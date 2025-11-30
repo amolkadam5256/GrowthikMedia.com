@@ -1,5 +1,5 @@
 // app/layout.tsx
-import './globals.css';
+import '../styles/App.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
