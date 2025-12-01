@@ -6,6 +6,7 @@ export default function AboutPage() {
                     About Page
                 </h1>
             </div>
-        </div>
+        </div>                                                                                                               
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
     );
 }
