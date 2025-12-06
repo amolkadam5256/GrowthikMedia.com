@@ -1,7 +1,7 @@
 // app/layout.tsx
 import '../../styles/globals.css';
-import Header from '../../components/website/Header';
-import Footer from '../../components/website/Footer';
+import Header from '../../components/comman/Header';
+import Footer from '../../components/comman/Footer';
 import SEO from '../../components/comman/SEO';
 import PageViewTracker from '../../components/comman/PageViewTracker';
 import GTM from '../../components/comman/GTM';
@@ -20,5 +20,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
       </body>
     </html>
-  );
+  );  
 }
