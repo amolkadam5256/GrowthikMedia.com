@@ -1,5 +1,5 @@
 // app/layout.tsx
-import '../../styles/App.css';
+import '../../styles/globals.css';
 import Header from '../../components/website/Header';
 import Footer from '../../components/website/Footer';
 import SEO from '../../components/comman/SEO';
