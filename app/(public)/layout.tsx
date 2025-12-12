@@ -1,12 +1,14 @@
-// app/layout.tsx
-import "../../styles/globals.css";
-import "../../styles/globals.css";
+import "../assets/styles/globals.css";
+import "../assets/styles/fonts.css";
+
 import Header from "../../components/comman/header/Header";
 import Footer from "../../components/comman/Footer";
 import SEO from "../../components/comman/SEO";
 import PageViewTracker from "../../components/comman/PageViewTracker";
 import GTM from "../../components/comman/GTM";
-import { ThemeProvider } from "next-themes";
+
+import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
+
 
 export default function RootLayout({
   children,
@@ -19,13 +21,13 @@ export default function RootLayout({
         <SEO />
       </head>
       <body suppressHydrationWarning={true}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProviderWrapper>
           <PageViewTracker />
           <GTM />
           <Header />
           <main>{children}</main>
           <Footer />
-        </ThemeProvider>
+        </ThemeProviderWrapper>
       </body>
     </html>
   );

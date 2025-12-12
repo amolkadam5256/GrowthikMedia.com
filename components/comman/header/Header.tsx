@@ -39,6 +39,7 @@ export default function Header() {
 
   // Close mobile menu when link is clicked
   const handleMobileLinkClick = () => {
+    
     setIsMobileMenuOpen(false);
     setActive(null);
   };

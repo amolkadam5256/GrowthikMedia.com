@@ -1,6 +1,7 @@
 // app/layout.tsx
-import '../globals.css';
-import Header from '../../components/comman/Header';
+import '../assets/styles/globals.css';
+import '../assets/styles/fonts.css';
+import Header from '../../components/comman/header/Header';
 import Footer from '../../components/comman/Footer';
 import SEO from '../../components/comman/SEO';
 import PageViewTracker from '../../components/comman/PageViewTracker';
