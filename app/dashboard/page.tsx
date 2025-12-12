@@ -10,10 +10,12 @@ export default function Home() {
         <div className="container mx-auto px-6 py-32 flex flex-col lg:flex-row items-center gap-12">
           <div className="lg:w-1/2 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6 leading-tight">
-              Dashboard <span className="text-yellow-400">Digital Marketing</span>
+              Dashboard{" "}
+              <span className="text-yellow-400">Digital Marketing</span>
             </h1>
-            <p className="mb-8 text-lg">
-              SEO, Social Media Marketing, Google Ads, and Web Development to take your business to the next level.
+            <p className="mb-8 text-sm">
+              SEO, Social Media Marketing, Google Ads, and Web Development to
+              take your business to the next level.
             </p>
             <Link
               href="/contact"
@@ -33,7 +35,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </main>
   );
 }
