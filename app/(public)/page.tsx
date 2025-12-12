@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { IMAGES } from "@/app/assets/images/images"
 
 export default function Home() {
   const { theme } = useTheme();
@@ -16,7 +17,7 @@ export default function Home() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/logo.png" // <-- use public path
+          src={IMAGES.logo} // <-- use public path
           alt="Background"
           fill
           className="object-cover"
