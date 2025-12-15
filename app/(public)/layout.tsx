@@ -9,7 +9,6 @@ import GTM from "../../components/comman/GTM";
 
 import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
 
-
 export default function RootLayout({
   children,
 }: {

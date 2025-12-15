@@ -80,10 +80,10 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
         href={href}
         className="hover:text-[#D90B1C] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5"
       >
-        {Icon && <Icon className="text-[#D90B1C]" />}
+        {Icon && <Icon className="text-[var(--color-primary)]" />}
         <span className="font-medium tracking-tight">{label}</span>
       </Link>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-[2px] bg-[#D90B1C] group-hover:w-4/5 transition-all duration-300"></div>
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-[2px] bg-[var(--color-primary)] group-hover:w-4/5 transition-all duration-300"></div>
     </li>
   );
 
@@ -97,8 +97,8 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
     >
       <button
         onClick={() => handleMenuClick(menu.id)}
-        className={`hover:text-[#D90B1C] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 cursor-pointer ${
-          clickedMenu === menu.id ? 'text-[#D90B1C] font-semibold' : ''
+        className={`hover:text-[var(--color-primary)] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 cursor-pointer ${
+          clickedMenu === menu.id ? 'text-[var(--color-primary)] font-semibold' : ''
         }`}
       >
         <span className="font-medium tracking-tight">{menu.label}</span>
@@ -106,7 +106,7 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
           active === menu.id ? "rotate-180" : "group-hover:rotate-180"
         }`} />
       </button>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-[2px] bg-[#D90B1C] group-hover:w-4/5 transition-all duration-300"></div>
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-[2px] bg-[var(--color-primary)] group-hover:w-4/5 transition-all duration-300"></div>
 
       {active === menu.id && (
         <div 
@@ -162,7 +162,7 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
                 <div className="flex flex-col sm:flex-row gap-2.5">
                   <Link
                     href="/contact"
-                    className="bg-[#D90B1C] hover:bg-[#D90B1C]/90 text-white px-4 py-2.5 rounded-full font-medium text-xs transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-1.5 shadow-sm"
+                    className="bg-[var(--color-primary)] hover:bg-[var(--color-primary)]/90 text-white px-4 py-2.5 rounded-full font-medium text-xs transition-all duration-200 transform hover:scale-[1.02] flex items-center justify-center space-x-1.5 shadow-sm"
                     onClick={() => {
                       setActive(null);
                       setClickedMenu(null);
@@ -196,8 +196,8 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
     >
       <button
         onClick={() => handleMenuClick(menu.id)}
-        className={`hover:text-[#D90B1C] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 cursor-pointer ${
-          clickedMenu === menu.id ? 'text-[#D90B1C] font-semibold' : ''
+        className={`hover:text-[var(--color-primary)] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 cursor-pointer ${
+          clickedMenu === menu.id ? 'text-[var(--color-primary)] font-semibold' : ''
         }`}
       >
         <span className="font-medium tracking-tight">{menu.label}</span>
@@ -265,11 +265,11 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
                       setClickedMenu(null);
                     }}
                   >
-                    {Icon && <Icon className="text-[#D90B1C] mr-2.5 text-xs" />}
-                    <span className="font-medium text-gray-700 dark:text-gray-300 group-hover/item:text-[#D90B1C] transition-colors tracking-tight">
+                    {Icon && <Icon className="text-[var(--color-primary)] mr-2.5 text-xs" />}
+                    <span className="font-medium text-gray-700 dark:text-gray-300 group-hover/item:text-[var(--color-primary)] transition-colors tracking-tight">
                       {item.label}
                     </span>
-                    <FiChevronRight className="ml-auto text-gray-400 group-hover/item:text-[#D90B1C] transform group-hover/item:translate-x-0.5 transition-all text-xs" />
+                    <FiChevronRight className="ml-auto text-gray-400 group-hover/item:text-[var(--color-primary)] transform group-hover/item:translate-x-0.5 transition-all text-xs" />
                   </Link>
                 );
               })}
