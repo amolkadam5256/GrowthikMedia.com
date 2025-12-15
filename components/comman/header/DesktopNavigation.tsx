@@ -1,3 +1,4 @@
+'use client';
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FiChevronDown, FiChevronRight, FiMessageCircle } from "react-icons/fi";
@@ -96,7 +97,7 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
     >
       <button
         onClick={() => handleMenuClick(menu.id)}
-        className={`hover:text-[#D90B1C] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 ${
+        className={`hover:text-[#D90B1C] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 cursor-pointer ${
           clickedMenu === menu.id ? 'text-[#D90B1C] font-semibold' : ''
         }`}
       >
@@ -109,11 +110,11 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
 
       {active === menu.id && (
         <div 
-          className="fixed left-0 right-0 mt-2 bg-white dark:bg-gray-900 text-black dark:text-white shadow-2xl rounded-xl z-50 border border-gray-100 dark:border-gray-800 animate-fadeIn mx-4 lg:mx-8 xl:mx-12 2xl:mx-auto 2xl:max-w-7xl overflow-hidden"
+          className="fixed left-0 right-0 mt-2 bg-white dark:bg-gray-900 text-black dark:text-white shadow-2xl rounded-xl z-50 border border-gray-100 dark:border-gray-800 animate-fadeIn mx-4 lg:mx-8 xl:mx-12 2xl:mx-auto 2xl:max-w-7xl overflow-hidden "
           onMouseEnter={() => handleMenuHover(menu.id)}
           onMouseLeave={handleMenuLeave}
         >
-          <div className="p-6">
+          <div className="p-4">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {menu.items.map((category: any, index: number) => (
                 <div key={index} className="group/category">
@@ -127,7 +128,7 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="flex items-center text-sm justify-between p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200 group/item"
+                        className="flex items-center text-sm justify-between p-1 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200 group/item"
                         onClick={() => {
                           setActive(null);
                           setClickedMenu(null);
@@ -139,7 +140,7 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
                             {item.label}
                           </span>
                         </div>
-                        <FiChevronRight className="text-gray-400 group-hover/item:text-[#D90B1C] transform group-hover/item:translate-x-0.5 transition-all text-xs" />
+                        {/* <FiChevronRight className="text-gray-400 group-hover/item:text-[#D90B1C] transform group-hover/item:translate-x-0.5 transition-all text-xs" /> */}
                       </Link>
                     ))}
                   </div>
@@ -148,7 +149,7 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
             </div>
             
             {/* CTA Section */}
-            <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800">
+            <div className="mt-4 pt-2 border-t border-gray-100 dark:border-gray-800">
               <div className="flex flex-col lg:flex-row items-center justify-between gap-4 p-5 bg-gradient-to-r from-[#D90B1C]/5 to-[#D90B1C]/10 dark:from-[#D90B1C]/10 dark:to-[#D90B1C]/20 rounded-xl">
                 <div>
                   <h4 className="text-base font-bold text-black dark:text-white">
@@ -195,7 +196,7 @@ export function DesktopNavigation({ active, setActive, navigationData }: Desktop
     >
       <button
         onClick={() => handleMenuClick(menu.id)}
-        className={`hover:text-[#D90B1C] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 ${
+        className={`hover:text-[#D90B1C] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 cursor-pointer ${
           clickedMenu === menu.id ? 'text-[#D90B1C] font-semibold' : ''
         }`}
       >
