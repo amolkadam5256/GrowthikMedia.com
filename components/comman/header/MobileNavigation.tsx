@@ -1,9 +1,10 @@
-'use client';
+"use client";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { FiChevronDown } from "react-icons/fi";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { ThemeToggleButton } from "./ThemeToggleButton";
+import { FiLogIn } from "react-icons/fi";
 
 interface MobileNavigationProps {
   isMobileMenuOpen: boolean;
@@ -13,12 +14,12 @@ interface MobileNavigationProps {
   navigationData: any;
 }
 
-export function MobileNavigation({ 
-  isMobileMenuOpen, 
-  active, 
-  setActive, 
-  handleMobileLinkClick, 
-  navigationData 
+export function MobileNavigation({
+  isMobileMenuOpen,
+  active,
+  setActive,
+  handleMobileLinkClick,
+  navigationData,
 }: MobileNavigationProps) {
   const { theme, setTheme } = useTheme();
 
@@ -27,11 +28,19 @@ export function MobileNavigation({
   };
 
   // Mobile regular link component
-  const MobileRegularLink = ({ href, label, icon: Icon }: { href: string; label: string; icon?: any }) => (
+  const MobileRegularLink = ({
+    href,
+    label,
+    icon: Icon,
+  }: {
+    href: string;
+    label: string;
+    icon?: any;
+  }) => (
     <li>
       <Link
         href={href}
-        className="flex items-center hover:text-[var(--color-primary)] py-3 px-4 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/10"
+        className="flex items-center hover:text-[var(--color-primary)] py-3 px-4 rounded-xl text-sm font-medium transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/10 "
         onClick={handleMobileLinkClick}
       >
         {Icon && <Icon className="text-[var(--color-primary)] mr-3" />}
@@ -48,11 +57,15 @@ export function MobileNavigation({
         onClick={() => setActive(active === menu.id ? null : menu.id)}
       >
         <div className="flex items-center">
-          {menu.icon && <menu.icon className="text-[var(--color-primary)] mr-3 text-sm" />}
+          {menu.icon && (
+            <menu.icon className="text-[var(--color-primary)] mr-3 text-sm" />
+          )}
           <span className="text-sm">{menu.label}</span>
         </div>
         <FiChevronDown
-          className={`transition-transform duration-300 text-sm ${active === menu.id ? "rotate-180" : ""}`}
+          className={`transition-transform duration-300 text-sm ${
+            active === menu.id ? "rotate-180" : ""
+          }`}
         />
       </button>
       {active === menu.id && (
@@ -62,7 +75,9 @@ export function MobileNavigation({
             return (
               <div key={index} className="space-y-2">
                 <div className="flex items-center">
-                  {Icon && <Icon className="text-[var(--color-primary)] mr-2 text-sm" />}
+                  {Icon && (
+                    <Icon className="text-[var(--color-primary)] mr-2 text-sm" />
+                  )}
                   <h4 className="font-semibold text-[var(--color-primary)] text-sm uppercase tracking-wider">
                     {category.category}
                   </h4>
@@ -82,16 +97,17 @@ export function MobileNavigation({
               </div>
             );
           })}
-          {!menu.categories && menu.items?.map((item: any) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="hover:text-[var(--color-primary)] py-2 px-3 rounded-lg block transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/10 text-sm"
-              onClick={handleMobileLinkClick}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {!menu.categories &&
+            menu.items?.map((item: any) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="hover:text-[var(--color-primary)] py-2 px-3 rounded-lg block transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/10 text-sm"
+                onClick={handleMobileLinkClick}
+              >
+                {item.label}
+              </Link>
+            ))}
         </div>
       )}
     </li>
@@ -99,9 +115,9 @@ export function MobileNavigation({
 
   return (
     <div
-      className={`lg:hidden absolute top-full left-0 right-0 mx-4 transition-all duration-500 ease-in-out ${
+      className={`lg:hidden absolute top-full left-0 right-0 transition-all duration-500 ease-in-out rounded-3xl ${
         isMobileMenuOpen
-          ? "max-h-[90vh] opacity-100 mt-4 overflow-y-auto"
+          ? "max-h-[80vh] opacity-100 mt-4  overflow-y-auto"
           : "max-h-0 opacity-0 mt-0 overflow-hidden"
       }`}
     >
@@ -114,16 +130,27 @@ export function MobileNavigation({
       >
         <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
           <div className="flex items-center justify-end mb-4 ml-10">
-         <ThemeToggleButton/>
+            <ThemeToggleButton />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <Link
-              href="/quote"
-              className="bg-[var(--color-primary)] text-white py-2 px-4 rounded-full text-center font-medium text-sm"
+              href="/auth/login"
               onClick={handleMobileLinkClick}
+              className="
+    inline-flex items-center justify-center gap-2
+    bg-[var(--color-primary)]
+    text-white
+    py-2 px-4
+    rounded-full
+    text-sm font-medium
+    transition-all duration-300
+    hover:opacity-90
+  "
             >
-              Get Quote
+              <FiLogIn className="w-4 h-4" />
+              <span>Login</span>
             </Link>
+
             <Link
               href="/contact"
               className="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-white py-2 px-4 rounded-full text-center font-medium text-sm"
@@ -139,11 +166,17 @@ export function MobileNavigation({
           {navigationData.mainLinks.map((link: any) => (
             <MobileRegularLink key={link.href} {...link} />
           ))}
-          
+
           {/* Expandable mobile menus */}
           {navigationData.expandableMenus.map((menu: any) => (
             <MobileServicesExpandableMenu key={menu.id} menu={menu} />
           ))}
+
+          {/* Standalone links (Blog, Contact) */}
+          {navigationData.standaloneLinks &&
+            navigationData.standaloneLinks.map((link: any) => (
+              <MobileRegularLink key={link.href} {...link} />
+            ))}
         </ul>
 
         {/* Mobile Contact Info */}

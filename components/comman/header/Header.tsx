@@ -39,7 +39,6 @@ export default function Header() {
 
   // Close mobile menu when link is clicked
   const handleMobileLinkClick = () => {
-    
     setIsMobileMenuOpen(false);
     setActive(null);
   };
@@ -50,9 +49,8 @@ export default function Header() {
 
       <header
         ref={menuRef}
-        className="transition-all duration-500 fixed top-8 left-0 right-0 z-50 shadow-lg rounded-full mt-6 mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 2xl:mx-auto 2xl:max-w-7xl"
+        className="transition-all duration-500 fixed top-4 lg:top-14 left-0 right-0 z-50 shadow-lg rounded-full mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 2xl:mx-auto 2xl:max-w-7xl"
         style={{
-          top: "20px",
           backgroundColor: theme === "light" ? "white" : "var(--color-dark)",
           color: theme === "light" ? "var(--color-dark)" : "white",
         }}

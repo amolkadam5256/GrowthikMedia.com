@@ -1,9 +1,10 @@
 // components/SEO.tsx
-import Script from 'next/script';
+import Script from "next/script";
 
 export const metadata = {
   title: "Growthik Media – Digital Marketing Agency",
-  description: "Growthik Media helps businesses grow with SEO, Google Ads, Social Media, and Web Development.",
+  description:
+    "Growthik Media helps businesses grow with SEO, Google Ads, Social Media, and Web Development.",
   openGraph: {
     title: "Growthik Media",
     description: "Digital marketing & SEO agency",
@@ -19,20 +20,35 @@ export default function SEO() {
       <title>{metadata.title}</title>
       <meta name="description" content={metadata.description} />
       <meta property="og:title" content={metadata.openGraph.title} />
-      <meta property="og:description" content={metadata.openGraph.description} />
+      <meta
+        property="og:description"
+        content={metadata.openGraph.description}
+      />
       <meta property="og:url" content={metadata.openGraph.url} />
       <meta property="og:image" content={metadata.openGraph.images[0]} />
       <meta name="robots" content="index, follow" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       {/* Google Site Verification */}
-      <meta name="google-site-verification" content="ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs" />
+      <meta
+        name="google-site-verification"
+        content="ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs"
+      />
 
       {/* Favicons */}
-      <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+      <link
+        rel="icon"
+        type="image/png"
+        href="/favicon-96x96.png"
+        sizes="96x96"
+      />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link rel="shortcut icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/apple-touch-icon.png"
+      />
       <meta name="apple-mobile-web-app-title" content="GrowthikMedia" />
       <link rel="manifest" href="/site.webmanifest" />
 
