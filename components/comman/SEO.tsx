@@ -1,14 +1,14 @@
 // components/SEO.tsx
 import Script from "next/script";
+import { CONTACT_INFO } from "@/constants/contact";
 
 export const metadata = {
-  title: "Growthik Media – Digital Marketing Agency",
-  description:
-    "Growthik Media helps businesses grow with SEO, Google Ads, Social Media, and Web Development.",
+  title: `${CONTACT_INFO.companyName} – Digital Marketing Agency`,
+  description: `${CONTACT_INFO.companyName} helps businesses grow with SEO, Google Ads, Social Media, and Web Development.`,
   openGraph: {
-    title: "Growthik Media",
+    title: CONTACT_INFO.companyName,
     description: "Digital marketing & SEO agency",
-    url: "https://growthikmedia.com",
+    url: CONTACT_INFO.website,
     images: ["/og-image.png"],
   },
 };
@@ -83,9 +83,9 @@ export default function SEO() {
             {
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Growthik Media",
-              "url": "https://growthikmedia.com",
-              "logo": "https://growthikmedia.com/logo.png"
+              "name": "${CONTACT_INFO.companyName}",
+              "url": "${CONTACT_INFO.website}",
+              "logo": "${CONTACT_INFO.website}/logo.png"
             }
           `,
         }}

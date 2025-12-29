@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import { MdEmail, MdPhone } from "react-icons/md";
 import { ThemeToggleButton } from "./ThemeToggleButton";
 import { FiLogIn } from "react-icons/fi";
+import { CONTACT_INFO } from "@/constants/contact";
 
 export function TopBar() {
   const { theme, setTheme } = useTheme();
@@ -28,7 +29,7 @@ export function TopBar() {
                 theme === "light" ? "text-white" : "text-[var(--color-primary)]"
               }`}
             />
-            <span>+91 80557 54054</span>
+            <span>{CONTACT_INFO.phone.primary}</span>
           </div>
           <div className="flex items-center">
             <MdEmail
@@ -36,7 +37,7 @@ export function TopBar() {
                 theme === "light" ? "text-white" : "text-[var(--color-primary)]"
               }`}
             />
-            <span>info@growthikmedia.com</span>
+            <span>{CONTACT_INFO.email.info}</span>
           </div>
         </div>
         <div className="flex items-center space-x-4">

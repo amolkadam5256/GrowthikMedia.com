@@ -1,8 +1,8 @@
-'use client';
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { IMAGES } from "@/app/assets/images/images"
+import { images } from "@/app/assets/images/images";
 
 interface LogoProps {
   onClick: () => void;
@@ -20,7 +20,7 @@ export function Logo({ onClick }: LogoProps) {
       <div className="relative">
         <div className="relative bg-white p-4 rounded-full">
           <Image
-            src={IMAGES.icon}
+            src={images.icon}
             alt="Growthik Media Logo"
             width={50} // required for Next.js layout
             height={50} // required for Next.js layout

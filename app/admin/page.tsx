@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { IMAGES } from "@/app/assets/images/images";
+import { images } from "@/app/assets/images/images";
 import Link from "next/link";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src={IMAGES.logo}
+          src={images.logo}
           alt="Admin Background"
           fill
           className="object-cover"

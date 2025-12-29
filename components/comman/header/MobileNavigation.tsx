@@ -5,6 +5,7 @@ import { FiChevronDown } from "react-icons/fi";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { ThemeToggleButton } from "./ThemeToggleButton";
 import { FiLogIn } from "react-icons/fi";
+import { CONTACT_INFO } from "@/constants/contact";
 
 interface MobileNavigationProps {
   isMobileMenuOpen: boolean;
@@ -184,15 +185,15 @@ export function MobileNavigation({
           <div className="space-y-4">
             <div className="flex items-center">
               <MdPhone className="text-[var(--color-primary)] mr-3 text-sm" />
-              <span className="text-sm">+1 (555) 123-4567</span>
+              <span className="text-sm">{CONTACT_INFO.phone.primary}</span>
             </div>
             <div className="flex items-center">
               <MdEmail className="text-[var(--color-primary)] mr-3 text-sm" />
-              <span className="text-sm">info@growthikmedia.com</span>
+              <span className="text-sm">{CONTACT_INFO.email.info}</span>
             </div>
             <div className="flex items-center">
               <MdLocationOn className="text-[var(--color-primary)] mr-3 text-sm" />
-              <span className="text-sm">123 Business St, City, Country</span>
+              <span className="text-sm">{CONTACT_INFO.address.full}</span>
             </div>
           </div>
         </div>

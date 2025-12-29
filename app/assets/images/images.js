@@ -1,7 +1,7 @@
 // Central image mapping for the project
 // All paths are relative to the `public/` folder
 
-export const IMAGES = {
+export const images = {
   appleTouchIcon: "/apple-touch-icon.png",
   download: "/download.jpg",
   favicon96: "/favicon-96x96.png",

@@ -28,6 +28,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import ThemeProviderWrapper from "../components/comman/ThemeProviderWrapper";
+import { CONTACT_INFO } from "@/constants/contact";
 
 function NotFoundContent() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -159,37 +160,37 @@ function NotFoundContent() {
               {[
                 {
                   Icon: FaInstagram,
-                  url: "https://instagram.com/growthikmedia",
+                  url: CONTACT_INFO.social.instagram,
                   label: "Instagram",
                 },
                 {
                   Icon: FaFacebook,
-                  url: "https://www.facebook.com/growthikmedia",
+                  url: CONTACT_INFO.social.facebook,
                   label: "Facebook",
                 },
                 {
                   Icon: FaLinkedin,
-                  url: "https://www.linkedin.com/company/growthikmedia",
+                  url: CONTACT_INFO.social.linkedin,
                   label: "LinkedIn",
                 },
                 {
                   Icon: FaYoutube,
-                  url: "https://www.youtube.com/@growthikmedia",
+                  url: CONTACT_INFO.social.youtube,
                   label: "YouTube",
                 },
                 {
                   Icon: FaXTwitter,
-                  url: "https://x.com/growthikmedia",
+                  url: CONTACT_INFO.social.twitter,
                   label: "Twitter (X)",
                 },
                 {
                   Icon: FaWhatsapp,
-                  url: "https://wa.me/",
+                  url: CONTACT_INFO.social.whatsapp,
                   label: "WhatsApp",
                 },
                 {
                   Icon: FaPinterest,
-                  url: "https://in.pinterest.com/growthikmedia/",
+                  url: CONTACT_INFO.social.pinterest,
                   label: "Pinterest",
                 },
               ].map(({ Icon, url, label }) => (

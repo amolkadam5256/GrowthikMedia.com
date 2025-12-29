@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { IMAGES } from "@/app/assets/images/images"
+import { images } from "@/app/assets/images/images";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -17,7 +17,7 @@ export default function Home() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src={IMAGES.logo} // <-- use public path
+          src={images.logo} // <-- use public path
           alt="Background"
           fill
           className="object-cover"
@@ -34,7 +34,7 @@ export default function Home() {
 
       {/* Content */}
       <section className="relative text-center px-6 z-10">
-        <h1 className="text-5xl font-bold text-red-500 dark:text-red-500">
+        <h1 className="text-5xl font-bold text-red-500 dark:text-white">
           Grow Your Business with Digital Marketing
         </h1>
       </section>

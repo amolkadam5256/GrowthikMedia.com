@@ -15,22 +15,47 @@ model User {
   name          String?
   email         String    @unique
   mobile        String    @unique
-  role          String    @default("USER") // USER, ADMIN, EDITOR
+  password      String?   // Hashed password for email/phone login
+  role          String    @default("USER") // USER, ADMIN
   isActive      Boolean   @default(true)
   isVerified    Boolean   @default(false)
+  lastLogin     DateTime?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
+
+  // Relations
+  sessions      Session[]
+  otps          Otp[]
 
   @@map("users")
 }
 
+model Session {
+  id            String    @id @default(cuid())
+  userId        String
+  token         String    @unique
+  refreshToken  String?   @unique
+  expiresAt     DateTime
+  userAgent     String?
+  ipAddress     String?
+  createdAt     DateTime  @default(now())
+
+  @@map("sessions")
+}
+
 model Otp {
   id         String   @id @default(cuid())
-  identifier String   // Email or Mobile
+  userId     String?
+  email      String?
+  mobile     String?
   code       String
+  method     String   @default("email") // email, sms, phone
+  isUsed     Boolean  @default(false)
+  attempts   Int      @default(0)
   expires    DateTime
   createdAt  DateTime @default(now())
 
-  @@unique([identifier, code])
+  @@unique([email, code])
+  @@unique([mobile, code])
   @@map("otps")
 }
