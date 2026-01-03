@@ -11,9 +11,8 @@
 /* Rostex Oblique */
 @font-face {
   font-family: 'Rostex';
-  src: url('/public/fonts/Rostex-Oblique.ttf') format('truetype'),
-       url('/public/fonts/Rostex-Oblique.otf') format('opentype');
-  font-weight: 400;
+  src: url('/fonts/Rostex-Oblique.ttf') format('truetype'),
+       url('/fonts/Rostex-Oblique.otf') format('opentype');
   font-style: italic;
   font-display: swap;
 }
@@ -21,8 +20,8 @@
 /* Rostex Outline */
 @font-face {
   font-family: 'RostexOutline';
-  src: url('/public/fonts/Rostex-Outline.ttf') format('truetype'),
-       url('/public/fonts/Rostex-Outline.otf') format('opentype');
+  src: url('/fonts/Rostex-Outline.ttf') format('truetype'),
+       url('/fonts/Rostex-Outline.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -31,8 +30,8 @@
 /* Rostex Oblique Outline */
 @font-face {
   font-family: 'RostexOutline';
-  src: url('/public/fonts/Rostex-ObliqueOutline.ttf') format('truetype'),
-       url('/public/fonts/Rostex-ObliqueOutline.otf') format('opentype');
+  src: url('/fonts/Rostex-ObliqueOutline.ttf') format('truetype'),
+       url('/fonts/Rostex-ObliqueOutline.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;

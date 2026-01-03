@@ -6,31 +6,71 @@ import Link from "next/link";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [identifier, setIdentifier] = useState("");
+  const [identifier, setIdentifier] = useState(""); // Email
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const [step, setStep] = useState<"identifier" | "otp">("identifier");
   const [otp, setOtp] = useState(["", "", "", "", "", ""]);
 
-  // Handle identifier submission
-  const handleSendOtp = (e: React.FormEvent) => {
+  // Handle identifier submission (Request OTP)
+  const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate Admin Check & OTP Send
-    setTimeout(() => {
+    setError("");
+
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: identifier }),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        setStep("otp");
+      } else {
+        setError(data.error || "Failed to send OTP");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again.");
+    } finally {
       setLoading(false);
-      setStep("otp");
-    }, 1000);
+    }
   };
 
-  // Handle OTP submission
-  const handleVerify = (e: React.FormEvent) => {
+  // Handle OTP submission (Verify OTP)
+  const handleVerify = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate Verify
-    setTimeout(() => {
+    setError("");
+
+    const code = otp.join("");
+    if (code.length !== 6) {
+      setError("Please enter complete OTP");
       setLoading(false);
-      router.push("/admin/dashboard");
-    }, 1500);
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/auth/verify-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: identifier, code }),
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        // Redirect to dashboard
+        router.push("/admin/dashboard");
+        router.refresh();
+      } else {
+        setError(data.error || "Invalid OTP");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleOtpChange = (element: HTMLInputElement, index: number) => {
@@ -56,14 +96,20 @@ export default function AdminLoginPage() {
           </p>
         </div>
 
+        {error && (
+          <div className="mb-4 p-3 bg-red-500/10 border border-red-500/50 text-red-500 text-sm rounded-lg text-center">
+            {error}
+          </div>
+        )}
+
         {step === "identifier" ? (
           <form onSubmit={handleSendOtp} className="space-y-6">
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">
-                Admin Email / ID
+                Admin Email
               </label>
               <input
-                type="text"
+                type="email"
                 required
                 value={identifier}
                 onChange={(e) => setIdentifier(e.target.value)}
@@ -77,10 +123,10 @@ export default function AdminLoginPage() {
               className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 rounded-lg transition-all flex items-center justify-center gap-2"
             >
               {loading ? (
-                "Verifying..."
+                "Sending OTP..."
               ) : (
                 <>
-                  Authenticate <FiArrowRight />
+                  Send OTP <FiArrowRight />
                 </>
               )}
             </button>
@@ -89,7 +135,7 @@ export default function AdminLoginPage() {
           <form onSubmit={handleVerify} className="space-y-6">
             <div>
               <label className="block text-center text-sm font-medium text-gray-300 mb-4">
-                Enter Security Code sent to your device
+                Enter OTP sent to {identifier}
               </label>
               <div className="flex justify-center gap-2">
                 {otp.map((data, index) => (
@@ -111,10 +157,10 @@ export default function AdminLoginPage() {
               className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 rounded-lg transition-all flex items-center justify-center gap-2"
             >
               {loading ? (
-                "Accessing..."
+                "Verifying..."
               ) : (
                 <>
-                  Verify Access <FiLock />
+                  Verify & Login <FiLock />
                 </>
               )}
             </button>
@@ -124,7 +170,7 @@ export default function AdminLoginPage() {
                 onClick={() => setStep("identifier")}
                 className="text-xs text-gray-500 hover:text-gray-300"
               >
-                Back to Identifier
+                Back to Email
               </button>
             </div>
           </form>
@@ -132,7 +178,7 @@ export default function AdminLoginPage() {
 
         <div className="mt-8 pt-6 border-t border-gray-700 text-center">
           <Link href="/" className="text-xs text-gray-500 hover:text-gray-300">
-            &larr; Exit to Public Site
+            &larr; Exit to Admin Login
           </Link>
         </div>
       </div>

@@ -51,14 +51,14 @@ export function TopBar() {
             Get Free Quote
           </Link>
           <Link
-            href="/auth/login"
+            href="/admin/login"
             className={`
         inline-flex items-center gap-2
         text-sm font-medium
         transition-all duration-300
         ${
           theme === "light"
-            ? "text-gray-700 hover:text-red-600"
+            ? "text-white hover:text-red-200" // Adjusted for better visibility on primary color
             : "text-gray-300 hover:text-red-400"
         }
       `}

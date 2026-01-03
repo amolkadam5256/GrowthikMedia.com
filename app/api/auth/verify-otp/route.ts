@@ -5,11 +5,11 @@ import { createToken } from "@/lib/auth";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { identifier, code } = body;
+    const { email, code } = body; // Changed 'identifier' to 'email' to match login flow
 
-    if (!identifier || !code) {
+    if (!email || !code) {
       return NextResponse.json(
-        { success: false, error: "Identifier and OTP code required" },
+        { success: false, error: "Email and OTP code required" },
         { status: 400 }
       );
     }
@@ -17,53 +17,31 @@ export async function POST(request: NextRequest) {
     // Find OTP record
     const otpRecord = await db.otp.findFirst({
       where: {
+        email,
         code,
         isUsed: false,
         expires: {
           gt: new Date(),
         },
-        OR: [{ email: identifier }, { mobile: identifier }],
       },
     });
 
     if (!otpRecord) {
       return NextResponse.json(
-        {
-          success: false,
-          error: "Invalid or expired OTP",
-        },
+        { success: false, error: "Invalid or expired OTP" },
         { status: 401 }
       );
     }
 
-    // Check attempt limit
-    if (otpRecord.attempts >= 3) {
-      await db.otp.delete({ where: { id: otpRecord.id } });
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Too many attempts. Please request a new OTP",
-        },
-        { status: 429 }
-      );
-    }
-
-    // Get user
-    const user = await db.user.findUnique({
-      where: { id: otpRecord.userId! },
+    // Verify Admin exists
+    const admin = await db.admin.findUnique({
+      where: { email },
     });
 
-    if (!user) {
+    if (!admin) {
       return NextResponse.json(
-        { success: false, error: "User not found" },
+        { success: false, error: "Admin account not found" },
         { status: 404 }
-      );
-    }
-
-    if (!user.isActive) {
-      return NextResponse.json(
-        { success: false, error: "Account is inactive" },
-        { status: 403 }
       );
     }
 
@@ -75,26 +53,9 @@ export async function POST(request: NextRequest) {
 
     // Create JWT token
     const token = await createToken({
-      id: user.id,
-      email: user.email,
-      role: user.role,
-    });
-
-    // Create session
-    await db.session.create({
-      data: {
-        userId: user.id,
-        token,
-        expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
-        userAgent: request.headers.get("user-agent") || undefined,
-        ipAddress: request.ip || undefined,
-      },
-    });
-
-    // Update lastLogin
-    await db.user.update({
-      where: { id: user.id },
-      data: { lastLogin: new Date() },
+      id: admin.id,
+      email: admin.email,
+      role: "ADMIN",
     });
 
     const response = NextResponse.json(
@@ -102,20 +63,21 @@ export async function POST(request: NextRequest) {
         success: true,
         message: "Login successful",
         user: {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          role: user.role,
+          id: admin.id,
+          email: admin.email,
+          name: admin.name,
+          role: "ADMIN",
         },
       },
       { status: 200 }
     );
 
+    // Set cookie
     response.cookies.set("authToken", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
-      maxAge: 7 * 24 * 60 * 60,
+      maxAge: 7 * 24 * 60 * 60, // 7 days
     });
 
     return response;
