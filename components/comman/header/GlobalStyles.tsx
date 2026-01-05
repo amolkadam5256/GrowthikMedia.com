@@ -1,4 +1,4 @@
-'use client';
+"use client";
 export function GlobalStyles() {
   return (
     <style jsx global>{`
@@ -12,7 +12,7 @@ export function GlobalStyles() {
           transform: translateY(0) scale(1);
         }
       }
-      
+
       @keyframes slideDown {
         from {
           opacity: 0;
@@ -25,20 +25,26 @@ export function GlobalStyles() {
           max-height: 2000px;
         }
       }
-      
+
       .animate-fadeIn {
         animation: fadeIn 0.3s ease-out;
       }
-      
+
       .animate-slideDown {
         animation: slideDown 0.3s ease-out;
       }
 
       /* Gradient animation for featured items */
       @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
       }
 
       .gradient-animate {

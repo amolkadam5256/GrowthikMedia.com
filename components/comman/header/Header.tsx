@@ -51,8 +51,9 @@ export default function Header() {
         ref={menuRef}
         className="transition-all duration-500 fixed top-4 lg:top-14 left-0 right-0 z-50 shadow-lg rounded-full mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 2xl:mx-auto 2xl:max-w-7xl"
         style={{
-          backgroundColor: theme === "light" ? "white" : "var(--color-dark)",
-          color: theme === "light" ? "var(--color-dark)" : "white",
+          backgroundColor:
+            theme === "dark" ? "var(--color-white)" : "var(--color-black)",
+          color: theme === "dark" ? "var(--color-black)" : "var(--color-white)",
         }}
       >
         <div className="flex justify-between items-center py-0 px-0">

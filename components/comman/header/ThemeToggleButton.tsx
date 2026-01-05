@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
@@ -22,25 +22,23 @@ export function ThemeToggleButton() {
       {/* Radio-style toggle */}
       <div className="relative flex items-center">
         {/* Background track */}
-        <div 
+        <div
           className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer transition-all duration-300 ${
-            theme === "light" 
-              ? "bg-black" 
-              : "bg-[var(--color-primary)]"
+            theme === "light" ? "bg-black" : "bg-[var(--color-primary)]"
           }`}
           onClick={toggleTheme}
           aria-label="Toggle theme"
           role="button"
           tabIndex={0}
           onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+            if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
               toggleTheme();
             }
           }}
         >
           {/* Toggle knob */}
-          <div 
+          <div
             className={`w-5 h-5 bg-white rounded-full shadow-lg transform transition-transform duration-300 ${
               theme === "light" ? "translate-x-0" : "translate-x-7"
             }`}
@@ -55,7 +53,6 @@ export function ThemeToggleButton() {
             </div>
           </div>
         </div>
-       
       </div>
     </div>
   );

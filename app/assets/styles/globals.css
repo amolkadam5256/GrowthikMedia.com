@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
-/* Optional: CSS variables for custom colors (if you want easier use in plain CSS) */
+/* Color palette */
 :root {
   --color-primary: #D90B1C;
   --color-primary-light: #F22E52;
   --color-neutral: #979DA6;
-  --color-dark: #0A0A0A;
+  --bg-light: #F2F2F2;
+  --bg-dark: #0D0D0D;
+  --color-black: #000000;
+  --color-white: #ffffff;
 }
+

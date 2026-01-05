@@ -6,14 +6,14 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "rgb(217,11,28)", // Tailwind can generate shades
-          light: "rgb(242,46,82)",
+          DEFAULT: "var(--color-primary)",
+          light: "var(--color-primary-light)",
         },
-        neutral: "rgb(151,157,166)",
-        dark: "rgb(13,13,13)",
-      },
-      backgroundImage: {
-        "primary-gradient": "linear-gradient(90deg, #D90B1C 0%, #F22E52 100%)",
+        neutral: "var(--color-neutral)",
+
+        // Semantic Colors mapped to CSS variables
+        page: "var(--bg-dark)",
+        surface: "var(--bg-light)",
       },
       keyframes: {
         shimmer: {

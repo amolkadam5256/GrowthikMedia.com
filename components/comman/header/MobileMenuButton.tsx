@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { FiMenu, FiX } from "react-icons/fi";
 
 interface MobileMenuButtonProps {
@@ -6,12 +6,15 @@ interface MobileMenuButtonProps {
   toggleMobileMenu: () => void;
 }
 
-export function MobileMenuButton({ isMobileMenuOpen, toggleMobileMenu }: MobileMenuButtonProps) {
+export function MobileMenuButton({
+  isMobileMenuOpen,
+  toggleMobileMenu,
+}: MobileMenuButtonProps) {
   return (
     <button
       className="lg:hidden py-3 px-8  rounded-full  transition-colors relative"
       onClick={toggleMobileMenu}
-      aria-label="Toggle menu" 
+      aria-label="Toggle menu"
     >
       {isMobileMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
       {!isMobileMenuOpen && (
