@@ -1,41 +1,208 @@
 import React from "react";
+import Button from "@/components/ui/Button";
+import Badge from "@/components/ui/Badge";
 
 const HeroHeadline = () => {
   return (
-    <div className="text-center relative max-w-5xl mx-auto mb-4 md:mb-6">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.1] tracking-tight mb-4 md:mb-6">
-        Engage Audiences <br className="hidden md:block" />
-        <span className="relative inline-block">
-          with Stunning Videos
-          {/* Underline Scribble */}
-          <svg
-            className="absolute w-full h-3 md:h-4 -bottom-1 md:-bottom-2 left-0 text-orange-400 opacity-80"
-            viewBox="0 0 200 9"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+    <div className="flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto px-4 py-12 md:py-12">
+      {/* Main Content Container */}
+      <div className="relative z-10 space-y-6 md:space-y-8">
+        {/* Pre-headline */}
+        <div className="flex items-center justify-center gap-2 mb-2">
+          <div className="h-px w-8 md:w-12 bg-gradient-to-r from-transparent to-[var(--color-primary)]"></div>
+          <span
+            className="text-xs md:text-sm font-semibold uppercase tracking-wider"
+            style={{ color: "var(--color-primary)" }}
           >
-            <path
-              d="M2.00025 6.99997C69.5002 4.00003 128.5 -1.50002 198 2.49997"
+            Professional Content Creation
+          </span>
+          <div className="h-px w-8 md:w-12 bg-gradient-to-l from-transparent to-[var(--color-primary)]"></div>
+        </div>
+
+        {/* Main Headline */}
+        <h1
+          className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-black tracking-wider leading-[1.1] tracking-tight"
+          style={{ color: "var(--text-primary)" }}
+        >
+          Engage Audiences
+          <br />
+          <span className="relative inline-block mt-2">
+            <span className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-primary-light)] to-[var(--color-primary-light)] bg-clip-text text-transparent">
+              with Stunning
+            </span>
+            {/* Animated underline */}
+            <svg
+              className="absolute w-full h-4 md:h-6 -bottom-2 md:-bottom-3 left-0 animate-pulse"
+              style={{ color: "var(--color-primary)" }}
+              viewBox="0 0 200 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.00025 6.99997C69.5002 4.00003 128.5 -1.50002 198 2.49997"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
+          <br />
+          <span style={{ color: "var(--text-primary)" }}>Videos</span>
+        </h1>
+
+        {/* Subheadline */}
+        <p
+          className="text-base sm:text-lg md:text-xl lg:text-xl max-w-3xl mx-auto font-medium leading-relaxed px-4"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          Boost Your Brand with{" "}
+          <span className="font-bold" style={{ color: "var(--color-primary)" }}>
+            High-Impact
+          </span>{" "}
+          Short Videos from our expert content creators.
+          <br className="hidden md:block" />
+          <span
+            className="text-sm md:text-base"
+            style={{ color: "var(--text-tertiary)" }}
+          >
+            Our team is ready to propel your business forward.
+          </span>
+        </p>
+
+        {/* CTA Section */}
+        <div className="relative flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          {/* Annotation: It's free */}
+          <div className="absolute left-3 md:-left-2 top-1/2 -translate-y-1/2  lg:block">
+            <p
+              className="font-handwriting text-lg md:text-xl transform -rotate-12 mb-2 font-medium"
+              style={{ color: "var(--text-primary)" }}
+            >
+              It's free
+            </p>
+            <svg
+              className="w-16 h-8 transform -scale-y-100 rotate-180"
+              style={{ color: "var(--text-primary)" }}
+              viewBox="0 0 60 30"
+              fill="none"
               stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-          </svg>
-        </span>
-      </h1>
+              strokeWidth="2"
+            >
+              <path d="M50,25 Q30,5 5,20 L10,15 M5,20 L15,22" />
+            </svg>
+          </div>
 
-      <p className="text-xs sm:text-sm md:text-sm text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed px-2 md:px-0">
-        Boost Your Brand with High-Impact Short Videos from our expert content
-        creators. Our team is ready to propel your business forward.
-      </p>
+          {/* Primary CTA */}
+          <div className="relative group">
+            <div
+              className="relative p-1.5 md:p-2 border-2 border-dashed rounded-full"
+              style={{
+                borderColor: "var(--color-primary)",
+                backgroundColor: "var(--surface)",
+              }}
+            >
+              <Button
+                size="lg"
+                className="rounded-full px-6 py-2 sm:px-8 sm:py-2 md:px-12 md:py-3 text-sm sm:text-lg md:text-lg font-bold text-white shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2"
+                style={{
+                  background: `linear-gradient(to right, var(--color-primary), var(--color-primary-light))`,
+                }}
+              >
+                Get Started Free
+                <svg
+                  className="w-10 h-10"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </Button>
+            </div>
+          </div>
+        </div>
 
-      {/* Annotation: Elevate your brand - Responsive positioning */}
-      <div className="absolute top-20 right-90 md:-top-8 md:-right-8 lg:-right-16  sm:block w-24 md:w-32 lg:w-40 opacity-80 md:opacity-100">
-        <p className="font-handwriting text-gray-800 text-sm md:text-lg transform -rotate-12 translate-y-2 font-medium">
+        {/* Trust Indicators */}
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-1 opacity-60">
+          <div className="flex items-center gap-2">
+            <svg
+              className="w-5 h-5"
+              style={{ color: "var(--color-primary)" }}
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span
+              className="text-xs md:text-sm"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              No Credit Card
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg
+              className="w-5 h-5"
+              style={{ color: "var(--color-primary)" }}
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span
+              className="text-xs md:text-sm"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              Cancel Anytime
+            </span>
+          </div>
+          <div className="flex items-center gap-2">
+            <svg
+              className="w-5 h-5"
+              style={{ color: "var(--color-primary)" }}
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <span
+              className="text-xs md:text-sm"
+              style={{ color: "var(--text-secondary)" }}
+            >
+              Fast Turnaround
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Decorative Elements */}
+      {/* Annotation: Elevate your brand */}
+      <div className="absolute top-40 md:top-20 lg:top-14 right-3 md:right-12 lg:right-0 md:block opacity-80">
+        <p
+          className="font-handwriting text-lg md:text-xl transform -rotate-12 font-medium"
+          style={{ color: "var(--text-primary)" }}
+        >
           Elevate your brand
         </p>
         <svg
-          className="w-full h-auto text-gray-800 transform rotate-180 md:rotate-90 pt-5 md:pt-20"
+          className="w-24 h-12 transform rotate-90"
+          style={{ color: "var(--text-primary)" }}
           viewBox="0 0 100 50"
           fill="none"
           stroke="currentColor"
@@ -45,15 +212,15 @@ const HeroHeadline = () => {
         </svg>
       </div>
 
-      {/* Annotation: Tic Marks */}
-      <div className="absolute top-4 left-4 md:top-10 md:-left-12 hidden sm:block opacity-40 md:opacity-60">
+      {/* Tic Marks */}
+      <div className="absolute top-8 left-8 md:top-16 md:left-16 hidden sm:block opacity-40">
         <svg
-          width="30"
-          height="30"
+          width="40"
+          height="40"
           viewBox="0 0 40 40"
           fill="none"
           stroke="currentColor"
-          className="text-gray-800"
+          style={{ color: "var(--text-primary)" }}
           strokeWidth="3"
           strokeLinecap="round"
         >

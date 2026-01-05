@@ -1,19 +1,121 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
-import Card from "@/components/ui/Card";
+import React, { useState, useRef, useEffect } from "react";
+import FacebookCard from "@/components/ui/cards/FacebookCard";
+import InstagramPostCard from "@/components/ui/cards/InstagramPostCard";
+import LinkedInPost from "@/components/ui/cards/LinkedInPost";
 
 interface CarouselItem {
   id: number;
-  image: string;
-  alt: string;
+  type: "facebook" | "instagram" | "linkedin";
+  data?: any;
 }
 
 interface HeroCarouselProps {
-  items: CarouselItem[];
+  items?: CarouselItem[];
 }
 
-const HeroCarousel = ({ items }: HeroCarouselProps) => {
+const HeroCarousel = ({ items: customItems }: HeroCarouselProps) => {
+  // Default social media cards data
+  const defaultItems: CarouselItem[] = [
+    {
+      id: 1,
+      type: "facebook",
+      data: {
+        username: "Growthik Media",
+        postTime: "2 hours ago",
+        postContent:
+          "🚀 Excited to share our latest digital marketing campaign results! Our client saw a 300% increase in engagement. Ready to transform your brand? Let's connect!",
+        likes: 2847,
+        comments: 156,
+        shares: 89,
+      },
+    },
+    {
+      id: 2,
+      type: "instagram",
+      data: {
+        username: "growthikmedia",
+        location: "Digital Marketing Agency",
+        likes: 3421,
+        caption:
+          "Creating stunning visual content that converts! 📸✨ Our creative team brings your brand vision to life.",
+        commentsCount: 187,
+        timeAgo: "3 hours ago",
+      },
+    },
+    {
+      id: 3,
+      type: "linkedin",
+      data: {
+        pageName: "Growthik Media - Digital Solutions",
+        followers: 25847,
+        postTime: "1d",
+        postContent:
+          "Transforming businesses through innovative #digitalmarketing strategies. Our comprehensive approach delivers #results that matter. Connect with us to elevate your brand!",
+        initialLikes: 542,
+        commentsCount: 98,
+        repostsCount: 67,
+      },
+    },
+    {
+      id: 4,
+      type: "facebook",
+      data: {
+        username: "Digital Marketing Pro",
+        postTime: "5 hours ago",
+        postContent:
+          "💡 Pro tip: Consistency is key in social media marketing! Our team helps you maintain a strong online presence across all platforms.",
+        likes: 1923,
+        comments: 94,
+        shares: 56,
+      },
+    },
+    {
+      id: 5,
+      type: "instagram",
+      data: {
+        username: "brandgrowth",
+        location: "Creative Studio",
+        likes: 2156,
+        caption:
+          "Behind the scenes of our latest photoshoot! 🎬 Quality content creation is our passion.",
+        commentsCount: 143,
+        timeAgo: "6 hours ago",
+      },
+    },
+    {
+      id: 6,
+      type: "linkedin",
+      data: {
+        pageName: "Marketing Excellence Hub",
+        followers: 18234,
+        postTime: "2d",
+        postContent:
+          "Data-driven marketing strategies that deliver ROI. Our #analytics team ensures every campaign is optimized for #success.",
+        initialLikes: 387,
+        commentsCount: 76,
+        repostsCount: 45,
+      },
+    },
+    {
+      id: 7,
+      type: "facebook",
+      data: {
+        username: "Social Media Experts",
+        postTime: "1 day ago",
+        postContent:
+          "🎯 Targeting the right audience is everything! Our advanced targeting strategies help you reach your ideal customers effectively.",
+        likes: 3156,
+        comments: 203,
+        shares: 124,
+      },
+    },
+  ];
+
+  const items = customItems || defaultItems;
+
   const [mounted, setMounted] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [hasDragged, setHasDragged] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -21,17 +123,16 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
 
   const carouselRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>(null);
-  const lastScrollTime = useRef<number>(0);
+  const isDraggingRef = useRef<boolean>(false); // Ref for animation loop
+  const dragThreshold = 5; // Pixels moved to consider it a drag
   const autoScrollSpeed = 0.5; // Pixels per frame
 
-  // Create circular buffer: [items, items, items, items] to ensure smoothness
-  // We need enough items to cover the viewport + buffer for seamless looping
+  // Create circular buffer for seamless looping
   const repeatedItems = [...items, ...items, ...items, ...items];
-  // Constants - Responsive Widths
-  // Mobile: w-52 (208px) + gap-4 (16px) = 224px
-  // Desktop: w-64 (256px) + gap-4 (16px) = 272px
-  const [itemWidth, setItemWidth] = useState(272);
-  const [totalSetWidth, setTotalSetWidth] = useState(items.length * 272);
+
+  // Responsive widths - adjusted for card components
+  const [itemWidth, setItemWidth] = useState(400);
+  const [totalSetWidth, setTotalSetWidth] = useState(items.length * 400);
   const [paddingX, setPaddingX] = useState(0);
 
   useEffect(() => {
@@ -41,30 +142,25 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
       setViewportWidth(vw);
 
       const isDesktop = vw >= 768;
-      const newItemWidth = isDesktop ? 272 : 224;
-      const newPaddingX = vw * (isDesktop ? 0.4 : 0.25);
+      // Increased width for card components
+      const newItemWidth = isDesktop ? 400 : 320;
+      const newPaddingX = vw * (isDesktop ? 0.3 : 0.15);
 
       setItemWidth(newItemWidth);
       setPaddingX(newPaddingX);
       setTotalSetWidth(items.length * newItemWidth);
     };
 
-    updateDimensions(); // Initial call
-
-    // Resize handler
+    updateDimensions();
     window.addEventListener("resize", updateDimensions);
 
-    // Initial centering logic needs to run after dimensions are set
     if (carouselRef.current) {
-      // We can't easily center perfectly on first render if width changes,
-      // but we can set a safe initial scroll.
-      const initialWidth = window.innerWidth >= 768 ? 272 : 224;
+      const initialWidth = window.innerWidth >= 768 ? 400 : 320;
       const initialTotalWidth = items.length * initialWidth;
       carouselRef.current.scrollLeft = initialTotalWidth;
       setScrollPosition(initialTotalWidth);
     }
 
-    // Start loop
     startAutoScroll();
 
     return () => {
@@ -73,11 +169,11 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
     };
   }, [items.length]);
 
-  const startAutoScroll = useCallback(() => {
+  const startAutoScroll = () => {
     if (animationRef.current) cancelAnimationFrame(animationRef.current);
 
     const animate = () => {
-      if (carouselRef.current && !isDragging) {
+      if (carouselRef.current && !isDraggingRef.current) {
         carouselRef.current.scrollLeft += autoScrollSpeed;
         checkScrollLoop();
         setScrollPosition(carouselRef.current.scrollLeft);
@@ -85,7 +181,7 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
       animationRef.current = requestAnimationFrame(animate);
     };
     animationRef.current = requestAnimationFrame(animate);
-  }, [isDragging, autoScrollSpeed]);
+  };
 
   const stopAutoScroll = () => {
     if (animationRef.current) {
@@ -94,13 +190,11 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
     }
   };
 
-  // Adjust checkScrollLoop to use state
   const checkScrollLoop = () => {
     if (!carouselRef.current) return;
 
-    // Use current state values or recalculate for latest closure
     const vw = typeof window !== "undefined" ? window.innerWidth : 1000;
-    const itemW = vw < 768 ? 224 : 272;
+    const itemW = vw < 768 ? 320 : 400;
     const totalW = items.length * itemW;
 
     const maxScroll = totalW * 2;
@@ -116,7 +210,6 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
   const handleScroll = () => {
     if (carouselRef.current) {
       setScrollPosition(carouselRef.current.scrollLeft);
-      // Only do loop check on manual scroll (auto-scroll handles it internally)
       if (isDragging) {
         checkScrollLoop();
       }
@@ -125,8 +218,21 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!carouselRef.current) return;
+
+    // Check if clicking on interactive elements (buttons, inputs, links)
+    const target = e.target as HTMLElement;
+    const isInteractive = target.closest(
+      'button, input, a, textarea, select, [role="button"]'
+    );
+
+    if (isInteractive) {
+      return; // Don't start dragging if clicking on interactive elements
+    }
+
     stopAutoScroll();
     setIsDragging(true);
+    isDraggingRef.current = true;
+    setHasDragged(false);
     setStartX(e.pageX - carouselRef.current.offsetLeft);
     setScrollLeft(carouselRef.current.scrollLeft);
     carouselRef.current.style.cursor = "grabbing";
@@ -137,30 +243,54 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
     e.preventDefault();
     const x = e.pageX - carouselRef.current.offsetLeft;
     const walk = (x - startX) * 2;
+
+    // Check if user has dragged beyond threshold
+    if (Math.abs(walk) > dragThreshold) {
+      setHasDragged(true);
+    }
+
     carouselRef.current.scrollLeft = scrollLeft - walk;
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
+    isDraggingRef.current = false;
     if (carouselRef.current) {
       carouselRef.current.style.cursor = "grab";
     }
     startAutoScroll();
+
+    // Reset drag flag after a short delay
+    setTimeout(() => setHasDragged(false), 100);
   };
 
   const handleMouseLeave = () => {
     if (isDragging) {
       setIsDragging(false);
+      isDraggingRef.current = false;
       if (carouselRef.current) {
         carouselRef.current.style.cursor = "grab";
       }
       startAutoScroll();
+      setTimeout(() => setHasDragged(false), 100);
     }
   };
 
   const handleTouchStart = (e: React.TouchEvent) => {
     if (!carouselRef.current) return;
+
+    // Check if touching interactive elements
+    const target = e.target as HTMLElement;
+    const isInteractive = target.closest(
+      'button, input, a, textarea, select, [role="button"]'
+    );
+
+    if (isInteractive) {
+      return; // Don't start dragging if touching interactive elements
+    }
+
     stopAutoScroll();
+    setHasDragged(false);
     const touch = e.touches[0];
     setStartX(touch.pageX - carouselRef.current.offsetLeft);
     setScrollLeft(carouselRef.current.scrollLeft);
@@ -171,11 +301,31 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
     const touch = e.touches[0];
     const x = touch.pageX - carouselRef.current.offsetLeft;
     const walk = (x - startX) * 2;
+
+    // Check if user has dragged beyond threshold
+    if (Math.abs(walk) > dragThreshold) {
+      setHasDragged(true);
+    }
+
     carouselRef.current.scrollLeft = scrollLeft - walk;
   };
 
   const handleTouchEnd = () => {
     startAutoScroll();
+    setTimeout(() => setHasDragged(false), 100);
+  };
+
+  const renderCard = (item: CarouselItem) => {
+    switch (item.type) {
+      case "facebook":
+        return <FacebookCard {...item.data} />;
+      case "instagram":
+        return <InstagramPostCard {...item.data} />;
+      case "linkedin":
+        return <LinkedInPost {...item.data} />;
+      default:
+        return null;
+    }
   };
 
   return (
@@ -187,8 +337,7 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
       <div
         ref={carouselRef}
         onScroll={handleScroll}
-        // Removed CSS px classes, using inline style for perfect sync
-        className="flex gap-4 items-center overflow-x-scroll pb-5 select-none scrollbar-hide overflow-hidden perspective-container"
+        className="flex gap-6 items-center overflow-x-scroll pb-5 select-none scrollbar-hide overflow-hidden perspective-container"
         style={{
           scrollbarWidth: "none",
           cursor: "grab",
@@ -201,7 +350,6 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
-        // onMouseLeave is handled on container to resume auto-scroll
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -214,20 +362,18 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
           let zIndex = 0;
 
           if (mounted) {
-            const currentItemWidth = itemWidth; // Use state
+            const currentItemWidth = itemWidth;
 
-            // Calculate center based on centralized paddingX state
             const itemCenterPos =
               paddingX + index * currentItemWidth + currentItemWidth / 2;
             const containerCenter = scrollPosition + viewportWidth / 2;
 
             const dist = itemCenterPos - containerCenter;
             const absDist = Math.abs(dist);
-            // Dynamic range based on viewport width
             const range = viewportWidth * (viewportWidth >= 768 ? 0.6 : 0.85);
             const normalizedDist = Math.min(1, absDist / range);
 
-            // Create a "Rolodex" or "Fan" style scroll
+            // 3D transformation effects
             rotateY = -(dist / range) * 20;
             const rotateZ = (dist / range) * 10;
 
@@ -240,44 +386,33 @@ const HeroCarousel = ({ items }: HeroCarouselProps) => {
             return (
               <div
                 key={`${item.id}-${index}`}
-                className="shrink-0 w-52 md:w-64 transition-transform duration-75 ease-out will-change-transform"
+                className="shrink-0 w-80 md:w-96 transition-transform duration-75 ease-out will-change-transform"
                 style={{
                   transform: `perspective(1000px) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) translateZ(${translateZ}px) scale(${scale})`,
                   zIndex: zIndex,
                   opacity: opacity,
                 }}
               >
-                <Card className="group h-full shadow-2xl border-4 border-white">
-                  <div className="relative overflow-hidden rounded-xl h-80 md:h-96">
-                    <img
-                      src={item.image}
-                      alt={item.alt}
-                      className="w-full h-full object-cover"
-                      draggable="false"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-30 transition-opacity"></div>
-                    <div className="absolute inset-0 bg-black/10"></div>
-                  </div>
-                </Card>
+                <div className="pointer-events-auto">{renderCard(item)}</div>
               </div>
             );
           }
 
-          return null; // Should not happen after mount, but safe fallback
+          return null;
         })}
       </div>
 
       {/* Scroll Hint */}
-      <div className="flex justify-center items-center gap-2 text-gray-500 text-sm my-5">
-        <span>Drag to explore</span>
+      <div className="flex justify-center items-center gap-2 text-gray-500 dark:text-gray-400 text-sm my-10">
+        <span>Drag to explore our social media presence</span>
         <div className="flex gap-1">
-          <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+          <div className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"></div>
           <div
-            className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+            className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"
             style={{ animationDelay: "0.1s" }}
           ></div>
           <div
-            className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
+            className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"
             style={{ animationDelay: "0.2s" }}
           ></div>
         </div>

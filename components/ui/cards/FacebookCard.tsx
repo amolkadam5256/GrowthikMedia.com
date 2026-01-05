@@ -1,4 +1,15 @@
 import React, { useState } from "react";
+import Card from "../Card";
+
+interface FacebookCardProps {
+  username?: string;
+  postTime?: string;
+  postContent?: string;
+  likes?: number;
+  comments?: number;
+  shares?: number;
+  imageUrl?: string | null;
+}
 
 // Main FacebookCard Component
 const FacebookCard = ({
@@ -9,7 +20,7 @@ const FacebookCard = ({
   comments = 124,
   shares = 89,
   imageUrl = null,
-}) => {
+}: FacebookCardProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(likes);
   const [commentText, setCommentText] = useState("");
@@ -26,7 +37,7 @@ const FacebookCard = ({
     }
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       handleCommentSubmit();
     }
@@ -34,20 +45,22 @@ const FacebookCard = ({
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
+      <Card hoverEffect={false}>
         {/* Card Header */}
-        <div className="p-4 border-b border-gray-200">
+        <div className="p-4 border-b border-gray-200 dark:border-[var(--border)]">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex-shrink-0"></div>
               <div>
-                <h3 className="font-semibold text-gray-900 text-sm sm:text-base">
+                <h3 className="font-semibold text-gray-900 dark:text-[var(--text-primary)] text-sm sm:text-base">
                   {username}
                 </h3>
-                <p className="text-xs text-gray-500">{postTime}</p>
+                <p className="text-xs text-gray-500 dark:text-[var(--text-tertiary)]">
+                  {postTime}
+                </p>
               </div>
             </div>
-            <button className="text-gray-600 hover:bg-gray-100 rounded-full p-2 transition-colors">
+            <button className="text-gray-600 dark:text-[var(--text-secondary)] hover:bg-gray-100 dark:hover:bg-[var(--surface-secondary)] rounded-full p-2 transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <circle cx="10" cy="4" r="1.5" />
                 <circle cx="10" cy="10" r="1.5" />
@@ -59,13 +72,13 @@ const FacebookCard = ({
 
         {/* Post Content */}
         <div className="p-4">
-          <p className="text-gray-800 text-sm sm:text-base mb-3">
+          <p className="text-gray-800 dark:text-[var(--text-primary)] text-sm sm:text-base mb-3">
             {postContent}
           </p>
         </div>
 
         {/* Image Section */}
-        <div className="bg-gradient-to-br from-gray-200 to-gray-300 aspect-video flex items-center justify-center">
+        <div className="bg-gradient-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 aspect-video flex items-center justify-center">
           {imageUrl ? (
             <img
               src={imageUrl}
@@ -74,7 +87,7 @@ const FacebookCard = ({
             />
           ) : (
             <svg
-              className="w-24 h-24 sm:w-32 sm:h-32 text-gray-400"
+              className="w-24 h-24 sm:w-32 sm:h-32 text-gray-400 dark:text-gray-600"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -84,10 +97,10 @@ const FacebookCard = ({
         </div>
 
         {/* Reaction Stats */}
-        <div className="px-4 py-3 flex items-center justify-between text-sm border-b border-gray-200">
+        <div className="px-4 py-3 flex items-center justify-between text-sm border-b border-gray-200 dark:border-[var(--border)]">
           <div className="flex items-center space-x-2">
             <div className="flex -space-x-1">
-              <div className="w-5 h-5 rounded-full bg-blue-500 border-2 border-white flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full bg-blue-500 border-2 border-white dark:border-[var(--surface)] flex items-center justify-center">
                 <svg
                   className="w-3 h-3 text-white"
                   fill="currentColor"
@@ -96,7 +109,7 @@ const FacebookCard = ({
                   <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
                 </svg>
               </div>
-              <div className="w-5 h-5 rounded-full bg-red-500 border-2 border-white flex items-center justify-center">
+              <div className="w-5 h-5 rounded-full bg-red-500 border-2 border-white dark:border-[var(--surface)] flex items-center justify-center">
                 <svg
                   className="w-3 h-3 text-white"
                   fill="currentColor"
@@ -106,24 +119,26 @@ const FacebookCard = ({
                 </svg>
               </div>
             </div>
-            <span className="text-gray-600 text-xs sm:text-sm">
+            <span className="text-gray-600 dark:text-[var(--text-secondary)] text-xs sm:text-sm">
               {likeCount > 999
                 ? `${(likeCount / 1000).toFixed(1)}K`
                 : likeCount}
             </span>
           </div>
-          <div className="flex items-center space-x-3 text-gray-600 text-xs sm:text-sm">
+          <div className="flex items-center space-x-3 text-gray-600 dark:text-[var(--text-secondary)] text-xs sm:text-sm">
             <span>{comments} Comments</span>
             <span>{shares} Shares</span>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="px-2 py-2 flex items-center justify-around border-b border-gray-200">
+        <div className="px-2 py-2 flex items-center justify-around border-b border-gray-200 dark:border-[var(--border)]">
           <button
             onClick={handleLike}
-            className={`flex items-center justify-center space-x-2 hover:bg-gray-100 rounded-lg px-3 py-2 sm:px-4 transition-colors flex-1 ${
-              isLiked ? "text-blue-600" : "text-gray-700"
+            className={`flex items-center justify-center space-x-2 hover:bg-gray-100 dark:hover:bg-[var(--surface-secondary)] rounded-lg px-3 py-2 sm:px-4 transition-colors flex-1 ${
+              isLiked
+                ? "text-blue-600"
+                : "text-gray-700 dark:text-[var(--text-secondary)]"
             }`}
           >
             <svg
@@ -142,7 +157,7 @@ const FacebookCard = ({
             <span className="font-medium text-xs sm:text-sm">Like</span>
           </button>
 
-          <button className="flex items-center justify-center space-x-2 hover:bg-gray-100 rounded-lg px-3 py-2 sm:px-4 transition-colors flex-1 text-gray-700">
+          <button className="flex items-center justify-center space-x-2 hover:bg-gray-100 dark:hover:bg-[var(--surface-secondary)] rounded-lg px-3 py-2 sm:px-4 transition-colors flex-1 text-gray-700 dark:text-[var(--text-secondary)]">
             <svg
               className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
@@ -159,7 +174,7 @@ const FacebookCard = ({
             <span className="font-medium text-xs sm:text-sm">Comment</span>
           </button>
 
-          <button className="flex items-center justify-center space-x-2 hover:bg-gray-100 rounded-lg px-3 py-2 sm:px-4 transition-colors flex-1 text-gray-700">
+          <button className="flex items-center justify-center space-x-2 hover:bg-gray-100 dark:hover:bg-[var(--surface-secondary)] rounded-lg px-3 py-2 sm:px-4 transition-colors flex-1 text-gray-700 dark:text-[var(--text-secondary)]">
             <svg
               className="w-5 h-5 sm:w-6 sm:h-6"
               fill="none"
@@ -188,54 +203,14 @@ const FacebookCard = ({
                 onChange={(e) => setCommentText(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Write a comment..."
-                className="w-full bg-gray-100 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full bg-gray-100 dark:bg-[var(--input-bg)] dark:text-[var(--text-primary)] rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400"
               />
             </div>
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   );
 };
 
-// Demo App showing multiple cards
-export default function App() {
-  const posts = [
-    {
-      username: "John Doe",
-      postTime: "2 hours ago",
-      postContent:
-        "Just finished an amazing hike in the mountains! The view was absolutely breathtaking. 🏔️",
-      likes: 2500,
-      comments: 156,
-      shares: 42,
-    },
-    {
-      username: "Sarah Wilson",
-      postTime: "5 hours ago",
-      postContent:
-        "Loving this new coffee shop in downtown! Best latte I've had in ages ☕",
-      likes: 834,
-      comments: 67,
-      shares: 23,
-    },
-  ];
-
-  return (
-    <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 min-h-screen py-8 px-4">
-      <div className="max-w-2xl mx-auto space-y-6">
-        {posts.map((post, index) => (
-          <FacebookCard
-            key={index}
-            username={post.username}
-            postTime={post.postTime}
-            postContent={post.postContent}
-            likes={post.likes}
-            comments={post.comments}
-            shares={post.shares}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
+export default FacebookCard;

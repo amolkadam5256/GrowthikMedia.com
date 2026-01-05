@@ -9,8 +9,10 @@ interface CardProps {
 const Card = ({ children, className = "", hoverEffect = true }: CardProps) => {
   return (
     <div
-      className={`bg-white  rounded-xl shadow-xl transition-all duration-300 overflow-hidden ${
-        hoverEffect ? "hover:shadow-2xl hover:-translate-y-3" : ""
+      className={`bg-white dark:bg-[var(--surface)] rounded-xl shadow-xl dark:shadow-[0_10px_40px_var(--shadow-lg)] transition-all duration-300 overflow-hidden ${
+        hoverEffect
+          ? "hover:shadow-2xl hover:-translate-y-3 dark:hover:shadow-[0_20px_60px_var(--shadow-lg)]"
+          : ""
       } ${className}`}
     >
       {children}

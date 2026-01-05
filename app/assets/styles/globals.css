@@ -2,12 +2,49 @@
 
 /* Color palette */
 :root {
-  --color-primary: #D90B1C;
-  --color-primary-light: #F22E52;
-  --color-neutral: #979DA6;
-  --bg-light: #F2F2F2;
-  --bg-dark: #0D0D0D;
+  /* Brand Colors */
+  --color-primary: #d90b1c;
+  --color-primary-light: #f22e52;
+  --color-neutral: #979da6;
   --color-black: #000000;
   --color-white: #ffffff;
+
+  /* Light Mode Colors */
+  --bg-light: #f2f2f2;
+  --bg-dark: #0d0d0d;
+
+  /* Light Theme Variables */
+  --background: #ffffff;
+  --surface: #ffffff;
+  --surface-secondary: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --border: #d1d5db;
+  --border-light: #e5e7eb;
+  --input-bg: #f3f4f6;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --shadow-lg: rgba(0, 0, 0, 0.15);
 }
 
+/* Dark Mode Colors */
+.dark {
+  --background: #0a0a0a;
+  --surface: #1a1a1a;
+  --surface-secondary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #9ca3af;
+  --text-tertiary: #6b7280;
+  --border: #404040;
+  --border-light: #333333;
+  --input-bg: #2a2a2a;
+  --shadow: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+}
+
+/* Base styles */
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

@@ -13,7 +13,21 @@ module.exports = {
 
         // Semantic Colors mapped to CSS variables
         page: "var(--bg-dark)",
-        surface: "var(--bg-light)",
+        surface: {
+          DEFAULT: "var(--surface)",
+          secondary: "var(--surface-secondary)",
+        },
+
+        // Theme-aware colors
+        background: "var(--background)",
+        "text-primary": "var(--text-primary)",
+        "text-secondary": "var(--text-secondary)",
+        "text-tertiary": "var(--text-tertiary)",
+        border: {
+          DEFAULT: "var(--border)",
+          light: "var(--border-light)",
+        },
+        "input-bg": "var(--input-bg)",
       },
       keyframes: {
         shimmer: {
