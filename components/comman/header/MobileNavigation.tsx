@@ -124,9 +124,7 @@ export function MobileNavigation({
     >
       <div
         className={`shadow-2xl rounded-3xl p-6 backdrop-blur-lg bg-opacity-95 ${
-          theme === "light"
-            ? "bg-white text-gray-900"
-            : "bg-gray-900 text-white"
+          theme === "dark" ? "bg-black text-white" : "bg-white text-gray-900"
         }`}
       >
         <div className="mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">

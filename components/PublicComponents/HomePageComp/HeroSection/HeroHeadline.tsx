@@ -22,7 +22,7 @@ const HeroHeadline = () => {
         {/* Main Headline */}
         <h1
           className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-black tracking-wider leading-[1.1] tracking-tight"
-          style={{ color: "var(--text-primary)" }}
+          style={{ color: "var(--color-white)" }}
         >
           Engage Audiences
           <br />
@@ -47,7 +47,7 @@ const HeroHeadline = () => {
             </svg>
           </span>
           <br />
-          <span style={{ color: "var(--text-primary)" }}>Videos</span>
+          <span style={{ color: "var(--color-white)" }}>Videos</span>
         </h1>
 
         {/* Subheadline */}
@@ -75,13 +75,13 @@ const HeroHeadline = () => {
           <div className="absolute left-3 md:-left-2 top-1/2 -translate-y-1/2  lg:block">
             <p
               className="font-handwriting text-lg md:text-xl transform -rotate-12 mb-2 font-medium"
-              style={{ color: "var(--text-primary)" }}
+              style={{ color: "var(--color-white)" }}
             >
               It's free
             </p>
             <svg
               className="w-16 h-8 transform -scale-y-100 rotate-180"
-              style={{ color: "var(--text-primary)" }}
+              style={{ color: "var(--color-white)" }}
               viewBox="0 0 60 30"
               fill="none"
               stroke="currentColor"
@@ -97,7 +97,6 @@ const HeroHeadline = () => {
               className="relative p-1.5 md:p-2 border-2 border-dashed rounded-full"
               style={{
                 borderColor: "var(--color-primary)",
-                backgroundColor: "var(--surface)",
               }}
             >
               <Button
@@ -196,13 +195,13 @@ const HeroHeadline = () => {
       <div className="absolute top-40 md:top-20 lg:top-14 right-3 md:right-12 lg:right-0 md:block opacity-80">
         <p
           className="font-handwriting text-lg md:text-xl transform -rotate-12 font-medium"
-          style={{ color: "var(--text-primary)" }}
+          style={{ color: "var(--color-white)" }}
         >
           Elevate your brand
         </p>
         <svg
           className="w-24 h-12 transform rotate-90"
-          style={{ color: "var(--text-primary)" }}
+          style={{ color: "var(--color-white)" }}
           viewBox="0 0 100 50"
           fill="none"
           stroke="currentColor"
@@ -219,8 +218,7 @@ const HeroHeadline = () => {
           height="40"
           viewBox="0 0 40 40"
           fill="none"
-          stroke="currentColor"
-          style={{ color: "var(--text-primary)" }}
+          stroke="var(--color-white)"
           strokeWidth="3"
           strokeLinecap="round"
         >

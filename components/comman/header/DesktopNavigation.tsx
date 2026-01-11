@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
 import { FiChevronDown, FiChevronRight, FiMessageCircle } from "react-icons/fi";
 import { useState, useEffect, useRef } from "react";
 
@@ -16,6 +17,7 @@ export function DesktopNavigation({
   navigationData,
 }: DesktopNavigationProps) {
   const router = useRouter();
+  const { theme } = useTheme();
   const [clickedMenu, setClickedMenu] = useState<string | null>(null);
   const [isHoverEnabled, setIsHoverEnabled] = useState(true);
   const menuRef = useRef<HTMLLIElement>(null);
@@ -105,7 +107,7 @@ export function DesktopNavigation({
     >
       <button
         onClick={() => handleMenuClick(menu.id)}
-        className={`hover:text-[var(--color-primary)] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 cursor-pointer ${
+        className={`hover:text-[var(--color-primary)]  text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 cursor-pointer ${
           clickedMenu === menu.id
             ? "text-[var(--color-primary)] font-semibold"
             : ""
@@ -122,13 +124,18 @@ export function DesktopNavigation({
 
       {active === menu.id && (
         <div
-          className={`absolute left-1/2 transform -translate-x-1/2 mt-6 bg-white dark:bg-gray-900 text-black dark:text-white shadow-2xl rounded-xl z-50 border border-gray-100 dark:border-gray-800 animate-fadeIn ${
+          className={`absolute left-1/2 transform -translate-x-1/2 mt-6 shadow-2xl rounded-xl z-50 border animate-fadeIn ${
             menu.columns === 3
               ? "grid grid-cols-3 gap-6 w-[1200px] p-6"
               : menu.columns === 2
               ? "grid grid-cols-2 gap-4 w-[500px] p-5"
               : "space-y-1 w-[240px] p-3"
           }`}
+          style={{
+            backgroundColor: theme === "dark" ? "#000000" : "#ffffff",
+            color: theme === "dark" ? "#ffffff" : "#000000",
+            borderColor: theme === "dark" ? "#374151" : "#e5e7eb",
+          }}
           onMouseEnter={() => handleMenuHover(menu.id)}
           onMouseLeave={handleMenuLeave}
         >
@@ -138,19 +145,32 @@ export function DesktopNavigation({
               {menu.items.map((category: any, index: number) => (
                 <div key={index} className="space-y-2.5">
                   <div>
-                    <h3 className="font-bold text-base text-black dark:text-white border-b border-gray-100 dark:border-gray-800 pb-1.5">
+                    <h3
+                      className="font-bold text-base border-b pb-1.5"
+                      style={{
+                        color: theme === "dark" ? "#ffffff" : "#000000",
+                        borderColor: theme === "dark" ? "#374151" : "#e5e7eb",
+                      }}
+                    >
                       {category.category}
                     </h3>
-                    <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">
-                      {category.description}
-                    </p>
                   </div>
                   <div className="space-y-1.5">
                     {category.items.map((item: any) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="flex items-center justify-between p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200 group/item text-sm"
+                        className="flex items-center justify-between p-2 rounded-lg transition-all duration-200 group/item text-sm"
+                        style={{
+                          backgroundColor: "transparent",
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor =
+                            theme === "dark" ? "#1f2937" : "#f3f4f6";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = "transparent";
+                        }}
                         onClick={() => {
                           setActive(null);
                           setClickedMenu(null);
@@ -158,17 +178,30 @@ export function DesktopNavigation({
                       >
                         <div className="flex items-center">
                           <div
-                            className={`w-1.5 h-1.5 rounded-full mr-2.5 flex-shrink-0 ${
-                              item.featured
-                                ? "bg-[#D90B1C]"
-                                : "bg-gray-300 dark:bg-gray-600"
-                            }`}
+                            className="w-1.5 h-1.5 rounded-full mr-2.5 flex-shrink-0"
+                            style={{
+                              backgroundColor: item.featured
+                                ? "#D90B1C"
+                                : theme === "dark"
+                                ? "#6b7280"
+                                : "#9ca3af",
+                            }}
                           ></div>
-                          <span className="font-medium text-gray-700 dark:text-gray-300 group-hover/item:text-[#D90B1C] transition-colors tracking-tight">
+                          <span
+                            className="font-medium group-hover/item:text-[#D90B1C] transition-colors tracking-tight"
+                            style={{
+                              color: theme === "dark" ? "#e5e7eb" : "#1f2937",
+                            }}
+                          >
                             {item.label}
                           </span>
                         </div>
-                        <FiChevronRight className="text-gray-400 group-hover/item:text-[#D90B1C] transform group-hover/item:translate-x-0.5 transition-all text-xs" />
+                        <FiChevronRight
+                          className="group-hover/item:text-[#D90B1C] transform group-hover/item:translate-x-0.5 transition-all text-xs"
+                          style={{
+                            color: theme === "dark" ? "#9ca3af" : "#6b7280",
+                          }}
+                        />
                       </Link>
                     ))}
                   </div>
@@ -184,7 +217,7 @@ export function DesktopNavigation({
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="flex items-center p-2.5 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-all duration-200 group/item text-sm"
+                    className="flex items-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 group/item text-sm"
                     onClick={() => {
                       setActive(null);
                       setClickedMenu(null);
@@ -193,10 +226,10 @@ export function DesktopNavigation({
                     {Icon && (
                       <Icon className="text-[var(--color-primary)] mr-2.5 text-xs" />
                     )}
-                    <span className="font-medium text-gray-700 dark:text-gray-300 group-hover/item:text-[var(--color-primary)] transition-colors tracking-tight">
+                    <span className="font-medium text-gray-800 dark:text-gray-200 group-hover/item:text-[var(--color-primary)] transition-colors tracking-tight">
                       {item.label}
                     </span>
-                    <FiChevronRight className="ml-auto text-gray-400 group-hover/item:text-[var(--color-primary)] transform group-hover/item:translate-x-0.5 transition-all text-xs" />
+                    <FiChevronRight className="ml-auto text-gray-500 dark:text-gray-400 group-hover/item:text-[var(--color-primary)] transform group-hover/item:translate-x-0.5 transition-all text-xs" />
                   </Link>
                 );
               })}
