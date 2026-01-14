@@ -27,7 +27,11 @@ export default function AboutUsSection() {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Side - Visual Element */}
-          <div className="relative">
+          <div
+            className="relative"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
             <div
               className="p-12 backdrop-blur-sm"
               style={{
@@ -36,7 +40,7 @@ export default function AboutUsSection() {
               }}
             >
               {/* Company Name with Gradient */}
-              <div className="mb-8">
+              <div className="mb-8" data-aos="fade-up" data-aos-delay="100">
                 <div className="flex items-center gap-3 mb-4">
                   <h3
                     className="text-3xl font-bold"
@@ -66,6 +70,8 @@ export default function AboutUsSection() {
                     backgroundColor: "var(--background)",
                     border: "1px solid var(--border)",
                   }}
+                  data-aos="fade-up"
+                  data-aos-delay="200"
                 >
                   <div className="flex items-start gap-4">
                     <div
@@ -100,6 +106,8 @@ export default function AboutUsSection() {
                     backgroundColor: "var(--background)",
                     border: "1px solid var(--border)",
                   }}
+                  data-aos="fade-up"
+                  data-aos-delay="300"
                 >
                   <div className="flex items-start gap-4">
                     <div
@@ -129,7 +137,11 @@ export default function AboutUsSection() {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mt-8">
+              <div
+                className="grid grid-cols-3 gap-4 mt-8"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              >
                 <div className="text-center">
                   <div
                     className="text-3xl font-bold mb-1"
@@ -177,9 +189,17 @@ export default function AboutUsSection() {
           </div>
 
           {/* Right Side - About Content */}
-          <div className="space-y-8">
+          <div
+            className="space-y-8"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <div>
-              <div className="inline-block px-1 py-2 mb-6">
+              <div
+                className="inline-block px-1 py-2 mb-6"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 <span
                   className="text-sm font-semibold"
                   style={{ color: "var(--color-primary)" }}
@@ -191,6 +211,8 @@ export default function AboutUsSection() {
               <h2
                 className="text-4xl md:text-5xl font-bold mb-6 leading-tight"
                 style={{ color: "var(--text-primary)" }}
+                data-aos="fade-up"
+                data-aos-delay="200"
               >
                 Who We Are
               </h2>
@@ -198,9 +220,15 @@ export default function AboutUsSection() {
               <div
                 className="w-24 h-1 mb-8"
                 style={{ backgroundColor: "var(--color-primary)" }}
+                data-aos="fade-right"
+                data-aos-delay="300"
               ></div>
 
-              <div className="space-y-4">
+              <div
+                className="space-y-4"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <p
                   className="text-lg leading-relaxed"
                   style={{ color: "var(--text-secondary)" }}
@@ -235,6 +263,8 @@ export default function AboutUsSection() {
                   backgroundColor: "var(--surface)",
                   border: "1px solid var(--border)",
                 }}
+                data-aos="fade-up"
+                data-aos-delay="500"
               >
                 <h3
                   className="text-xl font-bold mb-3"
@@ -254,7 +284,7 @@ export default function AboutUsSection() {
               </div>
 
               {/* CTA Button */}
-              <div className="mt-8">
+              <div className="mt-8" data-aos="zoom-in" data-aos-delay="600">
                 <Link href="/about">
                   <button
                     className="group px-8 py-4  font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3"

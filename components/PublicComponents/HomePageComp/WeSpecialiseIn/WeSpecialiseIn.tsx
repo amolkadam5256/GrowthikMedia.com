@@ -85,7 +85,11 @@ export default function WeSpecialiseIn() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Auto-scrolling Carousel */}
-          <div className="relative">
+          <div
+            className="relative"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
             <div
               className={`p-12 transition-all duration-500 ${
                 isAnimating
@@ -160,7 +164,7 @@ export default function WeSpecialiseIn() {
             </div>
 
             {/* CTA Button */}
-            <div className="mt-12">
+            <div className="mt-12" data-aos="zoom-in" data-aos-delay="200">
               <Link href="/contact">
                 <button
                   className="w-1/2 px-6 py-3 font-semibold text-white transition-all duration-300"
@@ -175,21 +179,31 @@ export default function WeSpecialiseIn() {
           </div>
 
           {/* Right Side - We Specialise Content */}
-          <div className="space-y-8">
+          <div
+            className="space-y-8"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          >
             <div>
               <h2
                 className="text-4xl md:text-5xl font-bold mb-6"
                 style={{ color: "var(--text-primary)" }}
+                data-aos="fade-up"
+                data-aos-delay="100"
               >
                 We Specialise In
               </h2>
               <div
                 className="w-24 h-1 mb-8"
                 style={{ backgroundColor: "var(--color-primary)" }}
+                data-aos="fade-right"
+                data-aos-delay="200"
               ></div>
               <p
                 className="text-lg leading-relaxed mb-8"
                 style={{ color: "var(--text-secondary)" }}
+                data-aos="fade-up"
+                data-aos-delay="300"
               >
                 Transforming your ideas into impactful digital experiences with
                 our comprehensive suite of creative and strategic services.
@@ -197,7 +211,7 @@ export default function WeSpecialiseIn() {
             </div>
 
             {/* Services List */}
-            <div className="space-y-4">
+            <div className="space-y-4" data-aos="fade-up" data-aos-delay="400">
               {services.map((service, index) => {
                 const Icon = service.icon;
                 return (

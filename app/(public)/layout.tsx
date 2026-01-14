@@ -6,6 +6,7 @@ import Footer from "../../components/comman/Footer";
 import SEO from "../../components/comman/SEO";
 import PageViewTracker from "../../components/comman/PageViewTracker";
 import GTM from "../../components/comman/GTM";
+import AOSInit from "../../components/comman/AOSInit";
 
 import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning={true}>
         <ThemeProviderWrapper>
+          <AOSInit />
           <PageViewTracker />
           <GTM />
           <Header />
