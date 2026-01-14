@@ -17,7 +17,7 @@ const HomeHeroSection = () => {
   return (
     <div className="relative w-full overflow-hidden flex flex-col items-center justify-center pt-20 md:pt-35">
       {/* Background Image for Headline */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0c">
         <Image
           src={images.bg}
           alt="Warm Light Background"

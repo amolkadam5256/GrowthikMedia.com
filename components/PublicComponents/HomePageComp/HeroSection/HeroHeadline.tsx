@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
 
@@ -99,28 +100,30 @@ const HeroHeadline = () => {
                 borderColor: "var(--color-primary)",
               }}
             >
-              <Button
-                size="lg"
-                className="rounded-full px-6 py-2 sm:px-8 sm:py-2 md:px-12 md:py-3 text-sm sm:text-lg md:text-lg font-bold text-white shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2"
-                style={{
-                  background: `linear-gradient(to right, var(--color-primary), var(--color-primary-light))`,
-                }}
-              >
-                Get Started Free
-                <svg
-                  className="w-10 h-10"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+              <Link href="/contact">
+                <Button
+                  size="lg"
+                  className="rounded-full px-6 py-2 sm:px-8 sm:py-2 md:px-12 md:py-3 text-sm sm:text-lg md:text-lg font-bold text-white shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2"
+                  style={{
+                    background: `linear-gradient(to right, var(--color-primary), var(--color-primary-light))`,
+                  }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
-              </Button>
+                  Get Started Free
+                  <svg
+                    className="w-10 h-10"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
