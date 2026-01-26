@@ -49,7 +49,7 @@ export default function OurServicesSection() {
     >
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <header className="text-center mb-16">
           {/* Animated Top Line */}
           <div
             className="flex items-center justify-center gap-4 mb-6"
@@ -112,27 +112,29 @@ export default function OurServicesSection() {
             Empowering your brand with innovative solutions that drive growth,
             engagement, and success in the digital landscape.
           </p>
-        </div>
+        </header>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 list-none p-0">
           {services.map((service, index) => (
-            <div
+            <li
               key={index}
               className="h-full"
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}
             >
-              <ServiceCard
-                icon={service.icon}
-                number={service.number}
-                title={service.title}
-                description={service.description}
-                delay={index * 100}
-              />
-            </div>
+              <article className="h-full">
+                <ServiceCard
+                  icon={service.icon}
+                  number={service.number}
+                  title={service.title}
+                  description={service.description}
+                  delay={index * 100}
+                />
+              </article>
+            </li>
           ))}
-        </div>
+        </ul>
 
         {/* CTA Section */}
         <div
@@ -150,8 +152,8 @@ export default function OurServicesSection() {
           </div>
 
           {/* Stats Section */}
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t"
+          <ul
+            className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t list-none p-0"
             style={{
               borderColor: "var(--border)",
             }}
@@ -162,7 +164,7 @@ export default function OurServicesSection() {
               { number: "10+", label: "Team Members" },
               { number: "5+", label: "Years Experience" },
             ].map((stat, index) => (
-              <div
+              <li
                 key={index}
                 className="text-center group cursor-pointer"
                 data-aos="zoom-in"
@@ -184,9 +186,9 @@ export default function OurServicesSection() {
                 >
                   {stat.label}
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
 

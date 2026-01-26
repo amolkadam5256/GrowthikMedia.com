@@ -90,7 +90,7 @@ export default function WeSpecialiseIn() {
             data-aos="fade-right"
             data-aos-duration="1000"
           >
-            <div
+            <article
               className={`p-12 transition-all duration-500 ${
                 isAnimating
                   ? "opacity-0 translate-y-8"
@@ -151,11 +151,11 @@ export default function WeSpecialiseIn() {
                   </div>
                 ))}
               </div>
-            </div>
+            </article>
 
             {/* Card Counter */}
             <div
-              className="absolute -bottom-0 right-8 px-6 py-3 font-semibold"
+              className="absolute bottom-0 right-8 px-6 py-3 font-semibold"
               style={{
                 color: "var(--color-primary)",
               }}
@@ -211,11 +211,15 @@ export default function WeSpecialiseIn() {
             </div>
 
             {/* Services List */}
-            <div className="space-y-4" data-aos="fade-up" data-aos-delay="400">
+            <ul
+              className="space-y-4 list-none p-0"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               {services.map((service, index) => {
                 const Icon = service.icon;
                 return (
-                  <div
+                  <li
                     key={index}
                     className={`flex items-center gap-4 p-1 transition-all duration-500 ${
                       index === currentIndex ? "scale-105" : "scale-100"
@@ -232,7 +236,7 @@ export default function WeSpecialiseIn() {
                     }}
                   >
                     <div
-                      className="w-12 h-12 flex items-center justify-center flex-shrink-0"
+                      className="w-12 h-12 flex items-center justify-center shrink-0"
                       style={{
                         backgroundColor:
                           index === currentIndex
@@ -266,10 +270,10 @@ export default function WeSpecialiseIn() {
                     >
                       {service.title}
                     </span>
-                  </div>
+                  </li>
                 );
               })}
-            </div>
+            </ul>
           </div>
         </div>
       </div>

@@ -5,7 +5,7 @@ import Badge from "@/components/ui/Badge";
 
 const HeroHeadline = () => {
   return (
-    <div className="flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto px-4 py-12 md:py-12">
+    <header className="flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto px-4 py-12 md:py-12">
       {/* Main Content Container */}
       <div className="relative z-10 space-y-6 md:space-y-8">
         {/* Pre-headline */}
@@ -129,8 +129,8 @@ const HeroHeadline = () => {
         </div>
 
         {/* Trust Indicators */}
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-1 opacity-60">
-          <div className="flex items-center gap-2">
+        <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-1 opacity-60 list-none p-0">
+          <li className="flex items-center gap-2">
             <svg
               className="w-5 h-5"
               style={{ color: "var(--color-primary)" }}
@@ -149,8 +149,8 @@ const HeroHeadline = () => {
             >
               No Credit Card
             </span>
-          </div>
-          <div className="flex items-center gap-2">
+          </li>
+          <li className="flex items-center gap-2">
             <svg
               className="w-5 h-5"
               style={{ color: "var(--color-primary)" }}
@@ -169,8 +169,8 @@ const HeroHeadline = () => {
             >
               Cancel Anytime
             </span>
-          </div>
-          <div className="flex items-center gap-2">
+          </li>
+          <li className="flex items-center gap-2">
             <svg
               className="w-5 h-5"
               style={{ color: "var(--color-primary)" }}
@@ -189,8 +189,8 @@ const HeroHeadline = () => {
             >
               Fast Turnaround
             </span>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
 
       {/* Decorative Elements */}
@@ -235,7 +235,7 @@ const HeroHeadline = () => {
           font-family: "Caveat", cursive;
         }
       `}</style>
-    </div>
+    </header>
   );
 };
 

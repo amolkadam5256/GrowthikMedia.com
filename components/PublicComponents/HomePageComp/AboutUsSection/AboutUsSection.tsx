@@ -64,7 +64,7 @@ export default function AboutUsSection() {
               {/* Mission & Vision Cards */}
               <div className="space-y-6">
                 {/* Mission Card */}
-                <div
+                <article
                   className="p-6 transition-all duration-300 hover:scale-105"
                   style={{
                     backgroundColor: "var(--background)",
@@ -97,10 +97,10 @@ export default function AboutUsSection() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </article>
 
                 {/* Vision Card */}
-                <div
+                <article
                   className="p-6 transition-all duration-300 hover:scale-105"
                   style={{
                     backgroundColor: "var(--background)",
@@ -133,7 +133,7 @@ export default function AboutUsSection() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </article>
               </div>
 
               {/* Stats */}
@@ -257,7 +257,7 @@ export default function AboutUsSection() {
               </div>
 
               {/* Why We Exist */}
-              <div
+              <article
                 className="mt-8 p-6"
                 style={{
                   backgroundColor: "var(--surface)",
@@ -281,7 +281,7 @@ export default function AboutUsSection() {
                   your audience, and drive meaningful growth through innovative
                   digital strategies and compelling visual content.
                 </p>
-              </div>
+              </article>
 
               {/* CTA Button */}
               <div className="mt-8" data-aos="zoom-in" data-aos-delay="600">

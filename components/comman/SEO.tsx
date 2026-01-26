@@ -3,6 +3,7 @@ import Script from "next/script";
 import { CONTACT_INFO } from "@/constants/contact";
 
 export const metadata = {
+  metadataBase: new URL(CONTACT_INFO.website),
   title: `${CONTACT_INFO.companyName} – Digital Marketing Agency`,
   description: `${CONTACT_INFO.companyName} helps businesses grow with SEO, Google Ads, Social Media, and Web Development.`,
   openGraph: {

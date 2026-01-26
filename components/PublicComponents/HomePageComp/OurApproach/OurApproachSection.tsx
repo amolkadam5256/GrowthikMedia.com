@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   TrendingUp,
   Target,
@@ -12,7 +12,15 @@ import {
 
 export default function OurApproachSection() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const [isVideoHovered, setIsVideoHovered] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current && videoRef.current.readyState >= 3) {
+      setIsVideoLoaded(true);
+    }
+  }, []);
 
   const features = [
     {
@@ -58,7 +66,7 @@ export default function OurApproachSection() {
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-5">
         <div
-          className="absolute top-0 right-0 w-96 h-96 rounded-full"
+          className="absolute top-0 right-0 w-96 h-96"
           style={{
             background:
               "radial-gradient(circle, var(--color-primary) 0%, transparent 70%)",
@@ -66,7 +74,7 @@ export default function OurApproachSection() {
           }}
         />
         <div
-          className="absolute bottom-0 left-0 w-96 h-96 rounded-full"
+          className="absolute bottom-0 left-0 w-96 h-96 "
           style={{
             background:
               "radial-gradient(circle, var(--color-primary) 0%, transparent 70%)",
@@ -77,7 +85,7 @@ export default function OurApproachSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16" data-aos="fade-up">
+        <header className="text-center mb-16" data-aos="fade-up">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div
               className="h-px w-16"
@@ -114,15 +122,15 @@ export default function OurApproachSection() {
               backgroundColor: "var(--color-primary)",
             }}
           />
-        </div>
+        </header>
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left Side - Content */}
           <div className="space-y-6" data-aos="fade-right">
             {/* Paragraph 1 - SEO Optimized */}
-            <div
-              className="p-6 rounded-lg transition-all duration-300 hover:shadow-lg"
+            <article
+              className="p-6 transition-all duration-300 hover:shadow-lg"
               style={{
                 backgroundColor: "var(--surface)",
                 border: "1px solid var(--border)",
@@ -157,11 +165,11 @@ export default function OurApproachSection() {
                 </strong>{" "}
                 to optimise your digital presence and drive measurable growth.
               </p>
-            </div>
+            </article>
 
             {/* Paragraph 2 - SEO Optimized */}
-            <div
-              className="p-6 rounded-lg transition-all duration-300 hover:shadow-lg"
+            <article
+              className="p-6 transition-all duration-300 hover:shadow-lg"
               style={{
                 backgroundColor: "var(--surface)",
                 border: "1px solid var(--border)",
@@ -193,7 +201,7 @@ export default function OurApproachSection() {
                 </strong>{" "}
                 and start building a stronger digital presence.
               </p>
-            </div>
+            </article>
 
             {/* CTA Button */}
             <div className="pt-4" data-aos="fade-up" data-aos-delay="200">
@@ -210,7 +218,11 @@ export default function OurApproachSection() {
           </div>
 
           {/* Right Side - Robot Mascot Video */}
-          <div className="relative" data-aos="fade-left" data-aos-delay="200">
+          <figure
+            className="relative"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <div
               className="relative overflow-hidden shadow-2xl"
               style={{
@@ -221,18 +233,26 @@ export default function OurApproachSection() {
               {/* Video Container */}
               <div className="relative w-full h-full min-h-[400px] md:min-h-[600px]">
                 <video
+                  ref={videoRef}
                   autoPlay
                   loop
                   muted
                   playsInline
+                  preload="auto"
                   className="absolute inset-0 w-full h-full object-cover"
                   onLoadedData={() => setIsVideoLoaded(true)}
+                  onCanPlay={() => setIsVideoLoaded(true)}
+                  onLoadedMetadata={() => setIsVideoLoaded(true)}
+                  onError={() => {
+                    setVideoError(true);
+                    setIsVideoLoaded(true); // Hide loader even on error
+                  }}
                   style={{
-                    opacity: isVideoLoaded ? 1 : 0,
+                    opacity: isVideoLoaded && !videoError ? 1 : 0,
                     transition: "opacity 0.5s ease-in-out",
                   }}
+                  src="/robot-mascot-2.mp4"
                 >
-                  <source src="/robot-mascot.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
 
@@ -245,7 +265,7 @@ export default function OurApproachSection() {
                     }}
                   >
                     <div
-                      className="animate-spin rounded-full h-12 w-12 border-4 border-t-transparent"
+                      className="animate-spin h-12 w-12 border-4 border-t-transparent"
                       style={{
                         borderColor: "var(--color-primary)",
                         borderTopColor: "transparent",
@@ -267,8 +287,8 @@ export default function OurApproachSection() {
             </div>
 
             {/* Floating Animation Badge */}
-            <div
-              className="absolute -top-6 -right-6 px-6 py-3 rounded-full shadow-lg animate-bounce"
+            <figcaption
+              className="absolute -top-6 -right-6 px-6 py-3 shadow-lg animate-bounce"
               style={{
                 backgroundColor: "var(--color-primary)",
                 animationDuration: "3s",
@@ -277,49 +297,48 @@ export default function OurApproachSection() {
               <span className="text-white font-bold text-sm">
                 AI-Powered Marketing
               </span>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 list-none p-0">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <div
-                key={index}
-                className="group p-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
-                style={{
-                  backgroundColor: "var(--surface)",
-                  border: "1px solid var(--border)",
-                }}
-                data-aos="fade-up"
-                data-aos-delay={index * 100}
-              >
-                <div
-                  className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
+              <li key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+                <article
+                  className="group p-6 h-full transition-all duration-300 hover:scale-105 hover:shadow-xl"
                   style={{
-                    backgroundColor: "var(--color-primary)",
+                    backgroundColor: "var(--surface)",
+                    border: "1px solid var(--border)",
                   }}
                 >
-                  <Icon className="w-7 h-7 text-white" strokeWidth={2} />
-                </div>
-                <h3
-                  className="text-xl font-bold mb-2"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  {feature.title}
-                </h3>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "var(--text-secondary)" }}
-                >
-                  {feature.description}
-                </p>
-              </div>
+                  <div
+                    className="w-14 h-14 flex items-center justify-center mb-4 transition-all duration-300 group-hover:scale-110"
+                    style={{
+                      backgroundColor: "var(--color-primary)",
+                    }}
+                  >
+                    <Icon className="w-7 h-7 text-white" strokeWidth={2} />
+                  </div>
+                  <h3
+                    className="text-xl font-bold mb-2"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {feature.title}
+                  </h3>
+                  <p
+                    className="text-sm leading-relaxed"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {feature.description}
+                  </p>
+                </article>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );
