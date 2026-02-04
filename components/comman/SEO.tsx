@@ -2,65 +2,14 @@
 import Script from "next/script";
 import { CONTACT_INFO } from "@/constants/contact";
 
-export const metadata = {
-  metadataBase: new URL(CONTACT_INFO.website),
-  title: `${CONTACT_INFO.companyName} – Digital Marketing Agency`,
-  description: `${CONTACT_INFO.companyName} helps businesses grow with SEO, Google Ads, Social Media, and Web Development.`,
-  openGraph: {
-    title: CONTACT_INFO.companyName,
-    description: "Digital marketing & SEO agency",
-    url: CONTACT_INFO.website,
-    images: ["/og-image.png"],
-  },
-};
-
 export default function SEO() {
   return (
     <>
-      {/* Basic SEO */}
-      <title>{metadata.title}</title>
-      <meta name="description" content={metadata.description} />
-      <meta property="og:title" content={metadata.openGraph.title} />
-      <meta
-        property="og:description"
-        content={metadata.openGraph.description}
-      />
-      <meta property="og:url" content={metadata.openGraph.url} />
-      <meta property="og:image" content={metadata.openGraph.images[0]} />
-      <meta name="robots" content="index, follow" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-      {/* Google Site Verification */}
-      <meta
-        name="google-site-verification"
-        content="ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs"
-      />
-
-      {/* Favicons */}
-      <link
-        rel="icon"
-        type="image/png"
-        href="/favicon-96x96.png"
-        sizes="96x96"
-      />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <link rel="shortcut icon" href="/favicon.ico" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-touch-icon.png"
-      />
-      <meta name="apple-mobile-web-app-title" content="GrowthikMedia" />
-      <link rel="manifest" href="/site.webmanifest" />
-
-      {/* Preconnect for GA & GTM */}
-      <link rel="preconnect" href="https://www.googletagmanager.com" />
-      <link rel="preconnect" href="https://www.google-analytics.com" />
-
       {/* Google Analytics gtag.js */}
       <Script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-30C78ZK2G8"
+        strategy="afterInteractive"
       />
       <Script
         id="google-analytics"
@@ -80,33 +29,51 @@ export default function SEO() {
         id="structured-data-organization"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: `
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "${CONTACT_INFO.companyName}",
-              "url": "${CONTACT_INFO.website}",
-              "logo": "${CONTACT_INFO.website}/logo.png",
-              "description": "Leading digital marketing and video production agency in Pune, India",
-              "email": "${CONTACT_INFO.email.info}",
-              "telephone": "${CONTACT_INFO.phone.primary}",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}",
-                "addressLocality": "${CONTACT_INFO.address.city}",
-                "addressRegion": "${CONTACT_INFO.address.state}",
-                "postalCode": "${CONTACT_INFO.address.pincode}",
-                "addressCountry": "IN"
-              },
-              "sameAs": [
-                "${CONTACT_INFO.social.facebook}",
-                "${CONTACT_INFO.social.instagram}",
-                "${CONTACT_INFO.social.twitter}",
-                "${CONTACT_INFO.social.linkedin}",
-                "${CONTACT_INFO.social.youtube}"
-              ]
-            }
-          `,
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: CONTACT_INFO.companyName,
+            url: CONTACT_INFO.website,
+            logo: `${CONTACT_INFO.website}/logo.png`,
+            description:
+              "Leading digital marketing and video production agency in Pune, India",
+            email: CONTACT_INFO.email.info,
+            telephone: CONTACT_INFO.phone.primary,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: `${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}`,
+              addressLocality: CONTACT_INFO.address.city,
+              addressRegion: CONTACT_INFO.address.state,
+              postalCode: CONTACT_INFO.address.pincode,
+              addressCountry: "IN",
+            },
+            sameAs: [
+              CONTACT_INFO.social.facebook,
+              CONTACT_INFO.social.instagram,
+              CONTACT_INFO.social.twitter,
+              CONTACT_INFO.social.linkedin,
+              CONTACT_INFO.social.youtube,
+            ],
+          }),
+        }}
+      />
+
+      {/* Structured Data JSON-LD - WebSite */}
+      <Script
+        id="structured-data-website"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: CONTACT_INFO.companyName,
+            url: CONTACT_INFO.website,
+            potentialAction: {
+              "@type": "SearchAction",
+              target: `${CONTACT_INFO.website}/blog?search={search_term_string}`,
+              "query-input": "required name=search_term_string",
+            },
+          }),
         }}
       />
 
@@ -115,52 +82,182 @@ export default function SEO() {
         id="structured-data-local-business"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: `
-            {
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "name": "${CONTACT_INFO.companyName}",
-              "image": "${CONTACT_INFO.website}/logo.png",
-              "@id": "${CONTACT_INFO.website}",
-              "url": "${CONTACT_INFO.website}",
-              "telephone": "${CONTACT_INFO.phone.primary}",
-              "priceRange": "$$",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}",
-                "addressLocality": "${CONTACT_INFO.address.city}",
-                "addressRegion": "${CONTACT_INFO.address.state}",
-                "postalCode": "${CONTACT_INFO.address.pincode}",
-                "addressCountry": "IN"
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: CONTACT_INFO.companyName,
+            image: `${CONTACT_INFO.website}/logo.png`,
+            "@id": CONTACT_INFO.website,
+            url: CONTACT_INFO.website,
+            telephone: CONTACT_INFO.phone.primary,
+            priceRange: "$$",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: `${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}`,
+              addressLocality: CONTACT_INFO.address.city,
+              addressRegion: CONTACT_INFO.address.state,
+              postalCode: CONTACT_INFO.address.pincode,
+              addressCountry: "IN",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 18.4782,
+              longitude: 73.8131,
+            },
+            openingHoursSpecification: [
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                ],
+                opens: "10:00",
+                closes: "19:00",
               },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 18.4782,
-                "longitude": 73.8131
+              {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: "Saturday",
+                opens: "10:00",
+                closes: "16:00",
               },
-              "openingHoursSpecification": [
+            ],
+          }),
+        }}
+      />
+
+      {/* Structured Data JSON-LD - BreadcrumbList */}
+      <Script
+        id="structured-data-breadcrumbs"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: CONTACT_INFO.website,
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Services",
+                item: `${CONTACT_INFO.website}/services`,
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Blog",
+                item: `${CONTACT_INFO.website}/blog`,
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                name: "About Us",
+                item: `${CONTACT_INFO.website}/about`,
+              },
+              {
+                "@type": "ListItem",
+                position: 5,
+                name: "Contact",
+                item: `${CONTACT_INFO.website}/contact`,
+              },
+            ],
+          }),
+        }}
+      />
+
+      {/* Services Schema */}
+      <Script
+        id="structured-data-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Digital Marketing & Video Production",
+            provider: {
+              "@type": "Organization",
+              name: CONTACT_INFO.companyName,
+            },
+            areaServed: "Worldwide",
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "Digital Services",
+              itemListElement: [
                 {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  "opens": "10:00",
-                  "closes": "19:00"
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Video Production",
+                  },
                 },
                 {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": "Saturday",
-                  "opens": "10:00",
-                  "closes": "16:00"
-                }
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Content Creation",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "Social Media Marketing",
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  itemOffered: {
+                    "@type": "Service",
+                    name: "SEO & Performance Marketing",
+                  },
+                },
               ],
-              "sameAs": [
-                "${CONTACT_INFO.social.facebook}",
-                "${CONTACT_INFO.social.instagram}",
-                "${CONTACT_INFO.social.twitter}",
-                "${CONTACT_INFO.social.linkedin}",
-                "${CONTACT_INFO.social.youtube}"
-              ]
-            }
-          `,
+            },
+          }),
+        }}
+      />
+      {/* FAQ Schema */}
+      <Script
+        id="structured-data-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Why choose Growthik Media as your Digital Marketing Company in Pune?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Growthik Media combines local expertise, innovative data-driven strategies, and a results-focused approach to elevate your brand. We don't just provide services; we partner with you to achieve sustainable growth.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What services does your Digital Marketing Agency in Pune offer?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "We offer SEO, Social Media Marketing, Content Creation, Performance Marketing, and specialized Video Production services.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "How long does it take to see results?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "While some results like performance ads can be immediate, organic growth typically takes 3-6 months. We provide transparent reporting to track progress.",
+                },
+              },
+            ],
+          }),
         }}
       />
     </>

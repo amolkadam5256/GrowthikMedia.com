@@ -12,6 +12,14 @@ import logo2 from "./logo-2.png";
 import webApp192 from "./web-app-manifest-192x192.png";
 import webApp512 from "./web-app-manifest-512x512.png";
 
+// Portfolio Images
+import seoRealEstate from "./portfolio/seo-real-estate.png";
+import socialMedia from "./portfolio/social-media.png";
+import videoMarketing from "./portfolio/video-marketing.png";
+import websiteRedesign from "./portfolio/website-redesign.png";
+import luxuryBranding from "./portfolio/luxury-branding.png";
+import educationContent from "./portfolio/education-content.png";
+
 // Export all images as a centralized object
 export const images = {
   appleTouchIcon,
@@ -26,4 +34,14 @@ export const images = {
   siteManifest: "/site.webmanifest", // Direct path for webmanifest (not importable)
   webApp192,
   webApp512,
+
+  // Portfolio
+  portfolio: {
+    seoRealEstate,
+    socialMedia,
+    videoMarketing,
+    websiteRedesign,
+    luxuryBranding,
+    educationContent,
+  },
 };

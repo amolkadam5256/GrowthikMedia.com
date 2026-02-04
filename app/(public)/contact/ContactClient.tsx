@@ -33,7 +33,7 @@ export default function ContactClient() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     setFormData({
       ...formData,
@@ -74,7 +74,7 @@ export default function ContactClient() {
           style={{ color: "var(--color-white)" }}
         >
           Get In{" "}
-          <span className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)] bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-(--color-primary) to-(--color-primary-light) bg-clip-text text-transparent">
             Touch
           </span>
         </h1>
@@ -82,8 +82,8 @@ export default function ContactClient() {
           className="text-lg sm:text-xl max-w-3xl mx-auto"
           style={{ color: "var(--text-secondary)" }}
         >
-          Have a project in mind? Let's create something amazing together. Our
-          team is ready to bring your vision to life.
+          Have a project in mind? Let&apos;s create something amazing together.
+          Our team is ready to bring your vision to life.
         </p>
       </div>
 

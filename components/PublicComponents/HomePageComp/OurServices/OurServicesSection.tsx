@@ -38,8 +38,6 @@ const services = [
 ];
 
 export default function OurServicesSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
   return (
     <section
       className="relative py-20 px-4 overflow-hidden"
@@ -117,12 +115,7 @@ export default function OurServicesSection() {
         {/* Services Grid */}
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 list-none p-0">
           {services.map((service, index) => (
-            <li
-              key={index}
-              className="h-full"
-              onMouseEnter={() => setActiveIndex(index)}
-              onMouseLeave={() => setActiveIndex(null)}
-            >
+            <li key={index} className="h-full">
               <article className="h-full">
                 <ServiceCard
                   icon={service.icon}

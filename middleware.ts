@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
 const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "your-secret-key-change-in-production"
+  process.env.JWT_SECRET || "your-secret-key-change-in-production",
 );
 
 export async function middleware(request: NextRequest) {
@@ -27,7 +27,7 @@ export async function middleware(request: NextRequest) {
 
     try {
       const verified = await jwtVerify(token, JWT_SECRET);
-      const user = verified.payload as any;
+      const user = verified.payload as { id: string; role: string };
 
       if (user.role !== "ADMIN") {
         return NextResponse.redirect(new URL("/admin/login", request.url));
@@ -37,9 +37,9 @@ export async function middleware(request: NextRequest) {
       response.headers.set("x-user-id", user.id);
       response.headers.set("x-user-role", user.role);
       return response;
-    } catch (error) {
+    } catch {
       const response = NextResponse.redirect(
-        new URL("/admin/login", request.url)
+        new URL("/admin/login", request.url),
       );
       response.cookies.delete("authToken");
       return response;

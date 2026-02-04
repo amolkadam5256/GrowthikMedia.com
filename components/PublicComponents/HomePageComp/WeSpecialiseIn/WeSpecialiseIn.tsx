@@ -172,7 +172,7 @@ export default function WeSpecialiseIn() {
                     backgroundColor: "var(--color-primary)",
                   }}
                 >
-                  Let's Get Started
+                  Let&apos;s Get Started
                 </button>
               </Link>
             </div>

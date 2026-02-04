@@ -1,0 +1,138 @@
+"use client";
+
+import {
+  ClipboardCheck,
+  Map as MapIcon,
+  Rocket,
+  TrendingUp,
+  ArrowRight,
+} from "lucide-react";
+import Link from "next/link";
+
+const STEPS = [
+  {
+    title: "Discovery & Audit",
+    benefit:
+      "Technical SEO, UX audit, creative performance review, and comprehensive ad funnel analysis.",
+    description:
+      "As a leading Digital Marketing Company in Pune, we begin with a deep dive into your current ecosystem. Our SEO Services in Pune experts identify toxic links, speed bottlenecks, and conversion leaks before we spend a single rupee.",
+    icon: ClipboardCheck,
+    keywords: ["Digital Marketing Company in Pune", "SEO Services in Pune"],
+  },
+  {
+    title: "Strategy Blueprint",
+    benefit:
+      "Data-backed growth roadmap with KPIs, timelines, and revenue milestones.",
+    description:
+      "Our Performance Marketing Agency builds a custom-engineered blueprint. We don't believe in guesswork; we set aggressive revenue targets and map out the exact path to dominate your industry.",
+    icon: MapIcon,
+    keywords: ["Performance Marketing Agency"],
+  },
+  {
+    title: "High-Performance Execution",
+    benefit:
+      "Scalable ads, SEO, content marketing, social media & video funnels.",
+    description:
+      "Our Growth Marketing Experts deploy multi-channel campaigns designed to convert. We focus on high-intent traffic and performance-driven content that builds authority and drives immediate sales.",
+    icon: Rocket,
+    keywords: ["Growth Marketing Experts"],
+  },
+  {
+    title: "Optimize & Scale",
+    benefit:
+      "Weekly optimization sprints, A/B testing, CRO improvements, and aggressive scaling.",
+    description:
+      "Marketing is never 'finished'. We run continuous A/B tests and conversion rate optimization (CRO) sprints to ensure your ROAS keeps climbing while we aggressively scale your winners.",
+    icon: TrendingUp,
+    keywords: [],
+  },
+];
+
+export default function GrowthFrameworkSection() {
+  return (
+    <section className="py-24 md:py-32 bg-(--background) relative overflow-hidden">
+      {/* Background Accents */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+        <div className="absolute top-10 right-10 w-96 h-96 bg-primary rounded-full blur-[120px]" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary rounded-full blur-[120px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20" data-aos="fade-up">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-12 h-[2px] bg-primary" />
+            <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs">
+              Our Methodology
+            </span>
+            <div className="w-12 h-[2px] bg-primary" />
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-4">
+            OUR 4-STEP <span className="text-primary">GROWTH FRAMEWORK</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-(--text-secondary) font-light italic">
+            How We Take You to the Top
+          </p>
+        </div>
+
+        {/* Steps Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {STEPS.map((step, index) => {
+            const Icon = step.icon;
+            return (
+              <div
+                key={index}
+                className="group relative p-8 bg-(--surface) border border-(--border) hover:border-primary transition-all duration-500"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                {/* Step Number */}
+                <div className="absolute -top-6 -right-6 text-8xl font-black text-primary/5 group-hover:text-primary/10 transition-colors pointer-events-none">
+                  0{index + 1}
+                </div>
+
+                {/* Icon */}
+                <div className="w-16 h-16 bg-(--color-primary) flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                  <Icon className="w-8 h-8 text-white" />
+                </div>
+
+                {/* Content */}
+                <h3 className="text-xl font-black text-(--text-primary) uppercase mb-4 group-hover:text-primary transition-colors">
+                  {step.title}
+                </h3>
+                <p className="text-primary font-bold text-sm mb-4 leading-tight">
+                  {step.benefit}
+                </p>
+                <p className="text-(--text-secondary) text-sm leading-relaxed mb-6 italic opacity-80">
+                  {step.description}
+                </p>
+
+                {/* Hover Line */}
+                <div className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-500" />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-20 text-center" data-aos="zoom-in">
+          <Link
+            href="/audit"
+            className="group relative inline-flex items-center gap-6 px-12 py-5 border-2 border-primary transition-all duration-500 hover:bg-(--color-primary) hover:scale-105 shadow-xl hover:shadow-primary/20 hover:border-(--color-primary)"
+          >
+            <span className="relative z-10 text-primary group-hover:text-white font-black uppercase tracking-[0.2em] text-sm transition-colors duration-300">
+              Get Your Growth Blueprint
+            </span>
+            <div className="relative z-10 w-10 h-10 border-2 border-primary group-hover:border-white bg-transparent flex items-center justify-center transition-all duration-300">
+              <ArrowRight className="w-5 h-5 text-primary group-hover:text-white group-hover:translate-x-1 transition-all" />
+            </div>
+          </Link>
+
+          <p className="mt-8 text-(--text-secondary) text-xs uppercase tracking-widest opacity-60">
+            Trusted by Businesses Across Pune & Beyond
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

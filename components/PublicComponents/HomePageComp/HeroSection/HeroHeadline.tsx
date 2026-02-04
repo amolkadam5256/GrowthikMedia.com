@@ -10,25 +10,25 @@ const HeroHeadline = () => {
       <div className="relative z-10 space-y-6 md:space-y-8">
         {/* Pre-headline */}
         <div className="flex items-center justify-center gap-2 mb-2">
-          <div className="h-px w-8 md:w-12 bg-gradient-to-r from-transparent to-[var(--color-primary)]"></div>
+          <div className="h-px w-8 md:w-12 bg-linear-to-r from-transparent to-(--color-primary)"></div>
           <span
             className="text-xs md:text-sm font-semibold uppercase tracking-wider"
             style={{ color: "var(--color-primary)" }}
           >
             Professional Content Creation
           </span>
-          <div className="h-px w-8 md:w-12 bg-gradient-to-l from-transparent to-[var(--color-primary)]"></div>
+          <div className="h-px w-8 md:w-12 bg-linear-to-l from-transparent to-(--color-primary)"></div>
         </div>
 
         {/* Main Headline */}
         <h1
-          className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-black tracking-wider leading-[1.1] tracking-tight"
+          className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-black leading-[1.1] tracking-tight"
           style={{ color: "var(--color-white)" }}
         >
           Engage Audiences
           <br />
           <span className="relative inline-block mt-2">
-            <span className="bg-gradient-to-r from-[var(--color-primary)] via-[var(--color-primary-light)] to-[var(--color-primary-light)] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
               with Stunning
             </span>
             {/* Animated underline */}
@@ -78,7 +78,7 @@ const HeroHeadline = () => {
               className="font-handwriting text-lg md:text-xl transform -rotate-12 mb-2 font-medium"
               style={{ color: "var(--color-white)" }}
             >
-              It's free
+              It&apos;s free
             </p>
             <svg
               className="w-16 h-8 transform -scale-y-100 rotate-180"

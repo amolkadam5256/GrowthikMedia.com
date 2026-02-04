@@ -219,8 +219,12 @@ function NotFoundContent() {
 
 export default function NotFound() {
   return (
-    <ThemeProviderWrapper>
-      <NotFoundContent />
-    </ThemeProviderWrapper>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true}>
+        <ThemeProviderWrapper>
+          <NotFoundContent />
+        </ThemeProviderWrapper>
+      </body>
+    </html>
   );
 }
