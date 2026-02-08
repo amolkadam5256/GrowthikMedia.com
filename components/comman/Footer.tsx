@@ -74,7 +74,7 @@ export default function Footer() {
     { href: "/", label: "Home", icon: FiHome },
     { href: "/about", label: "About", icon: FiInfo },
     { href: "/portfolio", label: "Portfolio", icon: FiLayers },
-    { href: "/blog", label: "Blog", icon: FiBookOpen },
+    { href: "/blog", label: "Insights", icon: FiBookOpen },
     { href: "/contact", label: "Contact", icon: FiMail },
   ];
 
@@ -113,7 +113,7 @@ export default function Footer() {
         className={`transition-all duration-500 relative ${
           isDark
             ? "bg-[#0A0A0A] text-white"
-            : "bg-gradient-to-br from-gray-50 via-white to-gray-100 text-gray-900"
+            : "bg-linear-to-br from-gray-50 via-white to-gray-100 text-gray-900"
         }`}
       >
         {/* Decorative Background Elements */}
@@ -126,8 +126,8 @@ export default function Footer() {
         <div
           className={`relative ${
             isDark
-              ? "bg-gradient-to-r from-[#D90B1C] via-[#F22E52] to-[#D90B1C]"
-              : "bg-gradient-to-r from-[#D90B1C] via-[#F22E52] to-[#D90B1C]"
+              ? "bg-linear-to-r from-[#D90B1C] via-[#F22E52] to-[#D90B1C]"
+              : "bg-linear-to-r from-[#D90B1C] via-[#F22E52] to-[#D90B1C]"
           } transition-all duration-500`}
         >
           {/* Animated Background Pattern */}
@@ -141,7 +141,7 @@ export default function Footer() {
             ></div>
           </div>
 
-          <div className="max-w-7xl mx-auto  h-1 bg-[var(--bg-color)] red-line-left"></div>
+          <div className="max-w-7xl mx-auto  h-1 bg-(--bg-color) red-line-left"></div>
         </div>
 
         {/* Main Footer Content */}
@@ -154,11 +154,11 @@ export default function Footer() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="relative w-12 h-12  rounded-xl flex items-center justify-center ">
                     <span className="text-white font-bold text-2xl">
-                      <img src={images.icon} alt="" />
+                      <img src={images.icon.src} alt="" />
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight bg-gradient-to-r from-[#D90B1C] to-[#F22E52] bg-clip-text text-transparent">
+                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight bg-linear-to-r from-[#D90B1C] to-[#F22E52] bg-clip-text text-transparent">
                       {CONTACT_INFO.companyName}
                     </h3>
                     <p
@@ -239,7 +239,7 @@ export default function Footer() {
             <div className="lg:col-span-2">
               <h4 className="text-lg font-bold mb-6 relative inline-block">
                 Quick Links
-                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
+                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-linear-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
               </h4>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
@@ -262,7 +262,7 @@ export default function Footer() {
             <div className="lg:col-span-3">
               <h4 className="text-lg font-bold mb-6 relative inline-block">
                 Our Services
-                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
+                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-linear-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
               </h4>
               <ul className="space-y-3">
                 {topServices.map((service) => (
@@ -273,7 +273,7 @@ export default function Footer() {
                         isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
                       } transition-all hover:translate-x-1`}
                     >
-                      <service.icon className="w-4 h-4 opacity-60 group-hover:opacity-100 flex-shrink-0" />
+                      <service.icon className="w-4 h-4 opacity-60 group-hover:opacity-100 shrink-0" />
                       <span>{service.label}</span>
                     </a>
                   </li>
@@ -285,7 +285,7 @@ export default function Footer() {
             <div className="lg:col-span-3">
               <h4 className="text-lg font-bold mb-6 relative inline-block">
                 Business Hours
-                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-gradient-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
+                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-linear-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
               </h4>
               <div
                 className={`space-y-3 text-sm mb-6 ${
@@ -314,7 +314,7 @@ export default function Footer() {
 
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#D90B1C] to-[#F22E52] hover:from-[#F22E52] hover:to-[#D90B1C] text-white rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105 group"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-[#D90B1C] to-[#F22E52] hover:from-[#F22E52] hover:to-[#D90B1C] text-white rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105 group"
               >
                 Get Started Today
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -437,7 +437,7 @@ export default function Footer() {
               >
                 Designed & Developed with{" "}
                 <span className="text-[#D90B1C] animate-pulse">❤️</span> by{" "}
-                <span className="font-bold bg-gradient-to-r from-[#D90B1C] to-[#F22E52] bg-clip-text text-transparent">
+                <span className="font-bold bg-linear-to-r from-[#D90B1C] to-[#F22E52] bg-clip-text text-transparent">
                   {CONTACT_INFO.companyName}
                 </span>
               </p>
@@ -450,7 +450,7 @@ export default function Footer() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 p-3 sm:p-4 bg-gradient-to-r from-[#D90B1C] to-[#F22E52] hover:from-[#F22E52] hover:to-[#D90B1C] text-white rounded-full shadow-2xl transition-all transform hover:scale-110 z-50 group"
+          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 p-3 sm:p-4 bg-linear-to-r from-[#D90B1C] to-[#F22E52] hover:from-[#F22E52] hover:to-[#D90B1C] text-white rounded-full shadow-2xl transition-all transform hover:scale-110 z-50 group"
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-y-1 transition-transform" />

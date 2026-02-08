@@ -1,263 +1,180 @@
 "use client";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { FiChevronDown, FiChevronRight, FiMessageCircle } from "react-icons/fi";
-import { useState, useEffect, useRef } from "react";
+import { FiChevronDown, FiChevronRight } from "react-icons/fi";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 
-interface DesktopNavigationProps {
-  active: string | null;
-  setActive: (id: string | null) => void;
-  navigationData: any;
+interface NavItemData {
+  label: string;
+  href?: string;
+  items?: NavItemData[];
+  icon?: any;
+  featured?: boolean;
+  direction?: "left" | "right";
 }
 
-export function DesktopNavigation({
-  active,
-  setActive,
-  navigationData,
-}: DesktopNavigationProps) {
-  const router = useRouter();
-  const { theme } = useTheme();
-  const [clickedMenu, setClickedMenu] = useState<string | null>(null);
-  const [isHoverEnabled, setIsHoverEnabled] = useState(true);
-  const menuRef = useRef<HTMLLIElement>(null);
+interface RecursiveNavItemProps {
+  item: NavItemData;
+  depth: number;
+}
+
+const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [calculatedDirection, setCalculatedDirection] = useState<
+    "left" | "right"
+  >("right");
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const containerRef = useRef<HTMLLIElement>(null);
+  const submenuRef = useRef<HTMLUListElement>(null);
+  const hasChildren = item.items && item.items.length > 0;
 
-  // Handle menu click - navigate to main page
-  const handleMenuClick = (menuId: string) => {
-    setClickedMenu(menuId);
-    setActive(null);
-    setIsHoverEnabled(false);
+  const isTopLevel = depth === 0;
 
-    // Navigate to the main page for the menu
-    switch (menuId) {
-      case "services":
-        router.push("/services");
-        break;
-      case "portfolio":
-        router.push("/portfolio");
-        break;
-    }
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-    // Re-enable hover after 1 second
-    setTimeout(() => {
-      setIsHoverEnabled(true);
-    }, 1000);
-  };
+  // Auto-detect direction based on screen space
+  useLayoutEffect(() => {
+    if (isOpen && submenuRef.current && !isTopLevel) {
+      const rect = submenuRef.current.getBoundingClientRect();
+      const windowWidth = window.innerWidth;
 
-  // Handle menu hover
-  const handleMenuHover = (menuId: string) => {
-    if (isHoverEnabled && clickedMenu !== menuId) {
-      // Clear any existing timeout
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+      if (rect.right > windowWidth - 20) {
+        setCalculatedDirection("left");
+      } else if (rect.left < 20) {
+        setCalculatedDirection("right");
+      } else {
+        setCalculatedDirection(item.direction || "right");
       }
-      setActive(menuId);
     }
+  }, [isOpen, isTopLevel, item.direction]);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsOpen(true);
   };
 
-  // Handle menu leave with delay
-  const handleMenuLeave = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-
+  const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
-      setActive(null);
-    }, 300);
+      setIsOpen(false);
+    }, 150);
   };
 
-  // Clear timeout on unmount
   useEffect(() => {
     return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
 
-  // Regular desktop link component
-  const DesktopRegularLink = ({
-    href,
-    label,
-    icon: Icon,
-  }: {
-    href: string;
-    label: string;
-    icon?: any;
-  }) => (
-    <li className="relative group">
-      <Link
-        href={href}
-        className="hover:text-[#D90B1C] text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5"
-      >
-        {Icon && <Icon className="text-[var(--color-primary)]" />}
-        <span className="font-medium tracking-tight">{label}</span>
-      </Link>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-[2px] bg-[var(--color-primary)] group-hover:w-4/5 transition-all duration-300"></div>
-    </li>
-  );
+  const commonClass = `flex items-center justify-between w-full px-4 py-2.5 transition-all duration-200 rounded-lg group/link`;
 
-  // Standard Mega Menu component (for all mega menus)
-  const DesktopStandardMegaMenu = ({ menu }: { menu: any }) => (
-    <li
-      className="relative cursor-pointer group"
-      onMouseEnter={() => handleMenuHover(menu.id)}
-      onMouseLeave={handleMenuLeave}
-    >
-      <button
-        onClick={() => handleMenuClick(menu.id)}
-        className={`hover:text-[var(--color-primary)]  text-sm px-3 py-2 rounded-full transition-all duration-200 group-hover:bg-black/5 dark:group-hover:bg-white/5 flex items-center space-x-1.5 cursor-pointer ${
-          clickedMenu === menu.id
-            ? "text-[var(--color-primary)] font-semibold"
-            : ""
-        }`}
-      >
-        <span className="font-medium tracking-tight">{menu.label}</span>
-        <FiChevronDown
-          className={`ml-0.5 transition-transform duration-200 ${
-            active === menu.id ? "rotate-180" : "group-hover:rotate-180"
-          }`}
+  // Use CSS variables for theme stability
+  const activeStyles =
+    mounted && resolvedTheme === "dark"
+      ? "bg-white/10 text-white"
+      : "bg-[#F0F2FD] text-[#4F46E5]";
+
+  // Idle styles use CSS variables from globals.css for automatic adaptation
+  const idleStyles =
+    "text-(--text-secondary) hover:bg-(--surface-secondary) dark:text-(--text-secondary) dark:hover:bg-white/5";
+
+  const ItemContent = () => (
+    <div className="flex items-center space-x-2.5">
+      {item.icon && (
+        <item.icon
+          className={`transition-colors ${isTopLevel ? "text-[#D90B1C]" : "text-(--text-tertiary) group-hover/link:text-[#D90B1C]"}`}
         />
-      </button>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-[2px] bg-[#D90B1C] group-hover:w-4/5 transition-all duration-300"></div>
-
-      {active === menu.id && (
-        <div
-          className={`absolute left-1/2 transform -translate-x-1/2 mt-6 shadow-2xl rounded-xl z-50 border animate-fadeIn ${
-            menu.columns === 3
-              ? "grid grid-cols-3 gap-6 w-[1200px] p-6"
-              : menu.columns === 2
-              ? "grid grid-cols-2 gap-4 w-[500px] p-5"
-              : "space-y-1 w-[240px] p-3"
-          }`}
-          style={{
-            backgroundColor: theme === "dark" ? "#000000" : "#ffffff",
-            color: theme === "dark" ? "#ffffff" : "#000000",
-            borderColor: theme === "dark" ? "#374151" : "#e5e7eb",
-          }}
-          onMouseEnter={() => handleMenuHover(menu.id)}
-          onMouseLeave={handleMenuLeave}
-        >
-          {menu.columns > 1 && Array.isArray(menu.items[0]?.items) ? (
-            // For Menus with categories (Services, Portfolio)
-            <>
-              {menu.items.map((category: any, index: number) => (
-                <div key={index} className="space-y-2.5">
-                  <div>
-                    <h3
-                      className="font-bold text-base border-b pb-1.5"
-                      style={{
-                        color: theme === "dark" ? "#ffffff" : "#000000",
-                        borderColor: theme === "dark" ? "#374151" : "#e5e7eb",
-                      }}
-                    >
-                      {category.category}
-                    </h3>
-                  </div>
-                  <div className="space-y-1.5">
-                    {category.items.map((item: any) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="flex items-center justify-between p-2 rounded-lg transition-all duration-200 group/item text-sm"
-                        style={{
-                          backgroundColor: "transparent",
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor =
-                            theme === "dark" ? "#1f2937" : "#f3f4f6";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "transparent";
-                        }}
-                        onClick={() => {
-                          setActive(null);
-                          setClickedMenu(null);
-                        }}
-                      >
-                        <div className="flex items-center">
-                          <div
-                            className="w-1.5 h-1.5 rounded-full mr-2.5 flex-shrink-0"
-                            style={{
-                              backgroundColor: item.featured
-                                ? "#D90B1C"
-                                : theme === "dark"
-                                ? "#6b7280"
-                                : "#9ca3af",
-                            }}
-                          ></div>
-                          <span
-                            className="font-medium group-hover/item:text-[#D90B1C] transition-colors tracking-tight"
-                            style={{
-                              color: theme === "dark" ? "#e5e7eb" : "#1f2937",
-                            }}
-                          >
-                            {item.label}
-                          </span>
-                        </div>
-                        <FiChevronRight
-                          className="group-hover/item:text-[#D90B1C] transform group-hover/item:translate-x-0.5 transition-all text-xs"
-                          style={{
-                            color: theme === "dark" ? "#9ca3af" : "#6b7280",
-                          }}
-                        />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </>
-          ) : (
-            // For simple lists
-            <>
-              {menu.items.map((item: any) => {
-                const Icon = item.icon;
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="flex items-center p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 group/item text-sm"
-                    onClick={() => {
-                      setActive(null);
-                      setClickedMenu(null);
-                    }}
-                  >
-                    {Icon && (
-                      <Icon className="text-[var(--color-primary)] mr-2.5 text-xs" />
-                    )}
-                    <span className="font-medium text-gray-800 dark:text-gray-200 group-hover/item:text-[var(--color-primary)] transition-colors tracking-tight">
-                      {item.label}
-                    </span>
-                    <FiChevronRight className="ml-auto text-gray-500 dark:text-gray-400 group-hover/item:text-[var(--color-primary)] transform group-hover/item:translate-x-0.5 transition-all text-xs" />
-                  </Link>
-                );
-              })}
-            </>
-          )}
-        </div>
       )}
-    </li>
+      <span className="font-medium whitespace-nowrap">{item.label}</span>
+    </div>
   );
 
   return (
-    <nav className="hidden lg:block">
-      <ul className="flex space-x-0 xl:space-x-2 2xl:space-x-3">
-        {/* Regular links */}
-        {navigationData.regularLinks.map((link: any) => (
-          <DesktopRegularLink key={link.href} {...link} />
-        ))}
+    <li
+      ref={containerRef}
+      className={`relative ${isTopLevel ? "" : "w-full"}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {item.href ? (
+        <Link
+          href={item.href}
+          className={`${commonClass} ${isTopLevel ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" : `text-[14px] ${isOpen ? activeStyles : idleStyles}`}`}
+        >
+          <ItemContent />
+          {hasChildren && !isTopLevel && (
+            <FiChevronRight
+              className={`ml-3 text-sm transition-transform ${isOpen ? "rotate-0 translate-x-1" : "opacity-40"}`}
+            />
+          )}
+          {hasChildren && isTopLevel && (
+            <FiChevronDown
+              className={`ml-1 transition-transform ${isOpen ? "rotate-180" : ""}`}
+            />
+          )}
+        </Link>
+      ) : (
+        <button
+          className={`${commonClass} ${isTopLevel ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" : `text-[14px] ${isOpen ? activeStyles : idleStyles}`}`}
+        >
+          <ItemContent />
+          {hasChildren && !isTopLevel && (
+            <FiChevronRight
+              className={`ml-3 text-sm transition-transform ${isOpen ? "rotate-0 translate-x-1" : "opacity-40"}`}
+            />
+          )}
+          {hasChildren && isTopLevel && (
+            <FiChevronDown
+              className={`ml-1 transition-transform ${isOpen ? "rotate-180" : ""}`}
+            />
+          )}
+        </button>
+      )}
 
-        {/* Mega menus */}
-        {navigationData.megaMenus.map((menu: any) => (
-          <DesktopStandardMegaMenu key={menu.id} menu={menu} />
-        ))}
+      {/* Underline for top-level hover state */}
+      {isTopLevel && (
+        <div
+          className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-[2px] bg-[#D90B1C] transition-all duration-300 ${isOpen ? "w-4/5" : "w-0"}`}
+        ></div>
+      )}
 
-        {/* Standalone links (Blog, Contact) */}
-        {navigationData.standaloneLinks &&
-          navigationData.standaloneLinks.map((link: any) => (
-            <DesktopRegularLink key={link.href} {...link} />
+      {/* Recursive Submenu */}
+      {hasChildren && isOpen && (
+        <ul
+          ref={submenuRef}
+          className={`absolute z-100 min-w-[240px] p-2 bg-(--background) border border-(--border-light) shadow-2xl rounded-xl animate-fadeIn ${
+            isTopLevel
+              ? "top-full left-1/2 -translate-x-1/2 mt-4"
+              : calculatedDirection === "left"
+                ? "top-0 right-[calc(100%+2px)]"
+                : "top-0 left-[calc(100%+2px)]"
+          }`}
+        >
+          {item.items?.map((subItem, idx) => (
+            <RecursiveNavItem key={idx} item={subItem} depth={depth + 1} />
           ))}
+        </ul>
+      )}
+    </li>
+  );
+};
+
+export function DesktopNavigation({ navigationData }: { navigationData: any }) {
+  return (
+    <nav className="hidden lg:block">
+      <ul className="flex items-center space-x-1">
+        {navigationData.regularLinks.map((link: any, idx: number) => (
+          <RecursiveNavItem key={idx} item={link} depth={0} />
+        ))}
+        {navigationData.megaMenus.map((menu: any, idx: number) => (
+          <RecursiveNavItem key={idx} item={menu} depth={0} />
+        ))}
+        {navigationData.standaloneLinks.map((link: any, idx: number) => (
+          <RecursiveNavItem key={idx} item={link} depth={0} />
+        ))}
       </ul>
     </nav>
   );

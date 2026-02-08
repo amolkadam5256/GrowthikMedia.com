@@ -10,23 +10,22 @@ import { MobileNavigation } from "./MobileNavigation";
 import { ContactButton } from "./ContactButton";
 import { MobileMenuButton } from "./MobileMenuButton";
 import { GlobalStyles } from "./GlobalStyles";
+import { FloatingThemeToggle } from "./FloatingThemeToggle";
 
 export default function Header() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [active, setActive] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Close menu when clicking outside
+  const [isTopBarVisible, setIsTopBarVisible] = useState(true);
+
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setActive(null);
-      }
+    const handleScroll = () => {
+      setIsTopBarVisible(window.scrollY <= 50);
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => setMounted(true), []);
@@ -40,7 +39,6 @@ export default function Header() {
   // Close mobile menu when link is clicked
   const handleMobileLinkClick = () => {
     setIsMobileMenuOpen(false);
-    setActive(null);
   };
 
   return (
@@ -49,7 +47,9 @@ export default function Header() {
 
       <header
         ref={menuRef}
-        className="transition-all duration-500 fixed top-4 lg:top-14 left-0 right-0 z-50 shadow-lg rounded-full mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 2xl:mx-auto 2xl:max-w-7xl"
+        className={`transition-all duration-500 fixed left-0 right-0 z-50 shadow-lg rounded-full mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 2xl:mx-auto 2xl:max-w-7xl ${
+          isTopBarVisible ? "top-4 lg:top-14" : "top-4"
+        }`}
         style={{
           backgroundColor:
             theme === "dark" ? "var(--color-black)" : "var(--color-white)",
@@ -59,11 +59,7 @@ export default function Header() {
         <div className="flex justify-between items-center py-0 px-0">
           <Logo onClick={() => setIsMobileMenuOpen(false)} />
 
-          <DesktopNavigation
-            active={active}
-            setActive={setActive}
-            navigationData={navigationData.desktop}
-          />
+          <DesktopNavigation navigationData={navigationData.desktop} />
 
           <div className="flex items-center space-x-4">
             <ContactButton />
@@ -77,14 +73,13 @@ export default function Header() {
 
         <MobileNavigation
           isMobileMenuOpen={isMobileMenuOpen}
-          active={active}
-          setActive={setActive}
           handleMobileLinkClick={handleMobileLinkClick}
-          navigationData={navigationData.mobile}
+          navigationData={navigationData}
         />
       </header>
 
       <GlobalStyles />
+      <FloatingThemeToggle />
     </>
   );
 }

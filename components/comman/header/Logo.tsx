@@ -3,13 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { images } from "@/app/assets/images/images";
+import React, { useState, useEffect } from "react";
 
 interface LogoProps {
   onClick: () => void;
 }
 
 export function Logo({ onClick }: LogoProps) {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Use this for any conditional logic that must only run on client
+  // const isDark = mounted && resolvedTheme === "dark";
 
   return (
     <Link
@@ -22,8 +31,8 @@ export function Logo({ onClick }: LogoProps) {
           <Image
             src={images.icon}
             alt="Growthik Media Logo"
-            width={50} // required for Next.js layout
-            height={50} // required for Next.js layout
+            width={50}
+            height={50}
             className="w-10 h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 object-contain"
             priority
           />
@@ -31,17 +40,12 @@ export function Logo({ onClick }: LogoProps) {
       </div>
       <div className="flex flex-col leading-tight">
         <span
-          className="text-sm sm:text-lg font-bold bg-[var(--color-primary)] bg-clip-text text-transparent transition-all duration-300 group-hover:from-[var(--color-primary-light)] group-hover:to-[var(--color-primary-light)]"
+          className="text-sm sm:text-lg font-bold bg-(--color-primary) bg-clip-text text-transparent transition-all duration-300 group-hover:from-(--color-primary-light) group-hover:to-(--color-primary-light)"
           style={{ fontFamily: "Rostex, sans-serif" }}
         >
           Growthik Media
         </span>
-        <span
-          className="text-[12px] sm:text-sm font-medium"
-          style={{
-            color: theme === "dark" ? "white" : "var(--color-dark)",
-          }}
-        >
+        <span className="text-[12px] sm:text-sm font-medium text-(--text-primary)">
           Digital Growth Partners
         </span>
       </div>

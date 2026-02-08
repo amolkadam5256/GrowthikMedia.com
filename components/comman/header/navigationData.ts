@@ -26,24 +26,67 @@ export const navigationData = {
       // SERVICES MEGA MENU -----------------------------------------------------
       {
         id: "services",
-        label: "Services",
-        icon: FiChevronDown,
-        columns: 3,
+        label: "Our Services",
+        href: "/services",
+        columns: "special", // Highlighting that this is a custom layout
         items: [
+          // TECHNOLOGY SERVICES
+          {
+            label: "Technology Services",
+            icon: FiCode,
+            description: "Website & Application Development",
+            items: [
+              { href: "/services/website-design", label: "Website Design" },
+              {
+                label: "Website Development",
+                featured: true,
+                items: [
+                  {
+                    href: "/services/website-development/nextjs",
+                    label: "Next.js Development",
+                  },
+                  {
+                    href: "/services/website-development/react",
+                    label: "React Development",
+                  },
+                  {
+                    href: "/services/website-development/full-stack",
+                    label: "Full-Stack Solutions",
+                  },
+                ],
+              },
+              {
+                href: "/services/wordpress-development",
+                label: "WordPress Development",
+              },
+              {
+                href: "/services/ecommerce-development",
+                label: "Shopify Development", // Changed label as requested
+              },
+              {
+                href: "/services/web-application",
+                label: "Web Application Development",
+              },
+              {
+                href: "/services/website-maintenance",
+                label: "Website Maintenance",
+              },
+              {
+                href: "/services/application-maintenance",
+                label: "Application Maintenance",
+              },
+            ],
+          },
           // DIGITAL MARKETING
           {
-            category: "Digital Marketing",
+            label: "Digital Marketing",
             icon: FiGlobe,
-            description: "Drive traffic, generate leads & boost conversions",
+            description: "Performance & Growth Marketing",
             items: [
-              {
-                href: "/services/digital-marketing",
-                label: "Digital Marketing",
-                featured: true,
-              },
               {
                 href: "/services/seo",
                 label: "Search Engine Optimization (SEO)",
+                featured: true,
               },
               {
                 href: "/services/social-media-marketing",
@@ -52,14 +95,6 @@ export const navigationData = {
               {
                 href: "/services/social-media-promotions",
                 label: "Social Media Promotions",
-              },
-              {
-                href: "/services/linkedin-management",
-                label: "LinkedIn Profile Management",
-              },
-              {
-                href: "/services/content-marketing",
-                label: "Content Marketing",
               },
               {
                 href: "/services/performance-marketing",
@@ -72,79 +107,36 @@ export const navigationData = {
               },
               { href: "/services/meta-ads", label: "Meta / Facebook Ads" },
               {
-                href: "/services/media-planning-buying",
-                label: "Media Planning and Buying",
+                href: "/services/content-marketing",
+                label: "Content Marketing",
               },
+              { href: "/services/lead-generation", label: "Lead Generation" },
               { href: "/services/email-marketing", label: "Email Marketing" },
               {
                 href: "/services/whatsapp-marketing",
-                label: "WhatsApp Campaign",
+                label: "WhatsApp Campaigns",
               },
               { href: "/services/sms-marketing", label: "SMS Marketing" },
-              { href: "/services/dooh", label: "DOOH (Digital Out of Home)" },
-              { href: "/services/lead-generation", label: "Lead Generation" },
-              {
-                href: "/services/political-digital-marketing",
-                label: "Political Digital Marketing",
-              },
-              { href: "/services/youtube-seo", label: "YouTube SEO" },
               {
                 href: "/services/influencer-management",
                 label: "Influencer Management",
               },
-            ],
-          },
-
-          // WEBSITE & APP DEVELOPMENT
-          {
-            category: "Website & App Development",
-            icon: FiCode,
-            description: "Create stunning, high-performance digital solutions",
-            items: [
+              { href: "/services/youtube-seo", label: "YouTube SEO" },
               {
-                href: "/services/website-development",
-                label: "Website Development",
-                featured: true,
-              },
-              { href: "/services/website-design", label: "Website Design" },
-              {
-                href: "/services/wordpress-development",
-                label: "WordPress Development",
+                href: "/services/media-planning-buying",
+                label: "Media Planning & Buying",
               },
               {
-                href: "/services/ecommerce-development",
-                label: "E-Commerce Development",
-              },
-              {
-                href: "/services/shopify-development",
-                label: "Shopify Development",
-              },
-              {
-                href: "/services/web-application",
-                label: "Web Application Development",
-              },
-              {
-                href: "/services/mobile-app-development",
-                label: "Mobile Application Development",
-              },
-              { href: "/services/php-development", label: "PHP Development" },
-              { href: "/services/cms-development", label: "CMS Development" },
-              {
-                href: "/services/website-maintenance",
-                label: "Website Maintenance",
-              },
-              {
-                href: "/services/application-maintenance",
-                label: "Application Maintenance",
+                href: "/services/political-digital-marketing",
+                label: "Political Digital Marketing",
               },
             ],
           },
-
-          // BRANDING & CREATIVE SERVICES
+          // BRANDING & CREATIVE
           {
-            category: "Branding & Creative",
+            label: "Branding & Creative",
             icon: FiPenTool,
-            description: "Build memorable brand identities",
+            description: "Brand Identity & Strategic Design",
             items: [
               {
                 href: "/services/branding-consulting",
@@ -162,6 +154,15 @@ export const navigationData = {
               { href: "/services/brand-name", label: "Brand Name Creation" },
               { href: "/services/logo-design", label: "Logo Design" },
               {
+                href: "/services/brand-identity",
+                label: "Brand Identity Development",
+              },
+              { href: "/services/branding-design", label: "Branding & Design" },
+              {
+                href: "/services/brochure-design",
+                label: "Brochure Designing",
+              },
+              {
                 href: "/services/business-card-design",
                 label: "Business Card Design",
               },
@@ -169,15 +170,6 @@ export const navigationData = {
                 href: "/services/letterhead-design",
                 label: "Letterhead Design",
               },
-              {
-                href: "/services/brochure-design",
-                label: "Brochure Designing",
-              },
-              {
-                href: "/services/brand-identity",
-                label: "Brand Identity Development",
-              },
-              { href: "/services/branding-design", label: "Branding & Design" },
             ],
           },
         ],
@@ -187,11 +179,12 @@ export const navigationData = {
       {
         id: "portfolio",
         label: "Portfolio",
-        icon: FiChevronDown,
-        columns: 2,
+        href: "/portfolio",
+        direction: "left", // Demonstrate left-opening submenu
+        columns: "special",
         items: [
           {
-            category: "Our Work",
+            label: "Our Work",
             icon: FiLayers,
             description: "See our successful projects",
             items: [
@@ -211,7 +204,7 @@ export const navigationData = {
             ],
           },
           {
-            category: "Success Stories",
+            label: "Success Stories",
             icon: FiAward,
             description: "Client transformations",
             items: [
@@ -230,7 +223,7 @@ export const navigationData = {
 
     // STANDALONE LINKS (after mega menus)
     standaloneLinks: [
-      { href: "/blog", label: "Blog", icon: FiBookOpen },
+      { href: "/blog", label: "Insights", icon: FiBookOpen },
       { href: "/contact", label: "Contact", icon: FiMail },
     ],
   },
@@ -243,87 +236,29 @@ export const navigationData = {
     ],
 
     expandableMenus: [
-      // DIGITAL MARKETING
+      // DIGITAL PLATFORMS (Technology Services)
       {
-        id: "mobile-digital-marketing",
-        label: "Digital Marketing",
-        icon: FiGlobe,
-        items: [
-          {
-            href: "/services/digital-marketing",
-            label: "Digital Marketing Overview",
-          },
-          { href: "/services/seo", label: "SEO Services" },
-          {
-            href: "/services/social-media-marketing",
-            label: "Social Media Marketing",
-          },
-          {
-            href: "/services/social-media-promotions",
-            label: "Social Media Promotions",
-          },
-          {
-            href: "/services/linkedin-management",
-            label: "LinkedIn Management",
-          },
-          { href: "/services/content-marketing", label: "Content Marketing" },
-          {
-            href: "/services/performance-marketing",
-            label: "Performance Marketing",
-          },
-          { href: "/services/ppc-google-ads", label: "Google Ads / PPC" },
-          { href: "/services/meta-ads", label: "Meta / Facebook Ads" },
-          {
-            href: "/services/media-planning-buying",
-            label: "Media Planning & Buying",
-          },
-          { href: "/services/email-marketing", label: "Email Marketing" },
-          { href: "/services/whatsapp-marketing", label: "WhatsApp Campaign" },
-          { href: "/services/sms-marketing", label: "SMS Marketing" },
-          { href: "/services/dooh", label: "DOOH" },
-          { href: "/services/lead-generation", label: "Lead Generation" },
-          {
-            href: "/services/political-digital-marketing",
-            label: "Political Digital Marketing",
-          },
-          { href: "/services/youtube-seo", label: "YouTube SEO" },
-          {
-            href: "/services/influencer-management",
-            label: "Influencer Management",
-          },
-        ],
-      },
-
-      // WEBSITE & APP DEVELOPMENT
-      {
-        id: "mobile-development",
-        label: "Website & App Development",
+        id: "mobile-technology-services",
+        label: "Technology Services",
         icon: FiCode,
         items: [
+          { href: "/services/website-design", label: "Website Design" },
           {
             href: "/services/website-development",
             label: "Website Development",
           },
-          { href: "/services/website-design", label: "Website Design" },
           {
             href: "/services/wordpress-development",
             label: "WordPress Development",
           },
           {
             href: "/services/ecommerce-development",
-            label: "E-Commerce Development",
-          },
-          {
-            href: "/services/shopify-development",
             label: "Shopify Development",
           },
-          { href: "/services/web-application", label: "Web Application" },
           {
-            href: "/services/mobile-app-development",
-            label: "Mobile App Development",
+            href: "/services/web-application",
+            label: "Web Application Development",
           },
-          { href: "/services/php-development", label: "PHP Development" },
-          { href: "/services/cms-development", label: "CMS Development" },
           {
             href: "/services/website-maintenance",
             label: "Website Maintenance",
@@ -335,30 +270,86 @@ export const navigationData = {
         ],
       },
 
-      // BRANDING & CREATIVE
+      // GROWTH MARKETING (Digital Marketing)
       {
-        id: "mobile-branding",
+        id: "mobile-digital-marketing",
+        label: "Digital Marketing",
+        icon: FiGlobe,
+        items: [
+          { href: "/services/seo", label: "SEO Services" },
+          {
+            href: "/services/social-media-marketing",
+            label: "Social Media Marketing",
+          },
+          {
+            href: "/services/social-media-promotions",
+            label: "Social Media Promotions",
+          },
+          {
+            href: "/services/performance-marketing",
+            label: "Performance Marketing",
+          },
+          { href: "/services/ppc-google-ads", label: "Google Ads / PPC" },
+          { href: "/services/meta-ads", label: "Meta / Facebook Ads" },
+          { href: "/services/content-marketing", label: "Content Marketing" },
+          { href: "/services/lead-generation", label: "Lead Generation" },
+          { href: "/services/email-marketing", label: "Email Marketing" },
+          { href: "/services/whatsapp-marketing", label: "WhatsApp Campaigns" },
+          { href: "/services/sms-marketing", label: "SMS Marketing" },
+          {
+            href: "/services/influencer-management",
+            label: "Influencer Management",
+          },
+          { href: "/services/youtube-seo", label: "YouTube SEO" },
+          {
+            href: "/services/media-planning-buying",
+            label: "Media Planning & Buying",
+          },
+          {
+            href: "/services/political-digital-marketing",
+            label: "Political Digital Marketing",
+          },
+        ],
+      },
+
+      {
+        id: "mobile-branding-creative",
         label: "Branding & Creative",
         icon: FiPenTool,
         items: [
           {
-            href: "/services/branding-consulting",
             label: "Branding Consulting",
+            items: [
+              {
+                href: "/services/branding-consulting",
+                label: "Branding Consulting",
+              },
+              { href: "/services/brand-strategy", label: "Brand Strategy" },
+              {
+                href: "/services/brand-marketing-communications",
+                label: "Brand Marketing",
+              },
+              { href: "/services/brand-name", label: "Brand Name Creation" },
+              { href: "/services/logo-design", label: "Logo Design" },
+              {
+                href: "/services/brand-identity",
+                label: "Brand Identity Development",
+              },
+              { href: "/services/branding-design", label: "Branding & Design" },
+              {
+                href: "/services/brochure-design",
+                label: "Brochure Designing",
+              },
+              {
+                href: "/services/business-card-design",
+                label: "Business Card Design",
+              },
+              {
+                href: "/services/letterhead-design",
+                label: "Letterhead Design",
+              },
+            ],
           },
-          { href: "/services/brand-strategy", label: "Brand Strategy" },
-          {
-            href: "/services/brand-marketing-communications",
-            label: "Brand Marketing",
-          },
-          { href: "/services/brand-name", label: "Brand Name Creation" },
-          { href: "/services/logo-design", label: "Logo Design" },
-          {
-            href: "/services/business-card-design",
-            label: "Business Card Design",
-          },
-          { href: "/services/letterhead-design", label: "Letterhead Design" },
-          { href: "/services/brochure-design", label: "Brochure Design" },
-          { href: "/services/brand-identity", label: "Brand Identity" },
         ],
       },
 
@@ -382,7 +373,7 @@ export const navigationData = {
 
     // STANDALONE MOBILE LINKS
     standaloneLinks: [
-      { href: "/blog", label: "Blog", icon: FiBookOpen },
+      { href: "/blog", label: "Insights", icon: FiBookOpen },
       { href: "/contact", label: "Contact", icon: FiMail },
     ],
   },

@@ -1,6 +1,6 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 export function ThemeToggleButton() {
@@ -14,46 +14,34 @@ export function ThemeToggleButton() {
   if (!mounted) return null;
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
-    <div className="flex items-center">
-      {/* Radio-style toggle */}
-      <div className="relative flex items-center">
-        {/* Background track */}
-        <div
-          className={`w-14 h-7 flex items-center rounded-full p-1 cursor-pointer transition-all duration-300 ${
-            theme === "light" ? "bg-black" : "bg-[var(--color-primary)]"
-          }`}
-          onClick={toggleTheme}
-          aria-label="Toggle theme"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              toggleTheme();
-            }
-          }}
-        >
-          {/* Toggle knob */}
-          <div
-            className={`w-5 h-5 bg-white rounded-full shadow-lg transform transition-transform duration-300 ${
-              theme === "light" ? "translate-x-0" : "translate-x-7"
-            }`}
-          >
-            {/* Icon inside knob */}
-            <div className="flex items-center justify-center h-full">
-              {theme === "light" ? (
-                <FiSun className="w-3 h-3 text-[var(--color-primary)]" />
-              ) : (
-                <FiMoon className="w-3 h-3 text-[var(--color-dark)]" />
-              )}
-            </div>
-          </div>
-        </div>
+    <button
+      onClick={toggleTheme}
+      className="relative w-10 h-10 flex items-center justify-center rounded-l-full bg-[#D90B1C] shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 group overflow-hidden"
+      aria-label="Toggle theme"
+    >
+      <div className="relative w-5 h-5 flex items-center justify-center">
+        <FiSun
+          className={`absolute w-full h-full transition-all duration-500 transform ${
+            theme === "dark"
+              ? "translate-y-10 opacity-0 rotate-90"
+              : "translate-y-0 opacity-100 rotate-0"
+          } text-white`}
+        />
+        <FiMoon
+          className={`absolute w-full h-full transition-all duration-500 transform ${
+            theme === "dark"
+              ? "translate-y-0 opacity-100 rotate-0"
+              : "-translate-y-10 opacity-0 -rotate-90"
+          } text-white`}
+        />
       </div>
-    </div>
+
+      {/* Subtle hover effect background */}
+      <span className="absolute inset-0 rounded-l-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+    </button>
   );
 }
