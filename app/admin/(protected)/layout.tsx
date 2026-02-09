@@ -1,58 +1,46 @@
 import { Metadata } from "next";
-import { headers } from "next/headers";
-import { jwtVerify } from "jose";
 import { redirect } from "next/navigation";
-import { ThemeToggleButton } from "@/components/comman/header/ThemeToggleButton";
+import { cookies } from "next/headers";
+import { jwtVerify } from "jose";
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard - Growthik Media",
+  title: "Admin Dashboard | Growthik Media",
 };
 
-const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "your-secret-key-change-in-production"
-);
+// Use the exact same secret strategy as API and Middleware
+const JWT_SECRET_STR =
+  process.env.NEXTAUTH_SECRET || "growthik_media_secret_secure_key_2024";
+const JWT_SECRET = new TextEncoder().encode(JWT_SECRET_STR);
 
 export default async function ProtectedAdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Get token from cookies via headers
-  const headersList = await headers();
-  const cookieHeader = headersList.get("cookie") || "";
+  const cookieStore = await cookies();
+  const token = cookieStore.get("authToken")?.value;
 
-  let token = "";
-  const cookies = cookieHeader.split(";");
-  for (const cookie of cookies) {
-    const [name, value] = cookie.trim().split("=");
-    if (name === "authToken") {
-      token = value;
-      break;
-    }
-  }
-
-  // Verify token and check admin role
-  let user: any = null;
-  if (token) {
-    try {
-      const verified = await jwtVerify(token, JWT_SECRET);
-      user = verified.payload;
-
-      // Check if user is admin
-      if (user.role !== "ADMIN") {
-        redirect("/");
-      }
-    } catch (error) {
-      // Token invalid
-      redirect("/admin/login");
-    }
-  } else {
+  if (!token) {
     redirect("/admin/login");
   }
 
-  return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 to-gray-100 dark:from-[#0A0A0A] dark:to-[#1a1a1a] flex">
-      <main className="w-full min-h-screen flex-1">{children}</main>
-    </div>
-  );
+  try {
+    const { payload } = await jwtVerify(token, JWT_SECRET);
+
+    // Allow both roles
+    if (payload.role !== "ADMIN" && payload.role !== "SUPER_ADMIN") {
+      console.log("[Layout] Forbidden role:", payload.role);
+      redirect("/admin/login");
+    }
+
+    // Success - render the dashboard children
+    return (
+      <div className="min-h-screen w-full bg-[#0f172a] flex">
+        <main className="w-full min-h-screen flex-1">{children}</main>
+      </div>
+    );
+  } catch (err: any) {
+    console.error("[Layout] Auth failed:", err.message);
+    redirect("/admin/login");
+  }
 }

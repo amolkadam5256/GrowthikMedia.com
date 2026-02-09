@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -15,7 +15,7 @@ model Admin {
   id            String    @id @default(cuid())
   name          String?
   email         String    @unique
-  password      String?    // Hashed password (optional if OTP only)
+  password      String?    // Hashed password
   role          String    @default("ADMIN") // SUPER_ADMIN, ADMIN, EDITOR
   isActive      Boolean   @default(true)
   createdAt     DateTime  @default(now())
@@ -44,7 +44,7 @@ model ServiceCategory {
   id          String    @id @default(cuid())
   name        String
   slug        String    @unique
-  description String?
+  description String?   @db.Text
   icon        String?   // Icon name from React Icons
   order       Int       @default(0)
   items       Service[]
@@ -60,8 +60,8 @@ model Service {
   category    ServiceCategory  @relation(fields: [categoryId], references: [id])
   name        String
   slug        String           @unique
-  description String?          // Short description
-  content     String?          // Rich text content
+  description String?          @db.Text
+  content     String?          @db.LongText
   image       String?          // Featured image
   isFeatured  Boolean          @default(false)
   order       Int              @default(0)
@@ -89,11 +89,11 @@ model PortfolioProject {
   category    PortfolioCategory  @relation(fields: [categoryId], references: [id])
   title       String
   slug        String             @unique
-  description String?
-  content     String?            // Detailed case study
+  description String?            @db.Text
+  content     String?            @db.LongText
   client      String?
   image       String?            // Main project image
-  gallery     String[]           // Array of image URLs
+  gallery     Json?              // Array of image URLs (using Json for MySQL)
   date        DateTime?
   isFeatured  Boolean            @default(false)
   createdAt   DateTime           @default(now())
@@ -107,11 +107,11 @@ model BlogPost {
   id          String    @id @default(cuid())
   title       String
   slug        String    @unique
-  excerpt     String?
-  content     String?
+  excerpt     String?   @db.Text
+  content     String?   @db.LongText
   author      String?
   image       String?
-  tags        String[]
+  tags        Json?     // Array of tags (using Json for MySQL)
   isPublished Boolean   @default(false)
   publishedAt DateTime?
   createdAt   DateTime  @default(now())
@@ -127,7 +127,7 @@ model Inquiry {
   email     String
   phone     String?
   subject   String?
-  message   String
+  message   String   @db.Text
   status    String   @default("NEW") // NEW, CONTACTED, RESOLVED
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

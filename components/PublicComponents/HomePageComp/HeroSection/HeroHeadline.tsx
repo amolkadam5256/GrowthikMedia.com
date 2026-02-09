@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
 
@@ -15,21 +16,21 @@ const HeroHeadline = () => {
             className="text-xs md:text-sm font-semibold uppercase tracking-wider"
             style={{ color: "var(--color-primary)" }}
           >
-            Professional Content Creation
+            Award-Winning Digital Marketing Agency
           </span>
           <div className="h-px w-8 md:w-12 bg-linear-to-l from-transparent to-(--color-primary)"></div>
         </div>
 
         {/* Main Headline */}
         <h1
-          className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-6xl font-black leading-[1.1] tracking-tight"
+          className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-black leading-[1.1] tracking-tight"
           style={{ color: "var(--color-white)" }}
         >
-          Engage Audiences
+          Scale Your Revenue with
           <br />
           <span className="relative inline-block mt-2">
             <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
-              with Stunning
+              Performance Marketing
             </span>
             {/* Animated underline */}
             <svg
@@ -48,7 +49,7 @@ const HeroHeadline = () => {
             </svg>
           </span>
           <br />
-          <span style={{ color: "var(--color-white)" }}>Videos</span>
+          <span style={{ color: "var(--color-white)" }}>That Delivers ROI</span>
         </h1>
 
         {/* Subheadline */}
@@ -56,29 +57,30 @@ const HeroHeadline = () => {
           className="text-base sm:text-lg md:text-xl lg:text-xl max-w-3xl mx-auto font-medium leading-relaxed px-4"
           style={{ color: "var(--text-secondary)" }}
         >
-          Boost Your Brand with{" "}
+          Dominate your niche with{" "}
           <span className="font-bold" style={{ color: "var(--color-primary)" }}>
-            High-Impact
+            Data-Driven SEO Services
           </span>{" "}
-          Short Videos from our expert content creators.
+          and high-converting Paid Ads. We specialize in precision lead
+          generation to propel your business forward.
           <br className="hidden md:block" />
           <span
             className="text-sm md:text-base"
             style={{ color: "var(--text-tertiary)" }}
           >
-            Our team is ready to propel your business forward.
+            Turning clicks into customers with predictable growth strategies.
           </span>
         </p>
 
         {/* CTA Section */}
-        <div className="relative flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          {/* Annotation: It's free */}
-          <div className="absolute left-3 md:-left-2 top-1/2 -translate-y-1/2  lg:block">
+        <div className="relative flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
+          {/* Annotation: Free Growth Audit */}
+          <div className="absolute -left-20 md:-left-32 top-0 hidden lg:block">
             <p
               className="font-handwriting text-lg md:text-xl transform -rotate-12 mb-2 font-medium"
               style={{ color: "var(--color-white)" }}
             >
-              It&apos;s free
+              Let’s Grow Your Business
             </p>
             <svg
               className="w-16 h-8 transform -scale-y-100 rotate-180"
@@ -92,44 +94,41 @@ const HeroHeadline = () => {
             </svg>
           </div>
 
-          {/* Primary CTA */}
+          {/* Primary CTA with Dashed Border */}
           <div className="relative group">
-            <div
-              className="relative p-1.5 md:p-2 border-2 border-dashed rounded-full"
-              style={{
-                borderColor: "var(--color-primary)",
-              }}
-            >
+            <div className="relative p-1.5 md:p-2 border-2 border-dashed rounded-full border-(--color-primary)">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="rounded-full px-6 py-2 sm:px-8 sm:py-2 md:px-12 md:py-3 text-sm sm:text-lg md:text-lg font-bold text-white shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-1 hover:scale-105 flex items-center gap-2"
-                  style={{
-                    background: `linear-gradient(to right, var(--color-primary), var(--color-primary-light))`,
-                  }}
+                  className="rounded-full px-8 py-3 md:px-12 md:py-4 text-base md:text-lg font-bold text-white shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-1 flex items-center gap-2 border-0"
+                  style={{ backgroundColor: "#d90b1c" }}
                 >
-                  Get Started Free
-                  <svg
-                    className="w-10 h-10"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
+                  Let’s Chat
+                  <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                 </Button>
               </Link>
             </div>
           </div>
+
+          {/* Secondary CTA */}
+          <div className="relative group">
+            <Link href="/portfolio">
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full px-8 py-3 md:px-12 md:py-4 text-base md:text-lg font-bold border-2 transition-all transform hover:-translate-y-1 !bg-transparent hover:!bg-primary !text-white hover:!text-white shadow-lg hover:shadow-[0_0_20px_rgba(217,11,28,0.4)]"
+                style={{
+                  borderColor: "var(--color-primary)",
+                }}
+              >
+                View Case Studies
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Trust Indicators */}
-        <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-1 opacity-60 list-none p-0">
+        <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-4 opacity-80 list-none p-0">
           <li className="flex items-center gap-2">
             <svg
               className="w-5 h-5"
@@ -144,10 +143,10 @@ const HeroHeadline = () => {
               />
             </svg>
             <span
-              className="text-xs md:text-sm"
-              style={{ color: "var(--text-secondary)" }}
+              className="text-xs md:text-sm font-semibold"
+              style={{ color: "var(--color-white)" }}
             >
-              No Credit Card
+              ROI Focused
             </span>
           </li>
           <li className="flex items-center gap-2">
@@ -164,10 +163,10 @@ const HeroHeadline = () => {
               />
             </svg>
             <span
-              className="text-xs md:text-sm"
-              style={{ color: "var(--text-secondary)" }}
+              className="text-xs md:text-sm font-semibold"
+              style={{ color: "var(--color-white)" }}
             >
-              Cancel Anytime
+              Google Certified
             </span>
           </li>
           <li className="flex items-center gap-2">
@@ -184,10 +183,10 @@ const HeroHeadline = () => {
               />
             </svg>
             <span
-              className="text-xs md:text-sm"
-              style={{ color: "var(--text-secondary)" }}
+              className="text-xs md:text-sm font-semibold"
+              style={{ color: "var(--color-white)" }}
             >
-              Fast Turnaround
+              Real-Time Reporting
             </span>
           </li>
         </ul>

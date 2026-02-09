@@ -13,8 +13,11 @@ import FloatingWhatsApp from "../../components/comman/FloatingWhatsApp";
 import { CONTACT_INFO } from "@/constants/contact";
 
 import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
+import ScrollProgressBar from "../../components/comman/ScrollProgressBar";
+import ProgressiveLeadCapture from "../../components/comman/ProgressiveLeadCapture";
 
 export const metadata: Metadata = {
+  // ... (lines 19-81 same)
   metadataBase: new URL(CONTACT_INFO.website),
   title: {
     default: `${CONTACT_INFO.companyName} – Digital Marketing Agency`,
@@ -89,6 +92,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body suppressHydrationWarning={true}>
         <ThemeProviderWrapper>
+          <ScrollProgressBar />
+          <ProgressiveLeadCapture />
           <AOSInit />
           <PageViewTracker />
           <GTM />

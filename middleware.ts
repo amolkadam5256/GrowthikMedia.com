@@ -1,43 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
-const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "your-secret-key-change-in-production",
-);
+const JWT_SECRET_STR =
+  process.env.NEXTAUTH_SECRET || "growthik_media_secret_secure_key_2024";
+const JWT_SECRET = new TextEncoder().encode(JWT_SECRET_STR);
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const token = request.cookies.get("authToken")?.value;
 
-  // Define public paths that should NEVER redirect
-  const isPublicAdminPath =
-    pathname === "/admin" || pathname.startsWith("/admin/login");
-
-  // Only run logic for /admin paths
-  if (pathname.startsWith("/admin")) {
-    // If it's a public path, just allow it
-    if (isPublicAdminPath) {
-      return NextResponse.next();
-    }
-
-    // For all other admin paths (protected), check token
+  // Only run logic for /admin paths, but IGNORE the root /admin page and /admin/login
+  // because we handle those in the page.tsx files to prevent redirect loops.
+  if (
+    pathname.startsWith("/admin") &&
+    pathname !== "/admin" &&
+    pathname !== "/admin/login"
+  ) {
     if (!token) {
       return NextResponse.redirect(new URL("/admin/login", request.url));
     }
 
     try {
-      const verified = await jwtVerify(token, JWT_SECRET);
-      const user = verified.payload as { id: string; role: string };
+      const { payload } = await jwtVerify(token, JWT_SECRET);
 
-      if (user.role !== "ADMIN") {
+      if (payload.role !== "ADMIN" && payload.role !== "SUPER_ADMIN") {
         return NextResponse.redirect(new URL("/admin/login", request.url));
       }
 
-      const response = NextResponse.next();
-      response.headers.set("x-user-id", user.id);
-      response.headers.set("x-user-role", user.role);
-      return response;
-    } catch {
+      return NextResponse.next();
+    } catch (err) {
       const response = NextResponse.redirect(
         new URL("/admin/login", request.url),
       );
