@@ -85,15 +85,15 @@ export default function TestimonialSection() {
           <div data-aos="fade-right">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-[2px] bg-(--color-primary)" />
-              <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-xs">
+              <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">
                 Testimonials
               </span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1]">
               REAL VOICES,{" "}
               <span className="text-(--color-primary)">REAL GROWTH</span>
             </h2>
-            <p className="text-lg md:text-xl text-(--text-secondary) mt-4 font-light italic">
+            <p className="text-lg md:text-xl text-(--text-secondary) mt-4 font-light italic max-w-2xl">
               Don't take our word for it-listen to the results.
             </p>
           </div>
@@ -136,7 +136,7 @@ export default function TestimonialSection() {
                       />
                     ))}
                   </div>
-                  <p className="text-2xl md:text-3xl font-medium text-(--text-primary) leading-relaxed mb-8 italic">
+                  <p className="text-xl md:text-2xl font-medium text-(--text-primary) leading-relaxed mb-8 italic">
                     "{t.text}"
                   </p>
 
@@ -145,10 +145,10 @@ export default function TestimonialSection() {
                       <span className="text-xl font-black text-(--text-primary) uppercase">
                         {t.name}
                       </span>
-                      <span className="text-(--color-primary) font-bold text-xs uppercase tracking-widest">
+                      <span className="text-(--color-primary) font-bold text-sm uppercase tracking-widest mt-1">
                         {t.role} @ {t.company}
                       </span>
-                      <span className="text-(--text-secondary) text-xs mt-1">
+                      <span className="text-(--text-secondary) text-sm mt-1">
                         {t.city}, Maharashtra
                       </span>
                     </div>
@@ -192,7 +192,7 @@ export default function TestimonialSection() {
           <p className="text-(--text-secondary) font-light">
             Working with over{" "}
             <span className="text-(--color-primary) font-bold">
-              250+ brands
+              50+ Happy Clients
             </span>{" "}
             across Maharashtra to drive aggressive digital scale.
           </p>

@@ -186,7 +186,7 @@ export default function WeSpecialiseIn() {
           >
             <div>
               <h2
-                className="text-4xl md:text-5xl font-bold mb-6"
+                className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-[1.1] tracking-tight"
                 style={{ color: "var(--text-primary)" }}
                 data-aos="fade-up"
                 data-aos-delay="100"
@@ -200,8 +200,7 @@ export default function WeSpecialiseIn() {
                 data-aos-delay="200"
               ></div>
               <p
-                className="text-lg leading-relaxed mb-8"
-                style={{ color: "var(--text-secondary)" }}
+                className="text-lg md:text-xl leading-relaxed mb-8 text-(--text-secondary) max-w-2xl"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >

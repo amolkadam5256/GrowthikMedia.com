@@ -8,32 +8,32 @@ import Link from "next/link";
 
 const services = [
   {
-    icon: Video,
+    icon: Palette,
     number: "01",
-    title: "Video Production",
+    title: "Website & Landing Pages",
     description:
-      "Professional video production services including corporate videos, promotional content, and social media videos that captivate your audience and tell your brand story.",
+      "High-performance websites and landing pages designed to convert visitors into loyal customers with seamless user experiences.",
   },
   {
     icon: Megaphone,
     number: "02",
     title: "Digital Marketing",
     description:
-      "Comprehensive digital marketing strategies that drive traffic, increase engagement, and boost your online presence across all platforms with measurable results.",
+      "Data-driven marketing strategies that amplify your brand presence, engage your audience, and drive measurable growth.",
   },
   {
     icon: TrendingUp,
     number: "03",
-    title: "SEO Optimization",
+    title: "SEO & Local SEO",
     description:
-      "Advanced SEO techniques to improve your search rankings, increase organic traffic, and dominate your industry online with data-driven strategies.",
+      "Dominate search results with advanced SEO and local optimization techniques that bring high-intent traffic to your business.",
   },
   {
-    icon: Palette,
+    icon: Video,
     number: "04",
-    title: "Content Creation",
+    title: "Google & Meta Ads",
     description:
-      "Engaging and creative content that tells your brand story, resonates with your audience, and drives meaningful conversions across all digital channels.",
+      "Precision-targeted ad campaigns on Google and Meta platforms designed to lower CPA and maximize your Return on Ad Spend (ROAS).",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function OurServicesSection() {
               }}
             />
             <span
-              className="text-sm font-semibold tracking-widest uppercase"
+              className="text-sm font-bold uppercase tracking-[0.3em]"
               style={{
                 color: "var(--color-primary)",
               }}
@@ -77,7 +77,7 @@ export default function OurServicesSection() {
 
           {/* Main Heading */}
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.1]"
             style={{ color: "var(--text-primary)" }}
             data-aos="fade-up"
             data-aos-delay="100"
@@ -85,7 +85,7 @@ export default function OurServicesSection() {
             Our Services
           </h2>
 
-          {/* Animated Underline */}
+          {/* Animated Underline - Removed for consistency or kept if user likes it? Keeping it for now but maybe simplify */}
           <div
             className="w-24 h-1 mx-auto mb-8 relative overflow-hidden"
             data-aos="zoom-in"
@@ -102,7 +102,7 @@ export default function OurServicesSection() {
 
           {/* Description */}
           <p
-            className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
             style={{ color: "var(--text-secondary)" }}
             data-aos="fade-up"
             data-aos-delay="300"

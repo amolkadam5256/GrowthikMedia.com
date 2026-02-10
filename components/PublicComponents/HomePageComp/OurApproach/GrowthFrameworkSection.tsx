@@ -50,7 +50,7 @@ const STEPS = [
 
 export default function GrowthFrameworkSection() {
   return (
-    <section className="py-24 md:py-32 bg-(--background) relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-(--background) relative overflow-hidden">
       {/* Background Accents */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
         <div className="absolute top-10 right-10 w-96 h-96 bg-primary rounded-full blur-[120px]" />
@@ -61,16 +61,17 @@ export default function GrowthFrameworkSection() {
         {/* Header */}
         <div className="text-center mb-20" data-aos="fade-up">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-12 h-[2px] bg-primary" />
-            <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs">
+            <div className="w-12 h-[2px] bg-(--color-primary)" />
+            <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">
               Our Methodology
             </span>
-            <div className="w-12 h-[2px] bg-primary" />
+            <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-4">
-            OUR 4-STEP <span className="text-primary">GROWTH FRAMEWORK</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-[1.1]">
+            OUR 4-STEP{" "}
+            <span className="text-(--color-primary)">GROWTH FRAMEWORK</span>
           </h2>
-          <p className="text-xl md:text-2xl text-(--text-secondary) font-light italic">
+          <p className="text-lg md:text-xl text-(--text-secondary) font-light italic max-w-2xl mx-auto leading-relaxed">
             How We Take You to the Top
           </p>
         </div>
@@ -82,12 +83,11 @@ export default function GrowthFrameworkSection() {
             return (
               <div
                 key={index}
-                className="group relative p-8 bg-(--surface) border border-(--border) hover:border-primary transition-all duration-500"
+                className="group relative p-8 bg-(--surface) border border-(--border) hover:border-(--color-primary) transition-all duration-500"
                 data-aos="fade-up"
-                data-aos-delay={index * 100}
               >
                 {/* Step Number */}
-                <div className="absolute -top-6 -right-6 text-8xl font-black text-primary/5 group-hover:text-primary/10 transition-colors pointer-events-none">
+                <div className="absolute -top-6 -right-6 text-8xl font-black text-(--color-primary)/5 group-hover:text-(--color-primary)/10 transition-colors pointer-events-none">
                   0{index + 1}
                 </div>
 
@@ -97,10 +97,10 @@ export default function GrowthFrameworkSection() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-black text-(--text-primary) uppercase mb-4 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-black text-(--text-primary) uppercase mb-4 group-hover:text-(--color-primary) transition-colors">
                   {step.title}
                 </h3>
-                <p className="text-primary font-bold text-sm mb-4 leading-tight">
+                <p className="text-(--color-primary) font-bold text-sm mb-4 leading-tight">
                   {step.benefit}
                 </p>
                 <p className="text-(--text-secondary) text-sm leading-relaxed mb-6 italic opacity-80">
@@ -108,7 +108,7 @@ export default function GrowthFrameworkSection() {
                 </p>
 
                 {/* Hover Line */}
-                <div className="absolute bottom-0 left-0 h-1 bg-primary w-0 group-hover:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 h-1 bg-(--color-primary) w-0 group-hover:w-full transition-all duration-500" />
               </div>
             );
           })}
@@ -118,13 +118,13 @@ export default function GrowthFrameworkSection() {
         <div className="mt-20 text-center" data-aos="zoom-in">
           <Link
             href="/audit"
-            className="group relative inline-flex items-center gap-6 px-12 py-5 border-2 border-primary transition-all duration-500 hover:bg-(--color-primary) hover:scale-105 shadow-xl hover:shadow-primary/20 hover:border-(--color-primary)"
+            className="group relative inline-flex items-center gap-6 px-12 py-5 border-2 border-(--color-primary) transition-all duration-500 hover:bg-(--color-primary) hover:scale-105 shadow-xl hover:shadow-primary/20"
           >
-            <span className="relative z-10 text-primary group-hover:text-white font-black uppercase tracking-[0.2em] text-sm transition-colors duration-300">
+            <span className="relative z-10 text-(--color-primary) group-hover:text-white font-black uppercase tracking-[0.2em] text-sm transition-colors duration-300">
               Get Your Growth Blueprint
             </span>
-            <div className="relative z-10 w-10 h-10 border-2 border-primary group-hover:border-white bg-transparent flex items-center justify-center transition-all duration-300">
-              <ArrowRight className="w-5 h-5 text-primary group-hover:text-white group-hover:translate-x-1 transition-all" />
+            <div className="relative z-10 w-10 h-10 border-2 border-(--color-primary) group-hover:border-white bg-transparent flex items-center justify-center transition-all duration-300">
+              <ArrowRight className="w-5 h-5 text-(--color-primary) group-hover:text-white group-hover:translate-x-1 transition-all" />
             </div>
           </Link>
 

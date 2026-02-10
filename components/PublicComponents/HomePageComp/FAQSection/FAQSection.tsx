@@ -70,15 +70,15 @@ export default function FAQSection() {
         <div className="text-center mb-20" data-aos="fade-up">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-[2px] bg-primary" />
-            <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs">
+            <span className="text-primary font-bold uppercase tracking-[0.3em] text-sm">
               Help Center
             </span>
             <div className="w-12 h-[2px] bg-primary" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-4 leading-[1.1]">
             FAQ<span className="text-primary">.</span>
           </h2>
-          <p className="text-xl md:text-2xl text-(--text-secondary) font-light italic">
+          <p className="text-lg md:text-xl text-(--text-secondary) font-light italic max-w-2xl mx-auto">
             Frequently Asked Questions
           </p>
         </div>
@@ -150,16 +150,16 @@ export default function FAQSection() {
             {/* Background Accent */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-(--color-primary)/5 -translate-y-1/2 translate-x-1/2 rotate-45 group-hover:bg-(--color-primary)/10 transition-colors" />
 
-            <div className="relative z-10 flex flex-col items-center gap-8">
-              <div className="w-20 h-20 bg-(--color-primary)/10 flex items-center justify-center">
+            <div className="relative z-10 flex flex-col items-center gap-6">
+              <div className="w-20 h-20 bg-(--color-primary)/10 flex items-center justify-center rounded-full">
                 <MessageCircle className="w-10 h-10 text-(--color-primary)" />
               </div>
 
               <div>
-                <h3 className="text-3xl font-black text-(--text-primary) uppercase mb-4 tracking-tighter">
+                <h3 className="text-4xl md:text-5xl font-black text-(--text-primary) uppercase mb-3 tracking-tighter">
                   Still have questions?
                 </h3>
-                <p className="text-(--text-secondary) max-w-md mx-auto mb-8">
+                <p className="text-(--text-secondary) max-w-md mx-auto">
                   Our growth experts are ready to help. Start a conversation now
                   or use our{" "}
                   <span className="text-(--color-primary) font-bold">

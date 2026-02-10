@@ -7,14 +7,14 @@ import "aos/dist/aos.css";
 export default function AOSInit() {
   useEffect(() => {
     AOS.init({
-      // Global settings
-      duration: 800, // Animation duration in milliseconds
-      easing: "ease-in-out", // Easing function
-      once: false, // Whether animation should happen only once
-      mirror: true, // Whether elements should animate out while scrolling past them
-      offset: 100, // Offset (in px) from the original trigger point
-      delay: 0, // Delay in milliseconds
-      anchorPlacement: "top-bottom", // Defines which position of the element should trigger the animation
+      // Global settings optimized for fast scrolling
+      duration: 400, // Fast but visible animation (30ms is too fast to see)
+      easing: "ease-out", // Snappier easing for quick reveal
+      once: false, // Animation repeats when scrolling back
+      mirror: true, // Elements animate out while scrolling past them
+      offset: 120, // Trigger when element is 120px from bottom of viewport
+      delay: 0, // No global delay
+      anchorPlacement: "top-bottom", // Trigger when top of element hits bottom of viewport
     });
 
     // Refresh AOS on route changes

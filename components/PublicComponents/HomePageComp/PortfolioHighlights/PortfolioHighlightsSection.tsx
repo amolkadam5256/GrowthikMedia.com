@@ -67,17 +67,17 @@ export default function PortfolioHighlightsSection() {
           <div className="max-w-2xl">
             <div className="flex items-center gap-4 mb-6" data-aos="fade-right">
               <span className="w-16 h-[2px] bg-(--color-primary)" />
-              <span className="text-primary font-bold uppercase tracking-[0.3em] text-[10px]">
+              <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">
                 Portfolio Highlights
               </span>
             </div>
 
             <h2
-              className="text-5xl md:text-8xl font-black text-(--text-primary) leading-[0.85] uppercase tracking-tighter"
+              className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) leading-[1.1] uppercase tracking-tighter"
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              Recent <br /> <span className="text-primary">Work</span>
+              Recent <br /> <span className="text-(--color-primary)">Work</span>
             </h2>
           </div>
 
@@ -124,7 +124,7 @@ export default function PortfolioHighlightsSection() {
         <div className="mt-32 pt-20 border-t border-(--border) flex flex-wrap justify-between items-center gap-12">
           {[
             { val: "500+", label: "Projects Done" },
-            { val: "250+", label: "Happy Brands" },
+            { val: "50+", label: "Happy Clients" },
             { val: "98%", label: "Success Rate" },
           ].map((stat, i) => (
             <div
@@ -136,9 +136,7 @@ export default function PortfolioHighlightsSection() {
               <span className="text-5xl md:text-6xl font-black text-(--text-primary)">
                 {stat.val}
               </span>
-              <span className="text-[10px] items-center flex gap-2 font-bold uppercase tracking-widest text-primary">
-                <span className="w-4 h-[1px] bg-primary" /> {stat.label}
-              </span>
+              <span className="w-4 h-px bg-primary" /> {stat.label}
             </div>
           ))}
           <div className="max-w-sm lg:text-right" data-aos="fade-left">
