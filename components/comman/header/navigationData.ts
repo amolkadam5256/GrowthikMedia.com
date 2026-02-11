@@ -386,7 +386,40 @@ export const getAllServiceLinks = () => {
     if (menu.id === "services" || menu.id === "specialized-services") {
       menu.items.forEach((category) => {
         category.items.forEach((item) => {
-          services.push(item);
+          // Only push items that have an href property
+          if ("href" in item && item.href) {
+            const service: { href: string; label: string; featured?: boolean } =
+              {
+                href: item.href,
+                label: item.label,
+              };
+            if ("featured" in item && typeof item.featured === "boolean") {
+              service.featured = item.featured;
+            }
+            services.push(service);
+          }
+          // Recursively handle nested items
+          if ("items" in item && Array.isArray(item.items)) {
+            item.items.forEach((nestedItem) => {
+              if ("href" in nestedItem && nestedItem.href) {
+                const service: {
+                  href: string;
+                  label: string;
+                  featured?: boolean;
+                } = {
+                  href: nestedItem.href,
+                  label: nestedItem.label,
+                };
+                if (
+                  "featured" in nestedItem &&
+                  typeof nestedItem.featured === "boolean"
+                ) {
+                  service.featured = nestedItem.featured;
+                }
+                services.push(service);
+              }
+            });
+          }
         });
       });
     }
