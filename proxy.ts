@@ -9,12 +9,14 @@ export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const token = request.cookies.get("authToken")?.value;
 
+  const normalizedPath = pathname.replace(/\/$/, "");
+
   // Only run logic for /admin paths, but IGNORE the root /admin page and /admin/login
   // because we handle those in the page.tsx files to prevent redirect loops.
   if (
-    pathname.startsWith("/admin") &&
-    pathname !== "/admin" &&
-    pathname !== "/admin/login"
+    normalizedPath.startsWith("/admin") &&
+    normalizedPath !== "/admin" &&
+    normalizedPath !== "/admin/login"
   ) {
     if (!token) {
       return NextResponse.redirect(new URL("/admin/login", request.url));
