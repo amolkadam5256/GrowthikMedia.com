@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import {
   Target,
   UserCheck,
@@ -48,7 +49,7 @@ const USP_ITEMS = [
   },
 ];
 
-export default function WhyChooseUsSection() {
+const WhyChooseUsSection = React.memo(() => {
   return (
     <section className="relative py-12 md:py-20 bg-(--surface) overflow-hidden">
       {/* Background Pattern */}
@@ -94,7 +95,7 @@ export default function WhyChooseUsSection() {
               >
                 {/* Icon Container */}
                 <div className="mb-6">
-                  <div className="w-16 h-16  bg-(--color-primary)/10 flex items-center justify-center group-hover:bg-(--color-primary) transition-all duration-500">
+                  <div className="w-16 h-16  bg-(--color-primary)/10 flex items-center justify-center group-hover:bg-(--color-primary) transition-all duration-500 will-change-transform">
                     <Icon className="w-8 h-8 text-(--color-primary) group-hover:text-white transition-colors duration-500" />
                   </div>
                 </div>
@@ -143,4 +144,7 @@ export default function WhyChooseUsSection() {
       </div>
     </section>
   );
-}
+});
+
+WhyChooseUsSection.displayName = "WhyChooseUsSection";
+export default WhyChooseUsSection;

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import PortfolioCard from "./PortfolioCard";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
@@ -44,7 +45,7 @@ const PROJECTS = [
   },
 ];
 
-export default function PortfolioHighlightsSection() {
+const PortfolioHighlightsSection = React.memo(() => {
   return (
     <section className="py-24 md:py-32 px-4 bg-(--background) relative transition-colors duration-500 overflow-hidden">
       {/* Background Patterns - Adjusted for Theme Consistency */}
@@ -149,4 +150,7 @@ export default function PortfolioHighlightsSection() {
       </div>
     </section>
   );
-}
+});
+
+PortfolioHighlightsSection.displayName = "PortfolioHighlightsSection";
+export default PortfolioHighlightsSection;

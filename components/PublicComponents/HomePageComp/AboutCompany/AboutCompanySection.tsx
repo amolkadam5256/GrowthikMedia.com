@@ -1,13 +1,14 @@
 "use client";
 
+import React from "react";
 import { Sparkles, ArrowRight } from "lucide-react";
 
-export default function AboutCompanySection() {
+const AboutCompanySection = React.memo(() => {
   return (
     <section className="relative py-12 md:py-20 bg-(--background) overflow-hidden">
       {/* Animated Background Grid */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(var(--color-primary) 1px, transparent 1px), linear-gradient(90deg, var(--color-primary) 1px, transparent 1px)",
@@ -16,8 +17,8 @@ export default function AboutCompanySection() {
       />
 
       {/* Floating Orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-(--color-primary)/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-(--color-primary)/5 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-20 left-10 w-72 h-72 bg-(--color-primary)/10 rounded-full blur-3xl animate-pulse will-change-[opacity]" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-(--color-primary)/5 rounded-full blur-3xl animate-pulse will-change-[opacity]" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
@@ -173,4 +174,7 @@ export default function AboutCompanySection() {
       </div>
     </section>
   );
-}
+});
+
+AboutCompanySection.displayName = "AboutCompanySection";
+export default AboutCompanySection;

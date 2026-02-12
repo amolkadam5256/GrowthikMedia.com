@@ -116,7 +116,7 @@ const HeroHeadline = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full px-8 py-3 md:px-12 md:py-4 text-base md:text-lg font-bold border-2 transition-all transform hover:-translate-y-1 !bg-transparent hover:!bg-primary !text-white hover:!text-white shadow-lg hover:shadow-[0_0_20px_rgba(217,11,28,0.4)]"
+                className="rounded-full px-8 py-3 md:px-12 md:py-4 text-base md:text-lg font-bold border-2 transition-all transform hover:-translate-y-1 bg-transparent! hover:bg-primary! text-white! hover:text-white! shadow-lg hover:shadow-[0_0_20px_rgba(217,11,28,0.4)]"
                 style={{
                   borderColor: "var(--color-primary)",
                 }}
@@ -229,9 +229,8 @@ const HeroHeadline = () => {
       </div>
 
       <style jsx>{`
-        @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap");
         .font-handwriting {
-          font-family: "Caveat", cursive;
+          font-family: var(--font-caveat), cursive;
         }
       `}</style>
     </header>

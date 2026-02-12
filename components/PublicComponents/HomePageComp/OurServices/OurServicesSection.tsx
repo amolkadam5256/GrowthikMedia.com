@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
 import { Video, Megaphone, TrendingUp, Palette } from "lucide-react";
 import ServiceCard from "./ServiceCard";
 import ServiceButton from "./ServiceButton";
@@ -37,7 +37,7 @@ const services = [
   },
 ];
 
-export default function OurServicesSection() {
+const OurServicesSection = React.memo(() => {
   return (
     <section
       className="relative py-20 px-4 overflow-hidden"
@@ -85,7 +85,6 @@ export default function OurServicesSection() {
             Our Services
           </h2>
 
-          {/* Animated Underline - Removed for consistency or kept if user likes it? Keeping it for now but maybe simplify */}
           <div
             className="w-24 h-1 mx-auto mb-8 relative overflow-hidden"
             data-aos="zoom-in"
@@ -100,7 +99,6 @@ export default function OurServicesSection() {
             />
           </div>
 
-          {/* Description */}
           <p
             className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
             style={{ color: "var(--text-secondary)" }}
@@ -188,7 +186,7 @@ export default function OurServicesSection() {
       {/* Decorative Elements */}
       <div className="absolute top-10 right-10 w-20 h-20 opacity-10 pointer-events-none">
         <div
-          className="w-full h-full border-4 animate-spin"
+          className="w-full h-full border-4 animate-spin will-change-transform"
           style={{
             borderColor: "var(--color-primary)",
             borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70%",
@@ -198,7 +196,7 @@ export default function OurServicesSection() {
       </div>
       <div className="absolute bottom-10 left-10 w-16 h-16 opacity-10 pointer-events-none">
         <div
-          className="w-full h-full border-4 animate-spin"
+          className="w-full h-full border-4 animate-spin will-change-transform"
           style={{
             borderColor: "#FFD700",
             borderRadius: "70% 30% 30% 70% / 70% 70% 30% 30%",
@@ -209,4 +207,7 @@ export default function OurServicesSection() {
       </div>
     </section>
   );
-}
+});
+
+OurServicesSection.displayName = "OurServicesSection";
+export default OurServicesSection;

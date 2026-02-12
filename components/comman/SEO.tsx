@@ -33,10 +33,11 @@ export default function SEO() {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: CONTACT_INFO.companyName,
+            alternateName: "Growthik",
             url: CONTACT_INFO.website,
             logo: `${CONTACT_INFO.website}/logo.png`,
             description:
-              "Leading digital marketing and video production agency in Pune, India",
+              "Growthik Media is a premier digital marketing and video production agency in Pune, specializing in SEO, PPC, and high-quality content creation.",
             email: CONTACT_INFO.email.info,
             telephone: CONTACT_INFO.phone.primary,
             address: {
@@ -53,7 +54,47 @@ export default function SEO() {
               CONTACT_INFO.social.twitter,
               CONTACT_INFO.social.linkedin,
               CONTACT_INFO.social.youtube,
+              CONTACT_INFO.social.pinterest,
+              CONTACT_INFO.social.behance,
             ],
+            contactPoint: {
+              "@type": "ContactPoint",
+              telephone: CONTACT_INFO.phone.primary,
+              contactType: "customer service",
+              areaServed: "IN",
+              availableLanguage: ["en", "hi", "mr"],
+            },
+          }),
+        }}
+      />
+
+      {/* Structured Data JSON-LD - ProfessionalService */}
+      <Script
+        id="structured-data-professional-service"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            name: CONTACT_INFO.companyName,
+            image: `${CONTACT_INFO.website}/logo.png`,
+            "@id": CONTACT_INFO.website,
+            url: CONTACT_INFO.website,
+            telephone: CONTACT_INFO.phone.primary,
+            priceRange: "$$",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: `${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}`,
+              addressLocality: CONTACT_INFO.address.city,
+              addressRegion: CONTACT_INFO.address.state,
+              postalCode: CONTACT_INFO.address.pincode,
+              addressCountry: "IN",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 18.4782,
+              longitude: 73.8131,
+            },
           }),
         }}
       />

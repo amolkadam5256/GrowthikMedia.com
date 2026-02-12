@@ -21,10 +21,17 @@ export default function Header() {
   const [isTopBarVisible, setIsTopBarVisible] = useState(true);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsTopBarVisible(window.scrollY <= 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsTopBarVisible(window.scrollY <= 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import {
   ClipboardCheck,
   Map as MapIcon,
@@ -48,7 +49,7 @@ const STEPS = [
   },
 ];
 
-export default function GrowthFrameworkSection() {
+const GrowthFrameworkSection = React.memo(() => {
   return (
     <section className="py-12 md:py-20 bg-(--background) relative overflow-hidden">
       {/* Background Accents */}
@@ -92,7 +93,7 @@ export default function GrowthFrameworkSection() {
                 </div>
 
                 {/* Icon */}
-                <div className="w-16 h-16 bg-(--color-primary) flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
+                <div className="w-16 h-16 bg-(--color-primary) flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500 will-change-transform">
                   <Icon className="w-8 h-8 text-white" />
                 </div>
 
@@ -135,4 +136,7 @@ export default function GrowthFrameworkSection() {
       </div>
     </section>
   );
-}
+});
+
+GrowthFrameworkSection.displayName = "GrowthFrameworkSection";
+export default GrowthFrameworkSection;

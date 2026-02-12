@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   Plus,
   Minus,
@@ -43,7 +43,7 @@ const FAQ_DATA = [
   },
 ];
 
-export default function FAQSection() {
+const FAQSection = React.memo(() => {
   const [openId, setOpenId] = useState<number | null>(1);
 
   const toggleFaq = (id: number) => {
@@ -96,7 +96,7 @@ export default function FAQSection() {
                 className={`transition-all duration-500 overflow-hidden cursor-pointer border-2 bg-(--surface) ${
                   openId === faq.id
                     ? "border-(--color-primary) shadow-[0_0_30px_rgba(217,11,28,0.05)]"
-                    : "border-(--border) hover:border-(--color-primary)/50 hover:bg-(--color-primary)/[0.02]"
+                    : "border-(--border) hover:border-(--color-primary)/50 hover:bg-(--color-primary)/2"
                 }`}
                 onClick={() => toggleFaq(faq.id)}
               >
@@ -184,4 +184,7 @@ export default function FAQSection() {
       </div>
     </section>
   );
-}
+});
+
+FAQSection.displayName = "FAQSection";
+export default FAQSection;

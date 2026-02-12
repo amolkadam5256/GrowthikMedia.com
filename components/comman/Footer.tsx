@@ -38,11 +38,18 @@ export default function Footer() {
   useEffect(() => {
     setMounted(true);
 
+    let ticking = false;
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setShowScrollTop(window.scrollY > 400);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -154,7 +161,10 @@ export default function Footer() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="relative w-12 h-12  rounded-xl flex items-center justify-center ">
                     <span className="text-white font-bold text-2xl">
-                      <img src={images.icon.src} alt="" />
+                      <img
+                        src={images.icon.src}
+                        alt={`${CONTACT_INFO.companyName} Icon`}
+                      />
                     </span>
                   </div>
                   <div>

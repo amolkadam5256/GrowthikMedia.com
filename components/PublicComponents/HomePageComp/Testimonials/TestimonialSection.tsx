@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Star,
   Quote,
@@ -8,7 +8,6 @@ import {
   ChevronRight,
   PlayCircle,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 const TESTIMONIALS = [
@@ -54,7 +53,7 @@ const TESTIMONIALS = [
   },
 ];
 
-export default function TestimonialSection() {
+const TestimonialSection = React.memo(() => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const next = () => setActiveIndex((prev) => (prev + 1) % TESTIMONIALS.length);
@@ -162,7 +161,7 @@ export default function TestimonialSection() {
                     <div className="aspect-video bg-(--surface-secondary) relative flex items-center justify-center">
                       <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
                       <div className="flex flex-col items-center gap-4 text-center p-8">
-                        <PlayCircle className="w-20 h-20 text-(--color-primary) opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all cursor-pointer" />
+                        <PlayCircle className="w-20 h-20 text-(--color-primary) opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all cursor-pointer will-change-transform" />
                         <span className="text-(--color-primary) font-bold uppercase tracking-widest text-xs">
                           Watch Video Testimonial
                         </span>
@@ -170,7 +169,7 @@ export default function TestimonialSection() {
                     </div>
 
                     {/* Result Badge */}
-                    <div className="absolute -bottom-6 -left-6 bg-(--color-primary) p-8 text-white shadow-xl z-20">
+                    <div className="absolute -bottom-6 -left-6 bg-(--color-primary) p-8 text-white shadow-xl z-20 will-change-transform">
                       <div className="flex flex-col">
                         <span className="text-xs uppercase tracking-widest font-bold opacity-80">
                           Proven Result
@@ -209,4 +208,7 @@ export default function TestimonialSection() {
       </div>
     </section>
   );
-}
+});
+
+TestimonialSection.displayName = "TestimonialSection";
+export default TestimonialSection;

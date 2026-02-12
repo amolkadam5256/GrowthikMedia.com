@@ -3,42 +3,42 @@
 import React from "react";
 import { XCircle, CheckCircle } from "lucide-react";
 
-export default function ProblemSolutionSection() {
-  const problems = [
-    {
-      title: "Low Quality Leads",
-      desc: "Tired of inquiries that never convert?",
-    },
-    {
-      title: "High Ad Spend, Low ROI",
-      desc: "Burning budget with zero returns?",
-    },
-    { title: "Invisible Online Presence", desc: "Hard to find on Google?" },
-    {
-      title: "Website Traffic Not Converting",
-      desc: "Lots of clicks, no sales?",
-    },
-  ];
+const problems = [
+  {
+    title: "Low Quality Leads",
+    desc: "Tired of inquiries that never convert?",
+  },
+  {
+    title: "High Ad Spend, Low ROI",
+    desc: "Burning budget with zero returns?",
+  },
+  { title: "Invisible Online Presence", desc: "Hard to find on Google?" },
+  {
+    title: "Website Traffic Not Converting",
+    desc: "Lots of clicks, no sales?",
+  },
+];
 
-  const solutions = [
-    {
-      title: "High-Intent Lead Generation",
-      desc: "Leads that are ready to buy.",
-    },
-    {
-      title: "Data-Driven Performance Marketing",
-      desc: "Maximize every rupee spent.",
-    },
-    {
-      title: "Dominate Search (SEO) & Socials",
-      desc: "Be seen everywhere that matters.",
-    },
-    {
-      title: "Conversion Rate Optimization (CRO)",
-      desc: "Turn visitors into loyal customers.",
-    },
-  ];
+const solutions = [
+  {
+    title: "High-Intent Lead Generation",
+    desc: "Leads that are ready to buy.",
+  },
+  {
+    title: "Data-Driven Performance Marketing",
+    desc: "Maximize every rupee spent.",
+  },
+  {
+    title: "Dominate Search (SEO) & Socials",
+    desc: "Be seen everywhere that matters.",
+  },
+  {
+    title: "Conversion Rate Optimization (CRO)",
+    desc: "Turn visitors into loyal customers.",
+  },
+];
 
+const ProblemSolutionSection = React.memo(() => {
   return (
     <section className="py-12 md:py-20 bg-(--background) relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
@@ -76,7 +76,7 @@ export default function ProblemSolutionSection() {
               strokeWidth="3"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="animate-pulse"
+              className="animate-pulse will-change-transform"
             >
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
@@ -152,4 +152,7 @@ export default function ProblemSolutionSection() {
       </div>
     </section>
   );
-}
+});
+
+ProblemSolutionSection.displayName = "ProblemSolutionSection";
+export default ProblemSolutionSection;

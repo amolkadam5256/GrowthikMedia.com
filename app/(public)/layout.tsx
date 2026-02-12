@@ -1,6 +1,48 @@
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
+import { Caveat } from "next/font/google";
 import "../assets/styles/globals.css";
-import "../assets/styles/fonts.css";
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  display: "swap",
+});
+
+// Use next/font/local for optimized font loading
+const rostex = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Rostex-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Rostex-Oblique.ttf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-rostex",
+  display: "swap",
+});
+
+const rostexOutline = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Rostex-Outline.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Rostex-ObliqueOutline.ttf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-rostex-outline",
+  display: "swap",
+});
 
 import Header from "../../components/comman/header/Header";
 import Footer from "../../components/comman/Footer";
@@ -12,12 +54,16 @@ import FloatingSocials from "../../components/comman/FloatingSocials";
 import FloatingWhatsApp from "../../components/comman/FloatingWhatsApp";
 import { CONTACT_INFO } from "@/constants/contact";
 
+import ClientUtilities from "../../components/comman/ClientUtilities";
 import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
-import ScrollProgressBar from "../../components/comman/ScrollProgressBar";
-import ProgressiveLeadCapture from "../../components/comman/ProgressiveLeadCapture";
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
-  // ... (lines 19-81 same)
   metadataBase: new URL(CONTACT_INFO.website),
   title: {
     default: `${CONTACT_INFO.companyName} – Digital Marketing Agency`,
@@ -89,11 +135,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
+    <html
+      lang="en"
+      suppressHydrationWarning={true}
+      className={`${rostex.variable} ${rostexOutline.variable} ${caveat.variable}`}
+    >
+      <head>
+        {/* Preload critical assets */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+      </head>
       <body suppressHydrationWarning={true}>
         <ThemeProviderWrapper>
-          <ScrollProgressBar />
-          <ProgressiveLeadCapture />
+          <ClientUtilities />
           <AOSInit />
           <PageViewTracker />
           <GTM />
@@ -101,7 +154,9 @@ export default function RootLayout({
           <Header />
           <FloatingSocials />
           <FloatingWhatsApp />
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
           <Footer />
         </ThemeProviderWrapper>
       </body>

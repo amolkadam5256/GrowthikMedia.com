@@ -22,7 +22,7 @@ const certifications = [
   { name: "Meta Business Partner", color: "text-blue-600" },
 ];
 
-const TrustStrip = () => {
+const TrustStrip = React.memo(() => {
   return (
     <div className="w-full py-12 md:py-16 overflow-hidden relative z-20 transition-colors duration-300 bg-(--background) border-y border-(--border)">
       {/* Background Animated Shapes */}
@@ -115,7 +115,7 @@ const TrustStrip = () => {
             }}
           >
             <motion.div
-              className="flex gap-12 md:gap-16 items-center whitespace-nowrap w-max"
+              className="flex gap-12 md:gap-16 items-center whitespace-nowrap w-max will-change-transform"
               animate={{ x: ["0%", "-50%"] }}
               transition={{
                 repeat: Infinity,
@@ -137,6 +137,7 @@ const TrustStrip = () => {
       </div>
     </div>
   );
-};
+});
 
+TrustStrip.displayName = "TrustStrip";
 export default TrustStrip;

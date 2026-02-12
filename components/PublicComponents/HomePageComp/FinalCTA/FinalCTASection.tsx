@@ -1,13 +1,14 @@
 "use client";
 
+import React from "react";
 import { Zap, ArrowRight, Sparkles } from "lucide-react";
 
-export default function FinalCTASection() {
+const FinalCTASection = React.memo(() => {
   return (
     <section className="relative py-12 md:py-20 bg-(--surface) overflow-hidden">
       {/* Subtle Background Pattern */}
       <div
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{
           backgroundImage:
             "radial-gradient(circle, var(--text-primary) 1px, transparent 1px)",
@@ -79,7 +80,7 @@ export default function FinalCTASection() {
               className="group relative inline-flex items-center gap-4 px-10 py-5 bg-(--color-primary) text-white font-black uppercase tracking-[0.2em] text-sm hover:bg-(--color-primary-light) transition-all duration-300 shadow-2xl hover:shadow-primary/30 hover:scale-105 overflow-hidden"
             >
               {/* Animated Background */}
-              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 will-change-transform" />
 
               <Zap className="w-5 h-5 relative z-10" />
               <span className="relative z-10">Get Free Strategy Session</span>
@@ -154,4 +155,7 @@ export default function FinalCTASection() {
       </div>
     </section>
   );
-}
+});
+
+FinalCTASection.displayName = "FinalCTASection";
+export default FinalCTASection;

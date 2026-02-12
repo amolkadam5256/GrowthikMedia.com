@@ -39,7 +39,7 @@ const slides: Slide[] = [
   },
 ];
 
-const CircularRevealSection = () => {
+const CircularRevealSection = React.memo(() => {
   const [index, setIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [revealOrigin, setRevealOrigin] = useState("50% 50%");
@@ -72,7 +72,7 @@ const CircularRevealSection = () => {
           backgroundImage: `url(${slides[(index - 1 + slides.length) % slides.length].image})`,
         }}
       >
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-[4px]" />
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-xs" />
       </div>
 
       <AnimatePresence initial={false} mode="wait">
@@ -178,13 +178,13 @@ const CircularRevealSection = () => {
       </div>
 
       <style jsx>{`
-        @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap");
         .font-handwriting {
-          font-family: "Caveat", cursive;
+          font-family: var(--font-caveat), cursive;
         }
       `}</style>
     </section>
   );
-};
+});
 
+CircularRevealSection.displayName = "CircularRevealSection";
 export default CircularRevealSection;
