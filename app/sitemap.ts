@@ -5,54 +5,44 @@ import { navigationData } from "@/components/comman/header/navigationData";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = CONTACT_INFO.website;
 
-  // Main pages
-  const routes = [
-    "",
-    "/about",
-    "/services",
-    "/blog",
-    "/contact",
-    "/portfolio",
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
+  // Function to recursively collect all hrefs from any item structure
+  const collectHrefs = (items: any[]): string[] => {
+    let hrefs: string[] = [];
+    items.forEach((item) => {
+      if (item.href && item.href.startsWith("/")) {
+        hrefs.push(item.href);
+      }
+      if (item.items && Array.isArray(item.items)) {
+        hrefs = [...hrefs, ...collectHrefs(item.items)];
+      }
+    });
+    return hrefs;
+  };
+
+  // Collect from regular links
+  const regularLinks = navigationData.desktop.regularLinks.map((l) => l.href);
+
+  // Collect from standalone links
+  const standaloneLinks = navigationData.desktop.standaloneLinks.map(
+    (l) => l.href,
+  );
+
+  // Collect from mega menus
+  let megaMenuLinks: string[] = [];
+  navigationData.desktop.megaMenus.forEach((menu) => {
+    if (menu.href) megaMenuLinks.push(menu.href);
+    megaMenuLinks = [...megaMenuLinks, ...collectHrefs(menu.items)];
+  });
+
+  // Unique links only
+  const allRoutes = Array.from(
+    new Set([...regularLinks, ...standaloneLinks, ...megaMenuLinks]),
+  );
+
+  return allRoutes.map((route) => ({
+    url: `${baseUrl}${route === "/" ? "" : route}`,
     lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency: route === "/" ? "daily" : "monthly",
+    priority: route === "/" ? 1.0 : route.startsWith("/services") ? 0.8 : 0.5,
   }));
-
-  // Add all service sub-pages from navigation data
-  const serviceRoutes: MetadataRoute.Sitemap = [];
-  navigationData.desktop.megaMenus.forEach((menu) => {
-    if (menu.id === "services") {
-      menu.items.forEach((category) => {
-        category.items.forEach((item) => {
-          serviceRoutes.push({
-            url: `${baseUrl}${item.href}`,
-            lastModified: new Date(),
-            changeFrequency: "monthly" as const,
-            priority: 0.6,
-          });
-        });
-      });
-    }
-  });
-
-  // Add all portfolio sub-pages
-  const portfolioRoutes: MetadataRoute.Sitemap = [];
-  navigationData.desktop.megaMenus.forEach((menu) => {
-    if (menu.id === "portfolio") {
-      menu.items.forEach((category) => {
-        category.items.forEach((item) => {
-          portfolioRoutes.push({
-            url: `${baseUrl}${item.href}`,
-            lastModified: new Date(),
-            changeFrequency: "monthly" as const,
-            priority: 0.5,
-          });
-        });
-      });
-    }
-  });
-
-  return [...routes, ...serviceRoutes, ...portfolioRoutes];
 }
