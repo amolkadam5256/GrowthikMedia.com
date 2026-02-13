@@ -1,18 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
-import {
-  Download,
-  FileText,
-  BarChart3,
-  ArrowRight,
-  Mail,
-  User,
-  Send,
-  CheckCircle2,
-} from "lucide-react";
+import React from "react";
+import Link from "next/link";
+import { Download, FileText, BarChart3, ArrowRight } from "lucide-react";
 import Button from "@/components/ui/Button";
-import Modal from "@/components/ui/Modal";
 import { motion } from "framer-motion";
 
 const magnets = [
@@ -49,30 +40,6 @@ const magnets = [
 ];
 
 const LeadMagnetSection = () => {
-  const [selectedMagnet, setSelectedMagnet] = useState<
-    (typeof magnets)[0] | null
-  >(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [formData, setFormData] = useState({ name: "", email: "" });
-
-  const handleOpenModal = (magnet: (typeof magnets)[0]) => {
-    setSelectedMagnet(magnet);
-    setIsSuccess(false);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormData({ name: "", email: "" });
-    }, 1500);
-  };
-
   return (
     <section className="py-24 bg-(--surface) relative overflow-hidden border-y border-(--border)">
       {/* Background Decorative Accent */}
@@ -125,114 +92,20 @@ const LeadMagnetSection = () => {
                   {magnet.description}
                 </p>
 
-                <Button
-                  variant="outline"
-                  onClick={() => handleOpenModal(magnet)}
-                  className="w-full grow-0 flex items-center justify-center gap-2 font-black uppercase tracking-widest text-xs py-5 border-2 border-(--color-primary)! text-(--color-primary)! hover:bg-(--color-primary)! hover:text-white! transition-all duration-300 rounded-full!"
-                >
-                  {magnet.cta}
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
+                <Link href="/contact" className="w-full">
+                  <Button
+                    variant="outline"
+                    className="w-full flex items-center justify-center gap-2 font-black uppercase tracking-widest text-xs py-5 border-2 border-(--color-primary)! text-(--color-primary)! hover:bg-(--color-primary)! hover:text-white! transition-all duration-300 rounded-full!"
+                  >
+                    {magnet.cta}
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      {/* Lead Capture Modal */}
-      <Modal
-        isOpen={!!selectedMagnet}
-        onClose={() => setSelectedMagnet(null)}
-        title={isSuccess ? "Success!" : `Get ${selectedMagnet?.title}`}
-      >
-        {!isSuccess ? (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <p className="text-(--text-secondary) leading-relaxed">
-              Enter your details below and we'll send the{" "}
-              <span className="font-bold text-(--text-primary)">
-                {selectedMagnet?.title}
-              </span>{" "}
-              directly to your inbox.
-            </p>
-
-            <div className="space-y-4">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <User className="h-5 w-5 text-(--text-tertiary)" />
-                </div>
-                <input
-                  type="text"
-                  required
-                  placeholder="Full Name"
-                  className="w-full pl-12 pr-4 py-4 bg-(--surface-secondary) border border-(--border) focus:border-(--color-primary) outline-hidden text-(--text-primary) font-medium transition-all"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                />
-              </div>
-
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-(--text-tertiary)" />
-                </div>
-                <input
-                  type="email"
-                  required
-                  placeholder="Email Address"
-                  className="w-full pl-12 pr-4 py-4 bg-(--surface-secondary) border border-(--border) focus:border-(--color-primary) outline-hidden text-(--text-primary) font-medium transition-all"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                />
-              </div>
-            </div>
-
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full py-5 bg-(--color-primary) hover:bg-(--color-primary-light) text-(--text-primary) font-black uppercase tracking-wider text-sm flex items-center justify-center gap-3 shadow-xl transition-all"
-            >
-              {isSubmitting ? (
-                <div className="w-5 h-5 border-2 border-(--text-primary)/30 border-t-(--text-primary) rounded-full animate-spin" />
-              ) : (
-                <>
-                  Send Me The Resource
-                  <Send className="w-4 h-4" />
-                </>
-              )}
-            </Button>
-
-            <p className="text-[10px] text-center text-(--text-tertiary) uppercase tracking-widest">
-              We respect your privacy. No spam, ever.
-            </p>
-          </form>
-        ) : (
-          <div className="text-center py-6 space-y-6">
-            <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <CheckCircle2 className="w-10 h-10" />
-            </div>
-            <h4 className="text-2xl font-black text-(--text-primary) uppercase">
-              Check Your Inbox!
-            </h4>
-            <p className="text-(--text-secondary) leading-relaxed">
-              We've just sent the{" "}
-              <span className="font-bold">{selectedMagnet?.title}</span> to your
-              email address: <br />
-              <span className="text-(--text-primary) font-semibold italic">
-                {formData.email}
-              </span>
-            </p>
-            <Button
-              onClick={() => setSelectedMagnet(null)}
-              className="w-full py-4 mt-8 bg-(--text-primary) text-white uppercase font-bold"
-            >
-              Back to Website
-            </Button>
-          </div>
-        )}
-      </Modal>
     </section>
   );
 };

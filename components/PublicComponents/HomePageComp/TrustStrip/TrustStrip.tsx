@@ -17,11 +17,6 @@ const logos = [
   "Visionary",
 ];
 
-const certifications = [
-  { name: "Google Partner", color: "text-blue-500" },
-  { name: "Meta Business Partner", color: "text-blue-600" },
-];
-
 const TrustStrip = React.memo(() => {
   return (
     <div className="w-full py-16 md:py-20 overflow-hidden relative z-20 transition-colors duration-300 bg-(--surface) border-b border-(--border)">
@@ -85,22 +80,24 @@ const TrustStrip = React.memo(() => {
               </div>
             </a>
 
-            {/* Certifications (Text/Simple Badges) */}
-            <div className="flex items-center gap-3 flex-wrap justify-center">
-              {certifications.map((cert, idx) => (
-                <span
-                  key={idx}
-                  className={`text-xs font-bold ${cert.color} bg-(--surface) px-3 py-1.5 rounded-full border border-(--border) shadow-sm whitespace-nowrap flex items-center gap-1.5`}
-                >
-                  {cert.name === "Google Partner" && (
-                    <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                  )}
-                  {cert.name === "Meta Business Partner" && (
-                    <span className="w-2 h-2 rounded-full bg-blue-600"></span>
-                  )}
-                  {cert.name}
+            {/* Certifications & Partners */}
+            <div className="flex items-center gap-3 bg-(--surface) px-4 py-2 rounded-full border border-(--border) shadow-sm shrink-0">
+              <div className="flex -space-x-2">
+                <div className="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white border-2 border-(--surface) shadow-sm">
+                  G
+                </div>
+                <div className="w-7 h-7 rounded-full bg-blue-400 flex items-center justify-center text-[10px] font-bold text-white border-2 border-(--surface) shadow-sm">
+                  M
+                </div>
+              </div>
+              <div className="flex flex-col leading-none">
+                <span className="text-xs font-bold text-(--text-primary)">
+                  Certified Partner
                 </span>
-              ))}
+                <span className="text-[9px] text-(--text-secondary) uppercase tracking-wider">
+                  Google & Meta
+                </span>
+              </div>
             </div>
           </div>
 
