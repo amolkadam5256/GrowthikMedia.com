@@ -1,12 +1,10 @@
-import { SignJWT, jwtVerify } from "jose";
+import { SignJWT, jwtVerify, JWTPayload } from "jose";
 import bcrypt from "bcryptjs";
 import nodemailer from "nodemailer";
 
 const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "your-secret-key-change-in-production"
+  process.env.JWT_SECRET || "your-secret-key-change-in-production",
 );
-
-const JWT_EXPIRATION = "7d"; // 7 days
 
 // ============ PASSWORD HASHING ============
 export async function hashPassword(password: string): Promise<string> {
@@ -16,7 +14,7 @@ export async function hashPassword(password: string): Promise<string> {
 
 export async function verifyPassword(
   password: string,
-  hashedPassword: string
+  hashedPassword: string,
 ): Promise<boolean> {
   return bcrypt.compare(password, hashedPassword);
 }
@@ -35,11 +33,11 @@ export async function createToken(payload: {
   return token;
 }
 
-export async function verifyToken(token: string): Promise<any> {
+export async function verifyToken(token: string): Promise<JWTPayload | null> {
   try {
     const verified = await jwtVerify(token, JWT_SECRET);
     return verified.payload;
-  } catch (error) {
+  } catch {
     return null;
   }
 }
@@ -142,8 +140,10 @@ export function validatePassword(password: string): {
 
 // ============ SECURITY ============
 export function generateSecureToken(): string {
-  return Math.random().toString(36).substring(2, 15) +
-    Math.random().toString(36).substring(2, 15);
+  return (
+    Math.random().toString(36).substring(2, 15) +
+    Math.random().toString(36).substring(2, 15)
+  );
 }
 
 export function maskEmail(email: string): string {

@@ -43,16 +43,13 @@
 }
 
 /* Base styles */
-/* Hide scrollbar for all browsers */
 html,
 body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  scrollbar-width: auto; /* Ensure default scrollbar in Firefox */
+  -ms-overflow-style: auto; /* Ensure default scrollbar in IE/Edge */
 }
 
 body {

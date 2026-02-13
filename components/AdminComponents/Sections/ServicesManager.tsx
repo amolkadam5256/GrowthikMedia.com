@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { FiSave, FiGrid, FiPlus, FiTrash2, FiEdit2 } from "react-icons/fi";
+import { FiSave, FiGrid, FiPlus, FiTrash2 } from "react-icons/fi";
 
 interface Service {
   id: string;
@@ -11,32 +11,35 @@ interface Service {
 
 export default function ServicesManager() {
   const [loading, setLoading] = useState(false);
-  const [services, setServices] = useState<Service[]>([
-    {
-      id: "1",
-      name: "SEO Optimization",
-      description: "Boost your search rankings",
-      icon: "FiTrendingUp",
-    },
-    {
-      id: "2",
-      name: "Social Media",
-      description: "Engage with your audience",
-      icon: "FiSmartphone",
-    },
-    {
-      id: "3",
-      name: "Content Marketing",
-      description: "Create compelling content",
-      icon: "FiFileText",
-    },
-  ]);
+  const [services, setServices] = useState<Service[]>(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("services_data");
+      if (saved) return JSON.parse(saved);
+    }
+    return [
+      {
+        id: "1",
+        name: "SEO Optimization",
+        description: "Boost your search rankings",
+        icon: "FiTrendingUp",
+      },
+      {
+        id: "2",
+        name: "Social Media",
+        description: "Engage with your audience",
+        icon: "FiSmartphone",
+      },
+      {
+        id: "3",
+        name: "Content Marketing",
+        description: "Create compelling content",
+        icon: "FiFileText",
+      },
+    ];
+  });
 
   useEffect(() => {
-    const saved = localStorage.getItem("services_data");
-    if (saved) {
-      setServices(JSON.parse(saved));
-    }
+    // Initialized from localStorage via useState initializer
   }, []);
 
   const handleSave = () => {
@@ -66,7 +69,7 @@ export default function ServicesManager() {
 
   const updateService = (id: string, field: keyof Service, value: string) => {
     setServices(
-      services.map((s) => (s.id === id ? { ...s, [field]: value } : s))
+      services.map((s) => (s.id === id ? { ...s, [field]: value } : s)),
     );
   };
 
@@ -93,7 +96,7 @@ export default function ServicesManager() {
           <button
             onClick={handleSave}
             disabled={loading}
-            className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 font-medium"
+            className="flex items-center gap-2 px-6 py-2.5 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 font-medium"
           >
             <FiSave />
             {loading ? "Saving..." : "Save Changes"}

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { FiSettings, FiGlobe, FiLock, FiBell } from "react-icons/fi";
+import { FiSettings, FiGlobe, FiLock } from "react-icons/fi";
 
 export default function SettingsManager() {
   return (

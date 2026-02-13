@@ -77,8 +77,11 @@ const HeroHeadline = () => {
           {/* Annotation: Free Growth Audit */}
           <div className="absolute -left-20 md:-left-32 top-0 hidden lg:block">
             <p
-              className="font-handwriting text-lg md:text-xl transform -rotate-12 mb-2 font-medium"
-              style={{ color: "var(--color-white)" }}
+              className="text-lg md:text-xl transform -rotate-12 mb-2 font-medium"
+              style={{
+                color: "var(--color-white)",
+                fontFamily: "var(--font-caveat), cursive",
+              }}
             >
               Let’s Grow Your Business
             </p>
@@ -194,10 +197,13 @@ const HeroHeadline = () => {
 
       {/* Decorative Elements */}
       {/* Annotation: Elevate your brand */}
-      <div className="absolute top-40 md:top-20 lg:top-14 right-3 md:right-12 lg:right-0 md:block opacity-80">
+      <div className="absolute top-40 md:top-20 lg:top-14 right-3 md:right-12 lg:right-0 hidden md:block opacity-80">
         <p
-          className="font-handwriting text-lg md:text-xl transform -rotate-12 font-medium"
-          style={{ color: "var(--color-white)" }}
+          className="text-lg md:text-xl transform -rotate-12 font-medium"
+          style={{
+            color: "var(--color-white)",
+            fontFamily: "var(--font-caveat), cursive",
+          }}
         >
           Elevate your brand
         </p>
@@ -227,12 +233,6 @@ const HeroHeadline = () => {
           <path d="M10 20L15 25L30 10" />
         </svg>
       </div>
-
-      <style jsx>{`
-        .font-handwriting {
-          font-family: var(--font-caveat), cursive;
-        }
-      `}</style>
     </header>
   );
 };

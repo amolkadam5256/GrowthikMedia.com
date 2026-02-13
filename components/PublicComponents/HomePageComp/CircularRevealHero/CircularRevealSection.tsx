@@ -176,12 +176,6 @@ const CircularRevealSection = React.memo(() => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .font-handwriting {
-          font-family: var(--font-caveat), cursive;
-        }
-      `}</style>
     </section>
   );
 });

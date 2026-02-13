@@ -1,25 +1,19 @@
-import { NextRequest, NextResponse } from "next/server";
-import { db } from "@/lib/db";
-import { jwtVerify } from "jose";
+import { NextResponse } from "next/server";
 
-const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "your-secret-key-change-in-production"
-);
-
-export async function POST(request: NextRequest) {
+export async function POST() {
   const response = NextResponse.json(
     { success: true, message: "Logged out successfully" },
-    { status: 200 }
+    { status: 200 },
   );
 
   response.cookies.delete("authToken");
   return response;
 }
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   const response = NextResponse.json(
     { success: true, message: "Logged out successfully" },
-    { status: 200 }
+    { status: 200 },
   );
 
   response.cookies.delete("authToken");

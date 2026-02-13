@@ -5,8 +5,13 @@ import { navigationData } from "@/components/comman/header/navigationData";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = CONTACT_INFO.website;
 
+  interface NavItem {
+    href?: string;
+    items?: NavItem[];
+  }
+
   // Function to recursively collect all hrefs from any item structure
-  const collectHrefs = (items: any[]): string[] => {
+  const collectHrefs = (items: NavItem[]): string[] => {
     let hrefs: string[] = [];
     items.forEach((item) => {
       if (item.href && item.href.startsWith("/")) {
@@ -20,18 +25,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
   };
 
   // Collect from regular links
-  const regularLinks = navigationData.desktop.regularLinks.map((l) => l.href);
+  const regularLinks = navigationData.desktop.regularLinks
+    .map((l) => l.href)
+    .filter((h): h is string => !!h);
 
   // Collect from standalone links
-  const standaloneLinks = navigationData.desktop.standaloneLinks.map(
-    (l) => l.href,
-  );
+  const standaloneLinks = navigationData.desktop.standaloneLinks
+    .map((l) => l.href)
+    .filter((h): h is string => !!h);
 
   // Collect from mega menus
   let megaMenuLinks: string[] = [];
   navigationData.desktop.megaMenus.forEach((menu) => {
     if (menu.href) megaMenuLinks.push(menu.href);
-    megaMenuLinks = [...megaMenuLinks, ...collectHrefs(menu.items)];
+    megaMenuLinks = [...megaMenuLinks, ...collectHrefs(menu.items || [])];
   });
 
   // Unique links only

@@ -30,7 +30,7 @@ export async function proxy(request: NextRequest) {
       }
 
       return NextResponse.next();
-    } catch (err) {
+    } catch {
       const response = NextResponse.redirect(
         new URL("/admin/login", request.url),
       );

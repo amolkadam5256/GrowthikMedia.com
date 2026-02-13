@@ -84,13 +84,16 @@ export async function POST(request: NextRequest) {
       },
       { status: 200 },
     );
-  } catch (error: any) {
-    console.error("[Login API] Fatal error:", error.message);
+  } catch (error: unknown) {
+    console.error(
+      "[Login API] Fatal error:",
+      error instanceof Error ? error.message : String(error),
+    );
     return NextResponse.json(
       {
         success: false,
         error: "Internal server error",
-        details: error.message,
+        details: error instanceof Error ? error.message : String(error),
       },
       { status: 500 },
     );

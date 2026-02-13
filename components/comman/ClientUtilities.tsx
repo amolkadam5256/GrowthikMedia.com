@@ -1,10 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-
-const ScrollProgressBar = dynamic(() => import("./ScrollProgressBar"), {
-  ssr: false,
-});
+import ScrollProgressBar from "./ScrollProgressBar";
 
 const ProgressiveLeadCapture = dynamic(
   () => import("./ProgressiveLeadCapture"),
@@ -12,6 +10,17 @@ const ProgressiveLeadCapture = dynamic(
 );
 
 export default function ClientUtilities() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <>
       <ScrollProgressBar />

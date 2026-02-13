@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { FiPlus, FiMinus, FiTrendingUp } from "react-icons/fi";
+import { FiPlus, FiMinus } from "react-icons/fi";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
-import { ThemeToggleButton } from "./ThemeToggleButton";
 import { CONTACT_INFO } from "@/constants/contact";
 import React, { useState, useEffect } from "react";
 
@@ -11,7 +10,7 @@ interface NavItemData {
   label: string;
   href?: string;
   items?: NavItemData[];
-  icon?: any;
+  icon?: React.ComponentType<{ className?: string }>;
 }
 
 // Higher-level wrapper to manage accordion state for children at THIS level
@@ -29,7 +28,10 @@ const MobileRecursiveList = ({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const toggle = (idx: number) => {
@@ -117,13 +119,21 @@ export function MobileNavigation({
 }: {
   isMobileMenuOpen: boolean;
   handleMobileLinkClick: () => void;
-  navigationData: any;
+  navigationData: {
+    desktop: {
+      regularLinks: NavItemData[];
+      megaMenus: NavItemData[];
+      standaloneLinks: NavItemData[];
+    };
+  };
 }) {
-  const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   // Combine regular links and mega menus into one display list

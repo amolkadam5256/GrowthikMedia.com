@@ -11,8 +11,11 @@ async function test() {
     const admin = await prisma.admin.findFirst();
     console.log("First admin email:", admin?.email);
     console.log("Has password:", !!admin?.password);
-  } catch (e: any) {
-    console.error("Connection failed:", e.message);
+  } catch (e) {
+    console.error(
+      "Connection failed:",
+      e instanceof Error ? e.message : String(e),
+    );
   } finally {
     await prisma.$disconnect();
   }

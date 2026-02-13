@@ -4,20 +4,24 @@ import { FiSave, FiInfo, FiTarget, FiEye, FiHeart } from "react-icons/fi";
 
 export default function AboutManager() {
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    mission:
-      "To empower businesses with innovative digital solutions that drive growth and maximize ROI through data-driven strategies.",
-    vision:
-      "To become the global leader in digital transformation, setting new standards for creativity and technical excellence in the industry.",
-    values:
-      "• Integrity in all our dealings\n• Innovation in every solution\n• Customer-centric approach\n• Continuous learning and adaptation",
+  const [formData, setFormData] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("about_data");
+      if (saved) return JSON.parse(saved);
+    }
+    return {
+      mission:
+        "To empower businesses with innovative digital solutions that drive growth and maximize ROI through data-driven strategies.",
+      vision:
+        "To become the global leader in digital transformation, setting new standards for creativity and technical excellence in the industry.",
+      values:
+        "• Integrity in all our dealings\n• Innovation in every solution\n• Customer-centric approach\n• Continuous learning and adaptation",
+    };
   });
 
   useEffect(() => {
-    const saved = localStorage.getItem("about_data");
-    if (saved) {
-      setFormData(JSON.parse(saved));
-    }
+    // We already initialized from localStorage, but we can keep the effect empty
+    // or remove it as it's no longer needed for initial load.
   }, []);
 
   const handleSave = () => {
@@ -30,7 +34,7 @@ export default function AboutManager() {
   };
 
   const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    setFormData((prev: any) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -42,13 +46,13 @@ export default function AboutManager() {
             About Us Content
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mt-1">
-            Define your company's core identity.
+            Define your company&apos;s core identity.
           </p>
         </div>
         <button
           onClick={handleSave}
           disabled={loading}
-          className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 font-medium"
+          className="flex items-center gap-2 px-6 py-2.5 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 font-medium"
         >
           <FiSave />
           {loading ? "Saving..." : "Save Changes"}

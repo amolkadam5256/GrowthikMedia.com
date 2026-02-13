@@ -1,21 +1,30 @@
 import {
-  FiChevronDown,
   FiGlobe,
   FiCode,
   FiPenTool,
-  FiStar,
   FiHome,
   FiInfo,
   FiLayers,
   FiBookOpen,
   FiMail,
-  FiTrendingUp,
-  FiShoppingCart,
   FiAward,
 } from "react-icons/fi";
 
+import { NavItemData } from "./DesktopNavigation";
+
 // Navigation data structure for Digital Marketing Agency
-export const navigationData = {
+export const navigationData: {
+  desktop: {
+    regularLinks: NavItemData[];
+    megaMenus: NavItemData[];
+    standaloneLinks: NavItemData[];
+  };
+  mobile: {
+    mainLinks: NavItemData[];
+    expandableMenus: NavItemData[];
+    standaloneLinks: NavItemData[];
+  };
+} = {
   desktop: {
     regularLinks: [
       { href: "/", label: "Home", icon: FiHome },
@@ -384,8 +393,8 @@ export const getAllServiceLinks = () => {
   const services: { href: string; label: string; featured?: boolean }[] = [];
   navigationData.desktop.megaMenus.forEach((menu) => {
     if (menu.id === "services" || menu.id === "specialized-services") {
-      menu.items.forEach((category) => {
-        category.items.forEach((item) => {
+      menu.items?.forEach((category) => {
+        category.items?.forEach((item) => {
           // Only push items that have an href property
           if ("href" in item && item.href) {
             const service: { href: string; label: string; featured?: boolean } =

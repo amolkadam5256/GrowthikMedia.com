@@ -24,23 +24,28 @@ export default async function ProtectedAdminLayout({
     redirect("/admin/login");
   }
 
+  let isAuthorized = false;
   try {
     const { payload } = await jwtVerify(token, JWT_SECRET);
-
-    // Allow both roles
-    if (payload.role !== "ADMIN" && payload.role !== "SUPER_ADMIN") {
+    if (payload.role === "ADMIN" || payload.role === "SUPER_ADMIN") {
+      isAuthorized = true;
+    } else {
       console.log("[Layout] Forbidden role:", payload.role);
-      redirect("/admin/login");
     }
-
-    // Success - render the dashboard children
-    return (
-      <div className="min-h-screen w-full bg-[#0f172a] flex">
-        <main className="w-full min-h-screen flex-1">{children}</main>
-      </div>
+  } catch (err: unknown) {
+    console.error(
+      "[Layout] Auth failed:",
+      err instanceof Error ? err.message : String(err),
     );
-  } catch (err: any) {
-    console.error("[Layout] Auth failed:", err.message);
+  }
+
+  if (!isAuthorized) {
     redirect("/admin/login");
   }
+
+  return (
+    <div className="min-h-screen w-full bg-[#0f172a] flex">
+      <main className="w-full min-h-screen flex-1">{children}</main>
+    </div>
+  );
 }

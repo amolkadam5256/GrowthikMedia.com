@@ -64,9 +64,13 @@ const ScrollProgressBar = () => {
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onMouseUp);
     window.addEventListener("keydown", onKeyDown);
-    updateScrollProgress();
+
+    const timer = setTimeout(() => {
+      updateScrollProgress();
+    }, 0);
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("scroll", updateScrollProgress);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseup", onMouseUp);

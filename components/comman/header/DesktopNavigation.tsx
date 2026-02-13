@@ -4,13 +4,16 @@ import { useTheme } from "next-themes";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 
-interface NavItemData {
+export interface NavItemData {
   label: string;
   href?: string;
   items?: NavItemData[];
-  icon?: any;
+  icon?: React.ComponentType<{ className?: string }>;
   featured?: boolean;
   direction?: "left" | "right";
+  id?: string;
+  description?: string;
+  columns?: string;
 }
 
 interface RecursiveNavItemProps {
@@ -33,7 +36,10 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
   const isTopLevel = depth === 0;
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   // Auto-detect direction based on screen space
@@ -81,7 +87,7 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
   const idleStyles =
     "text-(--text-secondary) hover:bg-(--surface-secondary) dark:text-(--text-secondary) dark:hover:bg-white/5";
 
-  const ItemContent = () => (
+  const itemContent = (
     <div className="flex items-center space-x-2.5">
       {item.icon && (
         <item.icon
@@ -104,7 +110,7 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
           href={item.href}
           className={`${commonClass} ${isTopLevel ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" : `text-[14px] ${isOpen ? activeStyles : idleStyles}`}`}
         >
-          <ItemContent />
+          {itemContent}
           {hasChildren && !isTopLevel && (
             <FiChevronRight
               className={`ml-3 text-sm transition-transform ${isOpen ? "rotate-0 translate-x-1" : "opacity-40"}`}
@@ -120,7 +126,7 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
         <button
           className={`${commonClass} ${isTopLevel ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" : `text-[14px] ${isOpen ? activeStyles : idleStyles}`}`}
         >
-          <ItemContent />
+          {itemContent}
           {hasChildren && !isTopLevel && (
             <FiChevronRight
               className={`ml-3 text-sm transition-transform ${isOpen ? "rotate-0 translate-x-1" : "opacity-40"}`}
@@ -162,17 +168,25 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
   );
 };
 
-export function DesktopNavigation({ navigationData }: { navigationData: any }) {
+export function DesktopNavigation({
+  navigationData,
+}: {
+  navigationData: {
+    regularLinks: NavItemData[];
+    megaMenus: NavItemData[];
+    standaloneLinks: NavItemData[];
+  };
+}) {
   return (
     <nav className="hidden lg:block">
       <ul className="flex items-center space-x-1">
-        {navigationData.regularLinks.map((link: any, idx: number) => (
+        {navigationData.regularLinks.map((link, idx) => (
           <RecursiveNavItem key={idx} item={link} depth={0} />
         ))}
-        {navigationData.megaMenus.map((menu: any, idx: number) => (
+        {navigationData.megaMenus.map((menu, idx) => (
           <RecursiveNavItem key={idx} item={menu} depth={0} />
         ))}
-        {navigationData.standaloneLinks.map((link: any, idx: number) => (
+        {navigationData.standaloneLinks.map((link, idx) => (
           <RecursiveNavItem key={idx} item={link} depth={0} />
         ))}
       </ul>

@@ -18,7 +18,9 @@ export function TopBar() {
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setIsVisible(false);
@@ -28,7 +30,10 @@ export function TopBar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const isLight = mounted && resolvedTheme === "light";
@@ -138,7 +143,7 @@ export function TopBar() {
               <social.icon className="w-3.5 h-3.5 transition-transform duration-300 group-hover:scale-110" />
 
               {/* Glossy Overlay effect on hover */}
-              <span className="absolute inset-0 rounded-lg bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>
+              <span className="absolute inset-0 rounded-lg bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>
             </Link>
           ))}
         </div>

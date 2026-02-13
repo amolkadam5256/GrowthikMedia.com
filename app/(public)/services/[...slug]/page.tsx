@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { navigationData } from "@/components/comman/header/navigationData";
 import { CONTACT_INFO } from "@/constants/contact";
 
 interface Props {
@@ -12,7 +10,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const currentSlug = slug[slug.length - 1];
 
   // Try to find the service in navigationData for a better label
-  let serviceLabel = currentSlug
+  const serviceLabel = currentSlug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -47,7 +45,7 @@ export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
   const currentSlug = slug[slug.length - 1];
 
-  let serviceName = currentSlug
+  const serviceName = currentSlug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -77,23 +75,23 @@ export default async function ServiceDetailPage({ params }: Props) {
       />
       <div className="min-h-screen py-32 px-4 flex flex-col items-center justify-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)] bg-clip-text text-transparent uppercase tracking-wider">
+          <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-linear-to-r from-(--color-primary) to-(--color-primary-light) bg-clip-text text-transparent uppercase tracking-wider">
             {serviceName}
           </h1>
-          <div className="w-32 h-1.5 bg-[var(--color-primary)] mx-auto mb-12 rounded-full"></div>
-          <p className="text-xl md:text-2xl text-[var(--text-secondary)] mb-12 leading-relaxed">
+          <div className="w-32 h-1.5 bg-(--color-primary) mx-auto mb-12 rounded-full"></div>
+          <p className="text-xl md:text-2xl text-(--text-secondary) mb-12 leading-relaxed">
             We are currently updating this page with our latest case studies,
             packages, and detailed service information for{" "}
             <strong>{serviceName}</strong>.
           </p>
-          <div className="p-8 rounded-2xl border border-[var(--border-color)] bg-[var(--card-background)] shadow-2xl backdrop-blur-sm">
-            <p className="text-lg text-[var(--text-primary)] mb-8">
+          <div className="p-8 rounded-2xl border border-(--border-color) bg-(--card-background) shadow-2xl backdrop-blur-sm">
+            <p className="text-lg text-(--text-primary) mb-8">
               Interested in our <strong>{serviceName}</strong> services?
               Let&apos;s discuss how we can help your business grow.
             </p>
             <a
               href="/contact"
-              className="inline-block px-10 py-4 bg-[var(--color-primary)] text-white font-bold rounded-lg hover:scale-105 transition-all duration-300 shadow-xl"
+              className="inline-block px-10 py-4 bg-(--color-primary) text-white font-bold rounded-lg hover:scale-105 transition-all duration-300 shadow-xl"
             >
               Get Expert Consultation
             </a>

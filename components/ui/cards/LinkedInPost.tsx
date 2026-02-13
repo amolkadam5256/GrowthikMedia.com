@@ -8,6 +8,7 @@ import {
   Globe,
 } from "lucide-react";
 import Card from "../Card";
+import NextImage from "next/image";
 
 interface LinkedInPostProps {
   pageName?: string;
@@ -28,7 +29,6 @@ export default function LinkedInPost({
   followers = 17474,
   postTime = "2d",
   postContent = "If you've been looking for #freemockups then you need to visit goodmockups website and download the one you like the most. We have #thebest collection!",
-  hashtags = ["#freemockups", "#thebest"],
   imageUrl = null,
   articleTitle = "Created and prepared by goodmockups.com",
   articleSource = "goodmockups.com • 1 min read",
@@ -69,7 +69,7 @@ export default function LinkedInPost({
           <div className="flex items-start justify-between">
             <div className="flex gap-3 sm:gap-4">
               {/* LinkedIn Logo */}
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-blue-600 rounded flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-blue-600 rounded flex items-center justify-center shrink-0">
                 <svg
                   className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 text-white"
                   viewBox="0 0 24 24"
@@ -81,13 +81,13 @@ export default function LinkedInPost({
 
               {/* Post Info */}
               <div className="flex-1 min-w-0">
-                <h2 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 dark:text-[var(--text-primary)] truncate">
+                <h2 className="text-sm sm:text-base md:text-lg font-semibold text-gray-900 dark:text-(--text-primary) truncate">
                   {pageName}
                 </h2>
-                <p className="text-xs sm:text-sm text-gray-600 dark:text-[var(--text-secondary)] mt-0.5">
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-(--text-secondary) mt-0.5">
                   {followers.toLocaleString()} followers
                 </p>
-                <div className="flex items-center gap-1.5 sm:gap-2 mt-1 text-xs text-gray-500 dark:text-[var(--text-tertiary)]">
+                <div className="flex items-center gap-1.5 sm:gap-2 mt-1 text-xs text-gray-500 dark:text-(--text-tertiary)">
                   <span>{postTime}</span>
                   <span>•</span>
                   <span>Edited</span>
@@ -98,24 +98,25 @@ export default function LinkedInPost({
             </div>
 
             {/* More Button */}
-            <button className="text-gray-500 dark:text-[var(--text-secondary)] hover:bg-gray-100 dark:hover:bg-[var(--surface-secondary)] rounded-full p-2 transition-colors flex-shrink-0">
+            <button className="text-gray-500 dark:text-(--text-secondary) hover:bg-gray-100 dark:hover:bg-(--surface-secondary) rounded-full p-2 transition-colors shrink-0">
               <MoreHorizontal className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
 
           {/* Post Text */}
-          <div className="mt-4 text-sm sm:text-base text-gray-800 dark:text-[var(--text-primary)] leading-relaxed">
+          <div className="mt-4 text-sm sm:text-base text-gray-800 dark:text-(--text-primary) leading-relaxed">
             <p>{renderPostContent()}</p>
           </div>
         </div>
 
         {/* LinkedIn Image */}
-        <div className="relative bg-gradient-to-br from-blue-600 to-blue-700 aspect-video flex items-center justify-center">
+        <div className="relative bg-linear-to-br from-blue-600 to-blue-700 aspect-video flex items-center justify-center">
           {imageUrl ? (
-            <img
+            <NextImage
               src={imageUrl}
               alt="LinkedIn post"
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           ) : (
             <div className="text-center">
@@ -134,38 +135,38 @@ export default function LinkedInPost({
         </div>
 
         {/* Article Link Preview */}
-        <div className="bg-gray-50 dark:bg-[var(--surface-secondary)] border-t border-gray-200 dark:border-[var(--border)] p-4 sm:p-5">
-          <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-[var(--text-primary)]">
+        <div className="bg-gray-50 dark:bg-(--surface-secondary) border-t border-gray-200 dark:border-(--border) p-4 sm:p-5">
+          <h3 className="text-sm sm:text-base font-semibold text-gray-900 dark:text-(--text-primary)">
             {articleTitle}
           </h3>
-          <p className="text-xs sm:text-sm text-gray-500 dark:text-[var(--text-tertiary)] mt-1">
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-(--text-tertiary) mt-1">
             {articleSource}
           </p>
         </div>
 
         {/* Reactions Bar */}
-        <div className="px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 border-t border-gray-200 dark:border-[var(--border)]">
-          <div className="flex items-center justify-between text-xs sm:text-sm text-gray-600 dark:text-[var(--text-secondary)]">
+        <div className="px-4 sm:px-5 md:px-6 py-2.5 sm:py-3 border-t border-gray-200 dark:border-(--border)">
+          <div className="flex items-center justify-between text-xs sm:text-sm text-gray-600 dark:text-(--text-secondary)">
             <div className="flex items-center gap-2">
               {/* Reaction Icons */}
               <div className="flex items-center -space-x-1">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full border-2 border-white dark:border-[var(--surface)] flex items-center justify-center">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center">
                   <ThumbsUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white fill-white" />
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full border-2 border-white dark:border-[var(--surface)] flex items-center justify-center text-xs">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
                   👏
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-red-500 rounded-full border-2 border-white dark:border-[var(--surface)] flex items-center justify-center text-xs">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-red-500 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
                   ❤️
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-amber-400 rounded-full border-2 border-white dark:border-[var(--surface)] flex items-center justify-center text-xs">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-amber-400 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
                   💡
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-purple-500 rounded-full border-2 border-white dark:border-[var(--surface)] flex items-center justify-center text-xs">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-purple-500 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
                   😊
                 </div>
               </div>
-              <span className="font-medium text-gray-900 dark:text-[var(--text-primary)]">
+              <span className="font-medium text-gray-900 dark:text-(--text-primary)">
                 {likeCount}
               </span>
             </div>
@@ -181,14 +182,14 @@ export default function LinkedInPost({
         </div>
 
         {/* Action Buttons */}
-        <div className="px-2 sm:px-3 md:px-4 py-2 border-t border-gray-200 dark:border-[var(--border)]">
+        <div className="px-2 sm:px-3 md:px-4 py-2 border-t border-gray-200 dark:border-(--border)">
           <div className="grid grid-cols-4 gap-1 sm:gap-2">
             <button
               onClick={handleLike}
-              className={`flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-lg transition-all hover:bg-gray-100 dark:hover:bg-[var(--surface-secondary)] ${
+              className={`flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-lg transition-all hover:bg-gray-100 dark:hover:bg-(--surface-secondary) ${
                 liked
                   ? "text-blue-600 dark:text-blue-400"
-                  : "text-gray-600 dark:text-[var(--text-secondary)]"
+                  : "text-gray-600 dark:text-(--text-secondary)"
               }`}
             >
               <ThumbsUp
@@ -199,17 +200,17 @@ export default function LinkedInPost({
               <span className="text-xs sm:text-sm font-medium">Like</span>
             </button>
 
-            <button className="flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-lg text-gray-600 dark:text-[var(--text-secondary)] transition-all hover:bg-gray-100 dark:hover:bg-[var(--surface-secondary)]">
+            <button className="flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-lg text-gray-600 dark:text-(--text-secondary) transition-all hover:bg-gray-100 dark:hover:bg-(--surface-secondary)">
               <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 mb-1" />
               <span className="text-xs sm:text-sm font-medium">Comment</span>
             </button>
 
-            <button className="flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-lg text-gray-600 dark:text-[var(--text-secondary)] transition-all hover:bg-gray-100 dark:hover:bg-[var(--surface-secondary)]">
+            <button className="flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-lg text-gray-600 dark:text-(--text-secondary) transition-all hover:bg-gray-100 dark:hover:bg-(--surface-secondary)">
               <Repeat2 className="w-5 h-5 sm:w-6 sm:h-6 mb-1" />
               <span className="text-xs sm:text-sm font-medium">Repost</span>
             </button>
 
-            <button className="flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-lg text-gray-600 dark:text-[var(--text-secondary)] transition-all hover:bg-gray-100 dark:hover:bg-[var(--surface-secondary)]">
+            <button className="flex flex-col items-center justify-center py-2.5 sm:py-3 rounded-lg text-gray-600 dark:text-(--text-secondary) transition-all hover:bg-gray-100 dark:hover:bg-(--surface-secondary)">
               <Send className="w-5 h-5 sm:w-6 sm:h-6 mb-1" />
               <span className="text-xs sm:text-sm font-medium">Send</span>
             </button>

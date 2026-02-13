@@ -15,7 +15,7 @@ const HomeHeroSection = React.memo(() => {
           alt="Premium Marketing Background"
           fill
           priority
-          quality={90}
+          quality={75}
           className="object-cover"
           sizes="100vw"
         />

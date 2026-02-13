@@ -10,16 +10,6 @@ interface LogoProps {
 }
 
 export function Logo({ onClick }: LogoProps) {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Use this for any conditional logic that must only run on client
-  // const isDark = mounted && resolvedTheme === "dark";
-
   return (
     <Link
       href="/"

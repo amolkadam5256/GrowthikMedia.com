@@ -5,7 +5,6 @@ import {
   FiGrid,
   FiFileText,
   FiActivity,
-  FiTrendingUp,
 } from "react-icons/fi";
 
 export default function DashboardHome() {
@@ -51,7 +50,7 @@ export default function DashboardHome() {
           Dashboard Overview
         </h2>
         <p className="text-gray-500 dark:text-gray-400">
-          Welcome back! Here's what's happening today.
+          Welcome back! Here&apos;s what&apos;s happening today.
         </p>
       </div>
 
@@ -65,7 +64,7 @@ export default function DashboardHome() {
               <div
                 className={`p-3 rounded-xl ${stat.bg} ${stat.color.replace(
                   "bg-",
-                  "text-"
+                  "text-",
                 )}`}
               >
                 <span className="text-xl">{stat.icon}</span>
@@ -114,7 +113,7 @@ export default function DashboardHome() {
         </div>
 
         {/* Quick Stats */}
-        <div className="bg-gradient-to-br from-blue-600 to-purple-600 p-6 rounded-2xl shadow-lg text-white">
+        <div className="bg-linear-to-br from-blue-600 to-purple-600 p-6 rounded-2xl shadow-lg text-white">
           <h3 className="text-lg font-bold mb-6">Performance</h3>
           <div className="space-y-4">
             <div>

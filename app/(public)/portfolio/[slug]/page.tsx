@@ -7,7 +7,7 @@ interface Props {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  let label = slug
+  const label = slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function PortfolioDetailPage({ params }: Props) {
   const { slug } = await params;
-  let label = slug
+  const label = slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
@@ -35,28 +35,28 @@ export default async function PortfolioDetailPage({ params }: Props) {
   return (
     <div className="min-h-screen py-32 px-4 flex flex-col items-center justify-center">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-[var(--color-primary)] font-bold tracking-widest mb-4 uppercase">
+        <h2 className="text-(--color-primary) font-bold tracking-widest mb-4 uppercase">
           Success Stories
         </h2>
-        <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)] bg-clip-text text-transparent uppercase tracking-wider">
+        <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-linear-to-r from-(--color-primary) to-(--color-primary-light) bg-clip-text text-transparent uppercase tracking-wider">
           {label} Projects
         </h1>
-        <div className="w-32 h-1.5 bg-[var(--color-primary)] mx-auto mb-12 rounded-full"></div>
+        <div className="w-32 h-1.5 bg-(--color-primary) mx-auto mb-12 rounded-full"></div>
 
-        <p className="text-xl md:text-2xl text-[var(--text-secondary)] mb-12 leading-relaxed">
+        <p className="text-xl md:text-2xl text-(--text-secondary) mb-12 leading-relaxed">
           Our portfolio for <strong>{label}</strong> is currently being curated
           to show you the best of our work. Stay tuned for detailed case studies
           and results.
         </p>
 
-        <div className="p-10 rounded-2xl border border-[var(--border-color)] bg-[var(--card-background)] shadow-2xl">
-          <p className="text-lg text-[var(--text-primary)] mb-8">
+        <div className="p-10 rounded-2xl border border-(--border-color) bg-(--card-background) shadow-2xl">
+          <p className="text-lg text-(--text-primary) mb-8">
             Want to see our previous work in <strong>{label}</strong>? We can
             share specific case studies and performance reports upon request.
           </p>
           <a
             href="/contact"
-            className="inline-block px-10 py-4 bg-[var(--color-primary)] text-white font-bold rounded-lg hover:rotate-1 hover:scale-105 transition-all duration-300 shadow-xl"
+            className="inline-block px-10 py-4 bg-(--color-primary) text-white font-bold rounded-lg hover:rotate-1 hover:scale-105 transition-all duration-300 shadow-xl"
           >
             Request Case Studies
           </a>

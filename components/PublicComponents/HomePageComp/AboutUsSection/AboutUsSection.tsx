@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Target, Eye, Sparkles } from "lucide-react";
+import { ArrowRight, Target, Eye } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 
 export default function AboutUsSection() {

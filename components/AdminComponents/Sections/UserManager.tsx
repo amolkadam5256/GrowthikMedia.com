@@ -1,12 +1,5 @@
 import React, { useState } from "react";
-import {
-  FiPlus,
-  FiTrash2,
-  FiEdit2,
-  FiMail,
-  FiPhone,
-  FiLock,
-} from "react-icons/fi";
+import { FiPlus, FiTrash2, FiEdit2 } from "react-icons/fi";
 
 // Mock data initially (until API connected)
 const initialUsers = [

@@ -10,11 +10,10 @@ import {
   Instagram,
   Facebook,
   Twitter,
-  Send,
   MapPin,
   ExternalLink,
 } from "lucide-react";
-import Image from "next/image";
+import NextImage from "next/image";
 import {
   FiGlobe,
   FiCode,
@@ -36,7 +35,9 @@ export default function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
 
     let ticking = false;
     const handleScroll = () => {
@@ -50,7 +51,10 @@ export default function Footer() {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -64,12 +68,6 @@ export default function Footer() {
       setEmail("");
     } else {
       alert("⚠️ Please enter a valid email address");
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      handleSubscribe();
     }
   };
 
@@ -160,10 +158,12 @@ export default function Footer() {
                 {/* Logo */}
                 <div className="flex items-center gap-3 mb-4">
                   <div className="relative w-12 h-12  rounded-xl flex items-center justify-center ">
-                    <span className="text-white font-bold text-2xl">
-                      <img
+                    <span className="text-white font-bold text-2xl relative w-full h-full">
+                      <NextImage
                         src={images.icon.src}
                         alt={`${CONTACT_INFO.companyName} Icon`}
+                        fill
+                        className="object-contain"
                       />
                     </span>
                   </div>

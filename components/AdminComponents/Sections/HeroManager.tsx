@@ -4,19 +4,22 @@ import { FiSave, FiLayout } from "react-icons/fi";
 
 export default function HeroManager() {
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    title: "Grow Your Business with Digital Marketing",
-    subtitle:
-      "We help you scale with data-driven strategies and creative solutions tailored to your brand.",
-    ctaText: "Get Started Reviews",
-    ctaLink: "/contact",
+  const [formData, setFormData] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("hero_data");
+      if (saved) return JSON.parse(saved);
+    }
+    return {
+      title: "Grow Your Business with Digital Marketing",
+      subtitle:
+        "We help you scale with data-driven strategies and creative solutions tailored to your brand.",
+      ctaText: "Get Started Reviews",
+      ctaLink: "/contact",
+    };
   });
 
   useEffect(() => {
-    const saved = localStorage.getItem("hero_data");
-    if (saved) {
-      setFormData(JSON.parse(saved));
-    }
+    // Initialized from localStorage via useState initializer
   }, []);
 
   const handleSave = () => {
@@ -45,7 +48,7 @@ export default function HeroManager() {
         <button
           onClick={handleSave}
           disabled={loading}
-          className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 font-medium"
+          className="flex items-center gap-2 px-6 py-2.5 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 font-medium"
         >
           <FiSave />
           {loading ? "Saving..." : "Save Changes"}

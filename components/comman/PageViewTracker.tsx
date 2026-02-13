@@ -1,14 +1,17 @@
-'use client';
+"use client";
 
-import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export default function PageViewTracker() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
-      (window as any).gtag('config', 'G-30C78ZK2G8', {
+    const win = window as unknown as {
+      gtag?: (command: string, id: string, config?: object) => void;
+    };
+    if (typeof window !== "undefined" && typeof win.gtag === "function") {
+      win.gtag("config", "G-30C78ZK2G8", {
         page_path: pathname,
       });
     }

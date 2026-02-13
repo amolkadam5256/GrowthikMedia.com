@@ -2,12 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import {
   FiHome,
-  FiLayout,
-  FiGrid,
-  FiPhone,
-  FiInfo,
-  FiBriefcase,
-  FiEdit,
   FiSettings,
   FiLogOut,
   FiChevronLeft,
@@ -64,7 +58,7 @@ export default function Sidebar({
     setExpandedMenus((prev) =>
       prev.includes(menuId)
         ? prev.filter((id) => id !== menuId)
-        : [...prev, menuId]
+        : [...prev, menuId],
     );
   };
 
@@ -109,7 +103,7 @@ export default function Sidebar({
     if (!sidebar) return;
 
     const focusableElements = sidebar.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
     );
     const firstElement = focusableElements[0] as HTMLElement;
     const lastElement = focusableElements[
@@ -177,7 +171,6 @@ export default function Sidebar({
         ref={sidebarRef}
         role="navigation"
         aria-label="Main navigation"
-        aria-expanded={isOpen}
         className={`fixed left-0 top-0 h-full bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 transition-all duration-300 z-50 flex flex-col ${
           isOpen ? "w-64 shadow-2xl md:shadow-none" : "w-20"
         } translate-x-0`}
@@ -191,7 +184,7 @@ export default function Sidebar({
           {isOpen ? (
             <>
               <div className="flex items-center gap-3">
-                <div className="relative w-8 h-8 flex-shrink-0">
+                <div className="relative w-8 h-8 shrink-0">
                   <Image
                     src="/favicon.ico"
                     alt="Growthik Media"
@@ -200,7 +193,7 @@ export default function Sidebar({
                   />
                 </div>
                 <span
-                  className="text-xs font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)]"
+                  className="text-xs font-bold bg-clip-text text-transparent bg-linear-to-r from-(--color-primary) to-(--color-primary-light)"
                   style={{ fontFamily: "Rostex, sans-serif" }}
                 >
                   Growthik Media
@@ -209,7 +202,7 @@ export default function Sidebar({
               <button
                 ref={toggleButtonRef}
                 onClick={() => setIsOpen(false)}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 transition-colors focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 aria-label="Collapse sidebar"
                 title="Collapse Sidebar"
               >
@@ -246,15 +239,15 @@ export default function Sidebar({
                 }
                 className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 group focus:outline-none   ${
                   activeTab === item.id && !item.children
-                    ? "bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)] text-white shadow-lg shadow-[var(--color-primary)]/30"
+                    ? "bg-linear-to-r from-(--color-primary) to-(--color-primary-light) text-white shadow-lg shadow-(--color-primary)/30"
                     : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
                 } ${!isOpen && "justify-center"}`}
               >
                 <span
-                  className={`text-xl flex-shrink-0 ${
+                  className={`text-xl shrink-0 ${
                     activeTab === item.id && !item.children
                       ? "text-white"
-                      : "text-gray-500 group-hover:text-[var(--color-primary)]"
+                      : "text-gray-500 group-hover:text-(--color-primary)"
                   }`}
                 >
                   {item.icon}
@@ -287,8 +280,8 @@ export default function Sidebar({
                       onClick={() => handleTabChange(child.id)}
                       className={`w-full flex items-center px-4 py-2 text-sm rounded-lg transition-colors ${
                         activeTab === child.id
-                          ? "text-[var(--color-primary)] font-medium bg-[var(--color-primary)]/10"
-                          : "text-gray-500 hover:text-[var(--color-primary)] hover:bg-gray-100 dark:hover:bg-gray-800"
+                          ? "text-(--color-primary) font-medium bg-(--color-primary)/10"
+                          : "text-gray-500 hover:text-(--color-primary) hover:bg-gray-100 dark:hover:bg-gray-800"
                       }`}
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-current mr-2 opacity-50"></span>

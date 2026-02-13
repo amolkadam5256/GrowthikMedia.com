@@ -1,21 +1,24 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { FiSave, FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import { FiSave, FiPhone, FiMail } from "react-icons/fi";
 
 export default function ContactManager() {
   const [loading, setLoading] = useState(false);
-  const [formData, setFormData] = useState({
-    phone: "+91 98765 43210",
-    email: "contact@growthikmedia.com",
-    address: "123 Business Hub, Tech Park, Mumbai, India",
-    whatsapp: "+91 98765 43210",
+  const [formData, setFormData] = useState(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem("contact_data");
+      if (saved) return JSON.parse(saved);
+    }
+    return {
+      phone: "+91 98765 43210",
+      email: "contact@growthikmedia.com",
+      address: "123 Business Hub, Tech Park, Mumbai, India",
+      whatsapp: "+91 98765 43210",
+    };
   });
 
   useEffect(() => {
-    const saved = localStorage.getItem("contact_data");
-    if (saved) {
-      setFormData(JSON.parse(saved));
-    }
+    // Initialized from localStorage via useState initializer
   }, []);
 
   const handleSave = () => {
@@ -28,7 +31,7 @@ export default function ContactManager() {
   };
 
   const handleChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    setFormData((prev: any) => ({ ...prev, [field]: value }));
   };
 
   return (
@@ -46,7 +49,7 @@ export default function ContactManager() {
         <button
           onClick={handleSave}
           disabled={loading}
-          className="flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 font-medium"
+          className="flex items-center gap-2 px-6 py-2.5 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 font-medium"
         >
           <FiSave />
           {loading ? "Saving..." : "Save Changes"}

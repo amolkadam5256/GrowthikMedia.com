@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FiSearch, FiMail, FiCheckCircle, FiClock } from "react-icons/fi";
+import React from "react";
+import { FiMail, FiClock } from "react-icons/fi";
 
 const mockInquiries = [
   {
@@ -29,7 +29,7 @@ export default function InquiriesManager() {
             Inquiries
           </h2>
           <p className="text-gray-500 text-sm mt-1">
-            Manage incoming messages from "Contact Us"
+            Manage incoming messages from &quot;Contact Us&quot;
           </p>
         </div>
       </div>

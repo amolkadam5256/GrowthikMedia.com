@@ -13,13 +13,16 @@ import UserManager from "@/components/AdminComponents/Sections/UserManager";
 import InquiriesManager from "@/components/AdminComponents/Sections/InquiriesManager";
 
 const AdminDashboardPage = () => {
-  const [activeTab, setActiveTab] = useState("dashboard");
+  const [activeTab, setActiveTab] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("admin_active_tab") || "dashboard";
+    }
+    return "dashboard";
+  });
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const savedTab = localStorage.getItem("admin_active_tab");
-    if (savedTab) setActiveTab(savedTab);
     setMounted(true);
   }, []);
 
