@@ -12,42 +12,48 @@ const PROJECTS = [
     title: "SEO Growth for Real Estate Client",
     image: images.portfolio.seoRealEstate,
     link: "/portfolio/seo-growth-real-estate",
+    metric: "+150% Traffic",
   },
   {
     category: "Social Media",
     title: "Social Media Campaign for E-commerce Brand",
     image: images.portfolio.socialMedia,
     link: "/portfolio/social-media-ecommerce",
+    metric: "3X Leads",
   },
   {
     category: "Video Production",
     title: "Video Marketing for Startup",
     image: images.portfolio.videoMarketing,
     link: "/portfolio/video-marketing-startup",
+    metric: "45% Lower CPL",
   },
   {
     category: "Web Development",
     title: "Website Redesign for Local Business",
     image: images.portfolio.websiteRedesign,
     link: "/portfolio/website-redesign-local",
+    metric: "85% Speed Up",
   },
   {
     category: "Branding",
     title: "Branding for Luxury App",
     image: images.portfolio.luxuryBranding,
     link: "/portfolio/luxury-branding-app",
+    metric: "2X Brand Value",
   },
   {
     category: "Content Strategy",
     title: "Content Strategy for Education",
     image: images.portfolio.educationContent,
     link: "/portfolio/education-content-strategy",
+    metric: "1M+ Impressions",
   },
 ];
 
 const PortfolioHighlightsSection = React.memo(() => {
   return (
-    <section className="py-24 md:py-32 px-4 bg-(--background) relative transition-colors duration-500 overflow-hidden">
+    <section className="py-24 md:py-32 px-4 bg-(--surface) relative transition-colors duration-500 overflow-hidden border-y border-(--border)">
       {/* Background Patterns - Adjusted for Theme Consistency */}
       <div
         className="absolute inset-0 opacity-[0.05] dark:opacity-[0.1] pointer-events-none"
@@ -59,8 +65,8 @@ const PortfolioHighlightsSection = React.memo(() => {
       />
 
       {/* Soft Topic Glows */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[150px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-(--color-primary)/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-(--color-primary)/10 rounded-full blur-[150px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
@@ -87,9 +93,9 @@ const PortfolioHighlightsSection = React.memo(() => {
             data-aos="fade-left"
             data-aos-delay="200"
           >
-            <p className="text-lg md:text-xl text-(--text-secondary) lg:text-right max-w-sm leading-relaxed font-medium">
-              We create digital experiences that set new standards. Dive into
-              our latest projects.
+            <p className="text-lg md:text-xl text-(--text-secondary) lg:text-right max-w-sm leading-relaxed font-medium italic">
+              "We create digital experiences that set new standards. Dive into
+              our latest projects."
             </p>
           </div>
         </div>
@@ -109,37 +115,44 @@ const PortfolioHighlightsSection = React.memo(() => {
         <div className="mt-32 flex justify-center" data-aos="fade-up">
           <Link
             href="/portfolio"
-            className="group relative inline-flex items-center gap-6 px-12 py-5 border-2 border-primary transition-all duration-500 hover:bg-(--color-primary) hover:scale-105 shadow-xl hover:shadow-primary/20 hover:border-(--color-primary)"
+            className="group relative inline-flex items-center gap-6 px-12 py-5 border-2 border-(--color-primary) transition-all duration-500 hover:bg-(--color-primary) hover:scale-105 shadow-xl hover:shadow-(--color-primary)/20"
           >
-            <span className="relative z-10 text-primary group-hover:text-white font-black uppercase tracking-[0.3em] text-sm transition-colors duration-300">
+            <span className="relative z-10 text-(--color-primary) group-hover:text-white font-black uppercase tracking-[0.3em] text-sm transition-colors duration-300">
               View All Projects
             </span>
 
-            <div className="relative z-10 w-12 h-12 border-2 border-primary group-hover:border-white bg-transparent group-hover:bg-(--color-primary)/20 flex items-center justify-center transition-all duration-300">
-              <MoveRight className="w-6 h-6 text-primary group-hover:text-white group-hover:translate-x-1 transition-all" />
+            <div className="relative z-10 w-12 h-12 border-2 border-(--color-primary) group-hover:border-white bg-transparent group-hover:bg-(--color-primary)/20 flex items-center justify-center transition-all duration-300">
+              <MoveRight className="w-6 h-6 text-(--color-primary) group-hover:text-white group-hover:translate-x-1 transition-all" />
             </div>
           </Link>
         </div>
 
         {/* Bottom Banner Stats */}
         <div className="mt-32 pt-20 border-t border-(--border) flex flex-wrap justify-between items-center gap-12">
-          {[
-            { val: "500+", label: "Projects Done" },
-            { val: "50+", label: "Happy Clients" },
-            { val: "98%", label: "Success Rate" },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className="flex flex-col"
-              data-aos="zoom-in"
-              data-aos-delay={i * 100}
-            >
-              <span className="text-5xl md:text-6xl font-black text-(--text-primary)">
-                {stat.val}
-              </span>
-              <span className="w-4 h-px bg-primary" /> {stat.label}
-            </div>
-          ))}
+          <div className="flex flex-wrap gap-12 md:gap-20">
+            {[
+              { val: "500+", label: "Projects Done" },
+              { val: "50+", label: "Happy Clients" },
+              { val: "98%", label: "Success Rate" },
+            ].map((stat, i) => (
+              <div
+                key={i}
+                className="flex flex-col"
+                data-aos="zoom-in"
+                data-aos-delay={i * 100}
+              >
+                <span className="text-5xl md:text-6xl font-black text-(--text-primary) tracking-tighter">
+                  {stat.val}
+                </span>
+                <div className="flex items-center gap-2">
+                  <div className="w-4 h-[2px] bg-(--color-primary)" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-(--text-secondary)">
+                    {stat.label}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
           <div className="max-w-sm lg:text-right" data-aos="fade-left">
             <p className="text-(--text-secondary) italic font-medium">
               "Pushing the boundaries of what's possible in the digital space,

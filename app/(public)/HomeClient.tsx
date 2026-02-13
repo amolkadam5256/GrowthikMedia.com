@@ -63,6 +63,31 @@ const FinalCTASection = dynamic(
   { ssr: true },
 );
 
+// New Conversion/SEO Sections
+const LeadMagnetSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/LeadMagnet/LeadMagnetSection"),
+  { ssr: true },
+);
+const AIPositioningSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/AIPositioning/AIPositioningSection"),
+  { ssr: true },
+);
+const ComparisonSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/Comparison/ComparisonSection"),
+  { ssr: true },
+);
+const SEOAuthoritySection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/SEOAuthority/SEOAuthoritySection"),
+  { ssr: true },
+);
+const StickyCTA = dynamic(() => import("@/components/comman/StickyCTA"), {
+  ssr: false,
+});
+
 const HomeClient = () => {
   return (
     <main className="relative bg-(--background)">
@@ -75,17 +100,29 @@ const HomeClient = () => {
       {/* 3. Problem → Solution - Identify Pain Points & Position Solution */}
       <ProblemSolutionSection />
 
+      {/* 3.1 Lead Magnet - High Conversion Hook */}
+      <LeadMagnetSection />
+
       {/* 4. About Company - Human Connection & Mission */}
       <AboutCompanySection />
 
       {/* 5. Our Services - What We Offer */}
       <OurServicesSection />
 
+      {/* 5.1 SEO Authority - Micro Expertise Block */}
+      <SEOAuthoritySection />
+
       {/* 6. Growth Framework - How We Work (Process) */}
       <GrowthFrameworkSection />
 
+      {/* 6.1 AI Positioning - Authority for 2026 */}
+      <AIPositioningSection />
+
       {/* 7. Why Choose Us - USPs & Differentiators */}
       <WhyChooseUsSection />
+
+      {/* 7.1 Comparison - Differentiator Proof */}
+      <ComparisonSection />
 
       {/* 8. Portfolio - Proof of Work & Results */}
       <PortfolioHighlightsSection />
@@ -101,6 +138,9 @@ const HomeClient = () => {
 
       {/* 12. Final CTA - Strong Closing & Conversion */}
       <FinalCTASection />
+
+      {/* Fixed Conversion Tools */}
+      <StickyCTA />
     </main>
   );
 };

@@ -24,11 +24,12 @@ const AboutCompanySection = React.memo(() => {
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12" data-aos="fade-up">
-            <div className="inline-flex items-center gap-3 mb-6 px-6 py-3 bg-(--surface) border border-(--border) rounded-full">
-              <Sparkles className="w-5 h-5 text-(--color-primary)" />
-              <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">
-                About Us
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="w-12 h-[2px] bg-(--color-primary)" />
+              <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-xs">
+                Our Heritage
               </span>
+              <div className="w-12 h-[2px] bg-(--color-primary)" />
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) mb-8 tracking-tight leading-[1.1]">
@@ -92,6 +93,18 @@ const AboutCompanySection = React.memo(() => {
             className="flex flex-wrap items-center justify-center gap-4 mt-12"
             data-aos="fade-up"
           >
+            <div className="flex items-center gap-3 px-6 py-3 bg-(--surface) border border-(--border) rounded-full hover:border-(--color-primary) transition-all">
+              <span className="text-sm font-bold text-(--text-secondary)">
+                Pune Digital Marketing Experts
+              </span>
+            </div>
+
+            <div className="flex items-center gap-3 px-6 py-3 bg-(--surface) border border-(--border) rounded-full hover:border-(--color-primary) transition-all">
+              <span className="text-sm font-bold text-(--text-secondary)">
+                Serving Pune, Mumbai, Maharashtra
+              </span>
+            </div>
+
             <div className="flex items-center gap-3 px-6 py-3 bg-(--surface) border border-(--border) rounded-full hover:border-(--color-primary) transition-all">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

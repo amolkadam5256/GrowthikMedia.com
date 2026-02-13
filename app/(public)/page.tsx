@@ -2,16 +2,16 @@ import { Metadata } from "next";
 import HomeClient from "@/app/(public)/HomeClient";
 
 export const metadata: Metadata = {
-  title: "Growthik Media - Digital Marketing & Video Production Agency in Pune",
+  title: "Growthik Media: Digital Marketing Agency in Pune",
   description:
-    "Growthik Media is a leading digital marketing and video production agency in Pune. We specialize in SEO, social media marketing, content creation, and professional video production services.",
+    "Growthik Media is a top digital marketing agency in Pune. We specialize in SEO, social media, content creation, and video production to scale your brand.",
   keywords:
-    "digital marketing agency pune, video production pune, content creation, social media marketing, SEO services, growthik media",
+    "digital marketing agency pune, video production pune, SEO services pune, content creation, social media marketing, growthik media",
   authors: [{ name: "Growthik Media" }],
   openGraph: {
-    title: "Growthik Media - Digital Marketing & Video Production Agency",
+    title: "Growthik Media: Digital Marketing & Video Production Pune",
     description:
-      "Transform your brand with professional digital marketing and video production services in Pune.",
+      "Scale your brand with Pune's leading digital marketing and video production agency. Data-driven SEO and creative content that delivers ROI.",
     url: "https://www.growthikmedia.com",
     siteName: "Growthik Media",
     images: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Growthik Media - Digital Marketing Agency",
+        alt: "Growthik Media - Digital Marketing Agency Pune",
       },
     ],
     locale: "en_IN",
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Growthik Media - Digital Marketing & Video Production Agency",
+    title: "Growthik Media: Digital Marketing Agency in Pune",
     description:
-      "Transform your brand with professional digital marketing and video production services in Pune.",
+      "Scale your brand with Pune's leading digital marketing agency. SEO, Social Media, and Video Production that driving growth.",
     images: ["/og-image.png"],
     creator: "@growthikmedia",
   },

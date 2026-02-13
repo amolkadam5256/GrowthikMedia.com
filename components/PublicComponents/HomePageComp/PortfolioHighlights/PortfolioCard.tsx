@@ -11,6 +11,7 @@ interface PortfolioCardProps {
   title: string;
   image: string | StaticImageData;
   link: string;
+  metric?: string;
   delay?: number;
 }
 
@@ -19,6 +20,7 @@ export default function PortfolioCard({
   title,
   image,
   link,
+  metric,
   delay = 0,
 }: PortfolioCardProps) {
   const [isHovered, setIsHovered] = useState(false);
@@ -43,7 +45,7 @@ export default function PortfolioCard({
 
       {/* Main Card Container */}
       <div
-        className="relative h-full w-full bg-(--surface) border border-primary overflow-hidden z-10 flex flex-col transition-all duration-500"
+        className="relative h-full w-full bg-(--surface) border border-(--border) overflow-hidden z-10 flex flex-col transition-all duration-500 group-hover:border-(--color-primary)"
         style={{
           boxShadow: isHovered ? "0 30px 60px rgba(0,0,0,0.15)" : "none",
           transform: isHovered ? "translateY(-8px)" : "none",
@@ -71,11 +73,11 @@ export default function PortfolioCard({
         {/* Content Top */}
         <div className="p-8 pb-4 relative z-30">
           <div className="mb-2">
-            <span className="text-primary font-bold uppercase tracking-[0.2em] text-[10px]">
+            <span className="text-(--color-primary) font-bold uppercase tracking-[0.2em] text-[10px]">
               {category}
             </span>
           </div>
-          <h3 className="text-3xl font-black text-primary leading-tight tracking-tight">
+          <h3 className="text-3xl font-black text-(--text-primary) leading-tight tracking-tight">
             {title}
           </h3>
         </div>
@@ -88,21 +90,32 @@ export default function PortfolioCard({
             fill
             className="object-cover transition-transform duration-1000 group-hover:scale-110"
           />
+          {/* Performance Metric Badge */}
+          {metric && (
+            <div className="absolute top-4 left-4 bg-(--color-primary) text-white p-3 shadow-xl z-20 group-hover:scale-110 transition-transform duration-500">
+              <span className="text-xs font-bold uppercase tracking-widest block opacity-70 mb-0.5">
+                Performance
+              </span>
+              <span className="text-lg font-black whitespace-nowrap">
+                {metric}
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Button Area - FIXED HOVER STATE */}
         <div className="p-8">
           <Link
             href={link}
-            className="group/btn relative inline-flex items-center gap-4 px-10 py-3 border border-primary  transition-all duration-300 bg-transparent hover:bg-(--color-primary) shadow-sm hover:shadow-primary/20 hover:border-(--color-primary)"
+            className="group/btn relative inline-flex items-center gap-4 px-10 py-3 border border-(--color-primary) transition-all duration-300 bg-transparent hover:bg-(--color-primary) shadow-sm hover:shadow-primary/20"
           >
             {/* Text stays consistent and visible */}
-            <span className="text-primary font-bold group-hover/btn:text-white transition-colors duration-300">
+            <span className="text-(--color-primary) font-black uppercase tracking-widest text-[10px] group-hover/btn:text-white transition-colors duration-300">
               Explore <span className="font-extrabold">More</span>
             </span>
 
             {/* Arrow with fixed hover color */}
-            <span className="text-primary group-hover/btn:text-white transition-colors duration-300 flex items-center">
+            <span className="text-(--color-primary) group-hover/btn:text-white transition-colors duration-300 flex items-center">
               <svg
                 width="34"
                 height="14"

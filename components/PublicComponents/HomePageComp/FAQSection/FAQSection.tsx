@@ -146,7 +146,7 @@ const FAQSection = React.memo(() => {
 
         {/* High-Conversion Footer CTA */}
         <div className="mt-20 text-center" data-aos="zoom-in">
-          <div className="p-10 md:p-16 bg-(--surface) border-2 border-(--border) hover:border-(--color-primary) relative overflow-hidden group transition-all duration-500 shadow-xl hover:shadow-[0_0_50px_rgba(217,11,28,0.1)]">
+          <div className="p-5 md:p-8 bg-(--surface) border-2 border-(--border) hover:border-(--color-primary) relative overflow-hidden group transition-all duration-500 shadow-xl hover:shadow-[0_0_50px_rgba(217,11,28,0.1)]">
             {/* Background Accent */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-(--color-primary)/5 -translate-y-1/2 translate-x-1/2 rotate-45 group-hover:bg-(--color-primary)/10 transition-colors" />
 

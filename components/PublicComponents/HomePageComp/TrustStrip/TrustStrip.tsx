@@ -24,7 +24,7 @@ const certifications = [
 
 const TrustStrip = React.memo(() => {
   return (
-    <div className="w-full py-12 md:py-16 overflow-hidden relative z-20 transition-colors duration-300 bg-(--background) border-y border-(--border)">
+    <div className="w-full py-16 md:py-20 overflow-hidden relative z-20 transition-colors duration-300 bg-(--surface) border-b border-(--border)">
       {/* Background Animated Shapes */}
       <div className="absolute -left-10 -top-10 w-40 h-40 md:w-60 md:h-60 opacity-5 pointer-events-none">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">

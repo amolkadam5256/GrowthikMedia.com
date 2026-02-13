@@ -37,12 +37,12 @@ export default function SEO() {
             url: CONTACT_INFO.website,
             logo: `${CONTACT_INFO.website}/logo.png`,
             description:
-              "Growthik Media is a premier digital marketing and video production agency in Pune, specializing in SEO, PPC, and high-quality content creation.",
+              "Growthik Media is a leading digital marketing agency in Pune. We specialize in ROI-focused SEO, PPC, social media, and professional video production.",
             email: CONTACT_INFO.email.info,
             telephone: CONTACT_INFO.phone.primary,
             address: {
               "@type": "PostalAddress",
-              streetAddress: `${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}`,
+              streetAddress: CONTACT_INFO.address.line1,
               addressLocality: CONTACT_INFO.address.city,
               addressRegion: CONTACT_INFO.address.state,
               postalCode: CONTACT_INFO.address.pincode,
@@ -56,6 +56,15 @@ export default function SEO() {
               CONTACT_INFO.social.youtube,
               CONTACT_INFO.social.pinterest,
               CONTACT_INFO.social.behance,
+              CONTACT_INFO.social.whatsapp,
+              CONTACT_INFO.social.telegram,
+              CONTACT_INFO.social.snapchat,
+              CONTACT_INFO.social.reddit,
+              CONTACT_INFO.social.discord,
+              CONTACT_INFO.social.github,
+              CONTACT_INFO.social.dribbble,
+              CONTACT_INFO.social.medium,
+              CONTACT_INFO.social.quora,
             ],
             contactPoint: {
               "@type": "ContactPoint",
@@ -95,6 +104,13 @@ export default function SEO() {
               latitude: 18.4782,
               longitude: 73.8131,
             },
+            sameAs: [
+              CONTACT_INFO.social.facebook,
+              CONTACT_INFO.social.instagram,
+              CONTACT_INFO.social.twitter,
+              CONTACT_INFO.social.linkedin,
+              CONTACT_INFO.social.youtube,
+            ],
           }),
         }}
       />
@@ -145,6 +161,13 @@ export default function SEO() {
               latitude: 18.4782,
               longitude: 73.8131,
             },
+            sameAs: [
+              CONTACT_INFO.social.facebook,
+              CONTACT_INFO.social.instagram,
+              CONTACT_INFO.social.twitter,
+              CONTACT_INFO.social.linkedin,
+              CONTACT_INFO.social.youtube,
+            ],
             openingHoursSpecification: [
               {
                 "@type": "OpeningHoursSpecification",

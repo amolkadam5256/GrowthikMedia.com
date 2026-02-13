@@ -127,13 +127,23 @@ const TestimonialSection = React.memo(() => {
                 {/* Left side: Content */}
                 <div className="lg:col-span-7">
                   <Quote className="w-16 h-16 text-primary/10 mb-6" />
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(t.rating)].map((_, idx) => (
-                      <Star
-                        key={idx}
-                        className="w-5 h-5 fill-(--color-primary) text-(--color-primary)"
-                      />
-                    ))}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="flex gap-1">
+                      {[...Array(t.rating)].map((_, idx) => (
+                        <Star
+                          key={idx}
+                          className="w-5 h-5 fill-(--color-primary) text-(--color-primary)"
+                        />
+                      ))}
+                    </div>
+                    <span className="text-(--text-primary) font-bold text-sm">
+                      5.0 / 5.0 Rating
+                    </span>
+                    <div className="flex items-center gap-1.5 bg-yellow-400/10 px-3 py-1 rounded-full border border-yellow-400/20">
+                      <span className="text-[10px] font-black text-yellow-600 uppercase tracking-widest">
+                        Verified Google Review
+                      </span>
+                    </div>
                   </div>
                   <p className="text-xl md:text-2xl font-medium text-(--text-primary) leading-relaxed mb-8 italic">
                     "{t.text}"
@@ -161,7 +171,12 @@ const TestimonialSection = React.memo(() => {
                     <div className="aspect-video bg-(--surface-secondary) relative flex items-center justify-center">
                       <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
                       <div className="flex flex-col items-center gap-4 text-center p-8">
-                        <PlayCircle className="w-20 h-20 text-(--color-primary) opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all cursor-pointer will-change-transform" />
+                        <div className="relative">
+                          <PlayCircle className="w-20 h-20 text-(--color-primary) opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all cursor-pointer will-change-transform" />
+                          <span className="absolute -bottom-2 right-0 bg-black text-white text-[10px] font-bold px-2 py-0.5 rounded">
+                            1:24
+                          </span>
+                        </div>
                         <span className="text-(--color-primary) font-bold uppercase tracking-widest text-xs">
                           Watch Video Testimonial
                         </span>

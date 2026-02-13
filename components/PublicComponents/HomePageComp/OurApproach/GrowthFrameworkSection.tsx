@@ -51,7 +51,7 @@ const STEPS = [
 
 const GrowthFrameworkSection = React.memo(() => {
   return (
-    <section className="py-12 md:py-20 bg-(--background) relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-(--surface) relative overflow-hidden border-y border-(--border)">
       {/* Background Accents */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
         <div className="absolute top-10 right-10 w-96 h-96 bg-primary rounded-full blur-[120px]" />

@@ -58,7 +58,7 @@ import ClientUtilities from "../../components/comman/ClientUtilities";
 import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#d90b1c",
   width: "device-width",
   initialScale: 1,
 };
@@ -66,18 +66,21 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(CONTACT_INFO.website),
   title: {
-    default: `${CONTACT_INFO.companyName} – Digital Marketing Agency`,
+    default: `${CONTACT_INFO.companyName} | Digital Marketing Agency in Pune`,
     template: `%s | ${CONTACT_INFO.companyName}`,
   },
-  description: `${CONTACT_INFO.companyName} helps businesses grow with SEO, Google Ads, Social Media, and Web Development.`,
+  description: `${CONTACT_INFO.companyName} is a top digital marketing agency in Pune. We provide SEO, PPC, social media, and video production services to scale your business.`,
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   keywords: [
-    "Digital Marketing",
-    "SEO",
-    "Google Ads",
+    "Digital Marketing Agency Pune",
+    "SEO Services Pune",
+    "Video Production Company Pune",
     "Social Media Marketing",
-    "Web Development",
-    "Pune",
-    "India",
+    "Google Ads Pune",
+    "Web Development India",
   ],
   authors: [{ name: CONTACT_INFO.companyName }],
   creator: CONTACT_INFO.companyName,
@@ -88,8 +91,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: CONTACT_INFO.companyName,
-    description: "Digital marketing & SEO agency in Pune",
+    title: `${CONTACT_INFO.companyName} - Digital Marketing & SEO Pune`,
+    description:
+      "Pune's leading digital marketing & video production agency helping brands scale with data-driven strategies.",
     url: CONTACT_INFO.website,
     siteName: CONTACT_INFO.companyName,
     images: [
@@ -105,8 +109,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: CONTACT_INFO.companyName,
-    description: "Digital marketing & SEO agency in Pune",
+    title: `${CONTACT_INFO.companyName} - Digital Marketing Agent in Pune`,
+    description:
+      "Premium digital marketing, SEO, and video production services in Pune.",
     images: ["/og-image.png"],
     creator: "@growthikmedia",
   },
