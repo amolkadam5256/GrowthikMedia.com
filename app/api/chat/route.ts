@@ -57,93 +57,128 @@ export async function POST(req: Request) {
     const { messages, sessionId } = body;
     const apiKey = process.env.GROQ_API_KEY;
 
-    console.log("Chat API Request - sessionId:", sessionId);
-    console.log("Messages Count:", messages?.length);
+    console.log("--- CHAT API DEBUG START ---");
+    console.log("Session ID provided:", sessionId || "NONE");
+
+    if (!messages || !Array.isArray(messages) || messages.length === 0) {
+      console.error("Error: No messages provided in request");
+      return NextResponse.json(
+        { error: "No messages provided" },
+        { status: 400 },
+      );
+    }
 
     if (!apiKey) {
-      console.error("GROQ_API_KEY is missing in environment variables");
+      console.error("CRITICAL: GROQ_API_KEY is missing from .env");
       return NextResponse.json(
-        { error: "API Key not configured" },
+        { error: "AI Engine configuration missing. Please check .env file." },
         { status: 500 },
       );
     }
 
-    // 1. Get AI Response
-    console.log("Calling Groq API...");
-    const response = await fetch(
-      "https://api.groq.com/openai/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
+    // 1. Get AI Response from Groq
+    console.log("Fetching AI response from Groq...");
+    let response;
+    try {
+      response = await fetch(
+        "https://api.groq.com/openai/v1/chat/completions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model: "llama-3.3-70b-versatile",
+            messages: [
+              { role: "system", content: SYSTEM_PROMPT },
+              ...messages.map((m: any) => ({
+                role: m.sender === "user" ? "user" : "assistant",
+                content: m.text,
+              })),
+            ],
+            temperature: 0.7,
+            max_tokens: 1000,
+          }),
         },
-        body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
-          messages: [
-            { role: "system", content: SYSTEM_PROMPT },
-            ...messages.map((m: any) => ({
-              role: m.sender === "user" ? "user" : "assistant",
-              content: m.text,
-            })),
-          ],
-          temperature: 0.7,
-          max_tokens: 500,
-        }),
-      },
-    );
+      );
+    } catch (fetchError: any) {
+      console.error("Groq Network Error:", fetchError);
+      return NextResponse.json(
+        { error: "Failed to connect to AI service" },
+        { status: 502 },
+      );
+    }
 
     if (!response.ok) {
       const errorText = await response.text();
       console.error("Groq API Error Response:", errorText);
       return NextResponse.json(
-        { error: "AI Service Error" },
+        { error: `AI Service Error: ${response.statusText}` },
         { status: response.status },
       );
     }
 
     const data = await response.json();
-    console.log("Groq API Response received");
 
-    if (!data.choices || data.choices.length === 0) {
-      console.error("No choices in Groq response:", data);
-      throw new Error("Invalid AI response");
+    if (!data.choices || !data.choices[0]?.message?.content) {
+      console.error(
+        "Invalid response structure from Groq:",
+        JSON.stringify(data),
+      );
+      return NextResponse.json(
+        { error: "AI returned an invalid response format" },
+        { status: 500 },
+      );
     }
 
     const reply = data.choices[0].message.content;
+    console.log("AI Response successfully retrieved.");
 
     // 2. Log to Database if we have a sessionId
     if (sessionId) {
       try {
         const lastUserMessage = messages[messages.length - 1];
-        console.log("Logging conversation to DB for session:", sessionId);
 
-        await db.chatMessage.createMany({
-          data: [
-            {
-              sessionId,
-              text: lastUserMessage.text,
-              sender: "user",
-            },
-            {
-              sessionId,
-              text: reply,
-              sender: "bot",
-            },
-          ],
+        // Verify session exists first to avoid foreign key issues
+        const sessionExists = await db.chatSession.findUnique({
+          where: { id: sessionId },
         });
-        console.log("Database logging successful");
+
+        if (sessionExists) {
+          console.log("Logging conversation to Database...");
+          await db.chatMessage.createMany({
+            data: [
+              {
+                sessionId,
+                text: lastUserMessage.text,
+                sender: "user",
+              },
+              {
+                sessionId,
+                text: reply,
+                sender: "bot",
+              },
+            ],
+          });
+          console.log("Conversation logged.");
+        } else {
+          console.warn(
+            `Warning: Session ID ${sessionId} not found in database. Skipping log.`,
+          );
+        }
       } catch (dbError) {
-        console.error("Database Logging Error:", dbError);
-        // Don't fail the request if logging fails
+        console.error("DATABASE LOGGING FAILED:", dbError);
+        // We still return the reply to the user even if logging fails
       }
     }
 
+    console.log("--- CHAT API DEBUG END ---");
     return NextResponse.json({ reply });
   } catch (error: any) {
-    console.error("Chat API Detailed Error:", error);
+    console.error("GLOBAL CHAT API ERROR:", error);
     return NextResponse.json(
-      { error: error?.message || "Failed to fetch response" },
+      { error: "A server error occurred while processing your request." },
       { status: 500 },
     );
   }

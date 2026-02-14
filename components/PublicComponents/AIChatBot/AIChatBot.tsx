@@ -111,6 +111,10 @@ const AIChatBot = () => {
 
       const data = await response.json();
 
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to get AI response");
+      }
+
       if (data.reply) {
         const botResponse: Message = {
           id: Date.now().toString(),
@@ -120,7 +124,7 @@ const AIChatBot = () => {
         };
         setMessages((prev) => [...prev, botResponse]);
       } else {
-        throw new Error("Invalid response from AI");
+        throw new Error("No reply received from AI");
       }
     } catch (error: any) {
       console.error("Chat Error:", error);
