@@ -122,11 +122,11 @@ const AIChatBot = () => {
       } else {
         throw new Error("Invalid response from AI");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Chat Error:", error);
       const errorMessage: Message = {
         id: Date.now().toString(),
-        text: "Sorry, I'm having trouble connecting right now. Please try again or contact us directly!",
+        text: `Error: ${error?.message || "Something went wrong. Please try again or contact us directly!"}`,
         sender: "bot",
         timestamp: new Date(),
       };

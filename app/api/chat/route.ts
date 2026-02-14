@@ -53,10 +53,15 @@ You are the first touchpoint for potential partners. Make every interaction prof
 
 export async function POST(req: Request) {
   try {
-    const { messages, sessionId } = await req.json();
+    const body = await req.json();
+    const { messages, sessionId } = body;
     const apiKey = process.env.GROQ_API_KEY;
 
+    console.log("Chat API Request - sessionId:", sessionId);
+    console.log("Messages Count:", messages?.length);
+
     if (!apiKey) {
+      console.error("GROQ_API_KEY is missing in environment variables");
       return NextResponse.json(
         { error: "API Key not configured" },
         { status: 500 },
@@ -64,6 +69,7 @@ export async function POST(req: Request) {
     }
 
     // 1. Get AI Response
+    console.log("Calling Groq API...");
     const response = await fetch(
       "https://api.groq.com/openai/v1/chat/completions",
       {
@@ -87,15 +93,31 @@ export async function POST(req: Request) {
       },
     );
 
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Groq API Error Response:", errorText);
+      return NextResponse.json(
+        { error: "AI Service Error" },
+        { status: response.status },
+      );
+    }
+
     const data = await response.json();
+    console.log("Groq API Response received");
+
+    if (!data.choices || data.choices.length === 0) {
+      console.error("No choices in Groq response:", data);
+      throw new Error("Invalid AI response");
+    }
+
     const reply = data.choices[0].message.content;
 
     // 2. Log to Database if we have a sessionId
     if (sessionId) {
-      const lastUserMessage = messages[messages.length - 1];
-
       try {
-        // Save user message and bot reply
+        const lastUserMessage = messages[messages.length - 1];
+        console.log("Logging conversation to DB for session:", sessionId);
+
         await db.chatMessage.createMany({
           data: [
             {
@@ -110,6 +132,7 @@ export async function POST(req: Request) {
             },
           ],
         });
+        console.log("Database logging successful");
       } catch (dbError) {
         console.error("Database Logging Error:", dbError);
         // Don't fail the request if logging fails
@@ -117,10 +140,10 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ reply });
-  } catch (error) {
-    console.error("Chat API Error:", error);
+  } catch (error: any) {
+    console.error("Chat API Detailed Error:", error);
     return NextResponse.json(
-      { error: "Failed to fetch response" },
+      { error: error?.message || "Failed to fetch response" },
       { status: 500 },
     );
   }
