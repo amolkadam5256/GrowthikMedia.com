@@ -88,7 +88,7 @@ const AdminDashboardPage = () => {
   };
 
   return (
-    <div className="flex min-h-[calc(100vh-80px)] relative">
+    <div className="flex min-h-[calc(100vh-80px)] relative bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -98,13 +98,13 @@ const AdminDashboardPage = () => {
       />
 
       <main
-        className={`flex-1 transition-all duration-300  ml-20 ${
+        className={`flex-1 transition-all duration-300 ml-20 ${
           isSidebarOpen ? "md:ml-64" : ""
         }`}
       >
-        <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl min-h-[calc(100vh-3rem)] p-6 md:p-8 relative overflow-hidden">
+        <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl min-h-[calc(100vh-3rem)] p-6 md:p-8 relative overflow-hidden m-4 rounded-3xl border border-white/20 shadow-xl dark:border-gray-800 transition-colors duration-300">
           {/* Accent Line */}
-          <div className="absolute top-0 left-0 w-full" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-red-500 via-purple-500 to-blue-500 opacity-80" />
           <div className="relative z-10">{renderContent()}</div>
         </div>
       </main>

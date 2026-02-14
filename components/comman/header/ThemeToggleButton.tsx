@@ -23,7 +23,7 @@ export function ThemeToggleButton() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative w-10 h-10 flex items-center justify-center rounded-l-full bg-[#D90B1C] shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 group overflow-hidden"
+      className="relative w-10 h-10 flex items-center justify-center rounded-full bg-[#D90B1C] shadow-lg transition-all duration-300 hover:scale-110 active:scale-95 group overflow-hidden"
       aria-label="Toggle theme"
     >
       <div className="relative w-5 h-5 flex items-center justify-center">
@@ -44,7 +44,7 @@ export function ThemeToggleButton() {
       </div>
 
       {/* Subtle hover effect background */}
-      <span className="absolute inset-0 rounded-l-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+      <span className="absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></span>
     </button>
   );
 }

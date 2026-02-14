@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 
-const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || "your-secret-key-change-in-production",
-);
+const JWT_SECRET_STR =
+  process.env.NEXTAUTH_SECRET || "growthik_media_secret_secure_key_2024";
+const JWT_SECRET = new TextEncoder().encode(JWT_SECRET_STR);
 
 export async function GET(request: NextRequest) {
   try {

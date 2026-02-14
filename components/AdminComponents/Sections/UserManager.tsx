@@ -25,6 +25,11 @@ interface AdminUser {
 export default function UserManager() {
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [loading, setLoading] = useState(true);
+  const [sessionLoading, setSessionLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState<{
+    role: string;
+    email: string;
+  } | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [modalType, setModalType] = useState<"add" | "edit">("add");
@@ -39,7 +44,24 @@ export default function UserManager() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch users on mount
+  const isSuperAdmin = currentUser?.role === "SUPER_ADMIN";
+
+  // Fetch current user session
+  const fetchSession = async () => {
+    try {
+      const res = await fetch("/api/auth/session");
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setCurrentUser(data.user);
+      }
+    } catch (err) {
+      console.error("Session fetch failed", err);
+    } finally {
+      setSessionLoading(false);
+    }
+  };
+
+  // Fetch users list
   const fetchUsers = async () => {
     try {
       setLoading(true);
@@ -58,10 +80,22 @@ export default function UserManager() {
   };
 
   useEffect(() => {
+    fetchSession();
     fetchUsers();
   }, []);
 
+  const maskEmail = (email: string) => {
+    if (isSuperAdmin) return email;
+    const [user, domain] = email.split("@");
+    if (!user || !domain) return "****@****.com";
+    return `${user.substring(0, 3)}***@***${domain.substring(domain.lastIndexOf("."))}`;
+  };
+
   const handleOpenAdd = () => {
+    if (!isSuperAdmin) {
+      alert("Only Super Admins can add new users.");
+      return;
+    }
     setModalType("add");
     setSelectedUser(null);
     setFormData({
@@ -76,6 +110,10 @@ export default function UserManager() {
   };
 
   const handleOpenEdit = (user: AdminUser) => {
+    if (!isSuperAdmin) {
+      alert("Only Super Admins can edit users.");
+      return;
+    }
     setModalType("edit");
     setSelectedUser(user);
     setFormData({
@@ -91,6 +129,7 @@ export default function UserManager() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!isSuperAdmin) return;
     setSubmitting(true);
     setError(null);
 
@@ -122,6 +161,10 @@ export default function UserManager() {
   };
 
   const handleDelete = async (id: string, role: string) => {
+    if (!isSuperAdmin) {
+      alert("Only Super Admins can delete users.");
+      return;
+    }
     if (role === "SUPER_ADMIN") {
       alert(
         "Main Admin (SUPER_ADMIN) is protected and cannot be deleted from the dashboard for security reasons.",
@@ -152,9 +195,17 @@ export default function UserManager() {
     const searchLow = searchQuery.toLowerCase();
     return (
       (user.name || "").toLowerCase().includes(searchLow) ||
-      user.email.toLowerCase().includes(searchLow)
+      (isSuperAdmin && user.email.toLowerCase().includes(searchLow))
     );
   });
+
+  if (sessionLoading) {
+    return (
+      <div className="p-8 text-center text-gray-500">
+        Authenticating Management Module...
+      </div>
+    );
+  }
 
   return (
     <div className="p-2 md:p-6 max-w-7xl mx-auto">
@@ -164,38 +215,48 @@ export default function UserManager() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <h2 className="text-3xl font-extrabold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-extrabold bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
             User Management
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-sm mt-1 flex items-center gap-2">
-            <FiShield className="text-red-500" /> Control access and
-            administrator privileges
+            <FiShield className="text-red-500" />
+            {isSuperAdmin
+              ? "Complete System Access"
+              : "General Administrator View"}
           </p>
         </motion.div>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={handleOpenAdd}
-          className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all duration-300 font-semibold"
-        >
-          <FiPlus className="text-xl" /> Add New Admin
-        </motion.button>
+        {isSuperAdmin && (
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleOpenAdd}
+            className="flex items-center gap-2 px-6 py-3 bg-linear-to-r from-red-600 to-red-700 text-white rounded-xl shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all duration-300 font-semibold"
+          >
+            <FiPlus className="text-xl" /> Add New Admin
+          </motion.button>
+        )}
       </div>
 
       {/* Stats & Search */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <div className="bg-white dark:bg-gray-800/50 backdrop-blur-xl p-4 rounded-2xl border border-gray-100 dark:border-gray-700/50 shadow-sm">
           <p className="text-gray-500 text-xs font-medium uppercase tracking-wider mb-1">
-            Total Admins
+            Total Users
           </p>
-          <p className="text-2xl font-bold dark:text-white">{users.length}</p>
+          <p className="text-2xl font-bold dark:text-white uppercase">
+            {users.length} Registered
+          </p>
         </div>
         <div className="md:col-span-2 relative">
           <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
           <input
             type="text"
-            placeholder="Search admins by name or email..."
+            placeholder={
+              isSuperAdmin
+                ? "Search by name or email..."
+                : "Search by user name..."
+            }
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-12 pr-4 py-4 bg-white dark:bg-gray-800/50 backdrop-blur-xl border border-gray-100 dark:border-gray-700/50 rounded-2xl focus:ring-2 focus:ring-red-500 outline-none transition-all dark:text-white"
@@ -210,17 +271,19 @@ export default function UserManager() {
             <thead>
               <tr className="bg-gray-50/50 dark:bg-gray-700/30 border-b border-gray-100 dark:border-gray-700">
                 <th className="py-5 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">
-                  Administrator
+                  User Identity
                 </th>
                 <th className="py-5 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">
-                  Authority
+                  Access Level
                 </th>
                 <th className="py-5 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">
                   Status
                 </th>
-                <th className="py-5 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest text-right">
-                  Actions
-                </th>
+                {isSuperAdmin && (
+                  <th className="py-5 px-6 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest text-right">
+                    Privileged Actions
+                  </th>
+                )}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100 dark:divide-gray-700/50">
@@ -231,20 +294,23 @@ export default function UserManager() {
                     .map((_, i) => (
                       <tr key={i} className="animate-pulse">
                         <td
-                          colSpan={4}
+                          colSpan={isSuperAdmin ? 4 : 3}
                           className="p-8 text-center text-gray-400"
                         >
-                          Loading admin data...
+                          Syncing encrypted data...
                         </td>
                       </tr>
                     ))
                 ) : filteredUsers.length === 0 ? (
                   <tr>
-                    <td colSpan={4} className="p-20 text-center">
+                    <td
+                      colSpan={isSuperAdmin ? 4 : 3}
+                      className="p-20 text-center"
+                    >
                       <div className="flex flex-col items-center gap-2 opacity-40">
                         <FiUser className="text-5xl" />
                         <p className="font-medium text-lg">
-                          No administrators found
+                          No users found in current view
                         </p>
                       </div>
                     </td>
@@ -264,23 +330,28 @@ export default function UserManager() {
                           <div
                             className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-inner ${
                               user.role === "SUPER_ADMIN"
-                                ? "bg-gradient-to-br from-red-500 to-rose-600"
-                                : "bg-gradient-to-br from-slate-600 to-slate-800"
+                                ? "bg-linear-to-br from-red-500 to-rose-600"
+                                : "bg-linear-to-br from-slate-600 to-slate-800"
                             }`}
                           >
                             {user.name?.charAt(0) || "A"}
                           </div>
                           <div>
                             <div className="font-bold text-gray-900 dark:text-gray-100 flex items-center gap-2">
-                              {user.name || "Anonymous"}
+                              {user.name || "Anonymous User"}
                               {user.role === "SUPER_ADMIN" && (
                                 <span className="bg-red-500/10 text-red-500 text-[10px] px-2 py-0.5 rounded-full font-black uppercase">
                                   Main
                                 </span>
                               )}
                             </div>
-                            <div className="text-sm text-gray-400 dark:text-gray-500">
-                              {user.email}
+                            <div
+                              className={`text-sm ${isSuperAdmin ? "text-gray-400 dark:text-gray-500" : "text-gray-400/30 italic blur-[2px] transition-all hover:blur-none cursor-help"}`}
+                              title={
+                                !isSuperAdmin ? "Email hidden for privacy" : ""
+                              }
+                            >
+                              {maskEmail(user.email)}
                             </div>
                           </div>
                         </div>
@@ -296,7 +367,9 @@ export default function UserManager() {
                           }`}
                         >
                           <FiShield className="text-[10px]" />
-                          {user.role}
+                          {user.role === "SUPER_ADMIN"
+                            ? "SUPER_ADMIN"
+                            : "ADMINISTRATOR"}
                         </span>
                       </td>
                       <td className="py-5 px-6">
@@ -311,24 +384,26 @@ export default function UserManager() {
                           </span>
                         </div>
                       </td>
-                      <td className="py-5 px-6 text-right">
-                        <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <button
-                            onClick={() => handleOpenEdit(user)}
-                            className="p-2.5 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all"
-                          >
-                            <FiEdit2 size={16} />
-                          </button>
-                          {user.role !== "SUPER_ADMIN" && (
+                      {isSuperAdmin && (
+                        <td className="py-5 px-6 text-right">
+                          <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <button
-                              onClick={() => handleDelete(user.id, user.role)}
-                              className="p-2.5 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all"
+                              onClick={() => handleOpenEdit(user)}
+                              className="p-2.5 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all"
                             >
-                              <FiTrash2 size={16} />
+                              <FiEdit2 size={16} />
                             </button>
-                          )}
-                        </div>
-                      </td>
+                            {user.role !== "SUPER_ADMIN" && (
+                              <button
+                                onClick={() => handleDelete(user.id, user.role)}
+                                className="p-2.5 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 transition-all"
+                              >
+                                <FiTrash2 size={16} />
+                              </button>
+                            )}
+                          </div>
+                        </td>
+                      )}
                     </motion.tr>
                   ))
                 )}
@@ -340,7 +415,7 @@ export default function UserManager() {
 
       {/* Modern Modal Overlay */}
       <AnimatePresence>
-        {showModal && (
+        {showModal && isSuperAdmin && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
             <motion.div
               initial={{ opacity: 0 }}
@@ -358,7 +433,7 @@ export default function UserManager() {
             >
               {/* Modal Banner */}
               <div
-                className={`h-32 bg-gradient-to-r ${modalType === "add" ? "from-red-600 to-rose-700" : "from-blue-600 to-indigo-700"} p-8 relative`}
+                className={`h-32 bg-linear-to-r ${modalType === "add" ? "from-red-600 to-rose-700" : "from-blue-600 to-indigo-700"} p-8 relative`}
               >
                 <div className="relative z-10">
                   <h3 className="text-2xl font-black text-white">
@@ -367,7 +442,7 @@ export default function UserManager() {
                       : "Update Profile"}
                   </h3>
                   <p className="text-white/70 text-sm font-medium">
-                    Please provide accurate authentication details.
+                    System-level authentication initialization.
                   </p>
                 </div>
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
