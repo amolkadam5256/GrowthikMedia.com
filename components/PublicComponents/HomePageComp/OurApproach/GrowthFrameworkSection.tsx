@@ -51,7 +51,7 @@ const STEPS = [
 
 const GrowthFrameworkSection = React.memo(() => {
   return (
-    <section className="py-12 md:py-20 bg-(--surface) relative overflow-hidden border-y border-(--border)">
+    <section className="py-10 md:py-16 bg-(--surface) relative overflow-hidden border-y border-(--border)">
       {/* Background Accents */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
         <div className="absolute top-10 right-10 w-96 h-96 bg-primary rounded-full blur-[120px]" />
@@ -60,7 +60,7 @@ const GrowthFrameworkSection = React.memo(() => {
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center mb-20" data-aos="fade-up">
+        <div className="text-center mb-16" data-aos="fade-up">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-[2px] bg-(--color-primary)" />
             <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">

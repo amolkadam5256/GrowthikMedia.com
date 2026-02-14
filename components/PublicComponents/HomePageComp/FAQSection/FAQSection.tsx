@@ -53,7 +53,7 @@ const FAQSection = React.memo(() => {
   return (
     <section
       id="faq"
-      className="relative py-24 md:py-32 bg-(--background) overflow-hidden"
+      className="relative py-16 md:py-24 bg-(--background) overflow-hidden"
     >
       {/* Background Decorative */}
       <div
@@ -67,7 +67,7 @@ const FAQSection = React.memo(() => {
 
       <div className="max-w-4xl mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-20" data-aos="fade-up">
+        <div className="text-center mb-12 md:mb-16" data-aos="fade-up">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-[2px] bg-primary" />
             <span className="text-primary font-bold uppercase tracking-[0.3em] text-sm">

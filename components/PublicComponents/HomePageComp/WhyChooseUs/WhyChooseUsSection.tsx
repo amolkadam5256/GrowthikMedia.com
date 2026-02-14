@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   TrendingUp,
 } from "lucide-react";
+import Counter from "@/components/ui/Counter";
 
 const USP_ITEMS = [
   {
@@ -38,20 +39,29 @@ const USP_ITEMS = [
   {
     icon: ShieldCheck,
     title: "100% White-Hat Methods",
-    description:
-      "Ethical, sustainable growth is our promise. We use only Google-approved, white-hat SEO and marketing techniques for long-term success.",
+    description: (
+      <>
+        Ethical, sustainable growth is our promise. We use only Google-approved,
+        white-hat SEO and marketing techniques for long-term success.
+      </>
+    ),
   },
   {
     icon: TrendingUp,
     title: "Proven Track Record",
-    description:
-      "With 50+ successful campaigns and a 98% client satisfaction rate, our results speak louder than promises.",
+    description: (
+      <>
+        With <Counter value={50} suffix="+ successful campaigns" /> and a{" "}
+        <Counter value={98} suffix="% client satisfaction rate" />, our results
+        speak louder than promises.
+      </>
+    ),
   },
 ];
 
 const WhyChooseUsSection = React.memo(() => {
   return (
-    <section className="relative py-12 md:py-20 bg-(--surface) overflow-hidden">
+    <section className="relative py-10 md:py-16 bg-(--surface) overflow-hidden">
       {/* Background Pattern */}
       <div
         className="absolute inset-0 opacity-[0.02] pointer-events-none"
@@ -64,7 +74,7 @@ const WhyChooseUsSection = React.memo(() => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 md:mb-24" data-aos="fade-up">
+        <div className="text-center mb-12 md:mb-16" data-aos="fade-up">
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="w-12 h-[2px] bg-(--color-primary)" />
             <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">

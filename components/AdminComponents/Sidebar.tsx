@@ -11,6 +11,7 @@ import {
   FiMail,
   FiMenu,
   FiLayers,
+  FiCpu,
 } from "react-icons/fi";
 import { ThemeToggleButton } from "@/components/comman/header/ThemeToggleButton";
 
@@ -21,6 +22,7 @@ type TabId =
   | "portfolio"
   | "blog"
   | "inquiries"
+  | "chat"
   | "hero"
   | "contact"
   | "about"
@@ -78,6 +80,7 @@ export default function Sidebar({
       ],
     },
     { id: "inquiries", label: "Inquiries", icon: <FiMail /> },
+    { id: "chat", label: "Chat Intelligence", icon: <FiCpu /> },
     { id: "users", label: "User Management", icon: <FiUsers /> },
     { id: "settings", label: "Settings", icon: <FiSettings /> },
   ];

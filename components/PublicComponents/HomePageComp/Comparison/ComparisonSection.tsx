@@ -33,9 +33,9 @@ const comparisonData = [
 
 const ComparisonSection = () => {
   return (
-    <section className="py-24 bg-(--background)">
+    <section className="py-16 md:py-20 bg-(--background)">
       <div className="max-w-5xl mx-auto px-4">
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter">
             Traditional Agency{" "}
             <span className="text-(--color-primary)">vs Growthik</span>

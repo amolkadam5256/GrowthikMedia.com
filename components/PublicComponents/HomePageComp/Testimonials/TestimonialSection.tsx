@@ -68,7 +68,7 @@ const TestimonialSection = React.memo(() => {
   }, []);
 
   return (
-    <section className="py-24 md:py-32 bg-(--background) relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-(--background) relative overflow-hidden">
       {/* Background Decorative */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -80,7 +80,7 @@ const TestimonialSection = React.memo(() => {
       />
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between mb-16 gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between mb-12 gap-8">
           <div data-aos="fade-right">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-[2px] bg-(--color-primary)" />

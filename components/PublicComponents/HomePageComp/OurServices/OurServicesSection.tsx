@@ -40,14 +40,14 @@ const services = [
 const OurServicesSection = React.memo(() => {
   return (
     <section
-      className="relative py-20 px-4 overflow-hidden"
+      className="relative py-12 md:py-16 px-4 overflow-hidden"
       style={{
         backgroundColor: "var(--background)",
       }}
     >
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <header className="text-center mb-16">
+        <header className="text-center mb-12">
           {/* Animated Top Line */}
           <div
             className="flex items-center justify-center gap-4 mb-6"

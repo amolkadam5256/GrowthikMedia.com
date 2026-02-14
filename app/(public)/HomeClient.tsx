@@ -62,6 +62,11 @@ const FinalCTASection = dynamic(
     import("@/components/PublicComponents/HomePageComp/FinalCTA/FinalCTASection"),
   { ssr: true },
 );
+const FounderSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/Founder/FounderSection"),
+  { ssr: true },
+);
 
 // New Conversion/SEO Sections
 const LeadMagnetSection = dynamic(
@@ -84,9 +89,11 @@ const SEOAuthoritySection = dynamic(
     import("@/components/PublicComponents/HomePageComp/SEOAuthority/SEOAuthoritySection"),
   { ssr: true },
 );
-const StickyCTA = dynamic(() => import("@/components/comman/StickyCTA"), {
-  ssr: false,
-});
+const InvestmentSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/Investment/InvestmentSection"),
+  { ssr: true },
+);
 
 const HomeClient = () => {
   return (
@@ -105,6 +112,9 @@ const HomeClient = () => {
 
       {/* 4. About Company - Human Connection & Mission */}
       <AboutCompanySection />
+
+      {/* 4.1 Founder Section - Personal Authority & Trust */}
+      <FounderSection />
 
       {/* 5. Our Services - What We Offer */}
       <OurServicesSection />
@@ -127,6 +137,9 @@ const HomeClient = () => {
       {/* 8. Portfolio - Proof of Work & Results */}
       <PortfolioHighlightsSection />
 
+      {/* 8.1 Investment - Price Anchoring & Qualification */}
+      <InvestmentSection />
+
       {/* 9. Testimonials - Client Success Stories & Social Proof */}
       <TestimonialSection />
 
@@ -138,9 +151,6 @@ const HomeClient = () => {
 
       {/* 12. Final CTA - Strong Closing & Conversion */}
       <FinalCTASection />
-
-      {/* Fixed Conversion Tools */}
-      <StickyCTA />
     </main>
   );
 };

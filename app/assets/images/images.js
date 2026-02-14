@@ -11,6 +11,8 @@ import logo from "./logo.png";
 import logo2 from "./logo-2.png";
 import webApp192 from "./web-app-manifest-192x192.png";
 import webApp512 from "./web-app-manifest-512x512.png";
+import amol1 from "./Amol-kadam/Amolkadam-1.png";
+import amol2 from "./Amol-kadam/Amolkadam-2.png";
 
 // Portfolio Images
 import seoRealEstate from "./portfolio/seo-real-estate.png";
@@ -43,5 +45,11 @@ export const images = {
     websiteRedesign,
     luxuryBranding,
     educationContent,
+  },
+
+  // Founder
+  founder: {
+    amol1,
+    amol2,
   },
 };

@@ -1,0 +1,435 @@
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  MessageSquare,
+  X,
+  Send,
+  Bot,
+  User,
+  Sparkles,
+  Minus,
+  Maximize2,
+  Headphones,
+} from "lucide-react";
+
+interface Message {
+  id: string;
+  text: string;
+  sender: "bot" | "user";
+  timestamp: Date;
+}
+
+const INITIAL_MESSAGES: Message[] = [
+  {
+    id: "1",
+    text: "Hi there! I'm Growthik AI, your official growth assistant from Growthik Media. How can I help you scale your business today?",
+    sender: "bot",
+    timestamp: new Date(),
+  },
+];
+
+const AIChatBot = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
+  const [inputValue, setInputValue] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+  const [sessionId, setSessionId] = useState<string | null>(null);
+  const [showLeadForm, setShowLeadForm] = useState(true);
+  const [leadData, setLeadData] = useState({ name: "", email: "", phone: "" });
+  const [isSubmittingLead, setIsSubmittingLead] = useState(false);
+
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Load existing session/lead from localStorage
+  useEffect(() => {
+    const savedLead = localStorage.getItem("growthik_chat_lead");
+    const savedSession = localStorage.getItem("growthik_chat_session");
+    if (savedLead && savedSession) {
+      setLeadData(JSON.parse(savedLead));
+      setSessionId(savedSession);
+      setShowLeadForm(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages, isTyping, showLeadForm]);
+
+  const handleLeadSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!leadData.name || !leadData.email || !leadData.phone) return;
+
+    setIsSubmittingLead(true);
+    try {
+      const response = await fetch("/api/chat/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(leadData),
+      });
+      const data = await response.json();
+      if (data.sessionId) {
+        setSessionId(data.sessionId);
+        setShowLeadForm(false);
+        localStorage.setItem("growthik_chat_lead", JSON.stringify(leadData));
+        localStorage.setItem("growthik_chat_session", data.sessionId);
+      }
+    } catch (error) {
+      console.error("Lead Error:", error);
+    } finally {
+      setIsSubmittingLead(false);
+    }
+  };
+
+  const handleSend = async () => {
+    if (!inputValue.trim()) return;
+
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      text: inputValue,
+      sender: "user",
+      timestamp: new Date(),
+    };
+
+    const updatedMessages = [...messages, userMessage];
+    setMessages(updatedMessages);
+    setInputValue("");
+    setIsTyping(true);
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: updatedMessages,
+          sessionId: sessionId,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.reply) {
+        const botResponse: Message = {
+          id: Date.now().toString(),
+          text: data.reply,
+          sender: "bot",
+          timestamp: new Date(),
+        };
+        setMessages((prev) => [...prev, botResponse]);
+      } else {
+        throw new Error("Invalid response from AI");
+      }
+    } catch (error) {
+      console.error("Chat Error:", error);
+      const errorMessage: Message = {
+        id: Date.now().toString(),
+        text: "Sorry, I'm having trouble connecting right now. Please try again or contact us directly!",
+        sender: "bot",
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
+      setIsTyping(false);
+    }
+  };
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50">
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+              scale: 0.95,
+              transformOrigin: "bottom right",
+            }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            className="absolute bottom-20 right-0 w-[350px] md:w-[400px] h-[500px] bg-(--surface) border border-(--border) shadow-2xl flex flex-col overflow-hidden"
+          >
+            {/* Chat Header */}
+            <div className="bg-(--color-primary) p-4 flex items-center justify-between text-white">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center relative">
+                  <Bot className="w-6 h-6 text-white" />
+                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-(--color-primary) rounded-full shadow-lg" />
+                </div>
+                <div>
+                  <h3 className="font-black uppercase tracking-widest text-xs">
+                    Growthik AI{" "}
+                    <span className="text-[8px] opacity-70 ml-1">OFFICIAL</span>
+                  </h3>
+                  <p className="text-[10px] opacity-80 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                    Online & Ready
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <button className="p-1.5 hover:bg-white/10 transition-colors">
+                  <Minus className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-1.5 hover:bg-white/10 transition-colors"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            {/* Messages Area */}
+            <div
+              ref={scrollRef}
+              className="flex-1 overflow-y-auto p-4 space-y-4 bg-(--background)/50 scrollbar-thin scrollbar-thumb-(--border)"
+            >
+              {showLeadForm ? (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="h-full flex flex-col justify-center items-center text-center p-4"
+                >
+                  <div className="w-16 h-16 bg-(--color-primary)/10 rounded-full flex items-center justify-center mb-6">
+                    <Sparkles className="w-8 h-8 text-(--color-primary)" />
+                  </div>
+                  <h4 className="text-xl font-black text-(--text-primary) uppercase tracking-tighter mb-2">
+                    Unlock{" "}
+                    <span className="text-(--color-primary)">Growthik AI</span>
+                  </h4>
+                  <p className="text-xs text-(--text-secondary) mb-8 max-w-[250px]">
+                    Introduce yourself to start your strategic growth session.
+                  </p>
+
+                  <form
+                    onSubmit={handleLeadSubmit}
+                    className="w-full space-y-4"
+                  >
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      required
+                      value={leadData.name}
+                      onChange={(e) =>
+                        setLeadData({ ...leadData, name: e.target.value })
+                      }
+                      className="w-full bg-(--background) border border-(--border) px-4 py-3 text-sm focus:border-(--color-primary) outline-none transition-all"
+                    />
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      required
+                      value={leadData.email}
+                      onChange={(e) =>
+                        setLeadData({ ...leadData, email: e.target.value })
+                      }
+                      className="w-full bg-(--background) border border-(--border) px-4 py-3 text-sm focus:border-(--color-primary) outline-none transition-all"
+                    />
+                    <input
+                      type="tel"
+                      placeholder="Contact Number"
+                      required
+                      value={leadData.phone}
+                      onChange={(e) =>
+                        setLeadData({ ...leadData, phone: e.target.value })
+                      }
+                      className="w-full bg-(--background) border border-(--border) px-4 py-3 text-sm focus:border-(--color-primary) outline-none transition-all"
+                    />
+                    <button
+                      type="submit"
+                      disabled={isSubmittingLead}
+                      className="w-full bg-(--color-primary) text-white font-black uppercase tracking-widest text-xs py-4 hover:bg-(--color-primary-light) transition-all disabled:opacity-50"
+                    >
+                      {isSubmittingLead
+                        ? "Initializing..."
+                        : "Start Consultation"}
+                    </button>
+                  </form>
+                </motion.div>
+              ) : (
+                <>
+                  {messages.map((msg) => (
+                    <div
+                      key={msg.id}
+                      className={
+                        msg.sender === "user"
+                          ? "flex justify-end"
+                          : "flex justify-start"
+                      }
+                    >
+                      <div
+                        className={
+                          msg.sender === "user"
+                            ? "flex gap-3 max-w-[85%] flex-row-reverse"
+                            : "flex gap-3 max-w-[85%] flex-row"
+                        }
+                      >
+                        <div
+                          className={
+                            msg.sender === "user"
+                              ? "w-8 h-8 rounded-full flex items-center justify-center shrink-0 bg-(--border)"
+                              : "w-8 h-8 rounded-full flex items-center justify-center shrink-0 bg-(--color-primary)/10 text-(--color-primary)"
+                          }
+                        >
+                          {msg.sender === "user" ? (
+                            <User className="w-4 h-4" />
+                          ) : (
+                            <Bot className="w-4 h-4" />
+                          )}
+                        </div>
+                        <div>
+                          <div
+                            className={
+                              msg.sender === "user"
+                                ? "p-3 text-sm leading-relaxed bg-(--color-primary) text-white"
+                                : "p-3 text-sm leading-relaxed bg-(--surface) border border-(--border) text-(--text-primary)"
+                            }
+                          >
+                            {msg.text}
+                          </div>
+                          <span className="text-[8px] text-(--text-secondary) mt-1 block px-1">
+                            {msg.timestamp.toLocaleTimeString([], {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  {isTyping && (
+                    <div className="flex justify-start">
+                      <div className="flex gap-3 max-w-[85%] items-center">
+                        <div className="w-8 h-8 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center">
+                          <Bot className="w-4 h-4" />
+                        </div>
+                        <div className="bg-(--surface) border border-(--border) p-3">
+                          <div className="flex gap-1">
+                            <span className="w-1.5 h-1.5 bg-(--text-secondary)/40 rounded-full animate-bounce" />
+                            <span className="w-1.5 h-1.5 bg-(--text-secondary)/40 rounded-full animate-bounce [animation-delay:0.2s]" />
+                            <span className="w-1.5 h-1.5 bg-(--text-secondary)/40 rounded-full animate-bounce [animation-delay:0.4s]" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+
+            {/* Input Area */}
+            {!showLeadForm && (
+              <div className="p-4 bg-(--surface) border-t border-(--border)">
+                <div className="relative flex items-center gap-2">
+                  <input
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && handleSend()}
+                    placeholder="Ask about pricing, services, or results..."
+                    className="flex-1 bg-(--background) border border-(--border) px-4 py-3 text-sm focus:border-(--color-primary) outline-none transition-all pr-12"
+                  />
+                  <button
+                    onClick={handleSend}
+                    disabled={!inputValue.trim()}
+                    className="absolute right-1 w-10 h-10 flex items-center justify-center bg-(--color-primary) text-white disabled:opacity-50 hover:bg-(--color-primary-light) transition-all"
+                  >
+                    <Send className="w-4 h-4" />
+                  </button>
+                </div>
+                <div className="mt-3 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] text-(--text-secondary) uppercase tracking-widest font-bold opacity-60 flex items-center gap-1">
+                      <Sparkles className="w-3 h-3" /> AI Engine v2.0
+                    </span>
+                  </div>
+                  <p className="text-[9px] text-(--text-secondary)/60 italic">
+                    Typing...
+                  </p>
+                </div>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Floating Trigger */}
+      <motion.button
+        onClick={() => setIsOpen(!isOpen)}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        animate={{
+          y: [0, -8, 0],
+        }}
+        transition={{
+          y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
+        }}
+        className={`relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center group ${
+          isOpen
+            ? "bg-(--text-primary) rounded-2xl shadow-2xl overflow-hidden"
+            : ""
+        }`}
+      >
+        <div className="absolute inset-0 bg-linear-to-tr from-white/20 to-transparent pointer-events-none" />
+
+        <AnimatePresence mode="wait">
+          {isOpen ? (
+            <motion.div
+              key="close"
+              initial={{ rotate: -90, opacity: 0 }}
+              animate={{ rotate: 0, opacity: 1 }}
+              exit={{ rotate: 90, opacity: 0 }}
+            >
+              <X className="w-8 h-8 text-white relative z-10" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="bot"
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              className="relative z-10 flex flex-col items-center"
+            >
+              {/* Custom 3D Character Look */}
+              <div className="flex flex-col items-center mb-1">
+                <div className="w-10 h-8 bg-(--color-primary) rounded-xl relative shadow-lg overflow-hidden mb-0.5 border border-white/10">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-1.5">
+                    <motion.div
+                      animate={{ scaleY: [1, 0.1, 1] }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 4,
+                        times: [0, 0.9, 1],
+                      }}
+                      className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_5px_white]"
+                    />
+                    <motion.div
+                      animate={{ scaleY: [1, 0.1, 1] }}
+                      transition={{
+                        repeat: Infinity,
+                        duration: 4,
+                        times: [0, 0.9, 1],
+                      }}
+                      className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_5px_white]"
+                    />
+                  </div>
+                </div>
+                <div className="w-12 h-6 bg-(--color-primary) rounded-lg relative shadow-lg overflow-hidden flex items-center justify-center border border-white/10">
+                  <div className="w-4 h-1 bg-white/30 rounded-full" />
+                </div>
+              </div>
+              <span className="text-[10px] font-black uppercase text-(--color-primary) tracking-widest opacity-90 group-hover:opacity-100">
+                Talk to AI
+              </span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.button>
+    </div>
+  );
+};
+
+export default AIChatBot;

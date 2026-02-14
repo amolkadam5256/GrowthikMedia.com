@@ -53,7 +53,7 @@ const PROJECTS = [
 
 const PortfolioHighlightsSection = React.memo(() => {
   return (
-    <section className="py-24 md:py-32 px-4 bg-(--surface) relative transition-colors duration-500 overflow-hidden border-y border-(--border)">
+    <section className="py-16 md:py-24 px-4 bg-(--surface) relative transition-colors duration-500 overflow-hidden border-y border-(--border)">
       {/* Background Patterns - Adjusted for Theme Consistency */}
       <div
         className="absolute inset-0 opacity-[0.05] dark:opacity-[0.1] pointer-events-none"
@@ -70,7 +70,7 @@ const PortfolioHighlightsSection = React.memo(() => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-20 gap-10">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-12 md:mb-16 gap-10">
           <div className="max-w-2xl">
             <div className="flex items-center gap-4 mb-6" data-aos="fade-right">
               <span className="w-16 h-[2px] bg-(--color-primary)" />

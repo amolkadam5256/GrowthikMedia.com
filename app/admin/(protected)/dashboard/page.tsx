@@ -11,6 +11,7 @@ import BlogManager from "@/components/AdminComponents/Sections/BlogManager";
 import SettingsManager from "@/components/AdminComponents/Sections/SettingsManager";
 import UserManager from "@/components/AdminComponents/Sections/UserManager";
 import InquiriesManager from "@/components/AdminComponents/Sections/InquiriesManager";
+import ChatIntelligence from "@/components/AdminComponents/Sections/ChatIntelligence";
 
 const AdminDashboardPage = () => {
   const [activeTab, setActiveTab] = useState(() => {
@@ -71,6 +72,8 @@ const AdminDashboardPage = () => {
         return <BlogManager />;
       case "inquiries":
         return <InquiriesManager />;
+      case "chat":
+        return <ChatIntelligence />;
       case "hero":
         return <HeroManager />;
       case "contact":

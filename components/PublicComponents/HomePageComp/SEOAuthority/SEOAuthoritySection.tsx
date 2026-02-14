@@ -39,7 +39,7 @@ const seoExpertise = [
 
 const SEOAuthoritySection = () => {
   return (
-    <section className="py-20 bg-(--surface) border-b border-(--border)">
+    <section className="py-12 md:py-16 bg-(--surface) border-b border-(--border)">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/3" data-aos="fade-right">

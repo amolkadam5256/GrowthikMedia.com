@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import Counter from "@/components/ui/Counter";
 
 const logos = [
   "TechFlow",
@@ -19,7 +20,7 @@ const logos = [
 
 const TrustStrip = React.memo(() => {
   return (
-    <div className="w-full py-16 md:py-20 overflow-hidden relative z-20 transition-colors duration-300 bg-(--surface) border-b border-(--border)">
+    <div className="w-full py-12 md:py-16 overflow-hidden relative z-20 transition-colors duration-300 bg-(--surface) border-b border-(--border)">
       {/* Background Animated Shapes */}
       <div className="absolute -left-10 -top-10 w-40 h-40 md:w-60 md:h-60 opacity-5 pointer-events-none">
         <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -46,7 +47,9 @@ const TrustStrip = React.memo(() => {
         <div className="flex flex-col justify-center text-center md:text-left">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-(--text-primary) leading-tight tracking-tight">
             Trusted by <br className="hidden md:block" />
-            <span className="text-(--color-primary)">50+ Happy Clients</span>
+            <span className="text-(--color-primary)">
+              <Counter value={50} suffix="+ Happy Clients" />
+            </span>
           </h2>
         </div>
 
@@ -72,7 +75,7 @@ const TrustStrip = React.memo(() => {
               </div>
               <div className="flex flex-col leading-none">
                 <span className="text-sm font-bold text-(--text-primary) group-hover:text-(--color-primary) transition-colors">
-                  5.0 Rating
+                  <Counter value={5} suffix=".0 Rating" />
                 </span>
                 <span className="text-[10px] text-(--text-secondary) uppercase tracking-wider transition-colors">
                   Google Reviews

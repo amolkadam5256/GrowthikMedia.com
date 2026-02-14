@@ -5,7 +5,7 @@ import { Zap, ArrowRight, Sparkles } from "lucide-react";
 
 const FinalCTASection = React.memo(() => {
   return (
-    <section className="relative py-12 md:py-20 bg-(--surface) overflow-hidden">
+    <section className="relative py-10 md:py-16 bg-(--surface) overflow-hidden">
       {/* Subtle Background Pattern */}
       <div
         className="absolute inset-0 opacity-[0.02] pointer-events-none"

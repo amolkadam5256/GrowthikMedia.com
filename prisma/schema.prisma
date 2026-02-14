@@ -134,3 +134,38 @@ model Inquiry {
 
   @@map("inquiries")
 }
+// -------------------------------------------------------------
+// AI CHATBOT SYSTEM
+// -------------------------------------------------------------
+
+model ChatLead {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  sessions  ChatSession[]
+  createdAt DateTime      @default(now())
+
+  @@map("chat_leads")
+}
+
+model ChatSession {
+  id        String        @id @default(cuid())
+  leadId    String
+  lead      ChatLead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  messages  ChatMessage[]
+  createdAt DateTime      @default(now())
+
+  @@map("chat_sessions")
+}
+
+model ChatMessage {
+  id        String      @id @default(cuid())
+  sessionId String
+  session   ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  text      String      @db.Text
+  sender    String      // "bot" or "user"
+  createdAt DateTime    @default(now())
+
+  @@map("chat_messages")
+}

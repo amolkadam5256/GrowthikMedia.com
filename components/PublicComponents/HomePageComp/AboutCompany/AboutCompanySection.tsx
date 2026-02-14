@@ -5,7 +5,7 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 const AboutCompanySection = React.memo(() => {
   return (
-    <section className="relative py-12 md:py-20 bg-(--background) overflow-hidden">
+    <section className="relative py-10 md:py-16 bg-(--background) overflow-hidden">
       {/* Animated Background Grid */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -23,7 +23,7 @@ const AboutCompanySection = React.memo(() => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12" data-aos="fade-up">
+          <div className="text-center mb-10" data-aos="fade-up">
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="w-12 h-[2px] bg-(--color-primary)" />
               <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-xs">

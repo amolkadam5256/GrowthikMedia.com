@@ -40,9 +40,9 @@ const solutions = [
 
 const ProblemSolutionSection = React.memo(() => {
   return (
-    <section className="py-12 md:py-20 bg-(--background) relative overflow-hidden">
+    <section className="py-10 md:py-16 bg-(--background) relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 md:mb-24" data-aos="fade-up">
+        <div className="text-center mb-12 md:mb-16" data-aos="fade-up">
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="w-12 h-[2px] bg-(--color-primary)" />
             <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">

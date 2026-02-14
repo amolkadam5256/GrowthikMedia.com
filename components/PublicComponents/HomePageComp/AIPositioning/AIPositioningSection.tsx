@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Cpu, Zap, Search, TrendingUp } from "lucide-react";
+import Counter from "@/components/ui/Counter";
 
 const aiFeatures = [
   {
@@ -26,7 +27,7 @@ const aiFeatures = [
 
 const AIPositioningSection = () => {
   return (
-    <section className="relative py-24 bg-(--background) overflow-hidden border-b border-(--border)">
+    <section className="relative py-16 md:py-20 bg-(--background) overflow-hidden border-b border-(--border)">
       {/* Circuit board pattern overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -36,13 +37,12 @@ const AIPositioningSection = () => {
           backgroundSize: "40px 40px",
         }}
       />
-
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div className="text-center mb-12" data-aos="fade-up">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-[2px] bg-(--color-primary)" />
             <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">
-              2026 Authority
+              <Counter value={2026} suffix=" Authority" />
             </span>
             <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
