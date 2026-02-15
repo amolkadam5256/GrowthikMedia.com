@@ -16,7 +16,7 @@ const USP_ITEMS = [
     icon: Target,
     title: "ROI-Focused Strategies",
     description:
-      "Every campaign is built around measurable returns. We don't just drive traffic—we drive revenue and growth that impacts your bottom line.",
+      "Every campaign is built around measurable returns. We don't just drive traffic-we drive revenue and growth that impacts your bottom line.",
   },
   {
     icon: UserCheck,
@@ -28,7 +28,7 @@ const USP_ITEMS = [
     icon: FileText,
     title: "Transparent Reporting",
     description:
-      "No smoke and mirrors. Receive detailed monthly reports with clear KPIs, performance metrics, and actionable insights you can trust.",
+      "No smoke and mirrors. Receive detailed monthly reports with clear KPIs, performance metricsand actionable insights you can trust.",
   },
   {
     icon: Award,
@@ -84,11 +84,11 @@ const WhyChooseUsSection = React.memo(() => {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) mb-6 tracking-tight leading-[1.1]">
-            Why Choose{" "}
-            <span className="text-(--color-primary)">Growthik Media</span>?
+            Why Choose Our Digital Marketing Agency{" "}
+            <span className="text-(--color-primary)">in Pune</span>?
           </h2>
           <p className="text-lg md:text-xl text-(--text-secondary) max-w-2xl mx-auto leading-relaxed">
-            We don't just deliver services—we deliver results. Here's what sets
+            We don't just deliver services-we deliver results. Here's what sets
             us apart from the competition.
           </p>
         </div>

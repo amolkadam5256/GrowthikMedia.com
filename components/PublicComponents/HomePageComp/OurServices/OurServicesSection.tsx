@@ -19,7 +19,7 @@ const services = [
     number: "02",
     title: "Digital Marketing",
     description:
-      "Data-driven marketing strategies that amplify your brand presence, engage your audience, and drive measurable growth.",
+      "Data-driven marketing strategies that amplify your brand presence, engage your audienceand drive measurable growth.",
   },
   {
     icon: TrendingUp,
@@ -82,7 +82,7 @@ const OurServicesSection = React.memo(() => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Our Services
+            Performance Marketing Services in Pune
           </h2>
 
           <div
@@ -106,7 +106,7 @@ const OurServicesSection = React.memo(() => {
             data-aos-delay="300"
           >
             Empowering your brand with innovative solutions that drive growth,
-            engagement, and success in the digital landscape.
+            engagementand success in the digital landscape.
           </p>
         </header>
 

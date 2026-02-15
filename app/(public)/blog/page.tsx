@@ -3,14 +3,14 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Blog | Growthik Media - Digital Marketing Insights & Tips",
   description:
-    "Stay updated with the latest digital marketing trends, video production tips, and industry insights from Growthik Media. Expert advice to grow your business.",
+    "Stay updated with the latest digital marketing trends, video production tipsand industry insights from Growthik Media. Expert advice to grow your business.",
   keywords:
     "digital marketing blog, video production tips, social media marketing insights, SEO tips, content marketing blog",
   authors: [{ name: "Growthik Media" }],
   openGraph: {
     title: "Blog | Growthik Media",
     description:
-      "Digital marketing insights, tips, and industry trends from the experts at Growthik Media.",
+      "Digital marketing insights, tipsand industry trends from the experts at Growthik Media.",
     url: "https://www.growthikmedia.com/blog",
     siteName: "Growthik Media",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Blog | Growthik Media",
     description:
-      "Digital marketing insights, tips, and industry trends from the experts at Growthik Media.",
+      "Digital marketing insights, tipsand industry trends from the experts at Growthik Media.",
     images: ["/og-image.png"],
     creator: "@growthikmedia",
   },
@@ -81,7 +81,7 @@ export default function Blog() {
             Our Blog
           </h1>
           <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
-            Stay updated with the latest insights, tips, and trends in digital
+            Stay updated with the latest insights, tipsand trends in digital
             marketing and video production.
           </p>
         </div>

@@ -6,53 +6,68 @@ import Badge from "@/components/ui/Badge";
 
 const HeroHeadline = () => {
   return (
-    <header className="flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto px-4 py-12 md:py-12">
+    <header
+      className="flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto px-4 py-12 md:py-12"
+      role="banner"
+    >
       {/* Main Content Container */}
       <div className="relative z-10 space-y-6 md:space-y-8">
         {/* Pre-headline */}
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <div className="h-px w-8 md:w-12 bg-linear-to-r from-transparent to-(--color-primary)"></div>
+        <p
+          className="flex items-center justify-center gap-2 mb-2"
+          aria-label="Award-winning digital marketing agency"
+        >
+          <span
+            className="h-px w-8 md:w-12 bg-linear-to-r from-transparent to-(--color-primary)"
+            aria-hidden="true"
+          ></span>
           <span
             className="text-xs md:text-sm font-semibold uppercase tracking-wider"
             style={{ color: "var(--color-primary)" }}
           >
             Award-Winning Digital Marketing Agency
           </span>
-          <div className="h-px w-8 md:w-12 bg-linear-to-l from-transparent to-(--color-primary)"></div>
-        </div>
+          <span
+            className="h-px w-8 md:w-12 bg-linear-to-l from-transparent to-(--color-primary)"
+            aria-hidden="true"
+          ></span>
+        </p>
 
-        {/* Main Headline */}
+        {/* Main Headline - SEO Optimized H1 */}
         <h1
           className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-black leading-[1.1] tracking-tight"
           style={{ color: "var(--color-white)" }}
         >
           <span className="sr-only">
-            Growthik Media - Digital Marketing Agency Pune
+            Digital Marketing Agency in Pune That Drives ROI - Growthik Media
           </span>
-          Scale Your Revenue with
-          <br />
-          <span className="relative inline-block mt-2">
-            <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
-              Performance Marketing
+          <span aria-hidden="true">
+            Scale Your Revenue with
+            <br />
+            <span className="relative inline-block mt-2">
+              <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
+                Performance Marketing
+              </span>
+              {/* Animated underline */}
+              <svg
+                className="absolute w-full h-4 md:h-6 -bottom-2 md:-bottom-3 left-0 animate-pulse"
+                style={{ color: "var(--color-primary)" }}
+                viewBox="0 0 200 9"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2.00025 6.99997C69.5002 4.00003 128.5 -1.50002 198 2.49997"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+              </svg>
             </span>
-            {/* Animated underline */}
-            <svg
-              className="absolute w-full h-4 md:h-6 -bottom-2 md:-bottom-3 left-0 animate-pulse"
-              style={{ color: "var(--color-primary)" }}
-              viewBox="0 0 200 9"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2.00025 6.99997C69.5002 4.00003 128.5 -1.50002 198 2.49997"
-                stroke="currentColor"
-                strokeWidth="4"
-                strokeLinecap="round"
-              />
-            </svg>
+            <br />
+            That Delivers ROI
           </span>
-          <br />
-          <span style={{ color: "var(--color-white)" }}>That Delivers ROI</span>
         </h1>
 
         {/* Subheadline */}
@@ -61,9 +76,12 @@ const HeroHeadline = () => {
           style={{ color: "var(--text-secondary)" }}
         >
           Dominate your niche with{" "}
-          <span className="font-bold" style={{ color: "var(--color-primary)" }}>
+          <strong
+            className="font-bold"
+            style={{ color: "var(--color-primary)" }}
+          >
             Data-Driven SEO Services
-          </span>{" "}
+          </strong>{" "}
           and high-converting Paid Ads. We specialize in precision lead
           generation to propel your business forward.
           <br className="hidden md:block" />

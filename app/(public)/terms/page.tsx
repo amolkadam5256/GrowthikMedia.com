@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: `Terms of Service | ${CONTACT_INFO.companyName}`,
   description: `Terms and conditions for using ${CONTACT_INFO.companyName} services and website.`,
   alternates: {
-    canonical: `${CONTACT_INFO.website}/terms`,
+    canonical: `${CONTACT_INFO.website}/terms/`,
   },
 };
 
@@ -27,7 +27,7 @@ export default function TermsOfService() {
           <p className="text-(--text-secondary)">
             By accessing our website at {CONTACT_INFO.website}, you agree to be
             bound by these terms of service, all applicable laws and
-            regulations, and agree that you are responsible for compliance with
+            regulationsand agree that you are responsible for compliance with
             any applicable local laws.
           </p>
         </section>
@@ -46,7 +46,7 @@ export default function TermsOfService() {
           <p className="text-(--text-secondary)">
             The materials on {CONTACT_INFO.companyName}&apos;s website are
             provided on an &apos;as is&apos; basis. {CONTACT_INFO.companyName}{" "}
-            makes no warranties, expressed or implied, and hereby disclaims and
+            makes no warranties, expressed or impliedand hereby disclaims and
             negates all other warranties including, without limitation, implied
             warranties or conditions of merchantability, fitness for a
             particular purpose, or non-infringement of intellectual property or

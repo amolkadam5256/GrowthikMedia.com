@@ -4,7 +4,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 export const metadata: Metadata = {
   title: "Our Portfolio | Growthik Media - Success Stories",
   description:
-    "Explore our diverse portfolio of successful digital marketing campaigns, stunning websites, and high-impact video productions.",
+    "Explore our diverse portfolio of successful digital marketing campaigns, stunning websitesand high-impact video productions.",
   keywords:
     "digital marketing portfolio, website portfolio, video production case studies, success stories",
 };

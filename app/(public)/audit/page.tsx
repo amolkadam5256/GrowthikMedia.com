@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: `Free Growth Audit | ${CONTACT_INFO.companyName}`,
   description: `Get a free digital marketing and SEO audit for your business from ${CONTACT_INFO.companyName}. Discover growth opportunities today.`,
   alternates: {
-    canonical: `${CONTACT_INFO.website}/audit`,
+    canonical: `${CONTACT_INFO.website}/audit/`,
   },
 };
 
@@ -18,9 +18,9 @@ export default function GrowthAudit() {
           Free Growth Audit
         </h1>
         <p className="text-xl text-(--text-secondary) leading-relaxed">
-          Level up your digital presence. Fill out the form below, and our
-          experts will analyze your website, SEO, and social media to provide
-          you with a personalized growth roadmap.
+          Level up your digital presence. Fill out the form belowand our experts
+          will analyze your website, SEOand social media to provide you with a
+          personalized growth roadmap.
         </p>
       </div>
 

@@ -3,6 +3,7 @@
 ## Login Page Features
 
 ### 1. **Step 1: Select Login Method**
+
 ```
 ┌─────────────────────────────────────┐
 │                                     │
@@ -27,6 +28,7 @@
 ```
 
 ### 2. **Step 2A: Email & Password**
+
 ```
 ┌─────────────────────────────────────┐
 │                                     │
@@ -47,6 +49,7 @@
 ```
 
 ### 2B: **Step 2B: Request OTP**
+
 ```
 ┌─────────────────────────────────────┐
 │                                     │
@@ -65,6 +68,7 @@
 ```
 
 ### 3. **Step 3: Verify OTP**
+
 ```
 ┌─────────────────────────────────────┐
 │                                     │
@@ -85,6 +89,7 @@
 ```
 
 ### 4. **Desktop Layout (Two-Column)**
+
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                                                           │
@@ -109,6 +114,7 @@
 ```
 
 ### 5. **Error/Success Messages**
+
 ```
 Error:
 ┌────────────────────────────────────┐
@@ -129,6 +135,7 @@ Success:
 ## Admin Dashboard
 
 ### **Header Layout**
+
 ```
 ┌─────────────────────────────────────────────────────┐
 │                                                     │
@@ -139,6 +146,7 @@ Success:
 ```
 
 ### **Full Page Layout**
+
 ```
 ┌─────────────────────────────────────────────────────┐
 │  Header (Sticky)                                    │
@@ -164,6 +172,7 @@ Success:
 ## Dark Mode Variants
 
 ### **Login Page - Dark Mode**
+
 - Background: Deep black gradient (#0A0A0A)
 - Text: White/Light gray
 - Inputs: Dark gray (#2a2a2a)
@@ -172,6 +181,7 @@ Success:
 - Accent: Light shadows
 
 ### **Login Page - Light Mode**
+
 - Background: Pastel gradient (Blue→Purple→Pink)
 - Text: Dark gray/black
 - Inputs: Light gray (#f3f4f6)
@@ -184,6 +194,7 @@ Success:
 ## Animation Effects
 
 ### 1. **Background Orbs**
+
 ```
 Rotating background elements:
 - Top-right: Purple, 20s rotation
@@ -193,6 +204,7 @@ Rotating background elements:
 ```
 
 ### 2. **Container Entry**
+
 ```
 On page load:
 - Container slides in from 0.95 scale to 1
@@ -202,6 +214,7 @@ On page load:
 ```
 
 ### 3. **Text Animation**
+
 ```
 On render:
 - Title: Slides up, opacity fade
@@ -210,6 +223,7 @@ On render:
 ```
 
 ### 4. **Form Transitions**
+
 ```
 Between steps:
 - Exit: Slides left with opacity
@@ -218,6 +232,7 @@ Between steps:
 ```
 
 ### 5. **Floating Animation**
+
 ```
 Right panel (branding):
 - Vertical bounce
@@ -231,6 +246,7 @@ Right panel (branding):
 ## Responsive Design
 
 ### **Mobile (< 768px)**
+
 ```
 ┌──────────────┐
 │              │
@@ -252,6 +268,7 @@ Right panel (branding):
 ```
 
 ### **Tablet (768px - 1024px)**
+
 ```
 ┌────────────────────────────────┐
 │                                │
@@ -268,6 +285,7 @@ Right panel (branding):
 ```
 
 ### **Desktop (> 1024px)**
+
 ```
 ┌────────────────────────────────────────────┐
 │                                            │
@@ -294,6 +312,7 @@ Right panel (branding):
 ## Color Palette
 
 ### **Primary Colors**
+
 ```
 Purple Gradient:    #667eea → #764ba2
 Blue:              #3b82f6
@@ -301,6 +320,7 @@ Pink:              #ec4899
 ```
 
 ### **Dark Mode**
+
 ```
 Background:        #0A0A0A
 Surface:           #1a1a1a
@@ -311,6 +331,7 @@ Text Secondary:    #9CA3AF
 ```
 
 ### **Light Mode**
+
 ```
 Background:        #f9fafb → #e9d5ff → #fce7f3
 Surface:           #FFFFFF
@@ -321,6 +342,7 @@ Text Secondary:    #6b7280
 ```
 
 ### **Status Colors**
+
 ```
 Error:   Red       #ef4444 / #dc2626
 Success: Green     #10b981 / #059669
@@ -333,12 +355,14 @@ Info:    Blue      #3b82f6 / #2563eb
 ## Typography
 
 ### **Font Families**
+
 ```
 Primary:   System fonts (-apple-system, BlinkMacSystemFont, Segoe UI)
 Mono:      JetBrains Mono (for OTP input)
 ```
 
 ### **Font Sizes**
+
 ```
 H1 (Title):        24px / 28px (mobile/desktop)
 H2 (Heading):      20px
@@ -349,6 +373,7 @@ Caption:           12px
 ```
 
 ### **Font Weights**
+
 ```
 Regular:   400
 Medium:    500
@@ -361,6 +386,7 @@ Bold:      700
 ## Spacing & Layout
 
 ### **Margins**
+
 ```
 Container: 8px (mobile), 20px (tablet), 32px (desktop)
 Forms:     16px between elements
@@ -369,6 +395,7 @@ Footer:    32px top padding
 ```
 
 ### **Padding**
+
 ```
 Container: 32px (mobile), 48px (desktop)
 Inputs:    12px horizontal, 12px vertical
@@ -377,6 +404,7 @@ Cards:     16px all sides
 ```
 
 ### **Border Radius**
+
 ```
 Small:     8px (inputs)
 Medium:    12px (cards)
@@ -389,6 +417,7 @@ XL:        24px (rounded containers)
 ## Accessibility
 
 ✅ **Features:**
+
 - Proper color contrast (WCAG AAA)
 - Keyboard navigation support
 - Screen reader friendly labels
@@ -402,6 +431,7 @@ XL:        24px (rounded containers)
 ## Performance Optimizations
 
 ✅ **Implemented:**
+
 - Lazy loading images
 - Code splitting
 - CSS-in-JS optimization
@@ -415,11 +445,12 @@ XL:        24px (rounded containers)
 ## Browser Compatibility
 
 ✅ **Supported:**
+
 - Chrome 90+
 - Firefox 88+
 - Safari 14+
 - Edge 90+
-- Mobile browsers (iOS 12+, Android 8+)
+- Mobile browsers (iOS 12+android 8+)
 
 ---
 

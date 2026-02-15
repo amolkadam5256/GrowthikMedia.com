@@ -2,7 +2,7 @@
 
 ## 🎉 What Was Created
 
-I've successfully implemented **TWO major sections** for your home page with creative animations, SEO optimization, and the existing project color scheme.
+I've successfully implemented **TWO major sections** for your home page with creative animations, SEO optimizationand the existing project color scheme.
 
 ---
 
@@ -354,7 +354,7 @@ All colors use CSS variables - update `globals.css`
 
 Both sections are now live on your home page at `http://localhost:3000`.
 
-**Enjoy your new creative, animated, and SEO-optimized sections!** 🚀
+**Enjoy your new creative, animatedand SEO-optimized sections!** 🚀
 
 ---
 

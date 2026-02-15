@@ -188,7 +188,7 @@ export default function Footer() {
                 >
                   Empowering businesses to thrive in the digital landscape
                   through innovative marketing strategies, cutting-edge web
-                  development, and creative branding solutions.
+                  developmentand creative branding solutions.
                 </p>
 
                 {/* Contact Info */}

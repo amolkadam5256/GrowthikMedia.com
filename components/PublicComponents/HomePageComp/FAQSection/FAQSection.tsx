@@ -27,19 +27,19 @@ const FAQ_DATA = [
     id: 3,
     question: "Why should I choose a Pune-based digital marketing agency?",
     answer:
-      "Local expertise matters. Choosing a Pune-based digital marketing company like Growthik Media means we understand the local market nuances, consumer behavior, and regional competition. We provide on-ground support and face-to-face strategy sessions that off-shore or distant agencies simply cannot match.",
+      "Local expertise matters. Choosing a Pune-based digital marketing company like Growthik Media means we understand the local market nuances, consumer behaviorand regional competition. We provide on-ground support and face-to-face strategy sessions that off-shore or distant agencies simply cannot match.",
   },
   {
     id: 4,
     question: "What makes your performance marketing different?",
     answer:
-      "We don't just track clicks; we track revenue. Our performance marketing strategies are backed by heavy data-analysis, A/B testing, and aggressive scaling. We focus on ROI and ROAS, ensuring every rupee you spend on digital marketing in Pune works toward your bottom line.",
+      "We don't just track clicks; we track revenue. Our performance marketing strategies are backed by heavy data-analysis, A/B testingand aggressive scaling. We focus on ROI and ROAS, ensuring every rupee you spend on digital marketing in Pune works toward your bottom line.",
   },
   {
     id: 5,
     question: "Do you provide comprehensive monthly reporting?",
     answer:
-      "Transparency is our core value. You will receive detailed monthly reports tracking KPIs, traffic growth, lead conversion, and keyword rankings. We schedule monthly strategy calls to review performance and adjust our roadmap for the next growth sprint.",
+      "Transparency is our core value. You will receive detailed monthly reports tracking KPIs, traffic growth, lead conversionand keyword rankings. We schedule monthly strategy calls to review performance and adjust our roadmap for the next growth sprint.",
   },
 ];
 

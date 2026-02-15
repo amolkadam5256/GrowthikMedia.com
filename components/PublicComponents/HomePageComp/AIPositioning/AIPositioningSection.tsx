@@ -47,8 +47,8 @@ const AIPositioningSection = () => {
             <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
-            AI-Powered{" "}
-            <span className="text-(--color-primary)">Growth Systems</span>
+            AI Marketing Automation{" "}
+            <span className="text-(--color-primary)">& Intelligence</span>
           </h2>
           <p className="text-(--text-secondary) text-lg leading-relaxed font-light italic max-w-2xl mx-auto">
             "We don't just use digital tools; we build AI-driven architectures

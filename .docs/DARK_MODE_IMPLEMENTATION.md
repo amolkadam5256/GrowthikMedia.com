@@ -49,7 +49,7 @@ Successfully implemented comprehensive dark and light mode support across the en
   - Reaction stats
   - Action buttons (Like, Comment, Share)
   - Comment input section
-- ✅ All borders, backgrounds, and text colors are theme-aware
+- ✅ All borders, backgroundsand text colors are theme-aware
 
 #### **InstagramPostCard (`components/ui/cards/InstagramPostCard.tsx`)**
 
@@ -163,14 +163,12 @@ The implementation follows the design system specifications:
 ## Testing Recommendations
 
 1. **Visual Testing**
-
    - Toggle between light and dark modes
    - Verify all card components render correctly
    - Check hover states and interactions
    - Test on different screen sizes
 
 2. **Accessibility Testing**
-
    - Verify color contrast ratios
    - Test keyboard navigation
    - Check screen reader compatibility

@@ -4,7 +4,7 @@ import ContactClient from "./ContactClient";
 export const metadata: Metadata = {
   title: "Contact Us | Growthik Media - Get in Touch",
   description:
-    "Get in touch with Growthik Media for professional video production, content creation, and digital marketing services. We're here to help bring your vision to life.",
+    "Get in touch with Growthik Media for professional video production, content creationand digital marketing services. We're here to help bring your vision to life.",
   keywords:
     "contact growthik media, video production inquiry, content creation services, digital marketing contact, pune video production",
   authors: [{ name: "Growthik Media" }],

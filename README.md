@@ -4,7 +4,7 @@
 
 Welcome to the official repository of **Growthik Media's Website**, a fast, SEO-optimized, modern digital experience built using **Next.js (App Router)**.
 
-This website represents our company portfolio, services, projects, and digital marketing offerings.
+This website represents our company portfolio, services, projectsand digital marketing offerings.
 
 ---
 
@@ -240,7 +240,7 @@ README.md
 
 #### `/lib` Directory
 
-Core utility functions and configurations for auth, database, file uploads, and external services.
+Core utility functions and configurations for auth, database, file uploadsand external services.
 
 #### `/prisma` Directory
 

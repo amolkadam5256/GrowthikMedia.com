@@ -95,6 +95,46 @@ const InvestmentSection = dynamic(
   { ssr: true },
 );
 
+// New SEO Enhancement Sections
+const IndustriesWeServeSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/IndustriesWeServe/IndustriesWeServeSection"),
+  { ssr: true },
+);
+const LocalSEOAuthoritySection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/LocalSEOAuthority/LocalSEOAuthoritySection"),
+  { ssr: true },
+);
+const GrowthResourcesSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/GrowthResources/GrowthResourcesSection"),
+  { ssr: true },
+);
+const ClientSuccessMetricsSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/ClientSuccessMetrics/ClientSuccessMetricsSection"),
+  { ssr: true },
+);
+
+const TechStackSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/TechStack/TechStackSection"),
+  { ssr: true },
+);
+
+const PuneMarketInsightSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/PuneMarketInsight/PuneMarketInsightSection"),
+  { ssr: true },
+);
+
+const PerformanceRoadmapSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/PerformanceRoadmap/PerformanceRoadmapSection"),
+  { ssr: true },
+);
+
 const HomeClient = () => {
   return (
     <main className="relative bg-(--background)">
@@ -103,6 +143,9 @@ const HomeClient = () => {
 
       {/* 2. Trust Strip - Immediate Social Proof */}
       <TrustStrip />
+
+      {/* 2.5 Industries We Serve - Industry Targeting & Semantic SEO */}
+      <IndustriesWeServeSection />
 
       {/* 3. Problem → Solution - Identify Pain Points & Position Solution */}
       <ProblemSolutionSection />
@@ -119,8 +162,17 @@ const HomeClient = () => {
       {/* 5. Our Services - What We Offer */}
       <OurServicesSection />
 
+      {/* 5.1 Tech Stack - Enterprise Grade Tools */}
+      <TechStackSection />
+
       {/* 5.1 SEO Authority - Micro Expertise Block */}
       <SEOAuthoritySection />
+
+      {/* 5.2 Local SEO Authority - Pune-Specific Expertise & E-E-A-T */}
+      <LocalSEOAuthoritySection />
+
+      {/* 5.3 Pune Market Insight - Local Data & Urgency */}
+      <PuneMarketInsightSection />
 
       {/* 6. Growth Framework - How We Work (Process) */}
       <GrowthFrameworkSection />
@@ -134,10 +186,19 @@ const HomeClient = () => {
       {/* 7.1 Comparison - Differentiator Proof */}
       <ComparisonSection />
 
+      {/* 7.2 Growth Resources - Internal Linking & Content Authority */}
+      <GrowthResourcesSection />
+
       {/* 8. Portfolio - Proof of Work & Results */}
       <PortfolioHighlightsSection />
 
-      {/* 8.1 Investment - Price Anchoring & Qualification */}
+      {/* 8.1 Client Success Metrics - E-E-A-T & Trust Building */}
+      <ClientSuccessMetricsSection />
+
+      {/* 8.2 Performance Roadmap - 90 Day Sprint to ROI */}
+      <PerformanceRoadmapSection />
+
+      {/* 8.2 Investment - Price Anchoring & Qualification */}
       <InvestmentSection />
 
       {/* 9. Testimonials - Client Success Stories & Social Proof */}

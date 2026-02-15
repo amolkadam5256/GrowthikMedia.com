@@ -2,7 +2,7 @@
 
 ## 🎉 What Was Implemented
 
-Two major sections were added to the home page with creative animations, SEO optimization, and consistent design.
+Two major sections were added to the home page with creative animations, SEO optimizationand consistent design.
 
 ## 📦 New Components
 

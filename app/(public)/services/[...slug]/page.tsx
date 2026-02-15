@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: name,
       description: description,
-      url: `${CONTACT_INFO.website}/services/${slug.join("/")}`,
+      url: `${CONTACT_INFO.website}/services/${slug.join("/")}/`,
       images: [
         {
           url: "/og-image.png",
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       ],
     },
     alternates: {
-      canonical: `${CONTACT_INFO.website}/services/${slug.join("/")}`,
+      canonical: `${CONTACT_INFO.website}/services/${slug.join("/")}/`,
     },
   };
 }
@@ -81,7 +81,7 @@ export default async function ServiceDetailPage({ params }: Props) {
           <div className="w-32 h-1.5 bg-(--color-primary) mx-auto mb-12 rounded-full"></div>
           <p className="text-xl md:text-2xl text-(--text-secondary) mb-12 leading-relaxed">
             We are currently updating this page with our latest case studies,
-            packages, and detailed service information for{" "}
+            packagesand detailed service information for{" "}
             <strong>{serviceName}</strong>.
           </p>
           <div className="p-8 rounded-2xl border border-(--border-color) bg-(--card-background) shadow-2xl backdrop-blur-sm">

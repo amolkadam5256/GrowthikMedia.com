@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Services | Growthik Media - Digital Marketing & Video Production",
   description:
-    "Explore our comprehensive digital marketing services including video production, content creation, social media marketing, SEO, and brand development. Transform your business with Growthik Media.",
+    "Explore our comprehensive digital marketing services including video production, content creation, social media marketing, SEOand brand development. Transform your business with Growthik Media.",
   keywords:
     "digital marketing services, video production services, content creation, social media marketing, SEO services, brand development, pune",
   authors: [{ name: "Growthik Media" }],
@@ -53,7 +53,7 @@ export default function Services() {
     {
       title: "Video Production",
       description:
-        "Professional video production services including corporate videos, promotional content, and social media videos.",
+        "Professional video production services including corporate videos, promotional contentand social media videos.",
       features: [
         "Corporate Videos",
         "Promotional Content",

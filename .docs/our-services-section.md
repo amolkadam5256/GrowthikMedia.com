@@ -2,7 +2,7 @@
 
 ## 📋 Overview
 
-A creative, animated services showcase section featuring 4 service cards with hover effects, stats display, and CTA buttons.
+A creative, animated services showcase section featuring 4 service cards with hover effects, stats displayand CTA buttons.
 
 ## 📁 Location
 

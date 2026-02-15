@@ -8,7 +8,7 @@ const seoExpertise = [
   {
     icon: Search,
     title: "Technical SEO",
-    desc: "Core web vitals, schema markup, and advanced architecture.",
+    desc: "Core web vitals, schema markupand advanced architecture.",
     link: "/seo-services-pune",
   },
   {
@@ -44,7 +44,8 @@ const SEOAuthoritySection = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/3" data-aos="fade-right">
             <h2 className="text-3xl md:text-4xl font-black text-(--text-primary) uppercase tracking-tighter mb-6">
-              Our SEO <span className="text-(--color-primary)">Expertise</span>{" "}
+              SEO Services in Pune -{" "}
+              <span className="text-(--color-primary)">Our Expertise </span>
               Includes:
             </h2>
             <p className="text-(--text-secondary) leading-relaxed">

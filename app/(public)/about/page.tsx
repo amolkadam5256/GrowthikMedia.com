@@ -13,7 +13,7 @@ const AboutTeamSection = dynamic(
 export const metadata: Metadata = {
   title: "About Us | Growthik Media - Your Digital Marketing Partner",
   description:
-    "Learn about Growthik Media, a leading digital marketing and video production agency in Pune. Discover our mission, values, and the team behind your success.",
+    "Learn about Growthik Media, a leading digital marketing and video production agency in Pune. Discover our mission, valuesand the team behind your success.",
   keywords:
     "about growthik media, digital marketing agency pune, video production company, our story, our team",
   authors: [{ name: "Growthik Media" }],
@@ -139,7 +139,7 @@ export default function About() {
               <p className="text-lg text-(--text-secondary) leading-relaxed mb-8">
                 At Growthik Media, we blend deep technical expertise with
                 creative intuition. Our team is comprised of specialists who
-                don't just use tools—they build the systems that drive modern
+                don't just use tools-they build the systems that drive modern
                 commerce.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

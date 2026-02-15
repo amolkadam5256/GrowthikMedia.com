@@ -46,10 +46,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     new Set([...regularLinks, ...standaloneLinks, ...megaMenuLinks]),
   );
 
-  return allRoutes.map((route) => ({
-    url: `${baseUrl}${route === "/" ? "" : route}`,
-    lastModified: new Date(),
-    changeFrequency: route === "/" ? "daily" : "monthly",
-    priority: route === "/" ? 1.0 : route.startsWith("/services") ? 0.8 : 0.5,
-  }));
+  return allRoutes.map((route) => {
+    // Ensure trailing slash for consistency with next.config.js
+    const normalizedRoute = route.endsWith("/") ? route : `${route}/`;
+    return {
+      url: `${baseUrl}${normalizedRoute === "/" ? "" : normalizedRoute}`,
+      lastModified: new Date(),
+      changeFrequency: route === "/" ? "daily" : "monthly",
+      priority: route === "/" ? 1.0 : route.startsWith("/services") ? 0.8 : 0.5,
+    };
+  });
 }

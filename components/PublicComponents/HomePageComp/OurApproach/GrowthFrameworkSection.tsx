@@ -14,16 +14,16 @@ const STEPS = [
   {
     title: "Discovery & Audit",
     benefit:
-      "Technical SEO, UX audit, creative performance review, and comprehensive ad funnel analysis.",
+      "Technical SEO, UX audit, creative performance reviewand comprehensive ad funnel analysis.",
     description:
-      "As a leading Digital Marketing Company in Pune, we begin with a deep dive into your current ecosystem. Our SEO Services in Pune experts identify toxic links, speed bottlenecks, and conversion leaks before we spend a single rupee.",
+      "As a leading Digital Marketing Company in Pune, we begin with a deep dive into your current ecosystem. Our SEO Services in Pune experts identify toxic links, speed bottlenecksand conversion leaks before we spend a single rupee.",
     icon: ClipboardCheck,
     keywords: ["Digital Marketing Company in Pune", "SEO Services in Pune"],
   },
   {
     title: "Strategy Blueprint",
     benefit:
-      "Data-backed growth roadmap with KPIs, timelines, and revenue milestones.",
+      "Data-backed growth roadmap with KPIs, timelinesand revenue milestones.",
     description:
       "Our Performance Marketing Agency builds a custom-engineered blueprint. We don't believe in guesswork; we set aggressive revenue targets and map out the exact path to dominate your industry.",
     icon: MapIcon,
@@ -41,7 +41,7 @@ const STEPS = [
   {
     title: "Optimize & Scale",
     benefit:
-      "Weekly optimization sprints, A/B testing, CRO improvements, and aggressive scaling.",
+      "Weekly optimization sprints, A/B testing, CRO improvementsand aggressive scaling.",
     description:
       "Marketing is never 'finished'. We run continuous A/B tests and conversion rate optimization (CRO) sprints to ensure your ROAS keeps climbing while we aggressively scale your winners.",
     icon: TrendingUp,
@@ -69,8 +69,8 @@ const GrowthFrameworkSection = React.memo(() => {
             <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-[1.1]">
-            OUR 4-STEP{" "}
-            <span className="text-(--color-primary)">GROWTH FRAMEWORK</span>
+            GROWTH STRATEGY{" "}
+            <span className="text-(--color-primary)">FRAMEWORK</span>
           </h2>
           <p className="text-lg md:text-xl text-(--text-secondary) font-light italic max-w-2xl mx-auto leading-relaxed">
             How We Take You to the Top

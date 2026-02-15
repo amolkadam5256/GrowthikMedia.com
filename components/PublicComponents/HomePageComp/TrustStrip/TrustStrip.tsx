@@ -86,10 +86,10 @@ const TrustStrip = React.memo(() => {
             {/* Certifications & Partners */}
             <div className="flex items-center gap-3 bg-(--surface) px-4 py-2 rounded-full border border-(--border) shadow-sm shrink-0">
               <div className="flex -space-x-2">
-                <div className="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white border-2 border-(--surface) shadow-sm">
+                <div className="w-7 h-7 rounded-full bg-(--color-primary) opacity-80 flex items-center justify-center text-[10px] font-bold text-white border-2 border-(--surface) shadow-sm">
                   G
                 </div>
-                <div className="w-7 h-7 rounded-full bg-blue-400 flex items-center justify-center text-[10px] font-bold text-white border-2 border-(--surface) shadow-sm">
+                <div className="w-7 h-7 rounded-full bg-(--color-primary) flex items-center justify-center text-[10px] font-bold text-white border-2 border-(--surface) shadow-sm">
                   M
                 </div>
               </div>

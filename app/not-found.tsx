@@ -117,7 +117,7 @@ function NotFoundContent() {
             </h2>
             <p className="text-lg md:text-xl text-(--color-neutral) leading-relaxed animate-[fadeIn_0.7s_ease-in]">
               Looks like this page took an unexpected detour. But don&apos;t
-              worry—
+              worry-
               <br />
               our digital marketing experts can help you find your way back to
               success!

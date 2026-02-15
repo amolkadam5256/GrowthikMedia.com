@@ -17,7 +17,7 @@ const TESTIMONIALS = [
     company: "Heritage Furnishings",
     city: "Pune",
     rating: 5,
-    text: "As the top Digital Marketing Company in Pune, they didn't just manage our ads; they re-engineered our entire sales funnel. Our organic leads grew by 3x within 6 months, and the ROI on our performance marketing has never been better. Truly growth marketing experts!",
+    text: "As the top Digital Marketing Company in Pune, they didn't just manage our ads; they re-engineered our entire sales funnel. Our organic leads grew by 3x within 6 monthsand the ROI on our performance marketing has never been better. Truly growth marketing experts!",
     metrics: "300% Growth in Leads",
     avatar: "/testimonials/rajesh.png",
   },
@@ -89,8 +89,8 @@ const TestimonialSection = React.memo(() => {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1]">
-              REAL VOICES,{" "}
-              <span className="text-(--color-primary)">REAL GROWTH</span>
+              CLIENT SUCCESS STORIES,{" "}
+              <span className="text-(--color-primary)">REAL RESULTS</span>
             </h2>
             <p className="text-lg md:text-xl text-(--text-secondary) mt-4 font-light italic max-w-2xl">
               Don't take our word for it-listen to the results.

@@ -204,4 +204,4 @@ The yellow accent in the bottom-left corner will slide in smoothly, just like in
 
 ---
 
-**All components are creative, animated, and use your existing project colors!** 🎉
+**All components are creative, animatedand use your existing project colors!** 🎉

@@ -2,7 +2,7 @@
 
 ## 📋 Overview
 
-An SEO-optimized section featuring a robot mascot video, keyword-rich content about digital marketing services in Pune, and 6 feature cards highlighting key services.
+An SEO-optimized section featuring a robot mascot video, keyword-rich content about digital marketing services in Puneand 6 feature cards highlighting key services.
 
 ## 📁 Location
 
@@ -88,7 +88,7 @@ components/PublicComponents/HomePageComp/OurApproach/
 
 Focuses on:
 
-- Approach combining creativity, strategy, and results
+- Approach combining creativity, strategyand results
 - Positioning as trusted company in Pune
 - Services: social media, email campaigns, media planning
 - Tools: Google Analytics, YouTube SEO
@@ -253,7 +253,7 @@ Replace `public/robot-mascot.mp4` with your video file and update the source:
   <strong style={{ color: "var(--text-primary)" }}>
     digital marketing
   </strong>{" "}
-  combines creativity, strategy, and a commitment to results.
+  combines creativity, strategyand a commitment to results.
 </p>
 ```
 

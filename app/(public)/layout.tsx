@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     default: `${CONTACT_INFO.companyName} | Digital Marketing Agency in Pune`,
     template: `%s | ${CONTACT_INFO.companyName}`,
   },
-  description: `${CONTACT_INFO.companyName} is a top digital marketing agency in Pune. We provide SEO, PPC, social media, and video production services to scale your business.`,
+  description: `${CONTACT_INFO.companyName} is a top digital marketing agency in Pune. We provide SEO, PPC, social mediaand video production services to scale your business.`,
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${CONTACT_INFO.companyName} - Digital Marketing Agent in Pune`,
     description:
-      "Premium digital marketing, SEO, and video production services in Pune.",
+      "Premium digital marketing, SEOand video production services in Pune.",
     images: ["/og-image.png"],
     creator: "@growthikmedia",
   },
@@ -127,9 +127,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: CONTACT_INFO.website,
-  },
+  // alternates: {
+  //   canonical: "./",
+  // },
   verification: {
     google: "ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs",
   },
