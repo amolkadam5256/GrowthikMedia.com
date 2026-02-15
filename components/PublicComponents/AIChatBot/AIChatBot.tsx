@@ -141,7 +141,7 @@ const AIChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-10 right-6 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -158,18 +158,17 @@ const AIChatBot = () => {
             {/* Chat Header */}
             <div className="bg-(--color-primary) p-4 flex items-center justify-between text-white">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center relative">
+                <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center relative">
                   <Bot className="w-6 h-6 text-white" />
                   <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-(--color-primary) rounded-full shadow-lg" />
                 </div>
                 <div>
                   <h3 className="font-black uppercase tracking-widest text-xs">
-                    Growthik AI{" "}
-                    <span className="text-[8px] opacity-70 ml-1">OFFICIAL</span>
+                    Growthik AI
                   </h3>
                   <p className="text-[10px] opacity-80 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                    Online & Ready
+                    Online
                   </p>
                 </div>
               </div>
@@ -371,9 +370,9 @@ const AIChatBot = () => {
         transition={{
           y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
         }}
-        className={`relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center group ${
+        className={`relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center group ${
           isOpen
-            ? "bg-(--text-primary) rounded-2xl shadow-2xl overflow-hidden"
+            ? "bg-(--text-primary) rounded-xl shadow-xl overflow-hidden"
             : ""
         }`}
       >
@@ -398,9 +397,9 @@ const AIChatBot = () => {
               className="relative z-10 flex flex-col items-center"
             >
               {/* Custom 3D Character Look */}
-              <div className="flex flex-col items-center mb-1">
-                <div className="w-10 h-8 bg-(--color-primary) rounded-xl relative shadow-lg overflow-hidden mb-0.5 border border-white/10">
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-1.5">
+              <div className="flex flex-col items-center">
+                <div className="w-8 h-6 bg-(--color-primary) rounded-lg relative shadow-lg overflow-hidden mb-0.5 border border-white/10">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-1">
                     <motion.div
                       animate={{ scaleY: [1, 0.1, 1] }}
                       transition={{
@@ -408,7 +407,7 @@ const AIChatBot = () => {
                         duration: 4,
                         times: [0, 0.9, 1],
                       }}
-                      className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_5px_white]"
+                      className="w-1 h-1 bg-white rounded-full shadow-[0_0_5px_white]"
                     />
                     <motion.div
                       animate={{ scaleY: [1, 0.1, 1] }}
@@ -417,20 +416,25 @@ const AIChatBot = () => {
                         duration: 4,
                         times: [0, 0.9, 1],
                       }}
-                      className="w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_5px_white]"
+                      className="w-1 h-1 bg-white rounded-full shadow-[0_0_5px_white]"
                     />
                   </div>
                 </div>
-                <div className="w-12 h-6 bg-(--color-primary) rounded-lg relative shadow-lg overflow-hidden flex items-center justify-center border border-white/10">
-                  <div className="w-4 h-1 bg-white/30 rounded-full" />
+                <div className="w-10 h-4 bg-(--color-primary) rounded-md relative shadow-lg overflow-hidden flex items-center justify-center border border-white/10">
+                  <div className="w-3 h-0.5 bg-white/30 rounded-full" />
                 </div>
               </div>
-              <span className="text-[10px] font-black uppercase text-(--color-primary) tracking-widest opacity-90 group-hover:opacity-100">
-                Talk to AI
-              </span>
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Hover Text */}
+        {!isOpen && (
+          <div className="absolute right-full mr-4 bg-black text-white px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+            Talk to AI
+            <div className="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-black rotate-45" />
+          </div>
+        )}
       </motion.button>
     </div>
   );
