@@ -157,10 +157,10 @@ const ClientSuccessMetricsSection = () => {
           <p className="text-base text-(--text-secondary) leading-relaxed">
             These aren't vanity metrics-they're revenue-driving results that
             transform businesses. Every client receives transparent monthly
-            reporting, dedicated account managementand strategic growth
+            reporting, dedicated account management and strategic growth
             roadmaps. We don't just track clicks-we track revenue, customer
-            lifetime valueand sustainable growth. When you partner with Growthik
-            Media, you're investing in measurable, scalable success.
+            lifetime value and sustainable growth. When you partner with
+            Growthik Media, you're investing in measurable, scalable success.
           </p>
         </div>
       </div>

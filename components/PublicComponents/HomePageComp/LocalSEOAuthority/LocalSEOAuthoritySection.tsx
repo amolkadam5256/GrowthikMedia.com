@@ -86,7 +86,7 @@ const LocalSEOAuthoritySection = () => {
               On-Ground Support & Strategy Sessions
             </h3>
             <p className="text-(--text-secondary) leading-relaxed">
-              Face-to-face strategy sessions, real-time market insightsand deep
+              Face-to-face strategy sessions, real-time market deep
               understanding of regional consumer behavior.
             </p>
           </div>
@@ -107,7 +107,7 @@ const LocalSEOAuthoritySection = () => {
             </Link>{" "}
             isn't just about proximity-it's about local expertise that drives
             results. Unlike remote agencies, we offer face-to-face strategy
-            sessions, real-time market insightsand deep understanding of
+            sessions, real-time market insights and deep understanding of
             regional consumer behavior.
           </p>
 

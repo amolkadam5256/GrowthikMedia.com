@@ -37,7 +37,7 @@ export default function SEO() {
             url: CONTACT_INFO.website,
             logo: `${CONTACT_INFO.website}/logo.png`,
             description:
-              "Growthik Media is a leading digital marketing agency in Pune. We specialize in ROI-focused SEO, PPC, social mediaand professional video production.",
+              "Growthik Media is a leading digital marketing agency in Pune. We specialize in ROI-focused SEO, PPC, social media and professional video production.",
             email: CONTACT_INFO.email.info,
             telephone: CONTACT_INFO.phone.primary,
             address: {
@@ -301,7 +301,7 @@ export default function SEO() {
                 name: "Why choose Growthik Media as your Digital Marketing Company in Pune?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Growthik Media combines local expertise, innovative data-driven strategiesand a results-focused approach to elevate your brand. We don't just provide services; we partner with you to achieve sustainable growth.",
+                  text: "Growthik Media combines local expertise, innovative data-driven strategies and a results-focused approach to elevate your brand. We don't just provide services; we partner with you to achieve sustainable growth.",
                 },
               },
               {
@@ -309,7 +309,7 @@ export default function SEO() {
                 name: "What services does your Digital Marketing Agency in Pune offer?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We offer SEO, Social Media Marketing, Content Creation, Performance Marketingand specialized Video Production services.",
+                  text: "We offer SEO, Social Media Marketing, Content Creation, Performance Marketing and specialized Video Production services.",
                 },
               },
               {

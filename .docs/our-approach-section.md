@@ -88,7 +88,7 @@ components/PublicComponents/HomePageComp/OurApproach/
 
 Focuses on:
 
-- Approach combining creativity, strategyand results
+- Approach combining creativity, strategy results
 - Positioning as trusted company in Pune
 - Services: social media, email campaigns, media planning
 - Tools: Google Analytics, YouTube SEO

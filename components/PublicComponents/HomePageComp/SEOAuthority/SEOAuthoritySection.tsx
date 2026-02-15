@@ -8,7 +8,7 @@ const seoExpertise = [
   {
     icon: Search,
     title: "Technical SEO",
-    desc: "Core web vitals, schema markupand advanced architecture.",
+    desc: "Core web vitals, schema markup and advanced architecture.",
     link: "/seo-services-pune",
   },
   {

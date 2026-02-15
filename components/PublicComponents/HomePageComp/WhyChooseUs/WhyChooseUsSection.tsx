@@ -28,7 +28,7 @@ const USP_ITEMS = [
     icon: FileText,
     title: "Transparent Reporting",
     description:
-      "No smoke and mirrors. Receive detailed monthly reports with clear KPIs, performance metricsand actionable insights you can trust.",
+      "No smoke and mirrors. Receive detailed monthly reports with clear KPIs, performance metrics and actionable insights you can trust.",
   },
   {
     icon: Award,

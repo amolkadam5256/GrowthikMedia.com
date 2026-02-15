@@ -19,7 +19,7 @@ const services = [
     number: "02",
     title: "Digital Marketing",
     description:
-      "Data-driven marketing strategies that amplify your brand presence, engage your audienceand drive measurable growth.",
+      "Data-driven marketing strategies that amplify your brand presence, engage your audience and drive measurable growth.",
   },
   {
     icon: TrendingUp,
@@ -106,7 +106,7 @@ const OurServicesSection = React.memo(() => {
             data-aos-delay="300"
           >
             Empowering your brand with innovative solutions that drive growth,
-            engagementand success in the digital landscape.
+            engagement and success in the digital landscape.
           </p>
         </header>
 

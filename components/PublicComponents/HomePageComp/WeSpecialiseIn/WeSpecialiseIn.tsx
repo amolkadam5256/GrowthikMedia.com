@@ -22,31 +22,31 @@ const services: Service[] = [
     icon: Video,
     title: "Video Production",
     description:
-      "Professional video production services including corporate videos, promotional contentand social media videos that captivate your audience.",
+      "Professional video production services including corporate videos, promotional content and social media videos that captivate your audience.",
   },
   {
     icon: Megaphone,
     title: "Digital Marketing",
     description:
-      "Comprehensive digital marketing strategies that drive traffic, increase engagementand boost your online presence across all platforms.",
+      "Comprehensive digital marketing strategies that drive traffic, increase engagement and boost your online presence across all platforms.",
   },
   {
     icon: TrendingUp,
     title: "SEO Optimization",
     description:
-      "Advanced SEO techniques to improve your search rankings, increase organic trafficand dominate your industry online.",
+      "Advanced SEO techniques to improve your search rankings, increase organic traffic and dominate your industry online.",
   },
   {
     icon: Palette,
     title: "Content Creation",
     description:
-      "Engaging and creative content that tells your brand story, resonates with your audienceand drives meaningful conversions.",
+      "Engaging and creative content that tells your brand story, resonates with your audience and drives meaningful conversions.",
   },
   {
     icon: Share2,
     title: "Social Media Marketing",
     description:
-      "Strategic social media campaigns that build communities, increase brand awarenessand generate leads across all major platforms.",
+      "Strategic social media campaigns that build communities, increase brand awareness and generate leads across all major platforms.",
   },
   {
     icon: BarChart3,

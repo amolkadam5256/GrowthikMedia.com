@@ -12,6 +12,7 @@ import {
   Twitter,
   MapPin,
   ExternalLink,
+  Youtube,
 } from "lucide-react";
 import NextImage from "next/image";
 import {
@@ -150,7 +151,7 @@ export default function Footer() {
         </div>
 
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-15 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-10 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
             {/* Brand Column - Spans 4 columns on large screens */}
             <div className="lg:col-span-4">
@@ -188,7 +189,7 @@ export default function Footer() {
                 >
                   Empowering businesses to thrive in the digital landscape
                   through innovative marketing strategies, cutting-edge web
-                  developmentand creative branding solutions.
+                  development and creative branding solutions.
                 </p>
 
                 {/* Contact Info */}
@@ -340,6 +341,28 @@ export default function Footer() {
           } relative z-10`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            {/* SEO Paragraph */}
+            <div
+              className={`mb-8 pb-8 border-b ${isDark ? "border-gray-800" : "border-gray-200"}`}
+            >
+              <p
+                className={`text-xs leading-relaxed text-justify ${isDark ? "text-gray-500" : "text-gray-500"}`}
+              >
+                <strong>Growthik Media</strong> is a premier{" "}
+                <strong>Performance Marketing Agency in Pune</strong>, dedicated
+                to scaling businesses through data-backed strategies. As a
+                top-rated <strong>Digital Marketing Company in Pune</strong>, we
+                specialize in delivering high-ROI campaigns, including{" "}
+                <strong>SEO Services in Pune</strong>, Social Media Marketing,
+                Pay-Per-Click (PPC) advertising, and custom Website Development.
+                Our expert team combines creative storytelling with technical
+                precision to drive qualified leads, enhance brand visibility,
+                and ensure tangible growth. From local startups to established
+                enterprises, we are the trusted partner for comprehensive
+                digital excellence in Pune and across India.
+              </p>
+            </div>
+
             {/* Main Bottom Content */}
             <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-4">
               {/* Copyright & Legal Links */}
@@ -429,6 +452,19 @@ export default function Footer() {
                     aria-label="Twitter/X"
                   >
                     <Twitter className="w-5 h-5" />
+                  </a>
+                  <a
+                    href={CONTACT_INFO.social.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-2.5 rounded-lg ${
+                      isDark
+                        ? "bg-gray-800 hover:bg-[#D90B1C]"
+                        : "bg-gray-100 hover:bg-[#D90B1C]"
+                    } hover:text-white transition-all hover:scale-110 group`}
+                    aria-label="YouTube"
+                  >
+                    <Youtube className="w-5 h-5" />
                   </a>
                 </div>
               </div>

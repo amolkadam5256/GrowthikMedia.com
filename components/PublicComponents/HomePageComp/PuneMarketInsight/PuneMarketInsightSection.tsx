@@ -70,7 +70,13 @@ const PuneMarketInsightSection = () => {
                       Local Intent
                     </h3>
                     <p className="text-sm text-(--text-secondary)">
-                      Surge in &quot;Near Me&quot; searches across Pune & PCMC
+                      Surge in &quot;Near Me&quot; searches across{" "}
+                      <Link
+                        href="/seo-marketing-pune"
+                        className="text-(--color-primary) hover:underline font-semibold"
+                      >
+                        Pune & PCMC
+                      </Link>{" "}
                       regions.
                     </p>
                   </div>
@@ -99,7 +105,14 @@ const PuneMarketInsightSection = () => {
                       Competition
                     </h3>
                     <p className="text-sm text-(--text-secondary)">
-                      70% of Pune businesses are now investing in SEO.
+                      70% of Pune businesses are now investing in{" "}
+                      <Link
+                        href="/services/seo"
+                        className="text-(--color-primary) hover:underline font-semibold"
+                      >
+                        SEO
+                      </Link>
+                      .
                     </p>
                   </div>
                 </div>

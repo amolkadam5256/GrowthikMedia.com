@@ -144,7 +144,7 @@ export default function OurApproachSection() {
                 <strong style={{ color: "var(--text-primary)" }}>
                   digital marketing
                 </strong>{" "}
-                combines creativity, strategyand a commitment to results. As a
+                combines creativity, strategy and a commitment to results. As a
                 trusted{" "}
                 <strong style={{ color: "var(--text-primary)" }}>
                   digital marketing company in Pune

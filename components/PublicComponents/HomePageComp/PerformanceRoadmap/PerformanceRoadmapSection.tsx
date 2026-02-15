@@ -9,6 +9,8 @@ const roadmapDisplay = [
     month: "Month 1",
     title: "Foundation & Audit",
     icon: BarChart2,
+    link: "/audit",
+    linkText: "Get Free Audit",
     points: [
       "Technical Website Audit",
       "Broken Link Fixes",
@@ -20,6 +22,8 @@ const roadmapDisplay = [
     month: "Month 2",
     title: "Optimization & Scale",
     icon: Rocket,
+    link: "/services/performance-marketing",
+    linkText: "Scale Now",
     points: [
       "Targeted Campaign Launch",
       "A/B Creative Testing",
@@ -31,6 +35,8 @@ const roadmapDisplay = [
     month: "Month 3",
     title: "Authority & ROI",
     icon: Crown,
+    link: "/services/brand-strategy",
+    linkText: "Build Authority",
     points: [
       "Winner Channel Scaling",
       "SEO Content Clusters",
@@ -105,6 +111,15 @@ const PerformanceRoadmapSection = () => {
                   </li>
                 ))}
               </ul>
+
+              {step.link && (
+                <Link
+                  href={step.link}
+                  className="mt-4 text-xs font-bold text-(--color-primary) border-b border-(--color-primary) hover:text-(--text-primary) hover:border-(--text-primary) transition-all pb-0.5 uppercase tracking-wider"
+                >
+                  {step.linkText}
+                </Link>
+              )}
             </div>
           ))}
         </div>

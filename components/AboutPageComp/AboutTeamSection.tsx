@@ -128,7 +128,7 @@ const AboutTeamSection = () => {
                     </div>
                     <p className="text-xs text-(--text-secondary) leading-relaxed">
                       Building modern, scalable web architectures using Next.js,
-                      Reactand RESTful services for high-speed performance.
+                      React and RESTful services for high-speed performance.
                     </p>
                   </div>
 

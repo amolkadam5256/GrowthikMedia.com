@@ -10,24 +10,32 @@ const techStack = [
     category: "SEO Intelligence",
     tools: "Semrush, Ahrefs, GSC",
     desc: "Deep keyword intelligence and competitor gap analysis.",
+    link: "/services/seo",
+    linkText: "SEO Service",
   },
   {
     icon: BarChart3,
     category: "Analytics & Behavior",
     tools: "GA4, Microsoft Clarity",
     desc: "User behavior tracking to eliminate ad spend wastage.",
+    link: "/services/performance-marketing",
+    linkText: "Performance Mktg",
   },
   {
     icon: Users,
     category: "CRM & Automation",
     tools: "HubSpot, Zapier",
     desc: "Seamless lead management and workflow automation.",
+    link: "/services/lead-generation",
+    linkText: "Lead Gen",
   },
   {
     icon: Palette,
     category: "Creative Suite",
     tools: "Adobe CC, Canva Ent.",
     desc: "Rapid high-conversion creative iteration and testing.",
+    link: "/services/social-media-marketing",
+    linkText: "Creative Strategy",
   },
 ];
 
@@ -96,7 +104,17 @@ const TechStackSection = () => {
                 <p className="text-xs font-mono text-(--color-primary) mb-2 uppercase tracking-wide">
                   {item.tools}
                 </p>
-                <p className="text-sm text-(--text-secondary)">{item.desc}</p>
+                <p className="text-sm text-(--text-secondary) mb-3">
+                  {item.desc}
+                </p>
+                {item.link && (
+                  <Link
+                    href={item.link}
+                    className="text-xs font-bold text-(--text-primary) hover:text-(--color-primary) flex items-center gap-1 transition-colors uppercase tracking-wider"
+                  >
+                    {item.linkText} <Zap className="w-3 h-3" />
+                  </Link>
+                )}
               </div>
             ))}
           </div>

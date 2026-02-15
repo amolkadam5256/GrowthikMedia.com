@@ -111,8 +111,8 @@ const FounderSection = () => {
                   Full Stack Developer
                 </h4>
                 <p className="text-[10px] text-(--text-secondary) leading-relaxed">
-                  Specializing in Next.js, Reactand robust backend architectures
-                  to build scalable web platforms.
+                  Specializing in Next.js, React and robust backend
+                  architectures to build scalable web platforms.
                 </p>
               </div>
 

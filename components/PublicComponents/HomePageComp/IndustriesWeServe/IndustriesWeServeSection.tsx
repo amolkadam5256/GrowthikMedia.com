@@ -45,7 +45,7 @@ const industries = [
   {
     icon: Palmtree,
     title: "Hospitality & Tourism",
-    desc: "Maximize bookings through local SEO, reviewsand conversion optimization.",
+    desc: "Maximize bookings through local SEO, reviews and conversion optimization.",
     link: "/seo-marketing-pune",
   },
 ];

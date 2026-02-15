@@ -278,7 +278,7 @@ export default function AboutUsSection() {
                 >
                   We believe every business has a unique story to tell. Our
                   purpose is to amplify your brand&apos;s voice, connect you
-                  with your audienceand drive meaningful growth through
+                  with your audience and drive meaningful growth through
                   innovative digital strategies and compelling visual content.
                 </p>
               </article>
