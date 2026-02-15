@@ -21,7 +21,7 @@ const Button = ({
 
   const variants = {
     primary:
-      "bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white shadow-lg hover:shadow-xl dark:shadow-[0_10px_40px_rgba(59,130,246,0.3)]",
+      "bg-(--color-primary) hover:bg-(--color-primary-light) text-white shadow-lg hover:shadow-xl shadow-(--color-primary)/20",
     secondary:
       "bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white",
     gradient:
