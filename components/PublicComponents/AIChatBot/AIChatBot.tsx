@@ -165,7 +165,7 @@ const AIChatBot = () => {
             {/* Chat Header */}
             <div className="bg-(--color-primary) p-4 flex items-center justify-between text-white">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center relative">
+                <div className="w-10 h-10 flex items-center justify-center relative">
                   <Bot className="w-6 h-6 text-white" />
                   <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-(--color-primary) rounded-full shadow-lg" />
                 </div>
@@ -377,13 +377,13 @@ const AIChatBot = () => {
         transition={{
           y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
         }}
-        className={`relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center group bg-white dark:bg-gray-900 rounded-full shadow-lg ${
+        className={`relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center group  dark:bg-gray-900 rounded-full shadow-lg ${
           isOpen
-            ? "bg-(--text-primary) rounded-xl shadow-xl overflow-hidden hidden md:flex"
+            ? "bg-(--color-primary) rounded-xl shadow-xl overflow-hidden hidden md:flex"
             : ""
         }`}
       >
-        <div className="absolute inset-0 bg-linear-to-tr from-white/20 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none" />
 
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -393,7 +393,7 @@ const AIChatBot = () => {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
             >
-              <X className="w-8 h-8 text-white relative z-10" />
+              <X className="w-10 h-10 text-black relative z-10" />
             </motion.div>
           ) : (
             <motion.div
