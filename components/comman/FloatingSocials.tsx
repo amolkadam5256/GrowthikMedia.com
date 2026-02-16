@@ -59,8 +59,6 @@ export default function FloatingSocials() {
           rel="noopener noreferrer"
           className="relative flex items-center justify-center w-9 h-9 rounded-full bg-black text-white transition-all duration-300 active:scale-95 group/item overflow-visible"
           aria-label={social.name}
-          data-aos="fade-right"
-          data-aos-delay={index * 100}
           onMouseEnter={(e) => {
             e.currentTarget.style.boxShadow = `0 0 15px ${social.color}`;
             e.currentTarget.style.backgroundColor = social.color;

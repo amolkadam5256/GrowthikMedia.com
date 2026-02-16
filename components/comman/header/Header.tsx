@@ -7,7 +7,7 @@ import { TopBar } from "./TopBar";
 import { Logo } from "./Logo";
 import { DesktopNavigation } from "./DesktopNavigation";
 import { MobileNavigation } from "./MobileNavigation";
-import { ContactButton } from "./ContactButton";
+
 import { MobileMenuButton } from "./MobileMenuButton";
 import { GlobalStyles } from "./GlobalStyles";
 import { FloatingThemeToggle } from "./FloatingThemeToggle";
@@ -74,8 +74,6 @@ export default function Header() {
           <DesktopNavigation navigationData={navigationData.desktop} />
 
           <div className="flex items-center space-x-4">
-            <ContactButton />
-
             <MobileMenuButton
               isMobileMenuOpen={isMobileMenuOpen}
               toggleMobileMenu={toggleMobileMenu}

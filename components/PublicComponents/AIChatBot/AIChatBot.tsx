@@ -59,6 +59,13 @@ const AIChatBot = () => {
     }
   }, [messages, isTyping, showLeadForm]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleLeadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!leadData.name || !leadData.email || !leadData.phone) return;
@@ -141,7 +148,7 @@ const AIChatBot = () => {
   };
 
   return (
-    <div className="fixed bottom-10 right-6 z-50">
+    <div className="fixed bottom-4 right-4 md:bottom-10 md:right-6 z-[9999]">
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -153,7 +160,7 @@ const AIChatBot = () => {
             }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="absolute bottom-20 right-0 w-[350px] md:w-[400px] h-[500px] bg-(--surface) border border-(--border) shadow-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-0 left-0 w-full h-[85vh] md:absolute md:bottom-20 md:right-0 md:left-auto md:w-[400px] md:h-[500px] bg-(--surface) border border-(--border) shadow-2xl flex flex-col overflow-hidden rounded-t-2xl md:rounded-xl"
           >
             {/* Chat Header */}
             <div className="bg-(--color-primary) p-4 flex items-center justify-between text-white">
@@ -370,9 +377,9 @@ const AIChatBot = () => {
         transition={{
           y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
         }}
-        className={`relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center group ${
+        className={`relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center group bg-white dark:bg-gray-900 rounded-full shadow-lg ${
           isOpen
-            ? "bg-(--text-primary) rounded-xl shadow-xl overflow-hidden"
+            ? "bg-(--text-primary) rounded-xl shadow-xl overflow-hidden hidden md:flex"
             : ""
         }`}
       >
