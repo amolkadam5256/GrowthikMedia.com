@@ -42,12 +42,32 @@ const AboutFinalCTASection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title:
-    "About Growthik Media – Performance-Driven Digital Marketing Agency in Pune",
+  title: "About Growthik Media – AI-Powered Growth Engineering Company in Pune",
   description:
-    "Growthik Media is a results-focused digital growth partner helping ambitious brands scale through AI-driven SEO, performance marketing, and conversion-focused web engineering.",
+    "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems — not just marketing campaigns. We help ambitious brands scale with ROI-driven performance engineering.",
   keywords:
-    "About Digital Marketing Agency Pune, Growth Marketing Experts Pune, Performance Marketing Company India, AI SEO Pune, Local SEO Pune, Web Development Pune",
+    "Growthik Media, Growth Engineering Company Pune, AI-Powered Marketing Pune, Predictable Revenue Systems, Performance Marketing Pune, Digital Growth Agency India",
+  alternates: {
+    canonical: `${CONTACT_INFO.website}/about/`,
+  },
+  openGraph: {
+    title:
+      "About Growthik Media – Performance-Driven Digital Marketing Agency in Pune",
+    description:
+      "Growthik Media is a results-focused digital growth partner helping ambitious brands scale through AI-driven SEO, performance marketing, and conversion-focused web engineering.",
+    url: `${CONTACT_INFO.website}/about/`,
+    siteName: "Growthik Media",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "About Growthik Media",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
 };
 
 // JSON-LD structured data for Organization
@@ -109,7 +129,7 @@ const getFAQSchema = () => {
         name: "How is Growthik different from other agencies?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Unlike traditional agencies that focus on vanity metrics like likes and impressions, Growthik Media prioritizes revenue generation. We build comprehensive growth ecosystems using data analytics, AI automation, and conversion rate optimization (CRO).",
+          text: "Unlike traditional agencies that focus on simple marketing campaigns and vanity metrics, Growthik Media is a growth engineering company. We build predictable revenue systems using AI automation, data analytics, and performance engineering to ensure sustainable business growth.",
         },
       },
       {
@@ -137,7 +157,7 @@ export default function About() {
   const faqSchema = getFAQSchema();
 
   return (
-    <main className="bg-(--background) min-h-screen pt-20 overflow-hidden">
+    <main className="bg-[--background] min-h-screen pt-20 overflow-hidden">
       {/* Schema Markup */}
       <script
         type="application/ld+json"

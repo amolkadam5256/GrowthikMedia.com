@@ -67,10 +67,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(CONTACT_INFO.website),
   title: {
-    default: `${CONTACT_INFO.companyName} | Digital Marketing Agency in Pune`,
+    default: `${CONTACT_INFO.companyName} | AI-Powered Growth Engineering Company`,
     template: `%s | ${CONTACT_INFO.companyName}`,
   },
-  description: `${CONTACT_INFO.companyName} is a top digital marketing agency in Pune. We provide SEO, PPC, social mediaand video production services to scale your business.`,
+  description: `${CONTACT_INFO.companyName} is an AI-powered growth engineering company that builds predictable revenue systems — not just marketing campaigns. Scaling brands with ROI-driven performance.`,
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",

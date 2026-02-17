@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Blog | Growthik Media",
     description:
       "Digital marketing insights, tipsand industry trends from the experts at Growthik Media.",
-    url: "https://www.growthikmedia.com/blog",
+    url: "https://www.growthikmedia.com/blog/",
     siteName: "Growthik Media",
     images: [
       {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.growthikmedia.com/blog",
+    canonical: "https://www.growthikmedia.com/blog/",
   },
 };
 
@@ -77,10 +77,10 @@ export default function Blog() {
     <div className="min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)] bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-(--color-primary) to-(--color-primary-light) bg-clip-text text-transparent">
             Our Blog
           </h1>
-          <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
+          <p className="text-lg text-(--text-secondary) max-w-3xl mx-auto">
             Stay updated with the latest insights, tipsand trends in digital
             marketing and video production.
           </p>
@@ -90,7 +90,7 @@ export default function Blog() {
           {blogPosts.map((post, index) => (
             <article
               key={index}
-              className="rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105"
+              className="rounded-2xl p-8 shadow-lg transition-all duration-300 hover:transform hover:scale-105"
               style={{
                 backgroundColor: "var(--card-background)",
                 border: "1px solid var(--border-color)",
@@ -113,9 +113,7 @@ export default function Blog() {
               >
                 {post.title}
               </h2>
-              <p className="text-[var(--text-secondary)] mb-4">
-                {post.excerpt}
-              </p>
+              <p className="text-(--text-secondary) mb-4">{post.excerpt}</p>
               <time
                 className="text-sm"
                 style={{ color: "var(--text-secondary)" }}
@@ -127,7 +125,7 @@ export default function Blog() {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-lg text-[var(--text-secondary)]">
+          <p className="text-lg text-(--text-secondary)">
             More blog posts coming soon! Stay tuned for expert insights and
             industry updates.
           </p>

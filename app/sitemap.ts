@@ -41,19 +41,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     megaMenuLinks = [...megaMenuLinks, ...collectHrefs(menu.items || [])];
   });
 
+  // Legal and extra routes not in navigation
+  const extraRoutes = ["/privacy-policy", "/terms", "/audit"];
+
   // Unique links only
   const allRoutes = Array.from(
-    new Set([...regularLinks, ...standaloneLinks, ...megaMenuLinks]),
+    new Set([
+      ...regularLinks,
+      ...standaloneLinks,
+      ...megaMenuLinks,
+      ...extraRoutes,
+    ]),
   );
 
   return allRoutes.map((route) => {
     // Ensure trailing slash for consistency with next.config.js
     const normalizedRoute = route.endsWith("/") ? route : `${route}/`;
     return {
-      url: `${baseUrl}${normalizedRoute === "/" ? "" : normalizedRoute}`,
+      url: `${baseUrl}${normalizedRoute === "/" ? "/" : normalizedRoute}`,
       lastModified: new Date(),
       changeFrequency: route === "/" ? "daily" : "monthly",
-      priority: route === "/" ? 1.0 : route.startsWith("/services") ? 0.8 : 0.5,
+      priority:
+        route === "/"
+          ? 1.0
+          : route.startsWith("/services")
+            ? 0.8
+            : route === "/audit"
+              ? 0.9
+              : 0.5,
     };
   });
 }

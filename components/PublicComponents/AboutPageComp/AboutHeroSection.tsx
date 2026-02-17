@@ -39,20 +39,20 @@ const AboutHeroSection = () => {
               </div>
 
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
-                GROWTHIK <br />
-                <span className="text-(--text-primary)">
-                  IS HERE TO BE
+                GROWTHIK MEDIA <br />
+                <span className="text-(--text-secondary) text-2xl md:text-3xl lg:text-4xl">
+                  AI-POWERED
                 </span>{" "}
                 <br />
                 <span className="text-(--color-primary)">
-                  YOUR GROWTH PARTNER
+                  GROWTH ENGINEERING
                 </span>
               </h1>
 
               <p className="text-lg text-(--text-secondary) leading-relaxed mb-6 max-w-lg font-medium">
-                Growthik Media is a results-focused digital growth partner
-                helping ambitious brands scale through AI-driven SEO,
-                performance marketing, and conversion-focused web engineering.
+                Growthik Media is an AI-powered growth engineering company that
+                builds predictable revenue systems — not just marketing
+                campaigns.
               </p>
 
               {/* SEO Text Block */}

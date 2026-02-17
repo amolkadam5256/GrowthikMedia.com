@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Our Services | Growthik Media",
     description:
       "Comprehensive digital marketing and video production services to grow your business.",
-    url: "https://www.growthikmedia.com/services",
+    url: "https://www.growthikmedia.com/services/",
     siteName: "Growthik Media",
     images: [
       {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.growthikmedia.com/services",
+    canonical: "https://www.growthikmedia.com/services/",
   },
 };
 
@@ -100,10 +100,10 @@ export default function Services() {
     <div className="min-h-screen py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)] bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-(--color-primary) to-(--color-primary-light) bg-clip-text text-transparent">
             Our Services
           </h1>
-          <p className="text-lg text-[var(--text-secondary)] max-w-3xl mx-auto">
+          <p className="text-lg text-(--text-secondary) max-w-3xl mx-auto">
             We offer a comprehensive range of digital marketing and video
             production services designed to help your business grow and succeed
             in the digital age.
@@ -126,14 +126,14 @@ export default function Services() {
               >
                 {service.title}
               </h2>
-              <p className="text-[var(--text-secondary)] mb-6">
+              <p className="text-(--text-secondary) mb-6">
                 {service.description}
               </p>
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
                   <li
                     key={idx}
-                    className="flex items-center text-[var(--text-secondary)]"
+                    className="flex items-center text-(--text-secondary)"
                   >
                     <span
                       className="w-2 h-2 rounded-full mr-3"

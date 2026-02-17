@@ -70,20 +70,26 @@ const AboutCompanySection = React.memo(() => {
 
             <div className="relative space-y-6 text-center">
               <p className="text-xl md:text-2xl text-(--text-primary) font-semibold leading-relaxed">
-                Performance-driven digital marketing agency in{" "}
-                <span className="text-(--color-primary) font-black">Pune</span>,
-                transforming ambitious businesses into market leaders.
+                Growthik Media is an{" "}
+                <span className="text-(--color-primary) font-black">
+                  AI-powered growth engineering company
+                </span>{" "}
+                that builds predictable revenue systems — not just marketing
+                campaigns.
               </p>
 
               <div className="w-20 h-1 bg-(--color-primary) mx-auto" />
 
               <p className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-3xl mx-auto">
-                We believe in{" "}
+                Based in{" "}
+                <span className="font-bold text-(--text-primary)">Pune</span>,
+                we combine advanced AI automation with data-driven performance
+                marketing to transform ambitious businesses into market leaders
+                with
                 <span className="text-(--color-primary) font-bold">
-                  data over guesswork
+                  {" "}
+                  ROI-focused engineering.
                 </span>
-                , results over vanity metrics. Our mission: help you dominate
-                your industry with ROI-focused strategies that scale.
               </p>
             </div>
           </div>

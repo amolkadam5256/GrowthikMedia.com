@@ -32,9 +32,9 @@ const WhoWeAreSection = () => {
             </div>
 
             <h2 className="text-3xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-8 leading-tight">
-              We Don’t Just Market. <br />
+              We Don’t Just Run Campaigns. <br />
               <span className="text-(--color-primary)">
-                We Engineer Growth.
+                We Build Revenue Systems.
               </span>
             </h2>
 

@@ -12,50 +12,37 @@ const HeroHeadline = () => {
     >
       {/* Main Content Container */}
       <div className="relative z-10 space-y-6 md:space-y-8">
-        {/* Pre-headline */}
-        <p
-          className="flex items-center justify-center gap-2 mb-2"
-          aria-label="Award-winning digital marketing agency"
+        {/* New Core Identity Message */}
+        <div
+          className="inline-block px-6 py-2 rounded-full border border-(--color-primary)/30 bg-(--color-primary)/5 backdrop-blur-sm shadow-xl shadow-primary/10 animate-fade-in"
+          data-aos="fade-down"
         >
-          <span
-            className="h-px w-8 md:w-12 bg-linear-to-r from-transparent to-(--color-primary)"
-            aria-hidden="true"
-          ></span>
-          <span
-            className="text-xs md:text-sm font-semibold uppercase tracking-wider"
-            style={{ color: "var(--color-primary)" }}
-          >
-            Award-Winning Digital Marketing Agency
-          </span>
-          <span
-            className="h-px w-8 md:w-12 bg-linear-to-l from-transparent to-(--color-primary)"
-            aria-hidden="true"
-          ></span>
-        </p>
+          <p className="text-xs md:text-sm font-bold tracking-wider text-white flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-(--color-primary) animate-pulse" />
+            Growthik Media: AI-Powered Growth Engineering
+          </p>
+        </div>
 
         {/* Main Headline - SEO Optimized H1 */}
         <h1
-          className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl font-black leading-[1.1] tracking-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight"
           style={{ color: "var(--color-white)" }}
         >
           <span className="sr-only">
-            Digital Marketing Agency in Pune That Drives ROI - Growthik Media
+            AI-Powered Growth Engineering Company in Pune - Growthik Media
           </span>
           <span aria-hidden="true">
-            Scale Your Revenue with
-            <br />
-            <span className="relative inline-block mt-2">
+            Building
+            <span className="relative inline-block mx-4">
               <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
-                Performance Marketing
+                Predictable Revenue
               </span>
-              {/* Animated underline */}
               <svg
-                className="absolute w-full h-4 md:h-6 -bottom-2 md:-bottom-3 left-0 animate-pulse"
+                className="absolute w-full h-4 md:h-6 -bottom-2 md:-bottom-3 left-0"
                 style={{ color: "var(--color-primary)" }}
                 viewBox="0 0 200 9"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
               >
                 <path
                   d="M2.00025 6.99997C69.5002 4.00003 128.5 -1.50002 198 2.49997"
@@ -66,31 +53,21 @@ const HeroHeadline = () => {
               </svg>
             </span>
             <br />
-            That Delivers ROI
+            Systems, Not Just Ads
           </span>
         </h1>
 
-        {/* Subheadline */}
+        {/* Subheadline - The Core Identity Line */}
         <p
-          className="text-base sm:text-lg md:text-xl lg:text-xl max-w-3xl mx-auto font-medium leading-relaxed px-4"
-          style={{ color: "var(--text-secondary)" }}
+          className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto font-medium leading-[1.6] px-4"
+          style={{ color: "var(--color-white)" }}
         >
-          Dominate your niche with{" "}
-          <strong
-            className="font-bold"
-            style={{ color: "var(--color-primary)" }}
-          >
-            Data-Driven SEO Services
+          Growthik Media is an{" "}
+          <strong className="text-(--color-primary) font-black">
+            AI-powered growth engineering company
           </strong>{" "}
-          and high-converting Paid Ads. We specialize in precision lead
-          generation to propel your business forward.
-          <br className="hidden md:block" />
-          <span
-            className="text-sm md:text-base"
-            style={{ color: "var(--text-tertiary)" }}
-          >
-            Turning clicks into customers with predictable growth strategies.
-          </span>
+          that builds predictable revenue systems —{" "}
+          <span className="opacity-80">not just marketing campaigns.</span>
         </p>
 
         {/* CTA Section */}

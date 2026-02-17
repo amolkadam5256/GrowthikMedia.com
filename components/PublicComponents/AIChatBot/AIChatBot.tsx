@@ -185,9 +185,9 @@ const AIChatBot = () => {
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1.5 hover:bg-white/10 transition-colors"
+                  className="p-1.5 hover:bg-black/10 transition-colors"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-4 h-4 text-black" />
                 </button>
               </div>
             </div>
@@ -377,7 +377,7 @@ const AIChatBot = () => {
         transition={{
           y: { repeat: Infinity, duration: 4, ease: "easeInOut" },
         }}
-        className={`relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center group  dark:bg-gray-900 rounded-full shadow-lg ${
+        className={`relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center group transition-all rounded-full ${
           isOpen
             ? "bg-(--color-primary) rounded-xl shadow-xl overflow-hidden hidden md:flex"
             : ""
@@ -393,7 +393,7 @@ const AIChatBot = () => {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
             >
-              <X className="w-10 h-10 text-black relative z-10" />
+              <X className="w-8 h-8 text-black relative z-10" />
             </motion.div>
           ) : (
             <motion.div
@@ -414,7 +414,7 @@ const AIChatBot = () => {
                         duration: 4,
                         times: [0, 0.9, 1],
                       }}
-                      className="w-1 h-1 bg-white rounded-full shadow-[0_0_5px_white]"
+                      className="w-1 h-1 bg-white"
                     />
                     <motion.div
                       animate={{ scaleY: [1, 0.1, 1] }}

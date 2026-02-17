@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Contact Us | Growthik Media",
     description:
       "Get in touch with Growthik Media for professional video production and content creation services.",
-    url: "https://www.growthikmedia.com/contact",
+    url: "https://www.growthikmedia.com/contact/",
     siteName: "Growthik Media",
     images: [
       {
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.growthikmedia.com/contact",
+    canonical: "https://www.growthikmedia.com/contact/",
   },
 };
 

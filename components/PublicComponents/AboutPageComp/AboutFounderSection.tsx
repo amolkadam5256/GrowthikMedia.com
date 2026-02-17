@@ -120,103 +120,158 @@ const AboutFounderSection = () => {
         </div>
       </section>
 
-      {/* --- TEAM SECTION ADDITION --- */}
-      <section className="py-24 border-b border-(--border) relative overflow-hidden">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#000_1px,transparent_1px)] dark:bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
+      {/* --- THE SQUAD: Creative Theme-Integrated Section --- */}
+      <section className="py-24 bg-(--background) relative overflow-hidden">
+        {/* Creative Background Elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-(--color-primary)/5 -skew-x-12 transform translate-x-20 pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 border border-(--color-primary)/10 rounded-full -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+
+        {/* Vertical Text Decoration */}
+        <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden xl:block select-none pointer-events-none">
+          <span className="text-[12rem] font-black text-(--text-primary)/5 rotate-90 inline-block tracking-tighter">
+            ELITE
+          </span>
+        </div>
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <div className="text-center mb-20" data-aos="fade-up">
-            <div className="inline-flex items-center justify-center gap-3 mb-4 px-4 py-1.5 rounded-full border border-(--color-primary)/20 bg-(--color-primary)/5">
-              <span className="text-(--color-primary) font-bold uppercase tracking-[0.2em] text-[10px]">
-                The Squad
-              </span>
+          <div
+            className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8"
+            data-aos="fade-up"
+          >
+            <div className="max-w-2xl">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-[2px] bg-(--color-primary)" />
+                <span className="text-(--color-primary) font-bold uppercase tracking-[0.4em] text-[10px]">
+                  The Squad
+                </span>
+              </div>
+              <h3 className="text-5xl md:text-7xl font-black text-(--text-primary) uppercase tracking-tighter leading-[0.9]">
+                Architects of <br />
+                <span
+                  className="text-transparent"
+                  style={{
+                    WebkitTextStroke: "1px var(--color-primary)",
+                  }}
+                >
+                  Digital Dominance
+                </span>
+              </h3>
             </div>
-            <h3 className="text-4xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter leading-none">
-              Strategic{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-primary) to-purple-600">
-                Core Team
-              </span>
-            </h3>
+
+            <p className="text-(--text-secondary) max-w-xs text-sm font-medium leading-relaxed border-l border-(--color-primary)/20 pl-6 hidden md:block">
+              A collective of growth engineers, AI strategists, and performance
+              architects obsessed with one thing: your revenue.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
-                name: "Demo Member 1",
-                role: "Head of SEO",
-                icon: <TrendingUp className="w-6 h-6" />,
+                name: "Digital Marketing Specialist",
+                role: "Performance & SEO Ops",
+                tag: "STRATEGY",
+                img: images.founder?.amol1,
               },
               {
-                name: "Demo Member 2",
-                role: "Lead Developer",
-                icon: <Briefcase className="w-6 h-6" />,
+                name: "AI Digital Strategist",
+                role: "Neural Automation",
+                tag: "AI OPS",
+                img: images.founder?.amol2,
               },
               {
-                name: "Demo Member 3",
-                role: "Performance Marketer",
-                icon: <Award className="w-6 h-6" />,
+                name: "Full-Stack Web Developer",
+                role: "Next.js & React Systems",
+                tag: "ENGINEERING",
+                img: images.founder?.amol1,
               },
               {
-                name: "Demo Member 4",
-                role: "Content Strategist",
-                icon: <ShieldCheck className="w-6 h-6" />,
+                name: "Meta Ads Expert",
+                role: "Paid Social Media",
+                tag: "PERFORMANCE",
+                img: images.founder?.amol2,
               },
             ].map((member, i) => (
               <div
                 key={i}
-                className="group relative"
+                className="group relative bg-(--surface) border border-(--border) p-1 transition-all duration-500 hover:bg-(--color-primary) hover:border-(--color-primary)"
                 data-aos="fade-up"
                 data-aos-delay={i * 100}
               >
-                {/* Card Image Container with Creative Border */}
-                <div className="relative aspect-[3/4] mb-6 transition-all duration-500 transform group-hover:-translate-y-2">
-                  {/* Tech Corner Accents */}
-                  <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-(--color-primary)/30 group-hover:border-(--color-primary) transition-colors duration-300 z-20" />
-                  <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-(--color-primary)/30 group-hover:border-(--color-primary) transition-colors duration-300 z-20" />
-
-                  {/* Main Image Box */}
-                  <div className="w-full h-full bg-(--surface) border border-(--border) overflow-hidden rounded-lg relative shadow-lg group-hover:shadow-2xl group-hover:shadow-(--color-primary)/20 transition-all duration-500">
-                    {/* Placeholder Grayscale Gradient Base */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 z-0" />
-
-                    {/* Placeholder Icon (Since no image yet) */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-(--text-secondary)/20 group-hover:text-(--color-primary) transition-colors duration-500 z-10">
-                      {member.icon}
-                      <span className="text-[10px] uppercase font-bold tracking-widest mt-2 opacity-50">
-                        Image Pending
+                {/* Image / Content Area */}
+                <div className="relative aspect-4/5 overflow-hidden bg-(--background)/50 flex items-center justify-center">
+                  {member.img ? (
+                    <Image
+                      src={member.img}
+                      alt={member.name}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center gap-4 text-(--text-secondary)/20 group-hover:text-white/40 transition-colors">
+                      <div className="w-16 h-16 border border-current rounded-full flex items-center justify-center p-4">
+                        <TrendingUp className="w-full h-full" />
+                      </div>
+                      <span className="text-[10px] font-black tracking-widest uppercase">
+                        Member Slot
                       </span>
                     </div>
+                  )}
 
-                    {/* Hover Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-(--color-primary)/90 via-(--color-primary)/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20 flex flex-col justify-end p-6">
-                      <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                        <a
-                          href="#"
-                          className="inline-flex items-center gap-2 text-white font-bold text-sm hover:underline"
-                        >
-                          <Linkedin className="w-4 h-4" /> Connect
-                        </a>
-                      </div>
-                    </div>
+                  {/* Tag */}
+                  <div className="absolute top-4 left-4 bg-(--color-primary) text-white text-[9px] font-black px-2 py-1 tracking-widest group-hover:bg-white group-hover:text-black transition-colors">
+                    {member.tag}
+                  </div>
+
+                  {/* Corner Accent */}
+                  <div className="absolute bottom-0 right-0 w-0 h-0 border-b-40 border-r-40 border-b-(--border) border-r-transparent group-hover:border-b-white/20 transition-colors" />
+                </div>
+
+                {/* Info Block */}
+                <div className="p-6">
+                  <p className="text-[10px] font-black text-(--text-secondary) uppercase tracking-widest mb-1 group-hover:text-white/60 transition-colors">
+                    {member.role}
+                  </p>
+                  <h4 className="text-xl font-black text-(--text-primary) uppercase tracking-tight group-hover:text-white transition-colors">
+                    {member.name}
+                  </h4>
+
+                  {/* Action Link */}
+                  <div className="mt-6 pt-6 border-t border-(--border) group-hover:border-white/20 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">
+                    <a
+                      href="https://linkedin.com/company/growthikmedia"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-black group-hover:text-white flex items-center gap-2"
+                    >
+                      CONNECT{" "}
+                      <Linkedin className="w-3 h-3 transition-transform group-hover:rotate-12" />
+                    </a>
                   </div>
                 </div>
 
-                {/* Text Info */}
-                <div className="text-center">
-                  <h4 className="text-xl font-black text-(--text-primary) uppercase leading-tight group-hover:text-(--color-primary) transition-colors duration-300">
-                    {member.name}
-                  </h4>
-                  <div className="flex items-center justify-center gap-2 mt-2">
-                    <div className="h-[1px] w-4 bg-(--color-primary)/50" />
-                    <p className="text-xs font-bold text-(--text-secondary) uppercase tracking-wider">
-                      {member.role}
-                    </p>
-                    <div className="h-[1px] w-4 bg-(--color-primary)/50" />
-                  </div>
+                {/* Number Indicator */}
+                <div className="absolute -top-3 -right-3 text-4xl font-black text-(--text-primary)/5 group-hover:text-white/10 transition-colors italic select-none">
+                  0{i + 1}
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Bottom CTA for Section */}
+          <div className="mt-20 flex justify-center" data-aos="fade-up">
+            <a
+              href="https://linkedin.com/company/growthikmedia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-6 group"
+            >
+              <span className="text-(--text-secondary) font-black tracking-[0.3em] text-xs group-hover:text-(--color-primary) transition-colors">
+                JOIN THE SQUAD
+              </span>
+              <div className="w-12 h-12 rounded-full border border-(--border) flex items-center justify-center group-hover:bg-(--color-primary) group-hover:border-(--color-primary) transition-all">
+                <Linkedin className="w-4 h-4 text-(--text-secondary) group-hover:text-white transition-colors" />
+              </div>
+            </a>
           </div>
         </div>
       </section>

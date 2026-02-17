@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: `Privacy Policy | ${CONTACT_INFO.companyName}`,
   description: `Privacy Policy for ${CONTACT_INFO.companyName}. Learn how we handle your data and protect your privacy.`,
   alternates: {
-    canonical: `${CONTACT_INFO.website}/privacy-policy`,
+    canonical: `${CONTACT_INFO.website}/privacy-policy/`,
   },
 };
 

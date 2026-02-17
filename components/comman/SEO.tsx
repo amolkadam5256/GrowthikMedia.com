@@ -37,7 +37,7 @@ export default function SEO() {
             url: CONTACT_INFO.website,
             logo: `${CONTACT_INFO.website}/logo.png`,
             description:
-              "Growthik Media is a leading digital marketing agency in Pune. We specialize in ROI-focused SEO, PPC, social media and professional video production.",
+              "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems — not just marketing campaigns. We specialize in ROI-focused performance engineering.",
             email: CONTACT_INFO.email.info,
             telephone: CONTACT_INFO.phone.primary,
             address: {
@@ -298,18 +298,18 @@ export default function SEO() {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "Why choose Growthik Media as your Digital Marketing Company in Pune?",
+                name: "Why choose Growthik Media as your Growth Engineering Partner?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Growthik Media combines local expertise, innovative data-driven strategies and a results-focused approach to elevate your brand. We don't just provide services; we partner with you to achieve sustainable growth.",
+                  text: "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems — not just marketing campaigns. We combine technical precision with data-driven strategies to deliver measurable business ROI.",
                 },
               },
               {
                 "@type": "Question",
-                name: "What services does your Digital Marketing Agency in Pune offer?",
+                name: "What does Growth Engineering include?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "We offer SEO, Social Media Marketing, Content Creation, Performance Marketing and specialized Video Production services.",
+                  text: "Our growth engineering framework includes AI-powered SEO, performance marketing (PPC), conversion rate optimization (CRO), and high-performance web architecture designed to build predictable revenue systems.",
                 },
               },
               {

@@ -496,7 +496,9 @@ export default function Footer() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-1 right-3 sm:bottom-1 sm:right-6 p-2 sm:p-3 text-black rounded-full shadow-2xl transition-all transform hover:scale-110 z-50 group"
+          className={`fixed bottom-1 right-3 sm:bottom-1 sm:right-6 p-2 sm:p-3 transition-all transform hover:scale-110 z-50 group ${
+            isDark ? "text-white" : "text-black"
+          }`}
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-y-1 transition-transform" />

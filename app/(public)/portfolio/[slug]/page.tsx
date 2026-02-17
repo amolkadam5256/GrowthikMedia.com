@@ -22,6 +22,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: description,
       url: `${CONTACT_INFO.website}/portfolio/${slug}/`,
     },
+    alternates: {
+      canonical: `${CONTACT_INFO.website}/portfolio/${slug}/`,
+    },
   };
 }
 
