@@ -9437,8 +9437,18 @@ export namespace Prisma {
 
   export type AggregateChatLead = {
     _count: ChatLeadCountAggregateOutputType | null
+    _avg: ChatLeadAvgAggregateOutputType | null
+    _sum: ChatLeadSumAggregateOutputType | null
     _min: ChatLeadMinAggregateOutputType | null
     _max: ChatLeadMaxAggregateOutputType | null
+  }
+
+  export type ChatLeadAvgAggregateOutputType = {
+    intentScore: number | null
+  }
+
+  export type ChatLeadSumAggregateOutputType = {
+    intentScore: number | null
   }
 
   export type ChatLeadMinAggregateOutputType = {
@@ -9448,6 +9458,10 @@ export namespace Prisma {
     phone: string | null
     status: string | null
     tags: string | null
+    aiSummary: string | null
+    intentScore: number | null
+    intentCategory: string | null
+    decisionStage: string | null
     createdAt: Date | null
   }
 
@@ -9458,6 +9472,10 @@ export namespace Prisma {
     phone: string | null
     status: string | null
     tags: string | null
+    aiSummary: string | null
+    intentScore: number | null
+    intentCategory: string | null
+    decisionStage: string | null
     createdAt: Date | null
   }
 
@@ -9468,10 +9486,23 @@ export namespace Prisma {
     phone: number
     status: number
     tags: number
+    aiSummary: number
+    intentScore: number
+    intentCategory: number
+    decisionStage: number
+    sensitiveFlags: number
     createdAt: number
     _all: number
   }
 
+
+  export type ChatLeadAvgAggregateInputType = {
+    intentScore?: true
+  }
+
+  export type ChatLeadSumAggregateInputType = {
+    intentScore?: true
+  }
 
   export type ChatLeadMinAggregateInputType = {
     id?: true
@@ -9480,6 +9511,10 @@ export namespace Prisma {
     phone?: true
     status?: true
     tags?: true
+    aiSummary?: true
+    intentScore?: true
+    intentCategory?: true
+    decisionStage?: true
     createdAt?: true
   }
 
@@ -9490,6 +9525,10 @@ export namespace Prisma {
     phone?: true
     status?: true
     tags?: true
+    aiSummary?: true
+    intentScore?: true
+    intentCategory?: true
+    decisionStage?: true
     createdAt?: true
   }
 
@@ -9500,6 +9539,11 @@ export namespace Prisma {
     phone?: true
     status?: true
     tags?: true
+    aiSummary?: true
+    intentScore?: true
+    intentCategory?: true
+    decisionStage?: true
+    sensitiveFlags?: true
     createdAt?: true
     _all?: true
   }
@@ -9542,6 +9586,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: ChatLeadAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ChatLeadSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: ChatLeadMinAggregateInputType
@@ -9572,6 +9628,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: ChatLeadCountAggregateInputType | true
+    _avg?: ChatLeadAvgAggregateInputType
+    _sum?: ChatLeadSumAggregateInputType
     _min?: ChatLeadMinAggregateInputType
     _max?: ChatLeadMaxAggregateInputType
   }
@@ -9583,8 +9641,15 @@ export namespace Prisma {
     phone: string
     status: string | null
     tags: string | null
+    aiSummary: string | null
+    intentScore: number | null
+    intentCategory: string | null
+    decisionStage: string | null
+    sensitiveFlags: JsonValue | null
     createdAt: Date
     _count: ChatLeadCountAggregateOutputType | null
+    _avg: ChatLeadAvgAggregateOutputType | null
+    _sum: ChatLeadSumAggregateOutputType | null
     _min: ChatLeadMinAggregateOutputType | null
     _max: ChatLeadMaxAggregateOutputType | null
   }
@@ -9610,6 +9675,11 @@ export namespace Prisma {
     phone?: boolean
     status?: boolean
     tags?: boolean
+    aiSummary?: boolean
+    intentScore?: boolean
+    intentCategory?: boolean
+    decisionStage?: boolean
+    sensitiveFlags?: boolean
     createdAt?: boolean
     sessions?: boolean | ChatLead$sessionsArgs<ExtArgs>
     _count?: boolean | ChatLeadCountOutputTypeDefaultArgs<ExtArgs>
@@ -9622,6 +9692,11 @@ export namespace Prisma {
     phone?: boolean
     status?: boolean
     tags?: boolean
+    aiSummary?: boolean
+    intentScore?: boolean
+    intentCategory?: boolean
+    decisionStage?: boolean
+    sensitiveFlags?: boolean
     createdAt?: boolean
   }
 
@@ -9643,6 +9718,11 @@ export namespace Prisma {
       phone: string
       status: string | null
       tags: string | null
+      aiSummary: string | null
+      intentScore: number | null
+      intentCategory: string | null
+      decisionStage: string | null
+      sensitiveFlags: Prisma.JsonValue | null
       createdAt: Date
     }, ExtArgs["result"]["chatLead"]>
     composites: {}
@@ -10045,6 +10125,11 @@ export namespace Prisma {
     readonly phone: FieldRef<"ChatLead", 'String'>
     readonly status: FieldRef<"ChatLead", 'String'>
     readonly tags: FieldRef<"ChatLead", 'String'>
+    readonly aiSummary: FieldRef<"ChatLead", 'String'>
+    readonly intentScore: FieldRef<"ChatLead", 'Int'>
+    readonly intentCategory: FieldRef<"ChatLead", 'String'>
+    readonly decisionStage: FieldRef<"ChatLead", 'String'>
+    readonly sensitiveFlags: FieldRef<"ChatLead", 'Json'>
     readonly createdAt: FieldRef<"ChatLead", 'DateTime'>
   }
     
@@ -10419,6 +10504,7 @@ export namespace Prisma {
   export type ChatSessionCountAggregateOutputType = {
     id: number
     leadId: number
+    turningPoints: number
     createdAt: number
     _all: number
   }
@@ -10439,6 +10525,7 @@ export namespace Prisma {
   export type ChatSessionCountAggregateInputType = {
     id?: true
     leadId?: true
+    turningPoints?: true
     createdAt?: true
     _all?: true
   }
@@ -10518,6 +10605,7 @@ export namespace Prisma {
   export type ChatSessionGroupByOutputType = {
     id: string
     leadId: string
+    turningPoints: JsonValue | null
     createdAt: Date
     _count: ChatSessionCountAggregateOutputType | null
     _min: ChatSessionMinAggregateOutputType | null
@@ -10541,6 +10629,7 @@ export namespace Prisma {
   export type ChatSessionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     leadId?: boolean
+    turningPoints?: boolean
     createdAt?: boolean
     lead?: boolean | ChatLeadDefaultArgs<ExtArgs>
     messages?: boolean | ChatSession$messagesArgs<ExtArgs>
@@ -10550,6 +10639,7 @@ export namespace Prisma {
   export type ChatSessionSelectScalar = {
     id?: boolean
     leadId?: boolean
+    turningPoints?: boolean
     createdAt?: boolean
   }
 
@@ -10569,6 +10659,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: string
       leadId: string
+      turningPoints: Prisma.JsonValue | null
       createdAt: Date
     }, ExtArgs["result"]["chatSession"]>
     composites: {}
@@ -10969,6 +11060,7 @@ export namespace Prisma {
   interface ChatSessionFieldRefs {
     readonly id: FieldRef<"ChatSession", 'String'>
     readonly leadId: FieldRef<"ChatSession", 'String'>
+    readonly turningPoints: FieldRef<"ChatSession", 'Json'>
     readonly createdAt: FieldRef<"ChatSession", 'DateTime'>
   }
     
@@ -12377,6 +12469,11 @@ export namespace Prisma {
     phone: 'phone',
     status: 'status',
     tags: 'tags',
+    aiSummary: 'aiSummary',
+    intentScore: 'intentScore',
+    intentCategory: 'intentCategory',
+    decisionStage: 'decisionStage',
+    sensitiveFlags: 'sensitiveFlags',
     createdAt: 'createdAt'
   };
 
@@ -12386,6 +12483,7 @@ export namespace Prisma {
   export const ChatSessionScalarFieldEnum: {
     id: 'id',
     leadId: 'leadId',
+    turningPoints: 'turningPoints',
     createdAt: 'createdAt'
   };
 
@@ -13088,6 +13186,11 @@ export namespace Prisma {
     phone?: StringFilter<"ChatLead"> | string
     status?: StringNullableFilter<"ChatLead"> | string | null
     tags?: StringNullableFilter<"ChatLead"> | string | null
+    aiSummary?: StringNullableFilter<"ChatLead"> | string | null
+    intentScore?: IntNullableFilter<"ChatLead"> | number | null
+    intentCategory?: StringNullableFilter<"ChatLead"> | string | null
+    decisionStage?: StringNullableFilter<"ChatLead"> | string | null
+    sensitiveFlags?: JsonNullableFilter<"ChatLead">
     createdAt?: DateTimeFilter<"ChatLead"> | Date | string
     sessions?: ChatSessionListRelationFilter
   }
@@ -13099,6 +13202,11 @@ export namespace Prisma {
     phone?: SortOrder
     status?: SortOrderInput | SortOrder
     tags?: SortOrderInput | SortOrder
+    aiSummary?: SortOrderInput | SortOrder
+    intentScore?: SortOrderInput | SortOrder
+    intentCategory?: SortOrderInput | SortOrder
+    decisionStage?: SortOrderInput | SortOrder
+    sensitiveFlags?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     sessions?: ChatSessionOrderByRelationAggregateInput
   }
@@ -13113,6 +13221,11 @@ export namespace Prisma {
     phone?: StringFilter<"ChatLead"> | string
     status?: StringNullableFilter<"ChatLead"> | string | null
     tags?: StringNullableFilter<"ChatLead"> | string | null
+    aiSummary?: StringNullableFilter<"ChatLead"> | string | null
+    intentScore?: IntNullableFilter<"ChatLead"> | number | null
+    intentCategory?: StringNullableFilter<"ChatLead"> | string | null
+    decisionStage?: StringNullableFilter<"ChatLead"> | string | null
+    sensitiveFlags?: JsonNullableFilter<"ChatLead">
     createdAt?: DateTimeFilter<"ChatLead"> | Date | string
     sessions?: ChatSessionListRelationFilter
   }, "id">
@@ -13124,10 +13237,17 @@ export namespace Prisma {
     phone?: SortOrder
     status?: SortOrderInput | SortOrder
     tags?: SortOrderInput | SortOrder
+    aiSummary?: SortOrderInput | SortOrder
+    intentScore?: SortOrderInput | SortOrder
+    intentCategory?: SortOrderInput | SortOrder
+    decisionStage?: SortOrderInput | SortOrder
+    sensitiveFlags?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: ChatLeadCountOrderByAggregateInput
+    _avg?: ChatLeadAvgOrderByAggregateInput
     _max?: ChatLeadMaxOrderByAggregateInput
     _min?: ChatLeadMinOrderByAggregateInput
+    _sum?: ChatLeadSumOrderByAggregateInput
   }
 
   export type ChatLeadScalarWhereWithAggregatesInput = {
@@ -13140,6 +13260,11 @@ export namespace Prisma {
     phone?: StringWithAggregatesFilter<"ChatLead"> | string
     status?: StringNullableWithAggregatesFilter<"ChatLead"> | string | null
     tags?: StringNullableWithAggregatesFilter<"ChatLead"> | string | null
+    aiSummary?: StringNullableWithAggregatesFilter<"ChatLead"> | string | null
+    intentScore?: IntNullableWithAggregatesFilter<"ChatLead"> | number | null
+    intentCategory?: StringNullableWithAggregatesFilter<"ChatLead"> | string | null
+    decisionStage?: StringNullableWithAggregatesFilter<"ChatLead"> | string | null
+    sensitiveFlags?: JsonNullableWithAggregatesFilter<"ChatLead">
     createdAt?: DateTimeWithAggregatesFilter<"ChatLead"> | Date | string
   }
 
@@ -13149,6 +13274,7 @@ export namespace Prisma {
     NOT?: ChatSessionWhereInput | ChatSessionWhereInput[]
     id?: StringFilter<"ChatSession"> | string
     leadId?: StringFilter<"ChatSession"> | string
+    turningPoints?: JsonNullableFilter<"ChatSession">
     createdAt?: DateTimeFilter<"ChatSession"> | Date | string
     lead?: XOR<ChatLeadRelationFilter, ChatLeadWhereInput>
     messages?: ChatMessageListRelationFilter
@@ -13157,6 +13283,7 @@ export namespace Prisma {
   export type ChatSessionOrderByWithRelationInput = {
     id?: SortOrder
     leadId?: SortOrder
+    turningPoints?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     lead?: ChatLeadOrderByWithRelationInput
     messages?: ChatMessageOrderByRelationAggregateInput
@@ -13168,6 +13295,7 @@ export namespace Prisma {
     OR?: ChatSessionWhereInput[]
     NOT?: ChatSessionWhereInput | ChatSessionWhereInput[]
     leadId?: StringFilter<"ChatSession"> | string
+    turningPoints?: JsonNullableFilter<"ChatSession">
     createdAt?: DateTimeFilter<"ChatSession"> | Date | string
     lead?: XOR<ChatLeadRelationFilter, ChatLeadWhereInput>
     messages?: ChatMessageListRelationFilter
@@ -13176,6 +13304,7 @@ export namespace Prisma {
   export type ChatSessionOrderByWithAggregationInput = {
     id?: SortOrder
     leadId?: SortOrder
+    turningPoints?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: ChatSessionCountOrderByAggregateInput
     _max?: ChatSessionMaxOrderByAggregateInput
@@ -13188,6 +13317,7 @@ export namespace Prisma {
     NOT?: ChatSessionScalarWhereWithAggregatesInput | ChatSessionScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"ChatSession"> | string
     leadId?: StringWithAggregatesFilter<"ChatSession"> | string
+    turningPoints?: JsonNullableWithAggregatesFilter<"ChatSession">
     createdAt?: DateTimeWithAggregatesFilter<"ChatSession"> | Date | string
   }
 
@@ -13931,6 +14061,11 @@ export namespace Prisma {
     phone: string
     status?: string | null
     tags?: string | null
+    aiSummary?: string | null
+    intentScore?: number | null
+    intentCategory?: string | null
+    decisionStage?: string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     sessions?: ChatSessionCreateNestedManyWithoutLeadInput
   }
@@ -13942,6 +14077,11 @@ export namespace Prisma {
     phone: string
     status?: string | null
     tags?: string | null
+    aiSummary?: string | null
+    intentScore?: number | null
+    intentCategory?: string | null
+    decisionStage?: string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     sessions?: ChatSessionUncheckedCreateNestedManyWithoutLeadInput
   }
@@ -13953,6 +14093,11 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     status?: NullableStringFieldUpdateOperationsInput | string | null
     tags?: NullableStringFieldUpdateOperationsInput | string | null
+    aiSummary?: NullableStringFieldUpdateOperationsInput | string | null
+    intentScore?: NullableIntFieldUpdateOperationsInput | number | null
+    intentCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    decisionStage?: NullableStringFieldUpdateOperationsInput | string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: ChatSessionUpdateManyWithoutLeadNestedInput
   }
@@ -13964,6 +14109,11 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     status?: NullableStringFieldUpdateOperationsInput | string | null
     tags?: NullableStringFieldUpdateOperationsInput | string | null
+    aiSummary?: NullableStringFieldUpdateOperationsInput | string | null
+    intentScore?: NullableIntFieldUpdateOperationsInput | number | null
+    intentCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    decisionStage?: NullableStringFieldUpdateOperationsInput | string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     sessions?: ChatSessionUncheckedUpdateManyWithoutLeadNestedInput
   }
@@ -13975,6 +14125,11 @@ export namespace Prisma {
     phone: string
     status?: string | null
     tags?: string | null
+    aiSummary?: string | null
+    intentScore?: number | null
+    intentCategory?: string | null
+    decisionStage?: string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
   }
 
@@ -13985,6 +14140,11 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     status?: NullableStringFieldUpdateOperationsInput | string | null
     tags?: NullableStringFieldUpdateOperationsInput | string | null
+    aiSummary?: NullableStringFieldUpdateOperationsInput | string | null
+    intentScore?: NullableIntFieldUpdateOperationsInput | number | null
+    intentCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    decisionStage?: NullableStringFieldUpdateOperationsInput | string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -13995,11 +14155,17 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     status?: NullableStringFieldUpdateOperationsInput | string | null
     tags?: NullableStringFieldUpdateOperationsInput | string | null
+    aiSummary?: NullableStringFieldUpdateOperationsInput | string | null
+    intentScore?: NullableIntFieldUpdateOperationsInput | number | null
+    intentCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    decisionStage?: NullableStringFieldUpdateOperationsInput | string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ChatSessionCreateInput = {
     id?: string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     lead: ChatLeadCreateNestedOneWithoutSessionsInput
     messages?: ChatMessageCreateNestedManyWithoutSessionInput
@@ -14008,12 +14174,14 @@ export namespace Prisma {
   export type ChatSessionUncheckedCreateInput = {
     id?: string
     leadId: string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     messages?: ChatMessageUncheckedCreateNestedManyWithoutSessionInput
   }
 
   export type ChatSessionUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lead?: ChatLeadUpdateOneRequiredWithoutSessionsNestedInput
     messages?: ChatMessageUpdateManyWithoutSessionNestedInput
@@ -14022,6 +14190,7 @@ export namespace Prisma {
   export type ChatSessionUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     leadId?: StringFieldUpdateOperationsInput | string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     messages?: ChatMessageUncheckedUpdateManyWithoutSessionNestedInput
   }
@@ -14029,17 +14198,20 @@ export namespace Prisma {
   export type ChatSessionCreateManyInput = {
     id?: string
     leadId: string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
   }
 
   export type ChatSessionUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ChatSessionUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     leadId?: StringFieldUpdateOperationsInput | string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -14632,6 +14804,17 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type ChatSessionListRelationFilter = {
     every?: ChatSessionWhereInput
     some?: ChatSessionWhereInput
@@ -14649,7 +14832,16 @@ export namespace Prisma {
     phone?: SortOrder
     status?: SortOrder
     tags?: SortOrder
+    aiSummary?: SortOrder
+    intentScore?: SortOrder
+    intentCategory?: SortOrder
+    decisionStage?: SortOrder
+    sensitiveFlags?: SortOrder
     createdAt?: SortOrder
+  }
+
+  export type ChatLeadAvgOrderByAggregateInput = {
+    intentScore?: SortOrder
   }
 
   export type ChatLeadMaxOrderByAggregateInput = {
@@ -14659,6 +14851,10 @@ export namespace Prisma {
     phone?: SortOrder
     status?: SortOrder
     tags?: SortOrder
+    aiSummary?: SortOrder
+    intentScore?: SortOrder
+    intentCategory?: SortOrder
+    decisionStage?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -14669,7 +14865,31 @@ export namespace Prisma {
     phone?: SortOrder
     status?: SortOrder
     tags?: SortOrder
+    aiSummary?: SortOrder
+    intentScore?: SortOrder
+    intentCategory?: SortOrder
+    decisionStage?: SortOrder
     createdAt?: SortOrder
+  }
+
+  export type ChatLeadSumOrderByAggregateInput = {
+    intentScore?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type ChatLeadRelationFilter = {
@@ -14690,6 +14910,7 @@ export namespace Prisma {
   export type ChatSessionCountOrderByAggregateInput = {
     id?: SortOrder
     leadId?: SortOrder
+    turningPoints?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -14886,6 +15107,14 @@ export namespace Prisma {
     connectOrCreate?: ChatSessionCreateOrConnectWithoutLeadInput | ChatSessionCreateOrConnectWithoutLeadInput[]
     createMany?: ChatSessionCreateManyLeadInputEnvelope
     connect?: ChatSessionWhereUniqueInput | ChatSessionWhereUniqueInput[]
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type ChatSessionUpdateManyWithoutLeadNestedInput = {
@@ -15182,6 +15411,33 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
   export type ServiceCreateWithoutCategoryInput = {
     id?: string
     name: string
@@ -15436,12 +15692,14 @@ export namespace Prisma {
 
   export type ChatSessionCreateWithoutLeadInput = {
     id?: string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     messages?: ChatMessageCreateNestedManyWithoutSessionInput
   }
 
   export type ChatSessionUncheckedCreateWithoutLeadInput = {
     id?: string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     messages?: ChatMessageUncheckedCreateNestedManyWithoutSessionInput
   }
@@ -15478,6 +15736,7 @@ export namespace Prisma {
     NOT?: ChatSessionScalarWhereInput | ChatSessionScalarWhereInput[]
     id?: StringFilter<"ChatSession"> | string
     leadId?: StringFilter<"ChatSession"> | string
+    turningPoints?: JsonNullableFilter<"ChatSession">
     createdAt?: DateTimeFilter<"ChatSession"> | Date | string
   }
 
@@ -15488,6 +15747,11 @@ export namespace Prisma {
     phone: string
     status?: string | null
     tags?: string | null
+    aiSummary?: string | null
+    intentScore?: number | null
+    intentCategory?: string | null
+    decisionStage?: string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
   }
 
@@ -15498,6 +15762,11 @@ export namespace Prisma {
     phone: string
     status?: string | null
     tags?: string | null
+    aiSummary?: string | null
+    intentScore?: number | null
+    intentCategory?: string | null
+    decisionStage?: string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
   }
 
@@ -15548,6 +15817,11 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     status?: NullableStringFieldUpdateOperationsInput | string | null
     tags?: NullableStringFieldUpdateOperationsInput | string | null
+    aiSummary?: NullableStringFieldUpdateOperationsInput | string | null
+    intentScore?: NullableIntFieldUpdateOperationsInput | number | null
+    intentCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    decisionStage?: NullableStringFieldUpdateOperationsInput | string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -15558,6 +15832,11 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     status?: NullableStringFieldUpdateOperationsInput | string | null
     tags?: NullableStringFieldUpdateOperationsInput | string | null
+    aiSummary?: NullableStringFieldUpdateOperationsInput | string | null
+    intentScore?: NullableIntFieldUpdateOperationsInput | number | null
+    intentCategory?: NullableStringFieldUpdateOperationsInput | string | null
+    decisionStage?: NullableStringFieldUpdateOperationsInput | string | null
+    sensitiveFlags?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -15590,6 +15869,7 @@ export namespace Prisma {
 
   export type ChatSessionCreateWithoutMessagesInput = {
     id?: string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
     lead: ChatLeadCreateNestedOneWithoutSessionsInput
   }
@@ -15597,6 +15877,7 @@ export namespace Prisma {
   export type ChatSessionUncheckedCreateWithoutMessagesInput = {
     id?: string
     leadId: string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
   }
 
@@ -15618,6 +15899,7 @@ export namespace Prisma {
 
   export type ChatSessionUpdateWithoutMessagesInput = {
     id?: StringFieldUpdateOperationsInput | string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     lead?: ChatLeadUpdateOneRequiredWithoutSessionsNestedInput
   }
@@ -15625,6 +15907,7 @@ export namespace Prisma {
   export type ChatSessionUncheckedUpdateWithoutMessagesInput = {
     id?: StringFieldUpdateOperationsInput | string
     leadId?: StringFieldUpdateOperationsInput | string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -15742,23 +16025,27 @@ export namespace Prisma {
 
   export type ChatSessionCreateManyLeadInput = {
     id?: string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: Date | string
   }
 
   export type ChatSessionUpdateWithoutLeadInput = {
     id?: StringFieldUpdateOperationsInput | string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     messages?: ChatMessageUpdateManyWithoutSessionNestedInput
   }
 
   export type ChatSessionUncheckedUpdateWithoutLeadInput = {
     id?: StringFieldUpdateOperationsInput | string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     messages?: ChatMessageUncheckedUpdateManyWithoutSessionNestedInput
   }
 
   export type ChatSessionUncheckedUpdateManyWithoutLeadInput = {
     id?: StringFieldUpdateOperationsInput | string
+    turningPoints?: NullableJsonNullValueInput | InputJsonValue
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 

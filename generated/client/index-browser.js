@@ -210,12 +210,18 @@ exports.Prisma.ChatLeadScalarFieldEnum = {
   phone: 'phone',
   status: 'status',
   tags: 'tags',
+  aiSummary: 'aiSummary',
+  intentScore: 'intentScore',
+  intentCategory: 'intentCategory',
+  decisionStage: 'decisionStage',
+  sensitiveFlags: 'sensitiveFlags',
   createdAt: 'createdAt'
 };
 
 exports.Prisma.ChatSessionScalarFieldEnum = {
   id: 'id',
   leadId: 'leadId',
+  turningPoints: 'turningPoints',
   createdAt: 'createdAt'
 };
 

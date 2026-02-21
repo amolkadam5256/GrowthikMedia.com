@@ -144,10 +144,15 @@ model ChatLead {
   name      String
   email     String
   phone     String
-  status    String?       @default("NEW") // NEW, HOT, QUALIFIED, DISQUALIFIED
-  tags      String?       // JSON string or comma-separated tags
-  sessions  ChatSession[]
-  createdAt DateTime      @default(now())
+  status         String?       @default("NEW") // NEW, HOT, QUALIFIED, DISQUALIFIED
+  tags           String?       // JSON string or comma-separated tags
+  aiSummary      String?       @db.Text
+  intentScore    Int?
+  intentCategory String?
+  decisionStage  String?
+  sensitiveFlags Json?
+  sessions       ChatSession[]
+  createdAt      DateTime      @default(now())
 
   @@map("chat_leads")
 }
@@ -155,9 +160,10 @@ model ChatLead {
 model ChatSession {
   id        String        @id @default(cuid())
   leadId    String
-  lead      ChatLead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
-  messages  ChatMessage[]
-  createdAt DateTime      @default(now())
+  lead          ChatLead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  turningPoints Json?
+  messages      ChatMessage[]
+  createdAt     DateTime      @default(now())
 
   @@map("chat_sessions")
 }
