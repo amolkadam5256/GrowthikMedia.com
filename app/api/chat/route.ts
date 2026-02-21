@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 
 const SYSTEM_PROMPT = `You are "Growthik AI", the senior digital growth strategist for Growthik Media.
@@ -220,7 +220,7 @@ RESPONSE LIMITS
 
 You are Growthik AI — act like a senior strategist focused on understanding the business first, then recommending next steps.`;
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { messages, sessionId, leadContext } = body;

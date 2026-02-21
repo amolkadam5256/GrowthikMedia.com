@@ -1,12 +1,12 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 
 export async function GET(
-  request: Request,
-  { params }: { params: { leadId: string } },
+  request: NextRequest,
+  context: { params: Promise<{ leadId: string }> },
 ) {
   try {
-    const { leadId } = params;
+    const { leadId } = await context.params;
 
     if (!leadId) {
       return NextResponse.json(

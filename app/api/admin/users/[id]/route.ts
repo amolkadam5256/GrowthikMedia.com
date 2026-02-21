@@ -21,10 +21,10 @@ async function getAuthUser(req: NextRequest) {
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
+  context: { params: Promise<{ id: string }> },
 ) {
   const user = await getAuthUser(req);
-  const { id } = await params;
+  const { id } = await context.params;
 
   if (!user || user.role !== "SUPER_ADMIN") {
     return NextResponse.json(
@@ -72,10 +72,10 @@ export async function PATCH(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
+  context: { params: Promise<{ id: string }> },
 ) {
   const user = await getAuthUser(req);
-  const { id } = await params;
+  const { id } = await context.params;
 
   if (!user || user.role !== "SUPER_ADMIN") {
     return NextResponse.json(
