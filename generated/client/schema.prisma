@@ -1,0 +1,174 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// -------------------------------------------------------------
+// AUTHENTICATION
+// -------------------------------------------------------------
+
+model Admin {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String?    // Hashed password
+  role          String    @default("ADMIN") // SUPER_ADMIN, ADMIN, EDITOR
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@map("admins")
+}
+
+model Otp {
+  id         String   @id @default(cuid())
+  email      String
+  code       String
+  isUsed     Boolean  @default(false)
+  expires    DateTime
+  createdAt  DateTime @default(now())
+
+  @@map("otps")
+}
+
+// -------------------------------------------------------------
+// CONTENT MANAGEMENT (CMS)
+// -------------------------------------------------------------
+
+// Services
+model ServiceCategory {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  description String?   @db.Text
+  icon        String?   // Icon name from React Icons
+  order       Int       @default(0)
+  items       Service[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("service_categories")
+}
+
+model Service {
+  id          String           @id @default(cuid())
+  categoryId  String
+  category    ServiceCategory  @relation(fields: [categoryId], references: [id])
+  name        String
+  slug        String           @unique
+  description String?          @db.Text
+  content     String?          @db.LongText
+  image       String?          // Featured image
+  isFeatured  Boolean          @default(false)
+  order       Int              @default(0)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@map("services")
+}
+
+// Portfolio
+model PortfolioCategory {
+  id          String             @id @default(cuid())
+  name        String
+  slug        String             @unique
+  projects    PortfolioProject[]
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+
+  @@map("portfolio_categories")
+}
+
+model PortfolioProject {
+  id          String             @id @default(cuid())
+  categoryId  String
+  category    PortfolioCategory  @relation(fields: [categoryId], references: [id])
+  title       String
+  slug        String             @unique
+  description String?            @db.Text
+  content     String?            @db.LongText
+  client      String?
+  image       String?            // Main project image
+  gallery     Json?              // Array of image URLs (using Json for MySQL)
+  date        DateTime?
+  isFeatured  Boolean            @default(false)
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+
+  @@map("portfolio_projects")
+}
+
+// Blog
+model BlogPost {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  excerpt     String?   @db.Text
+  content     String?   @db.LongText
+  author      String?
+  image       String?
+  tags        Json?     // Array of tags (using Json for MySQL)
+  isPublished Boolean   @default(false)
+  publishedAt DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("blog_posts")
+}
+
+// Contact
+model Inquiry {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String?
+  message   String   @db.Text
+  status    String   @default("NEW") // NEW, CONTACTED, RESOLVED
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("inquiries")
+}
+// -------------------------------------------------------------
+// AI CHATBOT SYSTEM
+// -------------------------------------------------------------
+
+model ChatLead {
+  id        String        @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  status    String?       @default("NEW") // NEW, HOT, QUALIFIED, DISQUALIFIED
+  tags      String?       // JSON string or comma-separated tags
+  sessions  ChatSession[]
+  createdAt DateTime      @default(now())
+
+  @@map("chat_leads")
+}
+
+model ChatSession {
+  id        String        @id @default(cuid())
+  leadId    String
+  lead      ChatLead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  messages  ChatMessage[]
+  createdAt DateTime      @default(now())
+
+  @@map("chat_sessions")
+}
+
+model ChatMessage {
+  id        String      @id @default(cuid())
+  sessionId String
+  session   ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  text      String      @db.Text
+  sender    String      // "bot" or "user"
+  createdAt DateTime    @default(now())
+
+  @@map("chat_messages")
+}

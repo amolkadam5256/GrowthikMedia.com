@@ -29,17 +29,17 @@
 
 /* Dark Mode Colors */
 .dark {
-  --background: #0a0a0a;
-  --surface: #1a1a1a;
-  --surface-secondary: #2a2a2a;
+  --background: #000000;
+  --surface: #0a0a0a;
+  --surface-secondary: #111111;
   --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
-  --text-tertiary: #6b7280;
-  --border: #404040;
-  --border-light: #333333;
-  --input-bg: #2a2a2a;
-  --shadow: rgba(0, 0, 0, 0.3);
-  --shadow-lg: rgba(0, 0, 0, 0.5);
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+  --border: #1d1d1d;
+  --border-light: #121212;
+  --input-bg: #0f0f0f;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --shadow-lg: rgba(0, 0, 0, 0.8);
 }
 
 /* Base styles */
@@ -91,9 +91,16 @@ body {
   animation: slideDown 0.3s ease-out forwards;
 }
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
 }
 
 .animate-shake {

@@ -1,5 +1,6 @@
 generator client {
   provider = "prisma-client-js"
+  output   = "../generated/client"
 }
 
 datasource db {
@@ -143,6 +144,8 @@ model ChatLead {
   name      String
   email     String
   phone     String
+  status    String?       @default("NEW") // NEW, HOT, QUALIFIED, DISQUALIFIED
+  tags      String?       // JSON string or comma-separated tags
   sessions  ChatSession[]
   createdAt DateTime      @default(now())
 

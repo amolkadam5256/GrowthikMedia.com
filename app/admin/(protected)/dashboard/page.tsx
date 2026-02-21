@@ -1,17 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Sidebar from "@/components/AdminComponents/Sidebar";
-import DashboardHome from "@/components/AdminComponents/DashboardHome";
-import HeroManager from "@/components/AdminComponents/Sections/HeroManager";
-import ServicesManager from "@/components/AdminComponents/Sections/ServicesManager";
-import ContactManager from "@/components/AdminComponents/Sections/ContactManager";
-import AboutManager from "@/components/AdminComponents/Sections/AboutManager";
-import PortfolioManager from "@/components/AdminComponents/Sections/PortfolioManager";
-import BlogManager from "@/components/AdminComponents/Sections/BlogManager";
-import SettingsManager from "@/components/AdminComponents/Sections/SettingsManager";
-import UserManager from "@/components/AdminComponents/Sections/UserManager";
-import InquiriesManager from "@/components/AdminComponents/Sections/InquiriesManager";
-import ChatIntelligence from "@/components/AdminComponents/Sections/ChatIntelligence";
+import Sidebar from "@/components/AdminComponents/layout/Sidebar";
+import DashboardHome from "@/components/AdminComponents/dashboard/DashboardHome";
+import HeroManager from "@/components/AdminComponents/content/HeroManager";
+import ServicesManager from "@/components/AdminComponents/content/ServicesManager";
+import ContactManager from "@/components/AdminComponents/leads/ContactManager";
+import AboutManager from "@/components/AdminComponents/content/AboutManager";
+import PortfolioManager from "@/components/AdminComponents/content/PortfolioManager";
+import BlogManager from "@/components/AdminComponents/content/BlogManager";
+import SettingsManager from "@/components/AdminComponents/settings/SettingsManager";
+import UserManager from "@/components/AdminComponents/users/UserManager";
+import InquiriesManager from "@/components/AdminComponents/leads/InquiriesManager";
+import ChatIntelligence from "@/components/AdminComponents/ai/ChatIntelligence";
+import LeadManager from "@/components/AdminComponents/leads/LeadManager";
 
 const AdminDashboardPage = () => {
   const [activeTab, setActiveTab] = useState(() => {
@@ -73,7 +74,18 @@ const AdminDashboardPage = () => {
       case "inquiries":
         return <InquiriesManager />;
       case "chat":
+      case "leads-chatbot":
         return <ChatIntelligence />;
+      case "leads-inquiry":
+        return <LeadManager type="inquiry-form" />;
+      case "leads-contact":
+        return <LeadManager type="contact-page" />;
+      case "leads-manual":
+        return <LeadManager type="manual" />;
+      case "leads-imported":
+        return <LeadManager type="imported" />;
+      case "leads-all":
+        return <LeadManager type="all-combined" />;
       case "hero":
         return <HeroManager />;
       case "contact":

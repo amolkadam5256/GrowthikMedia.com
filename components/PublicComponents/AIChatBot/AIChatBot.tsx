@@ -21,14 +21,7 @@ interface Message {
   timestamp: Date;
 }
 
-const INITIAL_MESSAGES: Message[] = [
-  {
-    id: "1",
-    text: "Hi there! I'm Growthik AI, your official growth assistant from Growthik Media. How can I help you scale your business today?",
-    sender: "bot",
-    timestamp: new Date(),
-  },
-];
+const INITIAL_MESSAGES: Message[] = [];
 
 const AIChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,14 +35,14 @@ const AIChatBot = () => {
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Load existing session/lead from localStorage
+  // Load existing session/lead from localStorage to pre-fill but NOT skip the form
   useEffect(() => {
     const savedLead = localStorage.getItem("growthik_chat_lead");
     const savedSession = localStorage.getItem("growthik_chat_session");
     if (savedLead && savedSession) {
-      setLeadData(JSON.parse(savedLead));
+      const parsedLead = JSON.parse(savedLead);
+      setLeadData(parsedLead);
       setSessionId(savedSession);
-      setShowLeadForm(false);
     }
   }, []);
 
@@ -83,6 +76,15 @@ const AIChatBot = () => {
         setShowLeadForm(false);
         localStorage.setItem("growthik_chat_lead", JSON.stringify(leadData));
         localStorage.setItem("growthik_chat_session", data.sessionId);
+
+        // Add personalized welcome message
+        const welcomeMsg: Message = {
+          id: "welcome-" + Date.now(),
+          text: `Awesome to have you here, ${leadData.name.split(" ")[0]}! Growthik AI is ready to scale your business. What's on your mind today?`,
+          sender: "bot",
+          timestamp: new Date(),
+        };
+        setMessages([welcomeMsg]);
       }
     } catch (error) {
       console.error("Lead Error:", error);
@@ -163,7 +165,7 @@ const AIChatBot = () => {
             className="fixed bottom-0 left-0 w-full h-[85vh] md:absolute md:bottom-20 md:right-0 md:left-auto md:w-[400px] md:h-[500px] bg-(--surface) border border-(--border) shadow-2xl flex flex-col overflow-hidden rounded-t-2xl md:rounded-xl"
           >
             {/* Chat Header */}
-            <div className="bg-(--color-primary) p-4 flex items-center justify-between text-white">
+            <div className="bg-(--color-primary) p-4 flex items-center justify-between border-b border-white/10 text-white">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 flex items-center justify-center relative">
                   <Bot className="w-6 h-6 text-white" />
@@ -180,14 +182,14 @@ const AIChatBot = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <button className="p-1.5 hover:bg-white/10 transition-colors">
+                <button className="p-1.5 hover:bg-white/10 transition-colors rounded-lg">
                   <Minus className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1.5 hover:bg-black/10 transition-colors"
+                  className="p-1.5  transition-colors rounded-lg group/close"
                 >
-                  <X className="w-4 h-4 text-black" />
+                  <X className="w-4 h-4 text-white group-hover/close:scale-110 transition-transform" />
                 </button>
               </div>
             </div>
@@ -379,8 +381,8 @@ const AIChatBot = () => {
         }}
         className={`relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center group transition-all rounded-full ${
           isOpen
-            ? "bg-(--color-primary) rounded-xl shadow-xl overflow-hidden hidden md:flex"
-            : ""
+            ? "bg-black rounded-xl shadow-xl overflow-hidden hidden md:flex"
+            : "bg-transparent drop-shadow-[0_0_20px_rgba(217,11,28,0.2)]"
         }`}
       >
         <div className="absolute inset-0 pointer-events-none" />
@@ -393,7 +395,9 @@ const AIChatBot = () => {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: 90, opacity: 0 }}
             >
-              <X className="w-8 h-8 text-black relative z-10" />
+              <div className="w-10 h-10 flex items-center justify-center">
+                <X className="w-8 h-8 text-white drop-shadow-lg" />
+              </div>
             </motion.div>
           ) : (
             <motion.div

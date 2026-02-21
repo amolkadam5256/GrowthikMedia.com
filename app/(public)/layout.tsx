@@ -56,7 +56,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 
 import ClientUtilities from "../../components/comman/ClientUtilities";
 import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
-import AIChatBot from "../../components/PublicComponents/AIChatBot/AIChatBot";
+import GrowthStrategistBot from "../../components/PublicComponents/AIChatBot/AIChatBot";
 
 export const viewport: Viewport = {
   themeColor: "#d90b1c",
@@ -160,7 +160,7 @@ export default function RootLayout({
           <Header />
           <FloatingSocials />
           <FloatingWhatsApp />
-          <AIChatBot />
+          <GrowthStrategistBot />
           <main id="main-content" tabIndex={-1}>
             {children}
           </main>

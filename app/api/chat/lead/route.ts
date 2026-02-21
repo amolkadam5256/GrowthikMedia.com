@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, phone } = await req.json();
+    const { name, email, phone, initialMessage } = await req.json();
 
     if (!name || !email || !phone) {
       return NextResponse.json(
@@ -12,27 +12,68 @@ export async function POST(req: Request) {
       );
     }
 
-    // 1. Create or Find Lead
+    const INTERNAL_EMAILS = [
+      "growthikmedia@gmail.com",
+      "amolkadam1274@gmail.com",
+    ];
+
+    // 1. Find or Update Lead by Email OR Phone
     let lead = await db.chatLead.findFirst({
-      where: { email },
+      where: {
+        OR: [{ email }, { phone }],
+      },
     });
 
-    if (!lead) {
+    const isInternal = INTERNAL_EMAILS.includes(email.toLowerCase());
+    const initialStatus = isInternal ? "INTERNAL" : "NEW";
+
+    if (lead) {
+      // Update existing lead info
+      lead = await db.chatLead.update({
+        where: { id: lead.id },
+        data: {
+          name,
+          email,
+          phone,
+          status: lead.status === "INTERNAL" ? "INTERNAL" : lead.status, // Preserve internal status
+        },
+      });
+    } else {
+      // Create new lead
       lead = await db.chatLead.create({
-        data: { name, email, phone },
+        data: {
+          name,
+          email,
+          phone,
+          status: initialStatus,
+        },
       });
     }
 
-    // 2. Create a new session for this chat session
+    // 2. Create NEW Session (Every time as per rules)
     const session = await db.chatSession.create({
       data: {
         leadId: lead.id,
       },
     });
 
+    // 3. Save initial bot message if provided
+    if (initialMessage) {
+      await db.chatMessage.create({
+        data: {
+          sessionId: session.id,
+          text: initialMessage,
+          sender: "bot",
+        },
+      });
+    }
+
     return NextResponse.json({
       sessionId: session.id,
       leadId: lead.id,
+      isReturning:
+        !!lead.createdAt &&
+        new Date().getTime() - new Date(lead.createdAt).getTime() > 1000,
     });
   } catch (error) {
     console.error("Lead API Error:", error);
