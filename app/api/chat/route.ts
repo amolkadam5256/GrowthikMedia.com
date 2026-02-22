@@ -302,7 +302,36 @@ export async function POST(req: NextRequest) {
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error("Groq API Error:", errorText);
+      console.error("Groq API Error:", response.status, errorText);
+
+      // If Groq blocks the IP (e.g., Cloudflare Access Denied 403)
+      if (response.status === 403 || errorText.includes("Access denied")) {
+        console.warn("Groq API network blocked. Using fallback AI response.");
+        // Fallback responder to keep development going
+        const userMsg =
+          messages[messages.length - 1]?.text?.toLowerCase() || "";
+        let fallbackReply =
+          "You can share your details and our team will get back to you shortly.";
+
+        if (userMsg.includes("hi") || userMsg.includes("hello")) {
+          fallbackReply =
+            "Hi! 👋 Welcome to Growthik Media. How can I help you grow your business today?\n\nA) Local Service\nB) Real Estate\nC) E-commerce\nD) Other";
+        } else if (
+          userMsg.includes("seo") ||
+          userMsg.includes("ads") ||
+          userMsg.length > 5
+        ) {
+          fallbackReply =
+            "Great. We can definitely assist with that. Could you let me know your approximate monthly marketing budget?\n\nA) Under ₹15K\nB) ₹15K – ₹30K\nC) ₹60K+";
+        }
+
+        return NextResponse.json({
+          reply:
+            fallbackReply +
+            "\n\n*(Note: AI running in fallback mode due to Groq network restrictions on this server)*",
+        });
+      }
+
       return NextResponse.json(
         { error: "AI Service is temporarily unavailable" },
         { status: response.status },

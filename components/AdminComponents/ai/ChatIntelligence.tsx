@@ -288,14 +288,14 @@ export default function ChatIntelligence() {
                             day: "numeric",
                           })}
                         </span>
-                        {lead.score && (
+                        {lead.intentScore || lead.score ? (
                           <div className="flex items-center gap-1.5 text-emerald-500/70">
                             <div className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse" />
                             <span className="text-[7px] font-black uppercase tracking-widest">
-                              {lead.score}% INTEL
+                              {lead.intentScore || lead.score}% INTEL
                             </span>
                           </div>
-                        )}
+                        ) : null}
                       </div>
                       <FiChevronRight
                         className={`transition-all duration-300 text-xs ${isSelected ? "translate-x-1 text-[#d90b1c]" : "opacity-0 group-hover:opacity-100 text-[#4a5568]"}`}
@@ -497,13 +497,16 @@ export default function ChatIntelligence() {
                         Lead IQ
                       </span>
                       <span className="text-[12px] font-black text-emerald-500">
-                        {selectedLead?.score || 45}%
+                        {selectedLead?.intentScore || selectedLead?.score || 45}
+                        %
                       </span>
                     </div>
                     <div className="h-2 w-full bg-[#0b0f14] rounded-full overflow-hidden border border-[#1f2a36] p-0.5">
                       <div
                         className="h-full bg-linear-to-r from-blue-600 to-indigo-500 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(37,99,235,0.4)]"
-                        style={{ width: `${selectedLead?.score || 45}%` }}
+                        style={{
+                          width: `${selectedLead?.intentScore || selectedLead?.score || 45}%`,
+                        }}
                       />
                     </div>
                   </div>
@@ -562,19 +565,38 @@ export default function ChatIntelligence() {
                     Behavioral Tags
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {[
-                      "SEO Intent",
-                      "Qualified",
-                      "Pune Node",
-                      "Action Priority",
-                    ].map((t) => (
-                      <span
-                        key={t}
-                        className="px-3 py-1.5 bg-[#11161c] border border-[#1f2a36] text-[8px] font-black text-[#6c7b8b] rounded-md hover:text-blue-400 hover:border-blue-500/30 transition-all uppercase tracking-widest cursor-default shadow-sm"
-                      >
-                        {t}
-                      </span>
-                    ))}
+                    {(() => {
+                      let parsedTags: string[] = [];
+                      if (selectedLead?.tags) {
+                        try {
+                          const parsed = JSON.parse(selectedLead.tags);
+                          if (Array.isArray(parsed)) {
+                            parsedTags = parsed;
+                          } else {
+                            parsedTags = selectedLead.tags
+                              .split(",")
+                              .map((s) => s.trim())
+                              .filter(Boolean);
+                          }
+                        } catch (e) {
+                          parsedTags = selectedLead.tags
+                            .split(",")
+                            .map((s) => s.trim())
+                            .filter(Boolean);
+                        }
+                      }
+                      if (!parsedTags || parsedTags.length === 0) {
+                        parsedTags = ["NEW", "UNLABELED"];
+                      }
+                      return parsedTags.map((t) => (
+                        <span
+                          key={String(t)}
+                          className="px-3 py-1.5 bg-[#11161c] border border-[#1f2a36] text-[8px] font-black text-[#6c7b8b] rounded-md hover:text-blue-400 hover:border-blue-500/30 transition-all uppercase tracking-widest cursor-default shadow-sm"
+                        >
+                          {String(t)}
+                        </span>
+                      ));
+                    })()}
                   </div>
                 </div>
 
@@ -584,9 +606,8 @@ export default function ChatIntelligence() {
                     <FiInfo size={10} /> Neural Insight
                   </h5>
                   <p className="text-[9px] font-bold text-[#a0aec0] leading-relaxed">
-                    Entity exhibits moderate intent for digital transformation.
-                    Recommend follow-up with customized case studies from Pune
-                    region.
+                    {selectedLead?.aiSummary ||
+                      "No AI summary available. Lead requires manual review or neural re-sync."}
                   </p>
                 </div>
               </div>

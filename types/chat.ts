@@ -17,10 +17,14 @@ export interface ChatLead {
   email: string;
   phone: string;
   status: string;
-  tags?: string;
+  tags?: string; // JSON string or comma-separated
   createdAt: string | Date;
   sessions: ChatSession[];
-  score?: number;
+  score?: number; // Keep this backward compatible or for calculated fields
+  intentScore?: number | null;
+  intentCategory?: string | null;
+  decisionStage?: string | null;
+  aiSummary?: string | null;
 }
 
 export const STATUS_CONFIG: Record<
