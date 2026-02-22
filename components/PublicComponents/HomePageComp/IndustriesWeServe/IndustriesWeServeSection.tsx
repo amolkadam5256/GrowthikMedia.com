@@ -16,37 +16,37 @@ const industries = [
     icon: ShoppingCart,
     title: "E-commerce & Retail",
     desc: "Scale revenue through conversion-optimized funnels and performance ads.",
-    link: "/performance-marketing-pune",
+    link: "/services/performance-marketing",
   },
   {
     icon: Heart,
     title: "Healthcare & Wellness",
     desc: "Build patient trust with local SEO and targeted digital campaigns.",
-    link: "/seo-marketing-pune",
+    link: "/services/seo",
   },
   {
     icon: Building2,
     title: "Real Estate & Construction",
     desc: "Generate qualified leads via Google Ads and strategic content marketing.",
-    link: "/google-ads-agency-pune",
+    link: "/services/google-ads",
   },
   {
     icon: GraduationCap,
     title: "Education & EdTech",
     desc: "Dominate competitive niches with data-driven SEO and paid acquisition.",
-    link: "/seo-services-pune",
+    link: "/services/seo",
   },
   {
     icon: Factory,
     title: "Manufacturing & B2B",
     desc: "Establish B2B authority with technical content and LinkedIn strategies.",
-    link: "/digital-marketing-agency-pune",
+    link: "/services/digital-marketing",
   },
   {
     icon: Palmtree,
     title: "Hospitality & Tourism",
     desc: "Maximize bookings through local SEO, reviews and conversion optimization.",
-    link: "/seo-marketing-pune",
+    link: "/services/seo",
   },
 ];
 
@@ -82,7 +82,7 @@ const IndustriesWeServeSection = () => {
           <p className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-4xl mx-auto">
             As Pune's leading{" "}
             <Link
-              href="/digital-marketing-agency-pune"
+              href="/services/digital-marketing"
               className="text-(--color-primary) font-bold hover:underline"
             >
               digital marketing agency
@@ -90,7 +90,7 @@ const IndustriesWeServeSection = () => {
             , we deliver industry-specific growth strategies across diverse
             sectors. Our{" "}
             <Link
-              href="/performance-marketing-pune"
+              href="/services/performance-marketing"
               className="text-(--color-primary) font-bold hover:underline"
             >
               performance marketing
@@ -136,7 +136,7 @@ const IndustriesWeServeSection = () => {
           <p className="text-base text-(--text-secondary) leading-relaxed">
             Every industry demands unique positioning. We craft tailored{" "}
             <Link
-              href="/seo-services-pune"
+              href="/services/seo"
               className="text-(--color-primary) font-bold hover:underline"
             >
               SEO services in Pune

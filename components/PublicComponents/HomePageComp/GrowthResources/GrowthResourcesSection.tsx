@@ -15,13 +15,13 @@ const resources = [
     icon: Target,
     title: "Performance Marketing Playbooks",
     desc: "Advanced Google Ads optimization techniques and scaling strategies.",
-    link: "/google-ads-agency-pune",
+    link: "/services/google-ads",
   },
   {
     icon: Video,
     title: "Video Marketing Strategies",
     desc: "Proven video marketing frameworks that convert viewers into customers.",
-    link: "/video-production-pune",
+    link: "/services/video-production",
   },
 ];
 
@@ -108,7 +108,7 @@ const GrowthResourcesSection = () => {
             proven frameworks used by top-performing brands. Whether you're
             exploring{" "}
             <Link
-              href="/seo-services-pune"
+              href="/services/seo"
               className="text-(--color-primary) font-bold hover:underline"
             >
               SEO services in Pune

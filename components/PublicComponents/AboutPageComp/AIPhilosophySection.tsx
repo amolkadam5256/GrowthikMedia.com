@@ -10,10 +10,10 @@ const AIPhilosophySection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5 space-y-8" data-aos="fade-right">
             <div>
-              <h3 className="text-2xl font-black text-(--text-primary) uppercase mb-4 flex items-center gap-3">
+              <h2 className="text-2xl font-black text-(--text-primary) uppercase mb-4 flex items-center gap-3">
                 <Bot className="w-6 h-6 text-(--color-primary)" /> AI-Powered
                 Growth Architecture
-              </h3>
+              </h2>
               <p className="text-(--text-secondary) mb-6">
                 Our AI-powered marketing systems combine semantic SEO analysis,
                 predictive ad bidding, and advanced conversion tracking to help
@@ -49,10 +49,10 @@ const AIPhilosophySection = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-black text-(--text-primary) uppercase mb-4 flex items-center gap-3">
+              <h2 className="text-2xl font-black text-(--text-primary) uppercase mb-4 flex items-center gap-3">
                 <Users className="w-6 h-6 text-(--color-primary)" /> Client
                 Philosophy
-              </h3>
+              </h2>
               <blockquote className="text-lg italic text-(--text-secondary) border-l-4 border-(--color-primary) pl-4 py-2 bg-(--surface) pr-4">
                 "We don’t work with clients — we build long-term growth
                 partnerships. Every campaign is engineered around measurable
@@ -62,9 +62,9 @@ const AIPhilosophySection = () => {
           </div>
 
           <div className="lg:col-span-7" data-aos="fade-left">
-            <h3 className="text-xl font-black text-(--text-primary) uppercase mb-4 ml-6">
+            <h2 className="text-xl font-black text-(--text-primary) uppercase mb-4 ml-6">
               Our Journey
-            </h3>
+            </h2>
             <p className="text-sm text-(--text-secondary) ml-6 mb-8 max-w-lg leading-relaxed">
               Since 2019, Growthik Media has evolved from a boutique digital
               marketing agency in Pune into a full-stack growth partner
@@ -111,9 +111,9 @@ const AIPhilosophySection = () => {
                   >
                     {item.year}
                   </span>
-                  <h4 className="text-lg font-black text-(--text-primary) uppercase mb-1">
+                  <h3 className="text-lg font-black text-(--text-primary) uppercase mb-1">
                     {item.title}
-                  </h4>
+                  </h3>
                   <p className="text-sm text-(--text-secondary)">{item.desc}</p>
                 </div>
               ))}

@@ -152,9 +152,50 @@ const getFAQSchema = () => {
   };
 };
 
+// JSON-LD structured data for AboutPage
+const getAboutPageSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Growthik Media",
+    description:
+      "Growthik Media is an AI-powered growth engineering company and performance marketing agency in Pune.",
+    url: `${CONTACT_INFO.website}/about/`,
+    mainEntity: {
+      "@type": "Organization",
+      name: "Growthik Media",
+    },
+  };
+};
+
+// JSON-LD structured data for Person (Founder)
+const getPersonSchema = () => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Amol Kadam",
+    jobTitle: "Founder & Growth Architect",
+    url: "https://www.linkedin.com/in/amolkadam77/",
+    worksFor: {
+      "@type": "Organization",
+      name: "Growthik Media",
+    },
+    knowsAbout: [
+      "Digital Marketing",
+      "Performance Marketing",
+      "Next.js Web Architecture",
+      "Search Engine Optimization",
+      "AI Growth Automation",
+    ],
+    sameAs: ["https://www.linkedin.com/in/amolkadam77/"],
+  };
+};
+
 export default function About() {
   const organizationSchema = getOrganizationSchema();
   const faqSchema = getFAQSchema();
+  const aboutPageSchema = getAboutPageSchema();
+  const personSchema = getPersonSchema();
 
   return (
     <main className="bg-[--background] min-h-screen pt-20 overflow-hidden">
@@ -166,6 +207,14 @@ export default function About() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
       {/* 1. HERO SECTION — BRAND AUTHORITY INTRO */}

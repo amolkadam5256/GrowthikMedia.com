@@ -77,7 +77,7 @@ const TechStackSection = () => {
             </p>
 
             <Link
-              href="/performance-marketing-pune"
+              href="/services/performance-marketing"
               className="inline-flex items-center gap-2 text-(--color-primary) font-bold uppercase tracking-wider hover:text-(--text-primary) transition-colors group"
             >
               Explore our data-driven approach

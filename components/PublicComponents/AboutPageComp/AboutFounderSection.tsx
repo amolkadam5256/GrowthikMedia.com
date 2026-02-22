@@ -70,39 +70,56 @@ const AboutFounderSection = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {[
-                  "Performance Marketing Strategy",
-                  "Next.js Web Architecture",
-                  "AI Growth Automation",
-                  "Conversion Engineering",
+                  {
+                    title: "Performance Marketing",
+                    desc: "ROI-driven ad scaling",
+                  },
+                  {
+                    title: "Next.js Architecture",
+                    desc: "High-speed conversion",
+                  },
+                  {
+                    title: "AI Growth Automation",
+                    desc: "Intelligent pipelines",
+                  },
+                  {
+                    title: "Conversion Engineering",
+                    desc: "CRO & UX optimization",
+                  },
                 ].map((exp, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-3 p-4 bg-(--surface) border border-(--border) hover:border-(--color-primary) transition-all"
+                    className="flex flex-col items-start gap-1 p-4 bg-(--surface) border border-(--border) hover:border-(--color-primary) transition-all group"
                   >
-                    <Briefcase className="w-5 h-5 text-(--color-primary)" />
-                    <span className="text-xs font-black uppercase text-(--text-primary)">
-                      {exp}
+                    <div className="flex items-center gap-2 mb-1">
+                      <Briefcase className="w-4 h-4 text-(--color-primary) group-hover:scale-110 transition-transform" />
+                      <span className="text-xs font-black uppercase text-(--text-primary)">
+                        {exp.title}
+                      </span>
+                    </div>
+                    <span className="text-[10px] text-(--text-secondary) uppercase tracking-widest pl-6">
+                      {exp.desc}
                     </span>
                   </div>
                 ))}
               </div>
 
               <div className="flex flex-wrap items-center gap-4 mb-8">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md">
-                  <ShieldCheck className="w-4 h-4 text-green-500" />
-                  <span className="text-[10px] uppercase font-bold text-(--text-secondary)">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-green-500 transition-colors">
+                  <ShieldCheck className="w-4 h-4 text-green-500 group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-green-500 transition-colors">
                     Google Certified
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md">
-                  <Award className="w-4 h-4 text-blue-500" />
-                  <span className="text-[10px] uppercase font-bold text-(--text-secondary)">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-blue-500 transition-colors">
+                  <Award className="w-4 h-4 text-blue-500 group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-blue-500 transition-colors">
                     Meta Partner
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md">
-                  <TrendingUp className="w-4 h-4 text-purple-500" />
-                  <span className="text-[10px] uppercase font-bold text-(--text-secondary)">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-purple-500 transition-colors">
+                  <TrendingUp className="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-purple-500 transition-colors">
                     AI Marketing Systems
                   </span>
                 </div>
@@ -145,7 +162,7 @@ const AboutFounderSection = () => {
                   The Squad
                 </span>
               </div>
-              <h3 className="text-5xl md:text-7xl font-black text-(--text-primary) uppercase tracking-tighter leading-[0.9]">
+              <h2 className="text-5xl md:text-7xl font-black text-(--text-primary) uppercase tracking-tighter leading-[0.9]">
                 Architects of <br />
                 <span
                   className="text-transparent"
@@ -155,7 +172,7 @@ const AboutFounderSection = () => {
                 >
                   Digital Dominance
                 </span>
-              </h3>
+              </h2>
             </div>
 
             <p className="text-(--text-secondary) max-w-xs text-sm font-medium leading-relaxed border-l border-(--color-primary)/20 pl-6 hidden md:block">
@@ -231,9 +248,9 @@ const AboutFounderSection = () => {
                   <p className="text-[10px] font-black text-(--text-secondary) uppercase tracking-widest mb-1 group-hover:text-white/60 transition-colors">
                     {member.role}
                   </p>
-                  <h4 className="text-xl font-black text-(--text-primary) uppercase tracking-tight group-hover:text-white transition-colors">
+                  <h3 className="text-xl font-black text-(--text-primary) uppercase tracking-tight group-hover:text-white transition-colors">
                     {member.name}
-                  </h4>
+                  </h3>
 
                   {/* Action Link */}
                   <div className="mt-6 pt-6 border-t border-(--border) group-hover:border-white/20 flex justify-between items-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0">

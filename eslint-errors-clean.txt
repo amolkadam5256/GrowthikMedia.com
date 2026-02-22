@@ -1,0 +1,955 @@
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\app\admin\(protected)\chat-logs\page.tsx
+  37:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  52:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\app\admin\(protected)\dashboard\page.tsx
+  28:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\app\admin\(protected)\dashboard\page.tsx:28:5
+  26 |
+  27 |   useEffect(() => {
+> 28 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  29 |   }, []);
+  30 |
+  31 |   useEffect(() => {  react-hooks/set-state-in-effect
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\app\api\admin\users\[id]\route.ts
+  39:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\app\api\chat\lead\route.ts
+  84:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\app\api\chat\route.ts
+  299:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  448:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\app\not-found.tsx
+  38:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\app\not-found.tsx:38:5
+  36 |
+  37 |   useEffect(() => {
+> 38 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  39 |   }, []);
+  40 |
+  41 |   // Determine current theme for conditional rendering if needed  react-hooks/set-state-in-effect
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\AdminComponents\ai\details\SessionsSidebar.tsx
+  74:19  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  74:38  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\AdminComponents\content\AboutManager.tsx
+  37:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\AdminComponents\dashboard\DashboardHome.tsx
+   17:38  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   91:57  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+   99:56  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  107:53  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  128:50  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  195:43  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\AdminComponents\leads\ContactManager.tsx
+  34:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\AIChatBot\AIChatBot.tsx
+  138:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\AboutPageComp\AIPhilosophySection.tsx
+  57:17  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  59:45  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\AboutPageComp\DifferentiatorsSection.tsx
+  24:21  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  24:29  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  24:43  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\AIPositioning\AIPositioningSection.tsx
+  54:13  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  55:79  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\ClientSuccessMetrics\ClientSuccessMetricsSection.tsx
+   73:24  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  125:63  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  158:23  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  158:45  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  161:29  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  163:32  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\FinalCTA\FinalCTASection.tsx
+  40:16  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                  react/no-unescaped-entities
+  91:13  error  Do not use an `<a>` element to navigate to `/portfolio/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\Founder\FounderSection.tsx
+   99:15  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  101:25  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  164:22  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\GrowthResources\GrowthResourcesSection.tsx
+  108:73  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\IndustriesWeServe\IndustriesWeServeSection.tsx
+   83:20  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  145:47  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\LocalSEOAuthority\LocalSEOAuthoritySection.tsx
+   46:33  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   46:77  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   47:45  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  108:16  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  108:42  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  117:15  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  122:30  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\OurApproach\OurApproachSection.tsx
+   21:7   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\OurApproach\OurApproachSection.tsx:21:7
+  19 |   useEffect(() => {
+  20 |     if (videoRef.current && videoRef.current.readyState >= 3) {
+> 21 |       setIsVideoLoaded(true);
+     |       ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  22 |     }
+  23 |   }, []);
+  24 |  react-hooks/set-state-in-effect
+  196:22  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react/no-unescaped-entities
+  197:35  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\PortfolioHighlights\PortfolioHighlightsSection.tsx
+   97:15  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+   98:35  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  158:15  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  158:46  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  159:37  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\SEOAuthority\SEOAuthoritySection.tsx
+  52:21  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\Testimonials\TestimonialSection.tsx
+   96:18  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  149:21  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  149:30  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\PublicComponents\HomePageComp\WhyChooseUs\WhyChooseUsSection.tsx
+   91:19  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+   91:68  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  137:22  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\comman\header\DesktopNavigation.tsx
+  52:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\components\comman\header\DesktopNavigation.tsx:52:9
+  50 |
+  51 |       if (rect.right > windowWidth - 20) {
+> 52 |         setCalculatedDirection("left");
+     |         ^^^^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  53 |       } else if (rect.left < 20) {
+  54 |         setCalculatedDirection("right");
+  55 |       } else {  react-hooks/set-state-in-effect
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\default.js
+  1:23  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\edge.js
+  25:5  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\index-browser.js
+  10:5  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\index.d.ts
+    137:81   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    149:60   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    160:79   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    172:58   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    187:47   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    384:20   error  An interface declaring no members is equivalent to its supertype                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-empty-object-type
+    402:20   error  An interface declaring no members is equivalent to its supertype                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-empty-object-type
+    484:13   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    485:14   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    491:49   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    496:53   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    496:78   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    509:23   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+    536:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+    563:17   error  Constraining the generic type `T` to `any` does nothing and is unnecessary                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unnecessary-type-constraint
+    563:27   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    563:50   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    579:27   error  Constraining the generic type `T` to `unknown` does nothing and is unnecessary                                                                                                                                                                                                                                                                                                             @typescript-eslint/no-unnecessary-type-constraint
+    610:23   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    640:26   error  Constraining the generic type `A` to `any` does nothing and is unnecessary                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unnecessary-type-constraint
+    640:36   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    640:53   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+    648:32   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    689:23   error  Constraining the generic type `A1` to `any` does nothing and is unnecessary                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unnecessary-type-constraint
+    689:34   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    689:39   error  Constraining the generic type `A2` to `any` does nothing and is unnecessary                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unnecessary-type-constraint
+    689:50   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    744:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+    753:40   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    754:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    794:100  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1533:16   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1536:44   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1537:19   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1540:71   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1541:19   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1544:44   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1545:19   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1548:71   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1549:19   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1607:25   error  Constraining the generic type `T` to `any` does nothing and is unnecessary                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unnecessary-type-constraint
+   1607:35   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1654:11   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   1662:30   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   2028:14   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   2039:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   2279:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   2363:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   2373:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   2381:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   2387:81   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   2410:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   2416:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   2913:14   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   2922:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   3162:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   3246:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   3256:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   3264:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   3270:79   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   3293:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   3299:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   3866:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   4106:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   4190:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   4200:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   4208:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   4214:91   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   4230:58   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   4238:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   4244:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   4902:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   5142:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   5226:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   5236:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   5244:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   5250:83   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   5266:62   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   5274:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   5280:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   5828:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   6068:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   6152:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   6162:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   6170:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   6176:93   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   6192:66   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   6200:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   6206:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   6843:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   7083:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   7167:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   7177:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   7185:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   7191:92   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   7207:64   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   7215:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   7221:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   7813:14   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   7828:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   8068:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   8152:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   8162:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   8170:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   8176:84   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   8199:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   8205:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   8733:14   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   8745:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   8985:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   9069:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   9079:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   9087:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   9093:83   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   9116:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   9122:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   9728:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   9968:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  10052:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  10062:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  10070:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  10076:84   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  10092:57   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  10100:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  10106:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  10665:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  10905:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  10989:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  10999:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11007:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11013:87   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11029:51   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11031:60   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11039:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  11045:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  11605:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11845:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  11929:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11939:13   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11947:9    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11953:87   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11969:57   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  11977:148  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  11983:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\index.js
+   25:5   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+   79:16  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  304:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  326:30  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\runtime\edge-esm.js
+  3:3369   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:3565   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:3921   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:4191   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:5178   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:5556   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:6041   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:6502   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:6723   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:7041   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:7345   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:7639   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:8007   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:8348   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:9424   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:10021  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:10941  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:11413  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12079  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12218  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12310  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12579  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:13264  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:13570  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14116  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14269  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14467  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14691  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:15376  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:15766  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:16574  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:16834  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:16994  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:17211  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:28949  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:35759  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\runtime\edge.js
+  3:3369   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:3565   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:3921   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:4191   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:5178   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:5556   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:6041   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:6502   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:6723   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:7041   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:7345   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:7639   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:8007   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:8348   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:9424   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:10021  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:10941  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:11413  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12079  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12218  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12310  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12579  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:13264  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:13570  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14116  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14269  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14467  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14691  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:15376  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:15766  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:16574  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:16834  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:16994  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:17211  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:28954  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:35764  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\runtime\index-browser.d.ts
+    9:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   14:51  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  238:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\runtime\index-browser.js
+  1:4388   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:4583   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:4939   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:5207   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:6192   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:6570   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:7054   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:7513   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:7734   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:8049   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:8353   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:8647   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:9015   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:9355   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:10428  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:11019  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:11935  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:12406  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:13068  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:13206  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:13298  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:13566  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:14250  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:14554  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:15095  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:15245  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:15438  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:15657  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:16341  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:16730  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:17533  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:17788  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:17945  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:18161  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  1:29803  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\runtime\library.d.ts
+    28:100  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    34:5    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+    44:27   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    49:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+    91:79   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   168:44   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+   172:48   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+   247:34   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   253:43   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   254:44   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   271:23   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   272:16   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   275:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   288:61   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   515:30   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   575:48   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   575:52   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   575:56   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   575:60   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   623:11   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   624:13   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   715:15   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   852:143  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   862:139  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   867:128  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   876:146  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   878:42   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   891:142  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   895:22   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   928:130  error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+   930:129  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   947:15   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   948:23   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   948:45   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   949:19   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+   974:97   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1081:26   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1214:139  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1226:58   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  1240:26   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1341:78   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1352:14   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1363:6    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  1365:58   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1365:63   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1367:28   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1373:26   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1376:38   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1377:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1393:25   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1418:67   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1447:65   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1463:45   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1465:21   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1483:29   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1483:44   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1483:58   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1489:66   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1490:189  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1606:51   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1606:56   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1612:12   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1721:21   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1722:20   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1723:14   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1745:26   error  An interface declaring no members is equivalent to its supertype                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-empty-object-type
+  1903:67   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1907:85   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1907:90   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1907:116  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1907:121  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  1974:43   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  1994:86   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2008:34   error  The `Function` type accepts any function-like value.
+Prefer explicitly defining any function parameters and return type                                                                                                                                                                                                                                                                    @typescript-eslint/no-unsafe-function-type
+  2027:31   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2027:36   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2033:87   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2097:49   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2108:23   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  2139:22   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2142:37   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2144:59   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2144:64   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2145:38   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2270:45   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2444:76   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2516:45   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2517:93   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2517:100  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2524:30   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2524:36   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2525:69   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2552:12   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2567:25   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2575:23   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  2588:22   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2592:17   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  2593:14   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  2594:14   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  2595:4    error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  2639:54   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2670:53   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2696:67   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2696:72   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2697:24   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2699:27   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  2966:44   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  3059:41   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  3059:46   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  3077:32   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  3077:40   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  3079:40   error  The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead  @typescript-eslint/no-empty-object-type
+  3098:27   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  3149:52   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  3158:43   error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\runtime\library.js
+    1:2800   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    1:2817   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    1:7011   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    1:7028   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    1:7047   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    3:6895   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    5:80     error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    5:1369   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    5:1400   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    5:1429   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    5:6313   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    8:1242   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+    8:1266   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   17:804    error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   17:2594   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   20:520    error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   23:5078   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   23:5104   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   23:5127   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   23:5147   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   23:7032   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   24:3269   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:3465   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:3821   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:4091   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:5078   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:5456   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:5941   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:6402   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:6623   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:6941   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:7245   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:7539   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:7907   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:8248   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:9324   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:9921   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:10841  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:11313  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:11979  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:12118  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:12210  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:12479  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:13164  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:13470  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:14016  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:14169  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:14367  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:14591  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:15276  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:15666  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:16474  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:16734  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:16894  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:17111  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:28833  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   24:35435  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+   27:4773   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   34:536    error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+   34:556    error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+  112:9517   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+  112:9537   error  A `require()` style import is forbidden          @typescript-eslint/no-require-imports
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\runtime\wasm.js
+  3:3368   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:3564   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:3920   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:4190   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:5175   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:5553   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:6038   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:6499   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:6720   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:7038   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:7342   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:7636   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:8004   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:8345   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:9420   error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:10017  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:10935  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:11407  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12071  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12210  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12302  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:12571  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:13255  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:13561  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14105  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14258  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14456  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:14680  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:15365  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:15755  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:16561  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:16821  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:16981  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:17198  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:28923  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  3:35686  error  Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\generated\client\wasm.js
+  10:5  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\scripts\test-chat.js
+  1:14  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\scripts\test-groq.js
+  1:15  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+  3:1   error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+D:\Company\Growthikmedia.com\Website\GrowthikMedia.com\summary.js
+  1:12  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+✖ 542 problems (542 errors, 0 warnings)
+

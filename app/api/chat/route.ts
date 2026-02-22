@@ -229,14 +229,21 @@ export async function POST(req: NextRequest) {
     let contextPrompt = "";
 
     // Check session first
-    if (sessionId) {
-      const session = await db.chatSession.findUnique({
-        where: { id: sessionId },
-        include: { lead: true },
-      });
-      if (session?.lead) {
-        const { name, email, phone } = session.lead;
-        contextPrompt = `\n\n[USER CONTEXT: You are talking to ${name}. Contact details (Email: ${email}, Phone: ${phone}) are ALREADY COLLECTED. Do NOT ask for contact info again. Focus on business goals.]`;
+    if (sessionId && !sessionId.startsWith("fallback-")) {
+      try {
+        const session = await db.chatSession.findUnique({
+          where: { id: sessionId },
+          include: { lead: true },
+        });
+        if (session?.lead) {
+          const { name, email, phone } = session.lead;
+          contextPrompt = `\n\n[USER CONTEXT: You are talking to ${name}. Contact details (Email: ${email}, Phone: ${phone}) are ALREADY COLLECTED. Do NOT ask for contact info again. Focus on business goals.]`;
+        }
+      } catch (err) {
+        console.warn(
+          "Could not fetch session, proceeding without context",
+          err,
+        );
       }
     }
     // Fallback to leadContext passed from frontend (localStorage)
@@ -349,7 +356,7 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. Log to Database (Async, don't block the response)
-    if (sessionId) {
+    if (sessionId && !sessionId.startsWith("fallback-")) {
       const lastUserMessage = messages[messages.length - 1];
 
       // We run this in the background to keep the UI fast
@@ -372,7 +379,7 @@ export async function POST(req: NextRequest) {
 
             // Update Lead Status & Tags (Qualification Logic)
             let newStatus = session.lead.status || "NEW";
-            let currentTags = session.lead.tags
+            const currentTags = session.lead.tags
               ? session.lead.tags.split(",")
               : [];
 

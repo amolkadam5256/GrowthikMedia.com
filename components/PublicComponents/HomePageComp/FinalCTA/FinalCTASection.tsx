@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { Zap, ArrowRight, Sparkles } from "lucide-react";
 
 const FinalCTASection = React.memo(() => {
@@ -75,7 +76,7 @@ const FinalCTASection = React.memo(() => {
             data-aos="fade-up"
           >
             {/* Primary CTA */}
-            <a
+            <Link
               href="/contact"
               className="group relative inline-flex items-center gap-4 px-10 py-5 bg-(--color-primary) text-white font-black uppercase tracking-[0.2em] text-sm hover:bg-(--color-primary-light) transition-all duration-300 shadow-2xl hover:shadow-primary/30 hover:scale-105 overflow-hidden"
             >
@@ -85,16 +86,16 @@ const FinalCTASection = React.memo(() => {
               <Zap className="w-5 h-5 relative z-10" />
               <span className="relative z-10">Get Free Strategy Session</span>
               <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
 
             {/* Secondary CTA */}
-            <a
+            <Link
               href="/portfolio"
               className="group inline-flex items-center gap-3 px-8 py-5 bg-transparent border-2 border-(--border) text-(--text-primary) font-bold uppercase tracking-[0.2em] text-sm hover:bg-(--surface) hover:border-(--color-primary) transition-all duration-300"
             >
               <span>View Our Work</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
 
           {/* Trust Indicators */}

@@ -19,7 +19,7 @@ const LocalExpertiseSection = () => {
             Scaling Brands Across Maharashtra.
           </span>
         </h2>
-        <p className="text-lg text-(--text-secondary) max-w-3xl mx-auto mb-12 leading-relaxed">
+        <p className="text-lg text-(--text-secondary) max-w-3xl mx-auto mb-10 leading-relaxed">
           We understand Pune’s competitive digital ecosystem — from IT hubs like{" "}
           <strong className="text-(--text-primary)">Hinjewadi</strong>, to
           retail markets like{" "}
@@ -28,15 +28,45 @@ const LocalExpertiseSection = () => {
           local-first strategies help brands across{" "}
           <strong className="text-(--text-primary)">PCMC</strong>,{" "}
           <strong className="text-(--text-primary)">Kothrud</strong>, and the
-          entire <strong className="text-(--text-primary)">Pune IT Hub</strong>{" "}
-          dominate local search rankings and High-intent searches.
+          entire <strong className="text-(--text-primary)">Pune region</strong>{" "}
+          capture high-intent organic traffic and scale efficiently.
         </p>
 
-        <p className="text-base text-(--text-secondary) max-w-2xl mx-auto opacity-90">
-          We help brands across Hinjewadi, Baner, Wakad, Kothrud, and PCMC
-          dominate local search rankings and attract high-intent customers
-          through strategic Local SEO services.
-        </p>
+        {/* Structured Proof Elements */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-(--border) pt-10">
+          <div className="text-center group">
+            <div className="text-3xl font-black text-(--text-primary) group-hover:text-(--color-primary) transition-colors">
+              100%
+            </div>
+            <div className="text-[10px] text-(--text-secondary) uppercase font-bold tracking-widest mt-2">
+              Local Knowledge
+            </div>
+          </div>
+          <div className="text-center group">
+            <div className="text-3xl font-black text-(--text-primary) group-hover:text-(--color-primary) transition-colors">
+              50+
+            </div>
+            <div className="text-[10px] text-(--text-secondary) uppercase font-bold tracking-widest mt-2">
+              Regional Brands
+            </div>
+          </div>
+          <div className="text-center group">
+            <div className="text-3xl font-black text-(--text-primary) group-hover:text-(--color-primary) transition-colors">
+              Data
+            </div>
+            <div className="text-[10px] text-(--text-secondary) uppercase font-bold tracking-widest mt-2">
+              Backed Decisions
+            </div>
+          </div>
+          <div className="text-center group">
+            <div className="text-3xl font-black text-(--text-primary) group-hover:text-(--color-primary) transition-colors">
+              ROI
+            </div>
+            <div className="text-[10px] text-(--text-secondary) uppercase font-bold tracking-widest mt-2">
+              Focused Systems
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -129,14 +129,14 @@ const ClientSuccessMetricsSection = () => {
             </span>{" "}
             through our{" "}
             <Link
-              href="/performance-marketing-pune"
+              href="/services/performance-marketing"
               className="text-(--color-primary) font-bold hover:underline"
             >
               performance marketing strategies
             </Link>
             . Our{" "}
             <Link
-              href="/seo-services-pune"
+              href="/services/seo"
               className="text-(--color-primary) font-bold hover:underline"
             >
               SEO services in Pune
@@ -144,7 +144,7 @@ const ClientSuccessMetricsSection = () => {
             consistently deliver first-page rankings for high-intent keywords,
             while our{" "}
             <Link
-              href="/google-ads-agency-pune"
+              href="/services/google-ads"
               className="text-(--color-primary) font-bold hover:underline"
             >
               Google Ads campaigns

@@ -1,4 +1,5 @@
 "use client";
+// HMR trigger
 
 import React from "react";
 import Image from "next/image";
@@ -12,6 +13,7 @@ import {
   Users,
   Star,
   CheckCircle,
+  Award,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { images } from "@/app/assets/images/images";
@@ -54,6 +56,24 @@ const AboutHeroSection = () => {
                 builds predictable revenue systems — not just marketing
                 campaigns.
               </p>
+
+              {/* Micro Trust Signals */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex -space-x-2">
+                  <div className="w-8 h-8 rounded-full border-2 border-(--background) bg-green-100 flex items-center justify-center text-green-600 font-bold text-xs shadow-sm">
+                    <CheckCircle className="w-4 h-4" />
+                  </div>
+                  <div className="w-8 h-8 rounded-full border-2 border-(--background) bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs shadow-sm">
+                    <Award className="w-4 h-4" />
+                  </div>
+                  <div className="w-8 h-8 rounded-full border-2 border-(--background) bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xs shadow-sm">
+                    <TrendingUp className="w-4 h-4" />
+                  </div>
+                </div>
+                <div className="text-xs font-bold text-(--text-secondary) uppercase tracking-wider">
+                  Trusted by 50+ Growth-stage Brands
+                </div>
+              </div>
 
               {/* SEO Text Block */}
               <div className="p-4 border-l-4 border-(--color-primary) bg-(--surface)/50 mb-8 rounded-r-lg">
@@ -100,9 +120,9 @@ const AboutHeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h3 className="text-sm font-black text-(--text-secondary) uppercase mb-6 tracking-widest opacity-80">
+              <h2 className="text-sm font-black text-(--text-secondary) uppercase mb-6 tracking-widest opacity-80">
                 Core Expertise
-              </h3>
+              </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[
                   {

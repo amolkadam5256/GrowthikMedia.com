@@ -3,7 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Rocket, Target, Lightbulb, ArrowUpRight } from "lucide-react";
+import {
+  Rocket,
+  Target,
+  Lightbulb,
+  ArrowUpRight,
+  CheckCircle,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { images } from "@/app/assets/images/images";
 
@@ -51,19 +57,40 @@ const WhoWeAreSection = () => {
                 bottom line.
               </p>
 
-              <p className="text-base opacity-80 border-l-4 border-(--color-primary)/20 pl-4">
-                We combine engineering precision with creative storytelling to
-                build scalable growth engines. From startups to enterprise
-                brands, we specialize in
+              <div className="space-y-4 pt-2">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-(--color-primary) shrink-0 mt-0.5" />
+                  <p className="text-base text-(--text-secondary) leading-snug">
+                    <strong className="text-(--text-primary)">
+                      Engineering Precision:
+                    </strong>{" "}
+                    We combine deep technical expertise with advanced growth
+                    architecture.
+                  </p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-(--color-primary) shrink-0 mt-0.5" />
+                  <p className="text-base text-(--text-secondary) leading-snug">
+                    <strong className="text-(--text-primary)">
+                      Scalable Systems:
+                    </strong>{" "}
+                    From startups to enterprise brands, we build predictable
+                    revenue engines.
+                  </p>
+                </div>
+              </div>
+
+              <p className="text-base opacity-80 border-l-4 border-(--color-primary)/20 pl-4 mt-6">
+                Our core mastery lies in providing
                 <Link
                   href="/services/seo"
                   className="text-(--color-primary) font-bold hover:underline mx-1"
                 >
-                  SEO
+                  AI-Powered SEO
                 </Link>
                 ,
                 <Link
-                  href="/services/performance"
+                  href="/services/performance-marketing"
                   className="text-(--color-primary) font-bold hover:underline mx-1"
                 >
                   Performance Marketing

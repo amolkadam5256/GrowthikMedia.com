@@ -61,7 +61,10 @@ const AboutGrowthFrameworkSection = () => {
               <div className="w-12 h-12 bg-(--surface) border border-(--border) flex items-center justify-center mb-6 text-(--color-primary) group-hover:bg-(--color-primary) group-hover:text-white transition-colors">
                 {item.icon}
               </div>
-              <div className="text-4xl font-black text-(--surface) stroke-2 stroke-(--text-disabled) absolute top-4 right-4 opacity-20 pointer-events-none">
+              <div
+                className="text-5xl md:text-6xl font-black text-transparent absolute top-4 right-4 opacity-10 pointer-events-none transition-opacity group-hover:opacity-20"
+                style={{ WebkitTextStroke: "2px var(--color-primary)" }}
+              >
                 {item.step}
               </div>
               <h3 className="text-lg font-black text-(--text-primary) uppercase mb-3">

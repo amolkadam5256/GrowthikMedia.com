@@ -43,7 +43,7 @@ const PuneMarketInsightSection = () => {
             </div>
 
             <Link
-              href="/seo-services-pune"
+              href="/services/seo"
               className="inline-flex items-center gap-2 bg-(--color-primary) text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-opacity-90 transition-all group"
             >
               Dominate the Pune Market
@@ -72,7 +72,7 @@ const PuneMarketInsightSection = () => {
                     <p className="text-sm text-(--text-secondary)">
                       Surge in &quot;Near Me&quot; searches across{" "}
                       <Link
-                        href="/seo-marketing-pune"
+                        href="/services/seo"
                         className="text-(--color-primary) hover:underline font-semibold"
                       >
                         Pune & PCMC

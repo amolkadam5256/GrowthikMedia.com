@@ -9,31 +9,31 @@ const seoExpertise = [
     icon: Search,
     title: "Technical SEO",
     desc: "Core web vitals, schema markup and advanced architecture.",
-    link: "/seo-services-pune",
+    link: "/services/seo",
   },
   {
     icon: MapPin,
     title: "Local SEO Pune",
     desc: "Dominate local searches and map packs in the Pune region.",
-    link: "/seo-marketing-pune",
+    link: "/services/seo",
   },
   {
     icon: ShoppingCart,
     title: "E-commerce SEO",
     desc: "Scale product visibility and increase Shopify/Woo sales.",
-    link: "/performance-marketing-pune",
+    link: "/services/performance-marketing",
   },
   {
     icon: Video,
     title: "Video SEO",
     desc: "Rank your YouTube content and video snippets on Google.",
-    link: "/video-production-pune",
+    link: "/services/video-production",
   },
   {
     icon: BarChart2,
     title: "CRO SEO",
     desc: "Conversion Rate Optimization to turn traffic into revenue.",
-    link: "/google-ads-agency-pune",
+    link: "/services/google-ads",
   },
 ];
 

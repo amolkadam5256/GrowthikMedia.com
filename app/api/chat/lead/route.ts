@@ -17,64 +17,83 @@ export async function POST(req: NextRequest) {
       "amolkadam1274@gmail.com",
     ];
 
-    // 1. Find or Update Lead by Email OR Phone
-    let lead = await db.chatLead.findFirst({
-      where: {
-        OR: [{ email }, { phone }],
-      },
-    });
-
-    const isInternal = INTERNAL_EMAILS.includes(email.toLowerCase());
-    const initialStatus = isInternal ? "INTERNAL" : "NEW";
-
-    if (lead) {
-      // Update existing lead info
-      lead = await db.chatLead.update({
-        where: { id: lead.id },
-        data: {
-          name,
-          email,
-          phone,
-          status: lead.status === "INTERNAL" ? "INTERNAL" : lead.status, // Preserve internal status
+    let session;
+    let lead;
+    try {
+      // 1. Find or Update Lead by Email OR Phone
+      const existingLead = await db.chatLead.findFirst({
+        where: {
+          OR: [{ email }, { phone }],
         },
       });
-    } else {
-      // Create new lead
-      lead = await db.chatLead.create({
+
+      const isInternal = INTERNAL_EMAILS.includes(email.toLowerCase());
+      const initialStatus = isInternal ? "INTERNAL" : "NEW";
+
+      if (existingLead) {
+        // Update existing lead info
+        lead = await db.chatLead.update({
+          where: { id: existingLead.id },
+          data: {
+            name,
+            email,
+            phone,
+            status:
+              existingLead.status === "INTERNAL"
+                ? "INTERNAL"
+                : existingLead.status,
+          },
+        });
+      } else {
+        // Create new lead
+        lead = await db.chatLead.create({
+          data: {
+            name,
+            email,
+            phone,
+            status: initialStatus,
+          },
+        });
+      }
+
+      // 2. Create NEW Session (Every time as per rules)
+      session = await db.chatSession.create({
         data: {
-          name,
-          email,
-          phone,
-          status: initialStatus,
+          leadId: lead.id,
         },
       });
-    }
 
-    // 2. Create NEW Session (Every time as per rules)
-    const session = await db.chatSession.create({
-      data: {
+      // 3. Save initial bot message if provided
+      if (initialMessage) {
+        await db.chatMessage.create({
+          data: {
+            sessionId: session.id,
+            text: initialMessage,
+            sender: "bot",
+          },
+        });
+      }
+
+      return NextResponse.json({
+        sessionId: session.id,
         leadId: lead.id,
-      },
-    });
+        isReturning:
+          !!lead.createdAt &&
+          new Date().getTime() - new Date(lead.createdAt).getTime() > 1000,
+      });
+    } catch (dbError: any) {
+      console.warn(
+        "Database connection failed. Proceeding in fallback mode:",
+        dbError.message,
+      );
 
-    // 3. Save initial bot message if provided
-    if (initialMessage) {
-      await db.chatMessage.create({
-        data: {
-          sessionId: session.id,
-          text: initialMessage,
-          sender: "bot",
-        },
+      const fallbackId = `fallback-${Date.now()}`;
+      return NextResponse.json({
+        sessionId: fallbackId,
+        leadId: fallbackId,
+        isReturning: false,
       });
     }
-
-    return NextResponse.json({
-      sessionId: session.id,
-      leadId: lead.id,
-      isReturning:
-        !!lead.createdAt &&
-        new Date().getTime() - new Date(lead.createdAt).getTime() > 1000,
-    });
   } catch (error) {
     console.error("Lead API Error:", error);
     return NextResponse.json({ error: "Failed to save lead" }, { status: 500 });
