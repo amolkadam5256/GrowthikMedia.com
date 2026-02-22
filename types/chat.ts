@@ -25,6 +25,9 @@ export interface ChatLead {
   intentCategory?: string | null;
   decisionStage?: string | null;
   aiSummary?: string | null;
+  lastActiveAt?: number;
+  isActive?: boolean;
+  lastMessage?: ChatMessage | null;
 }
 
 export const STATUS_CONFIG: Record<

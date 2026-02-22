@@ -80,6 +80,17 @@ export async function POST(req: NextRequest) {
         isReturning:
           !!lead.createdAt &&
           new Date().getTime() - new Date(lead.createdAt).getTime() > 1000,
+        lead: {
+          name: lead.name,
+          email: lead.email,
+          phone: lead.phone,
+          createdAt: lead.createdAt || new Date(),
+          lastActiveAt: new Date(),
+          status: "active",
+          messages: initialMessage
+            ? [{ text: initialMessage, sender: "bot" }]
+            : [],
+        },
       });
     } catch (dbError: any) {
       console.warn(
