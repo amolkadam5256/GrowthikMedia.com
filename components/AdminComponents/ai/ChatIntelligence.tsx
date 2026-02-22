@@ -206,7 +206,7 @@ export default function ChatIntelligence() {
 
   if (loading) {
     return (
-      <div className="h-[80vh] flex items-center justify-center bg-[#0b0f14] border border-[#1f2a36] rounded-sm">
+      <div className="h-screen w-full flex items-center justify-center bg-[#0b0f14]">
         <div className="flex flex-col items-center gap-4">
           <div className="w-10 h-10 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
           <p className="text-[10px] font-black text-[#4a5568] uppercase tracking-widest animate-pulse">
@@ -218,7 +218,7 @@ export default function ChatIntelligence() {
   }
 
   return (
-    <div className="flex flex-col h-[calc(100vh-140px)] md:h-[88vh] bg-[#0b0f14] border border-[#1f2a36] rounded-sm overflow-hidden shadow-2xl animate-fadeIn selection:bg-[#d90b1c]/30">
+    <div className="flex flex-col h-screen w-full bg-[#0b0f14] overflow-hidden animate-fadeIn selection:bg-[#d90b1c]/30">
       {/* Top Header */}
       <div className="h-16 shrink-0 bg-[#11161c] border-b border-[#1f2a36] px-6 flex items-center gap-6 z-30">
         <div className="flex items-center gap-2.5">
