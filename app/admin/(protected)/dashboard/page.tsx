@@ -115,7 +115,7 @@ const AdminDashboardPage = () => {
         }`}
       >
         <div
-          className={`bg-gray-50 dark:bg-gray-950 h-screen relative overflow-hidden transition-colors duration-300 ${activeTab === "chat" || activeTab === "leads-chatbot" ? "p-0" : "p-2 md:p-1"}`}
+          className={`bg-gray-50 dark:bg-gray-950 h-screen relative overflow-hidden transition-colors duration-300 ${activeTab === "chat" || activeTab === "leads-chatbot" ? "p-0" : "p-4 md:p-8"}`}
         >
           {/* Accent Line */}
           <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-red-500 via-purple-500 to-blue-500 opacity-80 z-20" />
