@@ -54,7 +54,7 @@ const AIPhilosophySection = () => {
                 Philosophy
               </h2>
               <blockquote className="text-lg italic text-(--text-secondary) border-l-4 border-(--color-primary) pl-4 py-2 bg-(--surface) pr-4">
-                "We don’t work with clients — we build long-term growth
+                "We don’t work with clients - we build long-term growth
                 partnerships. Every campaign is engineered around measurable
                 revenue, not vanity metrics."
               </blockquote>
@@ -74,23 +74,23 @@ const AIPhilosophySection = () => {
               {[
                 {
                   year: "2019",
-                  title: "Founded",
-                  desc: "Started as a boutique digital consultancy in Pune.",
+                  title: "Agency Foundation",
+                  desc: "Established as a boutique digital consultancy in Pune, focusing on precision marketing.",
                 },
                 {
                   year: "2021",
-                  title: "Performance Marketing Expansion",
-                  desc: "Scaled team and introduced advanced paid media strategies.",
+                  title: "Growth Engineering Expansion",
+                  desc: "Expanded into high-performance web architecture and ROI Driven Digital Marketing Pune.",
                 },
                 {
                   year: "2023",
                   title: "AI Marketing Systems",
-                  desc: "Integrated AI tools for SEO and content automation.",
+                  desc: "Pioneered automated Technical SEO frameworks and predictive conversion intelligence.",
                 },
                 {
                   year: "2026",
-                  title: "Advanced Growth Architecture",
-                  desc: "Full-stack engineering + marketing for total dominance.",
+                  title: "Digital Dominance Era",
+                  desc: "Unified Next.js SEO optimization with comprehensive AI marketing for absolute market dominance.",
                   current: true,
                 },
               ].map((item, i) => (

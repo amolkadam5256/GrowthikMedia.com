@@ -40,33 +40,37 @@ const AboutHeroSection = () => {
                 </span>
               </div>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
-                GROWTHIK MEDIA <br />
-                <span className="text-(--text-secondary) text-2xl md:text-3xl lg:text-4xl">
-                  AI-POWERED
-                </span>{" "}
-                <br />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
+                <span className="text-xl md:text-2xl text-(--text-secondary) block mb-2 font-bold tracking-widest">
+                  GROWTHIK MEDIA
+                </span>
+                AI-Driven Digital Marketing <br />
                 <span className="text-(--color-primary)">
-                  GROWTH ENGINEERING
+                  & SEO Services in Pune
                 </span>
               </h1>
 
-              <p className="text-lg text-(--text-secondary) leading-relaxed mb-6 max-w-lg font-medium">
-                Growthik Media is an AI-powered growth engineering company that
-                builds predictable revenue systems — not just marketing
-                campaigns.
-              </p>
+              <div className="bg-(--surface)/50 border-l-4 border-(--color-primary) p-4 mb-6 rounded-r-lg">
+                <p className="text-xl font-bold text-(--text-primary) mb-2">
+                  From Low Visibility to Predictable Revenue Systems.
+                </p>
+                <p className="text-base text-(--text-secondary) leading-relaxed font-medium">
+                  We are an AI-powered growth engineering company that builds
+                  highly scalable, data-driven revenue infrastructures -
+                  replacing guesswork with engineering precision.
+                </p>
+              </div>
 
               {/* Micro Trust Signals */}
               <div className="flex items-center gap-3 mb-6">
                 <div className="flex -space-x-2">
-                  <div className="w-8 h-8 rounded-full border-2 border-(--background) bg-green-100 flex items-center justify-center text-green-600 font-bold text-xs shadow-sm">
+                  <div className="w-8 h-8 rounded-full border-2 border-(--background) bg-(--surface) flex items-center justify-center text-(--text-primary) font-bold text-xs shadow-sm shadow-black/10">
                     <CheckCircle className="w-4 h-4" />
                   </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-(--background) bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs shadow-sm">
+                  <div className="w-8 h-8 rounded-full border-2 border-(--background) bg-(--surface) flex items-center justify-center text-(--text-primary) font-bold text-xs shadow-sm shadow-black/10">
                     <Award className="w-4 h-4" />
                   </div>
-                  <div className="w-8 h-8 rounded-full border-2 border-(--background) bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-xs shadow-sm">
+                  <div className="w-8 h-8 rounded-full border-2 border-(--background) bg-(--surface) flex items-center justify-center text-(--text-primary) font-bold text-xs shadow-sm shadow-black/10">
                     <TrendingUp className="w-4 h-4" />
                   </div>
                 </div>
@@ -76,41 +80,57 @@ const AboutHeroSection = () => {
               </div>
 
               {/* SEO Text Block */}
-              <div className="p-4 border-l-4 border-(--color-primary) bg-(--surface)/50 mb-8 rounded-r-lg">
-                <p className="text-sm text-(--text-secondary) leading-relaxed">
-                  We are a leading{" "}
+              <div className="mb-8">
+                <p className="text-sm text-(--text-secondary) leading-relaxed opacity-80">
+                  Leading{" "}
                   <strong className="text-(--text-primary)">
-                    Digital Marketing Agency in Pune
+                    Digital Marketing Company in Pune
                   </strong>{" "}
                   specializing in{" "}
                   <strong className="text-(--text-primary)">
+                    AI SEO Agency Pune
+                  </strong>{" "}
+                  strategies,{" "}
+                  <strong className="text-(--text-primary)">
                     Performance Marketing
                   </strong>
-                  ,{" "}
+                  , and{" "}
                   <strong className="text-(--text-primary)">
-                    AI-driven SEO Services
-                  </strong>
-                  , and High-Performance{" "}
-                  <strong className="text-(--text-primary)">
-                    Website Development
+                    High Performance Website Development Pune
                   </strong>{" "}
-                  for businesses across Maharashtra.
+                  to build Predictable Revenue Marketing Systems.
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4 mb-12">
+              <div className="flex flex-wrap items-center gap-4 mb-12">
                 <Link
                   href="/contact"
-                  className="px-8 py-4 bg-(--color-primary) text-white font-bold rounded-full shadow-lg shadow-(--color-primary)/30 hover:bg-(--color-primary-light) transition-all transform hover:-translate-y-1 flex items-center gap-2"
+                  className="px-8 py-4 bg-(--color-primary) text-white font-bold rounded-full shadow-lg shadow-(--color-primary)/30 hover:bg-black transition-all transform hover:-translate-y-1 flex items-center gap-2"
                 >
                   Meet Strategy Team <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link
-                  href="#framework"
-                  className="px-8 py-4 bg-transparent border-2 border-(--border) text-(--text-primary) font-bold rounded-full hover:border-(--color-primary) hover:text-(--color-primary) transition-all"
-                >
-                  View Framework
-                </Link>
+                <div className="flex items-center gap-3 bg-(--surface) px-6 py-4 rounded-full border border-(--border)">
+                  <a
+                    href="#framework"
+                    className="text-xs font-bold uppercase text-(--text-secondary) hover:text-(--color-primary) transition-colors tracking-widest"
+                  >
+                    Framework
+                  </a>
+                  <span className="text-(--border)">|</span>
+                  <a
+                    href="#tech"
+                    className="text-xs font-bold uppercase text-(--text-secondary) hover:text-(--color-primary) transition-colors tracking-widest"
+                  >
+                    Stack
+                  </a>
+                  <span className="text-(--border)">|</span>
+                  <a
+                    href="#squad"
+                    className="text-xs font-bold uppercase text-(--text-secondary) hover:text-(--color-primary) transition-colors tracking-widest"
+                  >
+                    Team
+                  </a>
+                </div>
               </div>
             </motion.div>
 
@@ -213,9 +233,9 @@ const AboutHeroSection = () => {
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="absolute top-10 -left-6 md:-left-16 bg-white dark:bg-gray-900 p-3 md:p-4 rounded-xl shadow-xl flex items-center gap-3 border border-gray-100 dark:border-gray-800 z-20"
+                className="absolute top-10 -left-6 md:-left-16 bg-(--background) p-3 md:p-4 rounded-xl shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.1)] flex items-center gap-3 border border-(--border) z-20"
               >
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-red-100 rounded-lg flex items-center justify-center text-(--color-primary) shrink-0">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-(--surface) rounded-lg flex items-center justify-center text-(--color-primary) border border-(--border) shrink-0">
                   <CheckCircle className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div>
@@ -233,10 +253,10 @@ const AboutHeroSection = () => {
                 initial={{ x: 20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.7, duration: 0.5 }}
-                className="absolute top-32 -right-4 md:-right-12 bg-white dark:bg-gray-900 p-3 md:p-4 rounded-xl shadow-xl flex items-center gap-3 border border-gray-100 dark:border-gray-800 z-20"
+                className="absolute top-32 -right-4 md:-right-12 bg-(--background) p-3 md:p-4 rounded-xl shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.1)] flex items-center gap-3 border border-(--border) z-20"
               >
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-500 shrink-0">
-                  <Star className="w-4 h-4 md:w-5 md:h-5 fill-current" />
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-(--surface) rounded-lg flex items-center justify-center text-(--text-primary) border border-(--border) shrink-0">
+                  <Star className="w-4 h-4 md:w-5 md:h-5 fill-current text-(--color-primary)" />
                 </div>
                 <div>
                   <span className="block font-bold text-sm md:text-base text-(--text-primary)">
@@ -253,9 +273,9 @@ const AboutHeroSection = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.9, duration: 0.5 }}
-                className="absolute -bottom-4 -right-2 md:-right-8 bg-white dark:bg-gray-900 p-3 md:p-4 rounded-xl shadow-xl flex items-center gap-3 border border-gray-100 dark:border-gray-800 z-20"
+                className="absolute -bottom-4 -right-2 md:-right-8 bg-(--background) p-3 md:p-4 rounded-xl shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.1)] flex items-center gap-3 border border-(--border) z-20"
               >
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 shrink-0">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-(--surface) rounded-full flex items-center justify-center text-(--color-primary) border border-(--border) shrink-0">
                   <Users className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div>

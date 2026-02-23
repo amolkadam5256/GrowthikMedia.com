@@ -20,7 +20,7 @@ const LocalExpertiseSection = () => {
           </span>
         </h2>
         <p className="text-lg text-(--text-secondary) max-w-3xl mx-auto mb-10 leading-relaxed">
-          We understand Pune’s competitive digital ecosystem — from IT hubs like{" "}
+          We understand Pune’s competitive digital ecosystem - from IT hubs like{" "}
           <strong className="text-(--text-primary)">Hinjewadi</strong>, to
           retail markets like{" "}
           <strong className="text-(--text-primary)">Baner</strong> and{" "}

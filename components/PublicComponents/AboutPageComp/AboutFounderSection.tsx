@@ -45,26 +45,22 @@ const AboutFounderSection = () => {
               <h2 className="text-3xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-6">
                 Meet Amol Kadam <br />
                 <span className="text-(--color-primary)">
-                  Founder & Growth Architect
+                  AI Growth Architect & Technical SEO Strategist
                 </span>
               </h2>
               <p className="text-lg text-(--text-secondary) leading-relaxed mb-6 italic border-l-4 border-(--color-primary) pl-6">
-                Amol Kadam is a Full-Stack Developer and Performance Marketing
-                Strategist specializing in Next.js, AI automation, and
-                high-conversion digital funnels.
+                "We don't just run campaigns. We engineer predictable revenue
+                systems that scale businesses faster."
               </p>
 
               <div className="space-y-4 mb-8 text-(--text-secondary)">
                 <p>
-                  With over{" "}
-                  <strong className="text-(--text-primary)">
-                    5+ years in Digital Marketing and Web Engineering
-                  </strong>
-                  , Amol Kadam has helped businesses scale through advanced SEO
-                  architecture, AI automation, and full-stack marketing systems.
-                  His approach merges engineering precision with aggressive
-                  growth marketing to build scalable revenue systems for modern
-                  brands.
+                  As an authority in Growth Engineering, Amol Kadam bridges the
+                  gap between complex web infrastructure and aggressive
+                  performance marketing. By combining Next.js architecture,
+                  AI-driven SEO automation, and high-conversion full-stack
+                  funnels, he builds scalable digital ecosystems that turn
+                  startups and established brands into market leaders.
                 </p>
               </div>
 
@@ -105,21 +101,21 @@ const AboutFounderSection = () => {
               </div>
 
               <div className="flex flex-wrap items-center gap-4 mb-8">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-green-500 transition-colors">
-                  <ShieldCheck className="w-4 h-4 text-green-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-green-500 transition-colors">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-(--color-primary) transition-colors">
+                  <ShieldCheck className="w-4 h-4 text-(--text-secondary) group-hover:text-(--color-primary) group-hover:scale-110 transition-all" />
+                  <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-(--color-primary) transition-colors">
                     Google Certified
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-blue-500 transition-colors">
-                  <Award className="w-4 h-4 text-blue-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-blue-500 transition-colors">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-(--color-primary) transition-colors">
+                  <Award className="w-4 h-4 text-(--text-secondary) group-hover:text-(--color-primary) group-hover:scale-110 transition-all" />
+                  <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-(--color-primary) transition-colors">
                     Meta Partner
                   </span>
                 </div>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-purple-500 transition-colors">
-                  <TrendingUp className="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform" />
-                  <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-purple-500 transition-colors">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-(--color-primary) transition-colors">
+                  <TrendingUp className="w-4 h-4 text-(--text-secondary) group-hover:text-(--color-primary) group-hover:scale-110 transition-all" />
+                  <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-(--color-primary) transition-colors">
                     AI Marketing Systems
                   </span>
                 </div>
@@ -184,26 +180,26 @@ const AboutFounderSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
-                name: "Digital Marketing Specialist",
-                role: "Performance & SEO Ops",
+                name: "Growth Engineer",
+                role: "Search & Conversion Ops",
                 tag: "STRATEGY",
                 img: images.founder?.amol1,
               },
               {
-                name: "AI Digital Strategist",
-                role: "Neural Automation",
+                name: "AI SEO Specialist",
+                role: "Automation & Analytics",
                 tag: "AI OPS",
                 img: images.founder?.amol2,
               },
               {
-                name: "Full-Stack Web Developer",
-                role: "Next.js & React Systems",
+                name: "Conversion Strategist",
+                role: "Next.js Experience",
                 tag: "ENGINEERING",
                 img: images.founder?.amol1,
               },
               {
-                name: "Meta Ads Expert",
-                role: "Paid Social Media",
+                name: "Performance Architect",
+                role: "Ad Yield Optimization",
                 tag: "PERFORMANCE",
                 img: images.founder?.amol2,
               },

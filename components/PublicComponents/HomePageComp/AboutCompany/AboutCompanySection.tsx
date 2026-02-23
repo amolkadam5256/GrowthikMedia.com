@@ -74,7 +74,7 @@ const AboutCompanySection = React.memo(() => {
                 <span className="text-(--color-primary) font-black">
                   AI-powered growth engineering company
                 </span>{" "}
-                that builds predictable revenue systems — not just marketing
+                that builds predictable revenue systems - not just marketing
                 campaigns.
               </p>
 

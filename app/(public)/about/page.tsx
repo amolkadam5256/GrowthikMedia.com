@@ -1,13 +1,14 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { CONTACT_INFO } from "@/constants/contact";
 
 const AboutHeroSection = dynamic(
   () => import("@/components/PublicComponents/AboutPageComp/AboutHeroSection"),
   { ssr: true },
 );
-const WhoWeAreSection = dynamic(
-  () => import("@/components/PublicComponents/AboutPageComp/WhoWeAreSection"),
+const TrustProofSection = dynamic(
+  () => import("@/components/PublicComponents/AboutPageComp/TrustProofSection"),
   { ssr: true },
 );
 const AboutFounderSection = dynamic(
@@ -15,24 +16,28 @@ const AboutFounderSection = dynamic(
     import("@/components/PublicComponents/AboutPageComp/AboutFounderSection"),
   { ssr: true },
 );
+const WhyDifferentSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/AboutPageComp/WhyDifferentSection"),
+  { ssr: true },
+);
 const AboutGrowthFrameworkSection = dynamic(
   () =>
     import("@/components/PublicComponents/AboutPageComp/AboutGrowthFrameworkSection"),
   { ssr: true },
 );
-const DifferentiatorsSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/AboutPageComp/DifferentiatorsSection"),
-  { ssr: true },
-);
-const LocalExpertiseSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/AboutPageComp/LocalExpertiseSection"),
+const TechStackSection = dynamic(
+  () => import("@/components/PublicComponents/AboutPageComp/TechStackSection"),
   { ssr: true },
 );
 const AIPhilosophySection = dynamic(
   () =>
     import("@/components/PublicComponents/AboutPageComp/AIPhilosophySection"),
+  { ssr: true },
+);
+const QualificationBlockSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/AboutPageComp/QualificationBlockSection"),
   { ssr: true },
 );
 const AboutFinalCTASection = dynamic(
@@ -44,7 +49,7 @@ const AboutFinalCTASection = dynamic(
 export const metadata: Metadata = {
   title: "About Growthik Media – AI-Powered Growth Engineering Company in Pune",
   description:
-    "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems — not just marketing campaigns. We help ambitious brands scale with ROI-driven performance engineering.",
+    "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems - not just marketing campaigns. We help ambitious brands scale with ROI-driven performance engineering.",
   keywords:
     "Growthik Media, Growth Engineering Company Pune, AI-Powered Marketing Pune, Predictable Revenue Systems, Performance Marketing Pune, Digital Growth Agency India",
   alternates: {
@@ -217,28 +222,31 @@ export default function About() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
 
-      {/* 1. HERO SECTION — BRAND AUTHORITY INTRO */}
+      {/* 1. HERO SECTION */}
       <AboutHeroSection />
 
-      {/* 2. WHO WE ARE — BRAND STORY SECTION */}
-      <WhoWeAreSection />
+      {/* 2. TRUST PROOF */}
+      <TrustProofSection />
 
-      {/* 4. FOUNDER STORY — HIGH AUTHORITY SECTION */}
+      {/* 3. FOUNDER AUTHORITY (WITH TEAM SECTION) */}
       <AboutFounderSection />
 
-      {/* 5. OUR APPROACH — UNIQUE GROWTH METHODOLOGY */}
+      {/* 4. WHY GROWTHIK IS DIFFERENT (AI Architecture + Local Expertise) */}
+      <WhyDifferentSection />
+
+      {/* 5. 4-STEP FRAMEWORK */}
       <AboutGrowthFrameworkSection />
 
-      {/* 6. WHAT MAKES US DIFFERENT */}
-      <DifferentiatorsSection />
+      {/* 6. TECHNOLOGY STACK */}
+      <TechStackSection />
 
-      {/* 8. LOCAL EXPERTISE SECTION */}
-      <LocalExpertiseSection />
-
-      {/* 9. AI & TECHNOLOGY PHILOSOPHY & Timeline */}
+      {/* 8. JOURNEY TIMELINE */}
       <AIPhilosophySection />
 
-      {/* 11. FINAL CTA SECTION */}
+      {/* 9. QUALIFICATION BLOCK */}
+      <QualificationBlockSection />
+
+      {/* 10. FINAL CTA SECTION */}
       <AboutFinalCTASection />
     </main>
   );

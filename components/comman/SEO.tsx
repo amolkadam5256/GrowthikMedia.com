@@ -37,7 +37,7 @@ export default function SEO() {
             url: CONTACT_INFO.website,
             logo: `${CONTACT_INFO.website}/logo.png`,
             description:
-              "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems — not just marketing campaigns. We specialize in ROI-focused performance engineering.",
+              "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems - not just marketing campaigns. We specialize in ROI-focused performance engineering.",
             email: CONTACT_INFO.email.info,
             telephone: CONTACT_INFO.phone.primary,
             address: {
@@ -301,7 +301,7 @@ export default function SEO() {
                 name: "Why choose Growthik Media as your Growth Engineering Partner?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems — not just marketing campaigns. We combine technical precision with data-driven strategies to deliver measurable business ROI.",
+                  text: "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems - not just marketing campaigns. We combine technical precision with data-driven strategies to deliver measurable business ROI.",
                 },
               },
               {

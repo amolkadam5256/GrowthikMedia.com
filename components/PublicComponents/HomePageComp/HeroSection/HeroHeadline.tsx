@@ -66,7 +66,7 @@ const HeroHeadline = () => {
           <strong className="text-(--color-primary) font-black">
             AI-powered growth engineering company
           </strong>{" "}
-          that builds predictable revenue systems —{" "}
+          that builds predictable revenue systems -{" "}
           <span className="opacity-80">not just marketing campaigns.</span>
         </p>
 

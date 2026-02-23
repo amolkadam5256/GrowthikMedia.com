@@ -4,7 +4,7 @@ import HomeClient from "@/app/(public)/HomeClient";
 export const metadata: Metadata = {
   title: "Growthik Media: AI-Powered Growth Engineering Company",
   description:
-    "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems — not just marketing campaigns. We help ambitious brands scale with ROI-driven performance.",
+    "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems - not just marketing campaigns. We help ambitious brands scale with ROI-driven performance.",
   keywords:
     "digital marketing agency pune, video production pune, SEO services pune, content creation, social media marketing, growthik media",
   authors: [{ name: "Growthik Media" }],

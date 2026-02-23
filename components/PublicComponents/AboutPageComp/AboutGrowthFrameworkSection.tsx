@@ -11,14 +11,23 @@ const AboutGrowthFrameworkSection = () => {
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-3xl md:text-4xl font-black text-(--text-primary) uppercase tracking-tighter mb-4">
-            Growthik Media <br />
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <div className="w-8 h-[2px] bg-(--color-primary)" />
+            <span className="text-sm font-bold uppercase tracking-widest text-(--text-secondary)">
+              Revenue Systems
+            </span>
+            <div className="w-8 h-[2px] bg-(--color-primary)" />
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-6">
+            Our 4-Step <br />
             <span className="text-(--color-primary)">
-              4-Step Growth Framework
+              Growth Engineering Framework
             </span>
           </h2>
-          <p className="text-(--text-secondary) max-w-2xl mx-auto">
-            A systematic approach to predictable revenue growth.
+          <p className="text-lg text-(--text-secondary) max-w-3xl mx-auto font-medium leading-relaxed">
+            We follow a rigid, data-driven architecture to transform chaotic
+            marketing into predictable, highly scalable revenue. Our process
+            minimizes risk and maximizes your ROI.
           </p>
         </div>
 
@@ -42,7 +51,7 @@ const AboutGrowthFrameworkSection = () => {
             {
               step: "03",
               title: "High-Performance Execution",
-              desc: "SEO, Ads, CRO, and content funnels.",
+              desc: "Technical SEO execution, Performance Marketing ads, and CRO logic.",
               icon: <Zap className="w-6 h-6" />,
             },
             {
@@ -77,18 +86,18 @@ const AboutGrowthFrameworkSection = () => {
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <div className="max-w-4xl mx-auto text-center mt-12" data-aos="fade-up">
           <p className="text-base text-(--text-secondary) italic leading-relaxed">
-            This structured growth methodology allows Growthik Media to deliver
-            search predictable ROI for businesses looking for{" "}
+            This structured methodology allows Growthik Media to deliver
+            predictable ROI for businesses seeking advanced{" "}
             <strong className="text-(--text-primary)">
               Digital Marketing Services in Pune
             </strong>
             ,{" "}
             <strong className="text-(--text-primary)">
-              Local SEO optimization
+              AI-Powered SEO Optimization
             </strong>
-            , and performance-driven advertising strategies.
+            , and highly scalable performance marketing architectures.
           </p>
         </div>
       </div>

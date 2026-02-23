@@ -52,7 +52,7 @@ const AIPositioningSection = () => {
           </h2>
           <p className="text-(--text-secondary) text-lg leading-relaxed font-light italic max-w-3xl mx-auto">
             "Growthik Media is an AI-powered growth engineering company that
-            builds predictable revenue systems — not just marketing campaigns."
+            builds predictable revenue systems - not just marketing campaigns."
           </p>
         </div>
 
