@@ -11,7 +11,7 @@ export async function GET(request: Request) {
     const format = searchParams.get("format") || "csv";
 
     // Same baseline query
-    let whereClause = {
+    const whereClause = {
       NOT: { status: "DELETED" },
     };
     if (filter !== "ALL") {
