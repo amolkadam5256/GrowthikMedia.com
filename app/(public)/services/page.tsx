@@ -20,7 +20,6 @@ import {
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { FilterableServices } from "./_components/FilterableServices";
-import { FloatingCTAs } from "./_components/FloatingCTAs";
 
 export const metadata: Metadata = {
   title: "Top Digital Marketing & Web Development Services in Pune",
@@ -178,8 +177,6 @@ export default function ServicesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-
-      <FloatingCTAs />
 
       {/* 1. HERO SECTION */}
       <section className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-gradient-to-b from-(--surface) to-(--background) border-b border-(--border) overflow-hidden">
