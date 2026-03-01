@@ -180,28 +180,28 @@ const AboutFounderSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
-                name: "Growth Engineer",
-                role: "Search & Conversion Ops",
-                tag: "STRATEGY",
-                img: images.founder?.amol1,
+                name: "Prachi Ghodke",
+                role: "Visual Storyteller",
+                tag: "CREATIVE",
+                img: images.team?.prachi,
+              },
+              {
+                name: "Amit Kadam",
+                role: "Financial Architect",
+                tag: "FINANCE",
+                img: images.team?.amit,
               },
               {
                 name: "AI SEO Specialist",
                 role: "Automation & Analytics",
                 tag: "AI OPS",
-                img: images.founder?.amol2,
-              },
-              {
-                name: "Conversion Strategist",
-                role: "Next.js Experience",
-                tag: "ENGINEERING",
-                img: images.founder?.amol1,
+                img: null,
               },
               {
                 name: "Performance Architect",
                 role: "Ad Yield Optimization",
                 tag: "PERFORMANCE",
-                img: images.founder?.amol2,
+                img: null,
               },
             ].map((member, i) => (
               <div

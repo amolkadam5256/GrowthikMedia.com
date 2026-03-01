@@ -45,7 +45,10 @@ export const navigationData: {
             icon: FiCode,
             description: "Website & Application Development",
             items: [
-              { href: "/services/website-design", label: "Website Design" },
+              {
+                href: "/services/website-design-company-pune",
+                label: "Website Design",
+              },
               {
                 label: "Website Development",
                 featured: true,
@@ -251,7 +254,10 @@ export const navigationData: {
         label: "Technology Services",
         icon: FiCode,
         items: [
-          { href: "/services/website-design", label: "Website Design" },
+          {
+            href: "/services/website-design-company-pune",
+            label: "Website Design",
+          },
           {
             href: "/services/website-development",
             label: "Website Development",

@@ -22,6 +22,10 @@ import websiteRedesign from "./portfolio/website-redesign.png";
 import luxuryBranding from "./portfolio/luxury-branding.png";
 import educationContent from "./portfolio/education-content.png";
 
+// Team
+import prachi from "./Prachi.png";
+import amit from "./Amit Kadam.jpg";
+
 // Export all images as a centralized object
 export const images = {
   appleTouchIcon,
@@ -51,5 +55,11 @@ export const images = {
   founder: {
     amol1,
     amol2,
+  },
+
+  // Team
+  team: {
+    prachi,
+    amit,
   },
 };
