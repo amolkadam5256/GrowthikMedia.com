@@ -23,6 +23,7 @@ import {
   Globe,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { images } from "@/app/assets/images/images";
 
 export const metadata: Metadata = {
   title: "Best Website Design Company in Pune | Custom & SEO-Friendly Websites",
@@ -439,52 +440,51 @@ export default function WebsiteDesignPunePage() {
         </section>
 
         {/* 3. TYPES OF SERVICES */}
-        <section className="px-6 lg:px-12 py-20 bg-(--surface) border-y border-(--border)">
+        <section className="px-6 lg:px-12 py-20 bg-(--background) border-y border-(--border)">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight text-(--text-primary)">
                 Custom Website Development Services
               </h2>
-              <div className="w-20 h-1.5 bg-(--color-primary) mx-auto mb-6"></div>
+              <div className="w-16 h-1.5 bg-(--color-primary) mx-auto mb-6"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  num: "1️⃣",
                   title: "Business Website Design",
                   desc: "Professional corporate websites tailored to represent your brand identity and build credibility.",
                 },
                 {
-                  num: "2️⃣",
                   title: "E-Commerce Website Development",
                   desc: "Sell products online with secure, scalable, and high-conversion eCommerce websites.",
                 },
                 {
-                  num: "3️⃣",
                   title: "WordPress Website Development",
                   desc: "Flexible, SEO-friendly WordPress websites customized to your business needs.",
                 },
                 {
-                  num: "4️⃣",
                   title: "Landing Page Design",
                   desc: "High-converting landing pages for Google Ads and social media campaigns.",
                 },
                 {
-                  num: "5️⃣",
                   title: "Website Redesign Services",
                   desc: "Upgrade your old website with a modern, fast, SEO-optimized structure.",
                 },
               ].map((service, idx) => (
                 <div
                   key={idx}
-                  className="bg-(--background) p-8 rounded-2xl shadow-sm border border-(--border) hover:-translate-y-2 transition-transform duration-300"
+                  className="bg-(--surface) p-8 rounded-none border border-(--border) hover:border-(--color-primary) hover:shadow-2xl hover:shadow-(--color-primary)/10 hover:-translate-y-2 transition-all duration-300 group"
                 >
-                  <div className="text-4xl mb-6">{service.num}</div>
+                  <div className="w-12 h-12 mb-6 bg-(--background) border-2 border-(--border) group-hover:border-(--color-primary) flex items-center justify-center text-(--text-primary) group-hover:text-(--color-primary) font-black text-2xl transition-colors relative">
+                    {/* Tiny primary color accent dot */}
+                    <div className="absolute -top-1 -right-1 w-2 h-2 bg-(--color-primary) rounded-none opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    {idx + 1}
+                  </div>
                   <h3 className="text-xl font-bold mb-3 text-(--text-primary)">
                     {service.title}
                   </h3>
-                  <p className="text-(--text-secondary) font-medium">
+                  <p className="text-(--text-secondary) font-medium text-sm leading-relaxed">
                     {service.desc}
                   </p>
                 </div>
@@ -598,19 +598,19 @@ export default function WebsiteDesignPunePage() {
                   name: "E-Commerce Store Redesign",
                   ind: "Retail & Shopping",
                   desc: "Improved sales velocity by 150%",
-                  img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
+                  img: images.portfolio.luxuryBranding,
                 },
                 {
                   name: "Corporate Business Portal",
                   ind: "Finance & B2B",
                   desc: "Reduced bounce rate by 30%",
-                  img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+                  img: images.portfolio.websiteRedesign,
                 },
                 {
                   name: "Local Service Website",
                   ind: "Healthcare",
                   desc: "Increased weekly leads by 200%",
-                  img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
+                  img: images.portfolio.seoRealEstate,
                 },
               ].map((port, i) => (
                 <article
@@ -1039,18 +1039,24 @@ export default function WebsiteDesignPunePage() {
         </section>
 
         {/* 12. CTA SECTION */}
-        <section className="px-6 lg:px-12 py-24 bg-(--color-primary) relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/10 mix-blend-multiply transition-opacity duration-300"></div>
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 blur-[100px] rounded-full pointer-events-none"></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-black/20 blur-[100px] rounded-full pointer-events-none"></div>
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className="inline-block bg-white text-(--color-primary) px-4 py-1.5 rounded-full font-black text-sm tracking-widest mb-6 animate-pulse shadow-xl">
+        <section
+          className="px-6 lg:px-12 py-24 relative overflow-hidden border-t border-(--border) bg-fixed bg-cover bg-center"
+          style={{ backgroundImage: `url(${images.bg.src})` }}
+        >
+          {/* Optional overlay to soften the background image slightly */}
+          <div className="absolute inset-0 bg-(--background)/60 pointer-events-none z-0"></div>
+
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-(--color-primary)/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-(--color-primary)/10 blur-[100px] rounded-full pointer-events-none z-0"></div>
+
+          <div className="max-w-4xl mx-auto text-center relative z-10 bg-(--surface) p-10 md:p-16 rounded-[3rem] border border-(--border) shadow-2xl shadow-(--color-primary)/5">
+            <div className="inline-block bg-(--color-primary)/10 text-(--color-primary) px-4 py-1.5 rounded-full font-black text-sm tracking-widest mb-6 animate-pulse border border-(--color-primary)/20">
               LIMITED TIME: FREE SEO AUDIT INCLUDED
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 uppercase tracking-tight drop-shadow-md">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) mb-6 uppercase tracking-tight">
               Contact Us
             </h2>
-            <p className="text-xl md:text-2xl text-white/95 font-medium mb-12 max-w-2xl mx-auto drop-shadow-sm">
+            <p className="text-xl md:text-2xl text-(--text-secondary) font-medium mb-12 max-w-2xl mx-auto">
               Partner with the best Website Design Company in Pune to build a
               high-performance digital presence.
             </p>
@@ -1058,33 +1064,42 @@ export default function WebsiteDesignPunePage() {
             <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-12">
               <Link
                 href={`tel:${CONTACT_INFO.phone.primary.replace(/\s+/g, "")}`}
-                className="flex items-center justify-center w-full sm:w-auto gap-3 px-8 py-5 bg-(--text-primary) text-(--background) rounded-2xl font-black text-lg hover:scale-[1.02] hover:-translate-y-1 transition-all shadow-2xl"
+                className="flex items-center justify-center w-full sm:w-auto gap-3 px-8 py-5 bg-(--text-primary) text-(--background) rounded-2xl font-black text-lg hover:scale-[1.02] hover:-translate-y-1 transition-all shadow-xl"
               >
                 Call: {CONTACT_INFO.phone.primary}
               </Link>
               <Link
                 href="/contact"
-                className="flex items-center justify-center w-full sm:w-auto gap-3 px-8 py-5 bg-white text-black rounded-2xl font-black text-lg hover:bg-gray-100 hover:scale-[1.02] hover:-translate-y-1 transition-all shadow-xl"
+                className="flex items-center justify-center w-full sm:w-auto gap-3 px-8 py-5 bg-(--surface) text-(--text-primary) border-2 border-(--border) rounded-2xl font-black text-lg hover:border-(--text-primary) hover:scale-[1.02] hover:-translate-y-1 transition-all shadow-sm"
               >
                 Book Free Consultation
               </Link>
             </div>
 
-            <address className="flex flex-wrap justify-center gap-8 text-white/90 text-sm font-bold uppercase tracking-wider backdrop-blur-sm bg-black/10 py-4 px-8 rounded-2xl inline-flex w-auto mx-auto border border-white/20 not-italic">
+            <address className="flex flex-wrap justify-center gap-8 text-(--text-secondary) text-sm font-bold uppercase tracking-wider bg-(--background) py-4 px-8 rounded-2xl inline-flex w-auto mx-auto border border-(--border) not-italic shadow-inner">
               <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-white" aria-hidden="true" />{" "}
+                <MapPin
+                  className="w-5 h-5 text-(--color-primary)"
+                  aria-hidden="true"
+                />{" "}
                 Baner, Pune
               </div>
               <div className="flex items-center gap-2">
-                <Search className="w-5 h-5 text-white" aria-hidden="true" /> Get
-                Instant Quote
+                <Search
+                  className="w-5 h-5 text-(--color-primary)"
+                  aria-hidden="true"
+                />{" "}
+                Get Instant Quote
               </div>
               <a
                 href={`mailto:${CONTACT_INFO.email.info}`}
-                className="flex items-center gap-2 hover:text-white transition-colors"
+                className="flex items-center gap-2 hover:text-(--color-primary) transition-colors"
                 aria-label={`Email us at ${CONTACT_INFO.email.info}`}
               >
-                <MailIcon className="w-5 h-5 text-white" aria-hidden="true" />{" "}
+                <MailIcon
+                  className="w-5 h-5 text-(--color-primary)"
+                  aria-hidden="true"
+                />{" "}
                 {CONTACT_INFO.email.info}
               </a>
             </address>
