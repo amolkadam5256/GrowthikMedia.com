@@ -570,7 +570,7 @@ export default function ServicePage() {
 }
 
 // Inline Mail icon helper
-function MailIcon(props) {
+function MailIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
