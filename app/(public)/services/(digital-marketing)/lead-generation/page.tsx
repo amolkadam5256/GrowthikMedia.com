@@ -20,6 +20,7 @@ import {
   LineChart,
   Globe,
   Award,
+  Search,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { images } from "@/app/assets/images/images";
