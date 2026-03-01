@@ -17,6 +17,7 @@ import {
   Users,
   Briefcase,
   Phone,
+  CheckCircle2,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { FilterableServices } from "./_components/FilterableServices";
@@ -178,66 +179,181 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-gradient-to-b from-(--surface) to-(--background) border-b border-(--border) overflow-hidden">
-        {/* Decorative Gradients */}
-        <div className="absolute top-0 right-[-10%] w-[50%] h-[60%] bg-(--color-primary)/10 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[60%] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
+      {/* 1. HERO SECTION (CUSTOM FORMAT BASED ON USER REFERENCE) */}
+      <section className="relative px-6 lg:px-16 pt-32 pb-24 lg:pt-48 lg:pb-40 flex items-center bg-[#1a202c] overflow-hidden -mt-24">
+        {/* Background Overlay simulating a dark hero image */}
+        <div className="absolute inset-0 bg-linear-to-r from-slate-900 via-slate-800/90 to-transparent z-10 w-full lg:w-2/3"></div>
+        <div
+          className="absolute inset-0 z-0 opacity-40 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/og-lead-gen.png')",
+            filter: "blur(2px)",
+          }}
+        ></div>
 
-        <div className="relative z-10 max-w-5xl mx-auto">
-          {/* Urgency/Notice Banner */}
-          <Link
-            href="/audit"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-red-500/10 border border-red-500/20 shadow-sm mb-8 text-sm font-bold text-red-600 hover:bg-red-500/20 transition-colors animate-pulse-slow"
-          >
-            <Zap className="w-4 h-4" />
-            Limited Time: Get a Free SEO & Performance Audit
-          </Link>
+        {/* Subtle decorative dot pattern */}
+        <div
+          className="absolute inset-0 z-10 opacity-10 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at center, rgba(255,255,255,0.8) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        ></div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 tracking-tighter leading-[1.1] text-(--text-primary)">
-            Digital Marketing & Website Development{" "}
-            <br className="hidden lg:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-primary) to-blue-500">
+        <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+          {/* Left Side Content */}
+          <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
+            {/* Top Tagline */}
+            <Link
+              href="/audit"
+              className="flex items-center gap-3 mb-6 bg-red-500/10 border border-red-500/20 px-4 py-2 rounded-full cursor-pointer hover:bg-red-500/20 transition-colors"
+            >
+              <Zap className="w-4 h-4 text-red-500" />
+              <span className="text-white text-xs font-bold tracking-widest uppercase opacity-90">
+                Limited Time: Get a Free SEO & Performance Audit
+              </span>
+            </Link>
+
+            {/* Headline */}
+            <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold mb-6 tracking-tight text-white leading-[1.1] max-w-3xl">
+              Digital Marketing & Website Development{" "}
+              <br className="hidden md:block" />
               Services in Pune
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
-            From highly-optimized enterprise websites to aggressive local SEO
-            campaigns focusing on Hinjewadi, Wakad & Baner. We engineer
-            growth-driven digital ecosystems that scale revenue.
-          </p>
+            </h1>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 w-full max-w-2xl mx-auto">
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-(--color-primary) text-white font-bold rounded-xl hover:bg-(--color-primary-dark) transition-all duration-300 shadow-lg shadow-(--color-primary)/30 flex items-center justify-center gap-2 w-full sm:w-auto transform hover:-translate-y-1"
-            >
-              Start Your Project <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link
-              href="/portfolio"
-              className="px-8 py-4 bg-(--surface) text-(--text-primary) font-bold rounded-xl border border-(--border) hover:border-(--color-primary) hover:text-(--color-primary) transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto"
-            >
-              View Our Case Studies
-            </Link>
+            <p className="text-lg md:text-xl text-white/80 font-medium max-w-3xl mb-10 leading-relaxed lg:pr-8">
+              From highly-optimized enterprise websites to aggressive local SEO
+              campaigns focusing on Hinjewadi, Wakad & Baner. We engineer
+              growth-driven digital ecosystems that scale revenue.
+            </p>
+
+            {/* Bullet Points */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-y-4 gap-x-8 mb-10 w-full max-w-2xl">
+              {[
+                "Digital Marketing & Strategy",
+                "Enterprise Next.js Web Apps",
+                "Result-Oriented SEO & PPC",
+              ].map((feature, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-green-400" />
+                  <span className="text-white text-sm md:text-base font-medium">
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Call to Action Button */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+              <Link
+                href="/contact"
+                className="group w-full sm:w-auto relative inline-flex items-center justify-center px-8 py-4 bg-(--color-primary) text-white font-bold rounded-full overflow-hidden transition-all hover:bg-(--color-primary-dark) shadow-lg shadow-(--color-primary)/30"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  Start Your Project{" "}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
+              <Link
+                href="/portfolio"
+                className="group w-full sm:w-auto relative inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full overflow-hidden transition-all hover:bg-white/10"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  View Our Case Studies
+                </span>
+              </Link>
+            </div>
           </div>
 
-          {/* Trust Badges */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-10 border-t border-(--border)/50 max-w-4xl mx-auto">
-            {metrics.map((metric, idx) => (
+          {/* Right Side - Process Track Diagram (Static, U-Shape Reference) */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative mt-16 lg:mt-0 h-[400px] md:h-[500px]">
+            <div className="relative w-full max-w-[450px] h-[350px] md:h-[450px] flex items-center">
+              {/* --- Red U-Shape Track --- */}
+              {/* Top horizontal line */}
+              <div className="absolute left-0 top-1/4 h-4 md:h-5 bg-(--color-primary) w-[75%] rounded-r-none z-10"></div>
+              {/* Bottom horizontal line */}
+              <div className="absolute left-0 bottom-1/4 h-4 md:h-5 bg-(--color-primary) w-[75%] rounded-r-none z-10"></div>
+              {/* Semi-circle connecting them on the right */}
               <div
-                key={idx}
-                className="flex flex-col items-center justify-center space-y-2 p-4 rounded-2xl bg-(--surface)/50 lg:bg-transparent"
-              >
-                <metric.icon className="w-6 h-6 text-(--color-primary)" />
-                <span className="text-2xl font-black text-(--text-primary)">
-                  {metric.value}
-                </span>
-                <span className="text-xs md:text-sm font-semibold text-(--text-secondary) uppercase tracking-wider text-center">
-                  {metric.label}
-                </span>
+                className="absolute right-[5%] top-1/4 bottom-1/4 w-[40%] border-r-4 border-t-4 border-b-4 md:border-r-5 md:border-t-5 md:border-b-5 border-(--color-primary) rounded-r-[200px] z-10"
+                style={{ borderWidth: "16px", borderLeftWidth: "0" }}
+              ></div>
+
+              {/* --- Nodes (White Circles) --- */}
+              <div className="absolute inset-0 z-20">
+                {/* Node 1: Client (Top Left) */}
+                <div className="absolute top-[5%] left-[10%] flex flex-col items-center">
+                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) mb-1 md:mb-2">
+                    Client
+                  </span>
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  {/* Connecting dashed line */}
+                  <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mt-1"></div>
+                  {/* Small bead on the track */}
+                  <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mt-[-6px] shadow-sm border border-gray-300"></div>
+                </div>
+
+                {/* Node 2: Requirements (Top Mid-Left) */}
+                <div className="absolute top-[5%] left-[35%] flex flex-col items-center">
+                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) mb-1 md:mb-2">
+                    Requirements
+                  </span>
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mt-1"></div>
+                  <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mt-[-6px] shadow-sm border border-gray-300"></div>
+                </div>
+
+                {/* Node 3: Analysis (Top Mid-Right) */}
+                <div className="absolute top-[10%] left-[60%] flex flex-col items-center">
+                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) mb-1 md:mb-2 text-center">
+                    Analysis
+                  </span>
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  {/* Diagonal dashed line connecting to curve */}
+                  <div className="w-[2px] h-6 md:h-8 border-l-2 border-dashed border-gray-400 mt-1 origin-top rotate-[-20deg]"></div>
+                  <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mt-[2px] ml-[-12px] shadow-sm border border-gray-300 relative pointer-events-none"></div>
+                </div>
+
+                {/* Node 4: Strategy (Right Curve Top) */}
+                <div className="absolute top-[28%] right-[10%] flex flex-col items-center group">
+                  <span className="absolute -top-6 text-[10px] md:text-sm font-bold text-(--text-primary) whitespace-nowrap">
+                    Strategy
+                  </span>
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="absolute -left-6 top-1/2 w-6 md:w-8 border-b-2 border-dashed border-gray-400 origin-right rotate-[30deg]"></div>
+                  <div className="absolute -left-7 top-[65%] w-3 h-3 md:w-4 md:h-4 bg-white rounded-full shadow-sm border border-gray-300 pointer-events-none"></div>
+                </div>
+
+                {/* Node 5: Unlabeled (Right Curve Bottom) */}
+                <div className="absolute bottom-[40%] right-[8%] flex flex-col items-center group">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="absolute -left-8 top-1/2 w-8 md:w-10 border-b-2 border-dashed border-gray-400 origin-right rotate-[-30deg]"></div>
+                  <div className="absolute -left-10 top-[15%] w-3 h-3 md:w-4 md:h-4 bg-white rounded-full shadow-sm border border-gray-300 pointer-events-none"></div>
+                </div>
+
+                {/* Node 6: Unlabeled (Bottom Right) */}
+                <div className="absolute bottom-[10%] left-[68%] flex flex-col items-center">
+                  <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[2px] ml-[-20px] shadow-sm border border-gray-300 relative pointer-events-none z-30"></div>
+                  <div className="w-[2px] h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 origin-bottom rotate-[-25deg] ml-[-10px] z-20"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                </div>
+
+                {/* Node 7: Unlabeled (Bottom Mid) */}
+                <div className="absolute bottom-[10%] left-[40%] flex flex-col items-center">
+                  <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[-6px] shadow-sm border border-gray-300 z-30 relative top-1"></div>
+                  <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 z-20 relative"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                </div>
+
+                {/* Node 8: Unlabeled (Bottom Left) */}
+                <div className="absolute bottom-[10%] left-[12%] flex flex-col items-center">
+                  <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[-6px] shadow-sm border border-gray-300 z-30 relative top-1"></div>
+                  <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 z-20 relative"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -423,8 +539,9 @@ export default function ServicesPage() {
             Ready to Build Your Digital Empire?
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-medium mb-12 max-w-2xl mx-auto">
-            Let's discuss how our specialized digital services can integrate
-            into a seamless strategy for your brand's explosive growth.
+            Let&apos;s discuss how our specialized digital services can
+            integrate into a seamless strategy for your brand&apos;s explosive
+            growth.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
