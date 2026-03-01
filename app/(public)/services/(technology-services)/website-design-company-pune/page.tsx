@@ -579,63 +579,83 @@ export default function WebsiteDesignPunePage() {
         </section>
 
         {/* PORTFOLIO SHOWCASE */}
-        <section className="px-6 lg:px-12 py-20 bg-(--surface) border-t border-(--border)">
+        <section className="px-6 lg:px-12 py-24 bg-(--background) border-t border-(--border)">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight text-(--text-primary)">
+              <h2 className="text-3xl md:text-5xl font-black mb-4 uppercase tracking-tight text-(--text-primary)">
                 Our Recent Website Design Projects
               </h2>
-              <div className="w-20 h-1.5 bg-(--color-primary) mx-auto mb-6"></div>
+              <div className="w-24 h-1.5 bg-(--color-primary) mx-auto mb-6"></div>
+              <p className="text-(--text-secondary) font-medium text-lg max-w-2xl mx-auto">
+                Take a look at some of the stunning digital experiences we've
+                crafted for scale-ready businesses.
+              </p>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
                   name: "E-Commerce Store Redesign",
                   ind: "Retail & Shopping",
                   desc: "Improved sales velocity by 150%",
+                  img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80",
                 },
                 {
                   name: "Corporate Business Portal",
                   ind: "Finance & B2B",
                   desc: "Reduced bounce rate by 30%",
+                  img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
                 },
                 {
                   name: "Local Service Website",
                   ind: "Healthcare",
                   desc: "Increased weekly leads by 200%",
+                  img: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=80",
                 },
               ].map((port, i) => (
                 <article
                   key={i}
-                  className="bg-(--background) rounded-2xl overflow-hidden shadow-sm border border-(--border) group hover:-translate-y-2 transition-transform"
+                  className="bg-(--surface) rounded-[2rem] overflow-hidden shadow-lg border border-(--border)/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-(--color-primary)/10 transition-all duration-500 group flex flex-col relative"
                 >
-                  <figure className="h-56 bg-gradient-to-tr from-(--color-primary)/20 to-blue-500/20 p-6 flex flex-col justify-end relative overflow-hidden m-0">
-                    <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white px-3 py-1 text-xs font-bold rounded-full">
+                  <figure className="h-64 w-full relative overflow-hidden m-0">
+                    <Image
+                      src={port.img}
+                      alt={port.name}
+                      fill
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                    {/* Gradient Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+                    {/* Industry Badge */}
+                    <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md text-white px-4 py-1.5 text-xs font-black uppercase tracking-widest rounded-full shadow-sm z-10 border border-white/20">
                       {port.ind}
                     </div>
-                    <figcaption className="bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg w-4/5 transform group-hover:scale-105 transition-transform origin-bottom-left">
-                      <div className="h-3 w-3/4 bg-gray-200 rounded mb-3"></div>
-                      <div className="h-2 w-1/2 bg-gray-200 rounded mb-2"></div>
-                      <div className="h-2 w-2/3 bg-gray-200 rounded"></div>
-                    </figcaption>
+
+                    {/* Faint Grid Overlay (Creative Touch) */}
+                    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDAuNWg0ME0wLjUgMHY0MCIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiLz48L3N2Zz4=')] opacity-20 pointer-events-none" />
                   </figure>
-                  <div className="p-6">
-                    <h3 className="font-bold text-xl mb-2 text-(--text-primary)">
+
+                  {/* Content Container */}
+                  <div className="p-8 flex-1 flex flex-col bg-(--surface) relative z-10 xl:-mt-8 xl:mx-4 xl:rounded-2xl xl:shadow-xl xl:border xl:border-(--border) transition-all duration-500 group-hover:border-(--color-primary)/30">
+                    <h3 className="font-black text-2xl text-(--text-primary) mb-3 leading-tight">
                       {port.name}
                     </h3>
-                    <p className="text-sm font-bold text-(--color-primary)">
-                      {port.desc}
+                    <p className="text-sm font-bold text-(--color-primary) flex items-center gap-2 mt-auto">
+                      <TrendingUp className="w-4 h-4" /> {port.desc}
                     </p>
                   </div>
                 </article>
               ))}
             </div>
-            <div className="text-center mt-12">
+
+            <div className="text-center mt-16">
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 font-bold text-(--color-primary) hover:text-black transition-colors rounded-full border-2 border-(--color-primary) px-6 py-3 hover:bg-(--color-primary)/10"
+                className="inline-flex items-center gap-3 font-bold text-(--color-primary) hover:text-white hover:bg-(--color-primary) transition-all duration-300 rounded-full border-2 border-(--color-primary) px-8 py-4 shadow-lg shadow-(--color-primary)/20 hover:shadow-(--color-primary)/40"
               >
-                View Full Portfolio <ArrowRight className="w-4 h-4" />
+                View Full Portfolio <ArrowRight className="w-5 h-5" />
               </Link>
             </div>
           </div>
