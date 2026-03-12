@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title:
     "Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - Growthik Media",
   description:
-    "Growthik Media is Pune's leading digital marketing agency. We build predictable revenue systems with data-driven SEO, Google Ads, and AI growth engineering. Scale your brand.",
+    "Growthik Media is Pune's top digital marketing agency. We build predictable revenue systems using data-driven SEO, Google Ads, and AI to scale your brand.",
   keywords:
     "digital marketing agency pune, digital marketing company pune, video production pune, SEO services pune, content creation, social media marketing, growthik media",
   authors: [{ name: "Growthik Media" }],
