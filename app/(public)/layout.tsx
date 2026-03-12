@@ -67,16 +67,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(CONTACT_INFO.website),
   title: {
-    default: `${CONTACT_INFO.companyName} | AI-Powered Growth Engineering Company`,
+    default: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
     template: `%s | ${CONTACT_INFO.companyName}`,
   },
-  description: `${CONTACT_INFO.companyName} is an AI-powered growth engineering company that builds predictable revenue systems - not just marketing campaigns. Scaling brands with ROI-driven performance.`,
+  description: `${CONTACT_INFO.companyName} is Pune's leading digital marketing agency building predictable revenue systems with data-driven SEO, Google Ads, and AI growth engineering.`,
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
   keywords: [
     "Digital Marketing Agency Pune",
+    "Digital Marketing Company in Pune",
     "SEO Services Pune",
     "Video Production Company Pune",
     "Social Media Marketing",
@@ -92,9 +93,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: `${CONTACT_INFO.companyName} - Digital Marketing & SEO Pune`,
+    title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
     description:
-      "Pune's leading digital marketing & video production agency helping brands scale with data-driven strategies.",
+      "Pune's leading digital marketing & video production agency helping brands scale with data-driven strategies and AI marketing automation.",
     url: CONTACT_INFO.website,
     siteName: CONTACT_INFO.companyName,
     images: [
@@ -110,9 +111,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${CONTACT_INFO.companyName} - Digital Marketing Agent in Pune`,
+    title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
     description:
-      "Premium digital marketing, SEOand video production services in Pune.",
+      "Premium digital marketing, SEO and video production services in Pune. Scale your revenue today.",
     images: ["/og-image.png"],
     creator: "@growthikmedia",
   },
@@ -149,6 +150,49 @@ export default function RootLayout({
       <head>
         {/* Preload critical assets */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://growthikmedia.com/#organization",
+                  name: "Growthik Media",
+                  url: "https://growthikmedia.com",
+                  logo: "https://growthikmedia.com/logo.png",
+                  sameAs: [
+                    "https://www.linkedin.com/company/growthikmedia/",
+                    "https://twitter.com/growthikmedia",
+                  ],
+                },
+                {
+                  "@type": ["LocalBusiness", "MarketingAgency"],
+                  "@id": "https://growthikmedia.com/#localbusiness",
+                  name: "Growthik Media",
+                  image: "https://growthikmedia.com/office.jpg",
+                  telephone: "+91-8888888888",
+                  url: "https://growthikmedia.com",
+                  address: {
+                    "@type": "PostalAddress",
+                    streetAddress: "Pune",
+                    addressLocality: "Pune",
+                    addressRegion: "Maharashtra",
+                    postalCode: "411001",
+                    addressCountry: "IN",
+                  },
+                  geo: {
+                    "@type": "GeoCoordinates",
+                    latitude: "18.5204",
+                    longitude: "73.8567",
+                  },
+                  priceRange: "$$",
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body suppressHydrationWarning={true}>
         <ThemeProviderWrapper>

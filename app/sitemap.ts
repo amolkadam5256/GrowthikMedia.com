@@ -44,6 +44,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Legal and extra routes not in navigation
   const extraRoutes = ["/privacy-policy", "/terms", "/audit"];
 
+  // Generate programmatic SEO routes
+  const programmaticServices = [
+    "seo-services",
+    "google-ads-agency",
+    "meta-ads-agency",
+    "performance-marketing",
+    "ai-marketing",
+  ];
+  const programmaticLocations = [
+    "pune",
+    "mumbai",
+    "bangalore",
+    "hyderabad",
+    "delhi",
+  ];
+  const programmaticIndustries = [
+    "ecommerce",
+    "startups",
+    "real-estate",
+    "healthcare",
+    "b2b-saas",
+    "education",
+  ];
+
+  const programmaticLocationRoutes = programmaticServices.flatMap((service) =>
+    programmaticLocations.map((loc) => `/services/${service}-in-${loc}`),
+  );
+
+  const programmaticIndustryRoutes = programmaticServices.flatMap((service) =>
+    programmaticIndustries.map((ind) => `/services/${service}-for-${ind}`),
+  );
+
   // Unique links only
   const allRoutes = Array.from(
     new Set([
@@ -51,6 +83,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...standaloneLinks,
       ...megaMenuLinks,
       ...extraRoutes,
+      ...programmaticLocationRoutes,
+      ...programmaticIndustryRoutes,
     ]),
   );
 

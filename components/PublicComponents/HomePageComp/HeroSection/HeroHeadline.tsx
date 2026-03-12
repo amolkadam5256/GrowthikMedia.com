@@ -29,13 +29,14 @@ const HeroHeadline = () => {
           style={{ color: "var(--color-white)" }}
         >
           <span className="sr-only">
-            AI-Powered Growth Engineering Company in Pune - Growthik Media
+            Digital Marketing Agency in Pune - AI-Powered SEO & Ads - Growthik
+            Media
           </span>
           <span aria-hidden="true">
-            Building
+            Pune&apos;s Premier
             <span className="relative inline-block mx-4">
               <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
-                Predictable Revenue
+                Digital Marketing
               </span>
               <svg
                 className="absolute w-full h-4 md:h-6 -bottom-2 md:-bottom-3 left-0"
@@ -53,7 +54,7 @@ const HeroHeadline = () => {
               </svg>
             </span>
             <br />
-            Systems, Not Just Ads
+            Agency For Growth
           </span>
         </h1>
 
@@ -104,7 +105,7 @@ const HeroHeadline = () => {
                   className="rounded-full px-8 py-3 md:px-12 md:py-4 text-base md:text-lg font-bold text-white shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-1 flex items-center gap-2 border-0"
                   style={{ backgroundColor: "#d90b1c" }}
                 >
-                  Let’s Chat
+                  Book Your Free Strategy Call
                   <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                 </Button>
               </Link>
