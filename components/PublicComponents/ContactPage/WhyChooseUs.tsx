@@ -5,11 +5,13 @@ import { CheckCircle2 } from "lucide-react";
 
 export default function WhyChooseUs() {
   return (
-    <div className="rounded-sm bg-white dark:bg-zinc-900 p-8 sm:p-10 border-2 border-black dark:border-white/20 shadow-[8px_8px_0_#000] dark:shadow-[8px_8px_0_#fff] transition-colors">
-      <h2 className="text-3xl font-black text-black dark:text-white mb-8 pb-4 relative uppercase tracking-tight border-b-4 border-black dark:border-white/20">
+    <div className="rounded-3xl bg-(--surface) p-8 sm:p-10 border border-(--border) shadow-xl transition-all group overflow-hidden relative">
+      <div className="absolute -top-12 -right-12 w-24 h-24 bg-red-600/5 rounded-full blur-2xl"></div>
+      
+      <h2 className="text-3xl font-black text-(--text-primary) mb-8 pb-4 relative uppercase tracking-tight border-b border-(--border)">
         Why Growthik<span className="text-red-600">.</span>
       </h2>
-      <ul className="space-y-0">
+      <ul className="space-y-3">
         {[
           "Data-Driven Marketing",
           "Expert SEO Strategies",
@@ -19,10 +21,12 @@ export default function WhyChooseUs() {
         ].map((item, idx) => (
           <li
             key={idx}
-            className="flex items-center gap-4 group border-b-2 border-black dark:border-white/20 last:border-b-0 p-4 hover:bg-black hover:text-white dark:hover:bg-white/10 transition-colors cursor-crosshair"
+            className="flex items-center gap-4 group/item p-4 rounded-xl border border-transparent hover:border-red-600/20 hover:bg-red-600/5 transition-all cursor-default"
           >
-            <CheckCircle2 className="w-5 h-5 text-red-600 flex-shrink-0" />
-            <span className="font-black uppercase tracking-wider text-sm text-black dark:text-white group-hover:text-white">
+            <div className="w-8 h-8 rounded-full bg-red-600/10 flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-4 h-4 text-red-600" />
+            </div>
+            <span className="font-bold uppercase tracking-wider text-xs text-(--text-primary)">
               {item}
             </span>
           </li>

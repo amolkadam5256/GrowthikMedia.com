@@ -63,17 +63,14 @@ const ProgressiveLeadCapture = () => {
     let startStep = STEPS.IDENTIFY;
     if ((savedEmail || savedPhone) && !(savedEmail && savedPhone))
       startStep = STEPS.COLLECT_SECOND;
-    else if (savedEmail && savedPhone && !savedName) startStep = STEPS.NAME;
-    else if (savedEmail && savedPhone && savedName) startStep = STEPS.SERVICE;
-
     // 3. Logic: Time Gap - Start after 15s (1st visit) or immediately if resuming
-    const delay = savedEmail || savedPhone ? 5000 : 15000;
-    const timer = setTimeout(() => {
-      setCurrentStep(startStep);
-      setIsVisible(true);
-    }, delay);
+    // const delay = savedEmail || savedPhone ? 5000 : 15000;
+    // const timer = setTimeout(() => {
+    //   setCurrentStep(startStep);
+    //   setIsVisible(true);
+    // }, delay);
 
-    return () => clearTimeout(timer);
+    // return () => clearTimeout(timer);
   }, []);
 
   const transitionToStep = (nextStep: number, delay = 800) => {

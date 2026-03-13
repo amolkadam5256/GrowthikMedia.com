@@ -14,7 +14,7 @@ import FAQSection from "@/components/PublicComponents/ContactPage/FAQSection";
 
 export default function ContactClient() {
   return (
-    <div className="min-h-screen bg-white dark:bg-black pb-20 font-sans selection:bg-red-600 selection:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-(--background) text-(--text-primary) pb-20 font-sans selection:bg-red-600 selection:text-white transition-colors duration-300">
       {/* 1. Sharp Hero Section */}
       <HeroSection />
 

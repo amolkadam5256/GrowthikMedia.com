@@ -5,17 +5,20 @@ import { Briefcase } from "lucide-react";
 
 export default function CareersSection() {
   return (
-    <div className="rounded-sm bg-white dark:bg-zinc-900 border-4 border-black dark:border-white p-8 sm:p-10 text-center flex flex-col items-center group hover:bg-black dark:hover:bg-zinc-800 transition-colors cursor-pointer">
-      <Briefcase className="w-12 h-12 text-black dark:text-white group-hover:text-white dark:group-hover:text-black mb-6 transition-colors" />
-      <h2 className="text-3xl font-black text-black dark:text-white group-hover:text-white dark:group-hover:text-black mb-4 uppercase tracking-tight transition-colors">
-        Careers
+    <div className="rounded-3xl bg-(--surface) border border-(--border) p-8 sm:p-10 text-center flex flex-col items-center group transition-all hover:shadow-xl hover:border-red-600/30">
+      <div className="w-16 h-16 rounded-2xl bg-red-600/10 flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+        <Briefcase className="w-8 h-8 text-red-600" />
+      </div>
+      <h2 className="text-3xl font-black text-(--text-primary) mb-4 uppercase tracking-tight">
+        Careers<span className="text-red-600">.</span>
       </h2>
+      <p className="text-(--text-secondary) text-sm font-medium mb-6">Want to join our expert team of growth hackers?</p>
       <a
-        href="mailto:info@growthikmedia.com"
+        href="mailto:jobs@growthikmedia.com"
         aria-label="Email us about careers"
-        className="rounded-sm font-bold text-red-600 dark:text-red-500 bg-red-50 dark:bg-black border-2 border-red-600 dark:border-red-500 py-3 px-6 uppercase tracking-widest text-sm relative z-10 hover:bg-red-600 hover:text-white dark:hover:bg-red-600 dark:hover:text-white transition-colors"
+        className="rounded-2xl font-black text-white bg-red-600 border border-transparent py-4 px-8 uppercase tracking-widest text-xs transition-all hover:bg-red-700 hover:shadow-lg hover:shadow-red-600/20 active:scale-95"
       >
-        info@growthikmedia.com
+        Send Your Resume
       </a>
     </div>
   );

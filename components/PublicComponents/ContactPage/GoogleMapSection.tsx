@@ -5,39 +5,39 @@ import { MapPin } from "lucide-react";
 
 export default function GoogleMapSection() {
   return (
-    <div className="rounded-sm bg-black dark:bg-black border-2 border-black dark:border-white/20 p-2 shadow-[8px_8px_0_#dc2626]">
-      <div className="rounded-sm bg-white dark:bg-zinc-900 p-6 sm:p-10 border-2 border-black dark:border-white/20">
-        <div className="flex items-start gap-5 mb-8 border-b-4 border-red-600 pb-6">
-          <div className="rounded-sm w-14 h-14 bg-black flex items-center justify-center shadow-[4px_4px_0_#dc2626] flex-shrink-0">
+    <div className="rounded-3xl bg-(--surface) border border-(--border) p-6 sm:p-10 shadow-2xl transition-all relative overflow-hidden group">
+      {/* Background Decorative element */}
+      <div className="absolute top-0 right-0 w-32 h-32 bg-red-600/5 rounded-full blur-3xl -mr-16 -mt-16 group-hover:bg-red-600/10 transition-all"></div>
+
+      <div className="relative z-10">
+        <div className="flex items-center gap-6 mb-10 pb-6 border-b border-(--border)">
+          <div className="rounded-2xl w-14 h-14 bg-red-600 flex items-center justify-center shrink-0 shadow-lg shadow-red-600/20">
             <MapPin className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-black text-black dark:text-white uppercase tracking-tight">
-              Locate Us
+            <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight">
+              Locate <span className="text-red-600">Us</span>
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 font-bold uppercase tracking-widest text-xs mt-1">
+            <p className="text-(--text-secondary) font-bold uppercase tracking-widest text-[10px] mt-1">
               Growthik Media HQ
             </p>
           </div>
         </div>
 
-        <div className="mb-8">
-          <p className="text-black dark:text-white font-black text-lg leading-relaxed uppercase">
+        <div className="mb-10">
+          <p className="text-(--text-primary) font-black text-xl leading-relaxed uppercase tracking-tight italic">
             Akshay Palace Cooperative
             <br />
             Housing Society
+          </p>
+          <p className="text-(--text-secondary) font-bold text-sm mt-2">
+            Warje Malwadi Road, Warje
             <br />
-            <span className="text-gray-500 dark:text-gray-400 font-bold">
-              Warje Malwadi Road
-              <br />
-              Warje, Pune – 411058
-              <br />
-              India
-            </span>
+            Pune – 411058, Maharashtra, India
           </p>
         </div>
 
-        <div className="rounded-sm border-4 border-black dark:border-white/20 h-[300px] relative bg-gray-100 grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden">
+        <div className="rounded-2xl border border-(--border) h-[350px] relative bg-(--surface-secondary) grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden shadow-inner">
           <iframe
             src="https://maps.google.com/maps?q=18.480682998115928,73.80476268274838&t=m&z=15&output=embed"
             width="100%"
@@ -47,7 +47,7 @@ export default function GoogleMapSection() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Growthik Media Location"
-            className="w-full h-full relative z-10"
+            className="w-full h-full relative z-10 opacity-80 hover:opacity-100 transition-opacity"
           ></iframe>
         </div>
       </div>

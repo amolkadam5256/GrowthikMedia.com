@@ -6,43 +6,49 @@ export default function FreeConsultation() {
   return (
     <div
       id="consultation"
-      className="rounded-sm p-8 sm:p-12 bg-black dark:bg-black border-4 border-red-600 text-white relative shadow-[10px_10px_0_#000] dark:shadow-[10px_10px_0_#7f1d1d] hover:translate-x-1 hover:translate-y-1 transition-transform cursor-pointer group"
+      className="rounded-3xl p-8 sm:p-12 bg-black border border-red-600/30 text-white relative shadow-2xl transition-all group overflow-hidden"
     >
-      <div className="rounded-sm mb-6 inline-block bg-white text-black font-black uppercase tracking-widest px-3 py-1 text-xs border-2 border-transparent group-hover:bg-red-600 group-hover:text-white transition-colors">
-        Priority Action
+      <div className="absolute inset-0 bg-linear-to-br from-red-600/20 to-transparent pointer-events-none"></div>
+      
+      <div className="relative z-10">
+        <div className="rounded-full mb-6 inline-block bg-red-600 text-white font-black uppercase tracking-widest px-4 py-1.5 text-[10px] animate-pulse">
+          Priority Action
+        </div>
+
+        <h2 className="text-4xl lg:text-5xl font-black mb-6 uppercase leading-tight italic">
+          Free Digital
+          <br />
+          Growth
+          <br />
+          <span className="text-red-600">Audit.</span>
+        </h2>
+
+        <p className="text-gray-400 font-bold mb-8 text-lg">
+          Data-backed insights to outrank competitors & scale revenue.
+        </p>
+
+        <div className="grid grid-cols-2 gap-3 mb-10">
+          {["Web Audit", "SEO Plan", "Competitors", "Social"].map(
+            (item, idx) => (
+              <div
+                key={idx}
+                className="rounded-xl bg-white/5 border border-white/10 p-3 font-bold text-[10px] uppercase tracking-wider text-center text-white backdrop-blur-sm group-hover:border-red-600/50 transition-colors"
+              >
+                + {item}
+              </div>
+            ),
+          )}
+        </div>
+        <a
+          href="https://calendar.app.google/growthik-media"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Claim your free consultation"
+          className="rounded-2xl block w-full py-5 px-6 font-black bg-red-600 text-white text-center uppercase tracking-widest transition-all hover:bg-red-700 hover:shadow-xl hover:shadow-red-600/30 active:scale-95"
+        >
+          Claim Consultation
+        </a>
       </div>
-
-      <h2 className="text-4xl font-black mb-6 uppercase leading-none">
-        Free Digital
-        <br />
-        Growth
-        <br />
-        <span className="text-red-600">Audit.</span>
-      </h2>
-
-      <p className="text-gray-400 font-bold mb-8">
-        Data-backed insights to outrank competitors & scale revenue.
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-        {["Web Audit", "SEO Plan", "Competitors", "Social", "Leads"].map(
-          (item, idx) => (
-            <div
-              key={idx}
-              className="rounded-sm bg-black border border-zinc-800 p-3 font-bold text-xs uppercase tracking-wider text-center text-white group-hover:border-red-600/50 transition-colors"
-            >
-              + {item}
-            </div>
-          ),
-        )}
-      </div>
-      <a
-        href="#consultation"
-        aria-label="Claim your free consultation"
-        className="rounded-sm block w-full py-5 px-6 font-black bg-white text-black text-center uppercase tracking-widest border-2 border-white hover:bg-red-600 hover:text-white hover:border-red-600 transition-colors"
-      >
-        Claim Consultation
-      </a>
     </div>
   );
 }

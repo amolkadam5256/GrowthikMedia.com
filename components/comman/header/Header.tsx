@@ -59,14 +59,9 @@ export default function Header() {
 
       <header
         ref={menuRef}
-        className={`transition-all duration-500 fixed left-0 right-0 z-50 shadow-lg rounded-full mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 2xl:mx-auto 2xl:max-w-7xl ${
+        className={`transition-all duration-500 fixed left-0 right-0 z-50 shadow-lg rounded-full mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 2xl:mx-auto 2xl:max-w-7xl bg-(--background) text-(--text-primary) border border-(--border-light) ${
           isTopBarVisible ? "top-4 lg:top-14" : "top-4"
         }`}
-        style={{
-          backgroundColor:
-            theme === "dark" ? "var(--color-black)" : "var(--color-white)",
-          color: theme === "dark" ? "var(--color-white)" : "var(--color-black)",
-        }}
       >
         <div className="flex justify-between items-center py-0 px-0">
           <Logo onClick={() => setIsMobileMenuOpen(false)} />
