@@ -52,12 +52,13 @@ const AIChatBot = () => {
     }
   }, [messages, isTyping, showLeadForm]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  // Disabled automatic popup as per user request
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsOpen(true);
+  //   }, 3000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const handleLeadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
