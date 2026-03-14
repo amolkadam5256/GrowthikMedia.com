@@ -9,7 +9,6 @@ import WhyChooseUs from "@/components/PublicComponents/ContactPage/WhyChooseUs";
 import FreeConsultation from "@/components/PublicComponents/ContactPage/FreeConsultation";
 import Testimonials from "@/components/PublicComponents/ContactPage/Testimonials";
 import SocialMediaConnect from "@/components/PublicComponents/ContactPage/SocialMediaConnect";
-import CareersSection from "@/components/PublicComponents/ContactPage/CareersSection";
 import FAQSection from "@/components/PublicComponents/ContactPage/FAQSection";
 
 export default function ContactClient() {
@@ -36,7 +35,6 @@ export default function ContactClient() {
             <FreeConsultation />
             <Testimonials />
             <SocialMediaConnect />
-            <CareersSection />
           </div>
         </div>
 
