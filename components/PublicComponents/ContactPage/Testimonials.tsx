@@ -73,11 +73,11 @@ export default function Testimonials() {
 
       <div className="relative overflow-hidden">
         <div 
-          className="flex transition-transform duration-500 ease-in-out"
+          className="flex transition-transform duration-500 ease-in-out w-full"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {testimonials.map((t) => (
-            <div key={t.id} className="w-full flex-none px-1">
+            <div key={t.id} className="w-full shrink-0 flex-none px-2 lg:px-4">
               <div className="rounded-3xl bg-(--surface) border border-(--border) p-8 shadow-xl relative transition-all group overflow-hidden h-full">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-red-600/5 rounded-full blur-2xl -mr-12 -mt-12 group-hover:bg-red-600/10 transition-all"></div>
                 
