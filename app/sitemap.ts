@@ -44,6 +44,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Legal and extra routes not in navigation
   const extraRoutes = ["/privacy-policy", "/terms", "/audit"];
 
+  // Location-specific pages (fixing 4xx errors — these pages now exist)
+  const locationRoutes = [
+    "/website-design-company-in-aundh",
+    "/web-design-in-viman-nagar",
+    "/seo-company-in-hinjewadi",
+    "/website-design-in-pcmc",
+    "/website-design-company-in-kothrud",
+    "/website-development-in-hadapsar",
+    "/website-design-company-in-baner",
+    "/website-design-company-in-wakad",
+  ];
+
+  // Blog post routes
+  const blogRoutes = [
+    "/blog/website-cost-in-pune",
+    "/blog/importance-of-seo",
+    "/blog/how-to-choose-website-design-company",
+    "/blog/seo-audit-checklist",
+  ];
+
   // Generate programmatic SEO routes
   const programmaticServices = [
     "seo-services",
@@ -83,6 +103,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...standaloneLinks,
       ...megaMenuLinks,
       ...extraRoutes,
+      ...locationRoutes,
+      ...blogRoutes,
       ...programmaticLocationRoutes,
       ...programmaticIndustryRoutes,
     ]),
@@ -98,11 +120,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority:
         route === "/"
           ? 1.0
-          : route.startsWith("/services")
-            ? 0.8
-            : route === "/audit"
-              ? 0.9
-              : 0.5,
+          : route === "/audit"
+            ? 0.9
+            : route.startsWith("/services")
+              ? 0.8
+              : locationRoutes.includes(route)
+                ? 0.75
+                : route.startsWith("/blog/")
+                  ? 0.7
+                  : 0.5,
     };
   });
 }
