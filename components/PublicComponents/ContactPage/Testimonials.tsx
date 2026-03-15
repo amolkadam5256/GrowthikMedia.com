@@ -6,25 +6,28 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    content: "Growthik Media generated high-quality leads through precision SEO and PPC.",
+    content:
+      "Growthik Media generated high-quality leads through precision SEO and PPC.",
     initials: "RD",
     name: "Rahul Deshmukh",
-    title: "CEO, TechNova"
+    title: "CEO, TechNova",
   },
   {
     id: 2,
-    content: "Our website traffic increased by 300% after deploying their strategies. Unmatched ROI.",
+    content:
+      "Our website traffic increased by 300% after deploying their strategies. Unmatched ROI.",
     initials: "SP",
     name: "Sneha Patil",
-    title: "Founder, EcomStore"
+    title: "Founder, EcomStore",
   },
   {
     id: 3,
-    content: "The best digital marketing agency in Pune. Fantastic results across all channels.",
+    content:
+      "The best digital marketing agency in Pune. Fantastic results across all channels.",
     initials: "AM",
     name: "Anil Mehta",
-    title: "Director, BuildCorp"
-  }
+    title: "Director, BuildCorp",
+  },
 ];
 
 export default function Testimonials() {
@@ -35,7 +38,9 @@ export default function Testimonials() {
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
   };
 
   useEffect(() => {
@@ -55,13 +60,13 @@ export default function Testimonials() {
         </h2>
         {testimonials.length > 1 && (
           <div className="flex gap-2">
-            <button 
+            <button
               onClick={prevTestimonial}
               className="w-10 h-10 rounded-full border border-(--border) flex items-center justify-center text-(--text-primary) hover:bg-red-600 hover:text-white hover:border-red-600 transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <button 
+            <button
               onClick={nextTestimonial}
               className="w-10 h-10 rounded-full border border-(--border) flex items-center justify-center text-(--text-primary) hover:bg-red-600 hover:text-white hover:border-red-600 transition-colors"
             >
@@ -72,7 +77,7 @@ export default function Testimonials() {
       </div>
 
       <div className="relative overflow-hidden">
-        <div 
+        <div
           className="flex transition-transform duration-500 ease-in-out w-full"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
@@ -80,13 +85,17 @@ export default function Testimonials() {
             <div key={t.id} className="w-full shrink-0 flex-none px-2 lg:px-4">
               <div className="rounded-3xl bg-(--surface) border border-(--border) p-8 shadow-xl relative transition-all group overflow-hidden h-full">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-red-600/5 rounded-full blur-2xl -mr-12 -mt-12 group-hover:bg-red-600/10 transition-all"></div>
-                
-                <div className="text-red-600 font-serif text-5xl font-black mb-4 h-8 opacity-20">"</div>
+
+                <div className="text-red-600 font-serif text-5xl font-black mb-4 h-8 opacity-20">
+                  "
+                </div>
                 <p className="text-(--text-primary) font-bold italic mb-8 text-lg mt-0 leading-relaxed relative z-10 min-h-[80px]">
                   {t.content}
                 </p>
                 <div className="flex items-center gap-4 pt-6 border-t border-(--border) relative z-10">
-                  <div className="w-10 h-10 rounded-full bg-red-600/20 flex items-center justify-center font-black text-red-600">{t.initials}</div>
+                  <div className="w-10 h-10 rounded-full bg-red-600/20 flex items-center justify-center font-black text-red-600">
+                    {t.initials}
+                  </div>
                   <div>
                     <h3 className="font-black text-(--text-primary) uppercase tracking-tight leading-none text-sm">
                       {t.name}
@@ -101,7 +110,7 @@ export default function Testimonials() {
           ))}
         </div>
       </div>
-      
+
       {/* Dots Indicator */}
       {testimonials.length > 1 && (
         <div className="flex justify-center gap-2 mt-6">
@@ -110,7 +119,9 @@ export default function Testimonials() {
               key={idx}
               onClick={() => setCurrentIndex(idx)}
               className={`w-2.5 h-2.5 rounded-full transition-all ${
-                idx === currentIndex ? "bg-red-600 w-8" : "bg-(--border) hover:bg-red-400"
+                idx === currentIndex
+                  ? "bg-red-600 w-8"
+                  : "bg-(--border) hover:bg-red-400"
               }`}
             />
           ))}

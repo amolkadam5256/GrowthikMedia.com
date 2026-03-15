@@ -34,6 +34,14 @@ export default function ContactForm() {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitStatus("success");
+
+      // Meta Pixel Lead Tracking
+      if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+        (window as any).fbq("track", "Lead", {
+          content_name: "Contact Form",
+        });
+      }
+
       setFormData({
         name: "",
         email: "",
