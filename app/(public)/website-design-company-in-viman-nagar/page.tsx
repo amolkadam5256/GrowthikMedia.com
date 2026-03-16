@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   keywords:
     "web design viman nagar, website design company viman nagar pune, website development viman nagar, best web design viman nagar",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/web-design-in-viman-nagar`,
+    canonical: `${CONTACT_INFO.website}/website-design-company-in-viman-nagar`,
   },
   openGraph: {
     title: "Web Design in Viman Nagar Pune | Growthik Media",
     description:
       "Professional web design in Viman Nagar, Pune — high-performance, SEO-optimized websites that grow your business.",
-    url: `${CONTACT_INFO.website}/web-design-in-viman-nagar`,
+    url: `${CONTACT_INFO.website}/website-design-company-in-viman-nagar`,
     siteName: "Growthik Media",
     type: "website",
   },
@@ -29,7 +29,7 @@ export default function WebDesignVimanNagar() {
       area="Viman Nagar"
       city="Pune"
       primaryService="Web Design"
-      slug="web-design-in-viman-nagar"
+      slug="website-design-company-in-viman-nagar"
       headline="Expert Web Design in Viman Nagar"
       subheadline="Premium website design services for businesses in Viman Nagar — crafted to rank on Google, load in under 2 seconds, and convert visitors into paying customers."
       areaDescription="Viman Nagar is Pune's cosmopolitan hub — a blend of corporate offices, upscale residences, premium retail, and thriving restaurants. Businesses here serve a digitally sophisticated audience that expects best-in-class online experiences. Growthik Media designs websites for Viman Nagar businesses that match the premium expectations of this market, combining cutting-edge design with high-performance Next.js or WordPress development and deep local SEO expertise."

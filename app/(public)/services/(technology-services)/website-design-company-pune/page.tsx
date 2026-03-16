@@ -26,7 +26,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 import { images } from "@/app/assets/images/images";
 
 export const metadata: Metadata = {
-  title: "Best Website Design Company in Pune | Custom & SEO-Friendly Websites",
+  title: "Best Website Design Company in Pune | Growthik Media",
   description:
     "Looking for a professional website design company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!",
   keywords:
@@ -879,9 +879,9 @@ export default function WebsiteDesignPunePage() {
                   { loc: "Hinjewadi", slug: "seo-company-in-hinjewadi" },
                   { loc: "Aundh", slug: "website-design-company-in-aundh" },
                   { loc: "Kothrud", slug: "website-design-company-in-kothrud" },
-                  { loc: "Hadapsar", slug: "website-development-in-hadapsar" },
-                  { loc: "Viman Nagar", slug: "web-design-in-viman-nagar" },
-                  { loc: "PCMC", slug: "website-design-in-pcmc" },
+                  { loc: "Hadapsar", slug: "website-design-company-in-hadapsar" },
+                  { loc: "Viman Nagar", slug: "website-design-company-in-viman-nagar" },
+                  { loc: "PCMC", slug: "website-design-company-in-pcmc" },
                 ].map((locData, i) => (
                   <Link
                     key={i}

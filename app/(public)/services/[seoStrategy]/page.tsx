@@ -50,9 +50,13 @@ export async function generateMetadata({
   service = titleCase(service);
   locationOrIndustry = titleCase(locationOrIndustry);
 
-  const metaTitle = isLocal
+  const exactOverrides: Record<string, string> = {
+    "lead-generation-company-in-pune": "Best Lead Generation Agency in Pune | Growthik Media",
+  };
+
+  const metaTitle = exactOverrides[seoStrategy] || (isLocal
     ? `Best ${service} Agency in ${locationOrIndustry} | Growthik Media`
-    : `Expert ${service} for ${locationOrIndustry} Brands | Growthik Media`;
+    : `Expert ${service} for ${locationOrIndustry} Brands | Growthik Media`);
 
   const metaDescription = isLocal
     ? `Top-rated ${service} company in ${locationOrIndustry}. We guarantee data-driven growth, better rankings, and higher ROI. Get your free strategy call today.`
@@ -134,6 +138,11 @@ export default async function ProgrammaticSeoPage({
                 "@type": "City",
                 name: modifier,
               },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "138",
+              },
             }),
           }}
         />
@@ -151,7 +160,7 @@ export default async function ProgrammaticSeoPage({
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
               Top Agency For <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-primary) to-blue-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">
                 {h1}
               </span>
             </h1>

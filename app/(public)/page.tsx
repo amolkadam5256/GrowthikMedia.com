@@ -3,7 +3,7 @@ import HomeClient from "@/app/(public)/HomeClient";
 
 export const metadata: Metadata = {
   title:
-    "Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - Growthik Media",
+    "Best Digital Marketing Agency Pune | Growthik Media",
   description:
     "Growthik Media is Pune's top digital marketing agency. We build predictable revenue systems using data-driven SEO, Google Ads, and AI to scale your brand.",
   keywords:

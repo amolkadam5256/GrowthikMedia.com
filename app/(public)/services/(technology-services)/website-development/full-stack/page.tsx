@@ -23,7 +23,7 @@ import {
 import { CONTACT_INFO } from "@/constants/contact";
 
 export const metadata: Metadata = {
-  title: "Full-Stack Solutions Services in Pune | Growthik Media",
+  title: "Full Stack Web Development in Pune | Growthik Media",
   description:
     "Looking for a professional Full-Stack Solutions company in Pune? We provide custom, SEO-optimized, Full-Stack Solutions services for businesses. Call Now!",
   keywords:

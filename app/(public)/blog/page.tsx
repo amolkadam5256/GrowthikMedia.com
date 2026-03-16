@@ -3,7 +3,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 import BlogListingClient from "./BlogListingClient";
 
 export const metadata: Metadata = {
-  title: "Blog | Digital Marketing, SEO & Web Design Insights | Growthik Media",
+  title: "Digital Marketing & SEO Blog Pune | Growthik Media",
   description:
     "Expert articles on SEO, web design, Google Ads, and digital marketing strategies tailored for Pune businesses. Written by the Growthik Media team.",
   keywords:

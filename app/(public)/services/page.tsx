@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import Image from "next/image";
 import {
   Code,
   Target,
@@ -23,7 +24,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 import { FilterableServices } from "./_components/FilterableServices";
 
 export const metadata: Metadata = {
-  title: "Top Digital Marketing & Web Development Services in Pune",
+  title: "All Digital Marketing Services Pune | Growthik Media",
   description:
     "Drive growth with Pune's premier digital marketing, web app development, SEO, & branding agency. Serving Baner, Wakad, Hinjewadi & beyond. Get a free website audit!",
   keywords:
@@ -61,6 +62,11 @@ export default function ServicesPage() {
           addressLocality: "Pune",
           addressRegion: "Maharashtra",
           addressCountry: "IN",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "138",
         },
       },
       {
@@ -183,13 +189,18 @@ export default function ServicesPage() {
       <section className="relative px-6 lg:px-16 pt-32 pb-24 lg:pt-48 lg:pb-40 flex items-center bg-[#1a202c] overflow-hidden -mt-24">
         {/* Background Overlay simulating a dark hero image */}
         <div className="absolute inset-0 bg-linear-to-r from-slate-900 via-slate-800/90 to-transparent z-10 w-full lg:w-2/3"></div>
-        <div
-          className="absolute inset-0 z-0 opacity-40 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/og-lead-gen.png')",
-            filter: "blur(2px)",
-          }}
-        ></div>
+        <div className="absolute inset-0 z-0 opacity-40">
+          <Image
+            src="/og-lead-gen.png"
+            alt="Growthik Media Digital Marketing Services"
+            fill
+            priority
+            quality={80}
+            className="object-cover"
+            style={{ filter: "blur(2px)" }}
+            sizes="100vw"
+          />
+        </div>
 
         {/* Subtle decorative dot pattern */}
         <div
@@ -421,9 +432,9 @@ export default function ServicesPage() {
       <section className="px-6 lg:px-12 py-16 bg-(--surface) border-y border-(--border)">
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div>
-            <h3 className="text-2xl md:text-3xl font-black mb-2">
+            <h2 className="text-2xl md:text-3xl font-black mb-2">
               Need a custom strategy?
-            </h3>
+            </h2>
             <p className="text-(--text-secondary) font-medium">
               Talk to our lead strategist to map out your digital growth plan.
             </p>
@@ -488,7 +499,7 @@ export default function ServicesPage() {
                     {idx + 1}
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-1">{item.title}</h4>
+                    <h3 className="text-xl font-bold mb-1">{item.title}</h3>
                     <p className="text-(--text-secondary) font-medium text-sm lg:text-base">
                       {item.desc}
                     </p>

@@ -103,10 +103,32 @@ export const TAGS: BlogTag[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "post-10",
+    title: "Complete Search Engine Submission Guide for Businesses in Pune",
+    slug: "search-engine-submission-guide-pune",
+    excerpt: "Learn how businesses in Pune can improve website visibility across Google, Bing, and global search engines using SEO strategies, backlinks, and technical optimization.",
+    content: "search-engine-submission-guide-pune",
+    featuredImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
+    featuredImageAlt: "Global digital ecosystem and SEO strategy",
+    category: CATEGORIES[0],
+    tags: [TAGS[0], TAGS[7], TAGS[2]],
+    author: AUTHORS[0],
+    publishDate: "2026-03-16T09:00:00Z",
+    readingTime: 15,
+    views: 0,
+    commentsCount: 0,
+    likesCount: 0,
+    featured: true,
+    trending: true,
+    metaTitle: "Complete Search Engine Submission Guide for Businesses in Pune",
+    metaDescription: "Learn how businesses in Pune can improve website visibility across Google, Bing, and global search engines using SEO strategies, backlinks, and technical optimization.",
+  },
+
+  {
     id: "post-1",
     title:
       "SEO Audit Checklist 2025: 50 Points to Audit Your Website Like a Pro",
-    slug: "seo-audit-checklist",
+    slug: "technical-seo-audit-checklist",
     excerpt:
       "A comprehensive SEO audit checklist covering technical SEO, on-page optimization, E-E-A-T content quality, backlinks, and local SEO — audit your site like a professional agency.",
     content: "",
@@ -132,7 +154,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: "post-2",
     title:
       "The Importance of SEO for Businesses in 2025: Why You Cannot Ignore It",
-    slug: "importance-of-seo",
+    slug: "why-seo-is-important",
     excerpt:
       "In 2025, over 8.5 billion searches happen daily on Google. If your business doesn't appear, a competitor does. Discover why SEO is non-negotiable for growth.",
     content: "",

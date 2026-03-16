@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   keywords:
     "website development hadapsar, web design hadapsar pune, website design company hadapsar, best web development hadapsar pune",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/website-development-in-hadapsar`,
+    canonical: `${CONTACT_INFO.website}/website-design-company-in-hadapsar`,
   },
   openGraph: {
     title: "Website Development in Hadapsar Pune | Growthik Media",
     description:
       "Expert website development in Hadapsar, Pune — custom, SEO-ready websites for businesses of all sizes. Free quote available.",
-    url: `${CONTACT_INFO.website}/website-development-in-hadapsar`,
+    url: `${CONTACT_INFO.website}/website-design-company-in-hadapsar`,
     siteName: "Growthik Media",
     type: "website",
   },
@@ -29,7 +29,7 @@ export default function WebsiteDevelopmentHadapsar() {
       area="Hadapsar"
       city="Pune"
       primaryService="Website Development"
-      slug="website-development-in-hadapsar"
+      slug="website-design-company-in-hadapsar"
       headline="Professional Website Development in Hadapsar"
       subheadline="We develop powerful, fast, and SEO-driven websites for businesses in Hadapsar — built to rank on Google, handle real traffic, and convert every visitor into a business opportunity."
       areaDescription="Hadapsar is one of Pune's rapidly developing corridors, home to Magarpatta City, SP Infocity, manufacturing units, residential societies, and a growing retail ecosystem. The digital transformation of Hadapsar's business landscape is accelerating — and companies that invest in quality web development now will enjoy first-mover advantage in Google rankings. Growthik Media provides premium website development services for Hadapsar businesses of all sizes, with a focus on performance, scalability, and local search dominance."

@@ -67,6 +67,11 @@ export default function LocationPageTemplate({
         },
         areaServed: [city, area],
         priceRange: "₹₹",
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          reviewCount: "138",
+        },
       },
       {
         "@type": "Service",

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   keywords:
     "website design pcmc, web design pimpri chinchwad, website development pcmc pune, best website design company pcmc",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/website-design-in-pcmc`,
+    canonical: `${CONTACT_INFO.website}/website-design-company-in-pcmc`,
   },
   openGraph: {
     title: "Website Design in PCMC Pune | Growthik Media",
     description:
       "Professional website design in PCMC (Pimpri Chinchwad) — fast, SEO-optimized websites for local businesses. Free consultation available.",
-    url: `${CONTACT_INFO.website}/website-design-in-pcmc`,
+    url: `${CONTACT_INFO.website}/website-design-company-in-pcmc`,
     siteName: "Growthik Media",
     type: "website",
   },
@@ -29,7 +29,7 @@ export default function WebsiteDesignPCMC() {
       area="PCMC"
       city="Pune"
       primaryService="Website Design"
-      slug="website-design-in-pcmc"
+      slug="website-design-company-in-pcmc"
       headline="Professional Website Design in PCMC"
       subheadline="We design and develop powerful, SEO-optimized websites for businesses in Pimpri Chinchwad Municipal Corporation (PCMC) — from manufacturing companies to retail shops and service providers."
       areaDescription="PCMC (Pimpri-Chinchwad) is one of Maharashtra's fastest-growing industrial and residential zones, spanning areas like Pimpri, Chinchwad, Akurdi, Nigdi, and Bhosari. With a massive mix of manufacturing industries, auto ancillary companies, IT firms, and consumer businesses, competition for online visibility is intensifying rapidly. Growthik Media brings enterprise-level website design and digital marketing capabilities to PCMC businesses at competitive pricing, helping you establish a strong digital presence that generates real business results."

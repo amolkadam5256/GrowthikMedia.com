@@ -17,6 +17,35 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/blog/importance-of-seo",
+        destination: "/blog/why-seo-is-important",
+        permanent: true,
+      },
+      {
+        source: "/blog/seo-audit-checklist",
+        destination: "/blog/technical-seo-audit-checklist",
+        permanent: true,
+      },
+      {
+        source: "/web-design-in-viman-nagar",
+        destination: "/website-design-company-in-viman-nagar",
+        permanent: true,
+      },
+      {
+        source: "/website-design-in-pcmc",
+        destination: "/website-design-company-in-pcmc",
+        permanent: true,
+      },
+      {
+        source: "/website-development-in-hadapsar",
+        destination: "/website-design-company-in-hadapsar",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

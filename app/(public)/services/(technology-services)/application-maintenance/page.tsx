@@ -879,9 +879,9 @@ export default function ServicePage() {
                   { loc: "Hinjewadi", slug: "seo-company-in-hinjewadi" },
                   { loc: "Aundh", slug: "website-design-company-in-aundh" },
                   { loc: "Kothrud", slug: "website-design-company-in-kothrud" },
-                  { loc: "Hadapsar", slug: "website-development-in-hadapsar" },
-                  { loc: "Viman Nagar", slug: "web-design-in-viman-nagar" },
-                  { loc: "PCMC", slug: "website-design-in-pcmc" },
+                  { loc: "Hadapsar", slug: "website-design-company-in-hadapsar" },
+                  { loc: "Viman Nagar", slug: "website-design-company-in-viman-nagar" },
+                  { loc: "PCMC", slug: "website-design-company-in-pcmc" },
                 ].map((locData, i) => (
                   <Link
                     key={i}

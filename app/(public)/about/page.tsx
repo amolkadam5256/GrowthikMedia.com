@@ -47,7 +47,7 @@ const AboutFinalCTASection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "About Growthik Media – AI-Powered Growth Engineering Company in Pune",
+  title: "About Top Digital Marketing Agency | Growthik Media",
   description:
     "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems - not just marketing campaigns. We help ambitious brands scale with ROI-driven performance engineering.",
   keywords:

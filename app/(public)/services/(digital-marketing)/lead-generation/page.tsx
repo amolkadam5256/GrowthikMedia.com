@@ -29,7 +29,7 @@ import { images } from "@/app/assets/images/images";
 // STEP 1-3: METADATA & TECHNICAL SEO
 // ────────────────────────────
 export const metadata: Metadata = {
-  title: "Best Lead Generation Company in Pune | B2B & B2C Qualified Leads",
+  title: "B2B Lead Generation Services Pune | Growthik Media",
   description:
     "Stop chasing cold prospects. Growthik Media is Pune's leading lead generation agency building predictable revenue engines and delivering Sales-Qualified Leads (SQLs). Book a Strategy Call!",
   keywords:

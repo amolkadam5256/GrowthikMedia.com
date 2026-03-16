@@ -47,11 +47,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Location-specific pages (fixing 4xx errors — these pages now exist)
   const locationRoutes = [
     "/website-design-company-in-aundh",
-    "/web-design-in-viman-nagar",
+    "/website-design-company-in-viman-nagar",
     "/seo-company-in-hinjewadi",
-    "/website-design-in-pcmc",
+    "/website-design-company-in-pcmc",
     "/website-design-company-in-kothrud",
-    "/website-development-in-hadapsar",
+    "/website-design-company-in-hadapsar",
     "/website-design-company-in-baner",
     "/website-design-company-in-wakad",
   ];
@@ -59,9 +59,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Blog post routes
   const blogRoutes = [
     "/blog/website-cost-in-pune",
-    "/blog/importance-of-seo",
+    "/blog/why-seo-is-important",
     "/blog/how-to-choose-website-design-company",
-    "/blog/seo-audit-checklist",
+    "/blog/technical-seo-audit-checklist",
+    "/blog/search-engine-submission-guide-pune",
   ];
 
   // Generate programmatic SEO routes

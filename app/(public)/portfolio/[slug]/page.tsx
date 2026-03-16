@@ -11,7 +11,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
-  const name = `${label} | Portfolio | ${CONTACT_INFO.companyName}`;
+  const exactOverrides: Record<string, string> = {
+    "education-content-strategy": "Education Content Strategy Portfolio | Growthik Media",
+  };
+
+  const name = exactOverrides[slug] || `${label} Portfolio | ${CONTACT_INFO.companyName}`;
   const description = `Showcase of our ${label} projects. See how Growthik Media delivers exceptional results for clients.`;
 
   return {
