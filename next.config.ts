@@ -44,6 +44,41 @@ const nextConfig: NextConfig = {
         destination: "/website-design-company-in-hadapsar",
         permanent: true,
       },
+      {
+        source: "/seo-marketing-pune",
+        destination: "/services/seo",
+        permanent: true,
+      },
+      {
+        source: "/video-production-pune",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/google-ads-agency-pune",
+        destination: "/services/ppc-google-ads",
+        permanent: true,
+      },
+      {
+        source: "/performance-marketing-pune",
+        destination: "/services/performance-marketing",
+        permanent: true,
+      },
+      {
+        source: "/digital-marketing-agency-pune",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/seo-services-pune",
+        destination: "/services/seo",
+        permanent: true,
+      },
+      {
+        source: "/quote",
+        destination: "/contact",
+        permanent: true,
+      },
     ];
   },
   async headers() {
