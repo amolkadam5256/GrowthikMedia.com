@@ -80,12 +80,40 @@ export const navigationData: {
                 label: "Web Application Development",
               },
               {
-                href: "/services/website-maintenance",
+                href: "/services/(technology-services)/website-maintenance",
                 label: "Website Maintenance",
               },
               {
-                href: "/services/application-maintenance",
+                href: "/services/(technology-services)/application-maintenance",
                 label: "Application Maintenance",
+              },
+              {
+                href: "/services/(technology-services)/website-design-company-in-aundh",
+                label: "Web Design in Aundh",
+              },
+              {
+                href: "/services/(technology-services)/website-design-company-in-baner",
+                label: "Web Design in Baner",
+              },
+              {
+                href: "/services/(technology-services)/website-design-company-in-hadapsar",
+                label: "Web Design in Hadapsar",
+              },
+              {
+                href: "/services/(technology-services)/website-design-company-in-kothrud",
+                label: "Web Design in Kothrud",
+              },
+              {
+                href: "/services/(technology-services)/website-design-company-in-pcmc",
+                label: "Web Design in PCMC",
+              },
+              {
+                href: "/services/(technology-services)/website-design-company-in-viman-nagar",
+                label: "Web Design in Viman Nagar",
+              },
+              {
+                href: "/services/(technology-services)/website-design-company-in-wakad",
+                label: "Web Design in Wakad",
               },
             ],
           },
@@ -138,9 +166,13 @@ export const navigationData: {
                 href: "/services/media-planning-buying",
                 label: "Media Planning & Buying",
               },
-              {
+               {
                 href: "/services/political-digital-marketing",
                 label: "Political Digital Marketing",
+              },
+              {
+                href: "/services/(digital-marketing)/seo-company-in-hinjewadi",
+                label: "SEO Services Hinjewadi",
               },
             ],
           },

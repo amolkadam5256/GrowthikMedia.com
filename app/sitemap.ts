@@ -44,16 +44,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Legal and extra routes not in navigation
   const extraRoutes = ["/privacy-policy", "/terms", "/audit"];
 
-  // Location-specific pages (fixing 4xx errors — these pages now exist)
+  // Location-specific pages (fixed paths)
   const locationRoutes = [
-    "/website-design-company-in-aundh",
-    "/website-design-company-in-viman-nagar",
-    "/seo-company-in-hinjewadi",
-    "/website-design-company-in-pcmc",
-    "/website-design-company-in-kothrud",
-    "/website-design-company-in-hadapsar",
-    "/website-design-company-in-baner",
-    "/website-design-company-in-wakad",
+    "/services/(technology-services)/website-design-company-in-aundh",
+    "/services/(technology-services)/website-design-company-in-viman-nagar",
+    "/services/(digital-marketing)/seo-company-in-hinjewadi",
+    "/services/(technology-services)/website-design-company-in-pcmc",
+    "/services/(technology-services)/website-design-company-in-kothrud",
+    "/services/(technology-services)/website-design-company-in-hadapsar",
+    "/services/(technology-services)/website-design-company-in-baner",
+    "/services/(technology-services)/website-design-company-in-wakad",
   ];
 
   // Blog post routes
