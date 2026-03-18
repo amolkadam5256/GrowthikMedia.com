@@ -4,16 +4,16 @@ import { CONTACT_INFO } from "@/constants/contact";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Website Design Company in Wakad Pune | Growthik Media",
+  title: "Web Design Company in Wakad Pune | Growthik Media",
   description:
-    "Top website design company in Wakad, Pune. Fast, SEO-optimized websites for IT companies, startups, and local businesses in Wakad. Get a free consultation.",
+    "Top web design company in Wakad, Pune. Fast, SEO-optimized websites for IT companies, startups, and local businesses. Get a free consultation.",
   keywords:
     "website design company wakad, web design wakad pune, website development wakad, best web design company wakad pune",
   alternates: {
     canonical: `${CONTACT_INFO.website}/website-design-company-in-wakad`,
   },
   openGraph: {
-    title: "Website Design Company in Wakad Pune | Growthik Media",
+    title: "Web Design Company in Wakad Pune | Growthik Media",
     description:
       "Top website design company in Wakad, Pune — SEO-optimized, conversion-focused websites for Wakad businesses. Free consultation.",
     url: `${CONTACT_INFO.website}/website-design-company-in-wakad`,

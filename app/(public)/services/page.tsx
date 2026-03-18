@@ -24,7 +24,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 import { FilterableServices } from "./_components/FilterableServices";
 
 export const metadata: Metadata = {
-  title: "All Digital Marketing Services Pune | Growthik Media",
+  title: "Digital Marketing & Web Services Pune | Growthik Media",
   description:
     "Drive growth with Pune's premier digital marketing, web app development, SEO, & branding agency. Serving Baner, Wakad, Hinjewadi & beyond. Get a free website audit!",
   keywords:

@@ -4,7 +4,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Website Development in Hadapsar Pune | Web Design Company | Growthik Media",
+  title: "Website Development in Hadapsar Pune | Growthik Media",
   description:
     "Expert website development in Hadapsar, Pune. Custom, SEO-optimized websites for businesses in Hadapsar. Fast delivery, transparent pricing. Get a free quote.",
   keywords:

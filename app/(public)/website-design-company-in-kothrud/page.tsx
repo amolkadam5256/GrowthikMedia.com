@@ -4,16 +4,16 @@ import { CONTACT_INFO } from "@/constants/contact";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Website Design Company in Kothrud Pune | Growthik Media",
+  title: "Web Design Company in Kothrud Pune | Growthik Media",
   description:
-    "Best website design company in Kothrud, Pune. We create modern, fast, and SEO-optimized websites for Kothrud businesses. Free consultation — no obligations.",
+    "Best web design company in Kothrud, Pune. We create modern, fast, and SEO-optimized websites for local businesses. Get a free quote today.",
   keywords:
     "website design company kothrud, web design kothrud pune, website development kothrud, best web design company kothrud pune",
   alternates: {
     canonical: `${CONTACT_INFO.website}/website-design-company-in-kothrud`,
   },
   openGraph: {
-    title: "Website Design Company in Kothrud Pune | Growthik Media",
+    title: "Web Design Company in Kothrud Pune | Growthik Media",
     description:
       "Best website design company in Kothrud, Pune — modern, fast, SEO-ready websites that convert. Free consultation available.",
     url: `${CONTACT_INFO.website}/website-design-company-in-kothrud`,

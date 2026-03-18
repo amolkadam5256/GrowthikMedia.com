@@ -4,7 +4,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Website Design in PCMC Pune | Web Design Company | Growthik Media",
+  title: "Website Design in PCMC Pune | Growthik Media",
   description:
     "Professional website design in PCMC (Pimpri Chinchwad). We build high-performance, SEO-ready websites for PCMC businesses. Get a free website audit today.",
   keywords:

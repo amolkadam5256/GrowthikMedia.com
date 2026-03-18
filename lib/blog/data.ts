@@ -120,7 +120,7 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 0,
     featured: true,
     trending: true,
-    metaTitle: "Complete Search Engine Submission Guide for Businesses in Pune",
+    metaTitle: "Search Engine Submission Guide Pune | Growthik Media",
     metaDescription: "Learn how businesses in Pune can improve website visibility across Google, Bing, and global search engines using SEO strategies, backlinks, and technical optimization.",
   },
 
@@ -145,8 +145,7 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 142,
     featured: true,
     trending: true,
-    metaTitle:
-      "SEO Audit Checklist 2025: 50 Points to Audit Your Site | Growthik Media",
+    metaTitle: "2025 SEO Audit Checklist: 50 Point Guide | Growthik Media",
     metaDescription:
       "Use this comprehensive SEO audit checklist to identify and fix technical, on-page, and off-page issues that are hurting your rankings in 2025.",
   },
@@ -171,8 +170,7 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 208,
     featured: true,
     trending: false,
-    metaTitle:
-      "Importance of SEO for Business in 2025 | Why SEO Matters | Growthik Media",
+    metaTitle: "Importance of SEO in 2025: Why It Matters | Growthik Media",
     metaDescription:
       "Why is SEO important for your business in 2025? Discover how search engine optimization drives organic traffic, builds credibility, and generates consistent leads.",
   },
@@ -196,8 +194,7 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 97,
     featured: false,
     trending: true,
-    metaTitle:
-      "How to Choose a Website Design Company in Pune | Growthik Media Guide",
+    metaTitle: "How to Choose a Web Design Company in Pune | Growthik Media",
     metaDescription:
       "Discover 7 critical factors to evaluate before hiring a website design company in Pune — portfolio, process, SEO, and more.",
   },
@@ -221,8 +218,7 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 164,
     featured: false,
     trending: false,
-    metaTitle:
-      "Website Cost in Pune 2025 | How Much Does a Website Cost? | Growthik Media",
+    metaTitle: "Website Cost in Pune: 2025 Pricing Guide | Growthik Media",
     metaDescription:
       "How much does a website cost in Pune? Get a complete 2025 pricing guide covering basic sites, eCommerce, custom web apps, and what factors affect the price.",
   },
@@ -247,8 +243,7 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 289,
     featured: true,
     trending: true,
-    metaTitle:
-      "Google Ads vs Meta Ads for Pune Businesses 2025 | Growthik Media",
+    metaTitle: "Google Ads vs Meta Ads for Pune Businesses | Growthik Media",
     metaDescription:
       "Google Ads or Meta Ads — which is better for your Pune business in 2025? Real campaign data, cost comparisons, and expert recommendations.",
   },

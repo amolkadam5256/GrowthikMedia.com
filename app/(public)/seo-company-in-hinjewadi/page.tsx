@@ -4,7 +4,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
 
 export const metadata: Metadata = {
-  title: "SEO Company in Hinjewadi Pune | Best SEO Agency | Growthik Media",
+  title: "SEO Company in Hinjewadi Pune | Growthik Media",
   description:
     "Top-rated SEO company in Hinjewadi, Pune. We help IT companies, startups, and local businesses rank higher on Google with data-driven SEO strategies.",
   keywords:
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: `${CONTACT_INFO.website}/seo-company-in-hinjewadi`,
   },
   openGraph: {
-    title: "SEO Company in Hinjewadi Pune | Growthik Media",
+    title: "SEO Company in Hinjewadi Pune | Growthik Media", // Already under 70 chars
     description:
       "Top-rated SEO company in Hinjewadi, Pune — data-driven strategies that rank your business on Google and drive consistent organic traffic.",
     url: `${CONTACT_INFO.website}/seo-company-in-hinjewadi`,

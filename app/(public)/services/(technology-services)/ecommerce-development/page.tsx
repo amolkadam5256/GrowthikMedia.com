@@ -190,9 +190,9 @@ export default function ServicePage() {
             </div>
 
             <p className="text-base md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-12 leading-relaxed text-center px-2">
-              Looking for a professional Ecommerce Development in Pune? We
-              build high-performance digital assets that rank on Google and
-              convert visitors into customers.{" "}
+              Looking for a professional Ecommerce Development in Pune? We build
+              high-performance digital assets that rank on Google and convert
+              visitors into customers.{" "}
               <strong className="text-(--text-primary)">
                 Predictable Revenue Systems, Not Just Ads.
               </strong>
@@ -360,9 +360,9 @@ export default function ServicePage() {
               </h2>
               <div className="w-20 h-1.5 bg-(--color-primary) mx-auto mb-6"></div>
               <p className="text-(--text-secondary) font-medium text-lg max-w-2xl mx-auto">
-                Your digital presence is your storefront. If it’s slow, outdated,
-                or poorly designed, you lose customers instantly. We build
-                websites that look premium and perform exceptionally.
+                Your digital presence is your storefront. If it’s slow,
+                outdated, or poorly designed, you lose customers instantly. We
+                build websites that look premium and perform exceptionally.
               </p>
             </div>
 
@@ -858,8 +858,14 @@ export default function ServicePage() {
                   { loc: "Hinjewadi", slug: "seo-company-in-hinjewadi" },
                   { loc: "Aundh", slug: "website-design-company-in-aundh" },
                   { loc: "Kothrud", slug: "website-design-company-in-kothrud" },
-                  { loc: "Hadapsar", slug: "website-design-company-in-hadapsar" },
-                  { loc: "Viman Nagar", slug: "website-design-company-in-viman-nagar" },
+                  {
+                    loc: "Hadapsar",
+                    slug: "website-design-company-in-hadapsar",
+                  },
+                  {
+                    loc: "Viman Nagar",
+                    slug: "website-design-company-in-viman-nagar",
+                  },
                   { loc: "PCMC", slug: "website-design-company-in-pcmc" },
                 ].map((locData, i) => (
                   <Link

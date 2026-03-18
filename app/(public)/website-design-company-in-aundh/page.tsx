@@ -4,16 +4,16 @@ import { CONTACT_INFO } from "@/constants/contact";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Best Website Design Company in Aundh Pune | Growthik Media",
+  title: "Best Web Design Company in Aundh Pune | Growthik Media",
   description:
-    "Top-rated website design company in Aundh, Pune. We build fast, SEO-optimized, conversion-focused websites for businesses in Aundh. Get a free quote today.",
+    "Top web design company in Aundh, Pune. We build fast, SEO-optimized, conversion-focused websites for local businesses. Get a free quote today.",
   keywords:
     "website design company in aundh, web design aundh pune, website development aundh, best web design company aundh",
   alternates: {
     canonical: `${CONTACT_INFO.website}/website-design-company-in-aundh`,
   },
   openGraph: {
-    title: "Best Website Design Company in Aundh Pune | Growthik Media",
+    title: "Best Web Design Company in Aundh Pune | Growthik Media",
     description:
       "Top-rated website design company in Aundh, Pune — fast, SEO-optimized websites that convert visitors into customers.",
     url: `${CONTACT_INFO.website}/website-design-company-in-aundh`,

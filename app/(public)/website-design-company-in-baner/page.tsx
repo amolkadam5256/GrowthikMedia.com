@@ -4,16 +4,16 @@ import { CONTACT_INFO } from "@/constants/contact";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Website Design Company in Baner Pune | Growthik Media",
+  title: "Web Design Company in Baner Pune | Growthik Media",
   description:
-    "Best website design company in Baner, Pune. We build fast, SEO-optimized, and conversion-focused websites for Baner businesses. Get a free quote today.",
+    "Best web design company in Baner, Pune. We build fast, SEO-optimized, and conversion-focused websites for local businesses. Get a free quote today.",
   keywords:
     "website design company baner, web design baner pune, website development baner, best web design company baner pune",
   alternates: {
     canonical: `${CONTACT_INFO.website}/website-design-company-in-baner`,
   },
   openGraph: {
-    title: "Website Design Company in Baner Pune | Growthik Media",
+    title: "Web Design Company in Baner Pune | Growthik Media",
     description:
       "Best website design company in Baner, Pune — premium websites for startups, agencies, and businesses in Baner & Balewadi area.",
     url: `${CONTACT_INFO.website}/website-design-company-in-baner`,

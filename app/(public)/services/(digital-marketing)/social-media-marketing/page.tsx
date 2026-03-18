@@ -28,17 +28,16 @@ import { images } from "@/app/assets/images/images";
 export const metadata: Metadata = {
   title: "Social Media Marketing Agency Pune | Growthik Media",
   description:
-    "Looking for a professional social media marketing company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!",
+    "Top social media marketing agency in Pune. We drive growth with data-backed SMM strategies, content creation, and lead generation. Get a free proposal!",
   keywords:
-    "Social Media Marketing in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom Social Media Marketing Pune",
+    "Social Media Marketing in Pune, SMM Agency in Pune, Digital Marketing Agency in Pune, Social Media Management Pune",
   alternates: {
     canonical: `${CONTACT_INFO.website}/services/social-media-marketing`,
   },
   openGraph: {
-    title:
-      "Best Social Media Marketing in Pune | Custom & SEO-Friendly Websites",
+    title: "Social Media Marketing Agency Pune | Growthik Media",
     description:
-      "Looking for a professional social media marketing company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses.",
+      "Top social media marketing agency in Pune. We drive growth with data-backed SMM strategies and content creation. Get a free proposal!",
     url: `${CONTACT_INFO.website}/services/social-media-marketing`,
     siteName: "Growthik Media",
     images: [
@@ -200,8 +199,8 @@ export default function ServicePage() {
             </h4>
 
             <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] font-black mb-6 tracking-tighter leading-[0.95] uppercase text-(--text-primary) text-center drop-shadow-sm">
-              Best Website
-              <br /> Design Pune
+              Social Media
+              <br /> Marketing Pune
             </h1>
 
             <div className="inline-flex items-center gap-2 border-y-2 border-(--border) py-3 mb-10">
@@ -211,11 +210,11 @@ export default function ServicePage() {
             </div>
 
             <p className="text-base md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-12 leading-relaxed text-center px-2">
-              Looking for a professional Social Media Marketing in Pune? We
-              build high-performance digital assets that rank on Google and
-              convert visitors into customers.{" "}
+              Looking for a professional social media marketing agency in Pune?
+              We build high-impact social campaigns that drive engagement and
+              convert followers into loyal customers.{" "}
               <strong className="text-(--text-primary)">
-                Predictable Revenue Systems, Not Just Ads.
+                Data-Driven Growth, Not Just Likes.
               </strong>
             </p>
 

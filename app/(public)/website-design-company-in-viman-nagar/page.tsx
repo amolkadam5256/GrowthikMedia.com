@@ -4,7 +4,7 @@ import { CONTACT_INFO } from "@/constants/contact";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Web Design in Viman Nagar Pune | Website Design Company | Growthik Media",
+  title: "Web Design in Viman Nagar Pune | Growthik Media",
   description:
     "Professional web design in Viman Nagar, Pune. We build fast, beautiful, and conversion-focused websites for businesses in Viman Nagar. Get a free quote.",
   keywords:
