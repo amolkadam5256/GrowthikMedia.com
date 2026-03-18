@@ -197,29 +197,17 @@ const getPersonSchema = () => {
 };
 
 export default function About() {
-  const organizationSchema = getOrganizationSchema();
-  const faqSchema = getFAQSchema();
-  const aboutPageSchema = getAboutPageSchema();
-  const personSchema = getPersonSchema();
+  const combinedSchema = {
+    "@context": "https://schema.org",
+    "@graph": [getAboutPageSchema(), getFAQSchema(), getPersonSchema()],
+  };
 
   return (
     <main className="bg-[--background] min-h-screen pt-20 overflow-hidden">
       {/* Schema Markup */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
       />
 
       {/* 1. HERO SECTION */}

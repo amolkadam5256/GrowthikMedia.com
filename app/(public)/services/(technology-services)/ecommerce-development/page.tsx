@@ -77,33 +77,12 @@ export default function ServicePage() {
     <>
       {/* STRUCTURED DATA SCHEMA */}
       <Script
-        id="schema-local-business"
+        id="schema-ecommerce-development"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@graph": [
-              {
-                "@type": "LocalBusiness",
-                "@id": `${CONTACT_INFO.website}/#localbusiness`,
-                name: "Growthik Media",
-                image: `${CONTACT_INFO.website}/logo.png`,
-                description:
-                  "Best Ecommerce Development in Pune offering custom, SEO-friendly websites.",
-                url: CONTACT_INFO.website,
-                telephone: CONTACT_INFO.phone.primary,
-                address: {
-                  "@type": "PostalAddress",
-                  addressLocality: "Pune",
-                  addressRegion: "Maharashtra",
-                  addressCountry: "IN",
-                },
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "150",
-                },
-              },
               {
                 "@type": "Service",
                 "@id": `${CONTACT_INFO.website}/services/ecommerce-development/#service`,

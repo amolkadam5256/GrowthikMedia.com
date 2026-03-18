@@ -192,49 +192,7 @@ export default function SEO() {
         }}
       />
 
-      {/* Structured Data JSON-LD - BreadcrumbList */}
-      <Script
-        id="structured-data-breadcrumbs"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            itemListElement: [
-              {
-                "@type": "ListItem",
-                position: 1,
-                name: "Home",
-                item: CONTACT_INFO.website,
-              },
-              {
-                "@type": "ListItem",
-                position: 2,
-                name: "Services",
-                item: `${CONTACT_INFO.website}/services`,
-              },
-              {
-                "@type": "ListItem",
-                position: 3,
-                name: "Blog",
-                item: `${CONTACT_INFO.website}/blog`,
-              },
-              {
-                "@type": "ListItem",
-                position: 4,
-                name: "About Us",
-                item: `${CONTACT_INFO.website}/about`,
-              },
-              {
-                "@type": "ListItem",
-                position: 5,
-                name: "Contact",
-                item: `${CONTACT_INFO.website}/contact`,
-              },
-            ],
-          }),
-        }}
-      />
+
 
       {/* Services Schema */}
       <Script
@@ -287,44 +245,6 @@ export default function SEO() {
           }),
         }}
       />
-      {/* FAQ Schema */}
-      <Script
-        id="structured-data-faq"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "Why choose Growthik Media as your Growth Engineering Partner?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems - not just marketing campaigns. We combine technical precision with data-driven strategies to deliver measurable business ROI.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What does Growth Engineering include?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Our growth engineering framework includes AI-powered SEO, performance marketing (PPC), conversion rate optimization (CRO), and high-performance web architecture designed to build predictable revenue systems.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "How long does it take to see results?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "While some results like performance ads can be immediate, organic growth typically takes 3-6 months. We provide transparent reporting to track progress.",
-                },
-              },
-            ],
-          }),
-        }}
-      />
-
       {/* Meta Pixel Code */}
       <Script
         id="meta-pixel"
