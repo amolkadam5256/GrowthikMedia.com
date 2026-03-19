@@ -103,6 +103,32 @@ export const TAGS: BlogTag[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "post-11",
+    title:
+      "🚀 What is SEO? Complete Beginner Guide to Search Engine Optimization (2026)",
+    slug: "complete-beginner-guide-to-seo-2026",
+    excerpt:
+      "Discover what SEO is, how search engines like Google work, and why it's the most powerful growth strategy for businesses in Pune to generate organic leads.",
+    content: "complete-beginner-guide-to-seo-2026",
+    featuredImage:
+      "/images/blog/seo-services-in-pune-rank-1-google-growthik-media-thumbnail.png",
+    featuredImageAlt:
+      "SEO Services in Pune - Rank 1 on Google with Growthik Media",
+    category: CATEGORIES[0],
+    tags: [TAGS[0], TAGS[3], TAGS[2], TAGS[7]],
+    author: AUTHORS[0],
+    publishDate: "2026-03-19T10:00:00Z",
+    readingTime: 12,
+    views: 0,
+    commentsCount: 0,
+    likesCount: 0,
+    featured: true,
+    trending: true,
+    metaTitle: "What is SEO? | Beginner Guide to SEO 2026 | Growthik Media",
+    metaDescription:
+      "The ultimate 2026 guide to SEO for beginners. Learn how search engines work and how to rank your Pune business on Page 1 organically.",
+  },
+  {
     id: "post-10",
     title: "Complete Search Engine Submission Guide for Businesses in Pune",
     slug: "search-engine-submission-guide-pune",

@@ -63,6 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/how-to-choose-website-design-company",
     "/blog/technical-seo-audit-checklist",
     "/blog/search-engine-submission-guide-pune",
+    "/blog/complete-beginner-guide-to-seo-2026",
+    "/blog/google-ads-vs-meta-ads",
+    "/blog/core-web-vitals-guide",
+    "/blog/local-seo-pune",
+    "/blog/fix-high-bounce-rate",
+    "/blog/b2b-content-marketing-india",
   ];
 
   // Generate programmatic SEO routes

@@ -25,6 +25,7 @@ import educationContent from "./portfolio/education-content.png";
 // Team
 import prachi from "./Prachi.png";
 import amit from "./Amit Kadam.jpg";
+import seoGuidePune from "./blog/seo-services-in-pune-rank-1-google-growthik-media-thumbnail.png";
 
 // Export all images as a centralized object
 export const images = {
@@ -61,5 +62,10 @@ export const images = {
   team: {
     prachi,
     amit,
+  },
+
+  // Blog
+  blog: {
+    seoGuidePune,
   },
 };
