@@ -26,17 +26,17 @@ const LeadMagnetSection = dynamic(
 const AboutCompanySection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/AboutCompany/AboutCompanySection"),
-  { ssr: false },
+  { ssr: true },
 );
 const FounderSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/Founder/FounderSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const OurServicesSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/OurServices/OurServicesSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const TechStackSection = dynamic(
   () =>
@@ -46,17 +46,17 @@ const TechStackSection = dynamic(
 const SEOAuthoritySection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/SEOAuthority/SEOAuthoritySection"),
-  { ssr: false },
+  { ssr: true },
 );
 const LocalSEOAuthoritySection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/LocalSEOAuthority/LocalSEOAuthoritySection"),
-  { ssr: false },
+  { ssr: true },
 );
 const PuneMarketInsightSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/PuneMarketInsight/PuneMarketInsightSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const GrowthFrameworkSection = dynamic(
   () =>
@@ -122,7 +122,7 @@ const CircularRevealSection = dynamic(
 const FAQSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/FAQSection/FAQSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const FinalCTASection = dynamic(
   () =>

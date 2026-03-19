@@ -41,6 +41,12 @@ const FAQ_DATA = [
     answer:
       "Transparency is our core value. You will receive detailed monthly reports tracking KPIs, traffic growth, lead conversion and keyword rankings. We schedule monthly strategy calls to review performance and adjust our roadmap for the next growth sprint.",
   },
+  {
+    id: 6,
+    question: "What is the core focus of Growthik Media as a Pune agency?",
+    answer:
+      "We focus on 'Growth Engineering'—combining code, AI, and marketing to build predictable revenue systems. Unlike traditional agencies that just provide services, we act as your growth partners to ensure every marketing rupee spent yields a measurable ROI for your Pune-based business.",
+  },
 ];
 
 const FAQSection = React.memo(() => {

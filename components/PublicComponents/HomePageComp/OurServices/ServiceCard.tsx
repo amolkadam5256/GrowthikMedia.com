@@ -7,7 +7,7 @@ interface ServiceCardProps {
   icon: LucideIcon;
   number: string;
   title: string;
-  description: string;
+  description: React.ReactNode;
   delay?: number;
 }
 

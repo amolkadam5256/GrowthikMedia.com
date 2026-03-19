@@ -10,30 +10,50 @@ const services = [
   {
     icon: Palette,
     number: "01",
-    title: "Website & Landing Pages",
-    description:
-      "High-performance websites and landing pages designed to convert visitors into loyal customers with seamless user experiences.",
+    title: "Web Design & Development",
+    description: (
+      <>
+        High-performance websites and landing pages designed to convert
+        visitors into loyal customers. Explore our{" "}
+        <Link href="/services" className="text-(--color-primary) font-bold hover:underline">Web Design services</Link>.
+      </>
+    ),
   },
   {
     icon: Megaphone,
     number: "02",
-    title: "Digital Marketing",
-    description:
-      "Data-driven marketing strategies that amplify your brand presence, engage your audience and drive measurable growth.",
+    title: "Performance Marketing",
+    description: (
+      <>
+        Data-driven marketing strategies that amplify your brand presence and
+        drive measurable growth. Read more on{" "}
+        <Link href="/services/performance-marketing" className="text-(--color-primary) font-bold hover:underline">Performance Marketing</Link>.
+      </>
+    ),
   },
   {
     icon: TrendingUp,
     number: "03",
-    title: "SEO & Local SEO",
-    description:
-      "Dominate search results with advanced SEO and local optimization techniques that bring high-intent traffic to your business.",
+    title: "SEO & Local SEO Pune",
+    description: (
+      <>
+        Dominate search results with advanced{" "}
+        <Link href="/services/seo" className="text-(--color-primary) font-bold hover:underline">SEO services</Link>{" "}
+        and local optimization for Pune businesses.
+      </>
+    ),
   },
   {
     icon: Video,
     number: "04",
     title: "Google & Meta Ads",
-    description:
-      "Precision-targeted ad campaigns on Google and Meta platforms designed to lower CPA and maximize your Return on Ad Spend (ROAS).",
+    description: (
+      <>
+        Precision-targeted{" "}
+        <Link href="/services/ppc-google-ads" className="text-(--color-primary) font-bold hover:underline">PPC management</Link>{" "}
+        on Google and Meta platforms to maximize your ROI.
+      </>
+    ),
   },
 ];
 

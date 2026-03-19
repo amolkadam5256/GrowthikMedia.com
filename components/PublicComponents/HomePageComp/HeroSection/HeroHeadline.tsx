@@ -29,11 +29,11 @@ const HeroHeadline = () => {
           style={{ color: "var(--color-white)" }}
         >
           <span className="sr-only">
-            Digital Marketing Agency in Pune - AI-Powered SEO & Ads - Growthik
-            Media
+            Best Digital Marketing Agency in Pune | SEO Services & Performance
+            Marketing Pune | Growthik Media - AI Powered Growth Engineering
           </span>
           <span aria-hidden="true">
-            Pune&apos;s Premier
+            Pune&apos;s Best
             <span className="relative inline-block mx-4">
               <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
                 Digital Marketing
@@ -63,12 +63,12 @@ const HeroHeadline = () => {
           className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto font-medium leading-[1.6] px-4"
           style={{ color: "var(--color-white)" }}
         >
-          Growthik Media is an{" "}
+          Growthik Media is Pune&apos;s premier{" "}
           <strong className="text-(--color-primary) font-black">
             AI-powered growth engineering company
           </strong>{" "}
-          that builds predictable revenue systems -{" "}
-          <span className="opacity-80">not just marketing campaigns.</span>
+          that builds predictable revenue systems using data-driven SEO and
+          performance marketing.
         </p>
 
         {/* CTA Section */}

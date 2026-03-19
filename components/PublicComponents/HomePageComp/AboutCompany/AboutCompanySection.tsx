@@ -70,26 +70,24 @@ const AboutCompanySection = React.memo(() => {
 
             <div className="relative space-y-6 text-center">
               <p className="text-xl md:text-2xl text-(--text-primary) font-semibold leading-relaxed">
-                Growthik Media is an{" "}
+                Growthik Media is the leading{" "}
                 <span className="text-(--color-primary) font-black">
-                  AI-powered growth engineering company
+                  AI-powered digital marketing agency in Pune
                 </span>{" "}
-                that builds predictable revenue systems - not just marketing
-                campaigns.
+                focused on building predictable revenue systems for high-growth
+                brands.
               </p>
 
               <div className="w-20 h-1 bg-(--color-primary) mx-auto" />
 
               <p className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-3xl mx-auto">
-                Based in{" "}
-                <span className="font-bold text-(--text-primary)">Pune</span>,
-                we combine advanced AI automation with data-driven performance
-                marketing to transform ambitious businesses into market leaders
-                with
-                <span className="text-(--color-primary) font-bold">
-                  {" "}
-                  ROI-focused engineering.
+                What is digital marketing? At its core, it&apos;s about using
+                data-driven strategies to reach your ideal audience. Based in{" "}
+                <span className="font-bold text-(--text-primary)">
+                  Pune (serving Baner, Viman Nagar, and Hinjewadi)
                 </span>
+                , we specialize in high-performance SEO and Google Ads to help
+                brands dominate the local and global market.
               </p>
             </div>
           </div>
