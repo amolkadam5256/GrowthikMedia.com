@@ -1,6 +1,16 @@
 import React from "react";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import {
+  ExternalLink,
+  Search,
+  BarChart3,
+  Settings,
+  Rocket,
+  Briefcase,
+  MapPin,
+  CheckCircle2,
+  HelpCircle,
+} from "lucide-react";
 
 export const POST_CONTENT: Record<string, React.ReactNode> = {
   "complete-beginner-guide-to-seo-2026": (
@@ -48,7 +58,9 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         At <Link href="/">Growthik Media</Link>, we help businesses grow with data-driven <Link href="/services/seo">SEO services in Pune</Link>, ensuring long-term visibility and consistent lead generation. This guide will walk you through everything a beginner needs to know about SEO in 2026.
       </p>
 
-      <h2>🔍 What is SEO?</h2>
+      <h2 className="flex items-center gap-3">
+        <Search className="w-6 h-6 text-primary" /> What is SEO?
+      </h2>
       <p>
         Search Engine Optimization (SEO) is the strategic process of improving a website&apos;s visibility on search engines like Google through organic (non-paid) results.
       </p>
@@ -61,91 +73,130 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       </blockquote>
 
       <h3>By making your website:</h3>
-      <ul>
-        <li><strong>Relevant:</strong> Matching user intent perfectly.</li>
-        <li><strong>Trustworthy:</strong> Building authority through quality backlinks.</li>
-        <li><strong>Technically Optimized:</strong> Ensuring fast speed and crawlability.</li>
+      <ul className="space-y-2">
+        <li className="flex items-start gap-2">
+          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <span><strong>Relevant:</strong> Matching user intent perfectly.</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <span><strong>Trustworthy:</strong> Building authority through quality backlinks.</span>
+        </li>
+        <li className="flex items-start gap-2">
+          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <span><strong>Technically Optimized:</strong> Ensuring fast speed and crawlability.</span>
+        </li>
       </ul>
 
       <div className="bg-(--surface) p-6 rounded-2xl border border-(--border) my-8">
-        <h4 className="font-black uppercase mb-2">📍 Real-World Example:</h4>
+        <h4 className="font-black uppercase mb-3 flex items-center gap-2">
+          <MapPin className="w-5 h-5 text-primary" /> Real-World Example:
+        </h4>
         <p className="mb-0 italic text-(--text-secondary)">
           If someone searches <strong>&quot;Best SEO agency in Pune&quot;</strong>, SEO helps your business appear on Page 1 results instead of being buried on Page 10 where no one looks.
         </p>
       </div>
 
-      <h2>📊 What is SERP? (Search Engine Results Page)</h2>
+      <h2 className="flex items-center gap-3">
+        <BarChart3 className="w-6 h-6 text-primary" /> What is SERP?
+      </h2>
       <p>
-        When you search anything on Google, the page you see is called a SERP. It displays results based on your query and helps you find the most relevant information quickly.
+        When you search anything on Google, the page you see is called a SERP (Search Engine Results Page). It displays results based on your query and helps you find the most relevant information quickly.
       </p>
 
-      <h3>🔹 What SERP Includes:</h3>
-      <ul>
-        <li><strong>Organic Results:</strong> The non-paid websites Google trusts.</li>
-        <li><strong>Paid Ads:</strong> Results with the &quot;Sponsored&quot; label (Google Ads).</li>
-        <li><strong>Local Map Listings:</strong> Crucial for <Link href="/blog/local-seo-pune">Local SEO in Pune</Link>.</li>
-        <li><strong>Featured Snippets:</strong> Direct answers shown at the top.</li>
+      <h3>Core SERP Elements:</h3>
+      <ul className="space-y-4">
+        <li className="flex items-start gap-3">
+          <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</div>
+          <div><strong>Organic Results:</strong> The non-paid websites Google trusts based on relevance.</div>
+        </li>
+        <li className="flex items-start gap-3">
+          <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</div>
+          <div><strong>Paid Ads:</strong> Results with the &quot;Sponsored&quot; label (Google Ads).</div>
+        </li>
+        <li className="flex items-start gap-3">
+          <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</div>
+          <div><strong>Local Map Listings:</strong> Crucial for <Link href="/blog/local-seo-pune">Local SEO in Pune</Link>.</div>
+        </li>
+        <li className="flex items-start gap-3">
+          <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</div>
+          <div><strong>Featured Snippets:</strong> Direct answers shown at the top.</div>
+        </li>
       </ul>
 
-      <p>
-        <strong>Why SERP is Important:</strong> Higher ranking = More visibility = More clicks = More traffic &amp; leads. This is why businesses invest in professional <Link href="/services/seo">SEO services in Pune</Link> to rank higher.
-      </p>
-
-      <h2>⚙️ How Search Engines Work</h2>
+      <h2 className="flex items-center gap-3">
+        <Settings className="w-6 h-6 text-primary" /> How Search Engines Work
+      </h2>
       <p>Search engines follow a structured four-stage process to deliver results:</p>
-      <ol>
-        <li><strong>Crawling:</strong> Search engine bots (spiders) scan websites and discover content.</li>
-        <li><strong>Indexing:</strong> Discovered pages are stored in a massive database (the Index).</li>
-        <li><strong>Processing:</strong> Algorithms analyze content based on relevance and quality.</li>
-        <li><strong>Ranking:</strong> The best results are displayed based on 200+ factors like speed, authority, and content quality.</li>
-      </ol>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div className="p-4 bg-(--surface) rounded-xl border border-(--border)">
+          <div className="font-bold text-primary mb-1">1. Crawling</div>
+          <p className="text-sm text-(--text-secondary) mb-0">Search bots scan websites and discover new/updated content.</p>
+        </div>
+        <div className="p-4 bg-(--surface) rounded-xl border border-(--border)">
+          <div className="font-bold text-primary mb-1">2. Indexing</div>
+          <p className="text-sm text-(--text-secondary) mb-0">Pages are stored in a massive database for quick retrieval.</p>
+        </div>
+        <div className="p-4 bg-(--surface) rounded-xl border border-(--border)">
+          <div className="font-bold text-primary mb-1">3. Processing</div>
+          <p className="text-sm text-(--text-secondary) mb-0">Algorithms analyze content relevance and intent.</p>
+        </div>
+        <div className="p-4 bg-(--surface) rounded-xl border border-(--border)">
+          <div className="font-bold text-primary mb-1">4. Ranking</div>
+          <p className="text-sm text-(--text-secondary) mb-0">The best results are displayed based on 200+ authority factors.</p>
+        </div>
+      </div>
 
       <div className="bg-primary/5 p-6 rounded-2xl border border-primary/20 my-8">
-        <h4 className="font-black text-primary uppercase mb-2">💡 Pro Insight:</h4>
+        <h4 className="font-black text-primary uppercase mb-2 flex items-center gap-2">
+          <HelpCircle className="w-5 h-5" /> Pro Insight:
+        </h4>
         <p className="mb-0 italic">
-          For a deep dive into how Google processes data, check out this 
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7440457319219359744" target="_blank" rel="noopener noreferrer" className="ml-1 text-primary font-bold hover:underline">
-            exclusive insight on LinkedIn <ExternalLink className="inline-block w-3 h-3 ml-1" />
+          For a deep dive into how Google processes data at scale, check out this 
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7440457319219359744" target="_blank" rel="noopener noreferrer" className="ml-1 text-primary font-bold hover:underline inline-flex items-center gap-1">
+            exclusive insight on LinkedIn <ExternalLink className="w-3 h-3" />
           </a>.
         </p>
       </div>
 
-      <h2>🚀 Why SEO is Critical for Your Business</h2>
-      <ul>
-        <li><strong>Increases Traffic:</strong> Constant flow of visitors 24/7.</li>
-        <li><strong>Lead Generation:</strong> High-intent users are ready to buy.</li>
-        <li><strong>Credibility:</strong> Ranking #1 makes you the industry leader.</li>
-        <li><strong>ROI:</strong> Better long-term return than <Link href="/services/meta-ads">Meta Ads</Link> or <Link href="/services/ppc-google-ads">Google Ads</Link>.</li>
+      <h2 className="flex items-center gap-3">
+        <Rocket className="w-6 h-6 text-primary" /> Why SEO is Critical for Growth
+      </h2>
+      <ul className="space-y-3">
+        <li className="flex items-start gap-2 italic">
+          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <span><strong>Sustainable Traffic:</strong> Continuous flow of visitors without recurring ad costs.</span>
+        </li>
+        <li className="flex items-start gap-2 italic">
+          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <span><strong>High-Intent Conversion:</strong> Users searching for solutions are ready to buy.</span>
+        </li>
+        <li className="flex items-start gap-2 italic">
+          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <span><strong>Industry Authority:</strong> Ranking #1 builds instant trust and market leadership.</span>
+        </li>
       </ul>
 
+      <h2 className="flex items-center gap-3">
+        <Briefcase className="w-6 h-6 text-primary" /> Why Pune Businesses Choose Us
+      </h2>
       <p>
-        If you want sustainable growth, investing in <Link href="/services/seo">SEO services in Pune</Link> is essential.
+        At Growthik Media, we specialize in <strong>&quot;Growth Engineering&quot;</strong>—combining deep code optimization with aggressive performance marketing.
       </p>
-
-      <h2>💼 Why Choose Growthik Media for Pune-Based SEO?</h2>
-      <p>
-        At Growthik Media, we specialize in <strong>&quot;Growth Engineering&quot;</strong>-combining deep code optimization with aggressive marketing. We provide:
-      </p>
-      <ul>
-        <li>Advanced <Link href="/blog/technical-seo-audit-checklist">Technical SEO Audits</Link></li>
-        <li>AI-Powered Keyword Research</li>
-        <li>High-Quality Backlink Building</li>
-        <li>Content Marketing &amp; Strategy</li>
-      </ul>
 
       <h2>Frequently Asked Questions</h2>
       <div className="faq-section mt-8">
         <div className="faq-item mb-4 p-4 bg-(--surface) rounded-xl border border-(--border)">
           <h4 className="font-bold">What is search engine submission?</h4>
-          <p className="text-(--text-secondary) text-sm mb-0">Search engine submission is the process of registering a website with search engines so they can crawl and index its pages. See our <Link href="/blog/search-engine-submission-guide-pune">Full Submission Guide</Link>.</p>
+          <p className="text-(--text-secondary) text-sm mb-0">Process of registering a website with search engines so they can crawl and index its pages. See our <Link href="/blog/search-engine-submission-guide-pune">Full Submission Guide</Link>.</p>
         </div>
         <div className="faq-item mb-4 p-4 bg-(--surface) rounded-xl border border-(--border)">
           <h4 className="font-bold">How long does SEO take?</h4>
-          <p className="text-(--text-secondary) text-sm mb-0">Typically 3 to 6 months for measurable ranking improvements. It is a long-term marathon, not a sprint.</p>
+          <p className="text-(--text-secondary) text-sm mb-0">Typically 3 to 6 months for measurable improvements. It is a long-term compound growth strategy.</p>
         </div>
         <div className="faq-item mb-4 p-4 bg-(--surface) rounded-xl border border-(--border)">
           <h4 className="font-bold">Is SEO better than Paid Ads?</h4>
-          <p className="text-(--text-secondary) text-sm mb-0">Both have roles! Ads are for instant speed, while SEO is for long-term equity. Read our <Link href="/blog/google-ads-vs-meta-ads">Ads Comparison</Link>.</p>
+          <p className="text-(--text-secondary) text-sm mb-0">Both have roles! Ads for speed/validation; SEO for long-term ROI. Read our <Link href="/blog/google-ads-vs-meta-ads">Ads Comparison</Link>.</p>
         </div>
       </div>
 
