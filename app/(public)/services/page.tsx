@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import {
   Code,
   Target,
@@ -21,7 +22,12 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
-import { FilterableServices } from "./_components/FilterableServices";
+
+// FilterableServices has interactive state and lives below the fold —
+// dynamic import keeps it out of the initial page bundle.
+const FilterableServices = dynamic(
+  () => import("./_components/FilterableServices").then((m) => m.FilterableServices),
+);
 
 export const metadata: Metadata = {
   title: "Digital Marketing & Web Services Pune | Growthik Media",
@@ -402,7 +408,7 @@ export default function ServicesPage() {
                   </p>
                 </header>
 
-                <div className="space-y-3 mb-8 flex-grow">
+                <div className="space-y-3 mb-8 grow">
                   {category.services.map((service, sIdx) => (
                     <Link
                       key={sIdx}
@@ -513,7 +519,7 @@ export default function ServicesPage() {
             <h3 className="text-2xl font-black mb-8 border-b border-(--border) pb-4 text-center">
               Our Proven Process
             </h3>
-            <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-(--border) before:to-transparent">
+            <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-linear-to-b before:from-transparent before:via-(--border) before:to-transparent">
               {[
                 "Discovery & Audit",
                 "Strategy & Architecture",

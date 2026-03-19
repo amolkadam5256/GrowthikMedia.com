@@ -46,14 +46,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Location-specific pages (fixed paths)
   const locationRoutes = [
-    "/services/(technology-services)/website-design-company-in-aundh",
-    "/services/(technology-services)/website-design-company-in-viman-nagar",
-    "/services/(digital-marketing)/seo-company-in-hinjewadi",
-    "/services/(technology-services)/website-design-company-in-pcmc",
-    "/services/(technology-services)/website-design-company-in-kothrud",
-    "/services/(technology-services)/website-design-company-in-hadapsar",
-    "/services/(technology-services)/website-design-company-in-baner",
-    "/services/(technology-services)/website-design-company-in-wakad",
+    "/services/website-design-company-in-aundh",
+    "/services/website-design-company-in-viman-nagar",
+    "/services/seo-company-in-hinjewadi",
+    "/services/website-design-company-in-pcmc",
+    "/services/website-design-company-in-kothrud",
+    "/services/website-design-company-in-hadapsar",
+    "/services/website-design-company-in-baner",
+    "/services/website-design-company-in-wakad",
   ];
 
   // Blog post routes

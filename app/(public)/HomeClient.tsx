@@ -5,134 +5,129 @@ import dynamic from "next/dynamic";
 import HomeHeroSection from "@/components/PublicComponents/HomePageComp/HeroSection/HomeHeroSection";
 import TrustStrip from "@/components/PublicComponents/HomePageComp/TrustStrip/TrustStrip";
 
-// Lazy load non-critical sections to reduce TBT and improve LCP
+// Code-split all below-fold sections.
+// ssr:false in a "use client" component means Next.js emits these as separate
+// JS chunks, loaded client-side only — reducing initial JS bundle & parse time.
+const IndustriesWeServeSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/IndustriesWeServe/IndustriesWeServeSection"),
+  { ssr: false },
+);
 const ProblemSolutionSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/ProblemSolution/ProblemSolutionSection"),
-  { ssr: true },
+  { ssr: false },
+);
+const LeadMagnetSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/LeadMagnet/LeadMagnetSection"),
+  { ssr: false },
 );
 const AboutCompanySection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/AboutCompany/AboutCompanySection"),
-  { ssr: true },
+  { ssr: false },
+);
+const FounderSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/Founder/FounderSection"),
+  { ssr: false },
 );
 const OurServicesSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/OurServices/OurServicesSection"),
-  { ssr: true },
+  { ssr: false },
+);
+const TechStackSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/TechStack/TechStackSection"),
+  { ssr: false },
+);
+const SEOAuthoritySection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/SEOAuthority/SEOAuthoritySection"),
+  { ssr: false },
+);
+const LocalSEOAuthoritySection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/LocalSEOAuthority/LocalSEOAuthoritySection"),
+  { ssr: false },
+);
+const PuneMarketInsightSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/PuneMarketInsight/PuneMarketInsightSection"),
+  { ssr: false },
 );
 const GrowthFrameworkSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/OurApproach").then(
       (m) => m.GrowthFrameworkSection,
     ),
-  { ssr: true },
+  { ssr: false },
+);
+const AIPositioningSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/AIPositioning/AIPositioningSection"),
+  { ssr: false },
 );
 const WhyChooseUsSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/WhyChooseUs/WhyChooseUsSection"),
-  { ssr: true },
+  { ssr: false },
+);
+const ComparisonSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/Comparison/ComparisonSection"),
+  { ssr: false },
+);
+const GrowthResourcesSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/GrowthResources/GrowthResourcesSection"),
+  { ssr: false },
 );
 const PortfolioHighlightsSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/PortfolioHighlights").then(
       (m) => m.PortfolioHighlightsSection,
     ),
-  { ssr: true },
+  { ssr: false },
+);
+const ClientSuccessMetricsSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/ClientSuccessMetrics/ClientSuccessMetricsSection"),
+  { ssr: false },
+);
+const PerformanceRoadmapSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/PerformanceRoadmap/PerformanceRoadmapSection"),
+  { ssr: false },
+);
+const InvestmentSection = dynamic(
+  () =>
+    import("@/components/PublicComponents/HomePageComp/Investment/InvestmentSection"),
+  { ssr: false },
 );
 const TestimonialSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/Testimonials").then(
       (m) => m.TestimonialSection,
     ),
-  { ssr: true },
+  { ssr: false },
 );
 const CircularRevealSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/CircularRevealHero/CircularRevealSection"),
-  { ssr: true },
+  { ssr: false },
 );
 const FAQSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/FAQSection/FAQSection"),
-  { ssr: true },
+  { ssr: false },
 );
 const FinalCTASection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/FinalCTA/FinalCTASection"),
-  { ssr: true },
-);
-const FounderSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/Founder/FounderSection"),
-  { ssr: true },
-);
-
-// New Conversion/SEO Sections
-const LeadMagnetSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/LeadMagnet/LeadMagnetSection"),
-  { ssr: true },
-);
-const AIPositioningSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/AIPositioning/AIPositioningSection"),
-  { ssr: true },
-);
-const ComparisonSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/Comparison/ComparisonSection"),
-  { ssr: true },
-);
-const SEOAuthoritySection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/SEOAuthority/SEOAuthoritySection"),
-  { ssr: true },
-);
-const InvestmentSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/Investment/InvestmentSection"),
-  { ssr: true },
-);
-
-// New SEO Enhancement Sections
-const IndustriesWeServeSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/IndustriesWeServe/IndustriesWeServeSection"),
-  { ssr: true },
-);
-const LocalSEOAuthoritySection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/LocalSEOAuthority/LocalSEOAuthoritySection"),
-  { ssr: true },
-);
-const GrowthResourcesSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/GrowthResources/GrowthResourcesSection"),
-  { ssr: true },
-);
-const ClientSuccessMetricsSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/ClientSuccessMetrics/ClientSuccessMetricsSection"),
-  { ssr: true },
-);
-
-const TechStackSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/TechStack/TechStackSection"),
-  { ssr: true },
-);
-
-const PuneMarketInsightSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/PuneMarketInsight/PuneMarketInsightSection"),
-  { ssr: true },
-);
-
-const PerformanceRoadmapSection = dynamic(
-  () =>
-    import("@/components/PublicComponents/HomePageComp/PerformanceRoadmap/PerformanceRoadmapSection"),
-  { ssr: true },
+  { ssr: false },
 );
 
 const HomeClient = () => {

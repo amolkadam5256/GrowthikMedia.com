@@ -2,6 +2,9 @@ import { Metadata } from "next";
 import { CONTACT_INFO } from "@/constants/contact";
 import BlogListingClient from "./BlogListingClient";
 
+// Blog listing data is compile-time static — force SSG for CDN-level caching
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Digital Marketing & SEO Blog Pune | Growthik Media",
   description:

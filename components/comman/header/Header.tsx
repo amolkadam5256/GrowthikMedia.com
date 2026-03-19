@@ -13,7 +13,7 @@ import { GlobalStyles } from "./GlobalStyles";
 import { FloatingThemeToggle } from "./FloatingThemeToggle";
 
 export default function Header() {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -36,12 +36,8 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setMounted(true);
-    }, 0);
-    return () => clearTimeout(timer);
+    setMounted(true);
   }, []);
-  if (!mounted) return null;
 
   // Toggle mobile menu
   const toggleMobileMenu = () => {

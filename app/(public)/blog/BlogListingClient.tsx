@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { Metadata } from "next";
 import type { BlogFilters } from "@/lib/blog/types";
 import {
   BLOG_POSTS,
@@ -12,8 +12,11 @@ import {
 } from "@/lib/blog/data";
 import BlogCard from "@/components/Blog/BlogCard";
 import SearchAndFilter from "@/components/Blog/SearchAndFilter";
-import BlogSidebar from "@/components/Blog/BlogSidebar";
-import NewsletterForm from "@/components/Blog/NewsletterForm";
+
+// Sidebar content is off-screen on mobile and non-critical on desktop first paint.
+const BlogSidebar = dynamic(() => import("@/components/Blog/BlogSidebar"), {
+  ssr: false,
+});
 
 const POSTS_PER_PAGE = 6;
 
@@ -30,7 +33,7 @@ export default function BlogListingPage() {
   const [filters, setFilters] = useState<BlogFilters>(DEFAULT_FILTERS);
   const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
 
-  const featured = getFeaturedPosts().slice(0, 1)[0];
+  const featured = useMemo(() => getFeaturedPosts().slice(0, 1)[0], []);
 
   // Apply filters
   const filteredPosts = useMemo(() => {
@@ -44,17 +47,17 @@ export default function BlogListingPage() {
 
   const visiblePosts = filteredPosts.slice(0, visibleCount);
   const hasMore = visibleCount < filteredPosts.length;
-  const isFiltered = !!(
+  const isFiltered = useMemo(() => !!(
     filters.search ||
     filters.category ||
     filters.tag ||
     filters.author
-  );
+  ), [filters.search, filters.category, filters.tag, filters.author]);
 
-  const handleFiltersChange = (newFilters: BlogFilters) => {
+  const handleFiltersChange = useCallback((newFilters: BlogFilters) => {
     setFilters(newFilters);
     setVisibleCount(POSTS_PER_PAGE);
-  };
+  }, []);
 
   return (
     <div className="min-h-screen bg-(--background) pt-18">

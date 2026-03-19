@@ -50,13 +50,17 @@ import SEO from "../../components/comman/SEO";
 import PageViewTracker from "../../components/comman/PageViewTracker";
 import GTM from "../../components/comman/GTM";
 import AOSInit from "../../components/comman/AOSInit";
-import FloatingSocials from "../../components/comman/FloatingSocials";
-import FloatingWhatsApp from "../../components/comman/FloatingWhatsApp";
+import Script from "next/script";
 import { CONTACT_INFO } from "@/constants/contact";
 
 import ClientUtilities from "../../components/comman/ClientUtilities";
 import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
-import GrowthStrategistBot from "../../components/PublicComponents/AIChatBot/AIChatBot";
+import dynamic from "next/dynamic";
+
+// The ClientUtilities component now handles the deferred loading of
+// widgets (Chatbot, Floating Socials, WhatsApp, etc.) to keep layout.tsx
+// clean and avoid SSR-related hydration mismatches or dynamic import errors.
+
 
 export const viewport: Viewport = {
   themeColor: "#d90b1c",
@@ -146,9 +150,18 @@ export default function RootLayout({
       className={`${rostex.variable} ${rostexOutline.variable} ${caveat.variable}`}
     >
       <head>
-        {/* Preload critical assets */}
+        {/* DNS prefetch for critical third-party origins */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <script
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        {/* Preconnect for Google Fonts if used */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Microsoft Clarity — deferred until after page hydration */}
+        <Script
+          id="clarity-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
@@ -211,9 +224,6 @@ export default function RootLayout({
           <GTM />
           <SEO />
           <Header />
-          <FloatingSocials />
-          <FloatingWhatsApp />
-          <GrowthStrategistBot />
           <main id="main-content" tabIndex={-1}>
             {children}
           </main>

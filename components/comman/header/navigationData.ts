@@ -88,31 +88,31 @@ export const navigationData: {
                 label: "Application Maintenance",
               },
               {
-                href: "/services/(technology-services)/website-design-company-in-aundh",
+                href: "/services/website-design-company-in-aundh",
                 label: "Web Design in Aundh",
               },
               {
-                href: "/services/(technology-services)/website-design-company-in-baner",
+                href: "/services/website-design-company-in-baner",
                 label: "Web Design in Baner",
               },
               {
-                href: "/services/(technology-services)/website-design-company-in-hadapsar",
+                href: "/services/website-design-company-in-hadapsar",
                 label: "Web Design in Hadapsar",
               },
               {
-                href: "/services/(technology-services)/website-design-company-in-kothrud",
+                href: "/services/website-design-company-in-kothrud",
                 label: "Web Design in Kothrud",
               },
               {
-                href: "/services/(technology-services)/website-design-company-in-pcmc",
+                href: "/services/website-design-company-in-pcmc",
                 label: "Web Design in PCMC",
               },
               {
-                href: "/services/(technology-services)/website-design-company-in-viman-nagar",
+                href: "/services/website-design-company-in-viman-nagar",
                 label: "Web Design in Viman Nagar",
               },
               {
-                href: "/services/(technology-services)/website-design-company-in-wakad",
+                href: "/services/website-design-company-in-wakad",
                 label: "Web Design in Wakad",
               },
             ],
@@ -171,7 +171,7 @@ export const navigationData: {
                 label: "Political Digital Marketing",
               },
               {
-                href: "/services/(digital-marketing)/seo-company-in-hinjewadi",
+                href: "/services/seo-company-in-hinjewadi",
                 label: "SEO Services Hinjewadi",
               },
             ],

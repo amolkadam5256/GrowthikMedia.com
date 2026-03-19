@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 const ScrollProgressBar = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-
   const [isDragging, setIsDragging] = useState(false);
 
-  const updateScrollProgress = () => {
+  // Memoized to avoid re-creating the function on every render.
+  const updateScrollProgress = useCallback(() => {
     const docHeight = document.documentElement.scrollHeight;
     const winHeight = window.innerHeight;
     const totalHeight = docHeight - winHeight;
@@ -17,9 +17,9 @@ const ScrollProgressBar = () => {
       const progress = (scrollPosition / totalHeight) * 100;
       setScrollProgress(progress);
     }
-  };
+  }, []);
 
-  const handleDrag = (e: React.MouseEvent | React.TouchEvent) => {
+  const handleDrag = useCallback((e: React.MouseEvent | React.TouchEvent) => {
     const clientX =
       "touches" in e ? e.touches[0].clientX : (e as React.MouseEvent).clientX;
     const { innerWidth } = window;
@@ -27,19 +27,26 @@ const ScrollProgressBar = () => {
     const totalHeight =
       document.documentElement.scrollHeight - window.innerHeight;
     window.scrollTo({ top: totalHeight * percentage, behavior: "auto" });
-  };
+  }, []);
 
-  const onMouseDown = (e: React.MouseEvent) => {
+  const onMouseDown = useCallback((e: React.MouseEvent) => {
     setIsDragging(true);
     handleDrag(e);
-  };
+  }, [handleDrag]);
 
-  const onTouchStart = (e: React.TouchEvent) => {
+  const onTouchStart = useCallback((e: React.TouchEvent) => {
     setIsDragging(true);
     handleDrag(e);
-  };
+  }, [handleDrag]);
 
   useEffect(() => {
+    // rAF-throttled scroll handler to cap updates at 60fps max
+    let rafId: number;
+    const onScroll = () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(updateScrollProgress);
+    };
+
     const onMouseMove = (e: MouseEvent) => {
       if (isDragging) {
         const percentage = e.clientX / window.innerWidth;
@@ -60,23 +67,22 @@ const ScrollProgressBar = () => {
       }
     };
 
-    window.addEventListener("scroll", updateScrollProgress);
-    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("mousemove", onMouseMove, { passive: true });
     window.addEventListener("mouseup", onMouseUp);
     window.addEventListener("keydown", onKeyDown);
 
-    const timer = setTimeout(() => {
-      updateScrollProgress();
-    }, 0);
+    // Initialise on mount
+    updateScrollProgress();
 
     return () => {
-      clearTimeout(timer);
-      window.removeEventListener("scroll", updateScrollProgress);
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("mouseup", onMouseUp);
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [isDragging]);
+  }, [isDragging, updateScrollProgress]);
 
   return (
     <div

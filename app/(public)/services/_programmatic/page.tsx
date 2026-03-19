@@ -51,12 +51,15 @@ export async function generateMetadata({
   locationOrIndustry = titleCase(locationOrIndustry);
 
   const exactOverrides: Record<string, string> = {
-    "lead-generation-company-in-pune": "Best Lead Generation Agency in Pune | Growthik Media",
+    "lead-generation-company-in-pune":
+      "Best Lead Generation Agency in Pune | Growthik Media",
   };
 
-  const metaTitle = exactOverrides[seoStrategy] || (isLocal
-    ? `Best ${service} Agency in ${locationOrIndustry} | Growthik Media`
-    : `Expert ${service} for ${locationOrIndustry} Brands | Growthik Media`);
+  const metaTitle =
+    exactOverrides[seoStrategy] ||
+    (isLocal
+      ? `Best ${service} Agency in ${locationOrIndustry} | Growthik Media`
+      : `Expert ${service} for ${locationOrIndustry} Brands | Growthik Media`);
 
   const metaDescription = isLocal
     ? `Top-rated ${service} company in ${locationOrIndustry}. We guarantee data-driven growth, better rankings, and higher ROI. Get your free strategy call today.`

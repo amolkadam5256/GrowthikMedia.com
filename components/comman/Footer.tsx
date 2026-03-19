@@ -30,15 +30,13 @@ import { images } from "@/app/assets/images/images";
 import { CONTACT_INFO } from "@/constants/contact";
 
 export default function Footer() {
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [email, setEmail] = useState("");
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setMounted(true);
-    }, 0);
+    setMounted(true);
 
     let ticking = false;
     const handleScroll = () => {
@@ -53,7 +51,6 @@ export default function Footer() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      clearTimeout(timer);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -72,9 +69,9 @@ export default function Footer() {
     }
   };
 
-  if (!mounted) return null;
-
-  const isDark = theme === "dark";
+  // Derive isDark only after hydration to avoid flash; before mount defaults
+  // to false (light mode classes) which matches the server-rendered HTML.
+  const isDark = mounted && resolvedTheme === "dark";
 
   const quickLinks = [
     { href: "/", label: "Home", icon: FiHome },

@@ -1,15 +1,31 @@
 import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  // Use Turbopack-compatible compiler options
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
+  experimental: {
+    // Faster next/font: preload only the subsets actually used
+    optimizePackageImports: [
+      "lucide-react",
+      "react-icons",
+      "@mui/material",
+      "@mui/icons-material",
+      "framer-motion",
+    ],
+  },
   // Enables static export if needed, but for performance with next/image,
   // we recommend server-side optimization or using a loader.
   // output: "export",
   trailingSlash: true,
+  compress: true, // Enable gzip/brotli compression
+  poweredByHeader: false, // Remove X-Powered-By header for security
   images: {
     // Enabled for better LCP/FCP
     unoptimized: false,
     formats: ["image/avif", "image/webp"],
-    qualities: [70, 70, 70, 70, 70, 70, 70, 70, 70, 75, 90],
     remotePatterns: [
       {
         protocol: "https",
@@ -83,6 +99,7 @@ const nextConfig: NextConfig = {
   },
   async headers() {
     return [
+      // Security headers for all routes
       {
         source: "/(.*)",
         headers: [
@@ -111,12 +128,38 @@ const nextConfig: NextConfig = {
             key: "Strict-Transport-Security",
             value: "max-age=31536000; includeSubDomains; preload",
           },
+        ],
+      },
+      // Long-term caching for Next.js static assets (JS, CSS, fonts, images)
+      {
+        source: "/_next/static/(.*)",
+        headers: [
           {
             key: "Cache-Control",
             value: "public, max-age=31536000, immutable",
           },
         ],
       },
+      // Long-term caching for public static assets
+      {
+        source: "/fonts/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/images/(.*)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
+      // API routes should never be cached at the browser level
       {
         source: "/api/(.*)",
         headers: [
