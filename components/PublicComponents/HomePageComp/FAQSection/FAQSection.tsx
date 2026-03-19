@@ -45,7 +45,7 @@ const FAQ_DATA = [
     id: 6,
     question: "What is the core focus of Growthik Media as a Pune agency?",
     answer:
-      "We focus on 'Growth Engineering'—combining code, AI, and marketing to build predictable revenue systems. Unlike traditional agencies that just provide services, we act as your growth partners to ensure every marketing rupee spent yields a measurable ROI for your Pune-based business.",
+      "We focus on 'Growth Engineering'-combining code, AI, and marketing to build predictable revenue systems. Unlike traditional agencies that just provide services, we act as your growth partners to ensure every marketing rupee spent yields a measurable ROI for your Pune-based business.",
   },
 ];
 

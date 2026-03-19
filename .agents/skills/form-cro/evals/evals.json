@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Audit our demo request form. It currently has these fields: First Name, Last Name, Work Email, Phone Number, Company Name, Company Size, Job Title, Industry, Current Solution, Budget Range, and a 'Tell us about your needs' textarea. Our conversion rate is 3.1% and we want to improve it.",
-      "expected_output": "Should check for product-marketing-context.md first. Should apply the 'every field has a cost' principle — 11 fields is excessive for a demo form. Should reference the field cost data (3 fields baseline, 7+ fields = 25-50% conversion reduction). Should evaluate each field: which are essential for demo prep, which can be collected later or inferred. Should recommend cutting to essential fields (likely Work Email, Company Name, and maybe one qualifier). Should provide audit findings in the structured format (Issue, Impact, Fix, Priority). Should recommend Quick Wins, High-Impact Changes, and Test Ideas.",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the 'every field has a cost' principle - 11 fields is excessive for a demo form. Should reference the field cost data (3 fields baseline, 7+ fields = 25-50% conversion reduction). Should evaluate each field: which are essential for demo prep, which can be collected later or inferred. Should recommend cutting to essential fields (likely Work Email, Company Name, and maybe one qualifier). Should provide audit findings in the structured format (Issue, Impact, Fix, Priority). Should recommend Quick Wins, High-Impact Changes, and Test Ideas.",
       "assertions": [
         "Checks for product-marketing-context.md",
         "Applies 'every field has a cost' principle",
@@ -33,7 +33,7 @@
     {
       "id": 3,
       "prompt": "should we use a single-step or multi-step form for our quote request? we need company info, project details, timeline, and budget.",
-      "expected_output": "Should trigger on casual phrasing. Should apply the multi-step form guidance — with this many required data types, multi-step is likely better. Should reference the threshold: multi-step recommended when more than 5-6 fields. Should recommend grouping by type (contact info → project details → budget/timeline). Should include progress indicator recommendation. Should apply best practices: easy questions first, save progress, allow back navigation. Should note that multi-step often increases completion for longer forms.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the multi-step form guidance - with this many required data types, multi-step is likely better. Should reference the threshold: multi-step recommended when more than 5-6 fields. Should recommend grouping by type (contact info → project details → budget/timeline). Should include progress indicator recommendation. Should apply best practices: easy questions first, save progress, allow back navigation. Should note that multi-step often increases completion for longer forms.",
       "assertions": [
         "Triggers on casual phrasing",
         "Recommends multi-step based on field count",

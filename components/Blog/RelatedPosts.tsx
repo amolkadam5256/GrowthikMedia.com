@@ -19,7 +19,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
             Related Articles
           </h2>
           <p className="text-(--text-secondary) font-medium text-sm mt-1">
-            Continue reading — you might enjoy these too
+            Continue reading - you might enjoy these too
           </p>
         </div>
         <Link

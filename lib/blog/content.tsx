@@ -53,7 +53,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         Search Engine Optimization (SEO) is the strategic process of improving a website&apos;s visibility on search engines like Google through organic (non-paid) results.
       </p>
       <p>
-        When users search for products, services, or information, SEO ensures your business appears at the top—helping you attract high-quality, targeted traffic without spending on ads. It is a long-term growth strategy that builds credibility, authority, and consistent conversions.
+        When users search for products, services, or information, SEO ensures your business appears at the top-helping you attract high-quality, targeted traffic without spending on ads. It is a long-term growth strategy that builds credibility, authority, and consistent conversions.
       </p>
 
       <blockquote>
@@ -124,7 +124,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
 
       <h2>💼 Why Choose Growthik Media for Pune-Based SEO?</h2>
       <p>
-        At Growthik Media, we specialize in <strong>&quot;Growth Engineering&quot;</strong>—combining deep code optimization with aggressive marketing. We provide:
+        At Growthik Media, we specialize in <strong>&quot;Growth Engineering&quot;</strong>-combining deep code optimization with aggressive marketing. We provide:
       </p>
       <ul>
         <li>Advanced <Link href="/blog/technical-seo-audit-checklist">Technical SEO Audits</Link></li>
@@ -354,7 +354,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <p className="lead">
         A comprehensive SEO audit is the starting point for any successful SEO
         strategy. Without knowing what&apos;s broken, you can&apos;t fix it.
-        This checklist covers every critical area — from technical foundations
+        This checklist covers every critical area - from technical foundations
         and on-page optimization to content quality and backlink profiles.
       </p>
 
@@ -473,7 +473,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <h2>Section 5: Local SEO (For Pune Businesses)</h2>
       <p>
         Local SEO helps your business appear for &apos;near me&apos; and
-        city-specific searches — critical for Pune-based businesses.
+        city-specific searches - critical for Pune-based businesses.
       </p>
       <ul>
         <li>
@@ -499,7 +499,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <p>
         Completing this SEO audit will give you a clear roadmap of what to fix
         and what to prioritize. The good news is that identifying these issues
-        is the hard part — most fixes are straightforward once you know what to
+        is the hard part - most fixes are straightforward once you know what to
         look for. At Growthik Media, we offer a free comprehensive SEO audit for
         Pune businesses. Book yours today and receive a detailed report within
         48 hours.
@@ -511,7 +511,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <p className="lead">
         In 2025, over 8.5 billion searches are performed on Google every single
         day. If your business doesn&apos;t appear in those results, a competitor
-        does. Search Engine Optimization (SEO) is no longer optional — it&apos;s
+        does. Search Engine Optimization (SEO) is no longer optional - it&apos;s
         a fundamental business survival strategy.
       </p>
       <h2>What Is SEO and How Does It Work?</h2>
@@ -585,7 +585,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <p>
         Third-party reviews on Google Maps, Clutch.co, or LinkedIn are more
         reliable than testimonials on the company&apos;s own website. Look for
-        patterns — are clients happy with their communication? Did they deliver
+        patterns - are clients happy with their communication? Did they deliver
         on time?
       </p>
       <h2>3. Their SEO Knowledge</h2>
@@ -679,10 +679,10 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
   "google-ads-vs-meta-ads": (
     <div className="blog-content">
       <p className="lead">
-        Google Ads and Meta Ads are the two biggest paid advertising platforms in the world — but they work in fundamentally different ways. Choosing the wrong one (or wrong budget split) is one of the most expensive mistakes Pune businesses make.
+        Google Ads and Meta Ads are the two biggest paid advertising platforms in the world - but they work in fundamentally different ways. Choosing the wrong one (or wrong budget split) is one of the most expensive mistakes Pune businesses make.
       </p>
       <h2>The Core Difference: Intent vs. Interest</h2>
-      <p>Google Ads shows your ads to people who are <strong>actively searching</strong> for what you offer. Meta Ads interrupts people while they&apos;re scrolling — so you need to create desire, not just capture it.</p>
+      <p>Google Ads shows your ads to people who are <strong>actively searching</strong> for what you offer. Meta Ads interrupts people while they&apos;re scrolling - so you need to create desire, not just capture it.</p>
       <blockquote>Google catches people when they&apos;re ready to buy. Meta builds the audience that will eventually be ready to buy.</blockquote>
       <h2>When Google Ads Wins</h2>
       <ul>
@@ -717,7 +717,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
   "core-web-vitals-guide": (
     <div className="blog-content">
       <p className="lead">
-        In 2025, Core Web Vitals are a confirmed Google ranking factor. Websites with poor scores see measurable ranking drops. Here&apos;s the technical guide to get your LCP, CLS, and INP into the &quot;Good&quot; range — and how we scored 100/100 on PageSpeed for multiple client sites.
+        In 2025, Core Web Vitals are a confirmed Google ranking factor. Websites with poor scores see measurable ranking drops. Here&apos;s the technical guide to get your LCP, CLS, and INP into the &quot;Good&quot; range - and how we scored 100/100 on PageSpeed for multiple client sites.
       </p>
       <h2>The Three Core Web Vitals Explained</h2>
       <ul>
@@ -732,7 +732,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         <li>Preload your LCP image with <code>&lt;link rel=&quot;preload&quot;&gt;</code></li>
         <li>Use AVIF or WebP format (50–70% smaller than JPEG)</li>
         <li>Serve images from a CDN (Vercel, Cloudflare, or CloudFront)</li>
-        <li>Reduce server response time — use Vercel Edge Functions or cache your pages</li>
+        <li>Reduce server response time - use Vercel Edge Functions or cache your pages</li>
         <li>Remove render-blocking CSS and JavaScript</li>
       </ul>
       <blockquote>The single biggest LCP win we see: switching from unoptimized PNG hero images to WebP with proper preloading. Average LCP improvement: 1.8 seconds.</blockquote>
@@ -746,7 +746,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       </ul>
       <h2>How to Fix INP (Interaction to Next Paint)</h2>
       <ul>
-        <li>Reduce JavaScript bundle size — code split with dynamic imports</li>
+        <li>Reduce JavaScript bundle size - code split with dynamic imports</li>
         <li>Move heavy computations to Web Workers</li>
         <li>Debounce and throttle event handlers</li>
         <li>Defer non-critical third-party scripts (chat widgets, analytics)</li>
@@ -757,7 +757,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
   "local-seo-pune": (
     <div className="blog-content">
       <p className="lead">
-        46% of all Google searches have local intent. For Pune businesses, ranking in the Google Map Pack — the 3 business listings that appear above organic results — is worth more than ranking #1 organically. Here&apos;s the complete 2025 local SEO strategy.
+        46% of all Google searches have local intent. For Pune businesses, ranking in the Google Map Pack - the 3 business listings that appear above organic results - is worth more than ranking #1 organically. Here&apos;s the complete 2025 local SEO strategy.
       </p>
       <h2>Step 1: Claim and Optimize Your Google Business Profile</h2>
       <p>Your Google Business Profile (GBP) is the single most important local SEO asset. Follow this optimization checklist:</p>
@@ -773,7 +773,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         <li>✅ Post weekly GBP updates (events, offers, news)</li>
       </ul>
       <h2>Step 2: Build Local Citations</h2>
-      <p>Citations are mentions of your business Name, Address, and Phone (NAP) on other websites. Consistency is critical — even a small discrepancy can hurt rankings.</p>
+      <p>Citations are mentions of your business Name, Address, and Phone (NAP) on other websites. Consistency is critical - even a small discrepancy can hurt rankings.</p>
       <ul>
         <li>Justdial, IndiaMart, Sulekha, UrbanClap (top Indian directories)</li>
         <li>Industry-specific directories relevant to your niche</li>
@@ -786,7 +786,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <p>Reviews are a massive local ranking factor. The key metrics Google watches: total review count, average rating, recency of reviews, and owner response rate.</p>
       <ul>
         <li>Ask every satisfied customer directly for a review</li>
-        <li>Respond to every review — positive and negative — within 48 hours</li>
+        <li>Respond to every review - positive and negative - within 48 hours</li>
         <li>Target 50+ reviews for competitive local categories</li>
         <li>Never buy or fake reviews</li>
       </ul>
@@ -797,7 +797,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
   "fix-high-bounce-rate": (
     <div className="blog-content">
       <p className="lead">
-        A high bounce rate (over 60–70%) is a symptom of a deeper problem — your website is failing to engage visitors before they can convert. Here are the 12 most common causes and their solutions.
+        A high bounce rate (over 60–70%) is a symptom of a deeper problem - your website is failing to engage visitors before they can convert. Here are the 12 most common causes and their solutions.
       </p>
       <h2>What Is a &quot;Good&quot; Bounce Rate?</h2>
       <p>Context matters. A blog post getting 80% bounce rate is normal (people read and leave). An e-commerce product page with 80% bounce rate is a crisis. Benchmark by page type:</p>
@@ -831,14 +831,14 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
   "b2b-content-marketing-india": (
     <div className="blog-content">
       <p className="lead">
-        Most Indian B2B companies copy Western content marketing playbooks — and then wonder why their blog gets zero traffic and their whitepapers have 12 downloads. Indian B2B buyers are different. Here&apos;s a strategy built specifically for the Indian market.
+        Most Indian B2B companies copy Western content marketing playbooks - and then wonder why their blog gets zero traffic and their whitepapers have 12 downloads. Indian B2B buyers are different. Here&apos;s a strategy built specifically for the Indian market.
       </p>
       <h2>How Indian B2B Buyers Are Different</h2>
       <p>Understanding the Indian B2B purchase journey is the foundation of any effective content strategy:</p>
       <ul>
-        <li>Decision cycles are longer — often 3–6 months for mid-market deals</li>
+        <li>Decision cycles are longer - often 3–6 months for mid-market deals</li>
         <li>Multiple stakeholders (committee buying is more common than in the West)</li>
-        <li>Price sensitivity is high — ROI and cost justification content performs well</li>
+        <li>Price sensitivity is high - ROI and cost justification content performs well</li>
         <li>WhatsApp is a legitimate professional communication channel</li>
         <li>LinkedIn adoption is growing rapidly in tier-1 Indian cities</li>
         <li>Vernacular content (Hindi, Marathi) is increasingly effective in regional markets</li>
@@ -849,8 +849,8 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <h3>2. Comparison Guides</h3>
       <p>Indian decision-makers do extensive research before committing. Content that helps them compare options (your solution vs alternatives) gets high search volume and builds trust.</p>
       <h3>3. How-to Guides for Compliance and Regulation</h3>
-      <p>GST compliance, SEBI regulations, labor law updates — content addressing India-specific regulatory challenges attracts highly qualified the B2B decision-makers.</p>
-      <blockquote>The Indian B2B buyer wants to see that you understand their specific context — regulatory environment, budget constraints, team structure. Generic Western-style thought leadership falls flat.</blockquote>
+      <p>GST compliance, SEBI regulations, labor law updates - content addressing India-specific regulatory challenges attracts highly qualified the B2B decision-makers.</p>
+      <blockquote>The Indian B2B buyer wants to see that you understand their specific context - regulatory environment, budget constraints, team structure. Generic Western-style thought leadership falls flat.</blockquote>
       <h2>Content Distribution in India</h2>
       <ul>
         <li><strong>LinkedIn:</strong> B2B decision-makers in India are most active 8–10am and 5–7pm on weekdays</li>

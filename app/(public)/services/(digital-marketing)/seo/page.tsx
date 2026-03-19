@@ -238,7 +238,7 @@ export default function SeoServicesPunePage() {
               <p className="text-(--text-secondary) font-medium text-lg mb-6 leading-relaxed">
                 Many businesses in Pune waste thousands of rupees on "cheap SEO
                 packages" that rely on outdated tricks, keyword stuffing, and
-                spammy backlinks. This doesn't just waste your money—it actively
+                spammy backlinks. This doesn't just waste your money-it actively
                 harms your domain ranking.
               </p>
 
@@ -543,39 +543,101 @@ export default function SeoServicesPunePage() {
               The Ultimate Guide to SEO in Pune
             </h2>
             <div className="w-16 h-1.5 bg-(--color-primary) mb-8"></div>
-            
+
             <p className="text-(--text-secondary) font-medium text-lg leading-relaxed mb-6">
-              Pune is a rapidly growing digital hub, home to hundreds of startups, robust IT parks in Hinjewadi and Magarpatta, and a booming local service economy. Standing out in this crowded market requires more than just basic keyword stuffing—it demands a strategic, data-driven approach to Search Engine Optimization (SEO). In this section, we'll dive deep into our methodology and explain why partnering with a specialized SEO agency is crucial for long-term growth.
+              Pune is a rapidly growing digital hub, home to hundreds of
+              startups, robust IT parks in Hinjewadi and Magarpatta, and a
+              booming local service economy. Standing out in this crowded market
+              requires more than just basic keyword stuffing-it demands a
+              strategic, data-driven approach to Search Engine Optimization
+              (SEO). In this section, we'll dive deep into our methodology and
+              explain why partnering with a specialized SEO agency is crucial
+              for long-term growth.
             </p>
 
-            <h3 className="text-2xl font-bold mb-4 text-(--text-primary)">Understanding the Local Pune Search Landscape</h3>
+            <h3 className="text-2xl font-bold mb-4 text-(--text-primary)">
+              Understanding the Local Pune Search Landscape
+            </h3>
             <p className="text-(--text-secondary) font-medium leading-relaxed mb-6">
-              Local SEO is no longer just about optimizing your Google Business Profile. Google's algorithms have evolved to prioritize semantics, user intent, and proximity. When a user in Viman Nagar searches for "best digital marketing agency," Google evaluates the entities associated with your brand, your site's technical health, and hyper-local signals such as citations from Pune-based directories and localized content hubs. Our approach starts with a granular analysis of these local search patterns, identifying low-hanging fruit and high-competition money keywords that drive conversions.
+              Local SEO is no longer just about optimizing your Google Business
+              Profile. Google's algorithms have evolved to prioritize semantics,
+              user intent, and proximity. When a user in Viman Nagar searches
+              for "best digital marketing agency," Google evaluates the entities
+              associated with your brand, your site's technical health, and
+              hyper-local signals such as citations from Pune-based directories
+              and localized content hubs. Our approach starts with a granular
+              analysis of these local search patterns, identifying low-hanging
+              fruit and high-competition money keywords that drive conversions.
             </p>
 
-            <h3 className="text-2xl font-bold mb-4 text-(--text-primary)">The Pillars of Enterprise SEO</h3>
+            <h3 className="text-2xl font-bold mb-4 text-(--text-primary)">
+              The Pillars of Enterprise SEO
+            </h3>
             <p className="text-(--text-secondary) font-medium leading-relaxed mb-4">
               A robust SEO strategy stands on four primary pillars:
             </p>
             <ul className="list-disc pl-6 mb-8 text-(--text-secondary) font-medium space-y-2">
-              <li><strong>Technical SEO:</strong> Ensure your website loads in under 2 seconds, scoring 90+ on Google Core Web Vitals. We optimize JavaScript rendering, compress images to WebP formats, and streamline CSS.</li>
-              <li><strong>On-Page Semantic Optimization:</strong> We structure your content using proper H1-H2-H3 hierarchies and rich JSON-LD schema markup. This helps search engine crawlers understand precisely what services you offer and where you offer them.</li>
-              <li><strong>E-E-A-T Content Strategies:</strong> Google rewards content that demonstrates Experience, Expertise, Authoritativeness, and Trustworthiness. We craft 1000+ word deep-dive articles that comprehensively solve your target audience's problems.</li>
-              <li><strong>Authority Link Building:</strong> We secure high-quality inbound links from authoritative domains through strategic digital PR, guest publishing, and strategic outreach. We never use PBNs (Private Blog Networks) or spammy directory submissions.</li>
+              <li>
+                <strong>Technical SEO:</strong> Ensure your website loads in
+                under 2 seconds, scoring 90+ on Google Core Web Vitals. We
+                optimize JavaScript rendering, compress images to WebP formats,
+                and streamline CSS.
+              </li>
+              <li>
+                <strong>On-Page Semantic Optimization:</strong> We structure
+                your content using proper H1-H2-H3 hierarchies and rich JSON-LD
+                schema markup. This helps search engine crawlers understand
+                precisely what services you offer and where you offer them.
+              </li>
+              <li>
+                <strong>E-E-A-T Content Strategies:</strong> Google rewards
+                content that demonstrates Experience, Expertise,
+                Authoritativeness, and Trustworthiness. We craft 1000+ word
+                deep-dive articles that comprehensively solve your target
+                audience's problems.
+              </li>
+              <li>
+                <strong>Authority Link Building:</strong> We secure high-quality
+                inbound links from authoritative domains through strategic
+                digital PR, guest publishing, and strategic outreach. We never
+                use PBNs (Private Blog Networks) or spammy directory
+                submissions.
+              </li>
             </ul>
 
-            <h3 className="text-2xl font-bold mb-4 text-(--text-primary)">Why E-Commerce Brands Need Specialized SEO</h3>
+            <h3 className="text-2xl font-bold mb-4 text-(--text-primary)">
+              Why E-Commerce Brands Need Specialized SEO
+            </h3>
             <p className="text-(--text-secondary) font-medium leading-relaxed mb-6">
-              For retail and D2C brands, standard SEO isn't enough. E-Commerce SEO involves complex taxonomy structuring, facet navigation optimization to prevent duplicate content, and aggressive schema markup for products and reviews. Whether you are built on Shopify, WooCommerce, or a custom Next.js storefront, we engineer your catalog to guarantee that individual products index and rank for high-intent, long-tail transactional queries.
+              For retail and D2C brands, standard SEO isn't enough. E-Commerce
+              SEO involves complex taxonomy structuring, facet navigation
+              optimization to prevent duplicate content, and aggressive schema
+              markup for products and reviews. Whether you are built on Shopify,
+              WooCommerce, or a custom Next.js storefront, we engineer your
+              catalog to guarantee that individual products index and rank for
+              high-intent, long-tail transactional queries.
             </p>
 
-            <h3 className="text-2xl font-bold mb-4 text-(--text-primary)">Measuring SEO ROI and KPIs</h3>
+            <h3 className="text-2xl font-bold mb-4 text-(--text-primary)">
+              Measuring SEO ROI and KPIs
+            </h3>
             <p className="text-(--text-secondary) font-medium leading-relaxed mb-6">
-              Transparency is at the core of our operations. We provide live dashboards via Google Looker Studio, integrating data from Google Search Console, Ahrefs, and Google Analytics 4. You won't just see "keyword rankings" – you'll see exact metrics on Customer Acquisition Cost (CAC) reduction, organic lead volume, phone calls from Google Maps, and total revenue directly attributed to your SEO campaigns. SEO is the most cost-effective marketing channel on a long timeframe, offering unparalleled compound interest on your digital real estate.
+              Transparency is at the core of our operations. We provide live
+              dashboards via Google Looker Studio, integrating data from Google
+              Search Console, Ahrefs, and Google Analytics 4. You won't just see
+              "keyword rankings" – you'll see exact metrics on Customer
+              Acquisition Cost (CAC) reduction, organic lead volume, phone calls
+              from Google Maps, and total revenue directly attributed to your
+              SEO campaigns. SEO is the most cost-effective marketing channel on
+              a long timeframe, offering unparalleled compound interest on your
+              digital real estate.
             </p>
 
             <p className="text-(--text-secondary) font-medium leading-relaxed">
-              If your current agency is sending you automated PDF reports without explaining the business impact, it's time for an upgrade. Reach out to our senior growth strategists to see how we can transform your website into an automated lead generation machine.
+              If your current agency is sending you automated PDF reports
+              without explaining the business impact, it's time for an upgrade.
+              Reach out to our senior growth strategists to see how we can
+              transform your website into an automated lead generation machine.
             </p>
           </div>
         </section>

@@ -47,12 +47,11 @@ export default function BlogListingPage() {
 
   const visiblePosts = filteredPosts.slice(0, visibleCount);
   const hasMore = visibleCount < filteredPosts.length;
-  const isFiltered = useMemo(() => !!(
-    filters.search ||
-    filters.category ||
-    filters.tag ||
-    filters.author
-  ), [filters.search, filters.category, filters.tag, filters.author]);
+  const isFiltered = useMemo(
+    () =>
+      !!(filters.search || filters.category || filters.tag || filters.author),
+    [filters.search, filters.category, filters.tag, filters.author],
+  );
 
   const handleFiltersChange = useCallback((newFilters: BlogFilters) => {
     setFilters(newFilters);
@@ -122,7 +121,7 @@ export default function BlogListingPage() {
               </div>
             </div>
 
-            {/* Right — Featured Hero Post */}
+            {/* Right - Featured Hero Post */}
             {featured && !isFiltered && (
               <div className="relative lg:ml-auto w-full max-w-lg group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-(--color-primary) to-orange-500 rounded-[2.5rem] opacity-20 group-hover:opacity-30 blur-2xl transition-opacity duration-500" />

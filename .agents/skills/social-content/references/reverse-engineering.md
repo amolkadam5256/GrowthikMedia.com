@@ -3,39 +3,44 @@
 Instead of guessing what works, systematically analyze top-performing content in your niche and extract proven patterns.
 
 ## Contents
+
 - The 6-Step Framework (Niche ID, Scrape, Analyze, Playbook, Layer Voice, Convert)
 - The Formula
 - Reverse Engineering Checklist
 
 ## The 6-Step Framework
 
-### 1. NICHE ID — Find Top Creators
+### 1. NICHE ID - Find Top Creators
 
 Identify 10-20 creators in your space who consistently get high engagement:
 
 **Selection criteria:**
+
 - Posting consistently (3+ times/week)
 - High engagement rate relative to follower count
 - Audience overlap with your target market
 - Mix of established and rising creators
 
 **Where to find them:**
+
 - LinkedIn: Search by industry keywords, check "People also viewed"
 - Twitter/X: Check who your target audience follows and engages with
 - Use tools like SparkToro, Followerwonk, or manual research
 - Look at who gets featured in industry newsletters
 
-### 2. SCRAPE — Collect Posts at Scale
+### 2. SCRAPE - Collect Posts at Scale
 
 Gather 500-1000+ posts from your identified creators for analysis:
 
 **Tools:**
-- **Apify** — LinkedIn scraper, Twitter scraper actors
-- **Phantom Buster** — Multi-platform automation
-- **Export tools** — Platform-specific export features
-- **Manual collection** — For smaller datasets, copy/paste into spreadsheet
+
+- **Apify** - LinkedIn scraper, Twitter scraper actors
+- **Phantom Buster** - Multi-platform automation
+- **Export tools** - Platform-specific export features
+- **Manual collection** - For smaller datasets, copy/paste into spreadsheet
 
 **Data to collect:**
+
 - Post text/content
 - Engagement metrics (likes, comments, shares, saves)
 - Post format (text-only, carousel, video, image)
@@ -44,11 +49,12 @@ Gather 500-1000+ posts from your identified creators for analysis:
 - CTA used
 - Topic/theme
 
-### 3. ANALYZE — Extract What Actually Works
+### 3. ANALYZE - Extract What Actually Works
 
 Sort and analyze the data to find patterns:
 
 **Quantitative analysis:**
+
 - Rank posts by engagement rate
 - Identify top 10% performers
 - Look for format patterns (do carousels outperform?)
@@ -56,6 +62,7 @@ Sort and analyze the data to find patterns:
 - Compare topic performance
 
 **Qualitative analysis:**
+
 - What hooks do top posts use?
 - How long are high-performing posts?
 - What emotional triggers appear?
@@ -63,16 +70,18 @@ Sort and analyze the data to find patterns:
 - What topics consistently perform?
 
 **Questions to answer:**
+
 - What's the average length of top posts?
 - Which hook types appear most in top 10%?
 - What CTAs drive most comments?
 - What topics get saved/shared most?
 
-### 4. PLAYBOOK — Codify Patterns
+### 4. PLAYBOOK - Codify Patterns
 
 Document repeatable patterns you can use:
 
 **Hook patterns to codify:**
+
 ```
 Pattern: "I [unexpected action] and [surprising result]"
 Example: "I stopped posting daily and my engagement doubled"
@@ -88,27 +97,31 @@ Why it works: Pattern interrupt + invites debate
 ```
 
 **Format patterns:**
+
 - Carousel: Hook slide → Problem → Solution steps → CTA
 - Thread: Hook → Promise → Deliver → Recap → CTA
 - Story post: Hook → Setup → Conflict → Resolution → Lesson
 
 **CTA patterns:**
+
 - Question: "What would you add?"
 - Agreement: "Agree or disagree?"
 - Share: "Tag someone who needs this"
 - Save: "Save this for later"
 
-### 5. LAYER VOICE — Apply Direct Response Principles
+### 5. LAYER VOICE - Apply Direct Response Principles
 
 Take proven patterns and make them yours with these voice principles:
 
 **"Smart friend who figured something out"**
+
 - Write like you're texting advice to a friend
 - Share discoveries, not lectures
 - Use "I found that..." not "You should..."
 - Be helpful, not preachy
 
 **Specific > Vague**
+
 ```
 ❌ "I made good revenue"
 ✅ "I made $47,329"
@@ -121,6 +134,7 @@ Take proven patterns and make them yours with these voice principles:
 ```
 
 **Short. Breathe. Land.**
+
 - One idea per sentence
 - Use line breaks liberally
 - Let important points stand alone
@@ -140,6 +154,7 @@ Everything changed."
 ```
 
 **Write from emotion**
+
 - Start with how you felt, not what you did
 - Use emotional words: frustrated, excited, terrified, obsessed
 - Show vulnerability when authentic
@@ -155,17 +170,19 @@ My hands were shaking when I sent the email.
 Here's what happened..."
 ```
 
-### 6. CONVERT — Turn Attention into Action
+### 6. CONVERT - Turn Attention into Action
 
 Bridge from engagement to business results:
 
 **Soft conversions:**
+
 - Newsletter signups in bio/comments
 - Free resource offers in follow-up comments
 - DM triggers ("Comment X and I'll send you...")
 - Profile visits → optimized profile with clear CTA
 
 **Direct conversions:**
+
 - Link in comments (not post body on LinkedIn)
 - Contextual product mentions within valuable content
 - Case study posts that naturally showcase your work

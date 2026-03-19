@@ -211,8 +211,8 @@ export default function ServicePage() {
             </div>
 
             <p className="text-base md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-12 leading-relaxed text-center px-2">
-              Looking for a professional Brand Marketing Communications in Pune? We
-              build high-performance digital assets that rank on Google and
+              Looking for a professional Brand Marketing Communications in Pune?
+              We build high-performance digital assets that rank on Google and
               convert visitors into customers.{" "}
               <strong className="text-(--text-primary)">
                 Predictable Revenue Systems, Not Just Ads.
@@ -377,13 +377,14 @@ export default function ServicePage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-black mb-4 uppercase tracking-tight text-(--text-primary)">
-                Professional Brand Marketing Communications for Modern Businesses
+                Professional Brand Marketing Communications for Modern
+                Businesses
               </h2>
               <div className="w-20 h-1.5 bg-(--color-primary) mx-auto mb-6"></div>
               <p className="text-(--text-secondary) font-medium text-lg max-w-2xl mx-auto">
-                Your digital presence is your storefront. If it’s slow, outdated,
-                or poorly designed, you lose customers instantly. We build
-                websites that look premium and perform exceptionally.
+                Your digital presence is your storefront. If it’s slow,
+                outdated, or poorly designed, you lose customers instantly. We
+                build websites that look premium and perform exceptionally.
               </p>
             </div>
 
@@ -730,7 +731,8 @@ export default function ServicePage() {
             {/* Importance */}
             <div>
               <h2 className="text-3xl font-black mb-4 uppercase tracking-tight text-(--text-primary)">
-                Importance of Custom Brand Marketing Communications for Business Growth
+                Importance of Custom Brand Marketing Communications for Business
+                Growth
               </h2>
               <div className="w-16 h-1.5 bg-(--color-primary) mb-8"></div>
               <div className="space-y-6">
@@ -819,13 +821,13 @@ export default function ServicePage() {
                 Why Choose Growthik Media
               </h2>
               <p className="text-(--color-primary) font-bold text-xl mb-4 tracking-wide">
-                We are not just designers — we are growth partners.
+                We are not just designers - we are growth partners.
               </p>
               <p className="text-(--text-secondary) font-medium mb-10 leading-relaxed max-w-lg">
                 Founded with a core mission to empower brands digitally, our
                 expert team combines creative web design with data-driven SEO.
                 We have proudly served industries across healthcare, real
-                estate, retail, and tech—building tailored digital experiences
+                estate, retail, and tech-building tailored digital experiences
                 that rank and convert.
               </p>
               <div className="grid grid-cols-2 gap-6">
@@ -879,8 +881,14 @@ export default function ServicePage() {
                   { loc: "Hinjewadi", slug: "seo-company-in-hinjewadi" },
                   { loc: "Aundh", slug: "website-design-company-in-aundh" },
                   { loc: "Kothrud", slug: "website-design-company-in-kothrud" },
-                  { loc: "Hadapsar", slug: "website-design-company-in-hadapsar" },
-                  { loc: "Viman Nagar", slug: "website-design-company-in-viman-nagar" },
+                  {
+                    loc: "Hadapsar",
+                    slug: "website-design-company-in-hadapsar",
+                  },
+                  {
+                    loc: "Viman Nagar",
+                    slug: "website-design-company-in-viman-nagar",
+                  },
                   { loc: "PCMC", slug: "website-design-company-in-pcmc" },
                 ].map((locData, i) => (
                   <Link
@@ -962,7 +970,8 @@ export default function ServicePage() {
               </h2>
               <div className="w-16 h-1.5 bg-(--color-primary) mb-8"></div>
               <p className="text-(--text-primary) mb-6 font-bold text-lg">
-                Brand Marketing Communications cost depends on several key factors:
+                Brand Marketing Communications cost depends on several key
+                factors:
               </p>
               <ul className="space-y-4 mb-10">
                 {[
@@ -982,8 +991,8 @@ export default function ServicePage() {
                 ))}
               </ul>
               <p className="text-(--text-secondary) font-medium mb-8">
-                We offer affordable brand marketing communications packages tailored for
-                startups, SMEs, and enterprises.
+                We offer affordable brand marketing communications packages
+                tailored for startups, SMEs, and enterprises.
               </p>
               <Link
                 href="/contact"
@@ -1057,8 +1066,8 @@ export default function ServicePage() {
               Contact Us
             </h2>
             <p className="text-xl md:text-2xl text-(--text-secondary) font-medium mb-12 max-w-2xl mx-auto">
-              Partner with the best Brand Marketing Communications in Pune to build a
-              high-performance digital presence.
+              Partner with the best Brand Marketing Communications in Pune to
+              build a high-performance digital presence.
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-12">

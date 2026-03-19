@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
-// Lazy-load both widgets — neither is needed for the first paint.
+// Lazy-load both widgets - neither is needed for the first paint.
 // Splitting them into separate chunks means the browser only parses
 // the code it needs, keeping main-thread time low during page load.
 const ScrollProgressBar = dynamic(() => import("./ScrollProgressBar"), {
@@ -32,13 +32,22 @@ export default function ClientUtilities() {
     // painting before we trigger the widget chunk downloads.
     const schedule =
       typeof window !== "undefined" && "requestIdleCallback" in window
-        ? (cb: () => void) => (window as Window & typeof globalThis & { requestIdleCallback: (cb: () => void) => number }).requestIdleCallback(cb)
+        ? (cb: () => void) =>
+            (
+              window as Window &
+                typeof globalThis & {
+                  requestIdleCallback: (cb: () => void) => number;
+                }
+            ).requestIdleCallback(cb)
         : (cb: () => void) => setTimeout(cb, 200);
 
     const id = schedule(() => setMounted(true));
     return () => {
       if (typeof window !== "undefined" && "cancelIdleCallback" in window) {
-        (window as Window & typeof globalThis & { cancelIdleCallback: (id: number) => void }).cancelIdleCallback(id as unknown as number);
+        (
+          window as Window &
+            typeof globalThis & { cancelIdleCallback: (id: number) => void }
+        ).cancelIdleCallback(id as unknown as number);
       }
     };
   }, []);

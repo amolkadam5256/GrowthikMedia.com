@@ -7,7 +7,7 @@ import TrustStrip from "@/components/PublicComponents/HomePageComp/TrustStrip/Tr
 
 // Code-split all below-fold sections.
 // ssr:false in a "use client" component means Next.js emits these as separate
-// JS chunks, loaded client-side only — reducing initial JS bundle & parse time.
+// JS chunks, loaded client-side only - reducing initial JS bundle & parse time.
 const IndustriesWeServeSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/IndustriesWeServe/IndustriesWeServeSection"),

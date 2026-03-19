@@ -40,7 +40,7 @@ export default function ServicePage() {
       <section className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden">
         <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[50%] h-[50%] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
-        
+
         <div className="relative z-10 max-w-5xl mx-auto">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--background) border border-(--border) shadow-sm shadow-black/5 mb-6 text-sm font-bold text-(--color-primary) tracking-wide">
             <Globe className="w-4 h-4" />
@@ -54,11 +54,11 @@ export default function ServicePage() {
           </h1>
           <p className="text-lg md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
             Looking for professional Next.js Development in Pune? We create
-            custom, data-driven, SEO-optimized solutions that help
-            businesses generate leads, increase visibility, and grow revenue. As
-            a leading Digital Marketing Agency in Pune, we don’t just deliver
-            services — we build high-performance digital assets that rank on
-            Google and convert visitors into customers.
+            custom, data-driven, SEO-optimized solutions that help businesses
+            generate leads, increase visibility, and grow revenue. As a leading
+            Digital Marketing Agency in Pune, we don’t just deliver services -
+            we build high-performance digital assets that rank on Google and
+            convert visitors into customers.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -88,7 +88,8 @@ export default function ServicePage() {
             <p className="text-(--text-secondary) font-medium text-lg max-w-2xl mx-auto">
               Your digital presence is your storefront. If it’s slow, outdated,
               or poorly executed, you lose customers instantly. We deliver
-              Next.js Development services that look premium and perform exceptionally.
+              Next.js Development services that look premium and perform
+              exceptionally.
             </p>
           </div>
 
@@ -108,7 +109,9 @@ export default function ServicePage() {
                 <div className="w-14 h-14 bg-(--color-primary)/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-(--color-primary) group-hover:text-white text-(--color-primary) transition-colors">
                   <feature.icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-(--text-primary)">{feature.title}</h3>
+                <h3 className="text-xl font-bold mb-2 text-(--text-primary)">
+                  {feature.title}
+                </h3>
                 <p className="text-(--text-secondary) text-sm font-medium">
                   We ensure our services meet the highest standard of modern
                   digital marketing practices.
@@ -155,7 +158,7 @@ export default function ServicePage() {
                 </li>
               ))}
             </ul>
-             <div className="p-6 bg-(--background) rounded-xl border border-(--border)">
+            <div className="p-6 bg-(--background) rounded-xl border border-(--border)">
               <h4 className="font-bold mb-4 text-sm uppercase tracking-widest text-(--text-primary)">
                 We help you rank for:
               </h4>
@@ -186,7 +189,8 @@ export default function ServicePage() {
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
                 </div>
                 <div className="bg-(--surface) text-xs px-4 py-2 rounded-full font-mono text-(--text-secondary) w-full text-center flex items-center justify-center font-bold truncate">
-                  <Globe className="w-3 h-3 mr-2 hidden sm:block" /> growthikmedia.com
+                  <Globe className="w-3 h-3 mr-2 hidden sm:block" />{" "}
+                  growthikmedia.com
                 </div>
               </div>
               <div className="space-y-4">
@@ -240,7 +244,9 @@ export default function ServicePage() {
                     <CheckCircle2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-(--text-primary)">{item.title}</h3>
+                    <h3 className="font-bold text-lg text-(--text-primary)">
+                      {item.title}
+                    </h3>
                     <p className="text-(--text-secondary) font-medium text-sm">
                       {item.desc}
                     </p>
@@ -274,13 +280,15 @@ export default function ServicePage() {
                   <div className="w-8 h-8 bg-(--surface) border border-(--border) text-(--color-primary) rounded-full flex items-center justify-center font-black text-sm shrink-0 shadow-sm">
                     {idx + 1}
                   </div>
-                  <span className="font-bold text-(--text-primary) text-sm">{step}</span>
+                  <span className="font-bold text-(--text-primary) text-sm">
+                    {step}
+                  </span>
                 </div>
               ))}
             </div>
             <p className="mt-6 text-xs text-(--text-secondary) text-center font-bold tracking-widest uppercase">
-              We ensure every campaign is data-backed, monitored, and
-              optimized for maximum ROI.
+              We ensure every campaign is data-backed, monitored, and optimized
+              for maximum ROI.
             </p>
           </div>
         </div>
@@ -294,7 +302,7 @@ export default function ServicePage() {
               Why We Are the Best Next.js Development Company in Pune
             </h2>
             <p className="text-(--color-primary-light) font-bold text-xl mb-10 tracking-wide">
-              We are not just agency vendors — we are your growth partners.
+              We are not just agency vendors - we are your growth partners.
             </p>
             <div className="grid grid-cols-2 gap-6">
               {[
@@ -409,7 +417,7 @@ export default function ServicePage() {
           {/* Pricing */}
           <div className="bg-(--background) p-8 md:p-12 rounded-3xl border border-(--border) shadow-xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-(--color-primary)/5 rounded-bl-full pointer-events-none" />
-            
+
             <h2 className="text-3xl font-black mb-4 uppercase tracking-tight text-(--text-primary)">
               Next.js Development Pricing in Pune
             </h2>
@@ -425,7 +433,10 @@ export default function ServicePage() {
                 "Target geographic reach",
                 "Resource allocation required",
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 font-medium text-(--text-secondary)">
+                <li
+                  key={i}
+                  className="flex items-center gap-3 font-medium text-(--text-secondary)"
+                >
                   <CheckCircle2 className="w-5 h-5 text-(--color-primary)" />
                   {item}
                 </li>
@@ -496,8 +507,8 @@ export default function ServicePage() {
             Ready to Supercharge Your Business?
           </h2>
           <p className="text-xl text-white/90 font-medium mb-12">
-            Partner with the leading growth engineering company in Pune and transform
-            your digital trajectory immediately.
+            Partner with the leading growth engineering company in Pune and
+            transform your digital trajectory immediately.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-12">

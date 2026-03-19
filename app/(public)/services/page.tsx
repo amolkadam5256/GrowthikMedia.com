@@ -23,10 +23,10 @@ import {
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 
-// FilterableServices has interactive state and lives below the fold —
+// FilterableServices has interactive state and lives below the fold -
 // dynamic import keeps it out of the initial page bundle.
-const FilterableServices = dynamic(
-  () => import("./_components/FilterableServices").then((m) => m.FilterableServices),
+const FilterableServices = dynamic(() =>
+  import("./_components/FilterableServices").then((m) => m.FilterableServices),
 );
 
 export const metadata: Metadata = {

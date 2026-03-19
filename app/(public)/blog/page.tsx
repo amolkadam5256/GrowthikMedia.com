@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { CONTACT_INFO } from "@/constants/contact";
 import BlogListingClient from "./BlogListingClient";
 
-// Blog listing data is compile-time static — force SSG for CDN-level caching
+// Blog listing data is compile-time static - force SSG for CDN-level caching
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: `${CONTACT_INFO.website}/blog`,
   },
   openGraph: {
-    title: "Blog | Growthik Media — Digital Marketing Insights",
+    title: "Blog | Growthik Media - Digital Marketing Insights",
     description:
       "Expert digital marketing, SEO, and web design articles for Pune businesses.",
     url: `${CONTACT_INFO.website}/blog`,
@@ -35,7 +35,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blog | Growthik Media",
-    description: "Expert digital marketing and SEO insights for Pune businesses.",
+    description:
+      "Expert digital marketing and SEO insights for Pune businesses.",
     images: ["/og-image.png"],
     creator: "@growthikmedia",
   },

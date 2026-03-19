@@ -20,11 +20,11 @@ import { CONTACT_INFO } from "@/constants/contact";
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 export interface LocationPageProps {
-  area: string;           // "Aundh"
-  city: string;           // "Pune"
+  area: string; // "Aundh"
+  city: string; // "Pune"
   primaryService: string; // "Website Design Company"
-  slug: string;           // "website-design-company-in-aundh"
-  headline: string;       // "Best Website Design Company in Aundh"
+  slug: string; // "website-design-company-in-aundh"
+  headline: string; // "Best Website Design Company in Aundh"
   subheadline: string;
   areaDescription: string;
   services: { icon: React.ElementType; name: string; desc: string }[];
@@ -130,9 +130,16 @@ export default function LocationPageTemplate({
           <div className="relative z-10 max-w-5xl mx-auto">
             {/* Breadcrumb */}
             <nav className="flex items-center gap-2 text-sm text-(--text-secondary) font-medium mb-6">
-              <Link href="/" className="hover:text-(--color-primary) transition-colors">Home</Link>
+              <Link
+                href="/"
+                className="hover:text-(--color-primary) transition-colors"
+              >
+                Home
+              </Link>
               <ArrowRight className="w-3 h-3" />
-              <span className="text-(--text-primary) font-bold">{primaryService} in {area}</span>
+              <span className="text-(--text-primary) font-bold">
+                {primaryService} in {area}
+              </span>
             </nav>
 
             {/* Badge */}
@@ -155,9 +162,21 @@ export default function LocationPageTemplate({
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-x-8 gap-y-3 mb-10 text-sm font-bold text-(--text-secondary) uppercase tracking-wider">
               {[
-                { icon: CheckCircle2, label: "350+ Websites Built", color: "text-green-500" },
-                { icon: Star, label: "5-Star Rated Agency", color: "text-yellow-500" },
-                { icon: Award, label: "7+ Years in Pune", color: "text-(--color-primary)" },
+                {
+                  icon: CheckCircle2,
+                  label: "350+ Websites Built",
+                  color: "text-green-500",
+                },
+                {
+                  icon: Star,
+                  label: "5-Star Rated Agency",
+                  color: "text-yellow-500",
+                },
+                {
+                  icon: Award,
+                  label: "7+ Years in Pune",
+                  color: "text-(--color-primary)",
+                },
               ].map(({ icon: Icon, label, color }) => (
                 <span key={label} className="flex items-center gap-2">
                   <Icon className={`w-4 h-4 ${color}`} />
@@ -188,7 +207,7 @@ export default function LocationPageTemplate({
         <section className="px-6 lg:px-12 py-16 bg-(--background)">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-black mb-4 text-(--text-primary)">
-              {primaryService} in {area} — Why Growthik Media?
+              {primaryService} in {area} - Why Growthik Media?
             </h2>
             <div className="w-12 h-1.5 bg-(--color-primary) mb-6 rounded-full" />
             <p className="text-(--text-secondary) font-medium text-lg leading-relaxed">
@@ -208,8 +227,12 @@ export default function LocationPageTemplate({
             ].map(({ icon: Icon, value, label }) => (
               <div key={label} className="text-center">
                 <Icon className="w-8 h-8 text-(--color-primary) mx-auto mb-2" />
-                <div className="text-3xl font-black text-(--text-primary)">{value}</div>
-                <div className="text-sm font-bold text-(--text-secondary) mt-1">{label}</div>
+                <div className="text-3xl font-black text-(--text-primary)">
+                  {value}
+                </div>
+                <div className="text-sm font-bold text-(--text-secondary) mt-1">
+                  {label}
+                </div>
               </div>
             ))}
           </div>
@@ -224,7 +247,8 @@ export default function LocationPageTemplate({
               </h2>
               <div className="w-16 h-1.5 bg-(--color-primary) mx-auto mb-4 rounded-full" />
               <p className="text-(--text-secondary) font-medium max-w-xl mx-auto">
-                Comprehensive digital solutions tailored for businesses in {area}, {city}.
+                Comprehensive digital solutions tailored for businesses in{" "}
+                {area}, {city}.
               </p>
             </div>
 
@@ -239,8 +263,12 @@ export default function LocationPageTemplate({
                     <div className="w-12 h-12 bg-(--background) rounded-xl flex items-center justify-center mb-4 border border-(--border) text-(--color-primary) group-hover:bg-(--color-primary) group-hover:text-white transition-all duration-300">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-lg font-black mb-2 text-(--text-primary)">{service.name}</h3>
-                    <p className="text-sm text-(--text-secondary) font-medium leading-relaxed">{service.desc}</p>
+                    <h3 className="text-lg font-black mb-2 text-(--text-primary)">
+                      {service.name}
+                    </h3>
+                    <p className="text-sm text-(--text-secondary) font-medium leading-relaxed">
+                      {service.desc}
+                    </p>
                   </div>
                 );
               })}
@@ -264,7 +292,9 @@ export default function LocationPageTemplate({
                   className="p-6 bg-(--background) border border-(--border) rounded-2xl"
                 >
                   <h3 className="text-base md:text-lg font-black text-(--text-primary) mb-3 flex items-start gap-3">
-                    <span className="text-(--color-primary) font-black text-lg leading-none mt-0.5">Q.</span>
+                    <span className="text-(--color-primary) font-black text-lg leading-none mt-0.5">
+                      Q.
+                    </span>
                     {faq.q}
                   </h3>
                   <p className="text-(--text-secondary) font-medium text-sm md:text-base leading-relaxed pl-7">
@@ -285,7 +315,8 @@ export default function LocationPageTemplate({
               Ready to Grow Your Business in {area}?
             </h2>
             <p className="text-lg text-white/90 font-medium mb-10 max-w-xl mx-auto">
-              Join 400+ businesses across {city} that trust Growthik Media for their digital success.
+              Join 400+ businesses across {city} that trust Growthik Media for
+              their digital success.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link

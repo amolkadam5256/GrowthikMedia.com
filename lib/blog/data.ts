@@ -156,7 +156,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "SEO Audit Checklist 2025: 50 Points to Audit Your Website Like a Pro",
     slug: "technical-seo-audit-checklist",
     excerpt:
-      "A comprehensive SEO audit checklist covering technical SEO, on-page optimization, E-E-A-T content quality, backlinks, and local SEO — audit your site like a professional agency.",
+      "A comprehensive SEO audit checklist covering technical SEO, on-page optimization, E-E-A-T content quality, backlinks, and local SEO - audit your site like a professional agency.",
     content: "",
     featuredImage:
       "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=80",
@@ -222,14 +222,14 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: true,
     metaTitle: "How to Choose a Web Design Company in Pune | Growthik Media",
     metaDescription:
-      "Discover 7 critical factors to evaluate before hiring a website design company in Pune — portfolio, process, SEO, and more.",
+      "Discover 7 critical factors to evaluate before hiring a website design company in Pune - portfolio, process, SEO, and more.",
   },
   {
     id: "post-4",
     title: "Website Cost in Pune: A Complete 2025 Pricing Guide",
     slug: "website-cost-in-pune",
     excerpt:
-      "How much does a website cost in Pune in 2025? A complete breakdown from ₹8,000 basic sites to ₹20 lakh+ custom web apps — with what each price range actually gets you.",
+      "How much does a website cost in Pune in 2025? A complete breakdown from ₹8,000 basic sites to ₹20 lakh+ custom web apps - with what each price range actually gets you.",
     content: "website-cost-in-pune",
     featuredImage:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
@@ -271,7 +271,7 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: true,
     metaTitle: "Google Ads vs Meta Ads for Pune Businesses | Growthik Media",
     metaDescription:
-      "Google Ads or Meta Ads — which is better for your Pune business in 2025? Real campaign data, cost comparisons, and expert recommendations.",
+      "Google Ads or Meta Ads - which is better for your Pune business in 2025? Real campaign data, cost comparisons, and expert recommendations.",
   },
   {
     id: "post-6",
@@ -303,7 +303,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Local SEO Strategy for Pune Businesses: Dominate the Map Pack in 2025",
     slug: "local-seo-pune",
     excerpt:
-      "Rank in Google's Map Pack for Pune area searches with this step-by-step local SEO strategy — Google Business Profile, citations, reviews, and hyper-local content.",
+      "Rank in Google's Map Pack for Pune area searches with this step-by-step local SEO strategy - Google Business Profile, citations, reviews, and hyper-local content.",
     content: "local-seo-pune",
     featuredImage:
       "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&q=80",
@@ -327,7 +327,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Why Your Website Bounce Rate Is High (And How to Fix It)",
     slug: "fix-high-bounce-rate",
     excerpt:
-      "A high bounce rate kills your conversions and tanks your SEO. Here are the 12 most common causes of bounce rate — and exact, actionable fixes for each one.",
+      "A high bounce rate kills your conversions and tanks your SEO. Here are the 12 most common causes of bounce rate - and exact, actionable fixes for each one.",
     content: "fix-high-bounce-rate",
     featuredImage:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",

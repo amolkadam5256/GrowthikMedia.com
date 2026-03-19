@@ -61,7 +61,6 @@ import dynamic from "next/dynamic";
 // widgets (Chatbot, Floating Socials, WhatsApp, etc.) to keep layout.tsx
 // clean and avoid SSR-related hydration mismatches or dynamic import errors.
 
-
 export const viewport: Viewport = {
   themeColor: "#d90b1c",
   width: "device-width",
@@ -157,8 +156,12 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.clarity.ms" />
         {/* Preconnect for Google Fonts if used */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Microsoft Clarity — deferred until after page hydration */}
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        {/* Microsoft Clarity - deferred until after page hydration */}
         <Script
           id="clarity-script"
           strategy="afterInteractive"

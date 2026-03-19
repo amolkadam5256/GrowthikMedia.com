@@ -106,7 +106,7 @@ export default function ServicePage() {
             custom, data-driven, SEO-optimized solutions that help
             businesses generate leads, increase visibility, and grow revenue. As
             a leading Digital Marketing Agency in Pune, we don’t just deliver
-            services — we build high-performance digital assets that rank on
+            services - we build high-performance digital assets that rank on
             Google and convert visitors into customers.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -343,7 +343,7 @@ export default function ServicePage() {
               Why We Are the Best ${name} Company in Pune
             </h2>
             <p className="text-(--color-primary-light) font-bold text-xl mb-10 tracking-wide">
-              We are not just agency vendors — we are your growth partners.
+              We are not just agency vendors - we are your growth partners.
             </p>
             <div className="grid grid-cols-2 gap-6">
               {[

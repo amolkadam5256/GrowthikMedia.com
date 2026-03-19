@@ -31,15 +31,13 @@ import { CategoryBadge } from "@/components/Blog/BlogCard";
 import BlogSidebar from "@/components/Blog/BlogSidebar";
 import RelatedPosts from "@/components/Blog/RelatedPosts";
 
-// Lazily load interactive-only widgets — they are below the fold and
+// Lazily load interactive-only widgets - they are below the fold and
 // do not appear in the initial server-rendered HTML, so splitting them
 // reduces the JS payload parsed on page load.
 const ReadingProgress = dynamic(
   () => import("@/components/Blog/ReadingProgress"),
 );
-const ShareButtons = dynamic(
-  () => import("@/components/Blog/ShareButtons"),
-);
+const ShareButtons = dynamic(() => import("@/components/Blog/ShareButtons"));
 const NewsletterForm = dynamic(
   () => import("@/components/Blog/NewsletterForm"),
 );
@@ -187,11 +185,17 @@ export default async function BlogDetailPage({
           <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
             {/* Breadcrumb */}
             <nav className="flex items-center justify-center gap-2 text-sm text-(--text-secondary) font-medium mb-8">
-              <Link href="/" className="hover:text-(--color-primary) transition-colors">
+              <Link
+                href="/"
+                className="hover:text-(--color-primary) transition-colors"
+              >
                 Home
               </Link>
               <ArrowRight className="w-3 h-3 text-(--border)" />
-              <Link href="/blog" className="hover:text-(--color-primary) transition-colors">
+              <Link
+                href="/blog"
+                className="hover:text-(--color-primary) transition-colors"
+              >
                 Blog
               </Link>
               <ArrowRight className="w-3 h-3 text-(--border)" />
@@ -273,7 +277,7 @@ export default async function BlogDetailPage({
 
             {/* Article (Right) */}
             <article className="order-1 lg:order-2">
-              {/* Share buttons — top */}
+              {/* Share buttons - top */}
               <div className="flex items-center justify-between mb-8 pb-6 border-b border-(--border) flex-wrap gap-4">
                 <Link
                   href="/blog"
@@ -332,7 +336,7 @@ export default async function BlogDetailPage({
                 </div>
               </div>
 
-              {/* Share buttons — bottom */}
+              {/* Share buttons - bottom */}
               <div className="mt-8 pt-8 border-t border-(--border)">
                 <ShareButtons url={pageUrl} title={post.title} />
               </div>
@@ -395,7 +399,7 @@ export default async function BlogDetailPage({
                   </h3>
                   <p className="text-sm text-white/85 font-medium mb-6 max-w-lg">
                     Let our experts audit your website for performance, SEO, and
-                    conversion opportunities — completely free, no strings
+                    conversion opportunities - completely free, no strings
                     attached.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
