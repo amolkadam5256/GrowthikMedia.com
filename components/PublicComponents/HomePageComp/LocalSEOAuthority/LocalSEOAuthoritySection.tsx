@@ -87,7 +87,7 @@ const LocalSEOAuthoritySection = () => {
             </h3>
             <p className="text-(--text-secondary) leading-relaxed">
               Face-to-face strategy sessions, real-time market deep
-              understanding of regional consumer behavior.
+              understanding of regional consumer behavior and insights.
             </p>
           </div>
         </div>
@@ -108,7 +108,7 @@ const LocalSEOAuthoritySection = () => {
             isn't just about proximity-it's about local expertise that drives
             results. Unlike remote agencies, we offer face-to-face strategy
             sessions, real-time market insights and deep understanding of
-            regional consumer behavior.
+            regional consumer behavior and local trends.
           </p>
 
           <div className="w-20 h-1 bg-(--color-primary) mb-6" />

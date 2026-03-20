@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Sparkles, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const AboutCompanySection = React.memo(() => {
   return (
@@ -80,15 +81,18 @@ const AboutCompanySection = React.memo(() => {
 
               <div className="w-20 h-1 bg-(--color-primary) mx-auto" />
 
-              <p className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-3xl mx-auto">
-                What is digital marketing? At its core, it&apos;s about using
-                data-driven strategies to reach your ideal audience. Based in{" "}
-                <span className="font-bold text-(--text-primary)">
-                  Pune (serving Baner, Viman Nagar, and Hinjewadi)
-                </span>
-                , we specialize in high-performance SEO and Google Ads to help
-                brands dominate the local and global market.
-              </p>
+              <div className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-3xl mx-auto space-y-4">
+                <p>
+                  <strong className="text-(--text-primary)">What is digital marketing?</strong> At its core, it&apos;s about using 
+                  data-driven strategies like <Link href="/services/seo" className="text-(--color-primary) font-bold hover:underline">SEO</Link> and <Link href="/services/google-ads" className="text-(--color-primary) font-bold hover:underline">performance ads</Link> to reach your ideal audience. 
+                  Based in <span className="font-bold text-(--text-primary)">Pune (serving Baner, Wakad, and Hinjewadi)</span>, 
+                  we help brands dominate their market through technical precision and AI-powered growth engineering.
+                </p>
+                <p>
+                  As the <strong className="text-(--text-primary)">best SEO agency in Pune</strong>, we focus on 
+                  measurable results, ensuring your business ranks #1 and converts traffic into customers.
+                </p>
+              </div>
             </div>
           </div>
 

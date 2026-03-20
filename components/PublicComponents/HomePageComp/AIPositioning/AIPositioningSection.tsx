@@ -42,7 +42,7 @@ const AIPositioningSection = () => {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-[2px] bg-(--color-primary)" />
             <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">
-              <Counter value={2026} suffix=" Authority" />
+              AI Marketing Authority
             </span>
             <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>

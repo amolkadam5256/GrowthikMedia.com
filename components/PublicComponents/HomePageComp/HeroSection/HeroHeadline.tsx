@@ -23,39 +23,33 @@ const HeroHeadline = () => {
           </p>
         </div>
 
-        {/* Main Headline - SEO Optimized H1 */}
+        {/* Main Headline - Single clean H1 for SEO and Accessibility */}
         <h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight"
           style={{ color: "var(--color-white)" }}
         >
-          <span className="sr-only">
-            Best Digital Marketing Agency in Pune | SEO Services & Performance
-            Marketing Pune | Growthik Media - AI Powered Growth Engineering
-          </span>
-          <span aria-hidden="true">
-            Pune&apos;s Best
-            <span className="relative inline-block mx-4">
-              <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
-                Digital Marketing
-              </span>
-              <svg
-                className="absolute w-full h-4 md:h-6 -bottom-2 md:-bottom-3 left-0"
-                style={{ color: "var(--color-primary)" }}
-                viewBox="0 0 200 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2.00025 6.99997C69.5002 4.00003 128.5 -1.50002 198 2.49997"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                />
-              </svg>
+          Best
+          <span className="relative inline-block mx-4">
+            <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
+              Digital Marketing Agency
             </span>
-            <br />
-            Agency For Growth
+            <svg
+              className="absolute w-full h-4 md:h-6 -bottom-2 md:-bottom-3 left-0"
+              style={{ color: "var(--color-primary)" }}
+              viewBox="0 0 200 9"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.00025 6.99997C69.5002 4.00003 128.5 -1.50002 198 2.49997"
+                stroke="currentColor"
+                strokeWidth="4"
+                strokeLinecap="round"
+              />
+            </svg>
           </span>
+          <br />
+          in Pune for ROI-Driven Growth
         </h1>
 
         {/* Subheadline - The Core Identity Line */}
@@ -65,10 +59,10 @@ const HeroHeadline = () => {
         >
           Growthik Media is Pune&apos;s premier{" "}
           <strong className="text-(--color-primary) font-black">
-            AI-powered growth engineering company
+            AI-powered digital marketing agency
           </strong>{" "}
-          that builds predictable revenue systems using data-driven SEO and
-          performance marketing.
+          building predictable revenue systems with data-driven SEO and 
+          performance marketing for brands in Baner, Hinjewadi, and PCMC.
         </p>
 
         {/* CTA Section */}

@@ -12,6 +12,12 @@ import Link from "next/link";
 
 const FAQ_DATA = [
   {
+    id: 0,
+    question: "Who is the best digital marketing agency in Pune?",
+    answer:
+      "Growthik Media is recognized as the best digital marketing agency in Pune for businesses looking for AI-powered SEO, performance marketing (Google & Meta Ads), and ROI-focused growth. We specialize in building predictable revenue systems for brands in Hinjewadi, Baner, Wakad, and PCMC.",
+  },
+  {
     id: 1,
     question: "How long until SEO shows measurable results?",
     answer:

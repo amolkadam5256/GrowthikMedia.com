@@ -31,7 +31,7 @@ const FounderSection = () => {
           <div className="lg:col-span-5" data-aos="fade-right">
             <div className="relative group">
               {/* Image Frame */}
-              <div className="relative z-10 aspect-[4/5] overflow-hidden border-2 border-(--border) group-hover:border-(--color-primary) transition-colors duration-500">
+              <div className="relative z-10 aspect-4/5 overflow-hidden border-2 border-(--border) group-hover:border-(--color-primary) transition-colors duration-500">
                 <NextImage
                   src={images.founder.amol1}
                   alt="Amol Kadam - Founder of Growthik Media"
@@ -96,7 +96,7 @@ const FounderSection = () => {
             </div>
 
             <p className="text-xl text-(--text-secondary) leading-relaxed mb-10 font-medium italic border-l-4 border-(--color-primary) pl-6">
-              "Arhitecting high-performance digital engines for high-growth
+              "Architecting high-performance digital engines for high-growth
               brands. I bridge the gap between complex code and ROI-driven
               marketing."
             </p>

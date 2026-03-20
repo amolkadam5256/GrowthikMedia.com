@@ -7,32 +7,32 @@ import Counter from "@/components/ui/Counter";
 
 const metrics = [
   {
-    icon: TrendingUp,
-    value: 247,
-    suffix: "%",
-    label: "Avg. Organic Traffic Increase",
-    timeframe: "Within 6 Months",
-  },
-  {
-    icon: Target,
-    value: 3.8,
-    suffix: "x",
-    label: "Average ROAS",
-    timeframe: "On Paid Campaigns",
+    icon: Users,
+    value: 50,
+    suffix: "+",
+    label: "Businesses Scaled",
+    timeframe: "In Pune & Beyond",
   },
   {
     icon: DollarSign,
-    value: 68,
-    suffix: "%",
-    label: "Reduction in Cost-Per-Acquisition",
-    timeframe: "Year-over-Year",
-  },
-  {
-    icon: Users,
     value: 12,
     suffix: " Cr+",
-    label: "Attributed Revenue Generated",
-    timeframe: "For Pune Businesses",
+    label: "Revenue Generated",
+    timeframe: "For Our Clients",
+  },
+  {
+    icon: TrendingUp,
+    value: 150,
+    suffix: "%+",
+    label: "Avg. Traffic Growth",
+    timeframe: "Within first 6 months",
+  },
+  {
+    icon: Target,
+    value: 3,
+    suffix: "X",
+    label: "Lead Gen Increase",
+    timeframe: "On average per client",
   },
 ];
 

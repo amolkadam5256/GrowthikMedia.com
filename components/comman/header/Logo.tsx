@@ -20,7 +20,7 @@ export function Logo({ onClick }: LogoProps) {
         <div className="relative bg-white p-4 rounded-full">
           <Image
             src={images.icon}
-            alt="Growthik Media Logo"
+            alt="Growthik Media Digital Marketing Agency in Pune"
             width={50}
             height={50}
             className="w-10 h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 object-contain"

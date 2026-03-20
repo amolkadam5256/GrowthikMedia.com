@@ -128,7 +128,7 @@ export default function AboutUsSection() {
                         style={{ color: "var(--text-secondary)" }}
                       >
                         To be the leading digital marketing agency that
-                        transforms brands through creativity, innovationand
+                        transforms brands through creativity, innovation and
                         measurable results.
                       </p>
                     </div>
@@ -252,7 +252,7 @@ export default function AboutUsSection() {
                   Based in Pune, we combine creativity with data-driven
                   strategies to deliver results that matter. Our expertise spans
                   video production, content creation, social media marketing,
-                  SEOand comprehensive digital marketing solutions.
+                  SEO and comprehensive digital marketing solutions.
                 </p>
               </div>
 

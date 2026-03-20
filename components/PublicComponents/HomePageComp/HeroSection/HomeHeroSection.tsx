@@ -12,10 +12,10 @@ const HomeHeroSection = React.memo(() => {
       <div className="absolute inset-0 z-0">
         <Image
           src={images.bg}
-          alt="Premium Marketing Background"
+          alt="Growthik Media - Best AI-Powered Digital Marketing Agency in Pune providing SEO and Ads Services"
           fill
           priority
-          quality={75}
+          quality={90}
           className="object-cover"
           sizes="100vw"
         />

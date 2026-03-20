@@ -2,17 +2,15 @@ import { Metadata } from "next";
 import HomeClient from "@/app/(public)/HomeClient";
 
 export const metadata: Metadata = {
-  title:
-    "Growthik Media | Best Digital Marketing Agency in Pune | AI-Powered SEO & Ads",
-  description:
-    "Growthik Media is Pune's top digital marketing agency. We build predictable revenue systems using data-driven SEO, Google Ads, and AI growth engineering to scale your brand.",
+  title: "Best Digital Marketing Agency in Pune | Growthik Media",
+  description: "Growthik Media is a leading digital marketing agency in Pune offering SEO, Google Ads, and AI-driven growth strategies to scale your business and maximize ROI.",
   keywords:
-    "digital marketing agency pune, digital marketing company pune, SEO services pune, performance marketing pune, google ads agency pune, video production pune, Growthik Media, AI marketing Pune",
+    "digital marketing agency pune, SEO services pune, performance marketing pune, google ads agency pune, Growthik Media, best digital marketing company pune, AI marketing Pune",
   authors: [{ name: "Amol Kadam" }],
   openGraph: {
-    title: "Best Digital Marketing Agency in Pune | AI-Powered growth - Growthik Media",
+    title: "Best Digital Marketing Agency in Pune | Growthik Media",
     description:
-      "Scale your brand with Pune's leading digital marketing and video production agency. Data-driven SEO and AI-powered marketing that delivers measurable ROI.",
+      "Scale your brand with Pune's premier AI-powered digital marketing agency. Data-driven SEO and performance marketing delivering measurable ROI.",
     url: "https://www.growthikmedia.com/",
     siteName: "Growthik Media",
     images: [
@@ -63,50 +61,18 @@ export default function Home() {
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": "What is the best digital marketing agency in Pune for SEO?",
+                  "name": "Who is the best digital marketing agency in Pune?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Growthik Media is recognized as one of the best digital marketing agencies in Pune, specializing in AI-powered SEO and predictable revenue systems."
+                    "text": "Growthik Media is one of the best digital marketing agencies in Pune, specializing in SEO, Google Ads, and AI-driven growth strategies."
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "How long until SEO shows measurable results?",
+                  "name": "What services does Growthik Media offer?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Typically, you will see measurable SEO improvements in organic traffic and rankings within 3 to 6 months, depending on the niche and baseline."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Do you work with small businesses and startups in Pune?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, Growthik Media specializes in building scalable revenue systems for startups, SMBs, and ecommerce brands in Pune and across India."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Why should I choose a Pune-based digital marketing agency?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "A Pune-based agency like Growthik Media provides local market knowledge, on-ground support, and hyper-targeted SEO for businesses in areas like Viman Nagar, Baner, and PCMC."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "What is digital marketing and why is it important?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Digital marketing involves promoting products or services using digital channels. It is crucial for businesses to reach targeted audiences, measure ROI, and stay competitive in the modern economy."
-                  }
-                },
-                 {
-                  "@type": "Question",
-                  "name": "What are the core services offered by Growthik Media?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We offer a full suite of services including SEO, Performance Marketing (Google & Meta Ads), Content Creation, Video Production, and AI-Powered Growth Engineering."
+                    "text": "Growthik Media offers SEO, Google Ads, social media marketing, website development, and AI-driven growth strategies."
                   }
                 }
               ]
@@ -118,29 +84,31 @@ export default function Home() {
               "image": "https://www.growthikmedia.com/og-image.png",
               "@id": "https://www.growthikmedia.com",
               "url": "https://www.growthikmedia.com",
-              "telephone": "+91-8888888888",
+              "telephone": "+918055754054",
               "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Pune",
+                "streetAddress": "Baner - Balewadi Rd",
                 "addressLocality": "Pune",
-                "postalCode": "411001",
+                "addressRegion": "MH",
+                "postalCode": "411058",
                 "addressCountry": "IN"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 18.5204,
-                "longitude": 73.8567
+                "latitude": 18.5597,
+                "longitude": 73.7799
               },
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
                 "opens": "09:00",
-                "closes": "18:00"
+                "closes": "20:00"
               },
               "sameAs": [
                 "https://www.linkedin.com/company/growthikmedia/",
-                "https://twitter.com/growthikmedia"
+                "https://twitter.com/growthikmedia",
+                "https://www.instagram.com/growthikmedia/"
               ]
             },
             {
