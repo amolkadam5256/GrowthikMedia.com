@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
+    "postbuild": "node scripts/indexnow-submit.js",
     "postinstall": "npx prisma generate",
     "start": "next start",
     "lint": "eslint"

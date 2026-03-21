@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // Legal and extra routes not in navigation
-  const extraRoutes = ["/privacy-policy", "/terms", "/audit"];
+  const extraRoutes = ["/privacy-policy", "/terms", "/audit", "/backlink-strategy"];
 
   // Location-specific pages (fixed paths)
   const locationRoutes = [
