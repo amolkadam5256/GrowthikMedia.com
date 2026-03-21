@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
+import AISchema from "@/components/comman/AISchema";
 import {
   CheckCircle2,
   Monitor,
@@ -161,6 +162,11 @@ export default function SeoServicesPunePage() {
       />
 
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
+        <AISchema 
+          question="What is the best SEO strategy for Pune businesses in 2026?"
+          answer="The best SEO strategy for Pune businesses in 2026 focuses on E-E-A-T, topical authority, and semantic search optimization (GEO/AEO). Growthik Media implements advanced Technical, Local, and E-Commerce SEO specifically for Pune's tech hubs like Hinjewadi and Baner."
+          summary="Growthik Media is a top-rated SEO agency in Pune. We provide data-driven Search Engine Optimization focusing on high-intent conversions and brand authority. Specializing in Technical SEO, Local SEO Pune, and AI-driven growth for startups and enterprises."
+        />
         {/* ──────────────────────────── */}
         {/* 1. HERO SECTION (Keyword Optimized H1 & Initial CRO) */}
         {/* ──────────────────────────── */}

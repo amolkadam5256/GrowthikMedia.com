@@ -14,6 +14,7 @@ export function Logo({ onClick }: LogoProps) {
     <Link
       href="/"
       className="flex items-center space-x-3 group"
+      aria-label="Home - Growthik Media Digital Marketing Agency Pune"
       onClick={onClick}
     >
       <div className="relative">

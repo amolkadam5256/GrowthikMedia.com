@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import AISchema from "@/components/comman/AISchema";
 import {
   Code,
   Target,
@@ -185,6 +186,11 @@ export default function ServicesPage() {
 
   return (
     <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
+      <AISchema 
+        question="What specialized digital services does Growthik Media provide?"
+        answer="Growthik Media provides a full suite of digital solutions including enterprise Next.js development, SEO (National & Local), Performance Marketing (Google/Meta Ads), and Branding services tailored for high-growth businesses."
+        summary="Expert digital services by Growthik Media: Next.js Web Apps, Advanced SEO Audits, result-driven PPC, and strategic Brand Identity. Specializing in scaling businesses across Hinjewadi, Baner, and Pune."
+      />
       <Script
         id="schema-services"
         type="application/ld+json"
@@ -338,14 +344,14 @@ export default function ServicesPage() {
                     Strategy
                   </span>
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
-                  <div className="absolute -left-6 top-1/2 w-6 md:w-8 border-b-2 border-dashed border-gray-400 origin-right rotate-[30deg]"></div>
+                  <div className="absolute -left-6 top-1/2 w-6 md:w-8 border-b-2 border-dashed border-gray-400 origin-right rotate-30"></div>
                   <div className="absolute -left-7 top-[65%] w-3 h-3 md:w-4 md:h-4 bg-white rounded-full shadow-sm border border-gray-300 pointer-events-none"></div>
                 </div>
 
                 {/* Node 5: Unlabeled (Right Curve Bottom) */}
                 <div className="absolute bottom-[40%] right-[8%] flex flex-col items-center group">
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
-                  <div className="absolute -left-8 top-1/2 w-8 md:w-10 border-b-2 border-dashed border-gray-400 origin-right rotate-[-30deg]"></div>
+                  <div className="absolute -left-8 top-1/2 w-8 md:w-10 border-b-2 border-dashed border-gray-400 origin-right -rotate-30"></div>
                   <div className="absolute -left-10 top-[15%] w-3 h-3 md:w-4 md:h-4 bg-white rounded-full shadow-sm border border-gray-300 pointer-events-none"></div>
                 </div>
 
@@ -447,7 +453,7 @@ export default function ServicesPage() {
           </div>
           <Link
             href="/contact"
-            className="px-8 py-4 bg-black text-white dark:bg-white dark:text-black font-bold rounded-xl shadow-lg hover:scale-105 transition-transform flex-shrink-0 w-full md:w-auto text-center"
+            className="px-8 py-4 bg-black text-white dark:bg-white dark:text-black font-bold rounded-xl shadow-lg hover:scale-105 transition-transform shrink-0 w-full md:w-auto text-center"
           >
             Schedule a Strategy Call
           </Link>
@@ -501,7 +507,7 @@ export default function ServicesPage() {
                 },
               ].map((item, idx) => (
                 <li key={idx} className="flex gap-4">
-                  <div className="w-12 h-12 flex-shrink-0 bg-(--color-primary)/10 text-(--color-primary) rounded-xl flex items-center justify-center font-black text-xl">
+                  <div className="w-12 h-12 shrink-0 bg-(--color-primary)/10 text-(--color-primary) rounded-xl flex items-center justify-center font-black text-xl">
                     {idx + 1}
                   </div>
                   <div>
