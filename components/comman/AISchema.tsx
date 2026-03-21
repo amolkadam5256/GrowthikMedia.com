@@ -1,3 +1,5 @@
+import React from "react";
+
 /**
  * AISchema Component
  * Implements Structured Data for AI-Search Engines (GEO/AEO).
