@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { sendEmail, TEAM_EMAIL } from "@/lib/mailer";
+import { sendEmail, TEAM_EMAILS } from "@/lib/mailer";
 
 export async function POST(req: Request) {
   try {
@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
     // 1. Notification to Team
     await sendEmail({
-      to: TEAM_EMAIL,
+      to: TEAM_EMAILS[0],
       subject: `New Blog Subscriber: ${email}`,
       html: `<p>New newsletter subscriber: <strong>${email}</strong>${name ? ` (Name: ${name})` : ""}</p>`,
     });

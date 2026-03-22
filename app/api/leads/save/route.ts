@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db as prisma } from "@/lib/db";
-import { sendEmail, TEAM_EMAIL, getAdminNotificationHTML, getUserAutoReplyHTML } from "@/lib/mailer";
+import { sendEmail, TEAM_EMAILS, getAdminNotificationHTML, getUserAutoReplyHTML } from "@/lib/mailer";
 
 export const dynamic = "force-dynamic";
 
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
 
     await Promise.all([
       sendEmail({
-        to: TEAM_EMAIL,
+        to: TEAM_EMAILS[0],
         subject: `🔴 New Lead: ${name} (Progressive)`,
         html: adminHtml,
         replyTo: email,

@@ -120,6 +120,8 @@ export default function InquiriesManager() {
     } catch (e) {
       console.error("Update failed:", e);
     }
+  };
+
   const handleSendReply = async () => {
     if (!selectedInquiry || !replyBody.trim()) return;
     setIsSendingReply(true);

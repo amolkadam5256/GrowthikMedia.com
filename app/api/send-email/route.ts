@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { sendUnifiedEmail, sendEmail, TEAM_EMAIL, getUserAutoReplyHTML, getAdminNotificationHTML } from "@/lib/mailer";
+import { sendUnifiedEmail, getUserAutoReplyHTML, getAdminNotificationHTML } from "@/lib/mailer";
 import { db as prisma } from "@/lib/db";
 
 /**
