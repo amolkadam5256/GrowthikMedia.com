@@ -1,11 +1,8 @@
 import nodemailer from "nodemailer";
 
-const EMAIL_USER = process.env.EMAIL_USER;
-const EMAIL_PASS = process.env.EMAIL_PASS;
-
-// Fallback sender if env is missing
-export const SENDER_EMAIL = EMAIL_USER || "info@growthikmedia.com";
-export const SENDER = `"Growthik Media" <${SENDER_EMAIL}>`;
+// Helpers
+export const getSenderEmail = () => process.env.EMAIL_USER || "info@growthikmedia.com";
+export const getSender = () => `"Growthik Media" <${getSenderEmail()}>`;
 
 export const TEAM_EMAILS = [
   "info@growthikmedia.com",
@@ -15,19 +12,18 @@ export const TEAM_EMAILS = [
 
 /**
  * Configure Nodemailer transporter (Gmail SMTP)
- * Using explicit host/port for better reliability in different environments.
+ * Note: Connection pooling (pool: true) is removed as it causes 500 errors 
+ * and socket timeouts in Serverless environments like Vercel.
  */
 export const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 465,
+  port: 465, // SSL
   secure: true, 
   auth: {
-    user: EMAIL_USER,
-    pass: EMAIL_PASS,
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
-  pool: true, // Use connection pooling for fast multiple sends
-  maxConnections: 5,
-  maxMessages: 100,
+  // pool: true is explicitly avoided for Vercel edge/serverless compatibility
 });
 
 /**
@@ -48,7 +44,7 @@ export async function sendEmail({
   replyTo?: string;
   bcc?: string | string[];
 }) {
-  if (!EMAIL_USER || !EMAIL_PASS) {
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     console.error("❌ CRITICAL: EMAIL_USER or EMAIL_PASS not set in environment variables!");
     return { success: false, error: "Email credentials missing" };
   }
@@ -58,13 +54,13 @@ export async function sendEmail({
 
   try {
     const info = await transporter.sendMail({
-      from: SENDER,
+      from: getSender(),
       to,
       bcc, // Re-added BCC support
       subject: subject.trim(),
       html,
       text: plainText,
-      replyTo: replyTo || SENDER_EMAIL,
+      replyTo: replyTo || getSenderEmail(),
     });
     console.log(`✅ Email sent to ${Array.isArray(to) ? to.join(', ') : to} | ID: ${info.messageId}`);
     return { success: true, messageId: info.messageId };
