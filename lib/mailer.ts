@@ -4,11 +4,14 @@ const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASS = process.env.EMAIL_PASS;
 
 // Fallback sender if env is missing
-export const SENDER = EMAIL_USER 
-  ? `"Growthik Media" <${EMAIL_USER}>` 
-  : `"Growthik Media" <info@growthikmedia.com>`;
+export const SENDER_EMAIL = EMAIL_USER || "info@growthikmedia.com";
+export const SENDER = `"Growthik Media" <${SENDER_EMAIL}>`;
 
-export const TEAM_EMAIL = "info@growthikmedia.com, amolkadam1274@gmail.com, growthikmedia@gmail.com";
+export const TEAM_EMAILS = [
+  "info@growthikmedia.com",
+  "amolkadam1274@gmail.com",
+  "growthikmedia@gmail.com"
+];
 
 /**
  * Configure Nodemailer transporter (Gmail SMTP)
@@ -34,12 +37,14 @@ export async function sendEmail({
   to, 
   subject, 
   html, 
-  replyTo 
+  replyTo,
+  bcc
 }: { 
-  to: string; 
+  to: string | string[]; 
   subject: string; 
   html: string; 
   replyTo?: string; 
+  bcc?: string | string[];
 }) {
   if (!EMAIL_USER || !EMAIL_PASS) {
     console.error("❌ CRITICAL: EMAIL_USER or EMAIL_PASS not set in environment variables!");
@@ -50,11 +55,12 @@ export async function sendEmail({
     const info = await transporter.sendMail({
       from: SENDER,
       to,
+      bcc,
       subject,
       html,
       replyTo: replyTo || SENDER,
     });
-    console.log(`✅ Email sent to ${to} | ID: ${info.messageId} | Subject: ${subject}`);
+    console.log(`✅ Email sent to ${Array.isArray(to) ? to.join(', ') : to} | ID: ${info.messageId}`);
     return { success: true, messageId: info.messageId };
   } catch (error: any) {
     console.error(`❌ SMTP Error sending to ${to}:`, error.message || error);
@@ -86,10 +92,11 @@ export async function sendUnifiedEmail({
     html: userHtml,
   });
 
-  // 2. Send Notification to Admin SECOND
+  // 2. Send Notification to Admin SECOND (Primary: info@, BCC: rest)
   const adminHtml = getAdminNotificationHTML(adminData);
   const adminResult = await sendEmail({
-    to: TEAM_EMAIL,
+    to: TEAM_EMAILS[0],
+    bcc: TEAM_EMAILS.slice(1),
     subject: adminSubject,
     html: adminHtml,
     replyTo: userEmail,

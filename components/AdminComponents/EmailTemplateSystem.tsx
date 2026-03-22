@@ -136,8 +136,8 @@ const TEMPLATES: EmailTemplate[] = [
 ];
 
 export default function EmailTemplateSystem() {
-  const [activeTab, setActiveTab] = useState(TEMPLATES[0].id);
-  const [copyStatus, setCopyStatus] = useState<string | null>(null);
+  const [testRecipient, setTestRecipient] = useState(COMPANY_INFO.adminEmails[0]);
+  const [isSendingTest, setIsSendingTest] = useState<string | null>(null);
 
   const activeTemplate = TEMPLATES.find((t) => t.id === activeTab) || TEMPLATES[0];
 
@@ -145,6 +145,28 @@ export default function EmailTemplateSystem() {
     navigator.clipboard.writeText(text);
     setCopyStatus(id);
     setTimeout(() => setCopyStatus(null), 2000);
+  };
+
+  const handleSendTest = async (subject: string, body: string, id: string) => {
+    setIsSendingTest(id);
+    try {
+      const res = await fetch("/api/admin/send-test", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ subject, body, recipient: testRecipient }),
+      });
+      if (res.ok) {
+        setCopyStatus(`${id}-sent`);
+      } else {
+        setCopyStatus(`${id}-error`);
+      }
+    } catch (error) {
+      console.error("Test send error:", error);
+      setCopyStatus(`${id}-error`);
+    } finally {
+      setIsSendingTest(null);
+      setTimeout(() => setCopyStatus(null), 3000);
+    }
   };
 
   return (
@@ -155,13 +177,32 @@ export default function EmailTemplateSystem() {
           <div className="w-8 h-1 bg-red-600 rounded-full" />
           <span className="font-black uppercase tracking-[0.2em] text-sm">Communication Engine</span>
         </div>
-        <h1 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white uppercase tracking-tight">
-          Email <span className="text-red-600">Template</span> System
-        </h1>
-        <p className="text-gray-500 dark:text-gray-400 mt-4 text-lg max-w-2xl font-medium">
-          Professional lead management infrastructure for Growthik Media. 
-          Optimized for high-conversion sales cycles.
-        </p>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-2">
+            <h1 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white uppercase tracking-tight">
+              Email <span className="text-red-600">Template</span> System
+            </h1>
+            <p className="text-gray-500 dark:text-gray-400 text-lg max-w-2xl font-medium">
+              Professional lead management infrastructure for Growthik Media. 
+            </p>
+          </div>
+
+          <div className="bg-white dark:bg-[#111] p-4 rounded-3xl border border-gray-100 dark:border-white/5 shadow-xl flex items-center gap-4">
+            <div className="flex flex-col">
+               <span className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Test Recipient</span>
+               <input 
+                  type="email" 
+                  value={testRecipient}
+                  onChange={(e) => setTestRecipient(e.target.value)}
+                  className="bg-transparent text-sm font-bold text-gray-900 dark:text-white focus:outline-none min-w-[200px]"
+                  placeholder="Enter email..."
+               />
+            </div>
+            <div className="w-10 h-10 rounded-full bg-red-600/10 flex items-center justify-center text-red-600">
+               <Mail size={18} />
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -226,7 +267,11 @@ export default function EmailTemplateSystem() {
                       version="user"
                       template={activeTemplate.userVersion} 
                       onCopy={(text) => handleCopy(text, `${activeTab}-user`)}
+                      onSendTest={(s, b) => handleSendTest(s, b, `${activeTab}-user`)}
                       isCopied={copyStatus === `${activeTab}-user`}
+                      isSent={copyStatus === `${activeTab}-user-sent`}
+                      isError={copyStatus === `${activeTab}-user-error`}
+                      isSending={isSendingTest === `${activeTab}-user`}
                     />
                   </div>
 
@@ -240,7 +285,11 @@ export default function EmailTemplateSystem() {
                       version="admin"
                       template={activeTemplate.adminVersion} 
                       onCopy={(text) => handleCopy(text, `${activeTab}-admin`)}
+                      onSendTest={(s, b) => handleSendTest(s, b, `${activeTab}-admin`)}
                       isCopied={copyStatus === `${activeTab}-admin`}
+                      isSent={copyStatus === `${activeTab}-admin-sent`}
+                      isError={copyStatus === `${activeTab}-admin-error`}
+                      isSending={isSendingTest === `${activeTab}-admin`}
                     />
                   </div>
                 </div>
@@ -253,9 +302,27 @@ export default function EmailTemplateSystem() {
   );
 }
 
-function EmailCard({ template, onCopy, isCopied, version }: { template: any, onCopy: (text: string) => void, isCopied: boolean, version: "user" | "admin" }) {
+function EmailCard({ 
+  template, 
+  onCopy, 
+  onSendTest,
+  isCopied, 
+  isSent,
+  isError,
+  isSending,
+  version 
+}: { 
+  template: any, 
+  onCopy: (text: string) => void, 
+  onSendTest: (subject: string, body: string) => void,
+  isCopied: boolean, 
+  isSent: boolean,
+  isError: boolean,
+  isSending: boolean,
+  version: "user" | "admin" 
+}) {
   return (
-    <div className={`rounded-3xl border bg-white dark:bg-[#0a0a0a] shadow-2xl transition-all overflow-hidden h-full ${
+    <div className={`rounded-3xl border bg-white dark:bg-[#0a0a0a] shadow-2xl transition-all overflow-hidden h-full flex flex-col ${
       version === "admin" ? "border-red-600/20" : "border-gray-200 dark:border-white/10"
     }`}>
       {/* Subject Line */}
@@ -263,42 +330,74 @@ function EmailCard({ template, onCopy, isCopied, version }: { template: any, onC
         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-2">Subject Line</p>
         <div className="flex items-center justify-between gap-4">
           <p className="text-gray-900 dark:text-white font-bold text-sm">{template.subject}</p>
-          <button 
-            onClick={() => onCopy(template.subject)}
-            className="p-2 hover:bg-gray-200 dark:hover:bg-white/10 rounded-lg transition-colors text-gray-400 shrink-0"
-          >
-            {isCopied ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
-          </button>
+          <div className="flex items-center gap-1">
+            <button 
+              onClick={() => onSendTest(template.subject, template.body)}
+              disabled={isSending}
+              className={`p-2 rounded-lg transition-colors flex items-center gap-2 text-xs font-bold ${
+                isSent 
+                  ? "bg-green-500/10 text-green-500" 
+                  : isError 
+                    ? "bg-red-500/10 text-red-500"
+                    : "hover:bg-gray-200 dark:hover:bg-white/10 text-gray-400 hover:text-red-500"
+              }`}
+              title="Send Test Email"
+            >
+              {isSending ? (
+                <div className="w-4 h-4 border-2 border-red-500 border-t-transparent animate-spin rounded-full" />
+              ) : isSent ? (
+                <CheckCircle2 size={16} />
+              ) : (
+                <Send size={16} />
+              )}
+              {isSent ? "SENT" : isError ? "ERROR" : ""}
+            </button>
+            <button 
+              onClick={() => onCopy(template.subject)}
+              className="p-2 hover:bg-gray-200 dark:hover:bg-white/10 rounded-lg transition-colors text-gray-400 shrink-0"
+            >
+              {isCopied ? <Check size={16} className="text-green-500" /> : <Copy size={16} />}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Body */}
-      <div className="p-6 relative">
+      <div className="p-6 relative flex-1">
         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-4">Email Body</p>
         <div className="bg-gray-50 dark:bg-[#111] rounded-2xl p-6 font-mono text-xs text-gray-600 dark:text-gray-300 whitespace-pre-wrap leading-relaxed border border-gray-100 dark:border-white/5 min-h-[400px]">
           {template.body}
         </div>
         
-        <button 
-          onClick={() => onCopy(template.body)}
-          className="absolute bottom-10 right-10 flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-black px-4 py-2 rounded-xl font-bold text-[10px] shadow-xl active:scale-95 transition-all"
-        >
-          {isCopied ? (
-            <>
-              <Check size={12} />
-              COPIED!
-            </>
-          ) : (
-            <>
-              <Copy size={12} />
-              COPY BODY
-            </>
-          )}
-        </button>
+        <div className="absolute bottom-10 right-10 flex items-center gap-2">
+          <button 
+             onClick={() => onSendTest(template.subject, template.body)}
+             disabled={isSending}
+             className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-xl font-bold text-[10px] shadow-xl active:scale-95 transition-all disabled:opacity-50"
+          >
+             {isSending ? "SENDING..." : isSent ? "TEST SENT" : "SEND TEST EMAIL"}
+          </button>
+          <button 
+            onClick={() => onCopy(template.body)}
+            className="flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-black px-4 py-2 rounded-xl font-bold text-[10px] shadow-xl active:scale-95 transition-all"
+          >
+            {isCopied ? (
+              <>
+                <Check size={12} />
+                COPIED!
+              </>
+            ) : (
+              <>
+                <Copy size={12} />
+                COPY BODY
+              </>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Footer Info */}
-      <div className="p-4 px-6 bg-gray-50/30 dark:bg-white/1 flex items-center justify-between text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+      <div className="p-4 px-6 bg-gray-50/30 dark:bg-white/1 flex items-center justify-between text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-auto">
          <span>Format: HTML/TEXT</span>
          {version === "admin" ? (
            <span className="text-red-500">To: Amol Kadam Team</span>
