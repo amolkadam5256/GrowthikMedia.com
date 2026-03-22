@@ -15,13 +15,13 @@ const resources = [
     icon: Target,
     title: "Performance Marketing Playbooks",
     desc: "Advanced Google Ads optimization techniques and scaling strategies.",
-    link: "/services/google-ads",
+    link: "/services/ppc-google-ads",
   },
   {
     icon: Video,
     title: "Video Marketing Strategies",
     desc: "Proven video marketing frameworks that convert viewers into customers.",
-    link: "/services/video-production",
+    link: "/services/youtube-seo",
   },
 ];
 

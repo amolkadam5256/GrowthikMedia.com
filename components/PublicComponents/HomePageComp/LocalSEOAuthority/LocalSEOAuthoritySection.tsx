@@ -100,7 +100,7 @@ const LocalSEOAuthoritySection = () => {
           <p className="text-lg md:text-xl text-(--text-primary) leading-relaxed mb-6">
             Choosing a Pune-based{" "}
             <Link
-              href="/services/digital-marketing"
+              href="/services/social-media-marketing"
               className="text-(--color-primary) font-bold hover:underline"
             >
               digital marketing company

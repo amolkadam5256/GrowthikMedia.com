@@ -31,30 +31,42 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-
-      // Meta Pixel Lead Tracking
-      if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-        (window as any).fbq("track", "Lead", {
-          content_name: "Contact Form",
-        });
-      }
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, formType: "Contact Form" }),
       });
 
-      // Reset success message after 5 seconds
+      if (response.ok) {
+        setSubmitStatus("success");
+        
+        // Meta Pixel Lead Tracking
+        if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+          (window as any).fbq("track", "Lead", {
+            content_name: "General Contact Form",
+          });
+        }
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
       setTimeout(() => setSubmitStatus("idle"), 5000);
-    }, 1500);
+    }
   };
 
   return (
@@ -164,10 +176,17 @@ export default function ContactForm() {
       </div>
 
       {submitStatus === "success" && (
-        <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/30">
-          <p className="text-green-500">
-            ✓ Thank you! We&apos;ll get back to you with your audit results
-            soon.
+        <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/30 animate-in fade-in duration-300">
+          <p className="text-green-500 font-bold">
+            ✓ Thank you! We&apos;ve received your inquiry and will get back to you within 24 hours.
+          </p>
+        </div>
+      )}
+
+      {submitStatus === "error" && (
+        <div className="p-4 rounded-lg bg-red-500/10 border border-red-500/30 animate-in shake-in duration-300">
+          <p className="text-red-500 font-bold">
+            ⚠️ Something went wrong. Please check your connection and try again.
           </p>
         </div>
       )}

@@ -41,13 +41,13 @@ const AIOptimizedBlocks = () => {
       <h2>Internal Linking</h2>
       <ul>
         <li>
-          <a href="/seo-services-pune">SEO Services in Pune</a>
+          <a href="/services/seo">SEO Services in Pune</a>
         </li>
         <li>
-          <a href="/google-ads-pune">Google Ads Management</a>
+          <a href="/services/ppc-google-ads">Google Ads Management</a>
         </li>
         <li>
-          <a href="/website-development-pune">Website Development</a>
+          <a href="/services/website-development">Website Development</a>
         </li>
       </ul>
 

@@ -27,13 +27,13 @@ const seoExpertise = [
     icon: Video,
     title: "Video SEO",
     desc: "Rank your YouTube content and video snippets on Google.",
-    link: "/services/video-production",
+    link: "/services/youtube-seo",
   },
   {
     icon: BarChart2,
     title: "CRO SEO",
     desc: "Conversion Rate Optimization to turn traffic into revenue.",
-    link: "/services/google-ads",
+    link: "/services/ppc-google-ads",
   },
 ];
 

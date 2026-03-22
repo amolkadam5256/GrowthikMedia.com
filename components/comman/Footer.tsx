@@ -28,6 +28,7 @@ import {
 } from "react-icons/fi";
 import { images } from "@/app/assets/images/images";
 import { CONTACT_INFO } from "@/constants/contact";
+import FooterLinks from "@/components/FooterLinks";
 
 export default function Footer() {
   const { resolvedTheme } = useTheme();
@@ -83,29 +84,33 @@ export default function Footer() {
 
   const topServices = [
     {
-      href: "/services/digital-marketing",
-      label: "Digital Marketing",
+      href: "/services/social-media-marketing/",
+      label: "Social Media Marketing",
       icon: FiGlobe,
     },
     {
-      href: "/services/website-development",
+      href: "/services/website-development/",
       label: "Website Development",
       icon: FiCode,
     },
-    { href: "/services/seo", label: "SEO Services", icon: FiGlobe },
     {
-      href: "/services/branding-consulting",
+      href: "/services/seo/",
+      label: "SEO Services",
+      icon: FiGlobe,
+    },
+    {
+      href: "/services/branding-consulting/",
       label: "Branding & Design",
       icon: FiPenTool,
     },
     {
-      href: "/services/ecommerce-development",
+      href: "/services/ecommerce-development/",
       label: "E-Commerce Solutions",
       icon: FiShoppingCart,
     },
     {
-      href: "/services/social-media-marketing",
-      label: "Social Media Marketing",
+      href: "/services/google-ads/",
+      label: "Google Ads agency",
       icon: FiGlobe,
     },
   ];
@@ -145,6 +150,11 @@ export default function Footer() {
           </div>
 
           <div className="max-w-7xl mx-auto  h-1 bg-(--bg-color) red-line-left"></div>
+        </div>
+
+        {/* Services Link Grid for SEO */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <FooterLinks />
         </div>
 
         {/* Main Footer Content */}

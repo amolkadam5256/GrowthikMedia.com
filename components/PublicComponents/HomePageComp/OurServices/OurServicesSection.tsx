@@ -1,73 +1,21 @@
 "use client";
 
 import React from "react";
-import { Video, Megaphone, TrendingUp, Palette } from "lucide-react";
-import ServiceCard from "./ServiceCard";
-import ServiceButton from "./ServiceButton";
 import Link from "next/link";
-
-const services = [
-  {
-    icon: Palette,
-    number: "01",
-    title: "Web Design & Development",
-    description: (
-      <>
-        High-performance websites and landing pages designed to convert
-        visitors into loyal customers. Explore our{" "}
-        <Link href="/services" className="text-(--color-primary) font-bold hover:underline">Web Design services</Link>.
-      </>
-    ),
-  },
-  {
-    icon: Megaphone,
-    number: "02",
-    title: "Performance Marketing",
-    description: (
-      <>
-        Data-driven marketing strategies that amplify your brand presence and
-        drive measurable growth. Read more on{" "}
-        <Link href="/services/performance-marketing" className="text-(--color-primary) font-bold hover:underline">Performance Marketing</Link>.
-      </>
-    ),
-  },
-  {
-    icon: TrendingUp,
-    number: "03",
-    title: "SEO & Local SEO Pune",
-    description: (
-      <>
-        Dominate search results with advanced{" "}
-        <Link href="/services/seo" className="text-(--color-primary) font-bold hover:underline">SEO services</Link>{" "}
-        and local optimization for Pune businesses.
-      </>
-    ),
-  },
-  {
-    icon: Video,
-    number: "04",
-    title: "Google & Meta Ads",
-    description: (
-      <>
-        Precision-targeted{" "}
-        <Link href="/services/ppc-google-ads" className="text-(--color-primary) font-bold hover:underline">PPC management</Link>{" "}
-        on Google and Meta platforms to maximize your ROI.
-      </>
-    ),
-  },
-];
+import ServiceButton from "./ServiceButton";
+import ServicesGrid from "../../../ServicesGrid";
 
 const OurServicesSection = React.memo(() => {
   return (
     <section
-      className="relative py-12 md:py-16 px-4 overflow-hidden"
+      className="relative py-12 md:py-24 px-4 overflow-hidden"
       style={{
         backgroundColor: "var(--background)",
       }}
     >
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <header className="text-center mb-12">
+        <header className="text-center mb-20">
           {/* Animated Top Line */}
           <div
             className="flex items-center justify-center gap-4 mb-6"
@@ -85,7 +33,7 @@ const OurServicesSection = React.memo(() => {
                 color: "var(--color-primary)",
               }}
             >
-              What We Offer
+              Excellence at Scale
             </span>
             <div
               className="h-px w-16 transition-all duration-500"
@@ -97,16 +45,16 @@ const OurServicesSection = React.memo(() => {
 
           {/* Main Heading */}
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 tracking-tight leading-[1.1]"
             style={{ color: "var(--text-primary)" }}
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Performance Marketing Services in Pune
+            Growth-Focused <br /> <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">Digital Solutions</span>
           </h2>
 
           <div
-            className="w-24 h-1 mx-auto mb-8 relative overflow-hidden"
+            className="w-24 h-1.5 mx-auto mb-8 relative overflow-hidden"
             data-aos="zoom-in"
             data-aos-delay="200"
           >
@@ -120,32 +68,19 @@ const OurServicesSection = React.memo(() => {
           </div>
 
           <p
-            className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-medium"
             style={{ color: "var(--text-secondary)" }}
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            Empowering your brand with innovative solutions that drive growth,
-            engagement and success in the digital landscape.
+            From brand identity to technical SEO and enterprise web systems, we provide the full stack of services required for market dominance in Pune.
           </p>
         </header>
 
-        {/* Services Grid */}
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 list-none p-0">
-          {services.map((service, index) => (
-            <li key={index} className="h-full">
-              <article className="h-full">
-                <ServiceCard
-                  icon={service.icon}
-                  number={service.number}
-                  title={service.title}
-                  description={service.description}
-                  delay={index * 100}
-                />
-              </article>
-            </li>
-          ))}
-        </ul>
+        {/* Services Grid Implementation */}
+        <div data-aos="fade-up" data-aos-delay="400">
+           <ServicesGrid />
+        </div>
 
         {/* CTA Section */}
         <div

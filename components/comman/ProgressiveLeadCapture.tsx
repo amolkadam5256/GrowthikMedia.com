@@ -191,14 +191,15 @@ const ProgressiveLeadCapture = () => {
 
     setIsLoading(true);
     try {
-      await fetch("/api/leads/save", {
+      await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
           phone: formData.phone.replace(/\D/g, ""),
-          service: formData.service,
+          message: `Service interest: ${formData.service}`,
+          formType: "Progressive Lead Capture",
         }),
       });
 

@@ -84,7 +84,7 @@ const AboutCompanySection = React.memo(() => {
               <div className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-3xl mx-auto space-y-4">
                 <p>
                   <strong className="text-(--text-primary)">What is digital marketing?</strong> At its core, it&apos;s about using 
-                  data-driven strategies like <Link href="/services/seo" className="text-(--color-primary) font-bold hover:underline">SEO</Link> and <Link href="/services/google-ads" className="text-(--color-primary) font-bold hover:underline">performance ads</Link> to reach your ideal audience. 
+                  data-driven strategies like <Link href="/services/seo" className="text-(--color-primary) font-bold hover:underline">SEO</Link> and <Link href="/services/ppc-google-ads" className="text-(--color-primary) font-bold hover:underline">performance ads</Link> to reach your ideal audience. 
                   Based in <span className="font-bold text-(--text-primary)">Pune (serving Baner, Wakad, and Hinjewadi)</span>, 
                   we help brands dominate their market through technical precision and AI-powered growth engineering.
                 </p>

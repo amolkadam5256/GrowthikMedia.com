@@ -144,7 +144,7 @@ const ClientSuccessMetricsSection = () => {
             consistently deliver first-page rankings for high-intent keywords,
             while our{" "}
             <Link
-              href="/services/google-ads"
+              href="/services/ppc-google-ads"
               className="text-(--color-primary) font-bold hover:underline"
             >
               Google Ads campaigns

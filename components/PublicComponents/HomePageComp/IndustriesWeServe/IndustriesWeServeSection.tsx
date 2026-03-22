@@ -28,7 +28,7 @@ const industries = [
     icon: Building2,
     title: "Real Estate & Construction",
     desc: "Generate qualified leads via Google Ads and strategic content marketing.",
-    link: "/services/google-ads",
+    link: "/services/ppc-google-ads",
   },
   {
     icon: GraduationCap,
@@ -40,7 +40,7 @@ const industries = [
     icon: Factory,
     title: "Manufacturing & B2B",
     desc: "Establish B2B authority with technical content and LinkedIn strategies.",
-    link: "/services/digital-marketing",
+    link: "/services/social-media-marketing",
   },
   {
     icon: Palmtree,
@@ -82,7 +82,7 @@ const IndustriesWeServeSection = () => {
           <p className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-4xl mx-auto">
             As Pune's leading{" "}
             <Link
-              href="/services/digital-marketing"
+              href="/services/social-media-marketing"
               className="text-(--color-primary) font-bold hover:underline"
             >
               digital marketing agency
