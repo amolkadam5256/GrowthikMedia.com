@@ -24,13 +24,13 @@ export default function AuditRequestForm() {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/send-email", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...formData, formType: "Audit Request (Detailed)" }),
       });
 
-      if (res.ok) {
+      if (response.ok) {
         setSubmitStatus("success");
         // Meta Pixel Lead Tracking
         if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {

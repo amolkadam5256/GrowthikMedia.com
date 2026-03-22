@@ -71,6 +71,15 @@ export async function POST(req: Request) {
       }),
     ]);
 
+    if (!adminResult.success || !userResult.success) {
+      console.warn("⚠️ One or more emails failed to send:", {
+        admin: adminResult.success,
+        user: userResult.success,
+        adminError: adminResult.error,
+        userError: userResult.error
+      });
+    }
+
     return NextResponse.json({ 
       success: true, 
       message: "Lead captured successfully!",
