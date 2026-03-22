@@ -157,7 +157,6 @@ export default function YoutubeSeoPage() {
             </div>
 
             <RelatedServices
-              currentPage="/services/youtube-seo/"
               category="social"
             />
 
