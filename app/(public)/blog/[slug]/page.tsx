@@ -27,19 +27,19 @@ import {
   stringToColor,
 } from "@/lib/blog/utils";
 import { POST_CONTENT } from "@/lib/blog/content";
-import { CategoryBadge } from "@/components/Blog/BlogCard";
-import BlogSidebar from "@/components/Blog/BlogSidebar";
-import RelatedPosts from "@/components/Blog/RelatedPosts";
+import { CategoryBadge } from "@/components/PublicComponents/Blog/BlogCard";
+import BlogSidebar from "@/components/PublicComponents/Blog/BlogSidebar";
+import RelatedPosts from "@/components/PublicComponents/Blog/RelatedPosts";
 
 // Lazily load interactive-only widgets - they are below the fold and
 // do not appear in the initial server-rendered HTML, so splitting them
 // reduces the JS payload parsed on page load.
 const ReadingProgress = dynamic(
-  () => import("@/components/Blog/ReadingProgress"),
+  () => import("@/components/PublicComponents/Blog/ReadingProgress"),
 );
-const ShareButtons = dynamic(() => import("@/components/Blog/ShareButtons"));
+const ShareButtons = dynamic(() => import("@/components/PublicComponents/Blog/ShareButtons"));
 const NewsletterForm = dynamic(
-  () => import("@/components/Blog/NewsletterForm"),
+  () => import("@/components/PublicComponents/Blog/NewsletterForm"),
 );
 
 // ─── Generate Static Params ───────────────────────────────────────────────────

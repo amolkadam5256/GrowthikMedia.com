@@ -9,7 +9,7 @@ import {
   ShieldCheck,
   TrendingUp,
 } from "lucide-react";
-import Counter from "@/components/ui/Counter";
+import Counter from "@/components/PublicComponents/ui/Counter";
 
 const USP_ITEMS = [
   {

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { CONTACT_INFO } from "@/constants/contact";
-import AuditRequestForm from "@/components/comman/AuditRequestForm";
+import AuditRequestForm from "@/components/PublicComponents/comman/AuditRequestForm";
 import { ShieldCheck, Zap, BarChart4 } from "lucide-react";
 
 export const metadata: Metadata = {

@@ -4,7 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
-import FAQSchema from "@/components/structured-data/FAQSchema";
+import FAQSchema from "@/components/PublicComponents/structured-data/FAQSchema";
 
 const slug = "seo";
 const title = "SEO Company in Pune | Growthik Media";

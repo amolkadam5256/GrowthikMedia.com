@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import PageHero from '@/components/ui/PageHero';
+import PageHero from '@/components/PublicComponents/ui/PageHero';
 import Link from 'next/link';
 import { portfolioData } from '@/lib/data/portfolio';
 import Image from 'next/image';

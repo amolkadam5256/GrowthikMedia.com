@@ -20,7 +20,7 @@ const FloatingWhatsApp = dynamic(() => import("./FloatingWhatsApp"), {
   ssr: false,
 });
 const GrowthStrategistBot = dynamic(
-  () => import("../PublicComponents/AIChatBot/AIChatBot"),
+  () => import("../AIChatBot/AIChatBot"),
   { ssr: false },
 );
 

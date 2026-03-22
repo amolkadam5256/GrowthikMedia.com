@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import Counter from "@/components/ui/Counter";
+import Counter from "@/components/PublicComponents/ui/Counter";
 
 const logos = [
   "TechFlow",

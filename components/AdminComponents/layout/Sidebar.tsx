@@ -13,7 +13,7 @@ import {
   FiCpu,
   FiTrendingUp,
 } from "react-icons/fi";
-import { ThemeToggleButton } from "@/components/comman/header/ThemeToggleButton";
+import { ThemeToggleButton } from "@/components/PublicComponents/comman/header/ThemeToggleButton";
 type TabId =
   | "dashboard"
   | "users"

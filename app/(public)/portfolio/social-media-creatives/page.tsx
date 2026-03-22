@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { portfolioData } from '@/lib/data/portfolio';
-import ClientPortfolioGrid from '@/components/portfolio/ClientPortfolioGrid';
-import PageHero from '@/components/ui/PageHero';
+import ClientPortfolioGrid from '@/components/PublicComponents/portfolio/ClientPortfolioGrid';
+import PageHero from '@/components/PublicComponents/ui/PageHero';
 
 export const metadata: Metadata = {
   title: 'Social Media Creatives & Ads | Growthik Media',

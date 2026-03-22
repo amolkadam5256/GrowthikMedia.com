@@ -44,19 +44,19 @@ const rostexOutline = localFont({
   display: "swap",
 });
 
-import Header from "../../components/comman/header/Header";
-import Footer from "../../components/comman/Footer";
-import SEO from "../../components/comman/SEO";
-import PageViewTracker from "../../components/comman/PageViewTracker";
-import GTM from "../../components/comman/GTM";
-import AOSInit from "../../components/comman/AOSInit";
+import Header from "@/components/PublicComponents/comman/header/Header";
+import Footer from "@/components/PublicComponents/comman/Footer";
+import SEO from "@/components/PublicComponents/comman/SEO";
+import PageViewTracker from "@/components/PublicComponents/comman/PageViewTracker";
+import GTM from "@/components/PublicComponents/comman/GTM";
+import AOSInit from "@/components/PublicComponents/comman/AOSInit";
 import Script from "next/script";
 import { CONTACT_INFO } from "@/constants/contact";
 
-import ClientUtilities from "../../components/comman/ClientUtilities";
-import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
-import BreadcrumbSchema from "../../components/structured-data/BreadcrumbSchema";
-import LocalBusinessSchema from "../../components/structured-data/LocalBusinessSchema";
+import ClientUtilities from "@/components/PublicComponents/comman/ClientUtilities";
+import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
+import BreadcrumbSchema from "@/components/PublicComponents/structured-data/BreadcrumbSchema";
+import LocalBusinessSchema from "@/components/PublicComponents/structured-data/LocalBusinessSchema";
 import dynamic from "next/dynamic";
 
 // The ClientUtilities component now handles the deferred loading of

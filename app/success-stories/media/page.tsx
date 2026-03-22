@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import PageHero from '@/components/ui/PageHero';
+import PageHero from '@/components/PublicComponents/ui/PageHero';
 
 export const metadata: Metadata = {
   title: 'Media Coverage | Growthik Media',

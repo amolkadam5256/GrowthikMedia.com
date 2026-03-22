@@ -16,7 +16,7 @@ import {
   Zap,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
-import AISchema from "@/components/comman/AISchema";
+import AISchema from "@/components/PublicComponents/comman/AISchema";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 

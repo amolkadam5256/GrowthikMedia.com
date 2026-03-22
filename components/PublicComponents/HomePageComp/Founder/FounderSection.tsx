@@ -13,8 +13,8 @@ import {
   Monitor,
   TrendingUp,
 } from "lucide-react";
-import Button from "@/components/ui/Button";
-import Counter from "@/components/ui/Counter";
+import Button from "@/components/PublicComponents/ui/Button";
+import Counter from "@/components/PublicComponents/ui/Counter";
 
 const FounderSection = () => {
   return (

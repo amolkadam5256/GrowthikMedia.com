@@ -2,9 +2,9 @@
 
 import React from "react";
 import { Check, ArrowRight, Zap, Target, Crown } from "lucide-react";
-import Button from "@/components/ui/Button";
+import Button from "@/components/PublicComponents/ui/Button";
 import Link from "next/link";
-import Counter from "@/components/ui/Counter";
+import Counter from "@/components/PublicComponents/ui/Counter";
 
 const tiers = [
   {

@@ -10,11 +10,11 @@ import {
   filterAndSortPosts,
   CATEGORIES,
 } from "@/lib/blog/data";
-import BlogCard from "@/components/Blog/BlogCard";
-import SearchAndFilter from "@/components/Blog/SearchAndFilter";
+import BlogCard from "@/components/PublicComponents/Blog/BlogCard";
+import SearchAndFilter from "@/components/PublicComponents/Blog/SearchAndFilter";
 
 // Sidebar content is off-screen on mobile and non-critical on desktop first paint.
-const BlogSidebar = dynamic(() => import("@/components/Blog/BlogSidebar"), {
+const BlogSidebar = dynamic(() => import("@/components/PublicComponents/Blog/BlogSidebar"), {
   ssr: false,
 });
 

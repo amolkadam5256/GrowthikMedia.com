@@ -3,7 +3,7 @@
 import React from "react";
 import { TrendingUp, Target, DollarSign, Users } from "lucide-react";
 import Link from "next/link";
-import Counter from "@/components/ui/Counter";
+import Counter from "@/components/PublicComponents/ui/Counter";
 
 const metrics = [
   {

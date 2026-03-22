@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { portfolioData } from '@/lib/data/portfolio';
-import ClientPortfolioGrid from '@/components/portfolio/ClientPortfolioGrid';
+import ClientPortfolioGrid from '@/components/PublicComponents/portfolio/ClientPortfolioGrid';
 
 export const metadata: Metadata = {
   title: 'Our Work | 30+ Tech & Marketing Projects | Growthik Media',

@@ -3,9 +3,9 @@
 import React from "react";
 import Link from "next/link";
 import { Download, FileText, BarChart3, ArrowRight } from "lucide-react";
-import Button from "@/components/ui/Button";
+import Button from "@/components/PublicComponents/ui/Button";
 import { motion } from "framer-motion";
-import Counter from "@/components/ui/Counter";
+import Counter from "@/components/PublicComponents/ui/Counter";
 
 const magnets = [
   {

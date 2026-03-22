@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import ServiceButton from "./ServiceButton";
-import ServicesGrid from "../../../ServicesGrid";
+import ServicesGrid from "@/components/PublicComponents/ServicesGrid";
 
 const OurServicesSection = React.memo(() => {
   return (

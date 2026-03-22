@@ -27,7 +27,7 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import ThemeProviderWrapper from "../components/comman/ThemeProviderWrapper";
+import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
 import { CONTACT_INFO } from "@/constants/contact";
 
 function NotFoundContent() {

@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import Button from "@/components/ui/Button";
-import Badge from "@/components/ui/Badge";
+import Button from "@/components/PublicComponents/ui/Button";
+import Badge from "@/components/PublicComponents/ui/Badge";
 
 const HeroHeadline = () => {
   return (

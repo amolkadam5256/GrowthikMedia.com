@@ -2,7 +2,7 @@ import "../assets/styles/globals.css";
 import "../assets/styles/fonts.css";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
-import ThemeProviderWrapper from "@/components/comman/ThemeProviderWrapper";
+import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 

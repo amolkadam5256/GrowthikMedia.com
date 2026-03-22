@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Cpu, Zap, Search, TrendingUp } from "lucide-react";
-import Counter from "@/components/ui/Counter";
+import Counter from "@/components/PublicComponents/ui/Counter";
 
 const aiFeatures = [
   {

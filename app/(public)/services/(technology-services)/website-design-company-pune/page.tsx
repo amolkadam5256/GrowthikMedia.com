@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
-import AISchema from "@/components/comman/AISchema";
+import AISchema from "@/components/PublicComponents/comman/AISchema";
 import {
   CheckCircle2,
   Monitor,

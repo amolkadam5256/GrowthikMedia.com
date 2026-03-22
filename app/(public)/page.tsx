@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import HomeClient from "@/app/(public)/HomeClient";
-import AISchema from "@/components/comman/AISchema";
+import AISchema from "@/components/PublicComponents/comman/AISchema";
 
 export const metadata: Metadata = {
   title: "Best Digital Marketing Agency in Pune | Growthik Media",
