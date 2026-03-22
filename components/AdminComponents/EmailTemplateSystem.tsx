@@ -136,6 +136,8 @@ const TEMPLATES: EmailTemplate[] = [
 ];
 
 export default function EmailTemplateSystem() {
+  const [activeTab, setActiveTab] = useState(TEMPLATES[0].id);
+  const [copyStatus, setCopyStatus] = useState<string | null>(null);
   const [testRecipient, setTestRecipient] = useState(COMPANY_INFO.adminEmails[0]);
   const [isSendingTest, setIsSendingTest] = useState<string | null>(null);
 

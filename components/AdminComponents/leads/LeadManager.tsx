@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FiSearch,
   FiFilter,
@@ -124,15 +124,36 @@ const SAMPLE_LEADS: Lead[] = [
 ];
 
 export default function LeadManager({ type = "all" }: { type?: string }) {
+  const [leads, setLeads] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("Contact Details");
   const [selectedLeads, setSelectedLeads] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
+  useEffect(() => {
+    fetchLeads();
+  }, [type]);
+
+  const fetchLeads = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/admin/inquiry-leads?type=${type}`);
+      const data = await res.json();
+      if (Array.isArray(data)) {
+        setLeads(data);
+      }
+    } catch (e) {
+      console.error("Failed to fetch leads", e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const toggleSelectAll = () => {
-    if (selectedLeads.length === SAMPLE_LEADS.length) {
+    if (selectedLeads.length === leads.length) {
       setSelectedLeads([]);
     } else {
-      setSelectedLeads(SAMPLE_LEADS.map((l) => l.id));
+      setSelectedLeads(leads.map((l) => l.id));
     }
   };
 
@@ -178,7 +199,7 @@ export default function LeadManager({ type = "all" }: { type?: string }) {
       </div>
 
       {/* Main Container */}
-      <div className="bg-white dark:bg-gray-900/50 rounded-[2rem] border border-gray-100 dark:border-gray-800 shadow-2xl overflow-hidden backdrop-blur-3xl">
+      <div className="bg-white dark:bg-gray-900/50 rounded-4xl border border-gray-100 dark:border-gray-800 shadow-2xl overflow-hidden backdrop-blur-3xl">
         {/* Tabs */}
         <div className="flex px-8 pt-6 border-b border-gray-100 dark:border-gray-800 gap-1 pb-4">
           {tabs.map((tab) => (
@@ -250,83 +271,104 @@ export default function LeadManager({ type = "all" }: { type?: string }) {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50 dark:divide-gray-800">
-              {SAMPLE_LEADS.map((lead, index) => (
-                <motion.tr
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  key={lead.id}
-                  className={`group hover:bg-blue-50/30 dark:hover:bg-blue-900/5 transition-colors ${
-                    selectedLeads.includes(lead.id)
-                      ? "bg-blue-50/50 dark:bg-blue-900/10"
-                      : ""
-                  }`}
-                >
-                  <td className="px-8 py-5">
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleSelectLead(lead.id);
-                      }}
-                      className={`w-5 h-5 rounded-md border-2 cursor-pointer flex items-center justify-center transition-all ${
+              {loading ? (
+                <tr>
+                  <td colSpan={9} className="py-20 text-center">
+                     <div className="w-10 h-10 border-4 border-blue-500/20 border-t-blue-500 rounded-full animate-spin mx-auto" />
+                     <p className="mt-4 text-gray-400 font-bold uppercase text-xs tracking-widest">Loading leads...</p>
+                  </td>
+                </tr>
+              ) : leads.length === 0 ? (
+                <tr>
+                  <td colSpan={9} className="py-20 text-center">
+                     <p className="text-gray-400 font-bold uppercase text-xs tracking-widest">No leads found in database.</p>
+                  </td>
+                </tr>
+              ) : (
+                leads
+                  .filter(l => 
+                    l.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                    l.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    (l.subject && l.subject.toLowerCase().includes(searchTerm.toLowerCase()))
+                  )
+                  .map((lead, index) => (
+                    <motion.tr
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                      key={lead.id}
+                      className={`group hover:bg-blue-50/30 dark:hover:bg-blue-900/5 transition-colors ${
                         selectedLeads.includes(lead.id)
-                          ? "bg-blue-600 border-blue-600"
-                          : "border-gray-300 dark:border-gray-600 group-hover:border-blue-400"
+                          ? "bg-blue-50/50 dark:bg-blue-900/10"
+                          : ""
                       }`}
                     >
-                      {selectedLeads.includes(lead.id) && (
-                        <FiCheck className="text-white text-xs" />
-                      )}
-                    </div>
-                  </td>
-                  <td className="px-4 py-5">
-                    <div className="flex items-center gap-3">
-                      <div className="flex flex-col">
-                        <span className="font-bold text-gray-900 dark:text-white text-sm">
-                          {lead.name}
-                        </span>
-                        <span className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
-                          {lead.source} • {lead.date}
-                        </span>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-4 py-5 text-sm text-gray-600 dark:text-gray-400 font-medium whitespace-nowrap">
-                    {lead.email}
-                  </td>
-                  <td className="px-4 py-5 text-sm text-gray-600 dark:text-gray-400 font-medium font-mono">
-                    {lead.mobile}
-                  </td>
-                  <td className="px-4 py-5 text-sm text-gray-600 dark:text-gray-400 font-medium truncate max-w-[150px]">
-                    {lead.company}
-                  </td>
-                  <td className="px-4 py-5">
-                    <div className="flex justify-center text-[10px] font-black uppercase text-gray-500">
-                      {lead.owner.initials}
-                    </div>
-                  </td>
-                  <td className="px-4 py-5">
-                    <div className="flex justify-center">
-                      <div
-                        className={`px-2 py-1 rounded-lg text-[10px] font-black ${lead.score && lead.score > 50 ? "bg-emerald-100 text-emerald-600" : "bg-gray-100 text-gray-500"}`}
-                      >
-                        {lead.score || 0}%
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-4 py-5 text-sm text-gray-600 dark:text-gray-400 font-medium">
-                    <div className="flex items-center gap-2">
-                      <FiGlobe className="text-gray-300" />
-                      {lead.country}
-                    </div>
-                  </td>
-                  <td className="px-8 py-5">
-                    <button className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors">
-                      <FiMoreVertical />
-                    </button>
-                  </td>
-                </motion.tr>
-              ))}
+                      <td className="px-8 py-5">
+                        <div
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleSelectLead(lead.id);
+                          }}
+                          className={`w-5 h-5 rounded-md border-2 cursor-pointer flex items-center justify-center transition-all ${
+                            selectedLeads.includes(lead.id)
+                              ? "bg-blue-600 border-blue-600"
+                              : "border-gray-300 dark:border-gray-600 group-hover:border-blue-400"
+                          }`}
+                        >
+                          {selectedLeads.includes(lead.id) && (
+                            <FiCheck className="text-white text-xs" />
+                          )}
+                        </div>
+                      </td>
+                      <td className="px-4 py-5">
+                        <div className="flex items-center gap-3">
+                          <div className="flex flex-col">
+                            <span className="font-bold text-gray-900 dark:text-white text-sm">
+                              {lead.name}
+                            </span>
+                            <span className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">
+                              {lead.subject || "General Inquiry"} • {new Date(lead.createdAt).toLocaleDateString()}
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-4 py-5 text-sm text-gray-600 dark:text-gray-400 font-medium whitespace-nowrap">
+                        {lead.email}
+                      </td>
+                      <td className="px-4 py-5 text-sm text-gray-600 dark:text-gray-400 font-medium font-mono">
+                        {lead.phone || "N/A"}
+                      </td>
+                      <td className="px-4 py-5 text-sm text-gray-600 dark:text-gray-400 font-medium truncate max-w-[150px]">
+                        {lead.message ? lead.message.substring(0, 50) + "..." : "No message"}
+                      </td>
+                      <td className="px-4 py-5">
+                        <div className="flex justify-center text-[10px] font-black uppercase text-gray-500">
+                          {lead.status}
+                        </div>
+                      </td>
+                      <td className="px-4 py-5">
+                        <div className="flex justify-center">
+                          <div
+                            className={`px-2 py-1 rounded-lg text-[10px] font-black ${lead.status === "NEW" ? "bg-red-100 text-red-600" : "bg-emerald-100 text-emerald-600"}`}
+                          >
+                            {lead.status}
+                          </div>
+                        </div>
+                      </td>
+                      <td className="px-4 py-5 text-sm text-gray-600 dark:text-gray-400 font-medium">
+                        <div className="flex items-center gap-2">
+                          <FiGlobe className="text-gray-300" />
+                          India
+                        </div>
+                      </td>
+                      <td className="px-8 py-5">
+                        <button className="p-2 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors">
+                          <FiMoreVertical />
+                        </button>
+                      </td>
+                    </motion.tr>
+                  ))
+              )}
             </tbody>
           </table>
         </div>

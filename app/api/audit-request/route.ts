@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { sendUnifiedEmail, sendEmail, TEAM_EMAIL } from "@/lib/mailer";
+import { sendUnifiedEmail } from "@/lib/mailer";
+import { db as prisma } from "@/lib/db";
 
 export async function POST(req: Request) {
   try {
@@ -9,6 +10,32 @@ export async function POST(req: Request) {
     const finalWebsite = websiteUrl || website || "N/A";
     const finalGoal = mainGoal || goal || "SEO Audit";
     const finalBusiness = businessName || "N/A";
+
+    // Combine for DB Message
+    const fullMessage = `
+💼 Business: ${finalBusiness}
+🌐 Website: ${finalWebsite}
+💰 Budget: ${monthlyBudget || "N/A"}
+🎯 Goal: ${finalGoal}
+    `.trim();
+
+    // DB Logging
+    let inquiryId = null;
+    try {
+      const inquiry = await prisma.inquiry.create({
+        data: {
+          name,
+          email,
+          phone: phone || null,
+          subject: `Audit: ${finalBusiness}`,
+          message: fullMessage,
+          status: "NEW",
+        },
+      });
+      inquiryId = inquiry.id;
+    } catch (e) {
+      console.error("❌ DB Logging Error:", e);
+    }
 
     await sendUnifiedEmail({
       userEmail: email,
@@ -22,6 +49,7 @@ export async function POST(req: Request) {
         website: finalWebsite,
         monthly_budget: monthlyBudget || "N/A",
         goal: finalGoal,
+        inquiry_id: inquiryId || "N/A",
       },
       userSubject: `Your Audit is Booked! — Growthik Media`
     });

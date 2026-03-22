@@ -12,10 +12,18 @@ import {
   FiCheckCircle,
   FiMessageSquare,
   FiEye,
-  FiPlus,
   FiSearch,
+  FiRepeat,
+  FiPaperclip,
+  FiSend,
 } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+
+const QUICK_TEMPLATES = [
+  { id: 'ack', label: 'Acknowledgment', body: "Hi [Name],\n\nThank you for reaching out to Growthik Media! We've received your inquiry regarding [Subject] and our team is already reviewing it.\n\nOne of our experts will get back to you within 24 hours with some initial ideas.\n\nIn the meantime, feel free to visit our portfolio: https://growthikmedia.com/portfolio" },
+  { id: 'meeting', label: 'Meeting Request', body: "Hi [Name],\n\nWe'd love to learn more about your project. Could we hop on a quick 15-minute discovery call this Thursday or Friday?\n\nYou can pick a time that works for you here: [Calendar Link]\n\nLooking forward to speaking with you!" },
+  { id: 'quote', label: 'Quote Request', body: "Hi [Name],\n\nThanks for your inquiry! Based on what you shared, we can definitely help with your project.\n\nTo give you an accurate quote, could you please share a few more details about [specific requirement]? Once we have that, I'll send over a formal proposal." }
+];
 
 export type InquiryLead = {
   id: string;
@@ -40,6 +48,11 @@ export default function InquiriesManager() {
     null,
   );
   const [showExportMenu, setShowExportMenu] = useState(false);
+  const [showEmailView, setShowEmailView] = useState(false);
+  const [showReplyComposer, setShowReplyComposer] = useState(false);
+  const [replyBody, setReplyBody] = useState("");
+  const [isSendingReply, setIsSendingReply] = useState(false);
+  const [replyStatus, setReplyStatus] = useState<"idle" | "success" | "error">("idle");
 
   useEffect(() => {
     fetchInquiries();
@@ -107,6 +120,40 @@ export default function InquiriesManager() {
     } catch (e) {
       console.error("Update failed:", e);
     }
+  const handleSendReply = async () => {
+    if (!selectedInquiry || !replyBody.trim()) return;
+    setIsSendingReply(true);
+    setReplyStatus("idle");
+
+    try {
+      const res = await fetch("/api/admin/reply-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          to: selectedInquiry.email,
+          subject: selectedInquiry.subject || "Quick Response",
+          body: replyBody,
+        }),
+      });
+
+      if (res.ok) {
+        setReplyStatus("success");
+        setReplyBody("");
+        setTimeout(() => setShowReplyComposer(false), 2000);
+      } else {
+        setReplyStatus("error");
+      }
+    } catch (e) {
+      setReplyStatus("error");
+    } finally {
+      setIsSendingReply(false);
+    }
+  };
+
+  const loadTemplate = (templateBody: string) => {
+    if (!selectedInquiry) return;
+    const personalized = templateBody.replace("[Name]", selectedInquiry.name.split(" ")[0]);
+    setReplyBody(personalized);
   };
 
   if (loading) {
@@ -303,6 +350,17 @@ export default function InquiriesManager() {
                     <option value="CONTACTED">Contacted</option>
                     <option value="RESOLVED">Resolved</option>
                   </select>
+
+                  <button 
+                    onClick={() => setShowEmailView(!showEmailView)}
+                    className={`text-[10px] font-black uppercase px-3 py-1.5 rounded-lg border transition-all ${
+                      showEmailView 
+                        ? "bg-red-600 border-red-600 text-white shadow-lg shadow-red-500/30" 
+                        : "bg-white dark:bg-gray-900 border-gray-200 dark:border-white/10 text-gray-500 hover:text-red-500"
+                    }`}
+                  >
+                    {showEmailView ? "EXIT PREVIEW" : "VIEW EMAIL FORMAT"}
+                  </button>
                 </div>
 
                 <div className="flex items-center gap-2">
@@ -323,6 +381,16 @@ export default function InquiriesManager() {
                   >
                     <FiMail size={16} />
                   </a>
+                  <button
+                     onClick={() => {
+                        setShowReplyComposer(true);
+                        setReplyBody(`Hi ${selectedInquiry.name.split(" ")[0]},\n\n`);
+                     }}
+                     className="p-2 bg-purple-50 text-purple-600 dark:bg-purple-500/10 dark:text-purple-400 rounded-lg hover:bg-purple-100 transition-colors"
+                     title="Reply Now"
+                  >
+                     <FiRepeat size={16} />
+                  </button>
                   <button
                     onClick={() => handleDelete(selectedInquiry.id)}
                     className="p-2 bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400 rounded-lg hover:bg-red-100 transition-colors ml-2"
@@ -374,27 +442,126 @@ export default function InquiriesManager() {
                   </div>
                 </div>
 
+                {/* Reply Composer Modal/Overlay */}
+                <AnimatePresence>
+                  {showReplyComposer && (
+                    <motion.div 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="border-b border-gray-100 dark:border-gray-700 bg-purple-50/30 dark:bg-purple-900/10 p-6 md:p-8"
+                    >
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="text-sm font-black uppercase text-purple-600 dark:text-purple-400 tracking-widest flex items-center gap-2">
+                           <FiRepeat /> Composite Response
+                        </h4>
+                        <div className="flex gap-2">
+                          {QUICK_TEMPLATES.map(t => (
+                            <button 
+                              key={t.id}
+                              onClick={() => loadTemplate(t.body)}
+                              className="text-[10px] bg-white dark:bg-gray-800 border border-gray-100 dark:border-white/5 px-2 py-1 rounded-md text-gray-500 hover:text-purple-600 transition-colors font-bold"
+                            >
+                              {t.label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <textarea 
+                        value={replyBody}
+                        onChange={(e) => setReplyBody(e.target.value)}
+                        placeholder="Write your professional response..."
+                        className="w-full h-40 bg-white dark:bg-[#0a0a0a] border border-gray-100 dark:border-white/5 rounded-2xl p-4 text-sm outline-none focus:border-purple-500 shadow-inner"
+                      />
+
+                      <div className="flex items-center justify-end gap-3 mt-4">
+                         <button 
+                           onClick={() => setShowReplyComposer(false)}
+                           className="text-xs font-bold text-gray-400 hover:text-gray-600"
+                         >
+                            CANCEL
+                         </button>
+                         <button 
+                           onClick={handleSendReply}
+                           disabled={isSendingReply || !replyBody.trim()}
+                           className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-xs font-black shadow-lg transition-all ${
+                             replyStatus === "success" 
+                               ? "bg-green-500 text-white" 
+                               : replyStatus === "error" 
+                                 ? "bg-red-500 text-white" 
+                                 : "bg-purple-600 text-white shadow-purple-500/30 active:scale-95 disabled:opacity-50"
+                           }`}
+                         >
+                            {isSendingReply ? "SENDING..." : replyStatus === "success" ? "SENT SUCCESSFULLY!" : replyStatus === "error" ? "RETRY FAILED" : <><FiSend /> SEND RESPONSE</>}
+                         </button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
                 {/* Submitted Content Area */}
                 <div className="bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-700 rounded-2xl p-6 md:p-8 relative">
                   <div className="absolute -top-3 left-6 bg-white dark:bg-gray-800 px-3 py-1 border border-gray-100 dark:border-gray-700 rounded-full text-xs font-bold text-blue-600 dark:text-blue-400 tracking-wider uppercase flex items-center gap-1.5 shadow-sm">
-                    <FiType size={12} />
-                    Submitted Subject & Message
+                    {showEmailView ? <FiMail size={12} /> : <FiType size={12} />}
+                    {showEmailView ? "Professional Email Format" : "Submitted Subject & Message"}
                   </div>
 
                   <div className="mt-2">
-                    <h5 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-white/5 pb-4">
-                      {selectedInquiry.subject || "No Subject Provided"}
-                    </h5>
+                    {showEmailView ? (
+                      <div className="bg-white dark:bg-[#0a0a0a] rounded-xl border border-gray-200 dark:border-white/5 overflow-hidden shadow-2xl">
+                         <div className="bg-red-600 p-6 text-white">
+                            <h4 className="text-sm font-bold opacity-80 uppercase tracking-widest mb-1">Growthik Media Team Alert</h4>
+                            <p className="text-xl font-black uppercase">New Lead Captured: {selectedInquiry.name}</p>
+                         </div>
+                         <div className="p-8 space-y-6 text-gray-800 dark:text-gray-200">
+                            <div className="grid grid-cols-2 gap-4">
+                               <div className="p-4 bg-gray-50 dark:bg-white/5 rounded-xl">
+                                  <p className="text-[10px] font-black text-gray-400 uppercase mb-1">Lead Name</p>
+                                  <p className="font-bold">{selectedInquiry.name}</p>
+                               </div>
+                               <div className="p-4 bg-gray-50 dark:bg-white/5 rounded-xl">
+                                  <p className="text-[10px] font-black text-gray-400 uppercase mb-1">Email Address</p>
+                                  <p className="font-bold underline">{selectedInquiry.email}</p>
+                               </div>
+                               <div className="p-4 bg-gray-50 dark:bg-white/5 rounded-xl">
+                                  <p className="text-[10px] font-black text-gray-400 uppercase mb-1">Phone Number</p>
+                                  <p className="font-bold">{selectedInquiry.phone || "Not provided"}</p>
+                               </div>
+                               <div className="p-4 bg-gray-50 dark:bg-white/5 rounded-xl">
+                                  <p className="text-[10px] font-black text-gray-400 uppercase mb-1">Inquiry ID</p>
+                                  <p className="font-mono text-[11px]">{selectedInquiry.id}</p>
+                               </div>
+                            </div>
+                            <div className="p-6 bg-gray-50 dark:bg-white/5 rounded-2xl border border-gray-100 dark:border-white/5">
+                               <p className="text-[10px] font-black text-gray-400 uppercase mb-4 tracking-widest">Message Content</p>
+                               <p className="text-lg font-bold text-gray-900 dark:text-white mb-4 italic">"{selectedInquiry.subject || "No Subject"}"</p>
+                               <div className="whitespace-pre-wrap text-sm leading-relaxed border-t border-gray-200 dark:border-white/5 pt-4">
+                                  {selectedInquiry.message || "No additional content provided."}
+                               </div>
+                            </div>
+                            <div className="text-center pt-8 opacity-50 text-[10px] font-black uppercase tracking-[0.3em]">
+                               Growthik Media Infrastructure • {new Date(selectedInquiry.createdAt).getFullYear()}
+                            </div>
+                         </div>
+                      </div>
+                    ) : (
+                      <>
+                        <h5 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-white/5 pb-4">
+                          {selectedInquiry.subject || "No Subject Provided"}
+                        </h5>
 
-                    <div className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-none whitespace-pre-wrap text-sm md:text-base selection:bg-blue-200 dark:selection:bg-blue-900">
-                      {selectedInquiry.message ? (
-                        selectedInquiry.message
-                      ) : (
-                        <span className="italic text-gray-400">
-                          No message body was provided in this inquiry.
-                        </span>
-                      )}
-                    </div>
+                        <div className="text-gray-700 dark:text-gray-300 leading-relaxed max-w-none whitespace-pre-wrap text-sm md:text-base selection:bg-blue-200 dark:selection:bg-blue-900">
+                          {selectedInquiry.message ? (
+                            selectedInquiry.message
+                          ) : (
+                            <span className="italic text-gray-400">
+                              No message body was provided in this inquiry.
+                            </span>
+                          )}
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

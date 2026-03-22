@@ -78,8 +78,8 @@ export default function Sidebar({
       label: "Lead Management",
       icon: <FiTrendingUp />,
       children: [
-        { id: "leads-chatbot", label: "Chatbot Leads" },
-        { id: "leads-inquiry", label: "Inquiry Form Leads" },
+        { id: "leads-inquiry", label: "Message Inbox" },
+        { id: "leads-chatbot", label: "AI Chat Leads" },
         { id: "leads-contact", label: "Contact Page Leads" },
         { id: "leads-manual", label: "Manual Added Leads" },
         { id: "leads-imported", label: "Imported Leads" },
