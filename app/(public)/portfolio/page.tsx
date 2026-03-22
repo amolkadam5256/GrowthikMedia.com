@@ -1,95 +1,56 @@
-import { Metadata } from "next";
-import { CONTACT_INFO } from "@/constants/contact";
+import { Metadata } from 'next';
+import { portfolioData } from '@/lib/data/portfolio';
+import ClientPortfolioGrid from '@/components/portfolio/ClientPortfolioGrid';
 
 export const metadata: Metadata = {
-  title: "Our Portfolio | Growthik Media - Success Stories",
-  description:
-    "Explore our diverse portfolio of successful digital marketing campaigns, stunning websitesand high-impact video productions.",
-  keywords:
-    "digital marketing portfolio, website portfolio, video production case studies, success stories",
-  alternates: {
-    canonical: "https://www.growthikmedia.com/services/portfolio/",
-  },
-  openGraph: {
-    title: "Our Portfolio | Growthik Media - Success Stories",
-    description:
-      "Explore our diverse portfolio of successful digital marketing campaigns, stunning websitesand high-impact video productions.",
-    url: `${CONTACT_INFO.website}/portfolio/`,
-    siteName: "Growthik Media",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Growthik Media Portfolio",
-      },
-    ],
-    locale: "en_IN",
-    type: "website",
-  },
+  title: 'Our Work | 30+ Tech & Marketing Projects | Growthik Media',
+  description: 'Explore our comprehensive portfolio of 30+ web development projects, marketing campaigns, healthcare platforms, and real estate solutions across Pune and Dubai.',
 };
 
 export default function PortfolioPage() {
   return (
-    <div className="min-h-screen py-32 px-4">
-      <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-linear-to-r from-(--color-primary) to-(--color-primary-light) bg-clip-text text-transparent uppercase tracking-wider">
-          Our Portfolio
-        </h1>
-        <div className="w-32 h-1.5 bg-(--color-primary) mx-auto mb-16 rounded-full"></div>
+    <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-black overflow-hidden relative">
+      <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-red-600/10 to-transparent pointer-events-none" />
 
-        <p className="text-xl text-(--text-secondary) mb-16 max-w-3xl mx-auto">
-          We have helped hundreds of businesses achieve their goals through
-          creative and data-driven digital solutions. Check out some of our
-          featured work below.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3, 4, 5, 6].map((item) => (
-            <div
-              key={item}
-              className="group relative overflow-hidden rounded-2xl aspect-video bg-(--card-background) border border-(--border-color) shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-            >
-              <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <h3 className="text-white text-xl font-bold mb-2">
-                  Featured Project {item}
-                </h3>
-                <p className="text-gray-300 text-sm">
-                  Full digital marketing & branding overhaul
-                </p>
-              </div>
-              <div className="flex items-center justify-center h-full">
-                <span className="text-(--text-secondary) italic">
-                  Project Showcase Coming Soon
-                </span>
-              </div>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Header Secton */}
+        <section className="text-center md:text-left mb-16 flex flex-col md:flex-row items-end justify-between gap-8 pt-8">
+          <div className="max-w-2xl">
+            <span className="text-red-600 font-bold tracking-wider uppercase text-sm mb-3 block">
+              Our Complete Portfolio
+            </span>
+            <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
+              Ideas Built into <br className="hidden md:block"/> Real-World Impact.
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+              Explore 30+ of our latest full-stack scalable web applications, real estate landing pages, SEO-optimised portals, and corporate structures connecting audiences globally.
+            </p>
+          </div>
+          
+          {/* Stats Bar Component */}
+          <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-6 shadow-xl flex gap-8">
+            <div className="text-center">
+              <span className="block text-3xl font-black text-gray-900 dark:text-white">30+</span>
+              <span className="text-xs text-gray-500 uppercase font-semibold">Projects Built</span>
             </div>
-          ))}
-        </div>
-        <div className="mt-16 text-center">
-          <p className="text-lg text-(--text-secondary)">
-            More blog posts coming soon! Stay tuned for expert insights and
-            industry updates.
-          </p>
-        </div>
+            <div className="w-px bg-gray-200 dark:bg-gray-800" />
+            <div className="text-center">
+              <span className="block text-3xl font-black text-gray-900 dark:text-white">10+</span>
+              <span className="text-xs text-gray-500 uppercase font-semibold">Industries</span>
+            </div>
+            <div className="w-px bg-gray-200 dark:bg-gray-800" />
+            <div className="text-center">
+              <span className="block text-3xl font-black text-gray-900 dark:text-white">2</span>
+              <span className="text-xs text-gray-500 uppercase font-semibold">Global Markets</span>
+            </div>
+          </div>
+        </section>
 
-        <div className="mt-24 p-12 rounded-3xl border border-(--border-color) bg-(--card-background) shadow-2xl backdrop-blur-sm">
-          <h2 className="text-3xl font-bold mb-6 text-white">
-            Want to see more?
-          </h2>
-          <p className="text-lg text-(--text-secondary) mb-8 max-w-2xl mx-auto">
-            We are in the process of migrating our extensive portfolio to this
-            new platform. In the meantime, you can reach out to us for specific
-            case studies in your industry.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block px-10 py-4 bg-(--color-primary) text-white font-bold rounded-lg hover:scale-105 transition-all duration-300 shadow-xl"
-          >
-            Inquire About Our Work
-          </a>
-        </div>
-      </div>
+        {/* Client Side Grid with Filtering */}
+        <ClientPortfolioGrid initialData={portfolioData} />
+        
+      </main>
     </div>
   );
 }

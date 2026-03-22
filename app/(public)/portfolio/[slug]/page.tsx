@@ -1,74 +1,192 @@
-import { Metadata } from "next";
-import { CONTACT_INFO } from "@/constants/contact";
+import { notFound } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
+import { portfolioData } from '@/lib/data/portfolio';
 
-interface Props {
-  params: Promise<{ slug: string }>;
+// Generate static routes for all portfolio entries
+export async function generateStaticParams() {
+  return portfolioData.map((project) => ({
+    slug: project.slug,
+  }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const label = slug
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-  const exactOverrides: Record<string, string> = {
-    "education-content-strategy": "Education Content Strategy Portfolio | Growthik Media",
-  };
-
-  const name = exactOverrides[slug] || `${label} Portfolio | ${CONTACT_INFO.companyName}`;
-  const description = `Showcase of our ${label} projects. See how Growthik Media delivers exceptional results for clients.`;
+  const project = portfolioData.find((p) => p.slug === slug);
+  if (!project) return { title: 'Not Found | Growthik Media' };
 
   return {
-    title: name,
-    description: description,
-    openGraph: {
-      title: name,
-      description: description,
-      url: `${CONTACT_INFO.website}/portfolio/${slug}/`,
-    },
-    alternates: {
-      canonical: `${CONTACT_INFO.website}/portfolio/${slug}/`,
-    },
+    title: `${project.title} | Growthik Media Portfolio`,
+    description: project.shortDesc,
   };
 }
 
-export default async function PortfolioDetailPage({ params }: Props) {
+export default async function PortfolioProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const label = slug
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+  const project = portfolioData.find((p) => p.slug === slug);
+
+  if (!project) {
+    notFound();
+  }
+
+  // Find related active projects
+  const relatedProjects = portfolioData
+    .filter((p) => p.category === project.category && p.id !== project.id)
+    .slice(0, 3);
 
   return (
-    <div className="min-h-screen py-32 px-4 flex flex-col items-center justify-center">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-(--color-primary) font-bold tracking-widest mb-4 uppercase">
-          Success Stories
-        </h2>
-        <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-linear-to-r from-(--color-primary) to-(--color-primary-light) bg-clip-text text-transparent uppercase tracking-wider">
-          {label} Projects
-        </h1>
-        <div className="w-32 h-1.5 bg-(--color-primary) mx-auto mb-12 rounded-full"></div>
-
-        <p className="text-xl md:text-2xl text-(--text-secondary) mb-12 leading-relaxed">
-          Our portfolio for <strong>{label}</strong> is currently being curated
-          to show you the best of our work. Stay tuned for detailed case studies
-          and results.
-        </p>
-
-        <div className="p-10 rounded-2xl border border-(--border-color) bg-(--card-background) shadow-2xl">
-          <p className="text-lg text-(--text-primary) mb-8">
-            Want to see our previous work in <strong>{label}</strong>? We can
-            share specific case studies and performance reports upon request.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block px-10 py-4 bg-(--color-primary) text-white font-bold rounded-lg hover:rotate-1 hover:scale-105 transition-all duration-300 shadow-xl"
-          >
-            Request Case Studies
-          </a>
+    <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-black">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Breadcrumbs */}
+        <div className="flex items-center text-sm text-gray-500 mb-8 pt-6">
+          <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
+          <span className="mx-2">/</span>
+          <Link href="/portfolio" className="hover:text-red-600 transition-colors">Portfolio</Link>
+          <span className="mx-2">/</span>
+          <span className="text-gray-900 dark:text-gray-300 capitalize">{project.category.replace('-', ' ')}</span>
+          <span className="mx-2">/</span>
+          <span className="text-gray-900 dark:text-gray-300 font-medium truncate">{project.title}</span>
         </div>
-      </div>
+
+        {/* Hero Section */}
+        <section className="mb-16">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
+            {project.title}
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mb-8 leading-relaxed">
+            {project.shortDesc}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4 mb-10">
+            <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-semibold">
+              🏢 {project.industry}
+            </div>
+            {project.location && (
+              <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-semibold capitalize">
+                📍 {project.location}
+              </div>
+            )}
+            {project.isClientWork ? (
+              <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400 rounded-lg text-sm font-bold border border-blue-200 dark:border-blue-800">
+                🤝 Client Project
+              </div>
+            ) : (
+              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 text-purple-700 dark:bg-purple-900/20 dark:text-purple-400 rounded-lg text-sm font-bold border border-purple-200 dark:border-purple-800">
+                🚀 Internal/Open Source
+              </div>
+            )}
+            
+            <div className="flex-1" />
+            
+            <div className="flex flex-wrap gap-3">
+              {project.liveUrl && (
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg shadow-md transition-all flex items-center gap-2">
+                  View Live Site
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                </a>
+              )}
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="px-6 py-2.5 bg-gray-900 hover:bg-black dark:bg-white dark:hover:bg-gray-100 dark:text-black text-white font-bold rounded-lg shadow-md transition-all flex items-center gap-2">
+                  View GitHub
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                </a>
+              )}
+              {(!project.liveUrl && !project.githubUrl) && (
+                <Link href="/contact" className="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg shadow-md transition-all">
+                  Contact Us to Discuss This
+                </Link>
+              )}
+            </div>
+          </div>
+
+          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+            <Image
+              src={project.thumbnail}
+              alt={project.title}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+          </div>
+        </section>
+
+        {/* Content Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          
+          {/* Main Description */}
+          <div className="lg:col-span-2">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">About The Project</h2>
+            <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+              <p className="whitespace-pre-line">{project.fullDesc}</p>
+            </div>
+            
+            {project.results && project.results.length > 0 && (
+              <div className="mt-12 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-xl p-8">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">Campaign Results</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {project.results.map((res, i) => (
+                    <div key={i} className="text-center">
+                      <div className="text-3xl font-black text-red-600 mb-2">{res.value}</div>
+                      <div className="text-sm font-semibold text-gray-700 dark:text-gray-300">{res.metric}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Sidebar */}
+          <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-8 h-fit sticky top-24 shadow-sm">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-wider">Tech Stack Used</h3>
+            <div className="flex flex-wrap gap-2 mb-8">
+              {project.techStack.map((tech, i) => (
+                <span key={i} className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm font-medium rounded-md">
+                  {tech}
+                </span>
+              ))}
+            </div>
+            
+            <hr className="border-gray-100 dark:border-gray-800 mb-8" />
+            
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Need something similar?</h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm">
+              Our team specializes in building robust solutions like this. Let's discuss your requirements.
+            </p>
+            <Link href="/contact" className="block text-center w-full px-4 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition-colors">
+              Start Your Project
+            </Link>
+          </div>
+        </div>
+
+        {/* Related Projects */}
+        {relatedProjects.length > 0 && (
+          <section className="mt-24 pt-16 border-t border-gray-200 dark:border-gray-800">
+            <div className="flex justify-between items-end mb-10">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Related Projects</h2>
+                <p className="text-gray-600 dark:text-gray-400">Explore more from our {project.category.replace('-', ' ')} portfolio.</p>
+              </div>
+              <Link href="/portfolio" className="text-red-600 font-bold hover:underline hidden sm:block">
+                View All Projects &rarr;
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {relatedProjects.map((relProject) => (
+                <Link key={relProject.id} href={`/portfolio/${relProject.slug}`} className="group block">
+                  <div className="relative h-48 w-full rounded-xl overflow-hidden mb-4 bg-gray-100 dark:bg-gray-800">
+                     <Image src={relProject.thumbnail} alt={relProject.title} fill className="object-cover group-hover:scale-105 transition-transform" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-red-600 transition-colors">{relProject.title}</h3>
+                  <p className="text-sm text-gray-500 line-clamp-2 mt-1">{relProject.shortDesc}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+      </main>
     </div>
   );
 }
