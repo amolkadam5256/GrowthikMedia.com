@@ -56,20 +56,19 @@ export async function POST(req: Request) {
     const userSubject = `We've received your inquiry | Growthik Media`;
     const userHtml = getUserAutoReplyHTML(name);
 
-    // 5. Send Emails (in parallel)
-    const [adminResult, userResult] = await Promise.all([
-      sendEmail({
-        to: TEAM_EMAIL,
-        subject: adminSubject,
-        html: adminHtml,
-        replyTo: email,
-      }),
-      sendEmail({
-        to: email,
-        subject: userSubject,
-        html: userHtml,
-      }),
-    ]);
+    // 5. Send Emails (Sequential: User first, then Admin)
+    const userResult = await sendEmail({
+      to: email,
+      subject: userSubject,
+      html: userHtml,
+    });
+
+    const adminResult = await sendEmail({
+      to: TEAM_EMAIL,
+      subject: adminSubject,
+      html: adminHtml,
+      replyTo: email,
+    });
 
     if (!adminResult.success || !userResult.success) {
       console.warn("⚠️ One or more emails failed to send:", {

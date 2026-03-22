@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASS = process.env.EMAIL_PASS;
 export const SENDER = `"Growthik Media" <${EMAIL_USER}>`;
-export const TEAM_EMAIL = process.env.REPORT_EMAIL || "info@growthikmedia.com";
+export const TEAM_EMAIL = "info@growthikmedia.com, amolkadam1274@gmail.com, growthikmedia@gmail.com";
 
 /**
  * Configure Nodemailer transporter (Gmail SMTP)
