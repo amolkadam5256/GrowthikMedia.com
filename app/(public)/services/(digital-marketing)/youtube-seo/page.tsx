@@ -4,7 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { CheckCircle2, Award, ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
-import RelatedServices from "@/components/RelatedServices";
+import RelatedServices from "@/components/PublicComponents/RelatedServices";
 
 export const metadata: Metadata = {
   title: "YouTube Video SEO Services in Pune | Growthik Media",

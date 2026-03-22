@@ -29,7 +29,7 @@ import {
 } from "react-icons/fi";
 import { images } from "@/app/assets/images/images";
 import { CONTACT_INFO } from "@/constants/contact";
-import FooterLinks from "@/components/FooterLinks";
+import FooterLinks from "@/components/PublicComponents/FooterLinks";
 
 export default function Footer() {
   const { resolvedTheme } = useTheme();
