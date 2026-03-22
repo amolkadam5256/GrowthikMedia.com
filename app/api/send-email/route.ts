@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { sendEmail, TEAM_EMAIL, getUserAutoReplyHTML, getAdminNotificationHTML } from "@/lib/mailer";
+import { sendUnifiedEmail, sendEmail, TEAM_EMAIL, getUserAutoReplyHTML, getAdminNotificationHTML } from "@/lib/mailer";
 import { db as prisma } from "@/lib/db";
 
 /**
@@ -52,22 +52,24 @@ export async function POST(req: Request) {
       submitted_at: new Date().toLocaleString(),
     });
 
-    // 4. Prepare User Auto-Reply
     const userSubject = `We've received your inquiry | Growthik Media`;
-    const userHtml = getUserAutoReplyHTML(name);
 
-    // 5. Send Emails (Sequential: User first, then Admin)
-    const userResult = await sendEmail({
-      to: email,
-      subject: userSubject,
-      html: userHtml,
-    });
-
-    const adminResult = await sendEmail({
-      to: TEAM_EMAIL,
-      subject: adminSubject,
-      html: adminHtml,
-      replyTo: email,
+    // 5. Send Emails (Unified Sequence: User then Admin)
+    const { adminResult, userResult } = await sendUnifiedEmail({
+      userEmail: email,
+      userName: name,
+      adminSubject: adminSubject,
+      adminData: {
+        name,
+        email,
+        phone,
+        form_type: formType,
+        subject: subject || "No Subject",
+        message: message || "No message provided.",
+        inquiry_id: inquiryId || "Not logged in DB",
+        submitted_at: new Date().toLocaleString(),
+      },
+      userSubject: userSubject,
     });
 
     if (!adminResult.success || !userResult.success) {

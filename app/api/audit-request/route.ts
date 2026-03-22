@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { sendEmail, TEAM_EMAIL } from "@/lib/mailer";
+import { sendUnifiedEmail, sendEmail, TEAM_EMAIL } from "@/lib/mailer";
 
 export async function POST(req: Request) {
   try {
@@ -10,49 +10,20 @@ export async function POST(req: Request) {
     const finalGoal = mainGoal || goal || "SEO Audit";
     const finalBusiness = businessName || "N/A";
 
-    // 1. Notification to Business (TEAM)
-    const teamHtml = `
-      <div style="font-family: Arial; padding: 20px; color: #333;">
-        <h2 style="color: #D90B1C;">🔍 New Audit Request</h2>
-        <table style="width: 100%; border-collapse: collapse;">
-          <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Name:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${name}</td></tr>
-          <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Email:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${email}</td></tr>
-          <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Phone:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${phone || "N/A"}</td></tr>
-          <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Business:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${finalBusiness}</td></tr>
-          <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Website:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${finalWebsite}</td></tr>
-          <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Budget:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${monthlyBudget || "N/A"}</td></tr>
-          <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Goal:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${finalGoal}</td></tr>
-        </table>
-        <p style="margin-top: 20px; border-left: 4px solid #D90B1C; padding-left: 10px;">ACTION REQUIRED: Generate and send audit within 48hrs.</p>
-      </div>
-    `;
-
-    await sendEmail({
-      to: TEAM_EMAIL,
-      subject: `🔍 Audit Request: ${finalBusiness} [${finalWebsite}]`,
-      html: teamHtml,
-      replyTo: email,
-    });
-
-    // 2. Auto-reply to User
-    const userHtml = `
-      <div style="font-family: Arial; padding: 20px; color: #333; max-width: 600px;">
-        <h2 style="color: #D90B1C;">Your audit is booked!</h2>
-        <p>Hi ${name}, you've taken a huge step toward market dominance. We've received your request for <strong>${finalBusiness === "N/A" ? finalWebsite : finalBusiness}</strong>.</p>
-        <p><strong>What Happens Next:</strong></p>
-        <ul>
-          <li>Our technical team manually audits your website & SEO data.</li>
-          <li>We'll build your custom growth roadmap including ROI projection.</li>
-          <li>Your detailed report will land in your inbox within 48 hours.</li>
-        </ul>
-        <p>Best regards,<br>The Growthik SEO Team</p>
-      </div>
-    `;
-
-    await sendEmail({
-      to: email,
-      subject: `Your Audit is Booked! — Growthik Media`,
-      html: userHtml,
+    await sendUnifiedEmail({
+      userEmail: email,
+      userName: name,
+      adminSubject: `🔍 Audit Request: ${finalBusiness} [${finalWebsite}]`,
+      adminData: {
+        name,
+        email,
+        phone: phone || "N/A",
+        business_name: finalBusiness,
+        website: finalWebsite,
+        monthly_budget: monthlyBudget || "N/A",
+        goal: finalGoal,
+      },
+      userSubject: `Your Audit is Booked! — Growthik Media`
     });
 
     return NextResponse.json({ success: true, message: "Audit booked!" });

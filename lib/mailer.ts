@@ -2,7 +2,12 @@ import nodemailer from "nodemailer";
 
 const EMAIL_USER = process.env.EMAIL_USER;
 const EMAIL_PASS = process.env.EMAIL_PASS;
-export const SENDER = `"Growthik Media" <${EMAIL_USER}>`;
+
+// Fallback sender if env is missing
+export const SENDER = EMAIL_USER 
+  ? `"Growthik Media" <${EMAIL_USER}>` 
+  : `"Growthik Media" <info@growthikmedia.com>`;
+
 export const TEAM_EMAIL = "info@growthikmedia.com, amolkadam1274@gmail.com, growthikmedia@gmail.com";
 
 /**
@@ -12,12 +17,11 @@ export const transporter = nodemailer.createTransport({
   service: "gmail",
   host: "smtp.gmail.com",
   port: 465,
-  secure: true, // SSL/TLS
+  secure: true, 
   auth: {
     user: EMAIL_USER,
     pass: EMAIL_PASS,
   },
-  // Add proper headers to improve deliverability
   headers: {
     "X-Mailer": "GrowthikMedia-Nodemailer"
   }
@@ -37,6 +41,11 @@ export async function sendEmail({
   html: string; 
   replyTo?: string; 
 }) {
+  if (!EMAIL_USER || !EMAIL_PASS) {
+    console.error("❌ CRITICAL: EMAIL_USER or EMAIL_PASS not set in environment variables!");
+    return { success: false, error: "Email credentials missing" };
+  }
+
   try {
     const info = await transporter.sendMail({
       from: SENDER,
@@ -45,12 +54,48 @@ export async function sendEmail({
       html,
       replyTo: replyTo || SENDER,
     });
-    console.log(`✅ Email sent: ${info.messageId} to ${to}`);
+    console.log(`✅ Email sent to ${to} | ID: ${info.messageId} | Subject: ${subject}`);
     return { success: true, messageId: info.messageId };
   } catch (error: any) {
-    console.error("❌ SMTP Error:", error.message || error);
+    console.error(`❌ SMTP Error sending to ${to}:`, error.message || error);
     return { success: false, error: error.message || "Failed to send email." };
   }
+}
+
+/**
+ * Sends both User confirmation and Admin notification in the required sequence.
+ */
+export async function sendUnifiedEmail({
+  userEmail,
+  userName,
+  adminSubject,
+  adminData,
+  userSubject = "We've received your enquiry | Growthik Media"
+}: {
+  userEmail: string;
+  userName: string;
+  adminSubject: string;
+  adminData: any;
+  userSubject?: string;
+}) {
+  // 1. Send Auto-Reply to User FIRST
+  const userHtml = getUserAutoReplyHTML(userName);
+  const userResult = await sendEmail({
+    to: userEmail,
+    subject: userSubject,
+    html: userHtml,
+  });
+
+  // 2. Send Notification to Admin SECOND
+  const adminHtml = getAdminNotificationHTML(adminData);
+  const adminResult = await sendEmail({
+    to: TEAM_EMAIL,
+    subject: adminSubject,
+    html: adminHtml,
+    replyTo: userEmail,
+  });
+
+  return { userResult, adminResult };
 }
 
 /**
