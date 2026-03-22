@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { portfolioData } from '@/lib/data/portfolio';
+import { portfolioData, getProjectBySlug, getRelatedProjects } from '@/lib/data/portfolio';
 
 // Generate static routes for all portfolio entries
 export async function generateStaticParams() {
@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const project = portfolioData.find((p) => p.slug === slug);
+  const project = getProjectBySlug(slug);
   if (!project) return { title: 'Not Found | Growthik Media' };
 
   return {
@@ -23,16 +23,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function PortfolioProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const project = portfolioData.find((p) => p.slug === slug);
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();
   }
 
   // Find related active projects
-  const relatedProjects = portfolioData
-    .filter((p) => p.category === project.category && p.id !== project.id)
-    .slice(0, 3);
+  const relatedProjects = getRelatedProjects(slug, 3);
 
   return (
     <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-black">
@@ -42,7 +40,7 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
         <div className="flex items-center text-sm text-gray-500 mb-8 pt-6">
           <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/portfolio" className="hover:text-red-600 transition-colors">Portfolio</Link>
+          <Link href="/portfolio" className="hover:text-red-600 transition-colors">Our Work</Link>
           <span className="mx-2">/</span>
           <span className="text-gray-900 dark:text-gray-300 capitalize">{project.category.replace('-', ' ')}</span>
           <span className="mx-2">/</span>
@@ -50,7 +48,7 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
         </div>
 
         {/* Hero Section */}
-        <section className="mb-16">
+        <section className="mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
             {project.title}
           </h1>
@@ -67,13 +65,9 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
                 📍 {project.location}
               </div>
             )}
-            {project.isClientWork ? (
-              <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400 rounded-lg text-sm font-bold border border-blue-200 dark:border-blue-800">
-                🤝 Client Project
-              </div>
-            ) : (
-              <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 text-purple-700 dark:bg-purple-900/20 dark:text-purple-400 rounded-lg text-sm font-bold border border-purple-200 dark:border-purple-800">
-                🚀 Internal/Open Source
+            {project.status === 'live' && (
+              <div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400 rounded-lg text-sm font-bold border border-emerald-200 dark:border-emerald-800">
+                🟢 Live / Available
               </div>
             )}
             
@@ -92,15 +86,10 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
                 </a>
               )}
-              {(!project.liveUrl && !project.githubUrl) && (
-                <Link href="/contact" className="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg shadow-md transition-all">
-                  Contact Us to Discuss This
-                </Link>
-              )}
             </div>
           </div>
 
-          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800">
+          <div className="relative w-full aspect-21/9 rounded-2xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 mb-12">
             <Image
               src={project.thumbnail}
               alt={project.title}
@@ -110,6 +99,25 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
               priority
             />
           </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-8 mb-16 shadow-sm">
+            <div>
+               <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Client</span>
+               <span className="text-lg font-bold text-gray-900 dark:text-gray-100">{project.client}</span>
+            </div>
+            <div>
+               <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Industry</span>
+               <span className="text-lg font-bold text-gray-900 dark:text-gray-100">{project.industry}</span>
+            </div>
+            <div>
+               <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Location</span>
+               <span className="text-lg font-bold text-gray-900 dark:text-gray-100 capitalize">{project.location}</span>
+            </div>
+            <div>
+               <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Completed</span>
+               <span className="text-lg font-bold text-gray-900 dark:text-gray-100">{project.completedDate}</span>
+            </div>
+          </div>
         </section>
 
         {/* Content Layout */}
@@ -118,9 +126,22 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
           {/* Main Description */}
           <div className="lg:col-span-2">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">About The Project</h2>
-            <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+            <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 mb-12">
               <p className="whitespace-pre-line">{project.fullDesc}</p>
             </div>
+
+            {project.challenge && project.solution && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <div className="border-l-4 border-orange-500 bg-orange-50 dark:bg-orange-900/10 p-6 rounded-r-xl">
+                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">The Challenge</h3>
+                   <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{project.challenge}</p>
+                </div>
+                <div className="border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-900/10 p-6 rounded-r-xl">
+                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">Our Solution</h3>
+                   <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">{project.solution}</p>
+                </div>
+              </div>
+            )}
             
             {project.results && project.results.length > 0 && (
               <div className="mt-12 bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20 rounded-xl p-8">
