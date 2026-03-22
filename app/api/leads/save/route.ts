@@ -32,9 +32,10 @@ export async function POST(request: NextRequest) {
 
     const userHtml = getUserAutoReplyHTML(name);
 
-    await Promise.all([
+    // 2. Notifications (Parallel)
+    const [adminRes, userRes] = await Promise.all([
       sendEmail({
-        to: TEAM_EMAILS[0],
+        to: TEAM_EMAILS,
         subject: `🔴 New Lead: ${name} (Progressive)`,
         html: adminHtml,
         replyTo: email,

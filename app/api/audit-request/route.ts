@@ -42,19 +42,14 @@ export async function POST(req: Request) {
       userName: name,
       adminSubject: `🔍 Audit Request: ${finalBusiness} [${finalWebsite}]`,
       adminData: {
-        name,
-        email,
-        phone: phone || "N/A",
-        business_name: finalBusiness,
-        website: finalWebsite,
-        monthly_budget: monthlyBudget || "N/A",
-        goal: finalGoal,
-        inquiry_id: inquiryId || "N/A",
+        ...data,
+        inquiry_id: inquiryId || "Not logged in DB",
+        source: "Audit Request Form"
       },
       userSubject: `Your Audit is Booked! — Growthik Media`
     });
 
-    return NextResponse.json({ success: true, message: "Audit booked!" });
+    return NextResponse.json({ success: true, message: "Audit booked! Check your email for confirmation." });
   } catch (error) {
     console.error("❌ Audit API Error:", error);
     return NextResponse.json({ success: false, error: "Failed." }, { status: 500 });

@@ -31,16 +31,14 @@ export async function POST(req: Request) {
       userName: name,
       adminSubject: `New Enquiry: ${name} — ${finalService}`,
       adminData: {
-        name,
-        email,
-        phone: phone || "N/A",
+        ...data,
+        inquiry_id: inquiryId || "Not logged in DB",
         service: finalService,
-        message: message || "No message provided.",
-        inquiry_id: inquiryId || "N/A"
+        source: "Main Contact Form"
       }
     });
 
-    return NextResponse.json({ success: true, message: "Enquiry sent!" });
+    return NextResponse.json({ success: true, message: "Enquiry sent! We'll be in touch." });
   } catch (error) {
     console.error("❌ Contact API Error:", error);
     return NextResponse.json({ success: false, error: "Failed." }, { status: 500 });

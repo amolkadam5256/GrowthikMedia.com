@@ -15,9 +15,9 @@ export const TEAM_EMAILS = [
 
 /**
  * Configure Nodemailer transporter (Gmail SMTP)
+ * Using explicit host/port for better reliability in different environments.
  */
 export const transporter = nodemailer.createTransport({
-  service: "gmail",
   host: "smtp.gmail.com",
   port: 465,
   secure: true, 
@@ -25,9 +25,9 @@ export const transporter = nodemailer.createTransport({
     user: EMAIL_USER,
     pass: EMAIL_PASS,
   },
-  headers: {
-    "X-Mailer": "GrowthikMedia-Nodemailer"
-  }
+  pool: true, // Use connection pooling for fast multiple sends
+  maxConnections: 5,
+  maxMessages: 100,
 });
 
 /**
@@ -37,13 +37,15 @@ export async function sendEmail({
   to, 
   subject, 
   html, 
+  text,
   replyTo,
   bcc
 }: { 
   to: string | string[]; 
   subject: string; 
   html: string; 
-  replyTo?: string; 
+  text?: string;
+  replyTo?: string;
   bcc?: string | string[];
 }) {
   if (!EMAIL_USER || !EMAIL_PASS) {
@@ -51,14 +53,18 @@ export async function sendEmail({
     return { success: false, error: "Email credentials missing" };
   }
 
+  // Simple text fallback if none provided (strip basic HTML)
+  const plainText = text || html.replace(/<[^>]*>?/gm, '');
+
   try {
     const info = await transporter.sendMail({
       from: SENDER,
       to,
-      bcc,
-      subject,
+      bcc, // Re-added BCC support
+      subject: subject.trim(),
       html,
-      replyTo: replyTo || SENDER,
+      text: plainText,
+      replyTo: replyTo || SENDER_EMAIL,
     });
     console.log(`✅ Email sent to ${Array.isArray(to) ? to.join(', ') : to} | ID: ${info.messageId}`);
     return { success: true, messageId: info.messageId };
@@ -69,7 +75,7 @@ export async function sendEmail({
 }
 
 /**
- * Sends both User confirmation and Admin notification in the required sequence.
+ * Sends both User confirmation and Admin notification in parallel for speed.
  */
 export async function sendUnifiedEmail({
   userEmail,
@@ -84,23 +90,29 @@ export async function sendUnifiedEmail({
   adminData: any;
   userSubject?: string;
 }) {
-  // 1. Send Auto-Reply to User FIRST
-  const userHtml = getUserAutoReplyHTML(userName);
-  const userResult = await sendEmail({
-    to: userEmail,
-    subject: userSubject,
-    html: userHtml,
-  });
+  console.log(`📩 Starting Unified Email sequence for: ${userName} (${userEmail})`);
 
-  // 2. Send Notification to Admin SECOND (Primary: info@, BCC: rest)
+  // Prepare both emails
+  const userHtml = getUserAutoReplyHTML(userName);
   const adminHtml = getAdminNotificationHTML(adminData);
-  const adminResult = await sendEmail({
-    to: TEAM_EMAILS[0],
-    bcc: TEAM_EMAILS.slice(1),
-    subject: adminSubject,
-    html: adminHtml,
-    replyTo: userEmail,
-  });
+
+  // Send BOTH in parallel for instant response
+  const [userResult, adminResult] = await Promise.all([
+    sendEmail({
+      to: userEmail,
+      subject: userSubject,
+      html: userHtml,
+    }),
+    sendEmail({
+      to: TEAM_EMAILS, // Send to all team emails directly (safer than BCC)
+      subject: adminSubject,
+      html: adminHtml,
+      replyTo: userEmail,
+    })
+  ]);
+
+  if (!userResult.success) console.error("❌ User Email failed:", userResult.error);
+  if (!adminResult.success) console.error("❌ Admin Email failed:", adminResult.error);
 
   return { userResult, adminResult };
 }

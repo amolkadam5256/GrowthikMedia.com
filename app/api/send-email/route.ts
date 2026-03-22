@@ -41,49 +41,37 @@ export async function POST(req: Request) {
 
     // 3. Prepare Admin Email
     const adminSubject = `🔴 New Lead: ${name} [${formType}]`;
-    const adminHtml = getAdminNotificationHTML({
-      name,
-      email,
-      phone,
-      form_type: formType,
-      subject: subject || "No Subject",
-      message: message || "No message provided.",
+    
+    // Dynamically build data for email (all fields from body)
+    const adminData = {
+      ...body,
       inquiry_id: inquiryId || "Not logged in DB",
       submitted_at: new Date().toLocaleString(),
-    });
+      form_type: formType,
+    };
 
-    const userSubject = `We've received your inquiry | Growthik Media`;
-
-    // 5. Send Emails (Unified Sequence: User then Admin)
+    // 4. Send Emails (Unified Parallel Sequence)
     const { adminResult, userResult } = await sendUnifiedEmail({
       userEmail: email,
       userName: name,
       adminSubject: adminSubject,
-      adminData: {
-        name,
-        email,
-        phone,
-        form_type: formType,
-        subject: subject || "No Subject",
-        message: message || "No message provided.",
-        inquiry_id: inquiryId || "Not logged in DB",
-        submitted_at: new Date().toLocaleString(),
-      },
-      userSubject: userSubject,
+      adminData: adminData,
+      userSubject: `We've received your inquiry | Growthik Media`,
     });
 
-    if (!adminResult.success || !userResult.success) {
-      console.warn("⚠️ One or more emails failed to send:", {
-        admin: adminResult.success,
-        user: userResult.success,
-        adminError: adminResult.error,
-        userError: userResult.error
-      });
+    // 6. Final Status Check
+    // If BOTH fail, it's a critical failure
+    if (!adminResult.success && !userResult.success) {
+      return NextResponse.json({ 
+        success: false, 
+        error: "Failed to send notification emails. Please contact us directly.",
+        inquiryId
+      }, { status: 500 });
     }
 
     return NextResponse.json({ 
       success: true, 
-      message: "Lead captured successfully!",
+      message: adminResult.success ? "Enquiry received! Our team will contact you soon." : "Enquiry received, but notification delay occurred.",
       inquiryId
     });
 
