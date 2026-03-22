@@ -25,7 +25,7 @@ export interface LocationData {
 }
 
 export const locationMapping: Record<string, LocationData> = {
-  "services/website-design-company-pune": {
+  "website-design-company-aundh": {
     title: "Best Web Design Company in Aundh Pune | Growthik Media",
     description:
       "Top web design company in Aundh, Pune. We build fast, SEO-optimized, conversion-focused websites for local businesses. Get a free quote today.",
@@ -93,7 +93,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "services/website-design-company-pune": {
+  "website-design-company-baner": {
     title: "Web Design Company in Baner Pune | Growthik Media",
     description:
       "Best web design company in Baner, Pune. We build fast, SEO-optimized, and conversion-focused websites for local businesses. Get a free quote today.",
@@ -161,7 +161,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "services/website-design-company-pune": {
+  "website-design-company-hadapsar": {
     title: "Website Development in Hadapsar Pune | Growthik Media",
     description:
       "Expert website development in Hadapsar, Pune. Custom, SEO-optimized websites for businesses in Hadapsar. Fast delivery, transparent pricing. Get a free quote.",
@@ -229,7 +229,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "services/website-design-company-pune": {
+  "website-design-company-kothrud": {
     title: "Web Design Company in Kothrud Pune | Growthik Media",
     description:
       "Best web design company in Kothrud, Pune. We create modern, fast, and SEO-optimized websites for local businesses. Get a free quote today.",
@@ -297,7 +297,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "services/website-design-company-pune": {
+  "website-design-company-pcmc": {
     title: "Website Design in PCMC Pune | Growthik Media",
     description:
       "Professional website design in PCMC (Pimpri Chinchwad). We build high-performance, SEO-ready websites for PCMC businesses. Get a free website audit today.",
@@ -365,7 +365,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "services/website-design-company-pune": {
+  "website-design-company-viman-nagar": {
     title: "Web Design in Viman Nagar Pune | Growthik Media",
     description:
       "Professional web design in Viman Nagar, Pune. We build fast, beautiful, and conversion-focused websites for businesses in Viman Nagar. Get a free quote.",
@@ -433,7 +433,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "services/website-design-company-pune": {
+  "website-design-company-wakad": {
     title: "Web Design Company in Wakad Pune | Growthik Media",
     description:
       "Top web design company in Wakad, Pune. Fast, SEO-optimized websites for IT companies, startups, and local businesses. Get a free consultation.",
@@ -501,7 +501,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "services/seo": {
+  "seo-company-hinjewadi": {
     title: "SEO Company in Hinjewadi Pune | Growthik Media",
     description:
       "SEO services for IT companies and startups in Hinjewadi Pune. Rank higher and generate more B2B leads. Get a free SEO audit today.",
