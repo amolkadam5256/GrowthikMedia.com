@@ -15,7 +15,7 @@ export async function POST(req: Request) {
           <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Name:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${name}</td></tr>
           <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Email:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${email}</td></tr>
           <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Phone:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${phone || "N/A"}</td></tr>
-          <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Service:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${service}</td></tr>
+          <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Service:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${finalService}</td></tr>
           <tr><td style="padding: 10px; border: 1px solid #eee;"><strong>Message:</strong></td><td style="padding: 10px; border: 1px solid #eee;">${message}</td></tr>
         </table>
       </div>
@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     await sendEmail({
       to: TEAM_EMAIL,
       subject: `New Enquiry: ${name} — ${finalService}`,
-      html: teamHtml.replace("${service}", finalService),
+      html: teamHtml,
       replyTo: email,
     });
 

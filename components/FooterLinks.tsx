@@ -40,7 +40,6 @@ const LINKS = {
     { name: 'Brochure Design', href: '/services/brochure-design/' },
     { name: 'Business Card Design', href: '/services/business-card-design/' },
     { name: 'Letterhead Design', href: '/services/letterhead-design/' },
-    { name: 'Communications', href: '/services/brand-marketing-communications/' },
   ],
 };
 

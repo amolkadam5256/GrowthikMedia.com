@@ -29,7 +29,7 @@ export async function POST(req: Request) {
 
     await sendEmail({
       to: TEAM_EMAIL,
-      subject: `🔍 Audit Request: ${businessName}`,
+      subject: `🔍 Audit Request: ${finalBusiness} [${finalWebsite}]`,
       html: teamHtml,
       replyTo: email,
     });

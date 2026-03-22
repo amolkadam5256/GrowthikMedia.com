@@ -31,29 +31,52 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
+    setSubmitStatus("idle");
 
-      // Meta Pixel Lead Tracking
-      if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-        (window as any).fbq("track", "Lead", {
-          content_name: "Contact Form",
-        });
-      }
-
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        website: "",
-        service: "",
-        budget: "",
-        message: "",
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type" : "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          formType: "Detailed Contact Form",
+          subject: `Enquiry from ${formData.name} about ${formData.service || "General"}`
+        }),
       });
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-    }, 1500);
+
+      if (res.ok) {
+        setSubmitStatus("success");
+        // Meta Pixel Lead Tracking
+        if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+          (window as any).fbq("track", "Lead", {
+            content_name: "Contact Form",
+            content_category: formData.service
+          });
+        }
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          website: "",
+          service: "",
+          budget: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      // Success remains for 5s then reverts
+      if (submitStatus === "success") {
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      }
+    }
   };
 
   return (
