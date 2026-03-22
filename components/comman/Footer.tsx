@@ -15,6 +15,7 @@ import {
   Youtube,
 } from "lucide-react";
 import NextImage from "next/image";
+import Link from "next/link";
 import {
   FiGlobe,
   FiCode,
@@ -33,7 +34,6 @@ import FooterLinks from "@/components/FooterLinks";
 export default function Footer() {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [email, setEmail] = useState("");
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -58,16 +58,6 @@ export default function Footer() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const handleSubscribe = () => {
-    if (email && email.includes("@")) {
-      console.log("Subscribing:", email);
-      alert(`🎉 Thank you for subscribing to ${CONTACT_INFO.companyName}!`);
-      setEmail("");
-    } else {
-      alert("⚠️ Please enter a valid email address");
-    }
   };
 
   // Derive isDark only after hydration to avoid flash; before mount defaults
@@ -262,7 +252,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.href}>
-                    <a
+                    <Link
                       href={link.href}
                       className={`flex items-center gap-3 text-sm group ${
                         isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
@@ -270,7 +260,7 @@ export default function Footer() {
                     >
                       <link.icon className="w-4 h-4 opacity-60 group-hover:opacity-100" />
                       <span>{link.label}</span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -285,7 +275,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {topServices.map((service) => (
                   <li key={service.href}>
-                    <a
+                    <Link
                       href={service.href}
                       className={`flex items-center gap-3 text-sm group ${
                         isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
@@ -293,7 +283,7 @@ export default function Footer() {
                     >
                       <service.icon className="w-4 h-4 opacity-60 group-hover:opacity-100 shrink-0" />
                       <span>{service.label}</span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -330,13 +320,13 @@ export default function Footer() {
                 </div>
               </div>
 
-              <a
+              <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-[#D90B1C] to-[#F22E52] hover:from-[#F22E52] hover:to-[#D90B1C] text-white rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105 group"
               >
                 Get Started Today
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -377,25 +367,25 @@ export default function Footer() {
                 <span className={isDark ? "text-gray-700" : "text-gray-300"}>
                   •
                 </span>
-                <a
+                <Link
                   href="/privacy-policy"
                   className={`${
                     isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
                   } transition-colors`}
                 >
                   Privacy Policy
-                </a>
+                </Link>
                 <span className={isDark ? "text-gray-700" : "text-gray-300"}>
                   •
                 </span>
-                <a
+                <Link
                   href="/terms"
                   className={`${
                     isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
                   } transition-colors`}
                 >
                   Terms & Conditions
-                </a>
+                </Link>
               </div>
 
               {/* Social Media */}
