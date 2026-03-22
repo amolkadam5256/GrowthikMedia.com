@@ -1,0 +1,20 @@
+# Growthik Media
+> growthikmedia.com | Digital Marketing & AI Search Optimization Agency in Pune, India.
+
+Growthik Media is a results-driven digital marketing agency specializing in high-performance web development, technical SEO, and data-backed performance marketing for businesses looking to scale within the Indian market.
+
+## Core Services
+- **Technical SEO:** Enterprise-grade organic growth strategy.
+- **PPC & Performance Marketing:** High-ROI campaigns on Google & Meta.
+- **Next.js Web Development:** Fastest-in-class, ROI-focused web systems.
+- **Brand Strategy:** Defining identity through identity, naming, and design.
+- **Social Media Marketing:** Multi-channel authority building.
+
+## Top Blogs & Guides
+- [/blog/complete-seo-guide/](https://www.growthikmedia.com/blog/complete-seo-guide/) Complete Beginner Guide to SEO (2026)
+- [/blog/website-cost-in-pune/](https://www.growthikmedia.com/blog/website-cost-in-pune/) Website Cost in Pune: 2025 Pricing Guide
+- [/blog/why-seo-is-important/](https://www.growthikmedia.com/blog/why-seo-is-important/) Why SEO is Important for Businesses
+
+## Contact
+- [Free Growth Audit](https://www.growthikmedia.com/audit/)
+- [Contact Us](https://www.growthikmedia.com/contact/)

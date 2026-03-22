@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   keywords:
     "digital marketing services pune, website development pune, SEO services, social media marketing baner, branding agency wakad, ecommerce development hinjewadi",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/services`,
+    canonical: "/services/",
   },
   openGraph: {
     title: "Top Digital Marketing & Web Development Services in Pune",
@@ -118,61 +118,34 @@ export default function ServicesPage() {
     {
       title: "Technology & Development",
       icon: Code,
-      desc: "Robust, scalable, and high-performance digital solutions optimized for Core Web Vitals and conversions.",
+      desc: "High-performance web applications, eCommerce stores and custom software solutions built with Next.js and modern stack.",
       services: [
-        {
-          name: "Website Development",
-          link: "/services/website-development",
-        },
-        {
-          name: "Next.js Web Applications",
-          link: "/services/web-application",
-        },
-        {
-          name: "E-Commerce Solutions",
-          link: "/services/ecommerce-development",
-        },
-        {
-          name: "WordPress Development",
-          link: "/services/wordpress-development",
-        },
+        { name: "Website Development", link: "/services/website-development/" },
+        { name: "eCommerce Development", link: "/services/ecommerce-development/" },
+        { name: "WordPress Development", link: "/services/wordpress-development/" },
+        { name: "Mobile App Development", link: "/services/mobile-app-development/" },
       ],
     },
     {
       title: "Digital Marketing & SEO",
       icon: Target,
-      desc: "Data-driven SEO strategies to dominate search engines and dynamic social feeds across Pune.",
+      desc: "Data-driven marketing strategies including SEO, Google Ads and Social Media that drive high-quality leads and ROI.",
       services: [
-        {
-          name: "Search Engine Optimization (SEO)",
-          link: "/services/seo",
-        },
-        {
-          name: "Performance Marketing (Ads)",
-          link: "/services/performance-marketing",
-        },
-        {
-          name: "Social Media Marketing",
-          link: "/services/social-media-marketing",
-        },
-        { name: "Lead Generation", link: "/services/lead-generation" },
+        { name: "SEO Company in Pune", link: "/services/seo/" },
+        { name: "Google Ads Agency", link: "/services/ppc-google-ads/" },
+        { name: "Local SEO Services", link: "/services/local-seo/" },
+        { name: "Social Media Marketing", link: "/services/social-media-marketing/" },
       ],
     },
     {
       title: "Branding & Creative",
       icon: PenTool,
-      desc: "Crafting memorable, enterprise-level brand identities that resonate deeply and convert effortlessly.",
+      desc: "Strategic branding, logo design and creative communications that establish your market authority and brand value.",
       services: [
-        {
-          name: "Brand Identity Design",
-          link: "/services/brand-identity",
-        },
-        { name: "Logo & UI/UX Design", link: "/services/logo-design" },
-        { name: "Brand Strategy", link: "/services/brand-strategy" },
-        {
-          name: "Marketing Communications",
-          link: "/services/brand-marketing-communications",
-        },
+        { name: "Brand Identity Design", link: "/services/brand-identity/" },
+        { name: "Logo Design Agency", link: "/services/logo-design/" },
+        { name: "Video Production", link: "/services/video-production/" },
+        { name: "Branding Consulting", link: "/services/branding-consulting/" },
       ],
     },
   ];
@@ -203,7 +176,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-linear-to-r from-slate-900 via-slate-800/90 to-transparent z-10 w-full lg:w-2/3"></div>
         <div className="absolute inset-0 z-0 opacity-40">
           <Image
-            src="/og-lead-gen.png"
+            src="/og-image.png"
             alt="Growthik Media Digital Marketing Services"
             fill
             priority

@@ -25,7 +25,7 @@ export interface LocationData {
 }
 
 export const locationMapping: Record<string, LocationData> = {
-  "website-design-company-in-aundh": {
+  "services/website-design-company-pune": {
     title: "Best Web Design Company in Aundh Pune | Growthik Media",
     description:
       "Top web design company in Aundh, Pune. We build fast, SEO-optimized, conversion-focused websites for local businesses. Get a free quote today.",
@@ -93,7 +93,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "website-design-company-in-baner": {
+  "services/website-design-company-pune": {
     title: "Web Design Company in Baner Pune | Growthik Media",
     description:
       "Best web design company in Baner, Pune. We build fast, SEO-optimized, and conversion-focused websites for local businesses. Get a free quote today.",
@@ -161,7 +161,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "website-design-company-in-hadapsar": {
+  "services/website-design-company-pune": {
     title: "Website Development in Hadapsar Pune | Growthik Media",
     description:
       "Expert website development in Hadapsar, Pune. Custom, SEO-optimized websites for businesses in Hadapsar. Fast delivery, transparent pricing. Get a free quote.",
@@ -229,7 +229,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "website-design-company-in-kothrud": {
+  "services/website-design-company-pune": {
     title: "Web Design Company in Kothrud Pune | Growthik Media",
     description:
       "Best web design company in Kothrud, Pune. We create modern, fast, and SEO-optimized websites for local businesses. Get a free quote today.",
@@ -297,7 +297,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "website-design-company-in-pcmc": {
+  "services/website-design-company-pune": {
     title: "Website Design in PCMC Pune | Growthik Media",
     description:
       "Professional website design in PCMC (Pimpri Chinchwad). We build high-performance, SEO-ready websites for PCMC businesses. Get a free website audit today.",
@@ -365,7 +365,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "website-design-company-in-viman-nagar": {
+  "services/website-design-company-pune": {
     title: "Web Design in Viman Nagar Pune | Growthik Media",
     description:
       "Professional web design in Viman Nagar, Pune. We build fast, beautiful, and conversion-focused websites for businesses in Viman Nagar. Get a free quote.",
@@ -433,7 +433,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
     ],
   },
-  "website-design-company-in-wakad": {
+  "services/website-design-company-pune": {
     title: "Web Design Company in Wakad Pune | Growthik Media",
     description:
       "Top web design company in Wakad, Pune. Fast, SEO-optimized websites for IT companies, startups, and local businesses. Get a free consultation.",
@@ -499,6 +499,102 @@ export const locationMapping: Record<string, LocationData> = {
         q: "How quickly can you build a website?",
         a: "Our typical turnaround for a 10-15 page business website is 3-4 weeks. Rush projects can be accommodated with priority development. We always provide a clear, agreed-upon timeline before we begin work.",
       },
+    ],
+  },
+  "services/seo": {
+    title: "SEO Company in Hinjewadi Pune | Growthik Media",
+    description:
+      "SEO services for IT companies and startups in Hinjewadi Pune. Rank higher and generate more B2B leads. Get a free SEO audit today.",
+    keywords:
+      "seo company in hinjewadi, seo services hinjewadi pune, seo for it companies hinjewadi, best seo agency hinjewadi",
+    ogTitle: "SEO Company in Hinjewadi Pune | Growthik Media",
+    ogDescription:
+      "Top-rated SEO agency in Hinjewadi, Pune - specialized in B2B lead generation for IT companies and startups.",
+    area: "Hinjewadi",
+    city: "Pune",
+    primaryService: "SEO Company",
+    headline: "SEO Company in Hinjewadi Pune",
+    subheadline:
+      "We provide specialized SEO services for IT companies, software firms, and startups in Hinjewadi - designed to rank you globally and locally for high-intent B2B keywords.",
+    areaDescription:
+      "Hinjewadi is the IT heart of Pune, housing hundreds of global technology giants and fast-growing startups. For businesses in Hinjewadi, local competition isn't just about footfall - it's about being found by decision-makers looking for specialized tech services. Growthik Media understands the unique SEO needs of Hinjewadi-based businesses. We don't just focus on ranking; we focus on 'Quality Lead Generation' by targeting keywords that developers, CEOs, and CTOs are searching for.",
+    services: [
+      {
+        icon: Search,
+        name: "Technical SEO Audit",
+        desc: "Deep analysis of your website's architecture, indexing, and Core Web Vitals to ensure a solid foundation for ranking.",
+      },
+      {
+        icon: Globe,
+        name: "Global & B2B SEO",
+        desc: "Expanding your reach beyond Pune to international markets, specifically targeting B2B tech keywords.",
+      },
+      {
+        icon: Target,
+        name: "Content Marketing",
+        desc: "Strategic blog posts, whitepapers, and case studies that establish your authority in the Hinjewadi tech ecosystem.",
+      },
+      {
+        icon: Zap,
+        name: "Local SEO Hinjewadi",
+        desc: "Optimizing for Hinjewadi-specific searches to ensure local talent and partners find you easily.",
+      },
+      {
+        icon: Monitor,
+        name: "On-Page Optimization",
+        desc: "Perfecting your meta tags, heading hierarchy, and internal linking to maximize keyword relevance.",
+      },
+      {
+        icon: BarChart,
+        name: "Lead Tracking & Analytics",
+        desc: "Setting up GA4 and Search Console to measure exactly which keywords are driving your B2B inquiries.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Why does my IT company in Hinjewadi need specialized SEO?",
+        a: "General SEO often misses the nuances of B2B tech searches. In Hinjewadi, you're competing for global keywords. We specialize in identifying the 'Long-tail' keywords that high-value clients use when looking for software partners.",
+      },
+      {
+        q: "How long does it take to see results from SEO in Hinjewadi?",
+        a: "SEO is a marthon. Typically, you'll see initial movement in 3 months, with significant ranking improvements and lead flow between 6–9 months. We provide monthly transparent reports to track this progress.",
+      },
+      {
+        q: "Do you focus on international SEO or just Pune?",
+        a: "For tech companies in Hinjewadi, we almost always implement Global SEO strategies alongside local optimization, ensuring you rank for your services in markets like the USA, UK, and Europe.",
+      },
+      {
+        q: "Will you provide a free SEO audit for my website?",
+        a: "Yes. We offer a comprehensive free SEO audit for Hinjewadi-based businesses to identify current bottlenecks and growth opportunities before we start any engagement.",
+      },
+    ],
+  },
+  "website-design-company-pune": {
+    title: "Website Design Company in Pune | Growthik Media",
+    description: "Leading website design company in Pune. We create stunning, mobile-responsive, and conversion-focused designs.",
+    keywords: "website design company pune, web design pune, best website design pune",
+    ogTitle: "Website Design Company in Pune | Growthik Media",
+    ogDescription: "Leading website design company in Pune. We create stunning, mobile-responsive, and conversion-focused designs.",
+    area: "Pune",
+    city: "Pune",
+    primaryService: "Website Design",
+    headline: "Creative Website Design Company in Pune",
+    subheadline: "Stunning visual identities and user-centric designs that differentiate your brand in the Pune market.",
+    areaDescription: "Design is not just about aesthetics; it's about business results. Our designs are engineered to engage, convince, and convert your target audience in Pune.",
+    services: [
+      {
+        icon: Target,
+        name: "UI/UX Strategy",
+        desc: "User journeys mapped out to maximize engagement and lead capture.",
+      },
+      {
+        icon: Globe,
+        name: "Brand Identity",
+        desc: "Cohesive visual language that builds trust and authority within your local niche.",
+      },
+    ],
+    faqs: [
+      { q: "Do you provide website redesign?", a: "Yes, we specialize in modernizing legacy websites with a focus on improving UI/UX and current SEO standards." },
     ],
   },
 };

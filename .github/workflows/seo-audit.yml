@@ -1,0 +1,70 @@
+name: Weekly SEO Audit
+
+on:
+  schedule:
+    # 3:30 AM UTC = 9:00 AM IST (Monday)
+    - cron: '30 3 * * 1'
+  workflow_dispatch:
+
+jobs:
+  seo-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci || npm install --no-package-lock
+
+      - name: Ensure Audit Reports Directory
+        run: mkdir -p audit-reports
+
+      - name: Run SEO Crawler
+        run: node scripts/audit-crawler.mjs
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://www.growthikmedia.com' }}
+          SITEMAP_URL: ${{ vars.SITEMAP_URL || 'https://www.growthikmedia.com/sitemap.xml' }}
+
+      - name: Generate HTML Report
+        run: node scripts/generate-report.mjs
+
+      - name: Send Email Report
+        run: node scripts/send-email.mjs
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+
+      - name: Send Slack Alert
+        run: node scripts/alert-slack.mjs
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Commit and Push Latest Results
+        run: |
+          git config --local user.email "seo-audit-bot@growthikmedia.com"
+          git config --local user.name "SEO Audit Bot"
+          git add audit-reports/latest.json
+          git status
+          git commit -m "chore: update latest seo audit results [skip ci]" || echo "No changes to commit"
+          git push
+
+      - name: Upload Report Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: seo-audit-reports
+          path: audit-reports/
+          retention-days: 90

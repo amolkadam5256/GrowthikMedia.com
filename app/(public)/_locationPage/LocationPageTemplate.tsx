@@ -24,7 +24,7 @@ export interface LocationPageProps {
   area: string; // "Aundh"
   city: string; // "Pune"
   primaryService: string; // "Website Design Company"
-  slug: string; // "website-design-company-in-aundh"
+  slug: string; // "services/website-design-company-pune"
   headline: string; // "Best Website Design Company in Aundh"
   subheadline: string;
   areaDescription: string;

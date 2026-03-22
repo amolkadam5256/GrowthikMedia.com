@@ -362,10 +362,10 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         Local SEO helps businesses appear in search results when customers search for services within a specific geographic location. For example, when someone searches for “website design company in Pune”, Google prioritizes businesses with strong local SEO signals.
       </p>
       <ul>
-        <li><Link href="/website-design-company-in-baner">Website Design Company in Baner</Link></li>
-        <li><Link href="/website-design-company-in-wakad">Website Design Company in Wakad</Link></li>
-        <li><Link href="/website-design-company-in-hadapsar">Website Development in Hadapsar</Link></li>
-        <li><Link href="/seo-company-in-hinjewadi">SEO Company in Hinjewadi</Link></li>
+        <li><Link href="/services/services/website-design-company-pune/">Website Design Company in Baner</Link></li>
+        <li><Link href="/services/services/website-design-company-pune/">Website Design Company in Wakad</Link></li>
+        <li><Link href="/services/services/website-design-company-pune/">Website Development in Hadapsar</Link></li>
+        <li><Link href="/services/services/seo/">SEO Company in Hinjewadi</Link></li>
       </ul>
 
       <h2>E-commerce SEO Optimization</h2>

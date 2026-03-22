@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   keywords:
     "Web Application in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom Web Application Pune",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/services/web-application`,
+    canonical: "https://www.growthikmedia.com/services/web-application/",
   },
   openGraph: {
     title: "Best Web Application in Pune | Custom & SEO-Friendly Websites",
@@ -873,24 +873,24 @@ export default function ServicePage() {
                 className="flex flex-wrap gap-3 relative z-10"
               >
                 {[
-                  { loc: "Baner", slug: "website-design-company-in-baner" },
-                  { loc: "Wakad", slug: "website-design-company-in-wakad" },
-                  { loc: "Hinjewadi", slug: "seo-company-in-hinjewadi" },
-                  { loc: "Aundh", slug: "website-design-company-in-aundh" },
-                  { loc: "Kothrud", slug: "website-design-company-in-kothrud" },
+                  { loc: "Baner", slug: "services/website-design-company-pune" },
+                  { loc: "Wakad", slug: "services/website-design-company-pune" },
+                  { loc: "Hinjewadi", slug: "services/seo" },
+                  { loc: "Aundh", slug: "services/website-design-company-pune" },
+                  { loc: "Kothrud", slug: "services/website-design-company-pune" },
                   {
                     loc: "Hadapsar",
-                    slug: "website-design-company-in-hadapsar",
+                    slug: "services/website-design-company-pune",
                   },
                   {
                     loc: "Viman Nagar",
-                    slug: "website-design-company-in-viman-nagar",
+                    slug: "services/website-design-company-pune",
                   },
-                  { loc: "PCMC", slug: "website-design-company-in-pcmc" },
+                  { loc: "PCMC", slug: "services/website-design-company-pune" },
                 ].map((locData, i) => (
                   <Link
                     key={i}
-                    href={`/${locData.slug}`}
+                    href={`/${locData.slug}/`}
                     className="px-4 py-2 bg-(--background) border border-(--border) rounded-lg text-xs font-bold uppercase tracking-wider text-(--text-secondary) hover:text-(--color-primary) hover:border-(--color-primary)/50 hover:shadow-sm transition-all text-center"
                     aria-label={`Web Application Services in ${locData.loc}`}
                   >
@@ -1118,7 +1118,7 @@ export default function ServicePage() {
             className="max-w-5xl mx-auto flex flex-wrap justify-center gap-x-6 gap-y-3"
           >
             <Link
-              href="/blog/importance-of-seo"
+              href="/blog/why-seo-is-important/"
               className="text-(--text-secondary) hover:text-(--color-primary) transition-colors"
             >
               Importance of SEO for Website

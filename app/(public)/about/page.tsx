@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   keywords:
     "Growthik Media, Growth Engineering Company Pune, AI-Powered Marketing Pune, Predictable Revenue Systems, Performance Marketing Pune, Digital Growth Agency India",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/about/`,
+    canonical: "https://www.growthikmedia.com/about/",
   },
   openGraph: {
     title:

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   keywords:
     "digital marketing portfolio, website portfolio, video production case studies, success stories",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/portfolio/`,
+    canonical: "https://www.growthikmedia.com/services/portfolio/",
   },
   openGraph: {
     title: "Our Portfolio | Growthik Media - Success Stories",

@@ -11,157 +11,31 @@ type Service = {
 };
 
 const allServices: Service[] = [
-  {
-    name: "Website Development",
-    category: "Development",
-    link: "/services/website-development",
-  },
-  {
-    name: "React Development",
-    category: "Development",
-    link: "/services/website-development/react",
-  },
-  {
-    name: "Next.js Development",
-    category: "Development",
-    link: "/services/website-development/nextjs",
-  },
-  {
-    name: "Full Stack Development",
-    category: "Development",
-    link: "/services/website-development/full-stack",
-  },
-  {
-    name: "E-Commerce Development",
-    category: "Development",
-    link: "/services/ecommerce-development",
-  },
-  {
-    name: "Web Application",
-    category: "Development",
-    link: "/services/web-application",
-  },
-  {
-    name: "WordPress Development",
-    category: "Development",
-    link: "/services/wordpress-development",
-  },
-  {
-    name: "Website Maintenance",
-    category: "Development",
-    link: "/services/website-maintenance",
-  },
-  {
-    name: "Website Design Pune",
-    category: "Development",
-    link: "/services/website-design-company-pune",
-  },
+  // --- Development ---
+  { name: "Website Development", category: "Development", link: "/services/website-development/" },
+  { name: "eCommerce Development", category: "Development", link: "/services/ecommerce-development/" },
+  { name: "WordPress Development", category: "Development", link: "/services/wordpress-development/" },
+  { name: "Mobile App Development", category: "Development", link: "/services/mobile-app-development/" },
+  { name: "Software Development", category: "Development", link: "/services/software-development/" },
+  { name: "Website Design", category: "Development", link: "/services/website-design/" },
 
-  {
-    name: "Search Engine Optimization (SEO)",
-    category: "Marketing",
-    link: "/services/seo",
-  },
-  {
-    name: "Google Ads / PPC",
-    category: "Marketing",
-    link: "/services/ppc-google-ads",
-  },
-  { name: "Meta Ads", category: "Marketing", link: "/services/meta-ads" },
-  {
-    name: "Performance Marketing",
-    category: "Marketing",
-    link: "/services/performance-marketing",
-  },
-  {
-    name: "Social Media Marketing",
-    category: "Marketing",
-    link: "/services/social-media-marketing",
-  },
-  {
-    name: "Social Media Promotions",
-    category: "Marketing",
-    link: "/services/social-media-promotions",
-  },
-  {
-    name: "Lead Generation",
-    category: "Marketing",
-    link: "/services/lead-generation",
-  },
-  { name: "YouTube SEO", category: "Marketing", link: "/services/youtube-seo" },
-  {
-    name: "Email Marketing",
-    category: "Marketing",
-    link: "/services/email-marketing",
-  },
-  {
-    name: "WhatsApp Marketing",
-    category: "Marketing",
-    link: "/services/whatsapp-marketing",
-  },
-  {
-    name: "SMS Marketing",
-    category: "Marketing",
-    link: "/services/sms-marketing",
-  },
-  {
-    name: "Influencer Management",
-    category: "Marketing",
-    link: "/services/influencer-management",
-  },
-  {
-    name: "Media Planning & Buying",
-    category: "Marketing",
-    link: "/services/media-planning-buying",
-  },
-  {
-    name: "Political Digital Marketing",
-    category: "Marketing",
-    link: "/services/political-digital-marketing",
-  },
+  // --- Marketing ---
+  { name: "SEO Company in Pune", category: "Marketing", link: "/services/seo/" },
+  { name: "Google Ads Agency", category: "Marketing", link: "/services/ppc-google-ads/" },
+  { name: "Local SEO Services", category: "Marketing", link: "/services/local-seo/" },
+  { name: "Social Media Marketing", category: "Marketing", link: "/services/social-media-marketing/" },
+  { name: "Content Marketing", category: "Marketing", link: "/services/content-marketing/" },
 
-  {
-    name: "Brand Identity",
-    category: "Branding",
-    link: "/services/brand-identity",
-  },
-  {
-    name: "Brand Strategy",
-    category: "Branding",
-    link: "/services/brand-strategy",
-  },
-  {
-    name: "Branding Consulting",
-    category: "Branding",
-    link: "/services/branding-consulting",
-  },
-  {
-    name: "Branding Design",
-    category: "Branding",
-    link: "/services/branding-design",
-  },
-  { name: "Logo Design", category: "Branding", link: "/services/logo-design" },
-  {
-    name: "Brochure Design",
-    category: "Branding",
-    link: "/services/brochure-design",
-  },
-  {
-    name: "Business Card Design",
-    category: "Branding",
-    link: "/services/business-card-design",
-  },
-  {
-    name: "Letterhead Design",
-    category: "Branding",
-    link: "/services/letterhead-design",
-  },
-  { name: "Brand Name", category: "Branding", link: "/services/brand-name" },
-  {
-    name: "Marketing Communications",
-    category: "Branding",
-    link: "/services/brand-marketing-communications",
-  },
+  // --- Branding ---
+  { name: "Brand Identity Design", category: "Branding", link: "/services/brand-identity/" },
+  { name: "Logo Design Agency", category: "Branding", link: "/services/logo-design/" },
+  { name: "Branding Consulting", category: "Branding", link: "/services/branding-consulting/" },
+  { name: "Brand Strategy", category: "Branding", link: "/services/brand-strategy/" },
+  { name: "Brand Naming", category: "Branding", link: "/services/brand-name/" },
+  { name: "Brand Marketing", category: "Branding", link: "/services/brand-marketing-communications/" },
+  { name: "Brochure Design", category: "Branding", link: "/services/brochure-design/" },
+  { name: "Business Card Design", category: "Branding", link: "/services/business-card-design/" },
+  { name: "Letterhead Design", category: "Branding", link: "/services/letterhead-design/" },
 ];
 
 export function FilterableServices() {

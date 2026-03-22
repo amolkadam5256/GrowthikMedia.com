@@ -55,6 +55,8 @@ import { CONTACT_INFO } from "@/constants/contact";
 
 import ClientUtilities from "../../components/comman/ClientUtilities";
 import ThemeProviderWrapper from "../../components/comman/ThemeProviderWrapper";
+import BreadcrumbSchema from "../../components/structured-data/BreadcrumbSchema";
+import LocalBusinessSchema from "../../components/structured-data/LocalBusinessSchema";
 import dynamic from "next/dynamic";
 
 // The ClientUtilities component now handles the deferred loading of
@@ -68,7 +70,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(CONTACT_INFO.website),
+  metadataBase: new URL('https://www.growthikmedia.com'),
   title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
   description: `${CONTACT_INFO.companyName} is Pune's leading digital marketing agency building predictable revenue systems with data-driven SEO, Google Ads, and AI growth engineering.`,
   icons: {
@@ -128,13 +130,15 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "./",
-  },
   verification: {
     google: "ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs",
     yandex: "e4be77a6ce273fd5",
   },
+  other: {
+    "google-site-verification": "ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs",
+    "ai-agent-discovery": "/llms.txt",
+    "llms-txt": "https://www.growthikmedia.com/llms.txt"
+  }
 };
 
 export default function RootLayout({
@@ -175,49 +179,8 @@ export default function RootLayout({
             `,
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": "https://growthikmedia.com/#organization",
-                  name: "Growthik Media",
-                  url: "https://growthikmedia.com",
-                  logo: "https://growthikmedia.com/logo.png",
-                  sameAs: [
-                    "https://www.linkedin.com/company/growthikmedia/",
-                    "https://twitter.com/growthikmedia",
-                  ],
-                },
-                {
-                  "@type": ["LocalBusiness", "MarketingAgency"],
-                  "@id": "https://growthikmedia.com/#localbusiness",
-                  name: "Growthik Media",
-                  image: "https://growthikmedia.com/office.jpg",
-                  telephone: "+91-8888888888",
-                  url: "https://growthikmedia.com",
-                  address: {
-                    "@type": "PostalAddress",
-                    streetAddress: "Pune",
-                    addressLocality: "Pune",
-                    addressRegion: "Maharashtra",
-                    postalCode: "411001",
-                    addressCountry: "IN",
-                  },
-                  geo: {
-                    "@type": "GeoCoordinates",
-                    latitude: "18.5204",
-                    longitude: "73.8567",
-                  },
-                  priceRange: "$$",
-                },
-              ],
-            }),
-          }}
-        />
+        <LocalBusinessSchema />
+        <BreadcrumbSchema />
       </head>
       <body suppressHydrationWarning={true}>
         <ThemeProviderWrapper>

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   keywords:
     "Full-Stack Solutions Company in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom Full-Stack Solutions Pune",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/services/website-development/full-stack`,
+    canonical: "https://www.growthikmedia.com/services/website-development/full-stack/",
   },
 };
 

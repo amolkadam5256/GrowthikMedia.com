@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   keywords:
     "React Development Company in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom React Development Pune",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/services/website-development/react`,
+    canonical: "https://www.growthikmedia.com/services/website-development/react/",
   },
 };
 

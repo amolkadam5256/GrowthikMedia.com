@@ -27,7 +27,7 @@ export async function generateMetadata({
     description: data.description,
     keywords: data.keywords,
     alternates: {
-      canonical: `${CONTACT_INFO.website}/services/${seoStrategy}`,
+      canonical: "https://www.growthikmedia.com/services/[seoStrategy]/",
     },
     openGraph: {
       title: data.ogTitle,

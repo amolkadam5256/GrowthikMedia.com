@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   keywords:
     "Next.js Development Company in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom Next.js Development Pune",
   alternates: {
-    canonical: `${CONTACT_INFO.website}/services/website-development/nextjs`,
+    canonical: "https://www.growthikmedia.com/services/website-development/nextjs/",
   },
 };
 

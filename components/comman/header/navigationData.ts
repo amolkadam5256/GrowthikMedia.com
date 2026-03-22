@@ -50,69 +50,64 @@ export const navigationData: {
                 label: "Website Design",
               },
               {
+                href: "/services/website-development/",
                 label: "Website Development",
                 featured: true,
-                items: [
-                  {
-                    href: "/services/website-development/nextjs",
-                    label: "Next.js Development",
-                  },
-                  {
-                    href: "/services/website-development/react",
-                    label: "React Development",
-                  },
-                  {
-                    href: "/services/website-development/full-stack",
-                    label: "Full-Stack Solutions",
-                  },
-                ],
               },
               {
-                href: "/services/wordpress-development",
+                href: "/services/wordpress-development/",
                 label: "WordPress Development",
               },
               {
-                href: "/services/ecommerce-development",
-                label: "Shopify Development", // Changed label as requested
+                href: "/services/ecommerce-development/",
+                label: "eCommerce Development",
               },
               {
-                href: "/services/web-application",
-                label: "Web Application Development",
+                href: "/services/mobile-app-development/",
+                label: "Mobile App Development",
               },
               {
-                href: "/services/(technology-services)/website-maintenance",
+                href: "/services/software-development/",
+                label: "Software Development",
+              },
+              {
+                href: "/services/website-design/",
+                label: "Website Design",
+              },
+              {
+                href: "/services/website-maintenance",
                 label: "Website Maintenance",
               },
               {
-                href: "/services/(technology-services)/application-maintenance",
+                href: "/services/application-maintenance",
                 label: "Application Maintenance",
               },
               {
-                href: "/services/website-design-company-in-aundh",
+                href: "/services/website-design-company-pune//",
                 label: "Web Design in Aundh",
               },
               {
-                href: "/services/website-design-company-in-baner",
+                href: "/services/website-design-company-pune//",
                 label: "Web Design in Baner",
               },
               {
-                href: "/services/website-design-company-in-hadapsar",
+                href: "/services/website-design-company-pune//",
                 label: "Web Design in Hadapsar",
               },
               {
-                href: "/services/website-design-company-in-kothrud",
+                href: "/services/website-design-company-pune//",
                 label: "Web Design in Kothrud",
               },
               {
-                href: "/services/website-design-company-in-pcmc",
+                href: "/services/website-design-company-pune//",
                 label: "Web Design in PCMC",
               },
               {
-                href: "/services/website-design-company-in-viman-nagar",
+                href: "/services/website-design-company-pune//",
                 label: "Web Design in Viman Nagar",
               },
               {
-                href: "/services/website-design-company-in-wakad",
+                href: "/services/website-design-company-pune//",
                 label: "Web Design in Wakad",
               },
             ],
@@ -124,30 +119,25 @@ export const navigationData: {
             description: "Performance & Growth Marketing",
             items: [
               {
-                href: "/services/seo",
-                label: "Search Engine Optimization (SEO)",
+                href: "/services/seo/",
+                label: "SEO Company Pune",
                 featured: true,
               },
               {
-                href: "/services/social-media-marketing",
+                href: "/services/ppc-google-ads/",
+                label: "Google Ads Agency",
+                featured: true,
+              },
+              {
+                href: "/services/local-seo/",
+                label: "Local SEO Services",
+              },
+              {
+                href: "/services/social-media-marketing/",
                 label: "Social Media Marketing",
               },
               {
-                href: "/services/social-media-promotions",
-                label: "Social Media Promotions",
-              },
-              {
-                href: "/services/performance-marketing",
-                label: "Performance Marketing",
-              },
-              {
-                href: "/services/ppc-google-ads",
-                label: "Google Ads / PPC",
-                featured: true,
-              },
-              { href: "/services/meta-ads", label: "Meta / Facebook Ads" },
-              {
-                href: "/services/content-marketing",
+                href: "/services/content-marketing/",
                 label: "Content Marketing",
               },
               { href: "/services/lead-generation", label: "Lead Generation" },
@@ -166,13 +156,21 @@ export const navigationData: {
                 href: "/services/media-planning-buying",
                 label: "Media Planning & Buying",
               },
-               {
+              {
                 href: "/services/political-digital-marketing",
                 label: "Political Digital Marketing",
               },
               {
-                href: "/services/seo-company-in-hinjewadi",
+                href: "/services/seo//",
                 label: "SEO Services Hinjewadi",
+              },
+              {
+                href: "/services/ppc-google-ads//",
+                label: "Google Ads Pune",
+              },
+              {
+                href: "/services/website-development//",
+                label: "Website Development Pune",
               },
             ],
           },
