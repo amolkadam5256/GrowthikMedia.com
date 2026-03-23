@@ -7,8 +7,8 @@ import {
   CardHeader, 
   CardTitle,
   CardDescription
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+} from "@/components/PublicComponents/ui/Card";
+import { Button } from "@/components/PublicComponents/ui/Button";
 import { 
   Loader2, 
   CheckCircle2, 
@@ -143,7 +143,7 @@ export default function GoogleReviewsDashboard() {
                 <span className="text-xs font-semibold text-green-400 uppercase tracking-widest">System Active</span>
               </div>
               <Button 
-                variant="ghost" 
+                variant="outline" 
                 className="w-full justify-start text-gray-400 hover:text-white"
                 onClick={() => window.open('https://myaccount.google.com/permissions', '_blank')}
               >

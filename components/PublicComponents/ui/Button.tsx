@@ -8,7 +8,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string; // Allow custom classes to merge
 }
 
-const Button = ({
+export const Button = ({
   variant = "primary",
   size = "md",
   icon,

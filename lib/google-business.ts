@@ -49,7 +49,8 @@ export async function getAuthorizedClient(email: string) {
  * Fetches all unreplied reviews for a given Google location.
  */
 export async function fetchUnrepliedReviews(auth: any, accountId: string, locationId: string) {
-  const mybusinessreviews = google.mybusinessreviews({ version: "v1", auth });
+  const g: any = google;
+  const mybusinessreviews = g.mybusinessreviews({ version: "v1", auth });
   const parent = `accounts/${accountId}/locations/${locationId}`;
   
   const response = await mybusinessreviews.accounts.locations.reviews.list({
@@ -64,7 +65,8 @@ export async function fetchUnrepliedReviews(auth: any, accountId: string, locati
  * Posts a reply to a Google review.
  */
 export async function replyToReview(auth: any, reviewName: string, replyText: string) {
-  const mybusinessreviews = google.mybusinessreviews({ version: "v1", auth });
+  const g: any = google;
+  const mybusinessreviews = g.mybusinessreviews({ version: "v1", auth });
   
   await mybusinessreviews.accounts.locations.reviews.reply({
     name: reviewName,
