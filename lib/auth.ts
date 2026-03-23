@@ -62,38 +62,183 @@ const emailTransporter = nodemailer.createTransport({
 });
 
 export async function sendOTPEmail(email: string, otp: string) {
+  const year = new Date().getFullYear();
+
+  // Split OTP into individual digits for visual display
+  const otpDigits = otp
+    .split("")
+    .map(
+      (d) =>
+        `<td style="padding:0 4px;">
+           <div style="width:44px;height:56px;background:#fff5f5;border:2px solid #D90B1C;
+                       border-radius:10px;text-align:center;line-height:56px;
+                       font-size:28px;font-weight:900;color:#D90B1C;
+                       font-family:Arial,Helvetica,sans-serif;">
+             ${d}
+           </div>
+         </td>`
+    )
+    .join("");
+
+  const socialLinks = [
+    { label: "Instagram", url: "https://instagram.com/growthikmedia",       icon: "📸" },
+    { label: "LinkedIn",  url: "https://linkedin.com/company/growthikmedia", icon: "💼" },
+    { label: "YouTube",   url: "https://youtube.com/@growthikmedia",         icon: "▶️" },
+    { label: "Website",   url: "https://www.growthikmedia.com",              icon: "🌐" },
+  ]
+    .map(
+      (s) =>
+        `<a href="${s.url}" target="_blank" rel="noopener"
+            style="display:inline-block;margin:0 5px;color:#94a3b8;font-size:11px;
+                   font-family:Arial,sans-serif;text-decoration:none;">
+           ${s.icon}&nbsp;${s.label}
+         </a>`
+    )
+    .join("");
+
+  const html = `<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Login OTP — Growthik Media</title>
+  <style>
+    @media only screen and (max-width:600px){
+      .email-card { width:100% !important; border-radius:0 !important; }
+      .otp-cell div { width:36px !important; height:46px !important; line-height:46px !important; font-size:22px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background:#f1f5f9;">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f1f5f9;">
+<tr><td align="center" style="padding:28px 12px 40px;">
+
+  <table class="email-card" width="560" cellpadding="0" cellspacing="0" border="0"
+         style="max-width:560px;width:100%;background:#fff;border-radius:16px;
+                overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,0.10);">
+
+    <!-- Header -->
+    <tr>
+      <td style="background:linear-gradient(135deg,#D90B1C 0%,#A3081A 100%);
+                 padding:28px 40px 22px;text-align:center;">
+        <span style="font-size:26px;font-weight:900;color:#fff;
+                     font-family:Arial,Helvetica,sans-serif;letter-spacing:-0.5px;">Growthik</span>
+        <span style="font-size:26px;font-weight:400;color:rgba(255,255,255,0.75);
+                     font-family:Arial,Helvetica,sans-serif;">&nbsp;Media</span>
+        <br>
+        <span style="font-size:10px;color:rgba(255,255,255,0.6);letter-spacing:2px;
+                     text-transform:uppercase;font-family:Arial,sans-serif;">
+          Admin Portal Security
+        </span>
+      </td>
+    </tr>
+
+    <!-- Lock icon + heading -->
+    <tr>
+      <td style="padding:36px 40px 0;text-align:center;">
+        <div style="width:64px;height:64px;background:#fff5f5;border-radius:50%;
+                    margin:0 auto 16px;display:flex;align-items:center;
+                    justify-content:center;border:2px solid #fecaca;">
+          <span style="font-size:28px;line-height:64px;">🔐</span>
+        </div>
+        <h1 style="margin:0 0 8px;font-size:22px;font-weight:900;color:#1e293b;
+                   font-family:Arial,Helvetica,sans-serif;">Login Verification</h1>
+        <p style="margin:0;font-size:13px;color:#64748b;font-family:Arial,sans-serif;line-height:1.6;">
+          Your one-time password for the Growthik Media admin portal.
+        </p>
+      </td>
+    </tr>
+
+    <!-- OTP digit display -->
+    <tr>
+      <td style="padding:28px 40px 8px;text-align:center;">
+        <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+          <tr class="otp-cell">${otpDigits}</tr>
+        </table>
+        <p style="margin:16px 0 0;font-size:12px;color:#94a3b8;font-family:Arial,sans-serif;">
+          ⏱ Valid for <strong style="color:#1e293b;">10 minutes</strong> only
+        </p>
+      </td>
+    </tr>
+
+    <!-- Security warning -->
+    <tr>
+      <td style="padding:20px 40px 36px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;
+                       padding:16px 20px;">
+              <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#64748b;
+                         text-transform:uppercase;letter-spacing:0.8px;font-family:Arial,sans-serif;">
+                🛡 Security Notice
+              </p>
+              <p style="margin:0;font-size:12px;color:#64748b;line-height:1.6;font-family:Arial,sans-serif;">
+                If you did not request this OTP, your account may be at risk.
+                Please change your password immediately and contact
+                <a href="mailto:info@growthikmedia.com"
+                   style="color:#D90B1C;text-decoration:none;">info@growthikmedia.com</a>.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- Contact strip -->
+    <tr>
+      <td style="background:#1e293b;padding:18px 32px;text-align:center;">
+        <div style="font-size:12px;color:#94a3b8;font-family:Arial,sans-serif;">
+          <a href="mailto:info@growthikmedia.com" style="color:#fca5a5;text-decoration:none;">
+            ✉&nbsp;info@growthikmedia.com
+          </a>
+          &nbsp;|&nbsp;
+          <a href="tel:+918055754054" style="color:#94a3b8;text-decoration:none;">
+            📞&nbsp;+91 80557 54054
+          </a>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Social links -->
+    <tr>
+      <td style="background:#0f172a;padding:14px 28px 18px;text-align:center;">
+        <div style="font-size:9px;font-weight:700;color:#475569;letter-spacing:2px;
+                    text-transform:uppercase;font-family:Arial,sans-serif;margin-bottom:8px;">
+          Follow Us
+        </div>
+        <div style="line-height:2.2;">${socialLinks}</div>
+      </td>
+    </tr>
+
+    <!-- Footer -->
+    <tr>
+      <td style="background:#0f172a;padding:0 28px 18px;text-align:center;
+                 border-top:1px solid #1e293b;">
+        <p style="font-size:10px;color:#334155;font-family:Arial,sans-serif;margin:0;">
+          &copy; ${year} Growthik Media. All rights reserved.
+        </p>
+      </td>
+    </tr>
+
+  </table>
+
+</td></tr>
+</table>
+</body>
+</html>`;
+
   try {
     await emailTransporter.sendMail({
-      from: process.env.EMAIL_FROM || "noreply@growthikmedia.com",
-      to: email,
+      from:    process.env.EMAIL_FROM || `"Growthik Media" <noreply@growthikmedia.com>`,
+      to:      email,
       subject: "🔐 Your Growthik Media Login OTP",
-      html: `
-        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px 20px; border-radius: 10px;">
-          <div style="background: white; padding: 40px; border-radius: 10px; text-align: center;">
-            <h1 style="color: #333; margin-bottom: 10px;">🔐 Login Verification</h1>
-            <p style="color: #666; font-size: 16px; margin-bottom: 30px;">Your One-Time Password (OTP) is:</p>
-            
-            <div style="background: #f8f9fa; border-left: 4px solid #667eea; padding: 20px; border-radius: 5px; margin-bottom: 30px;">
-              <p style="font-size: 32px; font-weight: bold; color: #667eea; letter-spacing: 5px; margin: 0;">${otp}</p>
-            </div>
-            
-            <p style="color: #999; font-size: 14px; margin-bottom: 20px;">This OTP is valid for <strong>10 minutes</strong></p>
-            
-            <div style="border-top: 1px solid #eee; padding-top: 20px; margin-top: 30px;">
-              <p style="color: #999; font-size: 12px; margin: 0;">
-                If you didn't request this OTP, please ignore this email.
-              </p>
-              <p style="color: #999; font-size: 12px; margin: 10px 0 0 0;">
-                © 2024 Growthik Media. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </div>
-      `,
+      html,
     });
     return true;
   } catch (error) {
-    console.error("Email sending failed:", error);
+    console.error("OTP email sending failed:", error);
     return false;
   }
 }
