@@ -8,12 +8,12 @@
     "postinstall": "npx prisma generate",
     "start": "next start",
     "lint": "eslint",
-    "audit:crawl": "node scripts/audit-crawler.mjs",
-    "audit:report": "node scripts/generate-report.mjs",
-    "audit:email": "node --env-file=.env scripts/send-email.mjs",
-    "audit:slack": "node --env-file=.env scripts/alert-slack.mjs",
-    "audit:test": "node scripts/audit-crawler.mjs --test-mode && node scripts/generate-report.mjs",
-    "audit:full": "node scripts/audit-crawler.mjs && node scripts/generate-report.mjs && node --env-file=.env scripts/send-email.mjs && node --env-file=.env scripts/alert-slack.mjs"
+    "audit:crawl": "node automation/seo-audit/crawler.mjs",
+    "audit:report": "node automation/seo-audit/generate-report.mjs",
+    "audit:email": "node --env-file=.env automation/seo-audit/send-email.mjs",
+    "audit:slack": "node --env-file=.env automation/seo-audit/alert-slack.mjs",
+    "audit:test": "node automation/seo-audit/crawler.mjs --test-mode && node automation/seo-audit/generate-report.mjs",
+    "audit:full": "node automation/seo-audit/crawler.mjs && node automation/seo-audit/generate-report.mjs && node --env-file=.env automation/seo-audit/send-email.mjs && node --env-file=.env automation/seo-audit/alert-slack.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

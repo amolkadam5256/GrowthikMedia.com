@@ -1,70 +1,98 @@
 name: Weekly SEO Audit
 
+# ────────────────────────────────────────────────────────────────────────────────
+# Triggers
+# ────────────────────────────────────────────────────────────────────────────────
 on:
   schedule:
-    # 3:30 AM UTC = 9:00 AM IST (Monday)
+    # ┌─ min ┬─ hour (UTC) ┬─ day ┬─ month ┬─ weekday (1=Mon)
+    # 3:30 AM UTC = 9:00 AM IST every Monday
     - cron: '30 3 * * 1'
-  workflow_dispatch:
+  workflow_dispatch:        # Allow manual triggering from GitHub UI
+
+# ────────────────────────────────────────────────────────────────────────────────
+# Permissions (only what's needed)
+# ────────────────────────────────────────────────────────────────────────────────
+permissions:
+  contents: write           # Needed to commit audit-reports/latest.json
 
 jobs:
   seo-audit:
+    name: SEO Crawl & Report
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
+
+    # ── Environment Variables (public config) ──────────────────────────────────
+    env:
+      SITE_URL:    ${{ vars.SITE_URL    || 'https://www.growthikmedia.com' }}
+      SITEMAP_URL: ${{ vars.SITEMAP_URL || 'https://www.growthikmedia.com/sitemap.xml' }}
 
     steps:
-      - name: Checkout Repository
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0      # Full history for git push
 
-      - name: Setup Node.js
+      # ── 2. Node.js Setup ─────────────────────────────────────────────────────
+      - name: ⚙️  Setup Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'  # Node 24 = future-proof (avoids deprecation warning)
           cache: 'npm'
 
-      - name: Install Dependencies
-        run: npm ci || npm install --no-package-lock
+      # ── 3. Install Dependencies (skip Prisma generate in CI) ─────────────────
+      - name: 📦 Install Dependencies
+        run: npm ci --ignore-scripts
+        # --ignore-scripts skips postinstall (prisma generate) which needs a DB.
+        # The audit scripts only need: node-fetch, fast-xml-parser, cheerio, nodemailer.
 
-      - name: Ensure Audit Reports Directory
+      # ── 4. Ensure output directory exists ─────────────────────────────────────
+      - name: 📁 Ensure Audit Reports Directory
         run: mkdir -p audit-reports
 
-      - name: Run SEO Crawler
-        run: node scripts/audit-crawler.mjs
-        env:
-          SITE_URL: ${{ vars.SITE_URL || 'https://www.growthikmedia.com' }}
-          SITEMAP_URL: ${{ vars.SITEMAP_URL || 'https://www.growthikmedia.com/sitemap.xml' }}
+      # ── 5. Run SEO Crawler ───────────────────────────────────────────────────
+      - name: 🔍 Run SEO Crawler
+        run: node automation/seo-audit/crawler.mjs
+        # Crawls all URLs from sitemap, writes audit-reports/latest.json
 
-      - name: Generate HTML Report
-        run: node scripts/generate-report.mjs
+      # ── 6. Generate HTML Report ───────────────────────────────────────────────
+      - name: 📊 Generate HTML Report
+        run: node automation/seo-audit/generate-report.mjs
+        # Converts latest.json → styled HTML email report
 
-      - name: Send Email Report
-        run: node scripts/send-email.mjs
+      # ── 7. Send Email Report ──────────────────────────────────────────────────
+      - name: 📧 Send Email Report
+        run: node automation/seo-audit/send-email.mjs
         env:
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_USER:    ${{ secrets.SMTP_USER }}
+          SMTP_PASS:    ${{ secrets.SMTP_PASS }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+        # Script exits 0 (gracefully skips) if secrets are not configured.
 
-      - name: Send Slack Alert
-        run: node scripts/alert-slack.mjs
+      # ── 8. Slack Alert ────────────────────────────────────────────────────────
+      - name: 📡 Send Slack Alert
+        run: node automation/seo-audit/alert-slack.mjs
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        # Script exits 0 (gracefully skips) if SLACK_WEBHOOK_URL is not set.
 
-      - name: Commit and Push Latest Results
+      # ── 9. Commit Latest Results ──────────────────────────────────────────────
+      - name: 💾 Commit Latest Audit Results
         run: |
           git config --local user.email "seo-audit-bot@growthikmedia.com"
-          git config --local user.name "SEO Audit Bot"
+          git config --local user.name  "SEO Audit Bot"
           git add audit-reports/latest.json
           git status
-          git commit -m "chore: update latest seo audit results [skip ci]" || echo "No changes to commit"
+          git diff --staged --quiet \
+            && echo "✅ No changes to commit." \
+            || git commit -m "chore: update latest seo audit results [skip ci]"
           git push
 
-      - name: Upload Report Artifacts
+      # ── 10. Upload Artifacts to GitHub ────────────────────────────────────────
+      - name: ☁️  Upload Report Artifacts
         uses: actions/upload-artifact@v4
+        if: always()          # Upload even if previous steps failed
         with:
-          name: seo-audit-reports
+          name: seo-audit-reports-${{ github.run_number }}
           path: audit-reports/
-          retention-days: 90
+          retention-days: 90  # Keep for 3 months
