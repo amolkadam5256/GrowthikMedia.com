@@ -4,12 +4,6 @@ import { getAuthorizedClient, fetchUnrepliedReviews, replyToReview, generateAIRe
 import { sendEmail, getReviewThankYouHTML } from "@/lib/mailer";
 
 export async function GET(request: Request) {
-  // CRON SECURE ACCESS - check authorization header
-  const authHeader = request.headers.get("authorization");
-  if (process.env.CRON_SECRET && authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
   // Fetch all active Google Business configs
   const configs = await db.googleConfig.findMany({
     where: { isActive: true },
