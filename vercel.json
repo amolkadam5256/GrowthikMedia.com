@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/auto-reply-reviews",
+      "path": "/api/google/lite-reply",
       "schedule": "0 * * * *"
     }
   ]
