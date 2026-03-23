@@ -1,8 +1,2 @@
 {
-  "crons": [
-    {
-      "path": "/api/google/lite-reply",
-      "schedule": "0 * * * *"
-    }
-  ]
 }
