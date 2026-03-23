@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     await sendUnifiedEmail({
       userEmail: email,
       userName: name,
-      adminSubject: `New Enquiry: ${name} — ${finalService}`,
+      adminSubject: `New Lead Inquiry: ${name} — ${finalService}`,
       adminData: {
         ...data,
         inquiry_id: inquiryId || "Not logged in DB",

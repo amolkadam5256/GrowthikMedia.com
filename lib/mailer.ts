@@ -12,11 +12,11 @@ const BRAND = {
   color:   "#D90B1C",
   colorDark: "#A3081A",
   social: [
-    { label: "Instagram", url: "https://instagram.com/growthikmedia",        icon: "📸" },
-    { label: "LinkedIn",  url: "https://linkedin.com/company/growthikmedia",  icon: "💼" },
-    { label: "YouTube",   url: "https://youtube.com/@growthikmedia",          icon: "▶️" },
-    { label: "Facebook",  url: "https://facebook.com/growthikmedia",          icon: "📘" },
-    { label: "WhatsApp",  url: "https://wa.me/918055754054",                  icon: "💬" },
+    { label: "Instagram", url: "https://instagram.com/growthikmedia",        icon: "https://img.icons8.com/fluent/48/000000/instagram-new.png" },
+    { label: "LinkedIn",  url: "https://linkedin.com/company/growthikmedia",  icon: "https://img.icons8.com/color/48/000000/linkedin.png" },
+    { label: "YouTube",   url: "https://youtube.com/@growthikmedia",          icon: "https://img.icons8.com/color/48/000000/youtube-play.png" },
+    { label: "Facebook",  url: "https://facebook.com/growthikmedia",          icon: "https://img.icons8.com/color/48/000000/facebook-new.png" },
+    { label: "WhatsApp",  url: "https://wa.me/918055754054",                  icon: "https://img.icons8.com/color/48/000000/whatsapp--v1.png" },
   ],
 };
 
@@ -30,9 +30,8 @@ function wrapEmailShell(innerHtml: string, previewText = ""): string {
     .map(
       (s) =>
         `<a href="${s.url}" target="_blank" rel="noopener"
-            style="display:inline-block;margin:0 6px;color:#94a3b8;font-size:11px;
-                   font-family:Arial,sans-serif;text-decoration:none;">
-           ${s.icon}&nbsp;${s.label}
+            style="display:inline-block;margin:0 8px;text-decoration:none;">
+           <img src="${s.icon}" alt="${s.label}" width="24" height="24" style="display:block;border:0;">
          </a>`
     )
     .join("");
@@ -96,47 +95,43 @@ function wrapEmailShell(innerHtml: string, previewText = ""): string {
 
     <!-- ─── CONTACT STRIP ──────────────────────────────────────────────────── -->
     <tr>
-      <td style="background:#1e293b;padding:20px 32px;text-align:center;">
-        <div style="font-size:13px;font-weight:700;color:#fff;
+      <td style="background:#000000;padding:24px 32px;text-align:center;">
+        <div style="font-size:16px;font-weight:700;color:#ffffff;
                     font-family:Arial,Helvetica,sans-serif;margin-bottom:8px;">
           ${BRAND.name}
         </div>
-        <div style="font-size:11px;color:#94a3b8;font-family:Arial,Helvetica,sans-serif;line-height:1.9;">
-          <a href="mailto:${BRAND.email}" style="color:#fca5a5;text-decoration:none;">
+        <div style="font-size:12px;color:#cccccc;font-family:Arial,Helvetica,sans-serif;line-height:1.9;">
+          <a href="mailto:${BRAND.email}" style="color:#D90B1C;text-decoration:none;">
             ✉&nbsp;${BRAND.email}
           </a>
           &nbsp;|&nbsp;
           <a href="tel:${BRAND.phone.replace(/\s/g, "")}"
-             style="color:#94a3b8;text-decoration:none;">
+             style="color:#ffffff;text-decoration:none;">
             📞&nbsp;${BRAND.phone}
           </a>
           <br>
-          <span>📍&nbsp;${BRAND.address}</span>
+          <span style="color:#aaaaaa;">📍&nbsp;${BRAND.address}</span>
         </div>
       </td>
     </tr>
 
     <!-- ─── SOCIAL LINKS ───────────────────────────────────────────────────── -->
     <tr>
-      <td style="background:#0f172a;padding:16px 28px 20px;text-align:center;">
-        <div style="font-size:9px;font-weight:700;color:#475569;letter-spacing:2px;
-                    text-transform:uppercase;font-family:Arial,sans-serif;margin-bottom:10px;">
-          Follow Us
-        </div>
-        <div style="line-height:2.2;">${socialLinks}</div>
+      <td style="background:#000000;padding:16px 28px 20px;text-align:center;">
+        <div style="line-height:1;">${socialLinks}</div>
       </td>
     </tr>
 
     <!-- ─── FOOTER LEGAL ───────────────────────────────────────────────────── -->
     <tr>
-      <td style="background:#0f172a;padding:0 28px 20px;text-align:center;
-                 border-top:1px solid #1e293b;">
-        <p style="font-size:10px;color:#334155;font-family:Arial,sans-serif;margin:0;">
+      <td style="background:#000000;padding:0 28px 24px;text-align:center;
+                 border-top:1px solid #333333;">
+        <p style="font-size:11px;color:#888888;font-family:Arial,sans-serif;margin:16px 0 0;">
           &copy; ${BRAND.year} ${BRAND.name}. All rights reserved.
           &nbsp;&nbsp;
-          <a href="${BRAND.website}/privacy-policy" style="color:#475569;text-decoration:none;">Privacy</a>
+          <a href="${BRAND.website}/privacy-policy" style="color:#cccccc;text-decoration:none;">Privacy</a>
           &nbsp;·&nbsp;
-          <a href="${BRAND.website}" style="color:#475569;text-decoration:none;">Website</a>
+          <a href="${BRAND.website}" style="color:#cccccc;text-decoration:none;">Website</a>
         </p>
       </td>
     </tr>
@@ -253,13 +248,13 @@ export function getUserAutoReplyHTML(name: string): string {
                   text-transform:uppercase;letter-spacing:1px;font-family:Arial,sans-serif;">
           Hi ${name},
         </p>
-        <h1 style="margin:0 0 20px;font-size:22px;font-weight:900;color:#1e293b;
+        <h1 style="margin:0 0 20px;font-size:22px;font-weight:900;color:#000000;
                    font-family:Arial,Helvetica,sans-serif;line-height:1.3;">
           Thanks for reaching out! 🙌
         </h1>
-        <p style="margin:0 0 16px;font-size:14px;color:#475569;line-height:1.7;
+        <p style="margin:0 0 16px;font-size:14px;color:#333333;line-height:1.7;
                   font-family:Arial,sans-serif;">
-          We've received your inquiry through the <strong style="color:#1e293b;">Growthik Media</strong>
+          We've received your inquiry through the <strong style="color:#000000;">Growthik Media</strong>
           website. Our team of digital marketing experts is already reviewing your request.
         </p>
       </td>
@@ -270,15 +265,15 @@ export function getUserAutoReplyHTML(name: string): string {
       <td style="padding:16px 40px;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td style="background:#fff5f5;border-left:4px solid #D90B1C;border-radius:0 8px 8px 0;
+            <td style="background:#f9f9f9;border-left:4px solid #D90B1C;border-radius:0 8px 8px 0;
                        padding:18px 20px;">
               <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:#D90B1C;
                          text-transform:uppercase;letter-spacing:0.8px;font-family:Arial,sans-serif;">
                 What's next?
               </p>
-              <p style="margin:0;font-size:13px;color:#475569;line-height:1.6;font-family:Arial,sans-serif;">
+              <p style="margin:0;font-size:13px;color:#333333;line-height:1.6;font-family:Arial,sans-serif;">
                 One of our growth strategists will reach out within
-                <strong style="color:#1e293b;">24 business hours</strong>
+                <strong style="color:#000000;">24 business hours</strong>
                 to discuss how we can scale your brand with AI-powered marketing.
               </p>
             </td>
@@ -290,7 +285,7 @@ export function getUserAutoReplyHTML(name: string): string {
     <!-- 3-step process -->
     <tr>
       <td style="padding:8px 40px 20px;">
-        <p style="margin:0 0 14px;font-size:13px;font-weight:700;color:#1e293b;
+        <p style="margin:0 0 14px;font-size:13px;font-weight:700;color:#000000;
                   font-family:Arial,sans-serif;">Here's what you can expect:</p>
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
           ${[
@@ -306,13 +301,13 @@ export function getUserAutoReplyHTML(name: string): string {
                   <tr>
                     <td style="width:36px;height:36px;background:#D90B1C;border-radius:50%;
                                text-align:center;vertical-align:middle;">
-                      <span style="font-size:11px;font-weight:900;color:#fff;font-family:Arial,sans-serif;">
+                      <span style="font-size:11px;font-weight:900;color:#ffffff;font-family:Arial,sans-serif;">
                         ${num}
                       </span>
                     </td>
                     <td style="padding-left:14px;vertical-align:middle;">
-                      <strong style="font-size:13px;color:#1e293b;font-family:Arial,sans-serif;">${title}</strong>
-                      <span style="font-size:12px;color:#64748b;font-family:Arial,sans-serif;"> — ${desc}</span>
+                      <strong style="font-size:13px;color:#000000;font-family:Arial,sans-serif;">${title}</strong>
+                      <span style="font-size:12px;color:#555555;font-family:Arial,sans-serif;"> — ${desc}</span>
                     </td>
                   </tr>
                 </table>
@@ -329,9 +324,9 @@ export function getUserAutoReplyHTML(name: string): string {
       <td style="padding:0 40px 24px;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td style="background:linear-gradient(135deg,#1e293b,#334155);border-radius:10px;
+            <td style="background:#000000;border-radius:10px;
                        padding:20px 24px;text-align:center;">
-              <p style="margin:0;font-size:14px;font-style:italic;color:#e2e8f0;line-height:1.6;
+              <p style="margin:0;font-size:14px;font-style:italic;color:#ffffff;line-height:1.6;
                          font-family:Georgia,serif;">
                 "Our mission is to bridge the gap between where you are<br>and where you want to be."
               </p>
@@ -356,10 +351,10 @@ export function getUserAutoReplyHTML(name: string): string {
           Explore Our Services →
         </a>
         <a href="https://wa.me/918055754054" target="_blank"
-           style="display:inline-block;background:#25D366;color:#fff;
+           style="display:inline-block;background:#000000;color:#ffffff;
                   font-size:13px;font-weight:700;padding:13px 28px;
-                  border-radius:8px;font-family:Arial,sans-serif;text-decoration:none;margin:4px;">
-          💬 WhatsApp Us
+                  border-radius:8px;font-family:Arial,sans-serif;text-decoration:none;margin:4px;box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+          WhatsApp Us
         </a>
       </td>
     </tr>
@@ -378,15 +373,15 @@ export function getAdminNotificationHTML(data: any): string {
     .map(
       ([key, value]) => `
       <tr>
-        <td style="padding:12px 16px;background:#f8fafc;border-bottom:1px solid #e2e8f0;
-                   font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;
+        <td style="padding:12px 16px;background:#f9f9f9;border-bottom:1px solid #eeeeee;
+                   font-size:11px;font-weight:700;color:#000000;text-transform:uppercase;
                    letter-spacing:0.5px;font-family:Arial,sans-serif;width:130px;
                    white-space:nowrap;">
           ${key.replace(/_/g, " ")}
         </td>
-        <td style="padding:12px 16px;border-bottom:1px solid #e2e8f0;font-size:13px;
-                   color:#1e293b;font-family:Arial,sans-serif;">
-          ${value || "<span style='color:#94a3b8;'>N/A</span>"}
+        <td style="padding:12px 16px;border-bottom:1px solid #eeeeee;font-size:13px;
+                   color:#333333;font-family:Arial,sans-serif;">
+          ${value || "<span style='color:#999999;'>N/A</span>"}
         </td>
       </tr>`
     )
@@ -400,8 +395,8 @@ export function getAdminNotificationHTML(data: any): string {
                    text-transform:uppercase;letter-spacing:0.8px;font-family:Arial,sans-serif;">
           Message
         </p>
-        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;
-                    padding:16px;font-size:13px;color:#334155;font-family:Arial,sans-serif;
+        <div style="background:#f9f9f9;border:1px solid #eeeeee;border-radius:8px;
+                    padding:16px;font-size:13px;color:#333333;font-family:Arial,sans-serif;
                     line-height:1.7;white-space:pre-wrap;">
           ${data.message}
         </div>
@@ -412,12 +407,12 @@ export function getAdminNotificationHTML(data: any): string {
   const inner = `
     <!-- Alert banner -->
     <tr>
-      <td style="background:#fff5f5;border-left:4px solid #D90B1C;margin:0;padding:16px 40px;">
-        <p style="margin:0;font-size:15px;font-weight:700;color:#D90B1C;font-family:Arial,sans-serif;">
+      <td style="background:#000000;color:#ffffff;margin:0;padding:24px 40px;">
+        <p style="margin:0;font-size:16px;font-weight:700;font-family:Arial,sans-serif;">
           🔴 New Lead Received!
         </p>
-        <p style="margin:4px 0 0;font-size:12px;color:#64748b;font-family:Arial,sans-serif;">
-          A visitor submitted a form on <strong>growthikmedia.com</strong>.
+        <p style="margin:6px 0 0;font-size:13px;color:#cccccc;font-family:Arial,sans-serif;">
+          A visitor submitted a form on <strong style="color:#ffffff;">growthikmedia.com</strong>.
           Respond within 4 hours for maximum conversion.
         </p>
       </td>
@@ -425,13 +420,13 @@ export function getAdminNotificationHTML(data: any): string {
 
     <!-- Lead details table -->
     <tr>
-      <td class="email-body" style="padding:24px 40px 8px;">
-        <p style="margin:0 0 12px;font-size:12px;font-weight:700;color:#475569;
+      <td class="email-body" style="padding:32px 40px 16px;">
+        <p style="margin:0 0 12px;font-size:12px;font-weight:700;color:#000000;
                    text-transform:uppercase;letter-spacing:0.8px;font-family:Arial,sans-serif;">
           Lead Details
         </p>
         <table width="100%" cellpadding="0" cellspacing="0" border="0"
-               style="border-collapse:collapse;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">
+               style="border-collapse:collapse;border:1px solid #eeeeee;border-radius:8px;overflow:hidden;">
           ${fieldRows}
         </table>
       </td>
@@ -445,15 +440,15 @@ export function getAdminNotificationHTML(data: any): string {
       <td style="padding:20px 40px 36px;">
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td style="background:linear-gradient(135deg,#1e293b,#0f172a);border-radius:10px;
-                       padding:18px 24px;text-align:center;">
-              <p style="margin:0 0 12px;font-size:13px;font-weight:700;color:#fca5a5;
+            <td style="background:#000000;border-radius:10px;
+                       padding:24px;text-align:center;">
+              <p style="margin:0 0 16px;font-size:14px;font-weight:700;color:#ffffff;
                          font-family:Arial,sans-serif;">
                 ⚡ Reply to this lead within 4 hours for 3× higher conversion rate
               </p>
               <a href="${BRAND.website}/admin" target="_blank"
-                 style="display:inline-block;background:#D90B1C;color:#fff;
-                        font-size:12px;font-weight:700;padding:10px 24px;
+                 style="display:inline-block;background:#D90B1C;color:#ffffff;
+                        font-size:13px;font-weight:700;padding:12px 28px;
                         border-radius:6px;font-family:Arial,sans-serif;text-decoration:none;">
                 Open Admin Dashboard →
               </a>
@@ -464,7 +459,7 @@ export function getAdminNotificationHTML(data: any): string {
     </tr>
   `;
 
-  return wrapEmailShell(inner, "🔴 New lead received on growthikmedia.com — action required.");
+  return wrapEmailShell(inner, "[ACTION REQUIRED] New Lead Submission on Growthik Media");
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -475,12 +470,12 @@ export function getAdminReplyHTML(bodyText: string): string {
     <!-- Greeting -->
     <tr>
       <td class="email-body" style="padding:36px 40px 20px;">
-        <p style="margin:0 0 16px;font-size:14px;color:#475569;line-height:1.7;font-family:Arial,sans-serif;">
+        <p style="margin:0 0 16px;font-size:14px;color:#333333;line-height:1.7;font-family:Arial,sans-serif;">
           Thank you for getting in touch with us. Here is our response to your inquiry:
         </p>
         <!-- Message body -->
-        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;
-                    padding:24px;font-size:14px;color:#334155;font-family:Arial,sans-serif;
+        <div style="background:#f9f9f9;border:1px solid #eeeeee;border-radius:10px;
+                    padding:24px;font-size:14px;color:#333333;font-family:Arial,sans-serif;
                     line-height:1.7;white-space:pre-wrap;">
           ${bodyText}
         </div>
@@ -494,16 +489,16 @@ export function getAdminReplyHTML(bodyText: string): string {
           <tr>
             <td style="width:4px;background:#D90B1C;border-radius:2px;"></td>
             <td style="padding-left:14px;">
-              <p style="margin:0;font-size:14px;font-weight:700;color:#1e293b;font-family:Arial,sans-serif;">
+              <p style="margin:0;font-size:14px;font-weight:700;color:#000000;font-family:Arial,sans-serif;">
                 Growthik Media Team
               </p>
-              <p style="margin:3px 0 0;font-size:12px;color:#64748b;font-family:Arial,sans-serif;">
+              <p style="margin:3px 0 0;font-size:12px;color:#555555;font-family:Arial,sans-serif;">
                 Digital Marketing Agency · Pune, India
               </p>
               <p style="margin:3px 0 0;font-size:12px;font-family:Arial,sans-serif;">
                 <a href="mailto:${BRAND.email}" style="color:#D90B1C;text-decoration:none;">${BRAND.email}</a>
                 &nbsp;·&nbsp;
-                <a href="tel:+918055754054" style="color:#64748b;text-decoration:none;">${BRAND.phone}</a>
+                <a href="tel:+918055754054" style="color:#555555;text-decoration:none;">${BRAND.phone}</a>
               </p>
             </td>
           </tr>

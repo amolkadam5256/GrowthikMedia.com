@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     }
 
     // 3. Prepare Admin Email
-    const adminSubject = `🔴 New Lead: ${name} [${formType}]`;
+    const adminSubject = `Action Required: New Inquiry from ${name} - ${formType}`;
     
     // Dynamically build data for email (all fields from body)
     const adminData = {
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
       userName: name,
       adminSubject: adminSubject,
       adminData: adminData,
-      userSubject: `We've received your inquiry | Growthik Media`,
+      userSubject: `Thank you for contacting Growthik Media - We are reviewing your request`,
     });
 
     // 6. Final Status Check

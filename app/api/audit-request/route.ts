@@ -40,13 +40,13 @@ export async function POST(req: Request) {
     await sendUnifiedEmail({
       userEmail: email,
       userName: name,
-      adminSubject: `🔍 Audit Request: ${finalBusiness} [${finalWebsite}]`,
+      adminSubject: `New Audit Request: ${finalBusiness} [${finalWebsite}]`,
       adminData: {
         ...data,
         inquiry_id: inquiryId || "Not logged in DB",
         source: "Audit Request Form"
       },
-      userSubject: `Your Audit is Booked! — Growthik Media`
+      userSubject: `Your Audit Request Form — Growthik Media`
     });
 
     return NextResponse.json({ success: true, message: "Audit booked! Check your email for confirmation." });

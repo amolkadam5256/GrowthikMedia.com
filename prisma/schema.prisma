@@ -178,3 +178,38 @@ model ChatMessage {
 
   @@map("chat_messages")
 }
+
+// -------------------------------------------------------------
+// GOOGLE REVIEWS AUTO-RESPONDER
+// -------------------------------------------------------------
+
+model GoogleConfig {
+  id               String   @id @default(cuid())
+  email            String   @unique
+  accessToken      String   @db.Text
+  refreshToken     String   @db.Text
+  tokenExpiry      DateTime
+  accountId        String?
+  locationId       String?
+  businessName     String?
+  isActive         Boolean  @default(true)
+  lastSync         DateTime?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("google_configs")
+}
+
+model ProcessedReview {
+  id         String   @id @default(cuid())
+  reviewId   String   @unique // Google's review ID
+  reviewer   String?
+  rating     String?
+  comment    String?  @db.Text
+  reply      String?  @db.Text
+  repliedAt  DateTime @default(now())
+  status     String   @default("SUCCESS") // SUCCESS, FAILED
+  error      String?  @db.Text
+
+  @@map("processed_reviews")
+}

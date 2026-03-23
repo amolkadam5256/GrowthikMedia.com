@@ -81,20 +81,22 @@ export async function sendOTPEmail(email: string, otp: string) {
     .join("");
 
   const socialLinks = [
-    { label: "Instagram", url: "https://instagram.com/growthikmedia",       icon: "📸" },
-    { label: "LinkedIn",  url: "https://linkedin.com/company/growthikmedia", icon: "💼" },
-    { label: "YouTube",   url: "https://youtube.com/@growthikmedia",         icon: "▶️" },
-    { label: "Website",   url: "https://www.growthikmedia.com",              icon: "🌐" },
+    { label: "Instagram", url: "https://instagram.com/growthikmedia",        icon: '<img src="https://img.icons8.com/color/48/instagram-new--v1.png" width="24" height="24" alt="Instagram" style="display:block;border:0" />' },
+    { label: "LinkedIn",  url: "https://linkedin.com/company/growthikmedia", icon: '<img src="https://img.icons8.com/color/48/linkedin.png" width="24" height="24" alt="LinkedIn" style="display:block;border:0" />' },
+    { label: "YouTube",   url: "https://youtube.com/@growthikmedia",         icon: '<img src="https://img.icons8.com/color/48/youtube-play.png" width="24" height="24" alt="YouTube" style="display:block;border:0" />' },
+    { label: "Website",   url: "https://www.growthikmedia.com",              icon: '<img src="https://img.icons8.com/color/48/domain--v1.png" width="24" height="24" alt="Website" style="display:block;border:0" />' },
   ]
     .map(
       (s) =>
-        `<a href="${s.url}" target="_blank" rel="noopener"
-            style="display:inline-block;margin:0 5px;color:#94a3b8;font-size:11px;
-                   font-family:Arial,sans-serif;text-decoration:none;">
-           ${s.icon}&nbsp;${s.label}
-         </a>`
+        `<td style="padding:0 12px;">
+           <a href="${s.url}" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block;">
+             ${s.icon}
+           </a>
+         </td>`
     )
     .join("");
+
+  const socialLinksHtml = `<table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;"><tr>${socialLinks}</tr></table>`;
 
   const html = `<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -137,14 +139,9 @@ export async function sendOTPEmail(email: string, otp: string) {
 
     <!-- Lock icon + heading -->
     <tr>
-      <td style="padding:36px 40px 0;text-align:center;">
-        <div style="width:64px;height:64px;background:#fff5f5;border-radius:50%;
-                    margin:0 auto 16px;display:flex;align-items:center;
-                    justify-content:center;border:2px solid #fecaca;">
-          <span style="font-size:28px;line-height:64px;">🔐</span>
-        </div>
-        <h1 style="margin:0 0 8px;font-size:22px;font-weight:900;color:#1e293b;
-                   font-family:Arial,Helvetica,sans-serif;">Login Verification</h1>
+      <td style="padding:40px 40px 0;text-align:center;">
+        <h1 style="margin:0 0 8px;font-size:24px;font-weight:900;color:#1e293b;
+                   font-family:Arial,Helvetica,sans-serif;text-transform:uppercase;letter-spacing:1px;">Login Verification</h1>
         <p style="margin:0;font-size:13px;color:#64748b;font-family:Arial,sans-serif;line-height:1.6;">
           Your one-time password for the Growthik Media admin portal.
         </p>
@@ -188,13 +185,13 @@ export async function sendOTPEmail(email: string, otp: string) {
 
     <!-- Contact strip -->
     <tr>
-      <td style="background:#1e293b;padding:18px 32px;text-align:center;">
-        <div style="font-size:12px;color:#94a3b8;font-family:Arial,sans-serif;">
-          <a href="mailto:info@growthikmedia.com" style="color:#fca5a5;text-decoration:none;">
+      <td style="background:#111111;padding:24px 32px;text-align:center;">
+        <div style="font-size:12px;color:#a3a3a3;font-family:Arial,sans-serif;line-height:2;">
+          <a href="mailto:info@growthikmedia.com" style="color:#ffffff;text-decoration:none;font-weight:700;">
             ✉&nbsp;info@growthikmedia.com
           </a>
-          &nbsp;|&nbsp;
-          <a href="tel:+918055754054" style="color:#94a3b8;text-decoration:none;">
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <a href="tel:+918055754054" style="color:#ffffff;text-decoration:none;font-weight:700;">
             📞&nbsp;+91 80557 54054
           </a>
         </div>
@@ -203,20 +200,20 @@ export async function sendOTPEmail(email: string, otp: string) {
 
     <!-- Social links -->
     <tr>
-      <td style="background:#0f172a;padding:14px 28px 18px;text-align:center;">
-        <div style="font-size:9px;font-weight:700;color:#475569;letter-spacing:2px;
-                    text-transform:uppercase;font-family:Arial,sans-serif;margin-bottom:8px;">
-          Follow Us
+      <td style="background:#000000;padding:24px 28px 24px;text-align:center;">
+        <div style="font-size:10px;font-weight:900;color:#737373;letter-spacing:3px;
+                    text-transform:uppercase;font-family:Arial,sans-serif;margin-bottom:16px;">
+          FOLLOW US
         </div>
-        <div style="line-height:2.2;">${socialLinks}</div>
+        ${socialLinksHtml}
       </td>
     </tr>
 
     <!-- Footer -->
     <tr>
-      <td style="background:#0f172a;padding:0 28px 18px;text-align:center;
-                 border-top:1px solid #1e293b;">
-        <p style="font-size:10px;color:#334155;font-family:Arial,sans-serif;margin:0;">
+      <td style="background:#000000;padding:0 28px 24px;text-align:center;">
+        <div style="width:100%;height:1px;background:#333333;margin-bottom:20px;"></div>
+        <p style="font-size:11px;color:#737373;font-family:Arial,sans-serif;margin:0;">
           &copy; ${year} Growthik Media. All rights reserved.
         </p>
       </td>
@@ -233,7 +230,7 @@ export async function sendOTPEmail(email: string, otp: string) {
     await emailTransporter.sendMail({
       from:    process.env.EMAIL_FROM || `"Growthik Media" <noreply@growthikmedia.com>`,
       to:      email,
-      subject: "🔐 Your Growthik Media Login OTP",
+      subject: "Security Login OTP - Growthik Media",
       html,
     });
     return true;
