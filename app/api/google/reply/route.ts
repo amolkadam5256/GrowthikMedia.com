@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { getAuthorizedClient, fetchUnrepliedReviews, replyToReview, generateAIResponse } from "@/lib/google-business";
+import { sendEmail, getReviewThankYouHTML } from "@/lib/mailer";
 
 export async function GET(request: Request) {
   // CRON SECURE ACCESS - check authorization header
@@ -22,6 +23,7 @@ export async function GET(request: Request) {
     totalAccounts: configs.length,
     processed: 0,
     repliedCount: 0,
+    emailsSent: 0,
     errors: [] as string[],
   };
 
@@ -43,12 +45,18 @@ export async function GET(request: Request) {
         // Post to Google
         await replyToReview(auth, review.name, replyText);
 
+        // Try to send thank you email if reviewer email is available 
+        // Note: Google API doesn't always provide reviewer email directly in simplified objects
+        // This is a placeholder for future-proofing or if we fetch full profile
+        const reviewerEmail = review.reviewer?.email || null; 
+
         // Mark as processed
         await db.processedReview.upsert({
           where: { reviewId: review.name },
           create: {
             reviewId: review.name,
             reviewer: review.reviewer.displayName,
+            reviewerEmail: reviewerEmail,
             rating: review.starRating,
             comment: review.comment,
             reply: replyText,
@@ -57,8 +65,19 @@ export async function GET(request: Request) {
           update: {
             status: "SUCCESS",
             reply: replyText,
+            reviewerEmail: reviewerEmail,
           },
         });
+
+        // Send Thank You Email if we have their email address
+        if (reviewerEmail) {
+           await sendEmail({
+             to: reviewerEmail,
+             subject: `Thank you for your ${review.starRating}-star review! ⭐`,
+             html: getReviewThankYouHTML(review.reviewer.displayName, review.starRating, replyText)
+           });
+           results.emailsSent++;
+        }
 
         results.repliedCount++;
       }

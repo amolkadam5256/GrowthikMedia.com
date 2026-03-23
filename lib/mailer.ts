@@ -508,3 +508,81 @@ export function getAdminReplyHTML(bodyText: string): string {
   `;
   return wrapEmailShell(inner, "A response from Growthik Media regarding your inquiry.");
 }
+// ═══════════════════════════════════════════════════════════════════════════════
+// TEMPLATE 4 — Review Thank You (sent when a Google review is processed)
+// ═══════════════════════════════════════════════════════════════════════════════
+export function getReviewThankYouHTML(name: string, rating: string, reply: string): string {
+  const stars = "★".repeat(parseInt(rating) || 5) + "☆".repeat(5 - (parseInt(rating) || 5));
+  
+  const inner = `
+    <!-- Greeting -->
+    <tr>
+      <td class="email-body" style="padding:36px 40px 0;">
+        <p style="margin:0 0 6px;font-size:13px;font-weight:700;color:#D90B1C;
+                  text-transform:uppercase;letter-spacing:1px;font-family:Arial,sans-serif;">
+          Hi ${name},
+        </p>
+        <h1 style="margin:0 0 20px;font-size:22px;font-weight:900;color:#000000;
+                   font-family:Arial,Helvetica,sans-serif;line-height:1.3;">
+          We loved your review! ⭐
+        </h1>
+        <p style="margin:0 0 16px;font-size:14px;color:#333333;line-height:1.7;
+                  font-family:Arial,sans-serif;">
+          Thank you for taking the time to share your experience with <strong style="color:#000000;">Growthik Media</strong> on Google.
+        </p>
+      </td>
+    </tr>
+
+    <!-- Review Summary -->
+    <tr>
+      <td style="padding:16px 40px;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0"
+               style="background:#f9f9f9;border-radius:12px;overflow:hidden;border:1px solid #eeeeee;">
+          <tr>
+            <td style="padding:24px;">
+              <div style="font-size:20px;color:#facc15;margin-bottom:8px;letter-spacing:2px;">
+                ${stars}
+              </div>
+              <p style="margin:0;font-size:14px;color:#555555;font-style:italic;line-height:1.6;font-family:Georgia,serif;">
+                 "We've just posted a reply to your feedback on Google Maps."
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <!-- AI Reply Context -->
+    <tr>
+      <td style="padding:8px 40px 24px;">
+        <p style="margin:0 0 10px;font-size:12px;font-weight:700;color:#D90B1C;
+                   text-transform:uppercase;letter-spacing:0.8px;font-family:Arial,sans-serif;">
+          Our Response:
+        </p>
+        <div style="background:#ffffff;border:1px solid #eeeeee;border-radius:8px;
+                    padding:16px;font-size:13px;color:#333333;font-family:Arial,sans-serif;
+                    line-height:1.7;">
+          ${reply}
+        </div>
+      </td>
+    </tr>
+
+    <!-- Closing -->
+    <tr>
+      <td style="padding:0 40px 36px;">
+        <p style="margin:0 0 20px;font-size:14px;color:#333333;line-height:1.7;font-family:Arial,sans-serif;">
+          Your feedback helps us continue to improve and serve businesses like yours better every day. We're glad to have you in the Growthik community!
+        </p>
+        <div style="text-align:center;">
+          <a href="${BRAND.website}" target="_blank"
+             style="display:inline-block;background:#000000;color:#ffffff;
+                    font-size:13px;font-weight:700;padding:13px 28px;
+                    border-radius:8px;font-family:Arial,sans-serif;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+            Visit Our Website
+          </a>
+        </div>
+      </td>
+    </tr>
+  `;
+  return wrapEmailShell(inner, `Thank you for your ${rating}-star review of Growthik Media!`);
+}

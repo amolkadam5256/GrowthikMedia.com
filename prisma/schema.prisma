@@ -204,6 +204,7 @@ model ProcessedReview {
   id         String   @id @default(cuid())
   reviewId   String   @unique // Google's review ID
   reviewer   String?
+  reviewerEmail String? // Added to send thank you emails
   rating     String?
   comment    String?  @db.Text
   reply      String?  @db.Text
