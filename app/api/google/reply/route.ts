@@ -29,36 +29,45 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
  */
 function validateCronAuth(request: Request) {
   const cronSecret = process.env.CRON_SECRET;
-  const authHeader = request.headers.get("authorization");
+  const rawHeader = request.headers.get("authorization");
+  const authHeader = rawHeader?.trim();
   
   // 1. Development Bypass
   if (process.env.NODE_ENV === "development" && request.headers.get("x-dev-bypass") === "true") {
-    console.log("[AUTH] Development bypass active.");
+    console.log("[AUTH] Success: Development bypass active.");
     return { ok: true };
   }
 
-  // 2. Production Security Checks
+  // 2. Secret Configuration Check
   if (!cronSecret) {
-    console.error("[AUTH] CRON_SECRET is missing from environment variables!");
+    console.error("[AUTH] FAIL: CRON_SECRET is missing from environment variables!");
     return { ok: false, status: 500, error: "Internal Server Error", message: "Server misconfiguration" };
   }
 
+  // 3. Missing Header Check
   if (!authHeader) {
-    console.warn(`[AUTH] Missing Authorization header from IP: ${request.headers.get('x-forwarded-for') || 'unknown'}`);
+    console.warn(`[AUTH] FAIL: Missing Authorization header`);
     return { ok: false, status: 401, error: "Unauthorized", message: "Missing Authorization header" };
   }
 
-  if (!authHeader.startsWith("Bearer ")) {
-    console.warn(`[AUTH] Invalid Authorization format.`);
-    return { ok: false, status: 401, error: "Unauthorized", message: "Invalid format. Use 'Bearer <token>'" };
+  // 4. Format & Extraneous Space Check (Case-Insensitive)
+  if (!authHeader.toLowerCase().startsWith("bearer ")) {
+    console.warn(`[AUTH] FAIL: Invalid format. Received header: ${authHeader.substring(0, 15)}...`);
+    return { ok: false, status: 401, error: "Unauthorized", message: "Invalid format. Expected 'Bearer <token>'" };
   }
 
-  const token = authHeader.split(" ")[1];
+  // Safely extract token even if there are multiple spaces
+  const parts = authHeader.split(" ").filter(Boolean);
+  const token = parts.length > 1 ? parts[1] : "";
+
+  // 5. Token Comparison
   if (token !== cronSecret) {
-    console.warn(`[AUTH] Invalid token attempt from IP: ${request.headers.get('x-forwarded-for') || 'unknown'}`);
+    const maskedToken = token.substring(0, 3) + "****" + token.slice(-3);
+    console.warn(`[AUTH] FAIL: Token mismatch. Received: ${maskedToken}`);
     return { ok: false, status: 401, error: "Unauthorized", message: "Invalid security token" };
   }
 
+  console.log("[AUTH] Success: Valid token authorized.");
   return { ok: true };
 }
 
