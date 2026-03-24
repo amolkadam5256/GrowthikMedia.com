@@ -8,7 +8,7 @@ import {
   CardTitle,
   CardDescription
 } from "@/components/PublicComponents/ui/Card";
-import { Button } from "@/components/PublicComponents/ui/Button";
+import { Button } from "@/components/PublicComponents/ui/GButton";
 import { 
   Loader2, 
   CheckCircle2, 

@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Check, ArrowRight, Zap, Target, Crown } from "lucide-react";
-import Button from "@/components/PublicComponents/ui/Button";
+import { Button } from "@/components/PublicComponents/ui/GButton";
 import Link from "next/link";
 import Counter from "@/components/PublicComponents/ui/Counter";
 

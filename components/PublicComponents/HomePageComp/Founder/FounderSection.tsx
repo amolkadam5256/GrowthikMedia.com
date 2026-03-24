@@ -13,7 +13,7 @@ import {
   Monitor,
   TrendingUp,
 } from "lucide-react";
-import Button from "@/components/PublicComponents/ui/Button";
+import { Button } from "@/components/PublicComponents/ui/GButton";
 import Counter from "@/components/PublicComponents/ui/Counter";
 
 const FounderSection = () => {
@@ -96,9 +96,9 @@ const FounderSection = () => {
             </div>
 
             <p className="text-xl text-(--text-secondary) leading-relaxed mb-10 font-medium italic border-l-4 border-(--color-primary) pl-6">
-              "Architecting high-performance digital engines for high-growth
+              &quot;Architecting high-performance digital engines for high-growth
               brands. I bridge the gap between complex code and ROI-driven
-              marketing."
+              marketing.&quot;
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -161,7 +161,7 @@ const FounderSection = () => {
                   variant="outline"
                   className="rounded-full px-10 py-4 font-black uppercase tracking-widest text-xs border-2"
                 >
-                  Let's Connect
+                  Let&apos;s Connect
                 </Button>
               </Link>
             </div>

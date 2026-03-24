@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Download, FileText, BarChart3, ArrowRight } from "lucide-react";
-import Button from "@/components/PublicComponents/ui/Button";
+import { Button } from "@/components/PublicComponents/ui/GButton";
 import { motion } from "framer-motion";
 import Counter from "@/components/PublicComponents/ui/Counter";
 
@@ -28,7 +28,7 @@ const magnets = [
     icon: Download,
     title: "Free Ads Audit PDF",
     description:
-      "Identify why your Google or Meta Ads aren't converting. Get actionable fixes for your local Pune business.",
+      "Identify why your Google or Meta Ads aren&apos;t converting. Get actionable fixes for your local Pune business.",
     cta: "Get Free Audit",
     color: "from-(--color-primary)/10 to-(--color-primary-light)/5",
     iconColor: "text-(--color-primary)",

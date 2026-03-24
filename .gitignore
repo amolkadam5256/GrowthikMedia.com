@@ -41,6 +41,12 @@ yarn-error.log*
 next-env.d.ts
 types
 
-/scripts
+# scripts
+!/scripts
+/scripts/reports
+/scripts/*.txt
+/scripts/*.log
+/scripts/patch.diff
+
 /generated
 git_status.txt
