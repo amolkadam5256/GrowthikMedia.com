@@ -5,7 +5,7 @@ import {
   Bookmark,
   Image as ImageIcon,
 } from "lucide-react";
-import Card from "../Card";
+import { Card } from "../GCard";
 import NextImage from "next/image";
 
 interface InstagramPostCardProps {

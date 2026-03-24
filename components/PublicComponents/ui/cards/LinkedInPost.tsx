@@ -7,7 +7,7 @@ import {
   MoreHorizontal,
   Globe,
 } from "lucide-react";
-import Card from "../Card";
+import { Card } from "../GCard";
 import NextImage from "next/image";
 
 interface LinkedInPostProps {

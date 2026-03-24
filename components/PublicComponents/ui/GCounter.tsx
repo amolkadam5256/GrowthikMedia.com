@@ -21,7 +21,7 @@ export const Counter = ({
   prefix = "",
   suffix = "",
   decimals = 0,
-}: CounterProps) {
+}: CounterProps) => {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : 0);
   const springValue = useSpring(motionValue, {
