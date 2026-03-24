@@ -6,7 +6,7 @@ interface BadgeProps {
   className?: string;
 }
 
-const Badge = ({
+export const Badge = ({
   children,
   variant = "warning",
   className = "",

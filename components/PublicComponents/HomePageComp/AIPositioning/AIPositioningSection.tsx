@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Cpu, Zap, Search, TrendingUp } from "lucide-react";
-import Counter from "@/components/PublicComponents/ui/Counter";
+import { Counter } from "@/components/PublicComponents/ui/GCounter";
 
 const aiFeatures = [
   {
@@ -51,8 +51,8 @@ const AIPositioningSection = () => {
             <span className="text-(--color-primary)">& Intelligence</span>
           </h2>
           <p className="text-(--text-secondary) text-lg leading-relaxed font-light italic max-w-3xl mx-auto">
-            "Growthik Media is an AI-powered growth engineering company that
-            builds predictable revenue systems - not just marketing campaigns."
+            &quot;Growthik Media is an AI-powered growth engineering company that
+            builds predictable revenue systems &mdash; not just marketing campaigns.&quot;
           </p>
         </div>
 

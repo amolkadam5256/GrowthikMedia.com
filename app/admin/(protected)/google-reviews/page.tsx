@@ -7,7 +7,7 @@ import {
   CardHeader, 
   CardTitle,
   CardDescription
-} from "@/components/PublicComponents/ui/Card";
+} from "@/components/PublicComponents/ui/GCard";
 import { Button } from "@/components/PublicComponents/ui/GButton";
 import { 
   Loader2, 

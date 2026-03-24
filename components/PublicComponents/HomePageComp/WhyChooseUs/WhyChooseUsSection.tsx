@@ -9,14 +9,14 @@ import {
   ShieldCheck,
   TrendingUp,
 } from "lucide-react";
-import Counter from "@/components/PublicComponents/ui/Counter";
+import { Counter } from "@/components/PublicComponents/ui/GCounter";
 
 const USP_ITEMS = [
   {
     icon: Target,
     title: "ROI-Focused Strategies",
     description:
-      "Every campaign is built around measurable returns. We don't just drive traffic-we drive revenue and growth that impacts your bottom line.",
+      "Every campaign is built around measurable returns. We don&apos;t just drive traffic&mdash;we drive revenue and growth that impacts your bottom line.",
   },
   {
     icon: UserCheck,
@@ -88,7 +88,7 @@ const WhyChooseUsSection = React.memo(() => {
             <span className="text-(--color-primary)">in Pune</span>?
           </h2>
           <p className="text-lg md:text-xl text-(--text-secondary) max-w-2xl mx-auto leading-relaxed">
-            We don't just deliver services-we deliver results. Here's what sets
+            We don&apos;t just deliver services&mdash;we deliver results. Here&apos;s what sets
             us apart from the competition.
           </p>
         </div>
@@ -134,7 +134,7 @@ const WhyChooseUsSection = React.memo(() => {
             href="/contact"
             className="inline-flex items-center gap-4 px-10 py-4 bg-(--color-primary) text-white font-black uppercase tracking-[0.2em] text-sm hover:bg-(--color-primary-light) transition-all duration-300 shadow-xl hover:shadow-primary/30 hover:scale-105"
           >
-            <span>Let's Talk Growth</span>
+            <span>Let&apos;s Talk Growth</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

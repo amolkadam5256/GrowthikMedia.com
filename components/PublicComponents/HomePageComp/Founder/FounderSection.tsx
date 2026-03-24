@@ -14,7 +14,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/PublicComponents/ui/GButton";
-import Counter from "@/components/PublicComponents/ui/Counter";
+import { Counter } from "@/components/PublicComponents/ui/GCounter";
 
 const FounderSection = () => {
   return (

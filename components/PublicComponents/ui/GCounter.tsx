@@ -13,7 +13,7 @@ interface CounterProps {
   decimals?: number;
 }
 
-export default function Counter({
+export const Counter = ({
   value,
   direction = "up",
   duration = 2,

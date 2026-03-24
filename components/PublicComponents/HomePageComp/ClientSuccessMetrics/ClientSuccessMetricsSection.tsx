@@ -3,7 +3,7 @@
 import React from "react";
 import { TrendingUp, Target, DollarSign, Users } from "lucide-react";
 import Link from "next/link";
-import Counter from "@/components/PublicComponents/ui/Counter";
+import { Counter } from "@/components/PublicComponents/ui/GCounter";
 
 const metrics = [
   {
@@ -70,7 +70,7 @@ const ClientSuccessMetricsSection = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-3xl mx-auto">
-            Numbers don't lie. Our Pune clients experience transformative growth
+            Numbers don&apos;t lie. Our Pune clients experience transformative growth
             through data-driven strategies that deliver measurable ROI.
           </p>
         </div>
@@ -155,12 +155,12 @@ const ClientSuccessMetricsSection = () => {
           <div className="w-20 h-1 bg-(--color-primary) mb-6" />
 
           <p className="text-base text-(--text-secondary) leading-relaxed">
-            These aren't vanity metrics-they're revenue-driving results that
+            These aren&apos;t vanity metrics&mdash;they&apos;re revenue-driving results that
             transform businesses. Every client receives transparent monthly
             reporting, dedicated account management and strategic growth
-            roadmaps. We don't just track clicks-we track revenue, customer
+            roadmaps. We don&apos;t just track clicks&mdash;we track revenue, customer
             lifetime value and sustainable growth. When you partner with
-            Growthik Media, you're investing in measurable, scalable success.
+            Growthik Media, you&apos;re investing in measurable, scalable success.
           </p>
         </div>
       </div>

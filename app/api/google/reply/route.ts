@@ -28,11 +28,48 @@ export async function GET(request: Request) {
   
   // Security Check: Verify CRON_SECRET from Headers
   const authHeader = request.headers.get("authorization");
-  const expectedToken = `Bearer ${process.env.CRON_SECRET}`;
+  const cronSecret = process.env.CRON_SECRET;
 
-  if (authHeader !== expectedToken) {
-    console.error(`[CRON] Unauthorized access attempt from: ${request.headers.get('x-forwarded-for')}`);
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  // 1. Development Bypass (Allow local testing without secret if desired)
+  const isDevelopment = process.env.NODE_ENV === "development";
+  const hasBypassHeader = request.headers.get("x-dev-bypass") === "true";
+
+  if (isDevelopment && hasBypassHeader) {
+    console.log("[AUTH] Development bypass active via x-dev-bypass header.");
+  } else {
+    // 2. Production Security Checks
+    if (!cronSecret) {
+      console.error("[AUTH] CRON_SECRET is not defined in environment variables!");
+      return NextResponse.json(
+        { error: "Internal Server Error", message: "Security configuration missing" },
+        { status: 500 }
+      );
+    }
+
+    if (!authHeader) {
+      console.warn(`[AUTH] Missing Authorization header from: ${request.headers.get('x-forwarded-for') || 'unknown'}`);
+      return NextResponse.json(
+        { error: "Unauthorized", message: "Missing Authorization header" },
+        { status: 401 }
+      );
+    }
+
+    if (!authHeader.startsWith("Bearer ")) {
+      console.warn(`[AUTH] Invalid Authorization format from: ${request.headers.get('x-forwarded-for') || 'unknown'}`);
+      return NextResponse.json(
+        { error: "Unauthorized", message: "Invalid Authorization format. Use 'Bearer <token>'" },
+        { status: 401 }
+      );
+    }
+
+    const token = authHeader.split(" ")[1];
+    if (token !== cronSecret) {
+      console.warn(`[AUTH] Invalid token attempt from: ${request.headers.get('x-forwarded-for') || 'unknown'}`);
+      return NextResponse.json(
+        { error: "Unauthorized", message: "Invalid security token" },
+        { status: 401 }
+      );
+    }
   }
 
   console.log("[CRON] Starting Google Reviews Auto-Reply sync...");
