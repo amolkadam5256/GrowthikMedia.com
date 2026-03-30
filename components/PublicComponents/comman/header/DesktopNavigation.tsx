@@ -75,17 +75,13 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
     };
   }, []);
 
-  const commonClass = `flex items-center justify-between w-full px-4 py-2.5 transition-all duration-200 rounded-lg group/link`;
+  const commonClass =
+    "flex items-center justify-between w-full px-4 py-2.5 transition-all duration-200 rounded-lg group/link text-gray-900 dark:text-white";
 
-  // Use CSS variables for theme stability
   const activeStyles =
-    mounted && resolvedTheme === "dark"
-      ? "bg-white/10 text-white"
-      : "bg-[#F0F2FD] text-[#4F46E5]";
-
-  // Idle styles use CSS variables from globals.css for automatic adaptation
+    "bg-[#F0F2FD] text-[#4F46E5] dark:bg-white/10 dark:text-white";
   const idleStyles =
-    "text-(--text-secondary) hover:bg-(--surface-secondary) dark:text-(--text-secondary) dark:hover:bg-white/5";
+    "text-gray-700 hover:bg-gray-100 dark:text-white dark:hover:bg-neutral-800";
 
   const itemContent = (
     <div className="flex items-center space-x-2.5">
@@ -108,7 +104,11 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
       {item.href ? (
         <Link
           href={item.href}
-          className={`${commonClass} ${isTopLevel ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" : `text-[14px] ${isOpen ? activeStyles : idleStyles}`}`}
+          className={`${commonClass} ${
+            isTopLevel
+              ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-900 dark:text-white"
+              : `text-[14px] ${isOpen ? activeStyles : idleStyles}`
+          }`}
         >
           {itemContent}
           {hasChildren && !isTopLevel && (
@@ -124,7 +124,11 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
         </Link>
       ) : (
         <button
-          className={`${commonClass} ${isTopLevel ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" : `text-[14px] ${isOpen ? activeStyles : idleStyles}`}`}
+          className={`${commonClass} ${
+            isTopLevel
+              ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-900 dark:text-white"
+              : `text-[14px] ${isOpen ? activeStyles : idleStyles}`
+          }`}
         >
           {itemContent}
           {hasChildren && !isTopLevel && (
@@ -151,7 +155,7 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
       {hasChildren && isOpen && (
         <ul
           ref={submenuRef}
-          className={`absolute z-100 min-w-[240px] p-2 bg-(--background) border border-(--border-light) shadow-2xl rounded-xl animate-fadeIn ${
+          className={`absolute z-100 min-w-[240px] p-2 bg-white dark:bg-neutral-900 text-gray-900 dark:text-white border border-gray-200 dark:border-neutral-700 shadow-2xl rounded-xl animate-fadeIn ${
             isTopLevel
               ? "top-full left-1/2 -translate-x-1/2 mt-4"
               : calculatedDirection === "left"
@@ -179,7 +183,7 @@ export function DesktopNavigation({
 }) {
   return (
     <nav className="hidden lg:block">
-      <ul className="flex items-center space-x-1">
+      <ul className="flex items-center space-x-1 text-gray-900 dark:text-white">
         {navigationData.regularLinks.map((link, idx) => (
           <RecursiveNavItem key={idx} item={link} depth={0} />
         ))}

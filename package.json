@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
-    "postinstall": "npx prisma generate",
+    "build": "next build",
+    "postinstall": "echo Prisma client generation skipped during install",
     "start": "next start",
     "lint": "eslint",
     "audit:crawl": "node automation/seo-audit/crawler.mjs",

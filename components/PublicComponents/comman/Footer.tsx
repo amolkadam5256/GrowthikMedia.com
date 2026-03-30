@@ -149,28 +149,14 @@ export default function Footer() {
             <div className="lg:col-span-4">
               <div className="mb-6">
                 {/* Logo */}
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="relative w-12 h-12  rounded-xl flex items-center justify-center ">
-                    <span className="text-white font-bold text-2xl relative w-full h-full">
-                      <NextImage
-                        src={images.icon.src}
-                        alt={`${CONTACT_INFO.companyName} Icon`}
-                        fill
-                        className="object-contain"
-                      />
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight bg-linear-to-r from-[#D90B1C] to-[#F22E52] bg-clip-text text-transparent">
-                      {CONTACT_INFO.companyName}
-                    </h3>
-                    <p
-                      className={`text-sm font-medium ${
-                        isDark ? "text-gray-400" : "text-gray-600"
-                      }`}
-                    >
-                      Digital Growth Partners
-                    </p>
+                <div className="mb-4">
+                  <div className="relative h-16 w-[280px] max-w-full  p-3">
+                    <NextImage
+                      src={images.Logo}
+                      alt={`${CONTACT_INFO.companyName} logo`}
+                      fill
+                      className="object-contain justify-start p-2"
+                    />
                   </div>
                 </div>
 

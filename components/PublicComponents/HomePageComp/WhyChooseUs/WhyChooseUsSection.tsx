@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import {
   Target,
   UserCheck,
@@ -130,8 +131,7 @@ const WhyChooseUsSection = React.memo(() => {
           <p className="text-lg text-(--text-secondary) mb-6">
             Ready to experience the Growthik difference?
           </p>
-          <a
-            href="/contact"
+          <Link href="/contact"
             className="inline-flex items-center gap-4 px-10 py-4 bg-(--color-primary) text-white font-black uppercase tracking-[0.2em] text-sm hover:bg-(--color-primary-light) transition-all duration-300 shadow-xl hover:shadow-primary/30 hover:scale-105"
           >
             <span>Let&apos;s Talk Growth</span>
@@ -149,7 +149,7 @@ const WhyChooseUsSection = React.memo(() => {
               <path d="M5 12h14" />
               <path d="m12 5 7 7-7 7" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -158,3 +158,4 @@ const WhyChooseUsSection = React.memo(() => {
 
 WhyChooseUsSection.displayName = "WhyChooseUsSection";
 export default WhyChooseUsSection;
+

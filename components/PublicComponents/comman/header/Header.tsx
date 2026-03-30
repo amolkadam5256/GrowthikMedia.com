@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useTheme } from "next-themes";
 import { navigationData } from "./navigationData";
 import { TopBar } from "./TopBar";
 import { Logo } from "./Logo";
@@ -13,7 +12,6 @@ import { GlobalStyles } from "./GlobalStyles";
 import { FloatingThemeToggle } from "./FloatingThemeToggle";
 
 export default function Header() {
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -55,16 +53,20 @@ export default function Header() {
 
       <header
         ref={menuRef}
-        className={`transition-all duration-500 fixed left-0 right-0 z-50 shadow-lg rounded-full mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-20 2xl:mx-auto 2xl:max-w-7xl bg-(--background) text-(--text-primary) border border-(--border-light) ${
-          isTopBarVisible ? "top-4 lg:top-14" : "top-4"
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 shadow-[0_8px_30px_-18px_rgba(0,0,0,0.5)] bg-white dark:bg-neutral-900 backdrop-blur border-b border-gray-200 dark:border-neutral-800 ${
+          isTopBarVisible ? "lg:top-12 top-0" : "top-0"
         }`}
       >
-        <div className="flex justify-between items-center py-0 px-0">
-          <Logo onClick={() => setIsMobileMenuOpen(false)} />
+        <div className="relative max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center h-16 px-4 sm:px-6 lg:px-8 gap-6 bg-white dark:bg-neutral-900">
+          <div className="justify-self-start">
+            <Logo onClick={() => setIsMobileMenuOpen(false)} />
+          </div>
 
-          <DesktopNavigation navigationData={navigationData.desktop} />
+          <div className="flex justify-center">
+            <DesktopNavigation navigationData={navigationData.desktop} />
+          </div>
 
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center justify-end">
             <MobileMenuButton
               isMobileMenuOpen={isMobileMenuOpen}
               toggleMobileMenu={toggleMobileMenu}

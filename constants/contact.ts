@@ -20,13 +20,13 @@ export const CONTACT_INFO = {
 
   // 📍 Address
   address: {
-    line1: "Akshay Palace Cooperative Housing Society",
-    line2: "Warje Malwadi Rd, near Highway Over Bridge, Chowk",
+    line1: "Akshay Palace CHS",
+    line2: "Warje Malwadi Rd",
     city: "Warje, Pune",
     state: "Maharashtra",
     country: "India",
     pincode: "411058",
-    full: "Akshay Palace Cooperative Housing Society, Warje Malwadi Rd, near Highway Over Bridge, Chowk, Warje, Pune, Maharashtra 411058",
+    full: "Akshay Palace CHS, Warje Malwadi Rd, Warje, Pune 411058",
   },
 
   // 🕒 Working Hours

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const AIOptimizedBlocks = () => {
   return (
@@ -41,13 +42,13 @@ const AIOptimizedBlocks = () => {
       <h2>Internal Linking</h2>
       <ul>
         <li>
-          <a href="/services/seo">SEO Services in Pune</a>
+          <Link href="/services/seo">SEO Services in Pune</Link>
         </li>
         <li>
-          <a href="/services/ppc-google-ads">Google Ads Management</a>
+          <Link href="/services/ppc-google-ads">Google Ads Management</Link>
         </li>
         <li>
-          <a href="/services/website-development">Website Development</a>
+          <Link href="/services/website-development">Website Development</Link>
         </li>
       </ul>
 

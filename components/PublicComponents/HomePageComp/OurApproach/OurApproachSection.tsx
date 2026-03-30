@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import { images } from "@/app/assets/images/images";
 import {
   TrendingUp,
   Target,
@@ -205,15 +207,14 @@ export default function OurApproachSection() {
 
             {/* CTA Button */}
             <div className="pt-4" data-aos="fade-up" data-aos-delay="200">
-              <a
-                href="/contact"
+              <Link href="/contact"
                 className="inline-block px-8 py-4 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
                 style={{
                   backgroundColor: "var(--color-primary)",
                 }}
               >
                 Get Started Today →
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -251,7 +252,7 @@ export default function OurApproachSection() {
                     opacity: isVideoLoaded && !videoError ? 1 : 0,
                     transition: "opacity 0.5s ease-in-out",
                   }}
-                  src="/robot-mascot-2.mp4"
+                  src={images.publicAssets.videos.robotMascot2}
                 >
                   Your browser does not support the video tag.
                 </video>
@@ -343,3 +344,4 @@ export default function OurApproachSection() {
     </section>
   );
 }
+

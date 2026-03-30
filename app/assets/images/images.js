@@ -1,16 +1,10 @@
-// Central image mapping for the project
-// Import all images from the assets/images directory
-import appleTouchIcon from "./apple-touch-icon.png";
+// Plain JS image manifest to keep Turbopack/HMR happy when a .js module is requested.
+// Duplicated from images.ts to avoid missing module factory during hot reloads.
+
 import bg from "./Bg.jpg";
 import download from "./download.jpg";
-import favicon96 from "./favicon-96x96.png";
-import faviconIco from "./favicon.ico";
-import faviconSvg from "./favicon.svg";
-import icon from "./icon.png";
-import logo from "./logo.png";
-import logo2 from "./logo-2.png";
-import webApp192 from "./web-app-manifest-192x192.png";
-import webApp512 from "./web-app-manifest-512x512.png";
+import brandBlackLogo from "./brand/logos/BlackLogo.png";
+import brandWhiteLogo from "./brand/logos/WhiteLogo.png";
 import amol1 from "./Amol-kadam/Amolkadam-1.png";
 import amol2 from "./Amol-kadam/Amolkadam-2.png";
 
@@ -25,24 +19,73 @@ import educationContent from "./portfolio/education-content.png";
 // Team
 import prachi from "./Prachi.png";
 import amit from "./Amit Kadam.jpg";
-import seoGuidePune from "./blog/seo-services-in-pune-rank-1-google-growthik-media-thumbnail.png";
 
-// Export all images as a centralized object
+export const publicAssets = {
+  brand: {
+    appleTouchIcon: "/brand/apple-touch-icon.png",
+    favicon96: "/brand/favicon-96x96.png",
+    faviconIco: "/brand/favicon.ico",
+    faviconSvg: "/brand/favicon.svg",
+    growthikMediaBrandMarkPng: "/brand/growthik-media-brand-mark.png",
+    growthikMediaBrandMarkSvg: "/brand/growthik-media-brand-mark.svg",
+    growthikMediaTransparentLogo: "/brand/growthik-media-transparent-logo.png",
+    growthikMediaWordmarkSvg: "/brand/growthik-media-wordmark.svg",
+    siteManifest: "/brand/site.webmanifest",
+    webApp192: "/brand/web-app-manifest-192x192.png",
+    webApp512: "/brand/web-app-manifest-512x512.png",
+  },
+  videos: {
+    robotMascot: "/robot-mascot.mp4",
+    robotMascot2: "/robot-mascot-2.mp4",
+  },
+  portfolio: {
+    amitKadamFinance: "/portfolio/amit-kadam-finance-portfolio.jpg",
+    ardyRealEstate: "/portfolio/ardy-real-estate-dubai.jpg",
+    ariaFreightways: "/portfolio/aria-freightways-logistics.jpg",
+    autobatManufacturing: "/portfolio/autobat-manufacturing-website.jpg",
+    dikshaComputers: "/portfolio/diksha-computers-it-training.jpg",
+    doctordomAppointment: "/portfolio/doctordom-appointment-platform.jpg",
+    dubaiBusinessConnect: "/portfolio/dubai-business-connect-uae.jpg",
+    ectiEducational: "/portfolio/ecti-educational-institute-portal.jpg",
+    growthikmediaOfficial: "/portfolio/growthikmedia-official-website.jpg",
+    hajjUmrahTravel: "/portfolio/hajj-umrah-travel-portal.jpg",
+    healurmindMentalHealth: "/portfolio/healurmind-mental-health-platform.jpg",
+    majesticRealties: "/portfolio/majestic-realties-pune.jpg",
+    mountCastleHilltop: "/portfolio/mount-castle-hilltop-plots.jpg",
+    nandavanPark: "/portfolio/nandavan-park-bhugaon.jpg",
+    naukriIndiaDubai: "/portfolio/naukri-india-dubai-jobs.jpg",
+    puneDreamHomes: "/portfolio/pune-dream-homes.jpg",
+    shabdbramhandCreative: "/portfolio/shabdbramhand-creative-agency.jpg",
+    shopnexusEcommerce: "/portfolio/shopnexus-ecommerce-platform.jpg",
+    skSalonBeauty: "/portfolio/sk-salon-beauty-website.jpg",
+    webmarkxDigitalMarketing: "/portfolio/webmarkx-digital-marketing-agency.jpg",
+    zeusManpowerRecruitment: "/portfolio/zeus-manpower-recruitment.jpg",
+  },
+};
+
 export const images = {
-  appleTouchIcon,
+  brandPalette: {
+    primaryRed: "#ed1c24",
+    primaryBlack: "#231f20",
+    white: "#ffffff",
+  },
   bg,
   download,
-  favicon96,
-  faviconIco,
-  faviconSvg,
-  icon,
-  logo,
-  logo2,
-  siteManifest: "/site.webmanifest", // Direct path for webmanifest (not importable)
-  webApp192,
-  webApp512,
-
-  // Portfolio
+  appleTouchIcon: publicAssets.brand.appleTouchIcon,
+  favicon96: publicAssets.brand.favicon96,
+  faviconIco: publicAssets.brand.faviconIco,
+  faviconSvg: publicAssets.brand.faviconSvg,
+  BlackLogo: brandBlackLogo,
+  WhiteLogo: brandWhiteLogo,
+  Logo: publicAssets.brand.growthikMediaTransparentLogo,
+  growthikMediaLogo: publicAssets.brand.growthikMediaTransparentLogo,
+  growthikMediaWordmark: publicAssets.brand.growthikMediaWordmarkSvg,
+  growthikMediaMark: publicAssets.brand.growthikMediaBrandMarkPng,
+  icon: publicAssets.brand.growthikMediaBrandMarkPng,
+  logo: publicAssets.brand.growthikMediaTransparentLogo,
+  siteManifest: publicAssets.brand.siteManifest,
+  webApp192: publicAssets.brand.webApp192,
+  webApp512: publicAssets.brand.webApp512,
   portfolio: {
     seoRealEstate,
     socialMedia,
@@ -51,21 +94,13 @@ export const images = {
     luxuryBranding,
     educationContent,
   },
-
-  // Founder
-  founder: {
-    amol1,
-    amol2,
-  },
-
-  // Team
-  team: {
-    prachi,
-    amit,
-  },
-
-  // Blog
+  founder: { amol1, amol2 },
+  team: { prachi, amit },
   blog: {
-    seoGuidePune,
+    seoGuidePune:
+      "/images/blog/seo-services-in-pune-rank-1-google-growthik-media-thumbnail.png",
   },
+  publicAssets,
 };
+
+export default images;

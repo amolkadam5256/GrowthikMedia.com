@@ -183,13 +183,13 @@ const AboutCompanySection = React.memo(() => {
 
           {/* CTA */}
           <div className="text-center mt-12" data-aos="fade-up">
-            <a
+            <Link
               href="/about"
               className="group inline-flex items-center gap-4 px-10 py-5 bg-(--color-primary) text-white font-black uppercase tracking-[0.2em] text-sm hover:bg-(--color-primary-light) transition-all duration-300 shadow-xl hover:shadow-primary/30 hover:scale-105"
             >
               <span>Discover Our Story</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

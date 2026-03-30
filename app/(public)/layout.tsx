@@ -1,13 +1,6 @@
 import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { Caveat } from "next/font/google";
 import "../assets/styles/globals.css";
-
-const caveat = Caveat({
-  subsets: ["latin"],
-  variable: "--font-caveat",
-  display: "swap",
-});
 
 // Use next/font/local for optimized font loading
 const rostex = localFont({
@@ -57,7 +50,6 @@ import ClientUtilities from "@/components/PublicComponents/comman/ClientUtilitie
 import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
 import BreadcrumbSchema from "@/components/PublicComponents/structured-data/BreadcrumbSchema";
 import LocalBusinessSchema from "@/components/PublicComponents/structured-data/LocalBusinessSchema";
-import dynamic from "next/dynamic";
 
 // The ClientUtilities component now handles the deferred loading of
 // widgets (Chatbot, Floating Socials, WhatsApp, etc.) to keep layout.tsx
@@ -73,9 +65,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.growthikmedia.com'),
   title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
   description: `${CONTACT_INFO.companyName} is Pune's leading digital marketing agency building predictable revenue systems with data-driven SEO, Google Ads, and AI growth engineering.`,
+  manifest: "/brand/site.webmanifest",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/brand/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/brand/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/brand/favicon.ico",
+    apple: [{ url: "/brand/apple-touch-icon.png", sizes: "180x180" }],
   },
   keywords: [
     "Digital Marketing Agency Pune",
@@ -150,9 +147,15 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning={true}
-      className={`${rostex.variable} ${rostexOutline.variable} ${caveat.variable}`}
+      className={`${rostex.variable} ${rostexOutline.variable}`}
     >
       <head>
+        <link rel="icon" type="image/png" href="/brand/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/brand/favicon.svg" />
+        <link rel="shortcut icon" href="/brand/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/brand/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content={CONTACT_INFO.companyName} />
+        <link rel="manifest" href="/brand/site.webmanifest" />
         {/* DNS prefetch for critical third-party origins */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />

@@ -37,3 +37,7 @@
   font-display: swap;
 }
 
+:root {
+  --font-caveat: 'Rostex', cursive;
+}
+

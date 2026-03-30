@@ -88,7 +88,7 @@ export default function WebsiteDesignPunePage() {
                 "@type": "LocalBusiness",
                 "@id": `${CONTACT_INFO.website}/#localbusiness`,
                 name: "Growthik Media",
-                image: `${CONTACT_INFO.website}/logo.png`,
+                image: `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`,
                 description:
                   "Best Website Design Company in Pune offering custom, SEO-friendly websites.",
                 url: CONTACT_INFO.website,

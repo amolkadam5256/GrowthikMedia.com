@@ -83,7 +83,7 @@ const getOrganizationSchema = () => {
     name: "Growthik Media",
     alternateName: "Growthik Media Pune",
     url: CONTACT_INFO.website,
-    logo: `${CONTACT_INFO.website}/logo.png`,
+    logo: `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`,
     sameAs: [
       CONTACT_INFO.social.facebook,
       CONTACT_INFO.social.twitter,

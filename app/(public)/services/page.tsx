@@ -121,9 +121,18 @@ export default function ServicesPage() {
       desc: "High-performance web applications, eCommerce stores and custom software solutions built with Next.js and modern stack.",
       services: [
         { name: "Website Development", link: "/services/website-development/" },
-        { name: "eCommerce Development", link: "/services/ecommerce-development/" },
-        { name: "WordPress Development", link: "/services/wordpress-development/" },
-        { name: "Mobile App Development", link: "/services/mobile-app-development/" },
+        {
+          name: "eCommerce Development",
+          link: "/services/ecommerce-development/",
+        },
+        {
+          name: "WordPress Development",
+          link: "/services/wordpress-development/",
+        },
+        {
+          name: "Mobile App Development",
+          link: "/services/mobile-app-development/",
+        },
       ],
     },
     {
@@ -134,7 +143,10 @@ export default function ServicesPage() {
         { name: "SEO Company in Pune", link: "/services/seo/" },
         { name: "Google Ads Agency", link: "/services/ppc-google-ads/" },
         { name: "Local SEO Services", link: "/services/local-seo/" },
-        { name: "Social Media Marketing", link: "/services/social-media-marketing/" },
+        {
+          name: "Social Media Marketing",
+          link: "/services/social-media-marketing/",
+        },
       ],
     },
     {
@@ -159,7 +171,7 @@ export default function ServicesPage() {
 
   return (
     <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
-      <AISchema 
+      <AISchema
         question="What specialized digital services does Growthik Media provide?"
         answer="Growthik Media provides a full suite of digital solutions including enterprise Next.js development, SEO (National & Local), Performance Marketing (Google/Meta Ads), and Branding services tailored for high-growth businesses."
         summary="Expert digital services by Growthik Media: Next.js Web Apps, Advanced SEO Audits, result-driven PPC, and strategic Brand Identity. Specializing in scaling businesses across Hinjewadi, Baner, and Pune."
@@ -280,7 +292,7 @@ export default function ServicesPage() {
               <div className="absolute inset-0 z-20">
                 {/* Node 1: Client (Top Left) */}
                 <div className="absolute top-[5%] left-[10%] flex flex-col items-center">
-                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) mb-1 md:mb-2">
+                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 md:mb-2">
                     Client
                   </span>
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
@@ -292,7 +304,7 @@ export default function ServicesPage() {
 
                 {/* Node 2: Requirements (Top Mid-Left) */}
                 <div className="absolute top-[5%] left-[35%] flex flex-col items-center">
-                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) mb-1 md:mb-2">
+                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 md:mb-2">
                     Requirements
                   </span>
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
@@ -302,7 +314,7 @@ export default function ServicesPage() {
 
                 {/* Node 3: Analysis (Top Mid-Right) */}
                 <div className="absolute top-[10%] left-[60%] flex flex-col items-center">
-                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) mb-1 md:mb-2 text-center">
+                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 md:mb-2 text-center">
                     Analysis
                   </span>
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
@@ -313,7 +325,7 @@ export default function ServicesPage() {
 
                 {/* Node 4: Strategy (Right Curve Top) */}
                 <div className="absolute top-[28%] right-[10%] flex flex-col items-center group">
-                  <span className="absolute -top-6 text-[10px] md:text-sm font-bold text-(--text-primary) whitespace-nowrap">
+                  <span className="absolute -top-6 text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white whitespace-nowrap">
                     Strategy
                   </span>
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
@@ -321,29 +333,41 @@ export default function ServicesPage() {
                   <div className="absolute -left-7 top-[65%] w-3 h-3 md:w-4 md:h-4 bg-white rounded-full shadow-sm border border-gray-300 pointer-events-none"></div>
                 </div>
 
-                {/* Node 5: Unlabeled (Right Curve Bottom) */}
+                {/* Node 5: Execution (Right Curve Mid) */}
                 <div className="absolute bottom-[40%] right-[8%] flex flex-col items-center group">
+                  <span className="absolute -top-6 text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white whitespace-nowrap">
+                    Execution
+                  </span>
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
                   <div className="absolute -left-8 top-1/2 w-8 md:w-10 border-b-2 border-dashed border-gray-400 origin-right -rotate-30"></div>
                   <div className="absolute -left-10 top-[15%] w-3 h-3 md:w-4 md:h-4 bg-white rounded-full shadow-sm border border-gray-300 pointer-events-none"></div>
                 </div>
 
-                {/* Node 6: Unlabeled (Bottom Right) */}
+                {/* Node 6: QA (Bottom Right) */}
                 <div className="absolute bottom-[10%] left-[68%] flex flex-col items-center">
+                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 whitespace-nowrap">
+                    QA
+                  </span>
                   <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[2px] ml-[-20px] shadow-sm border border-gray-300 relative pointer-events-none z-30"></div>
                   <div className="w-[2px] h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 origin-bottom rotate-[-25deg] ml-[-10px] z-20"></div>
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
                 </div>
 
-                {/* Node 7: Unlabeled (Bottom Mid) */}
+                {/* Node 7: Launch (Bottom Mid) */}
                 <div className="absolute bottom-[10%] left-[40%] flex flex-col items-center">
+                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 whitespace-nowrap">
+                    Launch
+                  </span>
                   <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[-6px] shadow-sm border border-gray-300 z-30 relative top-1"></div>
                   <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 z-20 relative"></div>
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
                 </div>
 
-                {/* Node 8: Unlabeled (Bottom Left) */}
+                {/* Node 8: Optimize (Bottom Left) */}
                 <div className="absolute bottom-[10%] left-[12%] flex flex-col items-center">
+                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 whitespace-nowrap">
+                    Optimize
+                  </span>
                   <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[-6px] shadow-sm border border-gray-300 z-30 relative top-1"></div>
                   <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 z-20 relative"></div>
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>

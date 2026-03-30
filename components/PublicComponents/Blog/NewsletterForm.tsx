@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { Mail, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 
 interface NewsletterFormProps {
@@ -125,9 +126,9 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
             />
             <label htmlFor="agree-full" className="text-sm text-(--text-secondary) font-medium cursor-pointer">
               I agree to the{" "}
-              <a href="/privacy-policy" className="text-(--color-primary) underline underline-offset-2">
+              <Link href="/privacy-policy" className="text-(--color-primary) underline underline-offset-2">
                 Privacy Policy
-              </a>
+              </Link>
             </label>
           </div>
         </form>

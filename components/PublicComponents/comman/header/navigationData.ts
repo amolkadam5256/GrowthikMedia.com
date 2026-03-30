@@ -36,6 +36,7 @@ export const navigationData: {
       {
         id: "services",
         label: "Our Services",
+        icon: FiLayers,
         href: "/services",
         columns: "special", // Highlighting that this is a custom layout
         items: [
@@ -221,6 +222,7 @@ export const navigationData: {
       {
         id: "portfolio",
         label: "Portfolio",
+        icon: FiAward,
         href: "/portfolio",
         direction: "left", // Demonstrate left-opening submenu
         columns: "special",

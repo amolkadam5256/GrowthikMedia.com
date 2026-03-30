@@ -34,7 +34,7 @@ export default function BacklinkStrategyPage() {
       "name": CONTACT_INFO.companyName,
       "logo": {
         "@type": "ImageObject",
-        "url": `${CONTACT_INFO.website}/logo.png`,
+        "url": `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`,
       },
     },
   };

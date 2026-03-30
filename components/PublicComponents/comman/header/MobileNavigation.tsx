@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useTheme } from "next-themes";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { MdPhone, MdEmail, MdLocationOn } from "react-icons/md";
 import { CONTACT_INFO } from "@/constants/contact";
@@ -23,22 +22,13 @@ const MobileRecursiveList = ({
   handleMobileLinkClick: () => void;
   isNested?: boolean;
 }) => {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setMounted(true);
-    }, 0);
-    return () => clearTimeout(timer);
-  }, []);
 
   const toggle = (idx: number) => {
     setOpenIndex(openIndex === idx ? null : idx);
   };
 
-  const isDark = mounted && resolvedTheme === "dark";
+  const isDark = false;
 
   return (
     <ul
@@ -61,7 +51,7 @@ const MobileRecursiveList = ({
               {item.href ? (
                 <Link
                   href={item.href}
-                  className={`flex-1 flex items-center py-3 px-4 rounded-xl text-sm font-medium transition-all ${isOpen ? activeClasses : idleClasses}`}
+                  className={`flex-1 flex items-center py-3 px-4 rounded-none text-sm font-medium transition-all ${isOpen ? activeClasses : idleClasses}`}
                   onClick={handleMobileLinkClick}
                 >
                   {item.icon && (
@@ -73,7 +63,7 @@ const MobileRecursiveList = ({
                 </Link>
               ) : (
                 <button
-                  className={`flex-1 flex items-center py-3 px-4 rounded-xl text-sm font-medium transition-all text-left ${isOpen ? activeClasses : idleClasses}`}
+                  className={`flex-1 flex items-center py-3 px-4 rounded-none text-sm font-medium transition-all text-left ${isOpen ? activeClasses : idleClasses}`}
                   onClick={() => hasChildren && toggle(idx)}
                 >
                   {item.icon && (
@@ -147,14 +137,14 @@ export function MobileNavigation({
 
   return (
     <div
-      className={`lg:hidden absolute top-full left-0 right-0 transition-all duration-500 ease-in-out rounded-3xl z-100 ${
+      className={`lg:hidden absolute top-full left-0 right-0 transition-all duration-500 ease-in-out rounded-none z-100 ${
         isMobileMenuOpen
           ? "max-h-[85vh] opacity-100 mt-4 overflow-y-auto"
           : "max-h-0 opacity-0 mt-0 overflow-hidden"
       }`}
     >
       <div
-        className={`shadow-2xl rounded-3xl p-6 backdrop-blur-lg bg-(--background) border border-(--border-light) text-(--text-primary)`}
+        className={`shadow-2xl rounded-none p-6 bg-white text-gray-900 border border-gray-200`}
       >
         <div className="pt-2">
           <MobileRecursiveList
@@ -177,7 +167,7 @@ export function MobileNavigation({
             </span>
           </div>
           <div className="flex items-center">
-            <MdLocationOn className="text-[#D90B1C] mr-3 text-lg" />
+            <MdLocationOn className="text-[#D90B1C] mr-3 text-xl" />
             <span className="text-sm font-medium">
               {CONTACT_INFO.address.full}
             </span>
