@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "date": "2026-04-07",
+=======
+  "date": "2026-04-06",
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
   "summary": {
     "total": 40,
     "healthy": 37,
@@ -13,7 +17,11 @@
     {
       "url": "https://www.growthikmedia.com/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 367,
+=======
+      "responseTime": 57,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Best Digital Marketing Agency in Pune | Growthik Media",
       "metaDesc": "Growthik Media is a leading digital marketing agency in Pune offering SEO, Google Ads, and AI-driven growth strategies to scale your business and maximize ROI.",
       "h1": "BestDigital Marketing Agencyin Pune for ROI-Driven Growth",
@@ -28,7 +36,11 @@
     {
       "url": "https://www.growthikmedia.com/about/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 1028,
+=======
+      "responseTime": 23,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "About Top Digital Marketing Agency | Growthik Media",
       "metaDesc": "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems - not just marketing campaigns. We help ambitious brands scale with ROI-driven performance engineering.",
       "h1": "GROWTHIK MEDIAAI-Driven Digital Marketing & SEO Services in Pune",
@@ -45,7 +57,11 @@
     {
       "url": "https://www.growthikmedia.com/contact/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 1386,
+=======
+      "responseTime": 179,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Contact Us | Growthik Media - Get in Touch",
       "metaDesc": "Get in touch with Growthik Media for professional video production, content creation and digital marketing services. We're here to help bring your vision to life.",
       "h1": "Let’s Grow Your BusinessDigitally.",
@@ -60,7 +76,11 @@
     {
       "url": "https://www.growthikmedia.com/audit/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 786,
+=======
+      "responseTime": 64,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Free SEO & Growth Audit Pune | Growthik Media",
       "metaDesc": "Get a professional digital marketing and SEO audit for your Pune-based business. Data-driven strategy to scale your brand and maximize ROI.",
       "h1": "Stop Guessing. Start Scaling.",
@@ -75,7 +95,11 @@
     {
       "url": "https://www.growthikmedia.com/portfolio/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 758,
+=======
+      "responseTime": 23,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Our Work | 30+ Tech & Marketing Projects | Growthik Media",
       "metaDesc": "Explore our comprehensive portfolio of 30+ web development projects, marketing campaigns, healthcare platforms, and real estate solutions across Pune and Dubai.",
       "h1": "Ideas Built into  Real-World Impact.",
@@ -90,7 +114,11 @@
     {
       "url": "https://www.growthikmedia.com/portfolio/case-studies/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 811,
+=======
+      "responseTime": 116,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "In-Depth Case Studies | Growthik Media",
       "metaDesc": "A deep dive into how we constructed robust software solutions and scaled digital agencies.",
       "h1": "See The Deep Method.",
@@ -105,7 +133,11 @@
     {
       "url": "https://www.growthikmedia.com/services/seo/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 710,
+=======
+      "responseTime": 83,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "SEO Company in Pune | Growthik Media",
       "metaDesc": "Top-rated SEO company in Pune. Rank on Page 1 of Google with our data-driven SEO strategies. Get a free SEO audit today.",
       "h1": "Top Agency For SEO Company in Pune",
@@ -120,7 +152,11 @@
     {
       "url": "https://www.growthikmedia.com/services/ppc-google-ads/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 738,
+=======
+      "responseTime": 23,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Google Ads Agency in Pune | High ROI PPC | Growthik Media",
       "metaDesc": "Certified Google Ads agency in Pune. Managing high-converting PPC campaigns with lower CPC and maximum ROI. Free audit.",
       "h1": "Top Agency For Google Ads Agency in Pune",
@@ -135,7 +171,11 @@
     {
       "url": "https://www.growthikmedia.com/services/social-media-marketing/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 805,
+=======
+      "responseTime": 19,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Social Media Marketing Agency in Pune | Growthik Media",
       "metaDesc": "Leading social media marketing in Pune. Instagram, LinkedIn & Facebook marketing that builds community and drives sales.",
       "h1": "Top Agency For Social Media Marketing Agency in Pune",
@@ -150,7 +190,11 @@
     {
       "url": "https://www.growthikmedia.com/services/website-development/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 739,
+=======
+      "responseTime": 27,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Website Development Company in Pune | Next.js | Growthik Media",
       "metaDesc": "Top website development company in Pune. Building fast, SEO-optimized websites using Next.js and modern web technologies.",
       "h1": "Top Agency For Website Development Company in Pune",
@@ -165,7 +209,11 @@
     {
       "url": "https://www.growthikmedia.com/services/website-development/nextjs/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 672,
+=======
+      "responseTime": 24,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Next.js Development Services in Pune | Growthik Media",
       "metaDesc": "Looking for a professional Next.js Development company in Pune? We provide custom, SEO-optimized, Next.js Development services for businesses. Call Now!",
       "h1": "Best Next.js Development Services in Pune – Custom, SEO-Friendly & Conversion-Focused",
@@ -180,7 +228,11 @@
     {
       "url": "https://www.growthikmedia.com/services/website-development/react/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 681,
+=======
+      "responseTime": 71,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "React Development Services in Pune | Growthik Media",
       "metaDesc": "Looking for a professional React Development company in Pune? We provide custom, SEO-optimized, React Development services for businesses. Call Now!",
       "h1": "Best React Development Services in Pune – Custom, SEO-Friendly & Conversion-Focused",
@@ -195,7 +247,11 @@
     {
       "url": "https://www.growthikmedia.com/services/website-development/full-stack/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 801,
+=======
+      "responseTime": 21,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Full Stack Web Development in Pune | Growthik Media",
       "metaDesc": "Looking for a professional Full-Stack Solutions company in Pune? We provide custom, SEO-optimized, Full-Stack Solutions services for businesses. Call Now!",
       "h1": "Best Full-Stack Solutions Services in Pune – Custom, SEO-Friendly & Conversion-Focused",
@@ -210,7 +266,11 @@
     {
       "url": "https://www.growthikmedia.com/services/ecommerce-development/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 774,
+=======
+      "responseTime": 18,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "eCommerce Website Development Agency in Pune | Growthik Media",
       "metaDesc": "Professional eCommerce development in Pune. Scaling online stores with Razorpay, inventory management and high-converting UX.",
       "h1": "Top Agency For eCommerce Development Agency in Pune",
@@ -225,7 +285,11 @@
     {
       "url": "https://www.growthikmedia.com/services/website-design-company-pune/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 838,
+=======
+      "responseTime": 113,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Best Website Design Company in Pune | Growthik Media",
       "metaDesc": "Looking for a professional website design company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!",
       "h1": "Best Website Design Pune",
@@ -240,7 +304,11 @@
     {
       "url": "https://www.growthikmedia.com/services/branding-consulting/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 916,
+=======
+      "responseTime": 143,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Brand Consulting Agency in Pune | Growthik Media",
       "metaDesc": "Expert branding consulting for Pune businesses. Brand audits, rebranding strategy and actionable brand growth roadmaps.",
       "h1": "Top Agency For Brand Consulting Agency in Pune",
@@ -255,7 +323,11 @@
     {
       "url": "https://www.growthikmedia.com/services/brand-identity/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 695,
+=======
+      "responseTime": 69,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Brand Identity Design Agency in Pune | Growthik Media",
       "metaDesc": "Professional brand identity design in Pune. Logo, colour palette, typography & brand guidelines for startups and SMEs.",
       "h1": "Top Agency For Brand Identity Design Agency in Pune",
@@ -270,7 +342,11 @@
     {
       "url": "https://www.growthikmedia.com/services/brand-strategy/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 725,
+=======
+      "responseTime": 58,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Brand Strategy Agency in Pune | Growthik Media",
       "metaDesc": "Expert brand strategy for Pune businesses. Positioning, competitive analysis, messaging framework and go-to-market planning.",
       "h1": "Top Agency For Brand Strategy Agency in Pune",
@@ -285,7 +361,11 @@
     {
       "url": "https://www.growthikmedia.com/services/brand-name/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 705,
+=======
+      "responseTime": 53,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Brand Naming Agency in Pune | Creative Brand Names | Growthik Media",
       "metaDesc": "Creative brand naming in Pune. Unique, memorable brand names for startups and products. Trademark-friendly naming.",
       "h1": "Top Agency For Brand Naming Agency in Pune",
@@ -300,7 +380,11 @@
     {
       "url": "https://www.growthikmedia.com/services/branding-design/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 660,
+=======
+      "responseTime": 20,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Branding Design Agency in Pune | Growthik Media",
       "metaDesc": "Complete branding design in Pune. Visual identity, brand collateral and design systems for modern businesses.",
       "h1": "Top Agency For Branding Design Agency in Pune",
@@ -315,7 +399,11 @@
     {
       "url": "https://www.growthikmedia.com/services/brand-marketing-communications/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 755,
+=======
+      "responseTime": 16,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Brand Marketing & Communications Agency Pune | Growthik Media",
       "metaDesc": "Strategic brand marketing and communications in Pune. Messaging frameworks, PR campaigns and brand voice development.",
       "h1": "Top Agency For Brand Marketing & Communications in Pune",
@@ -330,7 +418,11 @@
     {
       "url": "https://www.growthikmedia.com/services/content-marketing/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 772,
+=======
+      "responseTime": 16,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Content Marketing Agency in Pune | Growthik Media",
       "metaDesc": "Strategic content marketing in Pune. Blog writing, whitepapers, case studies and content distribution that drives B2B leads.",
       "h1": "Top Agency For Content Marketing Agency in Pune",
@@ -345,7 +437,11 @@
     {
       "url": "https://www.growthikmedia.com/services/performance-marketing/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 651,
+=======
+      "responseTime": 58,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Performance Marketing Agency in Pune | Growthik Media",
       "metaDesc": "Data-driven performance marketing for Pune businesses. Result-oriented campaigns for ROAS, CPA and revenue growth.",
       "h1": "Performance Marketing Agency in Pune",
@@ -360,7 +456,11 @@
     {
       "url": "https://www.growthikmedia.com/services/meta-ads/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 726,
+=======
+      "responseTime": 85,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Meta Ads Agency in Pune | Facebook & Instagram Ads | Growthik Media",
       "metaDesc": "Performance Meta Ads management in Pune. Facebook & Instagram campaigns for leads, sales and brand awareness.",
       "h1": "Meta Ads Agency in Pune",
@@ -375,7 +475,11 @@
     {
       "url": "https://www.growthikmedia.com/services/email-marketing/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 711,
+=======
+      "responseTime": 48,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Email Marketing Agency in Pune | Growthik Media",
       "metaDesc": "High-ROI email marketing campaigns for Pune businesses. Newsletters, drip sequences, automation and list management.",
       "h1": "Email Marketing Agency in Pune",
@@ -390,7 +494,11 @@
     {
       "url": "https://www.growthikmedia.com/services/whatsapp-marketing/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 795,
+=======
+      "responseTime": 61,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Top WhatsApp Marketing Services Pune | Growthik Media",
       "metaDesc": "Boost sales with top WhatsApp marketing services in Pune. Growthik Media offers official WhatsApp Business API integration and bulk messaging for high ROI.",
       "h1": "Top WhatsApp Marketing Services Pune",
@@ -405,7 +513,11 @@
     {
       "url": "https://www.growthikmedia.com/services/sms-marketing/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 732,
+=======
+      "responseTime": 18,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Bulk SMS Marketing Services in Pune | Growthik Media",
       "metaDesc": "Scale your business with the best bulk SMS marketing services in Pune. Growthik Media delivers high-ROI promotional and transactional SMS campaigns that convert.",
       "h1": "Bulk SMS Marketing Services in Pune",
@@ -420,7 +532,11 @@
     {
       "url": "https://www.growthikmedia.com/services/lead-generation/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 692,
+=======
+      "responseTime": 149,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Lead Generation Agency in Pune | Growthik Media",
       "metaDesc": "Qualified lead generation for Pune businesses. Multi-channel campaigns across Google, Meta, LinkedIn and email.",
       "h1": "Lead Generation Agency in Pune",
@@ -435,7 +551,11 @@
     {
       "url": "https://www.growthikmedia.com/services/influencer-management/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 894,
+=======
+      "responseTime": 49,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Influencer Management Agency Pune | Growthik Media",
       "metaDesc": "Scale your brand with the top influencer management agency in Pune. We connect you with authentic influencers to drive engagement and sales.",
       "h1": "Influencer Management Agency Pune",
@@ -450,7 +570,11 @@
     {
       "url": "https://www.growthikmedia.com/services/media-planning-buying/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 711,
+=======
+      "responseTime": 22,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Expert Media Planning and Buying Pune | Growthik Media",
       "metaDesc": "Maximize your ad spend with expert media planning and buying in Pune. Our data-driven digital media strategy ensures your brand reaches the right audience.",
       "h1": "Expert Media Planning and Buying Pune",
@@ -465,7 +589,11 @@
     {
       "url": "https://www.growthikmedia.com/services/political-digital-marketing/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 681,
+=======
+      "responseTime": 96,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Top Political Digital Marketing Pune | Growthik Media",
       "metaDesc": "Win elections with the top political digital marketing agency in Pune. Professional social media management, sentiment analysis, and voter outreach strategies.",
       "h1": "Top Political Digital Marketing Pune",
@@ -480,7 +608,11 @@
     {
       "url": "https://www.growthikmedia.com/services/youtube-seo/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 1516,
+=======
+      "responseTime": 47,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "YouTube Video SEO Services in Pune | Growthik Media",
       "metaDesc": "Dominate video search with expert YouTube Video SEO services in Pune. Growthik Media helps you rank higher, increase views, and grow your channel content.",
       "h1": "YouTube Video SEO Services in Pune",
@@ -495,7 +627,11 @@
     {
       "url": "https://www.growthikmedia.com/services/web-application/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 730,
+=======
+      "responseTime": 93,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Custom Web App Development in Pune | Growthik Media",
       "metaDesc": "Looking for a professional web application company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!",
       "h1": "Best Website Design Pune",
@@ -512,7 +648,11 @@
     {
       "url": "https://www.growthikmedia.com/services/website-maintenance/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 827,
+=======
+      "responseTime": 43,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Website Maintenance Services Pune | Growthik Media",
       "metaDesc": "Looking for a professional website maintenance company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!",
       "h1": "Best Website Design Pune",
@@ -529,7 +669,11 @@
     {
       "url": "https://www.growthikmedia.com/services/logo-design/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 809,
+=======
+      "responseTime": 19,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Logo Design Agency in Pune | Growthik Media",
       "metaDesc": "Creative logo design agency in Pune. Unique, memorable logos for startups, SMEs and enterprises. Multiple revisions included.",
       "h1": "Top Agency For Logo Design Agency in Pune",
@@ -544,7 +688,11 @@
     {
       "url": "https://www.growthikmedia.com/services/brochure-design/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 625,
+=======
+      "responseTime": 76,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Brochure Design Company in Pune | Growthik Media",
       "metaDesc": "Professional brochure design in Pune. Company profiles, product brochures, flyers and all print collateral.",
       "h1": "Top Agency For Brochure Design Company in Pune",
@@ -559,7 +707,11 @@
     {
       "url": "https://www.growthikmedia.com/services/business-card-design/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 975,
+=======
+      "responseTime": 24,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Business Card Design Company Pune | Growthik Media",
       "metaDesc": "Make a powerful first impression with the best business card design in Pune. Premium, professional visiting card designs that reflect your brand identity.",
       "h1": "Business Card Design Company Pune",
@@ -574,7 +726,11 @@
     {
       "url": "https://www.growthikmedia.com/services/letterhead-design/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 841,
+=======
+      "responseTime": 75,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Professional Letterhead Design Pune | Growthik Media",
       "metaDesc": "Establish corporate authority with professional letterhead design in Pune. Custom corporate stationery and digital letterhead templates for your brand.",
       "h1": "Professional Letterhead Design Pune",
@@ -589,7 +745,11 @@
     {
       "url": "https://www.growthikmedia.com/services/social-media-promotions/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 1183,
+=======
+      "responseTime": 31,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Social Media Promotions Agency in Pune | Growthik Media",
       "metaDesc": "Boost your reach with social media promotions in Pune. Targeted ad campaigns and viral marketing for businesses of all sizes.",
       "h1": "Social Media Promotions in Pune",
@@ -604,7 +764,11 @@
     {
       "url": "https://www.growthikmedia.com/blog/",
       "status": 200,
+<<<<<<< HEAD
       "responseTime": 2246,
+=======
+      "responseTime": 1506,
+>>>>>>> 95d5e6595f5e7ff2f6b535dce526a88e5e2a239b
       "title": "Digital Marketing & SEO Blog Pune | Growthik Media",
       "metaDesc": "Expert articles on SEO, web design, Google Ads, and digital marketing strategies tailored for Pune businesses. Written by the Growthik Media team.",
       "h1": "Master the Art of Digital Growth",
