@@ -64,16 +64,12 @@ export const navigationData: {
                 label: "eCommerce Development",
               },
               {
-                href: "/services/mobile-app-development/",
-                label: "Mobile App Development",
-              },
-              {
                 href: "/services/software-development/",
                 label: "Software Development",
               },
               {
-                href: "/services/website-design/",
-                label: "Website Design",
+                href: "/services/web-application/",
+                label: "Web Application Development",
               },
               {
                 href: "/services/website-maintenance",
@@ -82,34 +78,6 @@ export const navigationData: {
               {
                 href: "/services/application-maintenance",
                 label: "Application Maintenance",
-              },
-              {
-                href: "/services/website-design-company-pune//",
-                label: "Web Design in Aundh",
-              },
-              {
-                href: "/services/website-design-company-pune//",
-                label: "Web Design in Baner",
-              },
-              {
-                href: "/services/website-design-company-pune//",
-                label: "Web Design in Hadapsar",
-              },
-              {
-                href: "/services/website-design-company-pune//",
-                label: "Web Design in Kothrud",
-              },
-              {
-                href: "/services/website-design-company-pune//",
-                label: "Web Design in PCMC",
-              },
-              {
-                href: "/services/website-design-company-pune//",
-                label: "Web Design in Viman Nagar",
-              },
-              {
-                href: "/services/website-design-company-pune//",
-                label: "Web Design in Wakad",
               },
             ],
           },
@@ -160,18 +128,6 @@ export const navigationData: {
               {
                 href: "/services/political-digital-marketing",
                 label: "Political Digital Marketing",
-              },
-              {
-                href: "/services/seo//",
-                label: "SEO Services Hinjewadi",
-              },
-              {
-                href: "/services/ppc-google-ads//",
-                label: "Google Ads Pune",
-              },
-              {
-                href: "/services/website-development//",
-                label: "Website Development Pune",
               },
             ],
           },
@@ -300,11 +256,15 @@ export const navigationData: {
           },
           {
             href: "/services/ecommerce-development",
-            label: "Shopify Development",
+            label: "eCommerce Development",
           },
           {
-            href: "/services/web-application",
+            href: "/services/web-application/",
             label: "Web Application Development",
+          },
+          {
+            href: "/services/software-development/",
+            label: "Software Development",
           },
           {
             href: "/services/website-maintenance",

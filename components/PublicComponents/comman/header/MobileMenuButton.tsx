@@ -12,7 +12,7 @@ export function MobileMenuButton({
 }: MobileMenuButtonProps) {
   return (
     <button
-      className="lg:hidden py-3 px-8  rounded-full  transition-colors relative"
+      className="lg:hidden py-2.5 px-4 rounded-full transition-colors relative bg-white dark:bg-neutral-900 shadow-sm"
       onClick={toggleMobileMenu}
       aria-label="Toggle menu"
     >

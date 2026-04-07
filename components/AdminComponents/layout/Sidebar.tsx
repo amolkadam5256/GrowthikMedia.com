@@ -13,6 +13,7 @@ import {
   FiCpu,
   FiTrendingUp,
 } from "react-icons/fi";
+import { images } from "@/app/assets/images/images";
 import { ThemeToggleButton } from "@/components/PublicComponents/comman/header/ThemeToggleButton";
 type TabId =
   | "dashboard"
@@ -191,11 +192,12 @@ export default function Sidebar({
         >
           {isOpen ? (
             <>
-              <div className="relative w-10 h-10 shrink-0">
+              <div className="relative w-30 h-30 shrink-0">
                 <Image
-                  src="/Logo.png"
+                  src={images.BlackLogo}
                   alt="Growthik Media"
                   fill
+                  sizes="56px"
                   className="object-contain"
                 />
               </div>

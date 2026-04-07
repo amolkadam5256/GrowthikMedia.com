@@ -69,7 +69,7 @@ export function TopBar() {
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       } bg-(--color-primary) text-white shadow`}
     >
-      <div className="h-full max-w-6xl mx-auto flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-1 sm:gap-3 relative">
+      <div className="h-full w-full max-w-screen-2xl mx-auto flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-1 sm:gap-3 px-3 sm:px-6 lg:px-10 relative">
         {/* Left Side: Contact Info */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm leading-none">
           <div className="flex items-center group cursor-pointer">

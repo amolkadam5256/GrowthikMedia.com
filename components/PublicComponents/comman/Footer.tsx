@@ -63,6 +63,7 @@ export default function Footer() {
   // Derive isDark only after hydration to avoid flash; before mount defaults
   // to false (light mode classes) which matches the server-rendered HTML.
   const isDark = mounted && resolvedTheme === "dark";
+  const logoSrc = isDark ? images.WhiteLogo : images.BlackLogo;
 
   const quickLinks = [
     { href: "/", label: "Home", icon: FiHome },
@@ -152,9 +153,10 @@ export default function Footer() {
                 <div className="mb-4">
                   <div className="relative h-16 w-[280px] max-w-full  p-3">
                     <NextImage
-                      src={images.Logo}
+                      src={logoSrc}
                       alt={`${CONTACT_INFO.companyName} logo`}
                       fill
+                      sizes="280px"
                       className="object-contain justify-start p-2"
                     />
                   </div>

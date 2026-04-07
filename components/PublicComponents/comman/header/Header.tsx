@@ -57,7 +57,7 @@ export default function Header() {
           isTopBarVisible ? "lg:top-12 top-0" : "top-0"
         }`}
       >
-        <div className="relative max-w-7xl mx-auto grid grid-cols-[auto_1fr_auto] items-center h-16 px-4 sm:px-6 lg:px-8 gap-6 bg-white dark:bg-neutral-900">
+        <div className="relative w-full max-w-screen-2xl mx-auto grid grid-cols-[auto_1fr_auto] items-center h-16 px-4 sm:px-6 lg:px-10 xl:px-12 gap-4 sm:gap-6 bg-white dark:bg-neutral-900">
           <div className="justify-self-start">
             <Logo onClick={() => setIsMobileMenuOpen(false)} />
           </div>

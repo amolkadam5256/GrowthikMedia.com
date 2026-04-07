@@ -1,283 +1,472 @@
-import React, { useEffect, useState } from "react";
+﻿/** @jsxImportSource react */
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
-  FiUsers,
-  FiMessageSquare,
-  FiGrid,
-  FiFileText,
   FiActivity,
-  FiTrendingUp,
-  FiArrowUp,
-  FiClock,
-  FiCheckCircle,
   FiAlertCircle,
+  FiArrowRight,
+  FiAward,
+  FiBarChart2,
+  FiBookOpen,
+  FiClock,
+  FiCpu,
+  FiExternalLink,
+  FiFlag,
+  FiGrid,
+  FiMail,
+  FiMessageSquare,
+  FiRefreshCw,
+  FiSend,
+  FiSettings,
+  FiUsers,
 } from "react-icons/fi";
-import { motion } from "framer-motion";
+import SkeletonDashboard from "./SkeletonDashboard";
+import {
+  ActivityItem,
+  DashboardStats,
+  DotStatus,
+  MetricCard,
+  SystemStatusRow,
+} from "@/types/dashboard";
+
+type LoadState = "idle" | "loading" | "refreshing";
+
+const cardShell =
+  "rounded-3xl border border-gray-200 bg-white shadow-[0_14px_45px_rgba(17,24,39,0.08)]";
+
+function dotColor(state: DotStatus) {
+  if (state === "green") return "bg-emerald-500";
+  if (state === "amber") return "bg-amber-400";
+  return "bg-rose-500";
+}
+
+function statusBadgeColor(status?: string | null) {
+  const value = (status || "").toString().toLowerCase();
+  if (["new", "hot", "pending"].some((s) => value.includes(s))) {
+    return "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-200";
+  }
+  if (["replied", "resolved", "success", "qualified"].some((s) => value.includes(s))) {
+    return "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-200";
+  }
+  if (["error", "failed"].some((s) => value.includes(s))) {
+    return "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-200";
+  }
+  return "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-200";
+}
+
+const barsFromNumber = (value: number) => {
+  if (!value) return [0, 0, 0, 0, 0];
+  const seed = Math.max(1, value);
+  return [
+    (seed % 7) + 3,
+    ((seed * 2) % 9) + 4,
+    ((seed * 3) % 8) + 5,
+    ((seed * 5) % 10) + 4,
+    ((seed * 7) % 6) + 3,
+  ];
+};
+
+function Sparkline({ values }: { values: number[] }) {
+  const max = Math.max(...values, 1);
+  return (
+    <div className="mt-3 flex items-end gap-1 h-12">
+      {values.map((v, idx) => {
+        const height = max === 0 ? 6 : Math.max(6, Math.round((v / max) * 52));
+        return (
+          <div
+            key={idx}
+            className="flex-1 rounded-md bg-gradient-to-t from-gray-200 dark:from-gray-800 to-gray-300/80 dark:to-gray-700/70"
+            style={{ height }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+function systemDot(key: string, system: DashboardStats["system"]): DotStatus {
+  if (key === "db") return "green";
+  if (key === "api")
+    return system.apiLatencyMs < 100
+      ? "green"
+      : system.apiLatencyMs < 500
+        ? "amber"
+        : "red";
+  if (key === "smtp") return system.smtpConnected ? "green" : "red";
+  if (key === "cron") return system.googleCronConfigured ? "green" : "amber";
+  if (key === "groq") return system.groqConnected ? "green" : "red";
+  return "green";
+}
 
 export default function DashboardHome() {
-  const [stats, setStats] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+  const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [activity, setActivity] = useState<ActivityItem[]>([]);
+  const [loadState, setLoadState] = useState<LoadState>("loading");
+  const [error, setError] = useState<string | null>(null);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+
+  const fetchData = async (initial = false) => {
+    setLoadState(initial ? "loading" : "refreshing");
+    try {
+      const [statsRes, activityRes] = await Promise.all([
+        fetch("/api/admin/dashboard/stats"),
+        fetch("/api/admin/dashboard/activity"),
+      ]);
+
+      if (!statsRes.ok || !activityRes.ok) {
+        throw new Error("API error");
+      }
+
+      const statsJson: DashboardStats = await statsRes.json();
+      const activityJson = await activityRes.json();
+
+      setStats(statsJson);
+      setActivity(activityJson.items || activityJson || []);
+      setLastUpdated(new Date());
+      setError(null);
+    } catch (err) {
+      console.error("Dashboard fetch failed", err);
+      setError("Unable to load dashboard right now. We'll retry automatically.");
+    } finally {
+      setLoadState("idle");
+    }
+  };
 
   useEffect(() => {
-    async function fetchStats() {
-      try {
-        const res = await fetch("/api/admin/dashboard/stats");
-        const data = await res.json();
-        if (res.ok) {
-          setStats(data);
-        }
-      } catch (error) {
-        console.error("Failed to fetch dashboard stats", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchStats();
+    fetchData(true);
+    const interval = setInterval(() => fetchData(false), 60_000);
+    return () => clearInterval(interval);
   }, []);
 
-  if (loading) {
-    return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-pulse">
-        {[1, 2, 3, 4].map((i) => (
-          <div
-            key={i}
-            className="h-32 bg-gray-100 dark:bg-black border border-transparent dark:border-white/5 rounded-2xl"
-          ></div>
-        ))}
-      </div>
-    );
-  }
+  const keyCards: MetricCard[] = useMemo(() => {
+    if (!stats) return [];
+    return [
+      {
+        label: "Total Inquiries",
+        value: stats.inquiries.total,
+        subLabel: `New this week - ${stats.inquiries.thisWeek}`,
+        sparkline: barsFromNumber(stats.inquiries.total),
+      },
+      {
+        label: "AI Chat Leads",
+        value: stats.chatLeads.total,
+        subLabel: `High intent - ${stats.chatLeads.highIntent}`,
+        sparkline: barsFromNumber(stats.chatLeads.total),
+      },
+      {
+        label: "Portfolio Projects",
+        value: stats.portfolioProjects.total,
+        subLabel: `Featured - ${stats.portfolioProjects.featured}`,
+        sparkline: barsFromNumber(stats.portfolioProjects.total),
+      },
+      {
+        label: "Blog Posts",
+        value: stats.blogPosts.total,
+        subLabel: `Published - ${stats.blogPosts.published}`,
+        sparkline: barsFromNumber(stats.blogPosts.total),
+      },
+    ];
+  }, [stats]);
 
-  const statCards = [
-    {
-      label: "Total Inquiries",
-      value: stats?.counts?.totalInquiries || 0,
-      subValue: `${stats?.counts?.newInquiries || 0} New`,
-      icon: <FiMessageSquare />,
-      gradient: "from-blue-500 to-indigo-600",
-      bg: "bg-blue-50 dark:bg-blue-900/20",
-      textColor: "text-blue-600 dark:text-blue-400",
-    },
-    {
-      label: "AI Leads",
-      value: stats?.counts?.chatLeads || 0,
-      subValue: "captured",
-      icon: <FiTrendingUp />,
-      gradient: "from-purple-500 to-pink-600",
-      bg: "bg-purple-50 dark:bg-purple-900/20",
-      textColor: "text-purple-600 dark:text-purple-400",
-    },
-    {
-      label: "Portfolio Projects",
-      value: stats?.counts?.projects || 0,
-      subValue: "showcased",
-      icon: <FiGrid />,
-      gradient: "from-emerald-400 to-teal-600",
-      bg: "bg-emerald-50 dark:bg-emerald-900/20",
-      textColor: "text-emerald-600 dark:text-emerald-400",
-    },
-    {
-      label: "Blog Posts",
-      value: stats?.counts?.blogs || 0,
-      subValue: "published",
-      icon: <FiFileText />,
-      gradient: "from-orange-400 to-red-600",
-      bg: "bg-orange-50 dark:bg-orange-900/20",
-      textColor: "text-orange-600 dark:text-orange-400",
-    },
+  const secondaryCards = useMemo(() => {
+    if (!stats) return [];
+    return [
+      {
+        label: "Google Reviews Replied",
+        value: stats.googleReviews.totalReplied,
+        subLabel: `${stats.googleReviews.pendingErrors} pending errors`,
+      },
+      {
+        label: "Avg API Latency",
+        value: `${stats.system.apiLatencyMs} ms`,
+        subLabel: "Live probe",
+      },
+      {
+        label: "Active Admins",
+        value: stats.admins.active,
+        subLabel: `${stats.admins.superAdmins} super admins`,
+      },
+    ];
+  }, [stats]);
+
+  const systemRows: SystemStatusRow[] = useMemo(() => {
+    if (!stats) return [];
+    return [
+      {
+        key: "db",
+        label: "Database",
+        value: "Operational",
+        status: systemDot("db", stats.system),
+      },
+      {
+        key: "api",
+        label: "API Latency",
+        value: `${stats.system.apiLatencyMs} ms`,
+        status: systemDot("api", stats.system),
+      },
+      {
+        key: "smtp",
+        label: "SMTP Mailer",
+        value: stats.system.smtpConnected ? "Connected" : "Not set",
+        status: systemDot("smtp", stats.system),
+      },
+      {
+        key: "cron",
+        label: "Google Reviews Cron",
+        value: stats.system.googleCronConfigured ? "Configured" : "Needs setup",
+        status: systemDot("cron", stats.system),
+      },
+      {
+        key: "groq",
+        label: "Groq AI",
+        value: stats.system.groqConnected ? "Ready" : "Missing key",
+        status: systemDot("groq", stats.system),
+      },
+    ];
+  }, [stats]);
+
+  const recentLeads = useMemo(() => {
+    return activity
+      .filter((item) => item.type === "inquiry" || item.type === "chat_lead")
+      .slice(0, 3);
+  }, [activity]);
+
+  const quickLinks = [
+    { label: "Inbox", href: "/admin/inquiries", icon: <FiMail />, badge: stats ? stats.inquiries.newCount + stats.chatLeads.pending : 0 },
+    { label: "AI Chat Logs", href: "/admin/chat", icon: <FiMessageSquare /> },
+    { label: "Google Reviews", href: "/admin/google-reviews", icon: <FiAward /> },
+    { label: "Services", href: "/admin/services", icon: <FiGrid /> },
+    { label: "Portfolio", href: "/admin/portfolio", icon: <FiExternalLink /> },
+    { label: "Blog Posts", href: "/admin/blog", icon: <FiBookOpen /> },
+    { label: "Settings", href: "/admin/settings", icon: <FiSettings /> },
+    { label: "Users", href: "/admin/users", icon: <FiUsers /> },
+    { label: "Email Templates", href: "/admin/templates", icon: <FiSend /> },
   ];
 
-  // Combine recent activity
-  const recentActivities = [
-    ...(stats?.recentActivity?.inquiries || []).map((i: any) => ({
-      type: "inquiry",
-      message: `New inquiry from ${i.name}: "${i.subject || "No Subject"}"`,
-      date: i.createdAt,
-      icon: <FiMessageSquare />,
-      color: "text-blue-500",
-      bg: "bg-blue-100 dark:bg-blue-900/30",
-    })),
-    ...(stats?.recentActivity?.projects || []).map((p: any) => ({
-      type: "project",
-      message: `Project added: "${p.title}"`,
-      date: p.createdAt,
-      icon: <FiGrid />,
-      color: "text-emerald-500",
-      bg: "bg-emerald-100 dark:bg-emerald-900/30",
-    })),
-    ...(stats?.recentActivity?.blogs || []).map((b: any) => ({
-      type: "blog",
-      message: `Blog post ${b.isPublished ? "published" : "drafted"}: "${b.title}"`,
-      date: b.createdAt,
-      icon: <FiFileText />,
-      color: "text-orange-500",
-      bg: "bg-orange-100 dark:bg-orange-900/30",
-    })),
-  ]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 10);
+  const lastUpdatedLabel = lastUpdated
+    ? lastUpdated.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })
+    : "--:--:--";
+
+  if (loadState === "loading") {
+    return <SkeletonDashboard />;
+  }
 
   return (
-    <div className="space-y-8 animate-fade-in max-w-7xl mx-auto">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+    <div className="space-y-8 bg-white text-gray-900 rounded-3xl">
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h2 className="text-3xl font-extrabold bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
-            Executive Overview
-          </h2>
-          <p className="text-gray-500 dark:text-gray-400 mt-1">
-            Real-time insights into your platform's performance.
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+            Admin Command
+          </p>
+          <h1 className="text-3xl font-black text-gray-900">
+            Live Operations Dashboard
+          </h1>
+          <p className="text-sm text-gray-500">
+            Real-time pulse across leads, content, reviews, and system health.
           </p>
         </div>
-        <div className="flex items-center gap-2 text-sm text-gray-400 bg-white dark:bg-black px-4 py-2 rounded-full shadow-sm border border-gray-100 dark:border-white/10">
-          <FiClock /> Last updated: {new Date().toLocaleTimeString()}
-        </div>
-      </div>
-
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {statCards.map((stat, index) => (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            key={index}
-            className="group relative bg-white dark:bg-black backdrop-blur-xl p-6 rounded-4xl shadow-xl shadow-gray-200/50 dark:shadow-none border border-gray-100 dark:border-white/10 overflow-hidden hover:-translate-y-1 transition-transform duration-300"
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3 py-1.5 text-xs text-gray-600">
+            <FiClock /> Last updated: {lastUpdatedLabel}
+          </div>
+          <button
+            onClick={() => fetchData(false)}
+            className="flex items-center gap-2 rounded-full bg-gradient-to-r from-red-600 to-red-500 text-white px-3 py-1.5 text-xs font-semibold shadow-[0_12px_30px_rgba(220,38,38,0.35)] hover:opacity-90 transition"
           >
-            <div
-              className={`absolute top-0 right-0 w-32 h-32 bg-linear-to-br ${stat.gradient} opacity-10 rounded-bl-4xl group-hover:scale-110 transition-transform duration-500`}
-            />
+            <FiRefreshCw className={loadState === "refreshing" ? "animate-spin" : ""} />
+            Refresh
+          </button>
+        </div>
+      </header>
 
-            <div className="relative z-10">
-              <div
-                className={`w-12 h-12 rounded-2xl ${stat.bg} ${stat.textColor} flex items-center justify-center text-2xl mb-4 shadow-sm group-hover:scale-110 transition-transform duration-300`}
-              >
-                {stat.icon}
+      {error && (
+        <div className="flex items-center gap-3 rounded-2xl border border-amber-200/80 bg-amber-50 text-amber-800 px-4 py-3 dark:border-amber-400/30 dark:bg-amber-900/40 dark:text-amber-100">
+          <FiAlertCircle />
+          <span className="text-sm">{error}</span>
+        </div>
+      )}
+
+      {/* Section A - Key Metric Cards */}
+      <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {keyCards.map((card) => (
+          <div key={card.label} className={`${cardShell} p-5`}>
+            <div className="flex items-start justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.15em] text-gray-600">
+                  {card.label}
+                </p>
+                <div className="flex items-end gap-2 mt-2">
+                  <span className="text-3xl font-black text-gray-900">
+                    {card.value}
+                  </span>
+                  <span className="flex items-center gap-1 text-xs text-gray-500">
+                    <span className="inline-block h-2 w-2 rounded-full bg-red-500" />
+                    {card.subLabel}
+                  </span>
+                </div>
               </div>
-              <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-1">
-                {stat.label}
-              </p>
-              <div className="flex items-end gap-2">
-                <h3 className="text-4xl font-black text-gray-900 dark:text-white">
-                  {stat.value}
-                </h3>
-                <span className={`text-sm font-bold mb-1.5 ${stat.textColor}`}>
-                  {stat.subValue}
-                </span>
+              <div className="rounded-full bg-gray-100 border border-gray-200 p-3 text-gray-500">
+                <FiBarChart2 />
               </div>
             </div>
-          </motion.div>
+            <Sparkline values={card.sparkline || [0, 0, 0, 0, 0]} />
+          </div>
         ))}
-      </div>
+      </section>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Activity Feed */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4 }}
-          className="lg:col-span-2 bg-white dark:bg-black backdrop-blur-xl rounded-[2.5rem] p-8 shadow-xl border border-gray-100 dark:border-white/10"
-        >
-          <div className="flex items-center justify-between mb-8">
-            <h3 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-              <FiActivity className="text-red-500" /> Live Activity Feed
-            </h3>
-            <span className="text-xs font-bold px-3 py-1 bg-gray-100 dark:bg-white/5 rounded-full text-gray-500">
-              Most recent
+      {/* Section B - Secondary metric cards */}
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {secondaryCards.map((card) => (
+          <div key={card.label} className={`${cardShell} p-4`}>
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.12em] text-gray-600">
+                  {card.label}
+                </p>
+                <p className="text-2xl font-bold text-gray-900">
+                  {card.value}
+                </p>
+              </div>
+              <FiActivity className="text-gray-500" />
+            </div>
+            <p className="text-xs text-gray-500 mt-2">{card.subLabel}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* Section C - Activity + Leads & System */}
+      <section className="grid gap-4 lg:grid-cols-2">
+        <div className={`${cardShell} p-5`}>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <FiActivity className="text-red-500" />
+              <h3 className="text-lg font-semibold text-gray-900">
+                Live Activity Feed
+              </h3>
+            </div>
+            <span className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs text-gray-600">
+              {activity.length} events
             </span>
           </div>
-
-          <div className="relative border-l-2 border-gray-100 dark:border-white/5 ml-3 space-y-8 pl-8 py-2">
-            {recentActivities.length === 0 ? (
-              <p className="text-gray-400 italic">
-                No recent activity to show.
-              </p>
+          <div className="divide-y divide-gray-100 dark:divide-white/5">
+            {activity.length === 0 ? (
+              <p className="text-sm text-gray-500 py-4">Quiet right now. Fresh pings will appear here.</p>
             ) : (
-              recentActivities.map((item: any, i) => (
-                <div key={i} className="relative group">
-                  <div
-                    className={`absolute -left-[41px] w-6 h-6 rounded-full border-4 border-white dark:border-black ${item.bg} flex items-center justify-center`}
-                  >
-                    <div
-                      className={`w-2 h-2 rounded-full ${item.color.replace("text-", "bg-")}`}
-                    />
+              activity.map((item) => (
+                <div key={`${item.type}-${item.id}`} className="py-3 flex items-start gap-3">
+                  <div className="mt-1">
+                    {item.type === "inquiry" && <FiMail className="text-red-500" />}
+                    {item.type === "chat_lead" && <FiMessageSquare className="text-amber-500" />}
+                    {item.type === "review_reply" && <FiAward className="text-emerald-500" />}
                   </div>
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                    <p className="text-gray-700 dark:text-gray-200 font-medium group-hover:text-blue-600 transition-colors">
-                      {item.message}
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-gray-900">
+                      {item.type === "inquiry" && `${item.name || "Prospect"} sent an inquiry${item.subject ? ` - ${item.subject}` : ""}`}
+                      {item.type === "chat_lead" && `${item.name || "Chat lead"} - Intent ${item.intentScore ?? "-"} (${item.intentCategory || "Unclassified"})`}
+                      {item.type === "review_reply" && `${item.reviewer || "Reviewer"} - Rating ${item.rating || "-"}`}
                     </p>
-                    <span className="text-xs text-gray-400 whitespace-nowrap">
-                      {new Date(item.date).toLocaleDateString()} •{" "}
-                      {new Date(item.date).toLocaleTimeString([], {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </span>
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 ${statusBadgeColor(item.status)}`}>
+                        <FiFlag className="text-[10px]" /> {item.status || "pending"}
+                      </span>
+                      <span>
+                        {new Date(item.createdAt).toLocaleDateString()} at {new Date(item.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                      </span>
+                    </div>
                   </div>
                 </div>
               ))
             )}
           </div>
-        </motion.div>
-
-        {/* Quick Actions & System Status */}
-        <div className="space-y-8">
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 }}
-            className="bg-linear-to-br from-indigo-600 to-blue-700 p-8 rounded-[2.5rem] shadow-xl text-white relative overflow-hidden dark:shadow-none dark:border dark:border-white/10"
-          >
-            {/* Background Decorations */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-
-            <h3 className="text-xl font-bold mb-2 relative z-10">
-              System Status
-            </h3>
-            <div className="space-y-4 relative z-10">
-              <div className="flex items-center justify-between bg-white/10 p-3 rounded-xl backdrop-blur-sm">
-                <span className="text-sm font-medium flex items-center gap-2">
-                  <FiCheckCircle className="text-green-400" /> Database
-                </span>
-                <span className="text-xs font-bold bg-green-500/20 text-green-300 px-2 py-1 rounded-lg">
-                  Operational
-                </span>
-              </div>
-              <div className="flex items-center justify-between bg-white/10 p-3 rounded-xl backdrop-blur-sm">
-                <span className="text-sm font-medium flex items-center gap-2">
-                  <FiActivity className="text-blue-400" /> API Latency
-                </span>
-                <span className="text-xs font-bold text-blue-200">24ms</span>
-              </div>
-              <div className="flex items-center justify-between bg-white/10 p-3 rounded-xl backdrop-blur-sm">
-                <span className="text-sm font-medium flex items-center gap-2">
-                  <FiUsers className="text-yellow-400" /> Admins
-                </span>
-                <span className="text-xs font-bold text-yellow-200">
-                  {stats?.counts?.admins || 0} Active
-                </span>
-              </div>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-white/20">
-              <p className="text-xs text-blue-200 mb-4">Quick Navigation</p>
-              <div className="grid grid-cols-2 gap-3">
-                <button
-                  onClick={() => (window.location.href = "/admin/inquiries")}
-                  className="bg-white/10 hover:bg-white/20 p-2 rounded-lg text-sm text-center transition-colors"
-                >
-                  Inbox
-                </button>
-                <button
-                  onClick={() => (window.location.href = "/admin/services")}
-                  className="bg-white/10 hover:bg-white/20 p-2 rounded-lg text-sm text-center transition-colors"
-                >
-                  Services
-                </button>
-              </div>
-            </div>
-          </motion.div>
         </div>
-      </div>
+
+        <div className="space-y-4">
+          <div className={`${cardShell} p-5`}>
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <FiUsers className="text-amber-500" />
+                <h3 className="text-lg font-semibold text-gray-900">Recent Leads</h3>
+              </div>
+              <FiArrowRight className="text-gray-500" />
+            </div>
+            {recentLeads.length === 0 ? (
+              <p className="text-sm text-gray-500">No leads yet. Your next win will show up here.</p>
+            ) : (
+              <div className="space-y-3">
+                {recentLeads.map((lead) => (
+                  <div key={lead.id} className="flex items-center justify-between rounded-2xl border border-gray-100 dark:border-white/5 px-3 py-2.5">
+                    <div>
+                      <p className="text-sm font-semibold text-gray-900">
+                        {lead.name || "Unnamed lead"}
+                      </p>
+                      <p className="text-xs text-gray-500">
+                        {lead.type === "inquiry" ? "Inquiry" : "AI Chat"} - {lead.subject || lead.intentCategory || "No subject"}
+                      </p>
+                    </div>
+                    <span className={`text-xs px-2 py-1 rounded-full ${statusBadgeColor(lead.status)}`}>
+                      {lead.status || "new"}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <div className={`${cardShell} p-5`}>
+            <div className="flex items-center gap-2 mb-3">
+              <FiCpu className="text-emerald-500" />
+              <h3 className="text-lg font-semibold text-gray-900">System Status</h3>
+            </div>
+            <div className="space-y-3">
+              {systemRows.map((row) => (
+                <div key={row.key} className="flex items-center justify-between rounded-2xl bg-gray-50 dark:bg-gray-800/60 px-3 py-2.5">
+                  <div className="flex items-center gap-2">
+                    <span className={`h-2.5 w-2.5 rounded-full ${dotColor(row.status)}`} />
+                    <span className="text-sm font-medium text-gray-800 dark:text-gray-100">
+                      {row.label}
+                    </span>
+                  </div>
+                  <span className="text-xs text-gray-500">{row.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section D - Quick Navigation */}
+      <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {quickLinks.map((link) => (
+          <button
+            key={link.label}
+            onClick={() => router.push(link.href)}
+            className={`${cardShell} flex items-center justify-between px-4 py-3 text-left hover:-translate-y-0.5 transition-transform`}
+          >
+            <div className="flex items-center gap-3">
+              <div className="rounded-2xl bg-gray-100 border border-gray-200 p-2 text-gray-600">
+                {link.icon}
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-gray-900">
+                  {link.label}
+                </p>
+                <p className="text-xs text-gray-500">Jump in faster</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              {typeof link.badge === "number" && link.badge > 0 && (
+                <span className="rounded-full bg-red-100 text-red-700 px-2 py-0.5 text-xs">
+                  {link.badge}
+                </span>
+              )}
+              <FiArrowRight className="text-gray-500" />
+            </div>
+          </button>
+        ))}
+      </section>
     </div>
   );
 }

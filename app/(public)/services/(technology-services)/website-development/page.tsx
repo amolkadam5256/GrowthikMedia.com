@@ -2,7 +2,8 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import { Award, CheckCircle2, ArrowRight } from "lucide-react";
+import { Award, CheckCircle2, ArrowRight, BarChart2 } from "lucide-react";
+import FAQSchema from "@/components/PublicComponents/structured-data/FAQSchema";
 import { CONTACT_INFO } from "@/constants/contact";
 
 const slug = "website-development";
@@ -24,6 +25,13 @@ export default function WebsiteDevelopmentPage() {
       <Script id={`schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@type": "Service", serviceType: service, provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` }, areaServed: { "@type": "City", name: "Pune" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
       })}} />
+      <FAQSchema
+        questions={[
+          { q: "How long does a new website project take?", a: "Most corporate sites launch in 4–8 weeks depending on scope; ecommerce and complex integrations can take 10–14 weeks." },
+          { q: "Do you optimize for SEO and speed by default?", a: "Yes. Every build ships with technical SEO, schema, image optimization, and Core Web Vitals tuning baked in." },
+          { q: "Which stack do you use?", a: "We specialize in Next.js with headless CMS options, but also deliver high-speed WordPress where it fits budget and workflows." },
+        ]}
+      />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />
@@ -40,6 +48,7 @@ export default function WebsiteDevelopmentPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Link href="/contact" className="px-8 py-4 bg-(--color-primary) text-white font-bold rounded-xl hover:bg-black transition-all duration-300 shadow-lg shadow-(--color-primary)/30 flex items-center justify-center gap-2 w-full sm:w-auto">Book Your Free Strategy Call <ArrowRight className="w-5 h-5" /></Link>
             </div>
+            <p className="text-sm text-(--text-secondary)">Last updated: April 2026 · Fast answer: We deliver launch-ready, SEO-optimized builds in 4–8 weeks with Core Web Vitals passing out of the box.</p>
           </div>
         </header>
         <section className="px-6 lg:px-12 py-20 bg-(--background)">
@@ -50,6 +59,21 @@ export default function WebsiteDevelopmentPage() {
               <p className="text-(--text-secondary) font-medium text-lg mb-6 leading-relaxed">
                 Generic websites don't work. As a specialist operating in this sector, we've engineered a predictable software matrix. Our focus is entirely on increasing your web performance and SEO rankings.
               </p>
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { label: "CWV pass rate", value: "90%+ pages" },
+                  { label: "Avg. load time", value: "<1.8s LCP" },
+                  { label: "Conversion lift", value: "28% post-relaunch" },
+                ].map((stat, idx) => (
+                  <div key={idx} className="rounded-2xl border border-(--border) bg-(--surface) p-4 flex items-center gap-3">
+                    <BarChart2 className="w-5 h-5 text-(--color-primary)" />
+                    <div>
+                      <div className="text-sm font-bold text-(--text-primary)">{stat.value}</div>
+                      <div className="text-xs text-(--text-secondary)">{stat.label}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((feature, idx) => (

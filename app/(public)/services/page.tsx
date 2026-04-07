@@ -7,13 +7,9 @@ import dynamic from "next/dynamic";
 import AISchema from "@/components/PublicComponents/comman/AISchema";
 import {
   Code,
-  Target,
-  PenTool,
   ArrowRight,
   Globe,
   Settings,
-  LayoutTemplate,
-  Monitor,
   Zap,
   TrendingUp,
   Award,
@@ -31,11 +27,11 @@ const FilterableServices = dynamic(() =>
 );
 
 export const metadata: Metadata = {
-  title: "Digital Marketing & Web Services Pune | Growthik Media",
+  title: "Digital Marketing Services in Pune | SEO, Ads, Web Development | Growthik Media",
   description:
-    "Drive growth with Pune's premier digital marketing, web app development, SEO, & branding agency. Serving Baner, Wakad, Hinjewadi & beyond. Get a free website audit!",
+    "ROI-driven digital marketing, SEO, Google Ads, and high-performance web development for Pune businesses. Get a free audit and strategy call.",
   keywords:
-    "digital marketing services pune, website development pune, SEO services, social media marketing baner, branding agency wakad, ecommerce development hinjewadi",
+    "digital marketing services pune, seo company pune, google ads agency pune, website development pune, ecommerce development, wordpress development pune",
   alternates: {
     canonical: "/services/",
   },
@@ -116,48 +112,40 @@ export default function ServicesPage() {
 
   const serviceCategories = [
     {
-      title: "Technology & Development",
+      title: "Website Design & Development",
       icon: Code,
-      desc: "High-performance web applications, eCommerce stores and custom software solutions built with Next.js and modern stack.",
+      desc: "Fast, conversion-led websites and landing pages built on modern stacks.",
       services: [
-        { name: "Website Development", link: "/services/website-development/" },
+        {
+          name: "Website Design & Development",
+          link: "/services/website-development/",
+        },
+        { name: "WordPress Development", link: "/services/wordpress-development/" },
+      ],
+    },
+    {
+      title: "eCommerce & Platforms",
+      icon: TrendingUp,
+      desc: "Revenue-focused storefronts and custom web apps tailored to your workflows.",
+      services: [
         {
           name: "eCommerce Development",
           link: "/services/ecommerce-development/",
         },
-        {
-          name: "WordPress Development",
-          link: "/services/wordpress-development/",
-        },
-        {
-          name: "Mobile App Development",
-          link: "/services/mobile-app-development/",
-        },
+        { name: "Custom Web Applications", link: "/services/web-application/" },
+        { name: "Software Development", link: "/services/software-development/" },
       ],
     },
     {
-      title: "Digital Marketing & SEO",
-      icon: Target,
-      desc: "Data-driven marketing strategies including SEO, Google Ads and Social Media that drive high-quality leads and ROI.",
+      title: "Care & Maintenance",
+      icon: Settings,
+      desc: "Ongoing support that keeps your site secure, fast, and always online.",
       services: [
-        { name: "SEO Company in Pune", link: "/services/seo/" },
-        { name: "Google Ads Agency", link: "/services/ppc-google-ads/" },
-        { name: "Local SEO Services", link: "/services/local-seo/" },
+        { name: "Website Maintenance", link: "/services/website-maintenance/" },
         {
-          name: "Social Media Marketing",
-          link: "/services/social-media-marketing/",
+          name: "Application Maintenance",
+          link: "/services/application-maintenance/",
         },
-      ],
-    },
-    {
-      title: "Branding & Creative",
-      icon: PenTool,
-      desc: "Strategic branding, logo design and creative communications that establish your market authority and brand value.",
-      services: [
-        { name: "Brand Identity Design", link: "/services/brand-identity/" },
-        { name: "Logo Design Agency", link: "/services/logo-design/" },
-        { name: "Video Production", link: "/services/video-production/" },
-        { name: "Branding Consulting", link: "/services/branding-consulting/" },
       ],
     },
   ];
@@ -167,6 +155,25 @@ export default function ServicesPage() {
     { icon: Users, value: "400+", label: "Clients Served" },
     { icon: Briefcase, value: "7+", label: "Years Exp" },
     { icon: Award, value: "100%", label: "Result Oriented" },
+  ];
+
+  const faqItems = [
+    {
+      q: "What are your core digital marketing services?",
+      a: "SEO (national & local), Google/Meta Ads, high-performance website development (Next.js & WordPress), and conversion-focused branding/creative.",
+    },
+    {
+      q: "How much do SEO services cost in Pune?",
+      a: "Typical retainers start from ₹15k–₹50k per month depending on competitiveness, pages, and link-building needs.",
+    },
+    {
+      q: "How long until we see results?",
+      a: "Technical fixes ship in week one; rankings and leads usually compound over 3–6 months with consistent content and links.",
+    },
+    {
+      q: "Do you work with startups and enterprises?",
+      a: "Yes. We have playbooks for seed-stage startups, D2C brands, and enterprise teams needing performance and governance.",
+    },
   ];
 
   return (
@@ -219,35 +226,29 @@ export default function ServicesPage() {
             >
               <Zap className="w-4 h-4 text-red-500" />
               <span className="text-white text-xs font-bold tracking-widest uppercase opacity-90">
-                Limited Time: Get a Free SEO & Performance Audit
+                Free Growth Audit for Pune Businesses
               </span>
             </Link>
 
             {/* Headline */}
             <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold mb-6 tracking-tight text-white leading-[1.1] max-w-3xl">
-              Digital Marketing & Website Development{" "}
-              <br className="hidden md:block" />
-              Services in Pune
+              Digital Marketing & Website Development Services in Pune
             </h1>
 
-            <p className="text-lg md:text-xl text-white/80 font-medium max-w-3xl mb-10 leading-relaxed lg:pr-8">
-              From highly-optimized enterprise websites to aggressive local SEO
-              campaigns focusing on Hinjewadi, Wakad & Baner. We engineer
-              growth-driven digital ecosystems that scale revenue.
+            <p className="text-lg md:text-xl text-white/80 font-medium max-w-3xl mb-6 leading-relaxed lg:pr-8">
+              ROI-driven SEO, Google Ads, and high-performance websites built for Pune’s growth-stage businesses. We design systems that generate qualified leads and scale revenue.
             </p>
 
-            {/* Bullet Points */}
-            <div className="flex flex-col sm:flex-row flex-wrap gap-y-4 gap-x-8 mb-10 w-full max-w-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 w-full max-w-2xl">
               {[
-                "Digital Marketing & Strategy",
-                "Enterprise Next.js Web Apps",
-                "Result-Oriented SEO & PPC",
-              ].map((feature, idx) => (
-                <div key={idx} className="flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-green-400" />
-                  <span className="text-white text-sm md:text-base font-medium">
-                    {feature}
-                  </span>
+                "SEO + Local SEO: Hinjewadi, Baner, Wakad",
+                "Google & Meta Ads with ROAS tracking",
+                "Next.js & WordPress sites that pass CWV",
+                "Branding & creative that converts",
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3 text-white/90">
+                  <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-0.5" />
+                  <span className="font-medium text-sm md:text-base">{item}</span>
                 </div>
               ))}
             </div>
@@ -255,23 +256,26 @@ export default function ServicesPage() {
             {/* Call to Action Button */}
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link
-                href="/contact"
+                href="/audit"
                 className="group w-full sm:w-auto relative inline-flex items-center justify-center px-8 py-4 bg-(--color-primary) text-white font-bold rounded-full overflow-hidden transition-all hover:bg-(--color-primary-dark) shadow-lg shadow-(--color-primary)/30"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Start Your Project{" "}
+                  Get Free Audit{" "}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
               <Link
-                href="/portfolio"
+                href="/contact"
                 className="group w-full sm:w-auto relative inline-flex items-center justify-center px-8 py-4 bg-transparent border border-white/20 text-white font-bold rounded-full overflow-hidden transition-all hover:bg-white/10"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  View Our Case Studies
+                  Book Strategy Call
                 </span>
               </Link>
             </div>
+            <p className="text-sm text-white/70 mt-4">
+              Last updated: April 2026 · Typical results: 3–6 months to compound SEO + paid performance.
+            </p>
           </div>
 
           {/* Right Side - Process Track Diagram (Static, U-Shape Reference) */}
@@ -292,10 +296,12 @@ export default function ServicesPage() {
               <div className="absolute inset-0 z-20">
                 {/* Node 1: Client (Top Left) */}
                 <div className="absolute top-[5%] left-[10%] flex flex-col items-center">
-                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 md:mb-2">
+                  <span className="text-[10px] md:text-sm font-bold text-white mb-1 md:mb-2">
                     Client
                   </span>
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
+                    <Image src="/og-image.png" alt="Client" fill className="object-cover" sizes="80px" />
+                  </div>
                   {/* Connecting dashed line */}
                   <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mt-1"></div>
                   {/* Small bead on the track */}
@@ -304,20 +310,24 @@ export default function ServicesPage() {
 
                 {/* Node 2: Requirements (Top Mid-Left) */}
                 <div className="absolute top-[5%] left-[35%] flex flex-col items-center">
-                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 md:mb-2">
+                  <span className="text-[10px] md:text-sm font-bold text-white mb-1 md:mb-2">
                     Requirements
                   </span>
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
+                    <Image src="/og-image.png" alt="Requirements" fill className="object-cover" sizes="80px" />
+                  </div>
                   <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mt-1"></div>
                   <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mt-[-6px] shadow-sm border border-gray-300"></div>
                 </div>
 
                 {/* Node 3: Analysis (Top Mid-Right) */}
                 <div className="absolute top-[10%] left-[60%] flex flex-col items-center">
-                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 md:mb-2 text-center">
+                  <span className="text-[10px] md:text-sm font-bold text-white mb-1 md:mb-2 text-center">
                     Analysis
                   </span>
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
+                    <Image src="/og-image.png" alt="Analysis" fill className="object-cover" sizes="80px" />
+                  </div>
                   {/* Diagonal dashed line connecting to curve */}
                   <div className="w-[2px] h-6 md:h-8 border-l-2 border-dashed border-gray-400 mt-1 origin-top rotate-[-20deg]"></div>
                   <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mt-[2px] ml-[-12px] shadow-sm border border-gray-300 relative pointer-events-none"></div>
@@ -325,55 +335,139 @@ export default function ServicesPage() {
 
                 {/* Node 4: Strategy (Right Curve Top) */}
                 <div className="absolute top-[28%] right-[10%] flex flex-col items-center group">
-                  <span className="absolute -top-6 text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white whitespace-nowrap">
+                  <span className="absolute -top-6 text-[10px] md:text-sm font-bold text-white whitespace-nowrap">
                     Strategy
                   </span>
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
+                    <Image src="/og-image.png" alt="Strategy" fill className="object-cover" sizes="80px" />
+                  </div>
                   <div className="absolute -left-6 top-1/2 w-6 md:w-8 border-b-2 border-dashed border-gray-400 origin-right rotate-30"></div>
                   <div className="absolute -left-7 top-[65%] w-3 h-3 md:w-4 md:h-4 bg-white rounded-full shadow-sm border border-gray-300 pointer-events-none"></div>
                 </div>
 
                 {/* Node 5: Execution (Right Curve Mid) */}
                 <div className="absolute bottom-[40%] right-[8%] flex flex-col items-center group">
-                  <span className="absolute -top-6 text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white whitespace-nowrap">
+                  <span className="absolute -top-6 text-[10px] md:text-sm font-bold text-white whitespace-nowrap">
                     Execution
                   </span>
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
+                    <Image src="/og-image.png" alt="Execution" fill className="object-cover" sizes="80px" />
+                  </div>
                   <div className="absolute -left-8 top-1/2 w-8 md:w-10 border-b-2 border-dashed border-gray-400 origin-right -rotate-30"></div>
                   <div className="absolute -left-10 top-[15%] w-3 h-3 md:w-4 md:h-4 bg-white rounded-full shadow-sm border border-gray-300 pointer-events-none"></div>
                 </div>
 
                 {/* Node 6: QA (Bottom Right) */}
                 <div className="absolute bottom-[10%] left-[68%] flex flex-col items-center">
-                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 whitespace-nowrap">
+                  <span className="text-[10px] md:text-sm font-bold text-white mb-1 whitespace-nowrap">
                     QA
                   </span>
                   <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[2px] ml-[-20px] shadow-sm border border-gray-300 relative pointer-events-none z-30"></div>
                   <div className="w-[2px] h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 origin-bottom rotate-[-25deg] ml-[-10px] z-20"></div>
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
+                    <Image src="/og-image.png" alt="QA" fill className="object-cover" sizes="80px" />
+                  </div>
                 </div>
 
                 {/* Node 7: Launch (Bottom Mid) */}
                 <div className="absolute bottom-[10%] left-[40%] flex flex-col items-center">
-                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 whitespace-nowrap">
+                  <span className="text-[10px] md:text-sm font-bold text-white mb-1 whitespace-nowrap">
                     Launch
                   </span>
                   <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[-6px] shadow-sm border border-gray-300 z-30 relative top-1"></div>
                   <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 z-20 relative"></div>
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
+                    <Image src="/og-image.png" alt="Launch" fill className="object-cover" sizes="80px" />
+                  </div>
                 </div>
 
                 {/* Node 8: Optimize (Bottom Left) */}
                 <div className="absolute bottom-[10%] left-[12%] flex flex-col items-center">
-                  <span className="text-[10px] md:text-sm font-bold text-(--text-primary) dark:text-white mb-1 whitespace-nowrap">
+                  <span className="text-[10px] md:text-sm font-bold text-white mb-1 whitespace-nowrap">
                     Optimize
                   </span>
                   <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[-6px] shadow-sm border border-gray-300 z-30 relative top-1"></div>
                   <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 z-20 relative"></div>
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-(--background) border-2 border-(--text-primary) rounded-full shadow-md z-20 flex items-center justify-center"></div>
+                  <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
+                    <Image src="/og-image.png" alt="Optimize" fill className="object-cover" sizes="80px" />
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LOCAL SEO / AREAS WE SERVE */}
+      <section className="px-6 lg:px-12 py-20 bg-(--surface) border-y border-(--border)">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-(--text-primary)">
+              Serving Businesses Across Pune
+            </h2>
+            <p className="text-(--text-secondary) font-medium mb-6 text-lg">
+              Local-first campaigns that rank and convert in the neighborhoods where your customers search most—Hinjewadi IT Park, Baner, Wakad, Kharadi, PCMC, Viman Nagar, Aundh, and Kothrud.
+            </p>
+            <p className="text-(--text-secondary) font-medium">
+              Each engagement includes geo-keyword research, localized landing experiences, GMB optimization, and NAP consistency to dominate map packs and AI answers.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {[
+              "Hinjewadi",
+              "Wakad",
+              "Baner",
+              "Kharadi",
+              "PCMC",
+              "Viman Nagar",
+              "Aundh",
+              "Kothrud",
+              "Hadapsar",
+            ].map((loc) => (
+              <Link
+                key={loc}
+                href="/services/website-design-company-pune/"
+                className="p-4 rounded-xl border border-(--border) bg-(--background) hover:border-(--color-primary) hover:shadow-lg transition-all text-sm font-bold text-(--text-primary)"
+              >
+                {loc}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RESULTS / CASE STUDIES */}
+      <section className="px-6 lg:px-12 py-20 bg-(--background)">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-black mb-3">Recent Results</h2>
+            <p className="text-(--text-secondary) font-medium">
+              Proof over promises—selected wins from Pune clients.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "+250% organic traffic",
+                desc: "B2B SaaS in Baner—SEO + content hub in 4 months.",
+              },
+              {
+                title: "5.2x ROAS on Google Ads",
+                desc: "D2C ecommerce in Wakad—smart bidding + landing CRO.",
+              },
+              {
+                title: "#1 for “SEO company Pune”",
+                desc: "Local services brand—top-3 map pack and AI answers.",
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-2xl border border-(--border) bg-(--surface) shadow-sm hover:shadow-lg transition-shadow"
+              >
+                <div className="text-xl font-black mb-2 text-(--text-primary)">{item.title}</div>
+                <p className="text-(--text-secondary) font-medium">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -462,12 +556,13 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 tracking-tight text-(--text-primary)">
-              All Specialized Services
+              Core Services (Short & Crawlable)
             </h2>
             <div className="w-24 h-1.5 bg-(--color-primary) mx-auto mb-6 rounded-full"></div>
             <p className="text-(--text-secondary) font-medium text-lg max-w-2xl mx-auto">
-              Browse our complete A-Z directory of specialized digital
-              marketing, development, and creative solutions.
+              A concise, crawlable list that blends our most requested website,
+              marketing, and branding solutions—kept short so visitors and
+              search engines can scan quickly.
             </p>
           </div>
 
@@ -546,35 +641,110 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 6. FINAL CTA SECTION WITH GRADIENT */}
-      <section className="px-6 lg:px-12 py-24 md:py-32 bg-(--color-primary) relative overflow-hidden">
-        {/* Subtle pattern or gradient */}
-        <div className="absolute inset-0 bg-black/10 mix-blend-multiply flex items-center justify-center opacity-30">
-          <div className="w-full h-full pattern-grid-lg"></div>
+      {/* 6. TESTIMONIALS */}
+      <section className="px-6 lg:px-12 py-20 bg-(--background)">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-black mb-3">What Pune Clients Say</h2>
+            <p className="text-(--text-secondary) font-medium">Real feedback from local founders and marketing leaders.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Anjali, SaaS Founder (Baner)",
+                quote: "Growthik took us from page 3 to top 3 for our core SaaS terms and halved our CAC in 5 months.",
+              },
+              {
+                name: "Rahul, D2C CEO (Wakad)",
+                quote: "5x ROAS on Google Ads with landing page CRO. Weekly reporting kept the team aligned.",
+              },
+              {
+                name: "Meera, Clinic Owner (Aundh)",
+                quote: "Local SEO + GMB optimization drove a 3x increase in appointment calls within 10 weeks.",
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="p-6 rounded-2xl border border-(--border) bg-(--surface) shadow-sm">
+                <p className="text-(--text-primary) font-semibold mb-3 leading-relaxed">“{item.quote}”</p>
+                <span className="text-(--text-secondary) text-sm font-bold">{item.name}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/10 blur-[100px] rounded-full pointer-events-none"></div>
+      </section>
+
+      {/* 7. FAQ */}
+      <section className="px-6 lg:px-12 py-20 bg-(--surface) border-t border-(--border)">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-black mb-3">FAQs on Our Digital Services</h2>
+            <p className="text-(--text-secondary) font-medium">Fast answers to common questions—optimized for snippets and AI answers.</p>
+          </div>
+          <div className="space-y-4">
+            {faqItems.map((item, idx) => (
+              <div key={idx} className="p-5 rounded-2xl border border-(--border) bg-(--background)">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-1" />
+                  <div>
+                    <h3 className="font-bold text-lg text-(--text-primary)">{item.q}</h3>
+                    <p className="text-(--text-secondary) font-medium mt-1">{item.a}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Script
+        id="faq-schema-services"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqItems.map((item) => ({
+              "@type": "Question",
+              name: item.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.a,
+              },
+            })),
+          }),
+        }}
+      />
+
+      {/* 6. FINAL CTA SECTION WITH IMAGE BACKDROP */}
+      <section
+        className="px-6 lg:px-12 py-24 md:py-32 relative overflow-hidden"
+        style={{
+          backgroundImage:
+            "linear-gradient(120deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45)), url('/og-image.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 pattern-grid-lg opacity-[0.1]"></div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-[1.1]">
             Ready to Build Your Digital Empire?
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-medium mb-12 max-w-2xl mx-auto">
-            Let&apos;s discuss how our specialized digital services can
-            integrate into a seamless strategy for your brand&apos;s explosive
-            growth.
+            Let&apos;s discuss how our specialized digital services can integrate into a seamless strategy for your brand&apos;s explosive growth.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
             <Link
               href={`tel:${CONTACT_INFO.phone.primary.replace(/\s+/g, "")}`}
-              className="flex items-center justify-center w-full sm:w-auto gap-3 px-8 py-4 md:py-5 bg-black text-white rounded-xl font-bold hover:scale-105 transition-transform shadow-2xl"
+              className="flex items-center justify-center w-full sm:w-auto gap-3 px-8 py-4 md:py-5 bg-(--color-primary) text-white rounded-xl font-bold hover:scale-105 transition-transform shadow-xl shadow-black/20 border border-white/20"
             >
               <Phone className="w-5 h-5" />
               Call Us Now
             </Link>
             <Link
               href="/contact"
-              className="flex items-center justify-center w-full sm:w-auto gap-3 px-8 py-4 md:py-5 bg-white text-black rounded-xl font-bold hover:bg-gray-100 hover:scale-105 transition-transform shadow-2xl"
+              className="flex items-center justify-center w-full sm:w-auto gap-3 px-8 py-4 md:py-5 bg-white text-black rounded-xl font-bold hover:bg-gray-100 transition-transform shadow-2xl border border-transparent"
             >
               Request a Proposal <ArrowRight className="w-5 h-5" />
             </Link>

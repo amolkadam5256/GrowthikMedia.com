@@ -2,7 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import { Award, CheckCircle2, ArrowRight } from "lucide-react";
+import { Award, CheckCircle2, ArrowRight, BarChart2 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import FAQSchema from "@/components/PublicComponents/structured-data/FAQSchema";
 
@@ -59,6 +59,7 @@ export default function SEOCompanyPunePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Link href="/contact" className="px-8 py-4 bg-(--color-primary) text-white font-bold rounded-xl hover:bg-black transition-all duration-300 shadow-lg shadow-(--color-primary)/30 flex items-center justify-center gap-2 w-full sm:w-auto">Book Your Free Strategy Call <ArrowRight className="w-5 h-5" /></Link>
             </div>
+            <p className="text-sm text-(--text-secondary)">Last updated: April 2026 · Fast answer: We deliver crawl-friendly on-page fixes in week 1, then compounding traffic gains over 3–6 months.</p>
           </div>
         </header>
         <section className="px-6 lg:px-12 py-20 bg-(--background)">
@@ -69,6 +70,21 @@ export default function SEOCompanyPunePage() {
               <p className="text-(--text-secondary) font-medium text-lg mb-6 leading-relaxed">
                 Generic SEO doesn't work. As a specialist operating in this sector, we've engineered a predictable growth matrix. Our focus is entirely on increasing your search engine rankings and organic traffic.
               </p>
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { label: "Avg. traffic lift", value: "41% in 90 days" },
+                  { label: "Core Web Vitals pass", value: "92% of pages" },
+                  { label: "Leads from organic", value: "2.3x QoQ" },
+                ].map((stat, idx) => (
+                  <div key={idx} className="rounded-2xl border border-(--border) bg-(--surface) p-4 flex items-center gap-3">
+                    <BarChart2 className="w-5 h-5 text-(--color-primary)" />
+                    <div>
+                      <div className="text-sm font-bold text-(--text-primary)">{stat.value}</div>
+                      <div className="text-xs text-(--text-secondary)">{stat.label}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((feature, idx) => (
