@@ -2,8 +2,6 @@ import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  // Use a custom build output directory to avoid Windows file lock issues on .next
-  distDir: ".next-build",
   // Use Turbopack-compatible compiler options
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
