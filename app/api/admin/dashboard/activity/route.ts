@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { jwtVerify } from "jose";
 import { db as prisma } from "@/lib/db";
-import { ActivityItem } from "@/types/dashboard";
+import { ActivityItem } from "../../../../../types/dashboard";
 
 export const dynamic = "force-dynamic";
 

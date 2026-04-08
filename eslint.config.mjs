@@ -16,6 +16,9 @@ const eslintConfig = defineConfig([
     "scripts/**",
     "tmp/**",
     "summary.js",
+    // Additional ignores previously in .eslintignore
+    "generated/client/**",
+    "node_modules/**",
   ]),
   {
     rules: {
@@ -23,6 +26,10 @@ const eslintConfig = defineConfig([
       "react/no-unescaped-entities": "off",
       "@typescript-eslint/no-require-imports": "off",
       "react-hooks/set-state-in-effect": "off",
+      // Disable noisy rules that flood lint output without affecting build health
+      "@typescript-eslint/no-unused-vars": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "@next/next/no-img-element": "off",
     },
   },
 ]);

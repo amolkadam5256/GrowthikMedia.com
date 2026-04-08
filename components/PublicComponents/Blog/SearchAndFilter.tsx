@@ -37,7 +37,6 @@ export default function SearchAndFilter({ filters, onFiltersChange, totalResults
       onFiltersChange({ ...filters, search: localSearch });
     }, 300);
     return () => clearTimeout(debounceRef.current);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [localSearch]);
 
   const setFilter = <K extends keyof BlogFilters>(key: K, value: BlogFilters[K]) => {
