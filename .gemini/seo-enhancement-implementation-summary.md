@@ -23,7 +23,7 @@ Successfully added 4 new SEO-optimized sections to the Growthik Media homepage w
 
 - **Location**: After SEO Authority (Position 5.2)
 - **File**: `components/PublicComponents/HomePageComp/LocalSEOAuthority/LocalSEOAuthoritySection.tsx`
-- **Purpose**: Pune-specific local SEO signals + E-E-A-T enhancement
+- **Purpose**: Pune-specific local SEO signals + E-E-A-T enhapncement
 - **Features**:
   - 3 key value propositions (Local Knowledge, SEO Strategies, On-Ground Support)
   - Geographic targeting (Pune, Pimpri-Chinchwad, Wakad, Baner, Maharashtra)
@@ -35,7 +35,7 @@ Successfully added 4 new SEO-optimized sections to the Growthik Media homepage w
 - **Location**: After Comparison (Position 7.2)
 - **File**: `components/PublicComponents/HomePageComp/GrowthResources/GrowthResourcesSection.tsx`
 - **Purpose**: Internal linking + Content authority + Topical relevance
-- **Features**:
+- **Features**:`
   - 3 resource categories (SEO Guides, Performance Marketing, Video Marketing)
   - Internal linking to blog and service pages
   - Newsletter subscription CTA
