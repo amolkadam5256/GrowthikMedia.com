@@ -189,11 +189,7 @@ export default function ChatLogsPage() {
     "High Interaction Depth",
   ];
 
-  useEffect(() => {
-    fetchLogs();
-  }, []);
-
-  const fetchLogs = async () => {
+  const fetchLogs = React.useCallback(async () => {
     try {
       const response = await fetch("/api/chat/logs");
       const data = await response.json();
@@ -203,7 +199,11 @@ export default function ChatLogsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchLogs();
+  }, [fetchLogs]);
 
   const filteredLeads = leads.filter((lead) => {
     const matchSearch =

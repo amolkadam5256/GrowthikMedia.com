@@ -23,12 +23,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Check if user is authenticated on mount
-    checkAuth();
-  }, []);
-
-  const checkAuth = async () => {
+  const checkAuth = React.useCallback(async () => {
     try {
       // This would call an API endpoint that returns the current user
       // For now, we'll just check if the auth token exists
@@ -45,7 +40,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    // Check if user is authenticated on mount
+    checkAuth();
+  }, [checkAuth]);
 
   const logout = async () => {
     try {

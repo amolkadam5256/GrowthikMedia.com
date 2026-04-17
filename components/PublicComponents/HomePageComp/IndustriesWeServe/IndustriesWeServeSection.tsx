@@ -141,7 +141,7 @@ const IndustriesWeServeSection = () => {
             >
               SEO services in Pune
             </Link>{" "}
-            that align with your market dynamics, customer behaviorand
+            that align with your market dynamics, customer behavior and
             competitive landscape. Whether you're a startup or an established
             enterprise, our Pune-based team delivers measurable ROI.
           </p>

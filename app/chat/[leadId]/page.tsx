@@ -18,13 +18,7 @@ export default function ChatLeadDetailsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (leadId) {
-      fetchLeadDetails();
-    }
-  }, [leadId]);
-
-  const fetchLeadDetails = async () => {
+  const fetchLeadDetails = React.useCallback(async () => {
     try {
       setLoading(true);
       const response = await fetch(`/api/chat/logs/${leadId}`);
@@ -73,7 +67,13 @@ export default function ChatLeadDetailsPage() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [leadId]);
+
+  useEffect(() => {
+    if (leadId) {
+      fetchLeadDetails();
+    }
+  }, [leadId, fetchLeadDetails]);
 
   const selectedSession =
     lead?.sessions.find((s) => s.id === selectedSessionId) || null;

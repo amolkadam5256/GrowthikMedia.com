@@ -54,11 +54,7 @@ export default function InquiriesManager() {
   const [isSendingReply, setIsSendingReply] = useState(false);
   const [replyStatus, setReplyStatus] = useState<"idle" | "success" | "error">("idle");
 
-  useEffect(() => {
-    fetchInquiries();
-  }, []);
-
-  const fetchInquiries = async () => {
+  const fetchInquiries = React.useCallback(async () => {
     setLoading(true);
     try {
       const response = await fetch("/api/admin/inquiry-leads");
@@ -74,7 +70,11 @@ export default function InquiriesManager() {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    fetchInquiries();
+  }, [fetchInquiries]);
 
   const filteredInquiries = inquiries.filter((inquiry) => {
     const matchesSearch =

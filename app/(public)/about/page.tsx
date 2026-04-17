@@ -48,8 +48,7 @@ const AboutFinalCTASection = dynamic(
 
 export const metadata: Metadata = {
   title: "About Top Digital Marketing Agency | Growthik Media",
-  description:
-    "Growthik Media is an AI-powered growth engineering company that builds predictable revenue systems - not just marketing campaigns. We help ambitious brands scale with ROI-driven performance engineering.",
+  description: "Growthik Media is a Pune-based AI growth agency building predictable revenue systems. We help brands scale through ROI-driven performance engineering.",
   keywords:
     "Growthik Media, Growth Engineering Company Pune, AI-Powered Marketing Pune, Predictable Revenue Systems, Performance Marketing Pune, Digital Growth Agency India",
   alternates: {

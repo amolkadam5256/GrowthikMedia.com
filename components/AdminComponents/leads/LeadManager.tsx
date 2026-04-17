@@ -130,11 +130,7 @@ export default function LeadManager({ type = "all" }: { type?: string }) {
   const [selectedLeads, setSelectedLeads] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  useEffect(() => {
-    fetchLeads();
-  }, [type]);
-
-  const fetchLeads = async () => {
+  const fetchLeads = React.useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch(`/api/admin/inquiry-leads?type=${type}`);
@@ -147,7 +143,11 @@ export default function LeadManager({ type = "all" }: { type?: string }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [type]);
+
+  useEffect(() => {
+    fetchLeads();
+  }, [fetchLeads]);
 
   const toggleSelectAll = () => {
     if (selectedLeads.length === leads.length) {

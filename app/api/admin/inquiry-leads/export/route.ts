@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import { db as prisma } from "@/lib/db";
 import * as xlsx from "xlsx";
-
-const prisma = new PrismaClient();
 
 export async function GET(request: Request) {
   try {
@@ -47,7 +45,7 @@ export async function GET(request: Request) {
       const header = [
         "ID,Name,Email,Phone,Subject,Message,Status,Created At,Updated At",
       ];
-      const rows = inquiries.map((i) => {
+      const rows = inquiries.map((i: any) => {
         return `"${i.id}","${(i.name || "").replace(/"/g, '""')}","${(i.email || "").replace(/"/g, '""')}","${i.phone || ""}","${(i.subject || "").replace(/"/g, '""')}","${(i.message || "").replace(/"/g, '""')}","${i.status}","${i.createdAt.toISOString()}","${i.updatedAt.toISOString()}"`;
       });
       const csv = [header, ...rows].join("\n");
@@ -62,7 +60,7 @@ export async function GET(request: Request) {
     if (format === "xlsx" || format === "excel") {
       // Create worksheet
       const ws = xlsx.utils.json_to_sheet(
-        inquiries.map((i) => ({
+        inquiries.map((i: any) => ({
           ID: i.id,
           Name: i.name,
           Email: i.email,

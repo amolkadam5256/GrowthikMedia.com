@@ -27,8 +27,7 @@ import { images } from "@/app/assets/images/images";
 
 export const metadata: Metadata = {
   title: "Website Maintenance Services Pune | Growthik Media",
-  description:
-    "Looking for a professional website maintenance company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!",
+  description: "Reliable website maintenance company in Pune. We provide custom, SEO-friendly, and responsive maintenance services to keep your site fast and secure.",
   keywords:
     "Website Maintenance in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom Website Maintenance Pune",
   alternates: {

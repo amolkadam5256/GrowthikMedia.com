@@ -41,11 +41,7 @@ export default function ChatIntelligence() {
   const [mobileView, setMobileView] = useState<"list" | "chat">("list");
   const transcriptEndRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    fetchLogs();
-  }, []);
-
-  const fetchLogs = async () => {
+  const fetchLogs = React.useCallback(async () => {
     try {
       const response = await fetch("/api/chat/logs");
       const data = await response.json();
@@ -102,7 +98,11 @@ export default function ChatIntelligence() {
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedLeadId]);
+
+  useEffect(() => {
+    fetchLogs();
+  }, [fetchLogs]);
 
   useEffect(() => {
     if (transcriptEndRef.current) {

@@ -27,8 +27,7 @@ import { images } from "@/app/assets/images/images";
 
 export const metadata: Metadata = {
   title: "Custom Web App Development in Pune | Growthik Media",
-  description:
-    "Looking for a professional web application company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!",
+  description: "Top web application company in Pune. We build custom, SEO-optimized, and mobile-responsive web apps for businesses looking to scale. Get a free quote!",
   keywords:
     "Web Application in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom Web Application Pune",
   alternates: {

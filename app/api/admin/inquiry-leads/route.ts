@@ -1,8 +1,5 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-// Re-use an existing global prisma instance if possible, but for simplicity creating a new one or using the one from the project if we know its path
-const prisma = new PrismaClient();
+import { db as prisma } from "@/lib/db";
 
 export async function GET(request: Request) {
   try {
