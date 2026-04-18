@@ -99,7 +99,7 @@ For each page in the sitemap, the crawler checks:
 
 ---
 
-## 🚀 Adding New Automations
+## Adding New Automations
 
 1. Create a new folder under `automation/your-automation/`
 2. Add your scripts inside it

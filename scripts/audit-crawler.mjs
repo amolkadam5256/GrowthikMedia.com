@@ -120,7 +120,7 @@ async function run() {
   const allUrls = await fetchSitemap();
   const urlsToAudit = TEST_MODE ? allUrls.slice(0, 10) : allUrls;
   
-  console.log(`🚀 Starting audit for ${urlsToAudit.length} URLs (Test Mode: ${TEST_MODE})`);
+  console.log(`Starting audit for ${urlsToAudit.length} URLs (Test Mode: ${TEST_MODE})`);
   
   const report = {
     date: today,

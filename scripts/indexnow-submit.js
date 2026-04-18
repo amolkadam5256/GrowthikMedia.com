@@ -4,7 +4,7 @@ const INDEXNOW_KEY = process.env.INDEXNOW_KEY || "5adfb5166d66cb35e95c0605b5f6ad
 const HOST = "www.growthikmedia.com";
 
 async function submit() {
-  console.log("🚀 Starting post-build IndexNow submission...");
+  console.log("Starting post-build IndexNow submission...");
 
   const urls = [
     WEBSITE_URL,

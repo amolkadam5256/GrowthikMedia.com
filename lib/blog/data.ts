@@ -105,7 +105,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: "post-11",
     title:
-      "🚀 What is SEO? Complete Beginner Guide to Search Engine Optimization (2026)",
+      "What is SEO? Complete Beginner Guide to Search Engine Optimization (2026)",
     slug: "complete-beginner-guide-to-seo-2026",
     excerpt:
       "Discover what SEO is, how search engines like Google work, and why it's the most powerful growth strategy for businesses in Pune to generate organic leads.",

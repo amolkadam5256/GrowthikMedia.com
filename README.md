@@ -1,4 +1,4 @@
-# 🚀 Growthik Media – Digital Marketing & Web Development Agency
+# Growthik Media – Digital Marketing & Web Development Agency
 
 ### Modern Website Built with Next.js 16 • Turbo • Tailwind CSS
 
@@ -13,7 +13,7 @@ This website represents our company portfolio, services, projectsand digital mar
 **Growthik Media** is a full-service Digital Marketing & Web Development agency.  
 We help brands grow with:
 
-- 🚀 Performance Marketing (Meta Ads, Google Ads)
+- Performance Marketing (Meta Ads, Google Ads)
 - 📈 SEO Optimization
 - 🌐 Custom Website Development (Next.js, React, Node)
 - 🎨 Brand Strategy & Creative Content
@@ -248,7 +248,7 @@ Database schema and seeding scripts for development.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 

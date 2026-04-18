@@ -1,4 +1,4 @@
-# 🚀 Automated SEO Audit System
+# Automated SEO Audit System
 
 This system performs a weekly SEO audit of `growthikmedia.com`, generates a health report, and sends alerts via Email and Slack.
 

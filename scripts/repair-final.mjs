@@ -38,7 +38,7 @@ function fixRecursive(folder) {
   }
 }
 
-console.log('🚀 Final Repair Sweep...')
+console.log('Final Repair Sweep...')
 fixRecursive('app')
 fixRecursive('components')
 fixRecursive('constants')
