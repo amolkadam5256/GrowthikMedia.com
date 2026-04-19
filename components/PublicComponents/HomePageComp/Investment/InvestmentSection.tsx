@@ -11,7 +11,7 @@ const tiers = [
     name: "Starter / Launch Pad",
     icon: Zap,
     description:
-      "Ideal for local businesses and startups looking to establish digital presence.",
+      "Perfect for small Pune brands and startups wanting a professional start online.",
     startingAt: "Starting from",
     price: 25000,
     priceSuffix: "/mo",
@@ -29,7 +29,7 @@ const tiers = [
     name: "Growth / Accelerator",
     icon: Target,
     description:
-      "Built for businesses ready to scale aggressively and dominate their niche.",
+      "For businesses serious about growth and ready to invest in what actually works.",
     startingAt: "Starting from",
     price: 65000,
     priceSuffix: "/mo",
@@ -45,10 +45,10 @@ const tiers = [
     popular: true,
   },
   {
-    name: "Enterprise / Dominance",
+    name: "Enterprise / Custom",
     icon: Crown,
     description:
-      "Custom-engineered solutions for market leaders and national brands.",
+      "Bespoke strategy for established brands with high-growth targets.",
     startingAt: "Custom",
     price: 150000,
     priceSuffix: "+",
@@ -83,12 +83,11 @@ const InvestmentSection = () => {
           </div>
 
           <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-none">
-            Choose Your <br />
-            <span className="text-(--color-primary)">Growth Velocity</span>
+            Simple, Transparent <br />
+            <span className="text-(--color-primary)">Pricing</span>
           </h2>
           <p className="text-lg text-(--text-secondary) max-w-2xl mx-auto leading-relaxed">
-            Transparent pricing anchored by ROI. We filter for quality to ensure
-            we deliver maximum impact for every partner.
+            No hidden fees, no padded retainers. Just clear pricing for what your Pune business actually needs.
           </p>
         </div>
 
@@ -168,8 +167,7 @@ const InvestmentSection = () => {
 
         <div className="mt-16 text-center" data-aos="fade-up">
           <p className="text-sm text-(--text-secondary) italic">
-            * All packages are subject to availability. We only take on a
-            limited number of clients per month to maintain service quality.
+            * Not sure which plan fits? Book a free call and we&apos;ll recommend the right starting point for your business.
           </p>
         </div>
       </div>

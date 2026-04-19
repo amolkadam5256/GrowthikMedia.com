@@ -1,6 +1,6 @@
-# GrowthikMedia.com — Public Assets Audit
+# GrowthikMedia.com - Public Assets Audit
 
-> **Build Status:** ✅ Passing — 141 pages, exit code 0
+> **Build Status:** ✅ Passing - 141 pages, exit code 0
 > **Central Registry:** `app/assets/images/images.ts`
 > **Last Audited:** 2026-03-29
 
@@ -20,7 +20,7 @@ This file exports two objects:
 
 ---
 
-## Section 1 — `public/brand/` Brand Assets
+## Section 1 - `public/brand/` Brand Assets
 
 Accessed via `images.publicAssets.brand.*`
 
@@ -40,7 +40,7 @@ Accessed via `images.publicAssets.brand.*`
 
 ---
 
-## Section 2 — `public/` Videos
+## Section 2 - `public/` Videos
 
 Accessed via `images.publicAssets.videos.*`
 
@@ -51,7 +51,7 @@ Accessed via `images.publicAssets.videos.*`
 
 ---
 
-## Section 3 — `public/portfolio/` Client Thumbnails (21 files)
+## Section 3 - `public/portfolio/` Client Thumbnails (21 files)
 
 Accessed via `images.publicAssets.portfolio.*`
 
@@ -81,22 +81,22 @@ Accessed via `images.publicAssets.portfolio.*`
 
 ---
 
-## Section 4 — `public/images/blog/` Blog Images
+## Section 4 - `public/images/blog/` Blog Images
 
 | File | Public Path | Size |
 |---|---|---|
 | `seo-services-in-pune-rank-1-google-growthik-media-thumbnail.png` | `/images/blog/seo-services-...thumbnail.png` | 1.1 MB |
 
-> Also statically imported as `images.blog.seoGuidePune` — but **no component uses it**. The static import may be unused.
+> Also statically imported as `images.blog.seoGuidePune` - but **no component uses it**. The static import may be unused.
 
 ---
 
-## Section 5 — `app/assets/images/` Statically Imported Images
+## Section 5 - `app/assets/images/` Statically Imported Images
 
 ### Backgrounds
 | Key | File | Size | Note |
 |---|---|---|---|
-| `images.bg` | `Bg.jpg` | **2.5 MB** | ⚠️ Too large — target < 200 KB WebP |
+| `images.bg` | `Bg.jpg` | **2.5 MB** | ⚠️ Too large - target < 200 KB WebP |
 | `images.download` | `download.jpg` | 12.5 KB | OK |
 
 ### Brand / Logo
@@ -110,7 +110,7 @@ Accessed via `images.publicAssets.portfolio.*`
 | `images.founder.amol1` | `Amol-kadam/Amolkadam-1.png` | **2.25 MB** | `FounderSection.tsx`, `AboutHeroSection.tsx`, `AboutFounderSection.tsx` |
 | `images.founder.amol2` | `Amol-kadam/Amolkadam-2.png` | 605 KB | `AboutFounderSection.tsx` |
 
-> Unused file also present: `Amol-kadam/amol_pic.jfif` — delete it.
+> Unused file also present: `Amol-kadam/amol_pic.jfif` - delete it.
 
 ### Portfolio Card Images (Homepage highlights)
 | Key | File | Size |
@@ -137,7 +137,7 @@ Accessed via `images.publicAssets.portfolio.*`
 
 ---
 
-## Section 6 — `public/fonts/` Custom Fonts (Rostex)
+## Section 6 - `public/fonts/` Custom Fonts (Rostex)
 
 | File | Format | Size |
 |---|---|---|
@@ -153,7 +153,7 @@ Accessed via `images.publicAssets.portfolio.*`
 
 ---
 
-## Section 7 — `app/assets/images/brand/` Design Source Files
+## Section 7 - `app/assets/images/brand/` Design Source Files
 
 These are source/reference files **not imported into any component**.
 Production-ready copies live in `public/brand/`.
@@ -167,7 +167,7 @@ Production-ready copies live in `public/brand/`.
 
 ---
 
-## Section 8 — `public/` Root — Duplicate Files
+## Section 8 - `public/` Root - Duplicate Files
 
 The following brand files exist **both** at `public/` root AND in `public/brand/`. The canonical versions are in `public/brand/`. The root copies are legacy duplicates:
 
@@ -187,7 +187,7 @@ The following brand files exist **both** at `public/` root AND in `public/brand/
 
 ---
 
-## Section 9 — Component to Asset Map
+## Section 9 - Component to Asset Map
 
 | Component | Assets Used |
 |---|---|
@@ -208,12 +208,12 @@ The following brand files exist **both** at `public/` root AND in `public/brand/
 
 ---
 
-## Section 10 — Prioritized Action Items
+## Section 10 - Prioritized Action Items
 
 | Priority | Item |
 |---|---|
-| 🔴 **High** | Compress `Bg.jpg` — 2.5 MB → target < 200 KB as WebP |
-| 🔴 **High** | Compress `Amolkadam-1.png` — 2.25 MB → target < 300 KB as WebP |
+| 🔴 **High** | Compress `Bg.jpg` - 2.5 MB → target < 200 KB as WebP |
+| 🔴 **High** | Compress `Amolkadam-1.png` - 2.25 MB → target < 300 KB as WebP |
 | 🟡 **Medium** | Remove 11 duplicate brand files from `public/` root (keep `public/brand/` copies) |
 | 🟡 **Medium** | Delete unused `Amol-kadam/amol_pic.jfif` |
 | 🟡 **Medium** | Remove unused `images.blog.seoGuidePune` static import (or use it in a blog component) |

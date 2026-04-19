@@ -2,21 +2,21 @@ import nodemailer from "nodemailer";
 
 // ─── Brand Constants ───────────────────────────────────────────────────────────
 const BRAND = {
-  name:    "Growthik Media",
+  name: "Growthik Media",
   tagline: "Scale Your Business with AI & Data",
   website: "https://www.growthikmedia.com",
-  email:   "info@growthikmedia.com",
-  phone:   "+91 80557 54054",
+  email: "info@growthikmedia.com",
+  phone: "+91 80557 54054",
   address: "Warje, Pune, Maharashtra 411058, India",
-  year:    new Date().getFullYear(),
-  color:   "#D90B1C",
+  year: new Date().getFullYear(),
+  color: "#D90B1C",
   colorDark: "#A3081A",
   social: [
-    { label: "Instagram", url: "https://instagram.com/growthikmedia",        icon: "https://img.icons8.com/fluent/48/000000/instagram-new.png" },
-    { label: "LinkedIn",  url: "https://linkedin.com/company/growthikmedia",  icon: "https://img.icons8.com/color/48/000000/linkedin.png" },
-    { label: "YouTube",   url: "https://youtube.com/@growthikmedia",          icon: "https://img.icons8.com/color/48/000000/youtube-play.png" },
-    { label: "Facebook",  url: "https://facebook.com/growthikmedia",          icon: "https://img.icons8.com/color/48/000000/facebook-new.png" },
-    { label: "WhatsApp",  url: "https://wa.me/918055754054",                  icon: "https://img.icons8.com/color/48/000000/whatsapp--v1.png" },
+    { label: "Instagram", url: "https://instagram.com/growthikmedia", icon: "https://img.icons8.com/fluent/48/000000/instagram-new.png" },
+    { label: "LinkedIn", url: "https://linkedin.com/company/growthikmedia", icon: "https://img.icons8.com/color/48/000000/linkedin.png" },
+    { label: "YouTube", url: "https://youtube.com/@growthikmedia", icon: "https://img.icons8.com/color/48/000000/youtube-play.png" },
+    { label: "Facebook", url: "https://facebook.com/growthikmedia", icon: "https://img.icons8.com/color/48/000000/facebook-new.png" },
+    { label: "WhatsApp", url: "https://wa.me/918055754054", icon: "https://img.icons8.com/color/48/000000/whatsapp--v1.png" },
   ],
 };
 
@@ -149,7 +149,7 @@ function wrapEmailShell(innerHtml: string, previewText = ""): string {
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 export const getSenderEmail = () => process.env.EMAIL_USER || "info@growthikmedia.com";
-export const getSender      = () => `"Growthik Media" <${getSenderEmail()}>`;
+export const getSender = () => `"Growthik Media" <${getSenderEmail()}>`;
 
 export const TEAM_EMAILS = [
   "info@growthikmedia.com",
@@ -159,8 +159,8 @@ export const TEAM_EMAILS = [
 
 // ─── Transporter ───────────────────────────────────────────────────────────────
 export const transporter = nodemailer.createTransport({
-  host:   "smtp.gmail.com",
-  port:   465,
+  host: "smtp.gmail.com",
+  port: 465,
   secure: true,
   auth: {
     user: process.env.EMAIL_USER,
@@ -177,12 +177,12 @@ export async function sendEmail({
   replyTo,
   bcc,
 }: {
-  to:       string | string[];
-  subject:  string;
-  html:     string;
-  text?:    string;
+  to: string | string[];
+  subject: string;
+  html: string;
+  text?: string;
   replyTo?: string;
-  bcc?:     string | string[];
+  bcc?: string | string[];
 }) {
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     console.error("❌ CRITICAL: EMAIL_USER or EMAIL_PASS not set!");
@@ -193,12 +193,12 @@ export async function sendEmail({
 
   try {
     const info = await transporter.sendMail({
-      from:    getSender(),
+      from: getSender(),
       to,
       bcc,
       subject: subject.trim(),
       html,
-      text:    plainText,
+      text: plainText,
       replyTo: replyTo || getSenderEmail(),
     });
     console.log(`✅ Email sent to ${Array.isArray(to) ? to.join(", ") : to} | ID: ${info.messageId}`);
@@ -217,27 +217,27 @@ export async function sendUnifiedEmail({
   adminData,
   userSubject = "We've received your enquiry | Growthik Media",
 }: {
-  userEmail:    string;
-  userName:     string;
+  userEmail: string;
+  userName: string;
   adminSubject: string;
-  adminData:    any;
+  adminData: any;
   userSubject?: string;
 }) {
   console.log(`📩 Unified email sequence for: ${userName} (${userEmail})`);
 
   const [userResult, adminResult] = await Promise.all([
-    sendEmail({ to: userEmail,    subject: userSubject,    html: getUserAutoReplyHTML(userName) }),
-    sendEmail({ to: TEAM_EMAILS,  subject: adminSubject,   html: getAdminNotificationHTML(adminData), replyTo: userEmail }),
+    sendEmail({ to: userEmail, subject: userSubject, html: getUserAutoReplyHTML(userName) }),
+    sendEmail({ to: TEAM_EMAILS, subject: adminSubject, html: getAdminNotificationHTML(adminData), replyTo: userEmail }),
   ]);
 
-  if (!userResult.success)  console.error("❌ User email failed:", userResult.error);
+  if (!userResult.success) console.error("❌ User email failed:", userResult.error);
   if (!adminResult.success) console.error("❌ Admin email failed:", adminResult.error);
 
   return { userResult, adminResult };
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// TEMPLATE 1 — User Auto-Reply (sent to the person who submitted the form)
+// TEMPLATE 1 - User Auto-Reply (sent to the person who submitted the form)
 // ═══════════════════════════════════════════════════════════════════════════════
 export function getUserAutoReplyHTML(name: string): string {
   const inner = `
@@ -289,12 +289,12 @@ export function getUserAutoReplyHTML(name: string): string {
                   font-family:Arial,sans-serif;">Here's what you can expect:</p>
         <table width="100%" cellpadding="0" cellspacing="0" border="0">
           ${[
-            ["01", "Strategy Call", "We'll understand your goals and business needs in depth."],
-            ["02", "Custom Plan",   "Receive a tailored digital marketing roadmap built for you."],
-            ["03", "Grow Fast",     "Execute the plan and start seeing measurable results."],
-          ]
-            .map(
-              ([num, title, desc]) => `
+      ["01", "Strategy Call", "We'll understand your goals and business needs in depth."],
+      ["02", "Custom Plan", "Receive a tailored digital marketing roadmap built for you."],
+      ["03", "Grow Fast", "Execute the plan and start seeing measurable results."],
+    ]
+      .map(
+        ([num, title, desc]) => `
             <tr>
               <td style="padding:8px 0;">
                 <table cellpadding="0" cellspacing="0" border="0">
@@ -307,14 +307,14 @@ export function getUserAutoReplyHTML(name: string): string {
                     </td>
                     <td style="padding-left:14px;vertical-align:middle;">
                       <strong style="font-size:13px;color:#000000;font-family:Arial,sans-serif;">${title}</strong>
-                      <span style="font-size:12px;color:#555555;font-family:Arial,sans-serif;"> — ${desc}</span>
+                      <span style="font-size:12px;color:#555555;font-family:Arial,sans-serif;"> - ${desc}</span>
                     </td>
                   </tr>
                 </table>
               </td>
             </tr>`
-            )
-            .join("")}
+      )
+      .join("")}
         </table>
       </td>
     </tr>
@@ -332,7 +332,7 @@ export function getUserAutoReplyHTML(name: string): string {
               </p>
               <p style="margin:8px 0 0;font-size:11px;font-weight:700;color:#D90B1C;
                          font-family:Arial,sans-serif;letter-spacing:0.5px;">
-                — Growthik Media Team
+                - Growthik Media Team
               </p>
             </td>
           </tr>
@@ -363,7 +363,7 @@ export function getUserAutoReplyHTML(name: string): string {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// TEMPLATE 2 — Admin Lead Notification (sent to team when a form is submitted)
+// TEMPLATE 2 - Admin Lead Notification (sent to team when a form is submitted)
 // ═══════════════════════════════════════════════════════════════════════════════
 export function getAdminNotificationHTML(data: any): string {
   const excludeKeys = new Set(["subject", "message"]);
@@ -463,7 +463,7 @@ export function getAdminNotificationHTML(data: any): string {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// TEMPLATE 3 — Admin Reply to Lead (used in reply-email route)
+// TEMPLATE 3 - Admin Reply to Lead (used in reply-email route)
 // ═══════════════════════════════════════════════════════════════════════════════
 export function getAdminReplyHTML(bodyText: string): string {
   const inner = `
@@ -509,11 +509,11 @@ export function getAdminReplyHTML(bodyText: string): string {
   return wrapEmailShell(inner, "A response from Growthik Media regarding your inquiry.");
 }
 // ═══════════════════════════════════════════════════════════════════════════════
-// TEMPLATE 4 — Review Thank You (sent when a Google review is processed)
+// TEMPLATE 4 - Review Thank You (sent when a Google review is processed)
 // ═══════════════════════════════════════════════════════════════════════════════
 export function getReviewThankYouHTML(name: string, rating: string, reply: string): string {
   const stars = "★".repeat(parseInt(rating) || 5) + "☆".repeat(5 - (parseInt(rating) || 5));
-  
+
   const inner = `
     <!-- Greeting -->
     <tr>

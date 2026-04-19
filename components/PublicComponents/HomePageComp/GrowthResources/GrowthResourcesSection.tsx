@@ -57,7 +57,7 @@ const GrowthResourcesSection = () => {
           <p className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-3xl mx-auto">
             Knowledge is power. Access our library of actionable growth
             resources designed specifically for Pune businesses looking to
-            dominate their digital space.
+            improve their digital presence.
           </p>
         </div>
 
@@ -104,7 +104,7 @@ const GrowthResourcesSection = () => {
           data-aos="fade-up"
         >
           <p className="text-base md:text-lg text-(--text-secondary) leading-relaxed mb-6">
-            Our blog features in-depth case studies, industry benchmarksand
+            Our blog features in-depth case studies, industry benchmarks and
             proven frameworks used by top-performing brands. Whether you're
             exploring{" "}
             <Link

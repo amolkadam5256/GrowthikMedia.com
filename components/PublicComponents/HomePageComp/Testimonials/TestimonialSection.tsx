@@ -17,7 +17,7 @@ const TESTIMONIALS = [
     company: "Heritage Furnishings",
     city: "Pune",
     rating: 5,
-    text: "As the top Digital Marketing Company in Pune, they didn't just manage our ads; they re-engineered our entire sales funnel. Our organic leads grew by 3x within 6 months and the ROI on our performance marketing has never been better. Truly growth marketing experts!",
+    text: "We came in with a broken ads account and almost no organic traffic. Six months later our leads tripled and our cost per lead dropped significantly. These guys don't just run campaigns - they actually care about your results.",
     metrics: "300% Growth in Leads",
     avatar: "/testimonials/rajesh.png",
   },
@@ -27,7 +27,7 @@ const TESTIMONIALS = [
     company: "TechNova Solutions",
     city: "Mumbai / Pune",
     rating: 5,
-    text: "We were looking for the best SEO Agency in Pune to dominate international markets. Their technical SEO audit was eye-opening. They fixed issues we didn't even know existed, leading to a 150% increase in high-intent keyword rankings. Highly recommended.",
+    text: "Their technical SEO audit was seriously eye-opening - they found issues we had no idea existed. Within a few months our keyword rankings improved by over 150% and we started getting inbound traffic we never had before. Highly recommended.",
     metrics: "150% Increase in SEO Traffic",
     avatar: "/testimonials/sneha.png",
   },
@@ -37,7 +37,7 @@ const TESTIMONIALS = [
     company: "Global Edunext",
     city: "Pune",
     rating: 5,
-    text: "Partnering with this team transformed our student enrollment process. Their content strategy and video funnels created a high-trust environment before clients even spoke to us. They are more than just an agency; they are strategic growth partners.",
+    text: "Our enrollment numbers went up and our cost per lead dropped by 45%. What I appreciated most was their content strategy - students were already familiar with us before they even contacted our team. Made our sales process so much easier.",
     metrics: "45% Lower CPL",
     avatar: "/testimonials/amit.png",
   },
@@ -47,7 +47,7 @@ const TESTIMONIALS = [
     company: "Vibe E-commerce",
     city: "Pune",
     rating: 5,
-    text: "The aggressive scaling they achieved for our D2C brand was incredible. We went from ₹5 Lakh to ₹25 Lakh monthly ad spend while improving our ROAS from 2.5 to 4.2. They truly understand the pulse of performance marketing in Pune.",
+    text: "We scaled from ₹5L to ₹25L in monthly ad spend and our ROAS actually improved from 2.5 to 4.2 along the way. I was honestly nervous about scaling that fast but they managed it really well. Solid team.",
     metrics: "₹20L+ Monthly Revenue Scale",
     avatar: "/testimonials/priya.png",
   },
@@ -93,7 +93,7 @@ const TestimonialSection = React.memo(() => {
               <span className="text-(--color-primary)">REAL RESULTS</span>
             </h2>
             <p className="text-lg md:text-xl text-(--text-secondary) mt-4 font-light italic max-w-2xl">
-              Don't take our word for it-listen to the results.
+              Don&apos;t take our word for it - listen to the results.
             </p>
           </div>
 
@@ -141,7 +141,7 @@ const TestimonialSection = React.memo(() => {
                     </span>
                     <div className="flex items-center gap-1.5 bg-yellow-400/10 px-3 py-1 rounded-full border border-yellow-400/20">
                       <span className="text-[10px] font-black text-yellow-600 uppercase tracking-widest">
-                        Verified Google Review
+                        Google Review
                       </span>
                     </div>
                   </div>
@@ -208,7 +208,7 @@ const TestimonialSection = React.memo(() => {
             <span className="text-(--color-primary) font-bold">
               50+ Happy Clients
             </span>{" "}
-            across Maharashtra to drive aggressive digital scale.
+            across Maharashtra to help local businesses grow.
           </p>
           <Link
             href="/portfolio"

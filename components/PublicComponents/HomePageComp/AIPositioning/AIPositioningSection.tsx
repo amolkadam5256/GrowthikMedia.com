@@ -7,21 +7,21 @@ import { Counter } from "@/components/PublicComponents/ui/GCounter";
 const aiFeatures = [
   {
     icon: Search,
-    title: "AI SEO Optimization",
+    title: "Smart SEO Tools",
     description:
-      "Our proprietary AI agents analyze search intent and semantic gaps to rank you faster than traditional SEO methods.",
+      "We use smart tools to find exactly what people are searching for, helping your site get found faster by the right customers.",
   },
   {
     icon: Zap,
-    title: "Predictive Ads Scaling",
+    title: "Smart Ads Strategy",
     description:
-      "Algorithm-driven budget allocation that predicts high-converting times and audiences, reducing your CPL by up to 45%.",
+      "We track what works best to keep your ad costs down while finding the right audience at the right time.",
   },
   {
     icon: TrendingUp,
-    title: "Conversion Intelligence",
+    title: "Understanding Your Visitors",
     description:
-      "Using AI heatmaps and user flow prediction to eliminate friction and turn more website visitors into paying customers.",
+      "We look at how people use your site to see where they get stuck, so we can make it easier for them to buy from you.",
   },
 ];
 
@@ -42,17 +42,17 @@ const AIPositioningSection = () => {
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="w-12 h-[2px] bg-(--color-primary)" />
             <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">
-              AI Marketing Authority
+              Smart Marketing
             </span>
             <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
-            AI Marketing Automation{" "}
-            <span className="text-(--color-primary)">& Intelligence</span>
+            Better Insights{" "}
+            <span className="text-(--color-primary)">& Smart Tools</span>
           </h2>
           <p className="text-(--text-secondary) text-lg leading-relaxed font-light italic max-w-3xl mx-auto">
-            &quot;Growthik Media is an AI-powered growth engineering company that
-            builds predictable revenue systems &mdash; not just marketing campaigns.&quot;
+            &quot;We don&apos;t just run ads; we build the digital infrastructure your 
+            business needs to grow reliably and stay ahead of the competition.&quot;
           </p>
         </div>
 

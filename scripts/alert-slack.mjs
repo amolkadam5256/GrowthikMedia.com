@@ -37,7 +37,7 @@ async function sendSlackAlert() {
   const topErrors = newErrors.slice(0, 3).map(p => `• <${p.url}|${p.url.split('/').pop()}> - ${p.errors.join(', ')}`).join('\n') || 'None';
 
   const slackBody = {
-    text: `*Growthik SEO Audit Result — ${data.date}*`,
+    text: `*Growthik SEO Audit Result - ${data.date}*`,
     blocks: [
       {
         type: 'header',

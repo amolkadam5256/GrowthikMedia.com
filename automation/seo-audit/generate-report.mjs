@@ -13,12 +13,12 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname  = path.dirname(__filename);
+const __dirname = path.dirname(__filename);
 
-const auditPath      = path.resolve(__dirname, '../../audit-reports');
+const auditPath = path.resolve(__dirname, '../../audit-reports');
 const latestJsonPath = path.join(auditPath, 'latest.json');
-const today          = new Date().toISOString().split('T')[0];
-const todayHtmlPath  = path.join(auditPath, `report-${today}.html`);
+const today = new Date().toISOString().split('T')[0];
+const todayHtmlPath = path.join(auditPath, `report-${today}.html`);
 
 if (!fs.existsSync(latestJsonPath)) {
   console.error('❌ latest.json not found. Run the crawler first.');
@@ -29,30 +29,30 @@ const data = JSON.parse(fs.readFileSync(latestJsonPath, 'utf8'));
 
 // ── Brand constants ────────────────────────────────────────────────────────────
 const BRAND = {
-  name:        'Growthik Media',
-  website:     'https://www.growthikmedia.com',
-  email:       'info@growthikmedia.com',
-  phone:       '+91 80557 54054',
-  address:     'Warje, Pune, Maharashtra 411058, India',
+  name: 'Growthik Media',
+  website: 'https://www.growthikmedia.com',
+  email: 'info@growthikmedia.com',
+  phone: '+91 80557 54054',
+  address: 'Warje, Pune, Maharashtra 411058, India',
   gradientStart: '#D90B1C',
-  gradientEnd:   '#F22E52',
+  gradientEnd: '#F22E52',
   social: {
-    facebook:  { url: 'https://facebook.com/growthikmedia',           label: 'Facebook',  color: '#1877F2', icon: 'f' },
-    instagram: { url: 'https://instagram.com/growthikmedia',          label: 'Instagram', color: '#E1306C', icon: 'in' },
-    twitter:   { url: 'https://twitter.com/growthikmedia',            label: 'X/Twitter', color: '#000000', icon: 'X' },
-    linkedin:  { url: 'https://linkedin.com/company/growthikmedia',   label: 'LinkedIn',  color: '#0A66C2', icon: 'li' },
-    youtube:   { url: 'https://youtube.com/@growthikmedia',           label: 'YouTube',   color: '#FF0000', icon: '▶' },
-    whatsapp:  { url: 'https://wa.me/918055754054',                   label: 'WhatsApp',  color: '#25D366', icon: 'W' },
-    telegram:  { url: 'https://t.me/growthikmedia',                   label: 'Telegram',  color: '#26A5E4', icon: '✈' },
-    pinterest: { url: 'https://pinterest.com/growthikmedia',          label: 'Pinterest', color: '#E60023', icon: 'P' },
-    medium:    { url: 'https://medium.com/@growthikmedia',            label: 'Medium',    color: '#000000', icon: 'M' },
-    github:    { url: 'https://github.com/growthikmedia',             label: 'GitHub',    color: '#181717', icon: 'G' },
-    discord:   { url: 'https://discord.gg/growthikmedia',             label: 'Discord',   color: '#5865F2', icon: 'D' },
-    dribbble:  { url: 'https://dribbble.com/growthikmedia',           label: 'Dribbble',  color: '#EA4C89', icon: 'dr' },
-    behance:   { url: 'https://behance.net/growthikmedia',            label: 'Behance',   color: '#1769FF', icon: 'Be' },
-    reddit:    { url: 'https://reddit.com/user/growthikmedia',        label: 'Reddit',    color: '#FF4500', icon: 'R' },
-    quora:     { url: 'https://www.quora.com/profile/growthikmedia',  label: 'Quora',     color: '#B92B27', icon: 'Q' },
-    snapchat:  { url: 'https://snapchat.com/add/growthikmedia',       label: 'Snapchat',  color: '#FFFC00', icon: '👻' },
+    facebook: { url: 'https://facebook.com/growthikmedia', label: 'Facebook', color: '#1877F2', icon: 'f' },
+    instagram: { url: 'https://instagram.com/growthikmedia', label: 'Instagram', color: '#E1306C', icon: 'in' },
+    twitter: { url: 'https://twitter.com/growthikmedia', label: 'X/Twitter', color: '#000000', icon: 'X' },
+    linkedin: { url: 'https://linkedin.com/company/growthikmedia', label: 'LinkedIn', color: '#0A66C2', icon: 'li' },
+    youtube: { url: 'https://youtube.com/@growthikmedia', label: 'YouTube', color: '#FF0000', icon: '▶' },
+    whatsapp: { url: 'https://wa.me/918055754054', label: 'WhatsApp', color: '#25D366', icon: 'W' },
+    telegram: { url: 'https://t.me/growthikmedia', label: 'Telegram', color: '#26A5E4', icon: '✈' },
+    pinterest: { url: 'https://pinterest.com/growthikmedia', label: 'Pinterest', color: '#E60023', icon: 'P' },
+    medium: { url: 'https://medium.com/@growthikmedia', label: 'Medium', color: '#000000', icon: 'M' },
+    github: { url: 'https://github.com/growthikmedia', label: 'GitHub', color: '#181717', icon: 'G' },
+    discord: { url: 'https://discord.gg/growthikmedia', label: 'Discord', color: '#5865F2', icon: 'D' },
+    dribbble: { url: 'https://dribbble.com/growthikmedia', label: 'Dribbble', color: '#EA4C89', icon: 'dr' },
+    behance: { url: 'https://behance.net/growthikmedia', label: 'Behance', color: '#1769FF', icon: 'Be' },
+    reddit: { url: 'https://reddit.com/user/growthikmedia', label: 'Reddit', color: '#FF4500', icon: 'R' },
+    quora: { url: 'https://www.quora.com/profile/growthikmedia', label: 'Quora', color: '#B92B27', icon: 'Q' },
+    snapchat: { url: 'https://snapchat.com/add/growthikmedia', label: 'Snapchat', color: '#FFFC00', icon: '👻' },
   }
 };
 
@@ -64,12 +64,12 @@ const generateHtml = (data) => {
   // Score colour thresholds
   const scoreColor =
     summary.healthScore >= 90 ? '#10b981' :
-    summary.healthScore >= 75 ? '#f59e0b' : '#ef4444';
+      summary.healthScore >= 75 ? '#f59e0b' : '#ef4444';
 
   const scoreLabel =
     summary.healthScore >= 90 ? '🟢 Excellent' :
-    summary.healthScore >= 75 ? '🟡 Good'      :
-    summary.healthScore >= 60 ? '🟠 Fair'      : '🔴 Critical';
+      summary.healthScore >= 75 ? '🟡 Good' :
+        summary.healthScore >= 60 ? '🟠 Fair' : '🔴 Critical';
 
   // Trend sparkline bars
   const trendBars = trend.length > 1
@@ -78,7 +78,7 @@ const generateHtml = (data) => {
           <div style="width:12px;height:${Math.max(4, Math.round(t * 0.4))}px;
                       background:${i === trend.length - 1 ? scoreColor : '#dde2ea'};
                       border-radius:3px 3px 0 0;"
-               title="${t}% — Week ${i + 1}"></div>
+               title="${t}% - Week ${i + 1}"></div>
         </td>`).join('')
     : '';
 
@@ -109,9 +109,9 @@ const generateHtml = (data) => {
         ${p.warnings.map(w => `<span style="display:inline-block;margin:2px;background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600;">${w}</span>`).join('')}
       </td>
       <td style="padding:14px 12px;text-align:center;white-space:nowrap;font-size:11px;width:80px;">
-        ${p.newIssues?.length   ? `<span style="color:#ef4444;font-weight:700;">+${p.newIssues.length} New</span><br>` : ''}
+        ${p.newIssues?.length ? `<span style="color:#ef4444;font-weight:700;">+${p.newIssues.length} New</span><br>` : ''}
         ${p.fixedIssues?.length ? `<span style="color:#10b981;font-weight:700;">-${p.fixedIssues.length} Fixed</span>` : ''}
-        ${!p.newIssues?.length && !p.fixedIssues?.length ? `<span style="color:#cbd5e1;">—</span>` : ''}
+        ${!p.newIssues?.length && !p.fixedIssues?.length ? `<span style="color:#cbd5e1;">-</span>` : ''}
       </td>
     </tr>`;
   }).join('');
@@ -133,8 +133,8 @@ const generateHtml = (data) => {
   const trendText = trendDelta > 0
     ? `<span style="color:#10b981;">▲ ${trendDelta}% vs last week</span>`
     : trendDelta < 0
-    ? `<span style="color:#ef4444;">▼ ${Math.abs(trendDelta)}% vs last week</span>`
-    : `<span style="color:#64748b;">→ No change vs last week</span>`;
+      ? `<span style="color:#ef4444;">▼ ${Math.abs(trendDelta)}% vs last week</span>`
+      : `<span style="color:#64748b;">→ No change vs last week</span>`;
 
   return `<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -142,7 +142,7 @@ const generateHtml = (data) => {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SEO Audit Report — growthikmedia.com | ${date}</title>
+  <title>SEO Audit Report - growthikmedia.com | ${date}</title>
   <!--[if mso]>
   <noscript>
     <xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml>
@@ -248,13 +248,13 @@ const generateHtml = (data) => {
         <table width="100%" cellpadding="0" cellspacing="0" border="0" class="stat-row">
           <tr>
             ${[
-              { label: 'Pages Crawled', value: summary.total,    bg: '#f8fafc', color: '#334155', border: '#e2e8f0' },
-              { label: 'Healthy',       value: summary.healthy,  bg: '#ecfdf5', color: '#059669', border: '#a7f3d0' },
-              { label: 'Warnings',      value: summary.warnings, bg: '#fffbeb', color: '#d97706', border: '#fde68a' },
-              { label: 'Errors',        value: summary.errors,   bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
-              { label: '↑ New Issues',  value: `+${summary.new}`,   bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
-              { label: '✓ Fixed',       value: `-${summary.fixed}`, bg: '#ecfdf5', color: '#059669', border: '#a7f3d0' },
-            ].map(s => `
+      { label: 'Pages Crawled', value: summary.total, bg: '#f8fafc', color: '#334155', border: '#e2e8f0' },
+      { label: 'Healthy', value: summary.healthy, bg: '#ecfdf5', color: '#059669', border: '#a7f3d0' },
+      { label: 'Warnings', value: summary.warnings, bg: '#fffbeb', color: '#d97706', border: '#fde68a' },
+      { label: 'Errors', value: summary.errors, bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
+      { label: '↑ New Issues', value: `+${summary.new}`, bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
+      { label: '✓ Fixed', value: `-${summary.fixed}`, bg: '#ecfdf5', color: '#059669', border: '#a7f3d0' },
+    ].map(s => `
               <td class="stat-cell" style="padding:6px 5px;width:16.66%;vertical-align:top;">
                 <div style="background:${s.bg};border:1px solid ${s.border};border-radius:10px;padding:14px 8px;text-align:center;">
                   <div style="font-size:26px;font-weight:900;color:${s.color};font-family:Arial,sans-serif;line-height:1.1;">
@@ -372,7 +372,7 @@ const generateHtml = (data) => {
         <div style="font-size:11px;color:#94a3b8;font-family:Arial,sans-serif;line-height:2;">
           <a href="mailto:${BRAND.email}" style="color:#f87171;text-decoration:none;">✉ ${BRAND.email}</a>
           &nbsp;&nbsp;|&nbsp;&nbsp;
-          <a href="tel:${BRAND.phone.replace(/\s/g,'')}" style="color:#94a3b8;text-decoration:none;">📞 ${BRAND.phone}</a>
+          <a href="tel:${BRAND.phone.replace(/\s/g, '')}" style="color:#94a3b8;text-decoration:none;">📞 ${BRAND.phone}</a>
           &nbsp;&nbsp;|&nbsp;&nbsp;
           <span>📍 ${BRAND.address}</span>
         </div>

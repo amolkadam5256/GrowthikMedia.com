@@ -28,7 +28,7 @@ const AboutCompanySection = React.memo(() => {
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="w-12 h-[2px] bg-(--color-primary)" />
               <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-xs">
-                Our Heritage
+                Our Story
               </span>
               <div className="w-12 h-[2px] bg-(--color-primary)" />
             </div>
@@ -71,26 +71,24 @@ const AboutCompanySection = React.memo(() => {
 
             <div className="relative space-y-6 text-center">
               <p className="text-xl md:text-2xl text-(--text-primary) font-semibold leading-relaxed">
-                Growthik Media is the leading{" "}
+                Growthik Media is a{" "}
                 <span className="text-(--color-primary) font-black">
-                  AI-powered digital marketing agency in Pune
+                  Pune-based digital marketing agency
                 </span>{" "}
-                focused on building predictable revenue systems for high-growth
-                brands.
+                that helps businesses grow online - through SEO that ranks, ads that convert, and websites that bring in real leads.
               </p>
 
               <div className="w-20 h-1 bg-(--color-primary) mx-auto" />
 
               <div className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-3xl mx-auto space-y-4">
                 <p>
-                  <strong className="text-(--text-primary)">What is digital marketing?</strong> At its core, it&apos;s about using 
-                  data-driven strategies like <Link href="/services/seo" className="text-(--color-primary) font-bold hover:underline">SEO</Link> and <Link href="/services/ppc-google-ads" className="text-(--color-primary) font-bold hover:underline">performance ads</Link> to reach your ideal audience. 
-                  Based in <span className="font-bold text-(--text-primary)">Pune (serving Baner, Wakad, and Hinjewadi)</span>, 
-                  we help brands dominate their market through technical precision and AI-powered growth engineering.
+                  Digital marketing done right means being in front of the right people at the right time. We use{" "}
+                  <Link href="/services/seo" className="text-(--color-primary) font-bold hover:underline">SEO</Link>,{" "}
+                  <Link href="/services/ppc-google-ads" className="text-(--color-primary) font-bold hover:underline">Google Ads</Link>, and smart content to do exactly that - for businesses in{" "}
+                  <span className="font-bold text-(--text-primary)">Baner, Wakad, Hinjewadi</span>, and across Pune.
                 </p>
                 <p>
-                  As the <strong className="text-(--text-primary)">best SEO agency in Pune</strong>, we focus on 
-                  measurable results, ensuring your business ranks #1 and converts traffic into customers.
+                  As one of <strong className="text-(--text-primary)">Pune&apos;s top-rated SEO agencies</strong>, our goal is simple - more traffic, better leads, and real sales. Not just rankings.
                 </p>
               </div>
             </div>
@@ -103,7 +101,7 @@ const AboutCompanySection = React.memo(() => {
           >
             <div className="flex items-center gap-3 px-6 py-3 bg-(--surface) border border-(--border) rounded-full hover:border-(--color-primary) transition-all">
               <span className="text-sm font-bold text-(--text-secondary)">
-                Pune Digital Marketing Experts
+                Digital Marketing in Pune
               </span>
             </div>
 

@@ -86,11 +86,11 @@ export default function ContactForm() {
 
       <div className="relative z-10">
         <h2 className="text-3xl sm:text-4xl font-black text-(--text-primary) uppercase tracking-tight mb-4 inline-block">
-          Send a <span className="text-red-600">Message</span>
+          Start Your <span className="text-red-600">Growth Journey</span>
         </h2>
         <p className="text-(--text-secondary) mb-10 text-lg font-medium">
-          Fill out the form below and our growth experts will get back to you
-          shortly.
+          Fill out the form below and our digital marketing experts in Pune will
+          get back to you within 24 hours.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">

@@ -81,10 +81,10 @@ export async function sendOTPEmail(email: string, otp: string) {
     .join("");
 
   const socialLinks = [
-    { label: "Instagram", url: "https://instagram.com/growthikmedia",        icon: '<img src="https://img.icons8.com/color/48/instagram-new--v1.png" width="24" height="24" alt="Instagram" style="display:block;border:0" />' },
-    { label: "LinkedIn",  url: "https://linkedin.com/company/growthikmedia", icon: '<img src="https://img.icons8.com/color/48/linkedin.png" width="24" height="24" alt="LinkedIn" style="display:block;border:0" />' },
-    { label: "YouTube",   url: "https://youtube.com/@growthikmedia",         icon: '<img src="https://img.icons8.com/color/48/youtube-play.png" width="24" height="24" alt="YouTube" style="display:block;border:0" />' },
-    { label: "Website",   url: "https://www.growthikmedia.com",              icon: '<img src="https://img.icons8.com/color/48/domain--v1.png" width="24" height="24" alt="Website" style="display:block;border:0" />' },
+    { label: "Instagram", url: "https://instagram.com/growthikmedia", icon: '<img src="https://img.icons8.com/color/48/instagram-new--v1.png" width="24" height="24" alt="Instagram" style="display:block;border:0" />' },
+    { label: "LinkedIn", url: "https://linkedin.com/company/growthikmedia", icon: '<img src="https://img.icons8.com/color/48/linkedin.png" width="24" height="24" alt="LinkedIn" style="display:block;border:0" />' },
+    { label: "YouTube", url: "https://youtube.com/@growthikmedia", icon: '<img src="https://img.icons8.com/color/48/youtube-play.png" width="24" height="24" alt="YouTube" style="display:block;border:0" />' },
+    { label: "Website", url: "https://www.growthikmedia.com", icon: '<img src="https://img.icons8.com/color/48/domain--v1.png" width="24" height="24" alt="Website" style="display:block;border:0" />' },
   ]
     .map(
       (s) =>
@@ -104,7 +104,7 @@ export async function sendOTPEmail(email: string, otp: string) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Login OTP — Growthik Media</title>
+  <title>Login OTP - Growthik Media</title>
   <style>
     @media only screen and (max-width:600px){
       .email-card { width:100% !important; border-radius:0 !important; }
@@ -228,8 +228,8 @@ export async function sendOTPEmail(email: string, otp: string) {
 
   try {
     await emailTransporter.sendMail({
-      from:    process.env.EMAIL_FROM || `"Growthik Media" <noreply@growthikmedia.com>`,
-      to:      email,
+      from: process.env.EMAIL_FROM || `"Growthik Media" <noreply@growthikmedia.com>`,
+      to: email,
       subject: "Security Login OTP - Growthik Media",
       html,
     });

@@ -33,7 +33,7 @@ const OurServicesSection = React.memo(() => {
                 color: "var(--color-primary)",
               }}
             >
-              Excellence at Scale
+              What We Do Best
             </span>
             <div
               className="h-px w-16 transition-all duration-500"
@@ -50,7 +50,7 @@ const OurServicesSection = React.memo(() => {
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            Growth-Focused <br /> <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">Digital Solutions</span>
+            Digital Marketing & Web Services <br /> <span style={{ color: "var(--color-primary)" }}>in Pune</span>
           </h2>
 
           <div
@@ -73,7 +73,7 @@ const OurServicesSection = React.memo(() => {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            From brand identity to technical SEO and enterprise web systems, we provide the full stack of services required for market dominance in Pune.
+             SEO, Google Ads, social media, branding, and websites - everything your Pune business needs to grow online, handled in one place.
           </p>
         </header>
 
@@ -105,10 +105,10 @@ const OurServicesSection = React.memo(() => {
             }}
           >
             {[
-              { number: "20+", label: "Projects Completed" },
+              { number: "50+", label: "Projects Completed" },
               { number: "50+", label: "Happy Clients" },
               { number: "10+", label: "Team Members" },
-              { number: "5+", label: "Years Experience" },
+              { number: "6+", label: "Years Experience" },
             ].map((stat, index) => (
               <li
                 key={index}

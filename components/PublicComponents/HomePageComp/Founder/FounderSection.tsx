@@ -80,12 +80,12 @@ const FounderSection = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-[2px] bg-(--color-primary)" />
               <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-xs">
-                The Visionary
+                Meet the Founder
               </span>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-4 leading-none">
-              Meet the Growth Strategist <br />
+              Meet the Person <br />
               <span className="text-(--color-primary)">Behind Growthik</span>
             </h2>
 
@@ -96,9 +96,7 @@ const FounderSection = () => {
             </div>
 
             <p className="text-xl text-(--text-secondary) leading-relaxed mb-10 font-medium italic border-l-4 border-(--color-primary) pl-6">
-              &quot;Architecting high-performance digital engines for high-growth
-              brands. I bridge the gap between complex code and ROI-driven
-              marketing.&quot;
+              &quot;I started Growthik because I was tired of agencies that charge a lot and deliver very little. We track revenue, not just traffic - and we treat every client&apos;s business like it&apos;s our own.&quot;
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -111,8 +109,7 @@ const FounderSection = () => {
                   Full Stack Developer
                 </h4>
                 <p className="text-[10px] text-(--text-secondary) leading-relaxed">
-                  Specializing in Next.js, React and robust backend
-                  architectures to build scalable web platforms.
+                  Building fast websites and web apps in Next.js and React - the kind that actually convert visitors into customers.
                 </p>
               </div>
 
@@ -125,8 +122,7 @@ const FounderSection = () => {
                   Digital Marketing Strategy
                 </h4>
                 <p className="text-[10px] text-(--text-secondary) leading-relaxed">
-                  Leveraging data-driven insights to scale customer acquisition
-                  and maximize digital ROI.
+                  Running SEO and Google Ads campaigns that bring in real leads - not just impressions and clicks.
                 </p>
               </div>
             </div>
@@ -135,13 +131,13 @@ const FounderSection = () => {
               <Briefcase className="w-5 h-5 text-(--color-primary)" />
               <div>
                 <span className="block text-[10px] uppercase tracking-[0.2em] font-bold text-(--text-secondary)">
-                  Experience Authority
+                  Experience
                 </span>
                 <span className="text-lg font-black text-(--text-primary)">
                   <Counter
                     value={2.5}
                     decimals={1}
-                    suffix="+ Years of Digital Excellence"
+                    suffix="+ Years in Digital Marketing"
                   />
                 </span>
               </div>

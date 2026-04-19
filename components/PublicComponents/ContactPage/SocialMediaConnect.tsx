@@ -9,9 +9,12 @@ export default function SocialMediaConnect() {
     <div className="rounded-3xl bg-(--surface) p-8 sm:p-10 border border-(--border) text-center shadow-xl transition-all group overflow-hidden relative">
       <div className="absolute inset-0 bg-linear-to-br from-red-600/5 to-transparent pointer-events-none"></div>
       
-      <h2 className="text-2xl font-black text-(--text-primary) mb-8 uppercase tracking-widest relative z-10">
-        Connect<span className="text-red-600">.</span>
+      <h2 className="text-2xl font-black text-(--text-primary) mb-4 uppercase tracking-widest relative z-10">
+        Connect With Our <span className="text-red-600">Team</span>
       </h2>
+      <p className="text-(--text-secondary) text-xs font-medium mb-8 relative z-10">
+        Follow Growthik Media for digital marketing tips &amp; updates.
+      </p>
       <div className="flex justify-center flex-wrap gap-6 relative z-10">
         {[
           {

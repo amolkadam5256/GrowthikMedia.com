@@ -15,7 +15,7 @@ const magnets = [
     description: (
       <>
         The exact <Counter value={45} suffix="-point checklist" /> we use to
-        rank our clients #1 on Google Pune. Complete technical and on-page
+        improve rankings for our clients on Google Pune. Complete technical and on-page
         guide.
       </>
     ),
@@ -29,7 +29,7 @@ const magnets = [
     title: "Free Ads Audit PDF",
     description:
       "Identify why your Google or Meta Ads aren&apos;t converting. Get actionable fixes for your local Pune business.",
-    cta: "Get Free Audit",
+    cta: "Request Free Audit",
     color: "from-(--color-primary)/10 to-(--color-primary-light)/5",
     iconColor: "text-(--color-primary)",
   },
@@ -70,8 +70,7 @@ const LeadMagnetSection = () => {
             <span className="text-(--color-primary)">Growth Resources</span>
           </h2>
           <p className="text-lg text-(--text-secondary) max-w-2xl mx-auto leading-relaxed">
-            Stop guessing and start growing. Access the internal toolkits and
-            checklists our team uses to dominate search results in Pune.
+            The same checklists and tools our team uses on every client campaign - now free for you to use in your business.
           </p>
         </div>
 
@@ -103,11 +102,11 @@ const LeadMagnetSection = () => {
                 </p>
 
                 <Link href="/contact" className="w-full">
-                  <Button
+                    <Button
                     variant="outline"
                     className="w-full flex items-center justify-center gap-2 font-black uppercase tracking-widest text-xs py-5 border-2 border-(--color-primary)! text-(--color-primary)! hover:bg-(--color-primary)! hover:text-white! transition-all duration-300 rounded-full!"
                   >
-                    {magnet.cta}
+                    {idx === 0 ? "Request Guide" : magnet.cta}
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>

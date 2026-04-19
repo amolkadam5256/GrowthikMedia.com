@@ -13,13 +13,13 @@ export default function PortfolioManager() {
       id: 1,
       title: "E-commerce Redesign",
       category: "Web Design",
-      image: "/portfolio/1.jpg",
+      image: "/images/portfolio/1.jpg",
     },
     {
       id: 2,
       title: "Social Media Campaign",
       category: "Marketing",
-      image: "/portfolio/2.jpg",
+      image: "/images/portfolio/2.jpg",
     },
   ]);
 

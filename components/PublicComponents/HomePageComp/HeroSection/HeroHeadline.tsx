@@ -19,7 +19,7 @@ const HeroHeadline = () => {
         >
           <p className="text-xs md:text-sm font-bold tracking-wider text-white flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-(--color-primary) animate-pulse" />
-            Growthik Media: AI-Powered Growth Engineering
+            Pune's Digital Marketing Agency - Trusted Since 2019
           </p>
         </div>
 
@@ -57,12 +57,10 @@ const HeroHeadline = () => {
           className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto font-medium leading-[1.6] px-4"
           style={{ color: "var(--color-white)" }}
         >
-          Growthik Media is Pune&apos;s premier{" "}
+          We&apos;re Pune&apos;s digital marketing team helping businesses in Baner, Hinjewadi, and PCMC get more traffic, better leads, and real ROI -{" "}
           <strong className="text-(--color-primary) font-black">
-            AI-powered digital marketing agency
-          </strong>{" "}
-          building predictable revenue systems with data-driven SEO and 
-          performance marketing for brands in Baner, Hinjewadi, and PCMC.
+            through SEO, Google Ads, and websites that actually work.
+          </strong>
         </p>
 
         {/* CTA Section */}
@@ -198,7 +196,7 @@ const HeroHeadline = () => {
             fontFamily: "var(--font-caveat), cursive",
           }}
         >
-          Elevate your brand
+          Grow your business
         </p>
         <svg
           className="w-24 h-12 transform rotate-90"

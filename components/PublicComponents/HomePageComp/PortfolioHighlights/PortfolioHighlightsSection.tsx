@@ -94,8 +94,8 @@ const PortfolioHighlightsSection = React.memo(() => {
             data-aos-delay="200"
           >
             <p className="text-lg md:text-xl text-(--text-secondary) lg:text-right max-w-sm leading-relaxed font-medium italic">
-              "We create digital experiences that set new standards. Dive into
-              our latest projects."
+              "We create digital experiences that actually sell and scale. Dive into
+              our latest projects below."
             </p>
           </div>
         </div>
@@ -131,9 +131,9 @@ const PortfolioHighlightsSection = React.memo(() => {
         <div className="mt-32 pt-20 border-t border-(--border) flex flex-wrap justify-between items-center gap-12">
           <div className="flex flex-wrap gap-12 md:gap-20">
             {[
-              { val: "500+", label: "Projects Done" },
+              { val: "50+", label: "Projects Done" },
               { val: "50+", label: "Happy Clients" },
-              { val: "98%", label: "Success Rate" },
+              { val: "100%", label: "Client Commitment" },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -155,8 +155,7 @@ const PortfolioHighlightsSection = React.memo(() => {
           </div>
           <div className="max-w-sm lg:text-right" data-aos="fade-left">
             <p className="text-(--text-secondary) italic font-medium">
-              "Pushing the boundaries of what's possible in the digital space,
-              one project at a time."
+              "Focusing on performance and growth for Pune businesses, one project at a time."
             </p>
           </div>
         </div>

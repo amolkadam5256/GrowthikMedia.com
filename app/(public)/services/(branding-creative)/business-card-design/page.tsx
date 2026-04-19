@@ -74,7 +74,7 @@ export default function BusinessCardDesignPage() {
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Premium Finishes and Custom Layouts for Discerning Brands</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                A great design deserves a great finish. We go beyond basic layouts to recommend premium options like spot UV, foil stamping, embossing, and velvet-touch lamination. Our Pune design studio ensures that every element of your business card—from the paper weight to the edge-painting—reflects the quality of your services. Whether you need double-sided designs for maximum information or die-cut shapes for a unique creative identity, our experts guide you through the latest trends in the Indian corporate landscape.
+                A great design deserves a great finish. We go beyond basic layouts to recommend premium options like spot UV, foil stamping, embossing, and velvet-touch lamination. Our Pune design studio ensures that every element of your business card-from the paper weight to the edge-painting-reflects the quality of your services. Whether you need double-sided designs for maximum information or die-cut shapes for a unique creative identity, our experts guide you through the latest trends in the Indian corporate landscape.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Integrating Digital and Physical Identity</h2>

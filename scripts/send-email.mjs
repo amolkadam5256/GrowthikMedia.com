@@ -45,9 +45,9 @@ async function sendEmail() {
   // Calculate if alert prefix is needed
   const newErrors = data.pages.some(p => p.status >= 400 && p.newIssues);
   const healthDropped = data.trend && data.trend.length > 1 && (data.trend[data.trend.length - 2] - data.summary.healthScore >= 5);
-  
+
   const subjectPrefix = (newErrors || healthDropped || data.summary.healthScore < 80) ? '🔴 ALERT: ' : '🟢 ';
-  const subject = `${subjectPrefix}SEO Audit — growthikmedia.com | ${today} | Health: ${data.summary.healthScore}%`;
+  const subject = `${subjectPrefix}SEO Audit - growthikmedia.com | ${today} | Health: ${data.summary.healthScore}%`;
 
   console.log(`📧 Sending email to ${REPORT_EMAIL}...`);
 

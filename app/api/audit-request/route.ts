@@ -46,7 +46,7 @@ export async function POST(req: Request) {
         inquiry_id: inquiryId || "Not logged in DB",
         source: "Audit Request Form"
       },
-      userSubject: `Your Audit Request Form — Growthik Media`
+      userSubject: `Your Audit Request Form - Growthik Media`
     });
 
     return NextResponse.json({ success: true, message: "Audit booked! Check your email for confirmation." });

@@ -38,10 +38,10 @@ const FinalCTASection = React.memo(() => {
             className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) mb-6 tracking-tight leading-[1.1]"
             data-aos="fade-up"
           >
-            Let's Turn Your Business Into a{" "}
+            Ready to Make Digital Marketing{" "}
             <span className="relative inline-block">
               <span className="relative z-10 text-(--color-primary)">
-                Growth Machine
+                Actually Work for You?
               </span>
               <svg
                 className="absolute -bottom-2 left-0 w-full"
@@ -66,8 +66,8 @@ const FinalCTASection = React.memo(() => {
             className="text-lg md:text-xl text-(--text-secondary) mb-10 max-w-2xl mx-auto leading-relaxed"
             data-aos="fade-up"
           >
-            Book a free strategy session and discover how we can 3X your revenue
-            in the next 90 days.
+            Book a free strategy call. We&apos;ll review your current setup, find what&apos;s leaking leads,
+            and tell you exactly what we&apos;d fix first. No commitment, no fluff.
           </p>
 
           {/* CTA Buttons */}
@@ -117,7 +117,7 @@ const FinalCTASection = React.memo(() => {
               >
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>No Long-Term Contracts</span>
+              <span>No Pressure, No Fluff</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -133,7 +133,7 @@ const FinalCTASection = React.memo(() => {
               >
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>100% Transparent Reporting</span>
+              <span>100% Honest Reporting</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
@@ -149,7 +149,7 @@ const FinalCTASection = React.memo(() => {
               >
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>ROI-Focused Strategies</span>
+              <span>Results You Can Actually See</span>
             </div>
           </div>
         </div>

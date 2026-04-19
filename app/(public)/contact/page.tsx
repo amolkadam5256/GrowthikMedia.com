@@ -1,17 +1,18 @@
 import { Metadata } from "next";
 import ContactClient from "./ContactClient";
+import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Growthik Media - Get in Touch",
+  title: "Growthik Media | Book a Free Strategy Call With Our Pune Experts",
   description:
-    "Get in touch with Growthik Media for professional video production, content creation and digital marketing services. We're here to help bring your vision to life.",
+    "Ready to grow? Connect with Growthik Media—your Pune-based partner for clear, result-driven SEO, Google Ads, and high-performance websites. Let's map out your growth plan today.",
   keywords:
-    "contact growthik media, video production inquiry, content creation services, digital marketing contact, pune video production",
+    "contact digital marketing agency Pune, hire SEO agency Pune, Growthik Media contact, digital marketing consultation Pune, best digital marketing company Pune, SEO services contact Pune, Google Ads agency Pune, free digital marketing audit Pune",
   authors: [{ name: "Growthik Media" }],
   openGraph: {
-    title: "Contact Us | Growthik Media",
+    title: "Request a Digital Strategy Call | Growthik Media Pune",
     description:
-      "Get in touch with Growthik Media for professional video production and content creation services.",
+      "Ready to grow? Connect with Growthik Media—your Pune-based partner for clear, result-driven SEO, Google Ads, and high-performance websites.",
     url: "https://www.growthikmedia.com/contact/",
     siteName: "Growthik Media",
     images: [
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Contact Growthik Media",
+        alt: "Contact Growthik Media - Digital Marketing Agency Pune",
       },
     ],
     locale: "en_IN",
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us | Growthik Media",
+    title: "Contact Digital Marketing Agency in Pune | Growthik Media",
     description:
-      "Get in touch with Growthik Media for professional video production and content creation services.",
+      "Connect with Growthik Media - Pune's top digital marketing agency for SEO, Google Ads, social media & web design. Book your free strategy consultation today!",
     images: ["/og-image.png"],
     creator: "@growthikmedia",
   },
@@ -49,6 +50,91 @@ export const metadata: Metadata = {
   },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How quickly will you respond to inquiries?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our team typically responds within 12–24 hours during business days. For urgent enquiries, you can also call us directly at +91 80557 54054.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer free consultations?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, we provide a free digital marketing strategy consultation for new clients. Book your free session to get a customised growth plan for your business.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What services does Growthik Media provide?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Growthik Media offers SEO, Social Media Marketing, PPC/Google Ads, Website Development, Branding & Design, and E-Commerce Solutions to businesses across Pune and India.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you work with businesses outside Pune?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, we scale businesses across India and internationally. While we are based in Pune, our digital marketing services are available to clients in Mumbai, Delhi, Bangalore, and globally.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the cost of digital marketing services in Pune?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our digital marketing packages are customised based on your business goals, competition, and channels required. Contact us for a free consultation and we'll provide a tailored proposal.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take to see results from digital marketing?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "SEO typically shows measurable results in 3–6 months. PPC and Google Ads campaigns can deliver leads within 2–4 weeks. Social media growth depends on content strategy and ad spend.",
+      },
+    },
+  ],
+};
+
+const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact Growthik Media - Digital Marketing Agency Pune",
+  url: "https://www.growthikmedia.com/contact/",
+  description:
+    "Contact page for Growthik Media, Pune's leading digital marketing agency specialising in SEO, Google Ads, social media marketing, and web development.",
+  breadcrumb: {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.growthikmedia.com/" },
+      { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.growthikmedia.com/contact/" },
+    ],
+  },
+};
+
 export default function ContactPage() {
-  return <ContactClient />;
+  return (
+    <>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="contact-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+      <ContactClient />
+    </>
+  );
 }

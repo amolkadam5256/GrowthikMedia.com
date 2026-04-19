@@ -9,19 +9,27 @@ export default function FAQSection() {
   const faqs = [
     {
       q: "How quickly will you respond to inquiries?",
-      a: "Our team typically responds within 12–24 hours during business days.",
+      a: "Our team typically responds within 12–24 hours during business days. For urgent enquiries, call us directly at +91 80557 54054.",
     },
     {
       q: "Do you offer free consultations?",
-      a: "Yes, we provide a free digital marketing strategy consultation for new clients.",
+      a: "Yes, we provide a free digital marketing strategy consultation for new clients. Book your session to get a customised growth plan for your business.",
     },
     {
       q: "What services does Growthik Media provide?",
-      a: "SEO, Social Media Marketing, PPC Advertising, Website Development, Branding & Design, and E-Commerce Solutions.",
+      a: "SEO, Social Media Marketing, PPC / Google Ads, Website Development, Branding & Design, and E-Commerce Solutions - serving businesses across Pune and India.",
     },
     {
       q: "Do you work with businesses outside Pune?",
-      a: "Yes, we scale businesses across India and globally.",
+      a: "Yes, we scale businesses across India and globally. While headquartered in Pune, we serve clients in Mumbai, Bangalore, Delhi, and internationally.",
+    },
+    {
+      q: "What is the cost of digital marketing services in Pune?",
+      a: "Our packages are customised based on your business goals, competition, and channels. Contact us for a free consultation and a tailored proposal.",
+    },
+    {
+      q: "How long does it take to see results from digital marketing?",
+      a: "SEO typically delivers measurable results in 3–6 months. PPC and Google Ads can generate leads within 2–4 weeks. Social media growth depends on content strategy and ad spend.",
     },
   ];
 
@@ -29,10 +37,10 @@ export default function FAQSection() {
     <div className="rounded-3xl mt-24 bg-(--surface) border border-(--border) shadow-2xl max-w-5xl mx-auto overflow-hidden transition-all">
       <div className="border-b border-(--border) bg-(--surface-secondary) p-8 sm:p-12">
         <h2 className="text-4xl sm:text-5xl font-black text-(--text-primary) uppercase tracking-tighter">
-          FAQ<span className="text-red-600">.</span>
+          Frequently Asked <span className="text-red-600">Questions</span>
         </h2>
         <p className="text-(--text-secondary) font-bold uppercase tracking-widest mt-2 text-xs border-l-4 border-red-600 pl-4">
-          Common Questions
+          Digital Marketing Services - Pune & India
         </p>
       </div>
       <div className="divide-y divide-(--border)">

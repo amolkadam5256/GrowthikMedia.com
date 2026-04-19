@@ -148,15 +148,15 @@ export default function HeroSection() {
                   <div className="relative z-10 flex justify-between items-center">
                     <div>
                       <p className="text-xs text-white/60 dark:text-gray-400 font-bold tracking-widest uppercase mb-1">
-                        Active Campaigns
+                        Active Clients
                       </p>
-                      <p className="text-5xl font-black text-white">1,248</p>
+                      <p className="text-5xl font-black text-white">50+</p>
                     </div>
                     <div className="flex flex-col items-end">
                       <div className="text-red-500 font-black text-2xl flex items-center gap-1">
-                        ↑ 14%
+                        ↑ Growing
                       </div>
-                      <p className="text-[10px] text-white/40 font-bold uppercase">vs last month</p>
+                      <p className="text-[10px] text-white/40 font-bold uppercase">Pune &amp; India</p>
                     </div>
                   </div>
                 </div>

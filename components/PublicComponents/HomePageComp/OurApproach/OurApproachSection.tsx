@@ -115,7 +115,7 @@ export default function OurApproachSection() {
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             style={{ color: "var(--text-primary)" }}
           >
-            Our Approach to Digital Marketing
+            How We Grow Your Business
           </h2>
 
           <div
@@ -142,30 +142,7 @@ export default function OurApproachSection() {
                 className="text-base md:text-lg leading-relaxed"
                 style={{ color: "var(--text-secondary)" }}
               >
-                Our approach to{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  digital marketing
-                </strong>{" "}
-                combines creativity, strategy and a commitment to results. As a
-                trusted{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  digital marketing company in Pune
-                </strong>
-                , we start with a tailored strategy, from engaging{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  social media marketing
-                </strong>{" "}
-                to targeted email marketing campaigns. Our media planning
-                expertise ensures maximum impact through strategic ad
-                placements. We leverage analytics and SEO tools like{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  Google Analytics
-                </strong>{" "}
-                and{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  YouTube SEO
-                </strong>{" "}
-                to optimise your digital presence and drive measurable growth.
+                We believe digital marketing should be simple and effective. As a Pune-based agency, we focus on what works: engaging social media, smart ad placements, and technical SEO that actually moves the needle. By using tools like Google Analytics and search data, we constantly refine your strategy to make sure your budget is spent on the right audience.
               </p>
             </article>
 
@@ -181,27 +158,7 @@ export default function OurApproachSection() {
                 className="text-base md:text-lg leading-relaxed"
                 style={{ color: "var(--text-secondary)" }}
               >
-                We are recognised among{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  social media marketing agencies
-                </strong>{" "}
-                and{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  SEO companies in Pune
-                </strong>{" "}
-                for our innovative and results-focused approach. Our team
-                delivers{" "}
-                <strong style={{ color: "var(--text-primary)" }}>
-                  professional SEO services
-                </strong>{" "}
-                and comprehensive digital marketing solutions tailored to your
-                brand's goals. With a perfect balance of creativity and data, we
-                enhance your brand's visibility and engagement. Excited to take
-                your digital strategy to the next level?{" "}
-                <strong style={{ color: "var(--color-primary)" }}>
-                  Connect with us today
-                </strong>{" "}
-                and start building a stronger digital presence.
+                We&apos;re known among Pune businesses for focusing on results rather than just vanity metrics. Whether it&apos;s improving your search rankings or building a following on social media, we bring a balance of creativity and data to every project. Ready to see what we can do for you? Let&apos;s connect and start building a stronger digital presence today.
               </p>
             </article>
 
@@ -296,7 +253,7 @@ export default function OurApproachSection() {
               }}
             >
               <span className="text-white font-bold text-sm">
-                AI-Powered Marketing
+                Strategy-First Marketing
               </span>
             </figcaption>
           </figure>

@@ -15,25 +15,25 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    title: "Seamless Execution",
-    subtitle: "Transforming ideas into impact with",
-    description: "Let's flip your brand's challenges into success",
+    title: "Strategy That Actually Works",
+    subtitle: "Practical growth for Pune brands",
+    description: "We don't just plan; we execute. Get the results your business deserves.",
     image:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2670&auto=format&fit=crop",
   },
   {
     id: 2,
-    title: "Synergistic Consulting",
-    subtitle: "Transforming ideas into impact with",
-    description: "Let's flip your brand's challenges into success",
+    title: "Marketing Without the Fluff",
+    subtitle: "No jargon, just performance",
+    description: "Build a brand that people actually care about and buy from.",
     image:
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop",
   },
   {
     id: 3,
-    title: "Integrated Digital",
-    subtitle: "Transforming ideas into impact with",
-    description: "Let's flip your brand's challenges into success",
+    title: "Rank Higher, Sell More",
+    subtitle: "SEO & Ads that convert",
+    description: "Reach your local Pune customers exactly when they are looking for you.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
   },

@@ -1,6 +1,9 @@
 # Optimized robots.txt for Growthik Media
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /chat/
 Disallow: /privacy-policy/
 Disallow: /terms/
 Disallow: /blog/?category=*
@@ -9,21 +12,34 @@ Disallow: /blog/?tag=*
 # Directives for AI search bots
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /chat/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /admin/
+Disallow: /api/
 
 Sitemap: https://www.growthikmedia.com/sitemap.xml
 Llms-txt: https://www.growthikmedia.com/llms.txt

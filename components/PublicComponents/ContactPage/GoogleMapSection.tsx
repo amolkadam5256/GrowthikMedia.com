@@ -16,10 +16,10 @@ export default function GoogleMapSection() {
           </div>
           <div>
             <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight">
-              Locate <span className="text-red-600">Us</span>
+              Find <span className="text-red-600">Growthik Media</span>
             </h2>
             <p className="text-(--text-secondary) font-bold uppercase tracking-widest text-[10px] mt-1">
-              Growthik Media HQ
+              Digital Marketing Agency - Pune, Maharashtra
             </p>
           </div>
         </div>

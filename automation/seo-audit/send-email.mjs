@@ -7,9 +7,9 @@
  *   node automation/seo-audit/send-email.mjs
  *
  * Required env vars:
- *   SMTP_USER      — Gmail address
- *   SMTP_PASS      — Gmail App Password
- *   REPORT_EMAIL   — Recipient email (comma-separated for multiple)
+ *   SMTP_USER      - Gmail address
+ *   SMTP_PASS      - Gmail App Password
+ *   REPORT_EMAIL   - Recipient email (comma-separated for multiple)
  */
 
 import nodemailer from 'nodemailer';
@@ -21,8 +21,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const auditPath = path.resolve(__dirname, '../../audit-reports');
 
-const SMTP_USER    = process.env.SMTP_USER;
-const SMTP_PASS    = process.env.SMTP_PASS;
+const SMTP_USER = process.env.SMTP_USER;
+const SMTP_PASS = process.env.SMTP_PASS;
 const REPORT_EMAIL = process.env.REPORT_EMAIL;
 
 async function sendEmail() {
@@ -39,8 +39,8 @@ async function sendEmail() {
     process.exit(1);
   }
 
-  const data    = JSON.parse(fs.readFileSync(latestJsonPath, 'utf8'));
-  const today   = data.date;
+  const data = JSON.parse(fs.readFileSync(latestJsonPath, 'utf8'));
+  const today = data.date;
   const htmlPath = path.join(auditPath, `report-${today}.html`);
 
   if (!fs.existsSync(htmlPath)) {
@@ -58,26 +58,26 @@ async function sendEmail() {
     },
   });
 
-  // Smart subject line — flag urgent issues
-  const newErrors    = data.pages.some(p => p.status >= 400 && p.newIssues);
+  // Smart subject line - flag urgent issues
+  const newErrors = data.pages.some(p => p.status >= 400 && p.newIssues);
   const healthDropped = data.trend?.length > 1 &&
     (data.trend[data.trend.length - 2] - data.summary.healthScore >= 5);
 
   const isAlert = newErrors || healthDropped || data.summary.healthScore < 80;
-  const prefix  = isAlert ? '🔴 ALERT: ' : '🟢 ';
-  const subject = `${prefix}SEO Audit — growthikmedia.com | ${today} | Health: ${data.summary.healthScore}%`;
+  const prefix = isAlert ? '🔴 ALERT: ' : '🟢 ';
+  const subject = `${prefix}SEO Audit - growthikmedia.com | ${today} | Health: ${data.summary.healthScore}%`;
 
   console.log(`📧 Sending audit report to ${REPORT_EMAIL}...`);
 
   await transporter.sendMail({
-    from:    `"Growthik SEO Bot" <${SMTP_USER}>`,
-    to:      REPORT_EMAIL,
+    from: `"Growthik SEO Bot" <${SMTP_USER}>`,
+    to: REPORT_EMAIL,
     subject,
-    html:    htmlContent,
+    html: htmlContent,
     attachments: [
       {
         filename: `seo-report-${today}.html`,
-        path:     htmlPath,
+        path: htmlPath,
       }
     ]
   });

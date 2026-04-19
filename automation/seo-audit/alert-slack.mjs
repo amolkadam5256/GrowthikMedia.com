@@ -7,8 +7,8 @@
  *   node automation/seo-audit/alert-slack.mjs
  *
  * Required env var:
- *   SLACK_WEBHOOK_URL — Incoming Webhook URL from Slack app settings
- *                       (Optional — step is skipped if not set)
+ *   SLACK_WEBHOOK_URL - Incoming Webhook URL from Slack app settings
+ *                       (Optional - step is skipped if not set)
  */
 
 import fetch from 'node-fetch';
@@ -18,7 +18,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const auditPath      = path.resolve(__dirname, '../../audit-reports');
+const auditPath = path.resolve(__dirname, '../../audit-reports');
 const latestJsonPath = path.join(auditPath, 'latest.json');
 
 const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL;
@@ -28,7 +28,7 @@ async function sendSlackAlert() {
   if (!SLACK_WEBHOOK_URL) {
     console.warn('⚠️  SLACK_WEBHOOK_URL not set. Skipping Slack alert.');
     console.warn('   Add it as a GitHub Secret to enable Slack notifications.');
-    process.exit(0); // Not a failure — optional integration
+    process.exit(0); // Not a failure - optional integration
   }
 
   if (!fs.existsSync(latestJsonPath)) {
@@ -39,8 +39,8 @@ async function sendSlackAlert() {
   const data = JSON.parse(fs.readFileSync(latestJsonPath, 'utf8'));
 
   // Only alert on health < 80% or new issues appearing
-  const healthAlert  = data.summary.healthScore < 80;
-  const newErrors    = data.pages.filter(p => (p.status >= 400 || p.errors.length > 0) && p.newIssues);
+  const healthAlert = data.summary.healthScore < 80;
+  const newErrors = data.pages.filter(p => (p.status >= 400 || p.errors.length > 0) && p.newIssues);
   const totalNewIssues = data.summary.new;
 
   if (!healthAlert && newErrors.length === 0 && totalNewIssues === 0) {
@@ -49,12 +49,12 @@ async function sendSlackAlert() {
   }
 
   const statusEmoji =
-    healthAlert       ? '🚨 CRITICAL' :
-    totalNewIssues > 0 ? '⚠️  WARNING' : 'ℹ️  INFO';
+    healthAlert ? '🚨 CRITICAL' :
+      totalNewIssues > 0 ? '⚠️  WARNING' : 'ℹ️  INFO';
 
   const topErrors = newErrors
     .slice(0, 3)
-    .map(p => `• <${p.url}|${decodeURIComponent(p.url.split('/').pop() || '/')}> — ${p.errors.join(', ')}`)
+    .map(p => `• <${p.url}|${decodeURIComponent(p.url.split('/').pop() || '/')}> - ${p.errors.join(', ')}`)
     .join('\n') || 'None';
 
   const repoUrl = process.env.GITHUB_REPOSITORY
@@ -62,7 +62,7 @@ async function sendSlackAlert() {
     : 'https://github.com/amolkadam5256/GrowthikMedia.com/actions';
 
   const slackBody = {
-    text: `*Growthik SEO Audit — ${data.date}*`,
+    text: `*Growthik SEO Audit - ${data.date}*`,
     blocks: [
       {
         type: 'header',
@@ -109,7 +109,7 @@ async function sendSlackAlert() {
     console.log('✅ Slack alert sent successfully.');
   } else {
     const body = await res.text();
-    console.error(`❌ Failed to send Slack alert: ${res.status} ${res.statusText} — ${body}`);
+    console.error(`❌ Failed to send Slack alert: ${res.status} ${res.statusText} - ${body}`);
     process.exit(1);
   }
 }

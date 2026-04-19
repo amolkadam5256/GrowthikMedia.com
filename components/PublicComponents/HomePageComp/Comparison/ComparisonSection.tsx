@@ -17,7 +17,7 @@ const comparisonData = [
   {
     item: "Campaign style",
     traditional: "Generic Templates",
-    growthik: "Custom Growth Systems",
+    growthik: "Tailored Strategy for Your Market",
   },
   {
     item: "Communication",
@@ -27,7 +27,7 @@ const comparisonData = [
   {
     item: "Speed to scale",
     traditional: "Slow & Steady",
-    growthik: "Aggressive Market Dominance",
+    growthik: "Fast, Measurable Growth",
   },
 ];
 

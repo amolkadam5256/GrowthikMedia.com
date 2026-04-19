@@ -66,10 +66,9 @@ const PerformanceRoadmapSection = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-(--text-secondary) max-w-3xl mx-auto">
-            Success isn&apos;t accidental; it&apos;s engineered. We move you
-            from onboarding to predictable ROI with a structured, data-backed
-            sprint.
-          </p>
+            Good results come from a solid plan, not just luck. We move you
+            from onboarding to measurable growth with a clear, month-by-month roadmap.
+          </p>f9
         </div>
 
         {/* Roadmap Steps */}
@@ -130,7 +129,7 @@ const PerformanceRoadmapSection = () => {
             href="/contact"
             className="inline-block border-2 border-(--color-primary) text-(--text-primary) px-10 py-4 font-bold uppercase tracking-wider hover:bg-(--color-primary) hover:text-white transition-all duration-300"
           >
-            Start Your 90-Day Sprint
+            Start Your 90-Day Growth Plan
           </Link>
         </div>
       </div>

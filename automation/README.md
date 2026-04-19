@@ -1,4 +1,4 @@
-# 🤖 Growthik Media — Automation Hub
+# 🤖 Growthik Media - Automation Hub
 
 This folder contains all GitHub Actions automation scripts, organized by workflow category.
 
@@ -78,7 +78,7 @@ All reports are saved to `audit-reports/` (git-tracked):
 
 ---
 
-## 🔍 SEO Audit — What It Checks
+## 🔍 SEO Audit - What It Checks
 
 For each page in the sitemap, the crawler checks:
 

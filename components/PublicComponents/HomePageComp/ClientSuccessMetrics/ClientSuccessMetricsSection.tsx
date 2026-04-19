@@ -70,8 +70,7 @@ const ClientSuccessMetricsSection = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-3xl mx-auto">
-            Numbers don&apos;t lie. Our Pune clients experience transformative growth
-            through data-driven strategies that deliver measurable ROI.
+            Here&apos;s what actually happened for businesses we worked with across Pune.
           </p>
         </div>
 
@@ -155,12 +154,7 @@ const ClientSuccessMetricsSection = () => {
           <div className="w-20 h-1 bg-(--color-primary) mb-6" />
 
           <p className="text-base text-(--text-secondary) leading-relaxed">
-            These aren&apos;t vanity metrics&mdash;they&apos;re revenue-driving results that
-            transform businesses. Every client receives transparent monthly
-            reporting, dedicated account management and strategic growth
-            roadmaps. We don&apos;t just track clicks&mdash;we track revenue, customer
-            lifetime value and sustainable growth. When you partner with
-            Growthik Media, you&apos;re investing in measurable, scalable success.
+            These numbers come from real campaigns - not cherry-picked case studies. Every client gets a dedicated contact, plain-English monthly updates, and a clear picture of what&apos;s working. We count leads, not likes.
           </p>
         </div>
       </div>

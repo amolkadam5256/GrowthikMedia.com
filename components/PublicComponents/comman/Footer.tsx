@@ -167,9 +167,9 @@ export default function Footer() {
                     isDark ? "text-gray-400" : "text-gray-600"
                   }`}
                 >
-                  Empowering businesses to thrive in the digital landscape
-                  through innovative marketing strategies, cutting-edge web
-                  development and creative branding solutions.
+                  Helping Pune-based brands grow their online presence with
+                  SEO, Google Ads, and websites that actually work. No jargon,
+                  just real results for local businesses.
                 </p>
 
                 {/* Contact Info */}
@@ -328,18 +328,14 @@ export default function Footer() {
               <p
                 className={`text-xs leading-relaxed text-justify ${isDark ? "text-gray-500" : "text-gray-500"}`}
               >
-                <strong>Growthik Media</strong> is a premier{" "}
-                <strong>Performance Marketing Agency in Pune</strong>, dedicated
-                to scaling businesses through data-backed strategies. As a
-                top-rated <strong>Digital Marketing Company in Pune</strong>, we
-                specialize in delivering high-ROI campaigns, including{" "}
-                <strong>SEO Services in Pune</strong>, Social Media Marketing,
-                Pay-Per-Click (PPC) advertising, and custom Website Development.
-                Our expert team combines creative storytelling with technical
-                precision to drive qualified leads, enhance brand visibility,
-                and ensure tangible growth. From local startups to established
-                enterprises, we are the trusted partner for comprehensive
-                digital excellence in Pune and across India.
+                <strong>Growthik Media</strong> is a results-focused{" "}
+                <strong>Digital Marketing Agency in Pune</strong>. We help local
+                businesses in Baner, Hinjewadi, and across Pune grow through
+                practical <strong>SEO Services in Pune</strong>, targeted Google
+                Ads, and high-performance Website Development. Whether you're a
+                local startup or an established brand, we're here to help you
+                reach more customers and improve your ROI with honest,
+                data-backed strategies.
               </p>
             </div>
 

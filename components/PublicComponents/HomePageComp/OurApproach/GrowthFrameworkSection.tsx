@@ -12,38 +12,38 @@ import Link from "next/link";
 
 const STEPS = [
   {
-    title: "Discovery & Audit",
+    title: "Finding the Gaps",
     benefit:
-      "Technical SEO, UX audit, creative performance review and comprehensive ad funnel analysis.",
+      "A deep look at your SEO, current ads, and why visitors might be leaving without buying.",
     description:
-      "As a leading Digital Marketing Company in Pune, we begin with a deep dive into your current ecosystem. Our SEO Services in Pune experts identify toxic links, speed bottlenecks and conversion leaks before we spend a single rupee.",
+      "We start by taking a close look at your current setup. Our team identifies speed issues, broken links, and conversion leaks before we spend a single rupee.",
     icon: ClipboardCheck,
     keywords: ["Digital Marketing Company in Pune", "SEO Services in Pune"],
   },
   {
-    title: "Strategy Blueprint",
+    title: "A Better Plan",
     benefit:
-      "Data-backed growth roadmap with KPIs, timelines and revenue milestones.",
+      "A clear growth plan with realistic targets and timelines.",
     description:
-      "Our Performance Marketing Agency builds a custom-engineered blueprint. We don't believe in guesswork; we set aggressive revenue targets and map out the exact path to dominate your industry.",
+      "We build a tailored roadmap for your business. We don't believe in guesswork; we set clear goals and map out the exact steps to help you reach them.",
     icon: MapIcon,
     keywords: ["Performance Marketing Agency"],
   },
   {
-    title: "High-Performance Execution",
+    title: "Getting to Work",
     benefit:
-      "Scalable ads, SEO, content marketing, social media & video funnels.",
+      "Smart ads, SEO that works, and content your customers actually care about.",
     description:
-      "Our Growth Marketing Experts deploy multi-channel campaigns designed to convert. We focus on high-intent traffic and performance-driven content that builds authority and drives immediate sales.",
+      "Our team launches focused campaigns across the right platforms. We focus on people who are actually looking for what you sell, driving real sales through honest marketing.",
     icon: Rocket,
     keywords: ["Growth Marketing Experts"],
   },
   {
-    title: "Optimize & Scale",
+    title: "Watch & Improve",
     benefit:
-      "Weekly optimization sprints, A/B testing, CRO improvements and aggressive scaling.",
+      "Regular updates, testing new ideas, and doing more of what works.",
     description:
-      "Marketing is never 'finished'. We run continuous A/B tests and conversion rate optimization (CRO) sprints to ensure your ROAS keeps climbing while we aggressively scale your winners.",
+      "Marketing is never 'finished'. We keep testing new ideas and improving your site to ensure your results keep getting better while we help you grow.",
     icon: TrendingUp,
     keywords: [],
   },

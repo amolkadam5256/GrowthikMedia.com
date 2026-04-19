@@ -11,13 +11,13 @@ export default function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "MarketingAgency",
+        "@type": ["MarketingAgency", "LocalBusiness"],
         "@id": `${CONTACT_INFO.website}/#agency`,
         "name": CONTACT_INFO.companyName,
         "url": CONTACT_INFO.website,
         "logo": `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`,
         "image": `${CONTACT_INFO.website}/og-image.png`,
-        "description": "Premium Digital Marketing Agency in Pune specialized in Predictable Revenue Systems through SEO, PPC, and High-Performance Web Development.",
+        "description": "Premium Digital Marketing Agency in Pune specialized in helping brands grow through SEO, PPC, and High-Performance Web Development.",
         "telephone": CONTACT_INFO.phone.primary,
         "email": CONTACT_INFO.email.info,
         "priceRange": "$$",
@@ -29,6 +29,32 @@ export default function LocalBusinessSchema() {
           "postalCode": CONTACT_INFO.address.pincode,
           "addressCountry": "IN"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 18.480682998115928,
+          "longitude": 73.80476268274838
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "15:00"
+          }
+        ],
+        "areaServed": [
+          { "@type": "City", "name": "Pune" },
+          { "@type": "City", "name": "Mumbai" },
+          { "@type": "City", "name": "Nashik" },
+          { "@type": "City", "name": "Bangalore" },
+          { "@type": "Country", "name": "India" }
+        ],
         "sameAs": Object.values(CONTACT_INFO.social).filter(url => url.startsWith('http')),
         "hasOfferCatalog": {
           "@type": "OfferCatalog",

@@ -152,7 +152,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
           <HelpCircle className="w-5 h-5" /> Pro Insight:
         </h4>
         <p className="mb-0 italic">
-          For a deep dive into how Google processes data at scale, check out this 
+          For a deep dive into how Google processes data at scale, check out this
           <a href="https://www.linkedin.com/feed/update/urn:li:activity:7440457319219359744" target="_blank" rel="noopener noreferrer" className="ml-1 text-primary font-bold hover:underline inline-flex items-center gap-1">
             exclusive insight on LinkedIn <ExternalLink className="w-3 h-3" />
           </a>.
@@ -181,7 +181,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         <Briefcase className="w-6 h-6 text-primary" /> Why Pune Businesses Choose Us
       </h2>
       <p>
-        At Growthik Media, we specialize in <strong>&quot;Growth Engineering&quot;</strong>—combining deep code optimization with aggressive performance marketing.
+        At Growthik Media, we specialize in <strong>&quot;Growth Engineering&quot;</strong>-combining deep code optimization with aggressive performance marketing.
       </p>
 
       <h2>Frequently Asked Questions</h2>

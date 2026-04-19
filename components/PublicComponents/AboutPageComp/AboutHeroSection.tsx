@@ -41,23 +41,21 @@ const AboutHeroSection = () => {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
-                <span className="text-xl md:text-2xl text-(--text-secondary) block mb-2 font-bold tracking-widest">
-                  GROWTHIK MEDIA
+                <span className="text-xl md:text-2xl text-(--text-secondary) block mb-2 font-bold tracking-widest italic lowercase opacity-70">
+                  from pune, with love.
                 </span>
-                AI-Driven Digital Marketing <br />
+                We build search & ads that <br />
                 <span className="text-(--color-primary)">
-                  & SEO Services in Pune
+                  Actually Grow Your Business
                 </span>
               </h1>
 
               <div className="bg-(--surface)/50 border-l-4 border-(--color-primary) p-4 mb-6 rounded-r-lg">
                 <p className="text-xl font-bold text-(--text-primary) mb-2">
-                  From Low Visibility to Predictable Revenue Systems.
+                  Building digital trust, one click at a time.
                 </p>
                 <p className="text-base text-(--text-secondary) leading-relaxed font-medium">
-                  We are an AI-powered growth engineering company that builds
-                  highly scalable, data-driven revenue infrastructures -
-                  replacing guesswork with engineering precision.
+                  We're a Pune-based digital marketing team that skip the jargon and focus on what matters: turning your search traffic into consistent, predictable leads.
                 </p>
               </div>
 
@@ -82,23 +80,23 @@ const AboutHeroSection = () => {
               {/* SEO Text Block */}
               <div className="mb-8">
                 <p className="text-sm text-(--text-secondary) leading-relaxed opacity-80">
-                  Leading{" "}
+                  We're one of Pune's top-rated{" "}
                   <strong className="text-(--text-primary)">
-                    Digital Marketing Company in Pune
-                  </strong>{" "}
-                  specializing in{" "}
+                    digital marketing agencies
+                  </strong>
+                  , known for{" "}
                   <strong className="text-(--text-primary)">
-                    AI SEO Agency Pune
-                  </strong>{" "}
-                  strategies,{" "}
+                    SEO
+                  </strong>
+                  ,{" "}
                   <strong className="text-(--text-primary)">
-                    Performance Marketing
+                    Google Ads
                   </strong>
                   , and{" "}
                   <strong className="text-(--text-primary)">
-                    High Performance Website Development Pune
+                    website development in Pune
                   </strong>{" "}
-                  to build Predictable Revenue Marketing Systems.
+                  that drives real leads - from Baner to Hinjewadi and beyond.
                 </p>
               </div>
 
@@ -280,10 +278,10 @@ const AboutHeroSection = () => {
                 </div>
                 <div>
                   <span className="block font-bold text-sm md:text-base text-(--text-primary)">
-                    Amol Kadam
+                    Founder
                   </span>
                   <span className="text-[10px] md:text-xs text-(--text-secondary) block">
-                    Growth Architect
+                    Lead Strategist
                   </span>
                 </div>
               </motion.div>

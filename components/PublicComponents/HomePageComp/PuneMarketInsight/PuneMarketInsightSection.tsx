@@ -28,17 +28,16 @@ const PuneMarketInsightSection = () => {
 
             <div className="prose prose-lg text-(--text-secondary) mb-8">
               <p className="leading-relaxed mb-4">
-                Pune is evolving from an IT hub to a global startup capital.
+                Pune is evolving into one of India's fastest-growing startup hubs.
                 With over <strong>45% of local consumer queries</strong> now
                 containing &quot;near me&quot; or &quot;best in Pune,&quot;
-                traditional marketing is losing ground.
+                traditional marketing alone isn&apos;t enough.
               </p>
               <p className="leading-relaxed">
-                Whether you are a manufacturing unit in PCMC or a D2C brand in
+                Whether you are a manufacturing unit in PCMC or a retail brand in
                 Koregaon Park, your customers are searching online{" "}
-                <em>right now</em>. Growthik Media bridges the gap between your
-                local dominance and digital visibility, ensuring you capture
-                high-intent traffic before your competitors do.
+                <em>right now</em>. Growthik Media helps you turn local success into digital visibility, ensuring you reach
+                your customers before your competitors do.
               </p>
             </div>
 
@@ -46,7 +45,7 @@ const PuneMarketInsightSection = () => {
               href="/services/seo"
               className="inline-flex items-center gap-2 bg-(--color-primary) text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-opacity-90 transition-all group"
             >
-              Dominate the Pune Market
+               Grow Your Presence in Pune
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -105,7 +104,7 @@ const PuneMarketInsightSection = () => {
                       Competition
                     </h3>
                     <p className="text-sm text-(--text-secondary)">
-                      70% of Pune businesses are now investing in{" "}
+                      More and more Pune businesses are now investing in{" "}
                       <Link
                         href="/services/seo"
                         className="text-(--color-primary) hover:underline font-semibold"

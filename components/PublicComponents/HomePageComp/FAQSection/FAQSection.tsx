@@ -21,13 +21,13 @@ const FAQ_DATA = [
     id: 1,
     question: "How long until SEO shows measurable results?",
     answer:
-      "SEO is a results-driven marathon. While technical fixes and local SEO optimizations can show movement in 4-6 weeks, a dominant #1 ranking for competitive keywords in Pune typically takes 3 to 6 months. As a leading SEO agency in Pune, we focus on sustainable, long-term traffic that converts into revenue.",
+      "SEO is a process, not an overnight fix. While technical updates and local SEO can show movement in 4-6 weeks, seeing real growth for competitive keywords in Pune typically takes 3 to 6 months. We focus on building traffic that actually turns into revenue.",
   },
   {
     id: 2,
     question: "Do you work with small businesses and startups?",
     answer:
-      "Absolutely. We are growth marketing experts who specialize in scaling brands from the ground up. Whether you are a local Pune startup or a small business looking to dominate the digital space, we tailor our performance marketing strategies to fit your budget and aggressive growth goals.",
+      "Yes, absolutely. Whether you're just starting out in Pune or have been running for a few years and want to grow faster - we tailor everything to your budget and goals. No one-size-fits-all packages, no locked-in contracts.",
   },
   {
     id: 3,
@@ -39,19 +39,19 @@ const FAQ_DATA = [
     id: 4,
     question: "What makes your performance marketing different?",
     answer:
-      "We don't just track clicks; we track revenue. Our performance marketing strategies are backed by heavy data-analysis, A/B testing and aggressive scaling. We focus on ROI and ROAS, ensuring every rupee you spend on digital marketing in Pune works toward your bottom line.",
+      "We track revenue, not just clicks. Every ad we run goes through real A/B testing, and we optimize based on what actually brings in sales - not traffic spikes. Every rupee has to count, so we report on ROI and ROAS, not vanity metrics.",
   },
   {
     id: 5,
     question: "Do you provide comprehensive monthly reporting?",
     answer:
-      "Transparency is our core value. You will receive detailed monthly reports tracking KPIs, traffic growth, lead conversion and keyword rankings. We schedule monthly strategy calls to review performance and adjust our roadmap for the next growth sprint.",
+      "Transparency is our core value. You will receive detailed monthly reports tracking traffic growth, lead conversion and keyword rankings. We schedule monthly strategy calls to review results and plan the next steps for your business.",
   },
   {
     id: 6,
-    question: "What is the core focus of Growthik Media as a Pune agency?",
+    question: "How much does digital marketing cost in Pune?",
     answer:
-      "We focus on 'Growth Engineering' - combining code, AI, and marketing to build predictable revenue systems. Unlike traditional agencies that just provide services, we act as your growth partners to ensure every marketing rupee spent yields a measurable ROI for your Pune-based business.",
+      "Pricing depends on your goals and the channels you want to focus on. Most clients start between \u20b915,000 - \u20b950,000/month for a focused SEO or Google Ads campaign. We build custom plans around what your business actually needs - no padded packages, no compulsory lock-ins. Book a free call and we'll give you a straight answer.",
   },
 ];
 

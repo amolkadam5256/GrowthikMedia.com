@@ -34,13 +34,13 @@ const services: Service[] = [
     icon: TrendingUp,
     title: "SEO Optimization",
     description:
-      "Advanced SEO techniques to improve your search rankings, increase organic traffic and dominate your industry online.",
+      "Advanced SEO techniques to improve your search rankings, increase organic traffic and help you grow your brand online.",
   },
   {
     icon: Palette,
     title: "Content Creation",
     description:
-      "Engaging and creative content that tells your brand story, resonates with your audience and drives meaningful conversions.",
+      "Engaging content that tells your brand story, resonates with your audience and drives more sales.",
   },
   {
     icon: Share2,
@@ -52,7 +52,7 @@ const services: Service[] = [
     icon: BarChart3,
     title: "Analytics & Reporting",
     description:
-      "Data-driven insights and comprehensive reporting to track performance, measure ROIand optimize your marketing strategies.",
+      "Data-driven insights and comprehensive reporting to track performance, measure ROI and optimize your marketing strategies.",
   },
 ];
 
@@ -204,8 +204,8 @@ export default function WeSpecialiseIn() {
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
-                Transforming your ideas into impactful digital experiences with
-                our comprehensive suite of creative and strategic services.
+                Turning your ideas into digital results with
+                our full range of creative and strategic services.
               </p>
             </div>
 

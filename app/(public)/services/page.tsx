@@ -27,27 +27,37 @@ const FilterableServices = dynamic(() =>
 );
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services in Pune | SEO, Ads, Web Development | Growthik Media",
+  title: "Growthik Media | Honest Digital Marketing & SEO Services in Pune",
   description:
-    "ROI-driven digital marketing, SEO, Google Ads, and high-performance web development for Pune businesses. Get a free audit and strategy call.",
+    "We help Pune's ambitious brands grow with search strategies that work. High-performance SEO, predictable Google Ads, and fast websites that turn traffic into revenue. No fluff, just results.",
   keywords:
-    "digital marketing services pune, seo company pune, google ads agency pune, website development pune, ecommerce development, wordpress development pune",
+    "digital marketing services pune, seo company pune, google ads agency pune, website development pune, ecommerce development, performance marketing pune, social media marketing pune, branding agency pune, growthik media services",
   alternates: {
-    canonical: "/services/",
+    canonical: "https://www.growthikmedia.com/services/",
   },
   openGraph: {
     title: "Top Digital Marketing & Web Development Services in Pune",
     description:
       "Drive growth with Pune's top digital agency. High-performance Next.js websites, advanced SEO, & branding.",
-    url: `${CONTACT_INFO.website}/services`,
+    url: `${CONTACT_INFO.website}/services/`,
     type: "website",
     siteName: "Growthik Media",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Digital Marketing & Web Development Services in Pune - Growthik Media",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Top Digital Marketing & Web Development Services in Pune",
     description:
       "Drive growth with Pune's premier digital marketing & web development agency in Pune.",
+    images: ["/og-image.png"],
+    creator: "@growthikmedia",
   },
 };
 
@@ -151,10 +161,10 @@ export default function ServicesPage() {
   ];
 
   const metrics = [
-    { icon: Globe, value: "350+", label: "Websites Launched" },
-    { icon: Users, value: "400+", label: "Clients Served" },
-    { icon: Briefcase, value: "7+", label: "Years Exp" },
-    { icon: Award, value: "100%", label: "Result Oriented" },
+    { icon: Globe, value: "50+", label: "Projects Completed" },
+    { icon: Users, value: "50+", label: "Happy Clients" },
+    { icon: Briefcase, value: "7+", label: "Years Experience" },
+    { icon: Award, value: "100%", label: "Result Guaranteed" },
   ];
 
   const faqItems = [
@@ -190,9 +200,9 @@ export default function ServicesPage() {
       />
 
       {/* 1. HERO SECTION (CUSTOM FORMAT BASED ON USER REFERENCE) */}
-      <section className="relative px-6 lg:px-16 pt-32 pb-24 lg:pt-48 lg:pb-40 flex items-center bg-[#1a202c] overflow-hidden -mt-24">
+      <section className="relative px-6 lg:px-16 pt-32 pb-24 lg:pt-48 lg:pb-40 flex items-center bg-zinc-950 overflow-hidden -mt-24">
         {/* Background Overlay simulating a dark hero image */}
-        <div className="absolute inset-0 bg-linear-to-r from-slate-900 via-slate-800/90 to-transparent z-10 w-full lg:w-2/3"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-black via-zinc-900/90 to-transparent z-10 w-full lg:w-2/3"></div>
         <div className="absolute inset-0 z-0 opacity-40">
           <Image
             src="/og-image.png"
@@ -232,11 +242,11 @@ export default function ServicesPage() {
 
             {/* Headline */}
             <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold mb-6 tracking-tight text-white leading-[1.1] max-w-3xl">
-              Digital Marketing & Website Development Services in Pune
+              Honest Digital Marketing & <br /> Web Development in Pune
             </h1>
 
-            <p className="text-lg md:text-xl text-white/80 font-medium max-w-3xl mb-6 leading-relaxed lg:pr-8">
-              ROI-driven SEO, Google Ads, and high-performance websites built for Pune’s growth-stage businesses. We design systems that generate qualified leads and scale revenue.
+            <p className="text-lg md:text-xl text-white/80 font-medium max-w-3xl mb-6 leading-relaxed lg:pr-8 border-l-2 border-(--color-primary) pl-6">
+              Skip the agency talk. We&apos;re a small, expert team in Pune that builds websites that load fast and ads that actually make you money. If you&apos;re tired of vanity metrics and want real leads, you&apos;re in the right place.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 w-full max-w-2xl">
@@ -311,7 +321,7 @@ export default function ServicesPage() {
                 {/* Node 2: Requirements (Top Mid-Left) */}
                 <div className="absolute top-[5%] left-[35%] flex flex-col items-center">
                   <span className="text-[10px] md:text-sm font-bold text-white mb-1 md:mb-2">
-                    Requirements
+                    Understanding
                   </span>
                   <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
                     <Image src="/og-image.png" alt="Requirements" fill className="object-cover" sizes="80px" />
@@ -389,7 +399,7 @@ export default function ServicesPage() {
                   <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full mb-[-6px] shadow-sm border border-gray-300 z-30 relative top-1"></div>
                   <div className="h-6 md:h-8 border-l-2 border-dashed border-gray-400 mb-1 z-20 relative"></div>
                   <div className="w-12 h-12 md:w-16 md:h-16 relative rounded-full overflow-hidden border-2 border-white shadow-md z-20 bg-black">
-                    <Image src="/og-image.png" alt="Optimize" fill className="object-cover" sizes="80px" />
+                    <Image src="/og-image.png" alt="Optimization" fill className="object-cover" sizes="80px" />
                   </div>
                 </div>
               </div>
@@ -403,13 +413,13 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="text-3xl md:text-4xl font-black mb-4 tracking-tight text-(--text-primary)">
-              Serving Businesses Across Pune
+              Helping Local Pune Brands Win
             </h2>
             <p className="text-(--text-secondary) font-medium mb-6 text-lg">
-              Local-first campaigns that rank and convert in the neighborhoods where your customers search most—Hinjewadi IT Park, Baner, Wakad, Kharadi, PCMC, Viman Nagar, Aundh, and Kothrud.
+              We build search experiences that help you stand out in the neighborhoods where your customers actually live—from the IT hubs of Hinjewadi to the busy streets of Kothrud.
             </p>
             <p className="text-(--text-secondary) font-medium">
-              Each engagement includes geo-keyword research, localized landing experiences, GMB optimization, and NAP consistency to dominate map packs and AI answers.
+              Our local-first approach ensures you dominate Google Map packs and AI answers when someone searches for your services "near me" in Pune.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -442,22 +452,22 @@ export default function ServicesPage() {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-black mb-3">Recent Results</h2>
             <p className="text-(--text-secondary) font-medium">
-              Proof over promises—selected wins from Pune clients.
+              Proof over promises-selected wins from Pune clients.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 title: "+250% organic traffic",
-                desc: "B2B SaaS in Baner—SEO + content hub in 4 months.",
+                desc: "B2B SaaS in Baner-SEO + content hub in 4 months.",
               },
               {
                 title: "5.2x ROAS on Google Ads",
-                desc: "D2C ecommerce in Wakad—smart bidding + landing CRO.",
+                desc: "D2C ecommerce in Wakad-smart bidding + landing CRO.",
               },
               {
                 title: "#1 for “SEO company Pune”",
-                desc: "Local services brand—top-3 map pack and AI answers.",
+                desc: "Local services brand-top-3 map pack and AI answers.",
               },
             ].map((item, idx) => (
               <div
@@ -556,13 +566,12 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 tracking-tight text-(--text-primary)">
-              Core Services (Short & Crawlable)
+              All Our Digital Marketing &amp; Web Services
             </h2>
             <div className="w-24 h-1.5 bg-(--color-primary) mx-auto mb-6 rounded-full"></div>
             <p className="text-(--text-secondary) font-medium text-lg max-w-2xl mx-auto">
-              A concise, crawlable list that blends our most requested website,
-              marketing, and branding solutions—kept short so visitors and
-              search engines can scan quickly.
+              Browse our full range of SEO, paid media, web development, branding,
+              and e-commerce services - all tailored for Pune businesses and beyond.
             </p>
           </div>
 
@@ -677,7 +686,7 @@ export default function ServicesPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-black mb-3">FAQs on Our Digital Services</h2>
-            <p className="text-(--text-secondary) font-medium">Fast answers to common questions—optimized for snippets and AI answers.</p>
+            <p className="text-(--text-secondary) font-medium">Fast answers to common questions-optimized for snippets and AI answers.</p>
           </div>
           <div className="space-y-4">
             {faqItems.map((item, idx) => (

@@ -17,25 +17,25 @@ const USP_ITEMS = [
     icon: Target,
     title: "ROI-Focused Strategies",
     description:
-      "Every campaign is built around measurable returns. We don&apos;t just drive traffic&mdash;we drive revenue and growth that impacts your bottom line.",
+      "We don't count page views. We track leads, calls, and sales - and that's what we report back to you every month.",
   },
   {
     icon: UserCheck,
     title: "Dedicated Account Manager",
     description:
-      "Your success is personal to us. Get a dedicated expert who knows your business inside-out and is always available to support your goals.",
+      "You get one point of contact who actually knows your business. No being passed around between account managers. No junior execs handling your campaigns.",
   },
   {
     icon: FileText,
     title: "Transparent Reporting",
     description:
-      "No smoke and mirrors. Receive detailed monthly reports with clear KPIs, performance metrics and actionable insights you can trust.",
+      "Every month you get a plain-English report showing what worked, what didn't, and what we're doing next. No jargon, no padded slides.",
   },
   {
     icon: Award,
     title: "Industry-Specific Expertise",
     description:
-      "We understand your market. Our team brings deep industry knowledge to craft strategies that resonate with your target audience.",
+      "We've worked across healthcare, real estate, e-commerce, and SaaS. When we say we know your market - we mean it, not just your niche.",
   },
   {
     icon: ShieldCheck,
@@ -52,9 +52,8 @@ const USP_ITEMS = [
     title: "Proven Track Record",
     description: (
       <>
-        With <Counter value={50} suffix="+ successful campaigns" /> and a{" "}
-        <Counter value={98} suffix="% client satisfaction rate" />, our results
-        speak louder than promises.
+        <Counter value={50} suffix="+ campaigns delivered" /> for real businesses across Pune and India.{" "}
+        Clients who&apos;ve stayed with us for 2+ years - that&apos;s the only stat that matters.
       </>
     ),
   },

@@ -6,16 +6,16 @@ import { Star } from "lucide-react";
 import { Counter } from "@/components/PublicComponents/ui/GCounter";
 
 const logos = [
-  "TechFlow",
-  "NexaCorp",
-  "Vitality",
-  "BuildScale",
-  "GrowthGen",
-  "EcoShift",
-  "Synergy",
-  "ApexLabs",
-  "Quantum",
-  "Visionary",
+  "Heritage Furnishings",
+  "TechNova Solutions",
+  "Global Edunext",
+  "Vibe E-commerce",
+  "Pune Startups",
+  "Healthcare Clinics",
+  "Real Estate Brands",
+  "D2C Brands",
+  "EdTech Companies",
+  "B2B Enterprises",
 ];
 
 const TrustStrip = React.memo(() => {

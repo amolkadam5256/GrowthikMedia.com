@@ -43,8 +43,8 @@ const LocalSEOAuthoritySection = () => {
               Deep Local Market Knowledge
             </h3>
             <p className="text-(--text-secondary) leading-relaxed">
-              We understand Pune's unique business ecosystem, from Hinjewadi's
-              tech corridor to Koregaon Park's retail landscape.
+               We understand Pune's unique business landscape, from Hinjewadi's
+              tech corridor to Koregaon Park's retail hubs.
             </p>
           </div>
 
@@ -61,14 +61,14 @@ const LocalSEOAuthoritySection = () => {
               Pune-Centric SEO Strategies
             </h3>
             <p className="text-(--text-secondary) leading-relaxed">
-              Our{" "}
+               Our{" "}
               <Link
                 href="/services/seo"
                 className="text-(--color-primary) font-bold hover:underline"
               >
                 local SEO strategies
               </Link>{" "}
-              dominate Google Map Pack rankings, ensuring visibility when Pune
+              help you rank higher on Google Maps, ensuring visibility when Pune
               customers search.
             </p>
           </div>
@@ -105,9 +105,9 @@ const LocalSEOAuthoritySection = () => {
             >
               digital marketing company
             </Link>{" "}
-            isn't just about proximity-it's about local expertise that drives
+             isn't just about proximity-it's about local expertise that drives
             results. Unlike remote agencies, we offer face-to-face strategy
-            sessions, real-time market insights and deep understanding of
+            sessions, actual local market updates and deep understanding of
             regional consumer behavior and local trends.
           </p>
 

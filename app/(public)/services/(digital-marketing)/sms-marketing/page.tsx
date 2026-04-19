@@ -78,7 +78,7 @@ export default function SmsMarketingPage() {
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Strategic Bulk SMS Services for Business Growth</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                Effective SMS campaigns in India require more than just a list of numbers; they require a data-driven approach. We specialize in both transactional and promotional SMS services, helping Pune businesses automate their customer journey. Our platforms provide real-time delivery reports and link-tracking capabilities, so you can measure the exact ROI of every campaign. We understand the Pune market&apos;s unique pulse—leveraging local festivals, shopping habits, and business cycles to schedule your broadcasts for maximum impact. By integrating SMS with your wider digital marketing funnel, we create a multi-touchpoint experience that keeps your brand top-of-mind.
+                Effective SMS campaigns in India require more than just a list of numbers; they require a data-driven approach. We specialize in both transactional and promotional SMS services, helping Pune businesses automate their customer journey. Our platforms provide real-time delivery reports and link-tracking capabilities, so you can measure the exact ROI of every campaign. We understand the Pune market&apos;s unique pulse-leveraging local festivals, shopping habits, and business cycles to schedule your broadcasts for maximum impact. By integrating SMS with your wider digital marketing funnel, we create a multi-touchpoint experience that keeps your brand top-of-mind.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Technical Excellence and DLT Compliance</h2>
@@ -108,7 +108,7 @@ export default function SmsMarketingPage() {
             <div className="bg-(--surface) p-8 md:p-12 rounded-4xl border border-(--border) text-center">
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-4">Ready to Get Started?</h2>
               <p className="text-lg text-(--text-secondary) mb-8 max-w-2xl mx-auto font-medium">
-                Elevate your customer outreach with the most reliable bulk SMS marketing services in Pune. Don&apos;t let your business get lost in the digital shuffle—start reaching your clients directly today.
+                Elevate your customer outreach with the most reliable bulk SMS marketing services in Pune. Don&apos;t let your business get lost in the digital shuffle-start reaching your clients directly today.
               </p>
               <Link href="/audit" className="px-10 py-5 bg-(--color-primary) text-white font-black rounded-2xl hover:bg-black transition-all shadow-xl inline-flex items-center gap-2">
                 Claim Your Free Growth Audit <ArrowRight className="w-5 h-5" />

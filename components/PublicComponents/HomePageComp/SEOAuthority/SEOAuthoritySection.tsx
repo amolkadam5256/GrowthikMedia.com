@@ -14,7 +14,7 @@ const seoExpertise = [
   {
     icon: MapPin,
     title: "Local SEO Pune",
-    desc: "Dominate local searches and map packs in the Pune region.",
+    desc: "Reach more customers locally and map packs in the Pune region.",
     link: "/services/seo",
   },
   {

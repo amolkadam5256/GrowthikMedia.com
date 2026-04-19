@@ -1,5 +1,6 @@
 import { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Caveat } from "next/font/google";
 import "../assets/styles/globals.css";
 
 // Use next/font/local for optimized font loading
@@ -37,6 +38,12 @@ const rostexOutline = localFont({
   display: "swap",
 });
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
+  display: "swap",
+});
+
 import Header from "@/components/PublicComponents/comman/header/Header";
 import Footer from "@/components/PublicComponents/comman/Footer";
 import SEO from "@/components/PublicComponents/comman/SEO";
@@ -64,7 +71,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.growthikmedia.com'),
   title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
-  description: `${CONTACT_INFO.companyName} is Pune's leading digital marketing agency building predictable revenue systems with data-driven SEO, Google Ads, and AI growth engineering.`,
+  description: `${CONTACT_INFO.companyName} is Pune's leading digital marketing agency helping businesses grow with professional SEO, Google Ads, and smart marketing automation.`,
   manifest: "/brand/site.webmanifest",
   icons: {
     icon: [
@@ -79,9 +86,9 @@ export const metadata: Metadata = {
     "Digital Marketing Company in Pune",
     "SEO Services Pune",
     "Video Production Company Pune",
-    "Social Media Marketing",
-    "Google Ads Pune",
-    "Web Development India",
+    "Social Media Marketing Agency",
+    "Google Ads Experts Pune",
+    "Growth Engineering India",
   ],
   authors: [{ name: CONTACT_INFO.companyName }],
   creator: CONTACT_INFO.companyName,
@@ -147,7 +154,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning={true}
-      className={`${rostex.variable} ${rostexOutline.variable}`}
+      className={`${rostex.variable} ${rostexOutline.variable} ${caveat.variable}`}
     >
       <head>
         <link rel="icon" type="image/png" href="/brand/favicon-96x96.png" sizes="96x96" />

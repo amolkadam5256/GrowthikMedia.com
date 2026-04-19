@@ -56,7 +56,7 @@ export default function Testimonials() {
           <div className="w-10 h-10 rounded-xl bg-red-600/10 flex items-center justify-center">
             <Star className="w-5 h-5 text-red-600 fill-current" />
           </div>
-          Client <span className="text-red-600">Feedback</span>
+          Client <span className="text-red-600">Results</span>
         </h2>
         {testimonials.length > 1 && (
           <div className="flex gap-2">

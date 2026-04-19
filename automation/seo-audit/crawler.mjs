@@ -9,8 +9,8 @@
  *   node automation/seo-audit/crawler.mjs --test-mode   (first 10 URLs only)
  *
  * Env vars:
- *   SITE_URL    — e.g. https://www.growthikmedia.com
- *   SITEMAP_URL — e.g. https://www.growthikmedia.com/sitemap.xml
+ *   SITE_URL    - e.g. https://www.growthikmedia.com
+ *   SITEMAP_URL - e.g. https://www.growthikmedia.com/sitemap.xml
  */
 
 import fs from 'fs';
@@ -57,7 +57,7 @@ async function fetchSitemap() {
 
   // Handle sitemap index (nested sitemaps)
   if (jsonObj.sitemapindex) {
-    console.log('📑 Sitemap index detected — fetching child sitemaps...');
+    console.log('📑 Sitemap index detected - fetching child sitemaps...');
     const sitemaps = Array.isArray(jsonObj.sitemapindex.sitemap)
       ? jsonObj.sitemapindex.sitemap
       : [jsonObj.sitemapindex.sitemap];
@@ -74,7 +74,7 @@ async function fetchSitemap() {
           allUrls.push(...urls.filter(u => u && u.startsWith('http')));
         }
       } catch (e) {
-        console.warn(`⚠️  Could not fetch child sitemap: ${sm.loc} — ${e.message}`);
+        console.warn(`⚠️  Could not fetch child sitemap: ${sm.loc} - ${e.message}`);
       }
     }
     return allUrls;
@@ -127,11 +127,11 @@ async function auditUrl(url) {
     const html = await res.text();
     const $ = cheerio.load(html);
 
-    results.title    = $('title').text().trim();
+    results.title = $('title').text().trim();
     results.metaDesc = $('meta[name="description"]').attr('content') || '';
-    results.h1       = $('h1').first().text().trim();
+    results.h1 = $('h1').first().text().trim();
     results.canonical = $('link[rel="canonical"]').attr('href') || '';
-    results.noindex  = $('meta[name="robots"]').attr('content')?.includes('noindex') || false;
+    results.noindex = $('meta[name="robots"]').attr('content')?.includes('noindex') || false;
 
     // Word count (approximate visible text)
     const text = $('body').text();
@@ -145,17 +145,17 @@ async function auditUrl(url) {
     results.links = $('a[href]').length;
 
     // ── SEO Validation ──────────────────────────────────────────────────────
-    if (!results.title)                results.errors.push('Missing Title Tag');
-    if (results.title.length > 70)     results.warnings.push('Title too long (>70 chars)');
+    if (!results.title) results.errors.push('Missing Title Tag');
+    if (results.title.length > 70) results.warnings.push('Title too long (>70 chars)');
 
-    if (!results.metaDesc)             results.errors.push('Missing Meta Description');
+    if (!results.metaDesc) results.errors.push('Missing Meta Description');
     if (results.metaDesc.length > 165) results.warnings.push('Meta description too long (>165 chars)');
 
-    if (!results.h1)                   results.errors.push('Missing H1 Tag');
-    if ($('h1').length > 1)            results.warnings.push('Multiple H1 tags detected');
+    if (!results.h1) results.errors.push('Missing H1 Tag');
+    if ($('h1').length > 1) results.warnings.push('Multiple H1 tags detected');
 
-    if (results.wordCount < 300)       results.warnings.push('Low word count (<300)');
-    if (results.noindex)               results.warnings.push('Page is noindex');
+    if (results.wordCount < 300) results.warnings.push('Low word count (<300)');
+    if (results.noindex) results.warnings.push('Page is noindex');
 
     // Canonical mismatch: allow trailing-slash variants
     if (
@@ -205,9 +205,9 @@ async function run() {
     const pastResult = lastWeekReport.pages.find(p => p.url === url);
     if (pastResult) {
       const currentIssues = [...result.errors, ...result.warnings];
-      const pastIssues    = [...pastResult.errors, ...pastResult.warnings];
+      const pastIssues = [...pastResult.errors, ...pastResult.warnings];
 
-      const newIssues   = currentIssues.filter(i => !pastIssues.includes(i));
+      const newIssues = currentIssues.filter(i => !pastIssues.includes(i));
       const fixedIssues = pastIssues.filter(i => !currentIssues.includes(i));
 
       if (newIssues.length > 0) {
@@ -222,7 +222,7 @@ async function run() {
 
     report.pages.push(result);
     report.summary.total++;
-    if (result.errors.length > 0)   report.summary.errors   += result.errors.length;
+    if (result.errors.length > 0) report.summary.errors += result.errors.length;
     if (result.warnings.length > 0) report.summary.warnings += result.warnings.length;
     if (result.errors.length === 0 && result.warnings.length === 0) report.summary.healthy++;
 

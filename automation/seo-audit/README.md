@@ -1,4 +1,4 @@
-# 🔍 SEO Audit — Automation
+# 🔍 SEO Audit - Automation
 
 This directory contains all scripts for the **Weekly SEO Audit** pipeline.
 
@@ -18,9 +18,9 @@ This directory contains all scripts for the **Weekly SEO Audit** pipeline.
 ## Output
 
 Reports are saved to `audit-reports/` at the **project root**:
-- `latest.json` — always updated, used for week-over-week comparison
-- `report-YYYY-MM-DD.json` — dated JSON snapshot
-- `report-YYYY-MM-DD.html` — HTML email (not committed to git)
+- `latest.json` - always updated, used for week-over-week comparison
+- `report-YYYY-MM-DD.json` - dated JSON snapshot
+- `report-YYYY-MM-DD.html` - HTML email (not committed to git)
 
 ---
 

@@ -9,8 +9,11 @@ export default function WhyChooseUs() {
       <div className="absolute -top-12 -right-12 w-24 h-24 bg-red-600/5 rounded-full blur-2xl"></div>
       
       <h2 className="text-3xl font-black text-(--text-primary) mb-8 pb-4 relative uppercase tracking-tight border-b border-(--border)">
-        Why Growthik<span className="text-red-600">.</span>
+        Why Choose <span className="text-red-600">Growthik Media</span>
       </h2>
+      <p className="text-(--text-secondary) text-sm font-medium mb-6 -mt-4">
+        Pune&apos;s results-driven digital marketing agency trusted by 50+ brands.
+      </p>
       <ul className="space-y-3">
         {[
           "Data-Driven Marketing",

@@ -22,11 +22,11 @@ const problems = [
 const solutions = [
   {
     title: "High-Intent Lead Generation",
-    desc: "Leads that are ready to buy.",
+    desc: "Real leads who actually want what you offer.",
   },
   {
-    title: "Data-Driven Performance Marketing",
-    desc: "Maximize every rupee spent.",
+    title: "Real results you can actually track",
+    desc: "Every rupee tracked, optimized, and focused on growth.",
   },
   {
     title: "Dominate Search (SEO) & Socials",
@@ -46,7 +46,7 @@ const ProblemSolutionSection = React.memo(() => {
           <div className="flex items-center justify-center gap-4 mb-4">
             <span className="w-12 h-[2px] bg-(--color-primary)" />
             <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-sm">
-              Our Vision
+              What We Solve
             </span>
             <span className="w-12 h-[2px] bg-(--color-primary)" />
           </div>

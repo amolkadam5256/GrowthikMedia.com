@@ -15,7 +15,7 @@ const industries = [
   {
     icon: ShoppingCart,
     title: "E-commerce & Retail",
-    desc: "Scale revenue through conversion-optimized funnels and performance ads.",
+    desc: "Drive more sales with targeted ads and product pages that actually convert.",
     link: "/services/performance-marketing",
   },
   {
@@ -33,7 +33,7 @@ const industries = [
   {
     icon: GraduationCap,
     title: "Education & EdTech",
-    desc: "Dominate competitive niches with data-driven SEO and paid acquisition.",
+    desc: "Get in front of students and parents searching for exactly what you offer.",
     link: "/services/seo",
   },
   {
@@ -80,23 +80,21 @@ const IndustriesWeServeSection = () => {
           </h2>
 
           <p className="text-lg md:text-xl text-(--text-secondary) leading-relaxed max-w-4xl mx-auto">
-            As Pune's leading{" "}
-            <Link
-              href="/services/social-media-marketing"
-              className="text-(--color-primary) font-bold hover:underline"
-            >
-              digital marketing agency
-            </Link>
-            , we deliver industry-specific growth strategies across diverse
-            sectors. Our{" "}
+            We work across 6+ industries in Pune - and each one gets a strategy built for their specific market, not a recycled template. From{" "}
             <Link
               href="/services/performance-marketing"
               className="text-(--color-primary) font-bold hover:underline"
             >
               performance marketing
             </Link>{" "}
-            expertise spans multiple industries, each with tailored approaches
-            that drive measurable ROI.
+            to{" "}
+            <Link
+              href="/services/social-media-marketing"
+              className="text-(--color-primary) font-bold hover:underline"
+            >
+              social media
+            </Link>
+            , we tailor everything to how your customers actually search and buy.
           </p>
         </div>
 
@@ -134,16 +132,14 @@ const IndustriesWeServeSection = () => {
         {/* Bottom Content */}
         <div className="mt-12 text-center max-w-3xl mx-auto" data-aos="fade-up">
           <p className="text-base text-(--text-secondary) leading-relaxed">
-            Every industry demands unique positioning. We craft tailored{" "}
+            Every business is different. Our{" "}
             <Link
               href="/services/seo"
               className="text-(--color-primary) font-bold hover:underline"
             >
               SEO services in Pune
             </Link>{" "}
-            that align with your market dynamics, customer behavior and
-            competitive landscape. Whether you're a startup or an established
-            enterprise, our Pune-based team delivers measurable ROI.
+            are built around how your specific customers search - whether you&apos;re a local startup or a growing enterprise.
           </p>
         </div>
       </div>

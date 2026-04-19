@@ -25,7 +25,7 @@ const techStack = [
     icon: Users,
     category: "CRM & Automation",
     tools: "HubSpot, Zapier",
-    desc: "Seamless lead management and workflow automation.",
+    desc: "Integrated lead management and workflow automation.",
     link: "/services/lead-generation",
     linkText: "Lead Gen",
   },
@@ -65,15 +65,15 @@ const TechStackSection = () => {
 
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-[1.1]">
               Powered by <br />
-              <span className="text-(--color-primary)">World-Class</span>{" "}
-              Marketing Tech
+              <span className="text-(--color-primary)">Modern</span>{" "}
+              Marketing Tools
             </h2>
 
             <p className="text-lg text-(--text-secondary) leading-relaxed mb-8">
-              We don’t guess; we track. Growthik Media deploys an
-              enterprise-grade tech stack to validate every campaign decision.
+              We don’t guess; we track. Growthik Media uses professional
+              tools to validate every campaign decision.
               From deep keyword intelligence to user behavior analysis, our data
-              pipeline ensures zero ad spend wastage.
+              pipeline ensures we don't waste your ad spend.
             </p>
 
             <Link
