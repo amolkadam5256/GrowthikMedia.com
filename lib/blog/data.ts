@@ -105,10 +105,10 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: "post-11",
     title:
-      "What is SEO? Complete Beginner Guide to Search Engine Optimization (2026)",
+      "The 2026 SEO Blueprint: How We Rank Pune Businesses on Page 1 Organically",
     slug: "complete-beginner-guide-to-seo-2026",
     excerpt:
-      "Discover what SEO is, how search engines like Google work, and why it's the most powerful growth strategy for businesses in Pune to generate organic leads.",
+      "Stop guessing how Google's 2026 algorithms work. We break down the exact search framework we use at Growthik to generate organic leads for startups in Baner and Hinjewadi.",
     content: "complete-beginner-guide-to-seo-2026",
     featuredImage:
       "/images/blog/seo-services-in-pune-rank-1-google-growthik-media-thumbnail.png",
@@ -130,9 +130,9 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: "post-10",
-    title: "Complete Search Engine Submission Guide for Businesses in Pune",
+    title: "Stop Waiting for Google: The Growthik Guide to Fast-Tracking Your Site's Visibility",
     slug: "search-engine-submission-guide-pune",
-    excerpt: "Learn how businesses in Pune can improve website visibility across Google, Bing, and global search engines using SEO strategies, backlinks, and technical optimization.",
+    excerpt: "Just launched a new site? Most agencies say 'wait for the crawl.' We don't. Here is how we force-index Pune business pages across search engines in hours, not weeks.",
     content: "search-engine-submission-guide-pune",
     featuredImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
     featuredImageAlt: "Global digital ecosystem and SEO strategy",
@@ -153,10 +153,10 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: "post-1",
     title:
-      "SEO Audit Checklist 2025: 50 Points to Audit Your Website Like a Pro",
+      "The Expert SEO Audit: 50 Signals We Check to Uncover Your Competitor's Edge",
     slug: "technical-seo-audit-checklist",
     excerpt:
-      "A comprehensive SEO audit checklist covering technical SEO, on-page optimization, E-E-A-T content quality, backlinks, and local SEO - audit your site like a professional agency.",
+      "Most SEO audits are generic PDF exports. Ours isn't. This 50-point checklist reveals the technical and E-E-A-T signals we use to dominate local searches in Pune.",
     content: "",
     featuredImage:
       "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=80",
@@ -178,10 +178,10 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: "post-2",
     title:
-      "The Importance of SEO for Businesses in 2025: Why You Cannot Ignore It",
+      "Why Your Business is Losing Money Without a 2025 SEO Strategy",
     slug: "why-seo-is-important",
     excerpt:
-      "In 2025, over 8.5 billion searches happen daily on Google. If your business doesn't appear, a competitor does. Discover why SEO is non-negotiable for growth.",
+      "In 2025, if your business isn't on Page 1 for Pune searches, you're handing leads to your competitors. Here's why SEO is the only marketing channel that compounds value.",
     content: "",
     featuredImage:
       "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80",

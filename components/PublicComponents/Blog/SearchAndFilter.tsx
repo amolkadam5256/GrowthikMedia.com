@@ -99,11 +99,10 @@ export default function SearchAndFilter({ filters, onFiltersChange, totalResults
         {/* Filter Toggle */}
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className={`h-12 px-5 rounded-xl border font-semibold text-sm flex items-center gap-2 transition-all shrink-0 ${
-            showFilters || activeFilterCount > 0
+          className={`h-12 px-5 rounded-xl border font-semibold text-sm flex items-center gap-2 transition-all shrink-0 ${showFilters || activeFilterCount > 0
               ? "bg-(--color-primary) border-(--color-primary) text-white"
               : "border-(--border) bg-(--surface) text-(--text-primary) hover:border-(--color-primary)/50"
-          }`}
+            }`}
         >
           <SlidersHorizontal className="w-4 h-4" />
           Filters
@@ -127,11 +126,10 @@ export default function SearchAndFilter({ filters, onFiltersChange, totalResults
               <div className="flex flex-wrap gap-2">
                 <button
                   onClick={() => setFilter("category", "")}
-                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                    !filters.category
+                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${!filters.category
                       ? "bg-(--color-primary) text-white"
                       : "bg-(--background) border border-(--border) text-(--text-secondary) hover:border-(--color-primary)/50"
-                  }`}
+                    }`}
                 >
                   All
                 </button>
@@ -162,11 +160,10 @@ export default function SearchAndFilter({ filters, onFiltersChange, totalResults
                   <button
                     key={opt.value}
                     onClick={() => setFilter("readingTime", opt.value as BlogFilters["readingTime"])}
-                    className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-all text-left ${
-                      filters.readingTime === opt.value
+                    className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold transition-all text-left ${filters.readingTime === opt.value
                         ? "bg-(--color-primary)/10 text-(--color-primary) border border-(--color-primary)/20"
                         : "hover:bg-(--background) text-(--text-secondary)"
-                    }`}
+                      }`}
                   >
                     <Clock className="w-3 h-3" />
                     {opt.label}
@@ -185,11 +182,10 @@ export default function SearchAndFilter({ filters, onFiltersChange, totalResults
                   <button
                     key={tag.id}
                     onClick={() => setFilter("tag", filters.tag === tag.slug ? "" : tag.slug)}
-                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border ${
-                      filters.tag === tag.slug
+                    className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border ${filters.tag === tag.slug
                         ? "bg-(--color-primary) border-(--color-primary) text-white"
                         : "bg-(--background) border-(--border) text-(--text-secondary) hover:border-(--color-primary)/50"
-                    }`}
+                      }`}
                   >
                     #{tag.name}
                   </button>

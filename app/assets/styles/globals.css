@@ -48,8 +48,10 @@ body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
-  scrollbar-width: auto; /* Ensure default scrollbar in Firefox */
-  -ms-overflow-style: auto; /* Ensure default scrollbar in IE/Edge */
+  scrollbar-width: auto;
+  /* Ensure default scrollbar in Firefox */
+  -ms-overflow-style: auto;
+  /* Ensure default scrollbar in IE/Edge */
 }
 
 body {
@@ -66,6 +68,7 @@ body {
     opacity: 0;
     transform: translateY(4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -77,6 +80,7 @@ body {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -90,14 +94,18 @@ body {
 .animate-slideDown {
   animation: slideDown 0.3s ease-out forwards;
 }
+
 @keyframes shake {
+
   0%,
   100% {
     transform: translateX(0);
   }
+
   25% {
     transform: translateX(-5px);
   }
+
   75% {
     transform: translateX(5px);
   }
@@ -111,9 +119,11 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -179,8 +189,13 @@ body {
   margin: 1.5rem 0 2rem 1.5rem;
 }
 
-.blog-body ul { list-style: disc; }
-.blog-body ol { list-style: decimal; }
+.blog-body ul {
+  list-style: disc;
+}
+
+.blog-body ol {
+  list-style: decimal;
+}
 
 .blog-body li {
   color: var(--text-secondary);
@@ -206,7 +221,7 @@ body {
   font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.8;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 .blog-body code {
@@ -299,7 +314,7 @@ body {
   margin: 2.5rem 0;
   max-width: 100%;
   height: auto;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
 }
 
 .blog-body hr {

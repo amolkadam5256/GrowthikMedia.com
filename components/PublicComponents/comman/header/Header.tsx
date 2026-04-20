@@ -53,9 +53,8 @@ export default function Header() {
 
       <header
         ref={menuRef}
-        className={`fixed left-0 right-0 z-50 transition-all duration-500 shadow-[0_8px_30px_-18px_rgba(0,0,0,0.5)] bg-white dark:bg-neutral-900 backdrop-blur border-b border-gray-200 dark:border-neutral-800 ${
-          isTopBarVisible ? "lg:top-12 top-0" : "top-0"
-        }`}
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 shadow-[0_8px_30px_-18px_rgba(0,0,0,0.5)] bg-white dark:bg-neutral-900 backdrop-blur border-b border-gray-200 dark:border-neutral-800 ${isTopBarVisible ? "lg:top-12 top-0" : "top-0"
+          }`}
       >
         <div className="relative w-full max-w-screen-2xl mx-auto grid grid-cols-[auto_1fr_auto] items-center h-16 px-4 sm:px-6 lg:px-10 xl:px-12 gap-4 sm:gap-6 bg-white dark:bg-neutral-900">
           <div className="justify-self-start">

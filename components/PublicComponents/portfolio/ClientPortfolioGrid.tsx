@@ -5,17 +5,20 @@ import PortfolioCard from './PortfolioCard';
 import { PortfolioProject } from '@/lib/data/portfolio';
 
 // All Categories we want as filter tabs
-const categories = ['website-dev', 'digital-marketing', 'full-stack', 'real-estate', 'education'];
-
 export default function ClientPortfolioGrid({ initialData }: { initialData: PortfolioProject[] }) {
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
+  // Derive categories dynamically from data
+  const categories = Array.from(new Set(initialData.map(p => p.category)));
   const filteredData = initialData.filter(project => {
     if (activeCategory === 'All') return true;
     if (activeCategory === 'Pune') return project.location === 'pune';
     if (activeCategory === 'Dubai') return project.location === 'dubai';
+    
+    // Fallback industry filters if they are not in our dynamic categories list
     if (activeCategory === 'real-estate') return project.industry === 'Real Estate';
     if (activeCategory === 'education') return project.industry === 'Education';
+    
     return project.category === activeCategory;
   });
 

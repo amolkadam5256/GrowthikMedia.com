@@ -104,11 +104,10 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
       {item.href ? (
         <Link
           href={item.href}
-          className={`${commonClass} ${
-            isTopLevel
+          className={`${commonClass} ${isTopLevel
               ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-900 dark:text-white"
               : `text-[14px] ${isOpen ? activeStyles : idleStyles}`
-          }`}
+            }`}
         >
           {itemContent}
           {hasChildren && !isTopLevel && (
@@ -124,11 +123,10 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
         </Link>
       ) : (
         <button
-          className={`${commonClass} ${
-            isTopLevel
+          className={`${commonClass} ${isTopLevel
               ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-900 dark:text-white"
               : `text-[14px] ${isOpen ? activeStyles : idleStyles}`
-          }`}
+            }`}
         >
           {itemContent}
           {hasChildren && !isTopLevel && (
@@ -155,13 +153,12 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
       {hasChildren && isOpen && (
         <ul
           ref={submenuRef}
-          className={`absolute z-100 min-w-[240px] p-2 bg-white dark:bg-neutral-900 text-gray-900 dark:text-white border border-gray-200 dark:border-neutral-700 shadow-2xl rounded-xl animate-fadeIn ${
-            isTopLevel
+          className={`absolute z-100 min-w-[240px] p-2 bg-white dark:bg-neutral-900 text-gray-900 dark:text-white border border-gray-200 dark:border-neutral-700 shadow-2xl rounded-xl animate-fadeIn ${isTopLevel
               ? "top-full left-1/2 -translate-x-1/2 mt-4"
               : calculatedDirection === "left"
                 ? "top-0 right-[calc(100%+2px)]"
                 : "top-0 left-[calc(100%+2px)]"
-          }`}
+            }`}
         >
           {item.items?.map((subItem, idx) => (
             <RecursiveNavItem key={idx} item={subItem} depth={depth + 1} />

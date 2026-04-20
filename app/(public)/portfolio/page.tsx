@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Metadata } from 'next';
 import { portfolioData } from '@/lib/data/portfolio';
 import ClientPortfolioGrid from '@/components/PublicComponents/portfolio/ClientPortfolioGrid';
@@ -134,18 +135,18 @@ export default function PortfolioPage() {
             Like what you see? Let&apos;s build your project next.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/contact"
               className="inline-block px-8 py-4 bg-red-600 text-white font-bold rounded-xl hover:bg-red-700 transition-colors"
             >
               Start Your Project
-            </a>
-            <a
+            </Link>
+            <Link
               href="/services"
               className="inline-block px-8 py-4 border-2 border-red-600 text-red-600 font-bold rounded-xl hover:bg-red-600 hover:text-white transition-colors"
             >
               View Our Services
-            </a>
+            </Link>
           </div>
         </section>
 
