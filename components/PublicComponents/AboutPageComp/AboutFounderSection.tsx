@@ -179,12 +179,12 @@ const AboutFounderSection = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              {
+              /* {
                 name: "Prachi Ghodke",
                 role: "Visual Storyteller",
                 tag: "CREATIVE",
                 img: images.team?.prachi,
-              },
+              }, */
               {
                 name: "Amit Kadam",
                 role: "Financial Architect",
