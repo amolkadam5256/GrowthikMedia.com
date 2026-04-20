@@ -6,52 +6,18 @@ import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import { images } from "@/app/assets/images/images";
 
-const PROJECTS = [
-  {
-    category: "SEO & Content",
-    title: "SEO Growth for Real Estate Client",
-    image: images.portfolio.seoRealEstate,
-    link: "/portfolio/seo-growth-real-estate",
-    metric: "+150% Traffic",
-  },
-  {
-    category: "Social Media",
-    title: "Social Media Campaign for E-commerce Brand",
-    image: images.portfolio.socialMedia,
-    link: "/portfolio/social-media-ecommerce",
-    metric: "3X Leads",
-  },
-  {
-    category: "Video Production",
-    title: "Video Marketing for Startup",
-    image: images.portfolio.videoMarketing,
-    link: "/portfolio/video-marketing-startup",
-    metric: "45% Lower CPL",
-  },
-  {
-    category: "Web Development",
-    title: "Website Redesign for Local Business",
-    image: images.portfolio.websiteRedesign,
-    link: "/portfolio/website-redesign-local",
-    metric: "85% Speed Up",
-  },
-  {
-    category: "Branding",
-    title: "Branding for Luxury App",
-    image: images.portfolio.luxuryBranding,
-    link: "/portfolio/luxury-branding-app",
-    metric: "2X Brand Value",
-  },
-  {
-    category: "Content Strategy",
-    title: "Content Strategy for Education",
-    image: images.portfolio.educationContent,
-    link: "/portfolio/education-content-strategy",
-    metric: "1M+ Impressions",
-  },
-];
+import { portfolioData, getFeaturedProjects } from "@/lib/data/portfolio";
 
 const PortfolioHighlightsSection = React.memo(() => {
+  const featuredProjects = getFeaturedProjects().slice(0, 6);
+  
+  const projectsToDisplay = featuredProjects.map(project => ({
+    category: project.category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+    title: project.title,
+    image: project.thumbnail,
+    link: `/portfolio/${project.slug}`,
+    metric: project.results && project.results.length > 0 ? project.results[0].value : "Live Results",
+  }));
   return (
     <section className="py-16 md:py-24 px-4 bg-(--surface) relative transition-colors duration-500 overflow-hidden border-y border-(--border)">
       {/* Background Patterns - Adjusted for Theme Consistency */}
@@ -102,7 +68,7 @@ const PortfolioHighlightsSection = React.memo(() => {
 
         {/* Portfolio Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-10">
-          {PROJECTS.map((project, index) => (
+          {projectsToDisplay.map((project, index) => (
             <PortfolioCard
               key={project.title}
               {...project}
