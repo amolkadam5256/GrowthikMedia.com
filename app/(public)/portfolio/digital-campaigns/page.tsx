@@ -6,6 +6,9 @@ import PageHero from '@/components/PublicComponents/ui/PageHero';
 export const metadata: Metadata = {
   title: 'Holistic Digital Campaigns | Growthik Media',
   description: 'Full-spectrum campaigns bridging Organic SEO, paid advertising, and conversion funnels.',
+  alternates: {
+    canonical: 'https://www.growthikmedia.com/portfolio/digital-campaigns/',
+  },
 };
 
 export default function DigitalCampaignsPage() {

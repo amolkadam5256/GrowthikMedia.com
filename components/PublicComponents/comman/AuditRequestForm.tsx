@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { Send, Globe, Target, User, Mail, Phone } from "lucide-react";
+import React, { useRef, useState } from "react";
+import { Send, Globe, Target, User, Mail } from "lucide-react";
+import { trackEvent, trackLead } from "@/lib/analytics";
 
 export default function AuditRequestForm() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,16 @@ export default function AuditRequestForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const hasTrackedFormStart = useRef(false);
+
+  const trackFormStart = () => {
+    if (hasTrackedFormStart.current) return;
+    hasTrackedFormStart.current = true;
+    trackEvent("form_start", {
+      form_type: "Audit Request (Detailed)",
+      goal: formData.goal,
+    });
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -32,17 +43,28 @@ export default function AuditRequestForm() {
 
       if (response.ok) {
         setSubmitStatus("success");
-        // Meta Pixel Lead Tracking
-        if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-          (window as any).fbq("track", "Lead", { content_name: "Free SEO Audit", content_category: "Audit Request" });
-        }
+        trackLead("Free SEO Audit", {
+          form_type: "Audit Request (Detailed)",
+          content_category: "Audit Request",
+          goal: formData.goal,
+        });
         setFormData({ name: "", email: "", phone: "", website: "", goal: "SEO Audit" });
       } else {
         setSubmitStatus("error");
+        trackEvent("form_submit_error", {
+          form_type: "Audit Request (Detailed)",
+          error_type: "api_response",
+          goal: formData.goal,
+        });
       }
     } catch (error) {
       console.error("Audit Form Error:", error);
       setSubmitStatus("error");
+      trackEvent("form_submit_error", {
+        form_type: "Audit Request (Detailed)",
+        error_type: "network_or_runtime",
+        goal: formData.goal,
+      });
     } finally {
       setIsSubmitting(false);
       setTimeout(() => setSubmitStatus("idle"), 8000);
@@ -64,7 +86,7 @@ export default function AuditRequestForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} onFocusCapture={trackFormStart} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="relative">
           <label className="block text-xs font-black uppercase tracking-widest mb-2 text-(--text-secondary) pl-1">Full Name *</label>
@@ -132,9 +154,10 @@ export default function AuditRequestForm() {
 
       {submitStatus === "error" && (
         <p className="text-center text-red-500 text-sm font-bold animate-pulse">
-          ⚠️ Something went wrong. Please check your connection and try again.
+          Something went wrong. Please check your connection and try again.
         </p>
       )}
     </form>
   );
 }
+

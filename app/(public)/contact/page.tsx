@@ -1,18 +1,19 @@
 import { Metadata } from "next";
 import ContactClient from "./ContactClient";
 import Script from "next/script";
+import { CONTACT_INFO, STRUCTURED_DATA_IDS } from "@/constants/contact";
 
 export const metadata: Metadata = {
   title: "Growthik Media | Book a Free Strategy Call With Our Pune Experts",
   description:
-    "Ready to grow? Connect with Growthik Media—your Pune-based partner for clear, result-driven SEO, Google Ads, and high-performance websites. Let's map out your growth plan today.",
+    "Connect with Growthik Media for SEO, Google Ads, and high-performance websites in Pune. Book your free growth strategy call today.",
   keywords:
     "contact digital marketing agency Pune, hire SEO agency Pune, Growthik Media contact, digital marketing consultation Pune, best digital marketing company Pune, SEO services contact Pune, Google Ads agency Pune, free digital marketing audit Pune",
   authors: [{ name: "Growthik Media" }],
   openGraph: {
     title: "Request a Digital Strategy Call | Growthik Media Pune",
     description:
-      "Ready to grow? Connect with Growthik Media—your Pune-based partner for clear, result-driven SEO, Google Ads, and high-performance websites.",
+      "Connect with Growthik Media for clear, result-driven SEO, Google Ads, and high-performance websites in Pune.",
     url: "https://www.growthikmedia.com/contact/",
     siteName: "Growthik Media",
     images: [
@@ -59,7 +60,7 @@ const faqSchema = {
       name: "How quickly will you respond to inquiries?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Our team typically responds within 12–24 hours during business days. For urgent enquiries, you can also call us directly at +91 80557 54054.",
+        text: "Our team typically responds within 12-24 hours during business days. For urgent enquiries, you can also call us directly at +91 80557 54054.",
       },
     },
     {
@@ -99,7 +100,7 @@ const faqSchema = {
       name: "How long does it take to see results from digital marketing?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "SEO typically shows measurable results in 3–6 months. PPC and Google Ads campaigns can deliver leads within 2–4 weeks. Social media growth depends on content strategy and ad spend.",
+        text: "SEO typically shows measurable results in 3-6 months. PPC and Google Ads campaigns can deliver leads within 2-4 weeks. Social media growth depends on content strategy and ad spend.",
       },
     },
   ],
@@ -108,15 +109,35 @@ const faqSchema = {
 const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
+  "@id": `${CONTACT_INFO.website}/contact/#webpage`,
   name: "Contact Growthik Media - Digital Marketing Agency Pune",
-  url: "https://www.growthikmedia.com/contact/",
+  url: `${CONTACT_INFO.website}/contact/`,
   description:
     "Contact page for Growthik Media, Pune's leading digital marketing agency specialising in SEO, Google Ads, social media marketing, and web development.",
+  isPartOf: {
+    "@id": STRUCTURED_DATA_IDS.website,
+  },
+  about: {
+    "@id": STRUCTURED_DATA_IDS.organization,
+  },
+  mainEntity: {
+    "@id": STRUCTURED_DATA_IDS.localBusiness,
+  },
   breadcrumb: {
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.growthikmedia.com/" },
-      { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.growthikmedia.com/contact/" },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: `${CONTACT_INFO.website}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact",
+        item: `${CONTACT_INFO.website}/contact/`,
+      },
     ],
   },
 };

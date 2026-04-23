@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { CONTACT_INFO } from "@/constants/contact";
+import { CONTACT_INFO, STRUCTURED_DATA_IDS } from "@/constants/contact";
 
 const AboutHeroSection = dynamic(
   () => import("@/components/PublicComponents/AboutPageComp/AboutHeroSection"),
@@ -47,8 +47,8 @@ const AboutFinalCTASection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Growthik Media | We Help Pune Businesses Scale With SEO & Performance Marketing",
-  description: "More than just an agency, we're your Pune-based digital partner. We build reliable marketing systems using expert SEO, Google Ads, and high-performance web engineering to turn your traffic into consistent revenue.",
+  title: "About Growthik Media | Pune SEO & Performance Marketing",
+  description: "Meet Growthik Media, a Pune digital partner building SEO, Google Ads, and high-performance web systems that turn traffic into leads.",
   keywords:
     "about digital marketing agency Pune, SEO experts Pune, performance marketing Pune, Growthik Media team, Amol Kadam founder, reliable digital agency Pune, web development Pune, grow business online Pune",
   alternates: {
@@ -98,6 +98,7 @@ const getOrganizationSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": STRUCTURED_DATA_IDS.organization,
     name: "Growthik Media",
     alternateName: "Growthik Media Pune",
     url: CONTACT_INFO.website,
@@ -180,13 +181,17 @@ const getAboutPageSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "AboutPage",
+    "@id": `${CONTACT_INFO.website}/about/#webpage`,
     name: "About Growthik Media",
     description:
       "Growthik Media is an AI-powered growth engineering company and performance marketing agency in Pune.",
     url: `${CONTACT_INFO.website}/about/`,
+    isPartOf: {
+      "@id": STRUCTURED_DATA_IDS.website,
+    },
     mainEntity: {
       "@type": "Organization",
-      name: "Growthik Media",
+      "@id": STRUCTURED_DATA_IDS.organization,
     },
   };
 };
@@ -196,12 +201,13 @@ const getPersonSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${CONTACT_INFO.website}/#amol-kadam`,
     name: "Amol Kadam",
     jobTitle: "Founder & Growth Architect",
     url: "https://www.linkedin.com/in/amolkadam77/",
     worksFor: {
       "@type": "Organization",
-      name: "Growthik Media",
+      "@id": STRUCTURED_DATA_IDS.organization,
     },
     knowsAbout: [
       "Digital Marketing",
@@ -217,7 +223,12 @@ const getPersonSchema = () => {
 export default function About() {
   const combinedSchema = {
     "@context": "https://schema.org",
-    "@graph": [getAboutPageSchema(), getFAQSchema(), getPersonSchema()],
+    "@graph": [
+      getOrganizationSchema(),
+      getAboutPageSchema(),
+      getFAQSchema(),
+      getPersonSchema(),
+    ],
   };
 
   return (

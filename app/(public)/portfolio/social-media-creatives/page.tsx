@@ -6,6 +6,9 @@ import PageHero from '@/components/PublicComponents/ui/PageHero';
 export const metadata: Metadata = {
   title: 'Social Media Creatives & Ads | Growthik Media',
   description: 'High-performing social media campaigns bridging aesthetics and conversion.',
+  alternates: {
+    canonical: 'https://www.growthikmedia.com/portfolio/social-media-creatives/',
+  },
 };
 
 export default function SocialMediaPage() {

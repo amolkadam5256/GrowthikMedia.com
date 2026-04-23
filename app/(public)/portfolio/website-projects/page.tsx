@@ -6,6 +6,9 @@ import PageHero from '@/components/PublicComponents/ui/PageHero';
 export const metadata: Metadata = {
   title: 'Website Development Projects | Growthik Media',
   description: '14+ website development projects spanning real estate, healthcare, education, logistics, and more.',
+  alternates: {
+    canonical: 'https://www.growthikmedia.com/portfolio/website-projects/',
+  },
 };
 
 export default function WebsiteProjectsPage() {

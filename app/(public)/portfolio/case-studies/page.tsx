@@ -6,6 +6,9 @@ import PageHero from '@/components/PublicComponents/ui/PageHero';
 export const metadata: Metadata = {
   title: 'In-Depth Case Studies | Growthik Media',
   description: 'A deep dive into how we constructed robust software solutions and scaled digital agencies.',
+  alternates: {
+    canonical: 'https://www.growthikmedia.com/portfolio/case-studies/',
+  },
 };
 
 export default function CaseStudiesPage() {

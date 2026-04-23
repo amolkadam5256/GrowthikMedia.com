@@ -1,6 +1,12 @@
 // components/SEO.tsx
 import Script from "next/script";
-import { CONTACT_INFO } from "@/constants/contact";
+import {
+  BUSINESS_GEO,
+  CONTACT_INFO,
+  INDEXABLE_SOCIAL_PROFILES,
+  OPENING_HOURS_SPECIFICATION,
+  STRUCTURED_DATA_IDS,
+} from "@/constants/contact";
 
 export default function SEO() {
   return (
@@ -32,6 +38,7 @@ export default function SEO() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
+            "@id": STRUCTURED_DATA_IDS.organization,
             name: CONTACT_INFO.companyName,
             alternateName: "Growthik",
             url: CONTACT_INFO.website,
@@ -48,24 +55,7 @@ export default function SEO() {
               postalCode: CONTACT_INFO.address.pincode,
               addressCountry: "IN",
             },
-            sameAs: [
-              CONTACT_INFO.social.facebook,
-              CONTACT_INFO.social.instagram,
-              CONTACT_INFO.social.twitter,
-              CONTACT_INFO.social.linkedin,
-              CONTACT_INFO.social.youtube,
-              CONTACT_INFO.social.pinterest,
-              CONTACT_INFO.social.behance,
-              CONTACT_INFO.social.whatsapp,
-              CONTACT_INFO.social.telegram,
-              CONTACT_INFO.social.snapchat,
-              CONTACT_INFO.social.reddit,
-              CONTACT_INFO.social.discord,
-              CONTACT_INFO.social.github,
-              CONTACT_INFO.social.dribbble,
-              CONTACT_INFO.social.medium,
-              CONTACT_INFO.social.quora,
-            ],
+            sameAs: INDEXABLE_SOCIAL_PROFILES,
             contactPoint: {
               "@type": "ContactPoint",
               telephone: CONTACT_INFO.phone.primary,
@@ -87,7 +77,7 @@ export default function SEO() {
             "@type": "ProfessionalService",
             name: CONTACT_INFO.companyName,
             image: `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`,
-            "@id": CONTACT_INFO.website,
+            "@id": STRUCTURED_DATA_IDS.professionalService,
             url: CONTACT_INFO.website,
             telephone: CONTACT_INFO.phone.primary,
             priceRange: "$$",
@@ -101,16 +91,13 @@ export default function SEO() {
             },
             geo: {
               "@type": "GeoCoordinates",
-              latitude: 18.4782,
-              longitude: 73.8131,
+              latitude: BUSINESS_GEO.latitude,
+              longitude: BUSINESS_GEO.longitude,
             },
-            sameAs: [
-              CONTACT_INFO.social.facebook,
-              CONTACT_INFO.social.instagram,
-              CONTACT_INFO.social.twitter,
-              CONTACT_INFO.social.linkedin,
-              CONTACT_INFO.social.youtube,
-            ],
+            sameAs: INDEXABLE_SOCIAL_PROFILES,
+            parentOrganization: {
+              "@id": STRUCTURED_DATA_IDS.organization,
+            },
           }),
         }}
       />
@@ -123,8 +110,12 @@ export default function SEO() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
+            "@id": STRUCTURED_DATA_IDS.website,
             name: CONTACT_INFO.companyName,
             url: CONTACT_INFO.website,
+            publisher: {
+              "@id": STRUCTURED_DATA_IDS.organization,
+            },
             potentialAction: {
               "@type": "SearchAction",
               target: `${CONTACT_INFO.website}/blog?search={search_term_string}`,
@@ -144,7 +135,7 @@ export default function SEO() {
             "@type": "LocalBusiness",
             name: CONTACT_INFO.companyName,
             image: `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`,
-            "@id": CONTACT_INFO.website,
+            "@id": STRUCTURED_DATA_IDS.localBusiness,
             url: CONTACT_INFO.website,
             telephone: CONTACT_INFO.phone.primary,
             priceRange: "$$",
@@ -158,36 +149,14 @@ export default function SEO() {
             },
             geo: {
               "@type": "GeoCoordinates",
-              latitude: 18.4782,
-              longitude: 73.8131,
+              latitude: BUSINESS_GEO.latitude,
+              longitude: BUSINESS_GEO.longitude,
             },
-            sameAs: [
-              CONTACT_INFO.social.facebook,
-              CONTACT_INFO.social.instagram,
-              CONTACT_INFO.social.twitter,
-              CONTACT_INFO.social.linkedin,
-              CONTACT_INFO.social.youtube,
-            ],
-            openingHoursSpecification: [
-              {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                ],
-                opens: "10:00",
-                closes: "19:00",
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: "Saturday",
-                opens: "10:00",
-                closes: "16:00",
-              },
-            ],
+            sameAs: INDEXABLE_SOCIAL_PROFILES,
+            openingHoursSpecification: OPENING_HOURS_SPECIFICATION,
+            parentOrganization: {
+              "@id": STRUCTURED_DATA_IDS.organization,
+            },
           }),
         }}
       />
@@ -205,6 +174,7 @@ export default function SEO() {
             serviceType: "Digital Marketing & Video Production",
             provider: {
               "@type": "Organization",
+              "@id": STRUCTURED_DATA_IDS.organization,
               name: CONTACT_INFO.companyName,
             },
             areaServed: "Worldwide",

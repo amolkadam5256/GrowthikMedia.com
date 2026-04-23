@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: `Terms of Service | ${CONTACT_INFO.companyName}`,
   description: `Terms and conditions for using ${CONTACT_INFO.companyName} services and website.`,
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/terms/",
+    canonical: "https://www.growthikmedia.com/terms/",
+  },
+  robots: {
+    index: false,
+    follow: true,
   },
 };
 

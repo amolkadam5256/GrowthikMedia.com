@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Send, CheckCircle2, ChevronDown } from "lucide-react";
+import { trackEvent, trackLead } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,15 @@ export default function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
+  const hasTrackedFormStart = useRef(false);
+
+  const trackFormStart = () => {
+    if (hasTrackedFormStart.current) return;
+    hasTrackedFormStart.current = true;
+    trackEvent("form_start", {
+      form_type: "Detailed Contact Form",
+    });
+  };
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -46,13 +56,10 @@ export default function ContactForm() {
 
       if (res.ok) {
         setSubmitStatus("success");
-        // Meta Pixel Lead Tracking
-        if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-          (window as any).fbq("track", "Lead", {
-            content_name: "Contact Form",
-            content_category: formData.service
-          });
-        }
+        trackLead("Contact Form", {
+          form_type: "Detailed Contact Form",
+          service: formData.service,
+        });
 
         setFormData({
           name: "",
@@ -64,18 +71,25 @@ export default function ContactForm() {
           budget: "",
           message: "",
         });
+        setTimeout(() => setSubmitStatus("idle"), 5000);
       } else {
         setSubmitStatus("error");
+        trackEvent("form_submit_error", {
+          form_type: "Detailed Contact Form",
+          error_type: "api_response",
+          service: formData.service,
+        });
       }
     } catch (err) {
       console.error("Submission error:", err);
       setSubmitStatus("error");
+      trackEvent("form_submit_error", {
+        form_type: "Detailed Contact Form",
+        error_type: "network_or_runtime",
+        service: formData.service,
+      });
     } finally {
       setIsSubmitting(false);
-      // Success remains for 5s then reverts
-      if (submitStatus === "success") {
-        setTimeout(() => setSubmitStatus("idle"), 5000);
-      }
     }
   };
 
@@ -93,7 +107,7 @@ export default function ContactForm() {
           get back to you within 24 hours.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} onFocusCapture={trackFormStart} className="space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label

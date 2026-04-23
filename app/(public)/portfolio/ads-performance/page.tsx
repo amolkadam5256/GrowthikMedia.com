@@ -6,6 +6,9 @@ import PageHero from '@/components/PublicComponents/ui/PageHero';
 export const metadata: Metadata = {
   title: 'PPC & Meta Ads Performance Portfolio | Growthik Media',
   description: 'View the metrics and direct lead structures of our most powerful Real Estate and Healthcare ad campaigns.',
+  alternates: {
+    canonical: 'https://www.growthikmedia.com/portfolio/ads-performance/',
+  },
 };
 
 export default function AdsPerformancePage() {

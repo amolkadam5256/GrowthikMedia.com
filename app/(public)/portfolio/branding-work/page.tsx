@@ -6,6 +6,9 @@ import PageHero from '@/components/PublicComponents/ui/PageHero';
 export const metadata: Metadata = {
   title: 'Branding Work | Creative Identity | Growthik Media',
   description: 'View creative branding campaigns and corporate identity designs for our international clients.',
+  alternates: {
+    canonical: 'https://www.growthikmedia.com/portfolio/branding-work/',
+  },
 };
 
 export default function BrandingWorkPage() {
