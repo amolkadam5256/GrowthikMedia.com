@@ -18,7 +18,7 @@
     },
     {
       "id": 2,
-      "prompt": "I want to build a free ROI calculator for our HR software. Users input their company size and current processes, and it shows how much time and money they'd save.",
+      "prompt": "I want to build a free ROI calculator for our HR software. Users input their company size and current processes and it shows how much time and money they'd save.",
       "expected_output": "Should identify this as a calculator tool type. Should apply the ideation framework to validate the concept. Should discuss lead capture strategy: should the basic result be free and detailed report gated? Should address the build vs buy decision. Should recommend MVP scope (what inputs, what outputs, what formula). Should discuss SEO considerations for the tool page. Should reference the evaluation scorecard to score the idea.",
       "assertions": [
         "Identifies as calculator tool type",

@@ -48,7 +48,7 @@ const AboutFinalCTASection = dynamic(
 
 export const metadata: Metadata = {
   title: "About Growthik Media | Pune SEO & Performance Marketing",
-  description: "Meet Growthik Media, a Pune digital partner building SEO, Google Ads, and high-performance web systems that turn traffic into leads.",
+  description: "Meet Growthik Media, a Pune digital partner building SEO, Google Ads and high-performance web systems that turn traffic into leads.",
   keywords:
     "about digital marketing agency Pune, SEO experts Pune, performance marketing Pune, Growthik Media team, Amol Kadam founder, reliable digital agency Pune, web development Pune, grow business online Pune",
   alternates: {
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title:
       "About Growthik Media - Digital Marketing Agency in Pune",
     description:
-      "Growthik Media is Pune's results-focused digital growth partner helping brands scale through AI-driven SEO, performance marketing, and web engineering. Meet our team.",
+      "Growthik Media is Pune's results-focused digital growth partner helping brands scale through AI-driven SEO, performance marketing and web engineering. Meet our team.",
     url: `${CONTACT_INFO.website}/about/`,
     siteName: "Growthik Media",
     images: [
@@ -145,7 +145,7 @@ const getFAQSchema = () => {
         name: "Why choose Growthik Media in Pune?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Growthik Media is Pune's leading performance marketing agency that focuses on ROI-driven strategies, combining AI-powered SEO, precision paid media, and high-conversion web engineering to deliver predictable growth.",
+          text: "Growthik Media is Pune's leading performance marketing agency that focuses on ROI-driven strategies, combining AI-powered SEO, precision paid media and high-conversion web engineering to deliver predictable growth.",
         },
       },
       {
@@ -153,7 +153,7 @@ const getFAQSchema = () => {
         name: "How is Growthik different from other agencies?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Unlike traditional agencies that focus on simple marketing campaigns and vanity metrics, Growthik Media is a growth engineering company. We build predictable revenue systems using AI automation, data analytics, and performance engineering to ensure sustainable business growth.",
+          text: "Unlike traditional agencies that focus on simple marketing campaigns and vanity metrics, Growthik Media is a growth engineering company. We build predictable revenue systems using AI automation, data analytics and performance engineering to ensure sustainable business growth.",
         },
       },
       {
@@ -161,7 +161,7 @@ const getFAQSchema = () => {
         name: "Do you offer SEO services for Pune businesses?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes, we specialize in high-performance SEO for local businesses. We don't just 'do SEO' - we build search strategies that capture high-intent traffic and turn it into leads for businesses in Baner, Wakad, and beyond.",
+          text: "Yes, we specialize in high-performance SEO for local businesses. We don't just 'do SEO' - we build search strategies that capture high-intent traffic and turn it into leads for businesses in Baner, Wakad and beyond.",
         },
       },
       {
@@ -169,7 +169,7 @@ const getFAQSchema = () => {
         name: "Where is Growthik Media located?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Growthik Media is based in Warje, Pune, and serves clients across Hinjewadi, Baner, Wakad, PCMC, Kothrud, and throughout Maharashtra and India.",
+          text: "Growthik Media is based in Warje, Pune and serves clients across Hinjewadi, Baner, Wakad, PCMC, Kothrud and throughout Maharashtra and India.",
         },
       },
     ],

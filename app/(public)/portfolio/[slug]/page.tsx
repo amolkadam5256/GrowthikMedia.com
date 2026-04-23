@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { portfolioData, getProjectBySlug, getRelatedProjects } from '@/lib/data/portfolio';
+import { CONTACT_INFO, STRUCTURED_DATA_IDS } from '@/constants/contact';
 
 // Generate static routes for all portfolio entries
 export async function generateStaticParams() {
@@ -42,26 +43,26 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'CreativeWork',
+        '@type': 'Article',
+        '@id': `${CONTACT_INFO.website}/portfolio/${slug}/#article`,
+        headline: project.title,
         name: project.title,
         description: project.shortDesc,
-        image: `https://www.growthikmedia.com${project.thumbnail}`,
+        image: `${CONTACT_INFO.website}${project.thumbnail}`,
         author: {
-          '@type': 'Organization',
-          name: 'Growthik Media',
+          '@id': STRUCTURED_DATA_IDS.organization,
         },
         publisher: {
-          '@type': 'Organization',
-          name: 'Growthik Media',
-          logo: {
-            '@type': 'ImageObject',
-            url: 'https://www.growthikmedia.com/logo.png',
-          },
+          '@id': STRUCTURED_DATA_IDS.organization,
         },
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `https://www.growthikmedia.com/portfolio/${slug}/`,
+          '@id': `${CONTACT_INFO.website}/portfolio/${slug}/`,
         },
+        about: [
+          { '@type': 'Thing', name: project.industry },
+          { '@type': 'Thing', name: project.category.replace('-', ' ') },
+        ],
       },
       {
         '@type': 'BreadcrumbList',
@@ -70,21 +71,32 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://www.growthikmedia.com/',
+            item: `${CONTACT_INFO.website}/`,
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Portfolio',
-            item: 'https://www.growthikmedia.com/portfolio/',
+            item: `${CONTACT_INFO.website}/portfolio/`,
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: project.title,
-            item: `https://www.growthikmedia.com/portfolio/${slug}/`,
+            item: `${CONTACT_INFO.website}/portfolio/${slug}/`,
           },
         ],
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${CONTACT_INFO.website}/portfolio/${slug}/#results`,
+        name: `${project.title} Results`,
+        numberOfItems: project.results?.length || 0,
+        itemListElement: (project.results || []).map((result, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: `${result.metric}: ${result.value}`,
+        })),
       },
     ],
   };
@@ -124,16 +136,16 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
 
           <div className="flex flex-wrap items-center gap-4 mb-10">
             <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-semibold">
-              🏢 {project.industry}
+              {project.industry}
             </div>
             {project.location && (
               <div className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-semibold capitalize">
-                📍 {project.location}
+                {project.location}
               </div>
             )}
             {project.status === 'live' && (
               <div className="flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 dark:bg-emerald-900/20 dark:text-emerald-400 rounded-lg text-sm font-bold border border-emerald-200 dark:border-emerald-800">
-                🟢 Live Results
+                Live Results
               </div>
             )}
 
@@ -268,3 +280,4 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
     </div>
   );
 }
+

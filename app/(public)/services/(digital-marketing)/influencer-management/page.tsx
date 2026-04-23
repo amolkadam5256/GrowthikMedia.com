@@ -73,17 +73,17 @@ export default function InfluencerManagementPage() {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight">Authentic Brand Storytelling with Influencer Marketing in Pune</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                As a leading influencer agency India, we believe that authenticity is the currency of the digital age. For brands in Pune, this means moving beyond simple celebrity endorsements to meaningful partnerships with micro and nano-influencers who have a real connection with the local community. We identify creators who align with your brand values and have an active, engaged following in Pune and across India. 
+                As a leading influencer agency India, we believe that authenticity is the currency of the digital age. For brands in Pune, this means moving beyond simple celebrity endorsements to meaningful partnerships with micro and nano-influencers who have a real connection with the local community. We identify creators who align with your brand values and have an active, engaged following in Pune and across India.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">End-to-End Influencer Campaign Management</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                Managing multiple influencers can be a logistical nightmare. Growthik Media simplifies this by handling the entire process: from initial outreach and negotiation to content briefing and final performance reporting. We ensure that every piece of content produced is on-brand and optimized for engagement. Our proprietary influencer marketing Pune database allows us to filter creators based on niche, location, and proven ROI metrics, ensuring your budget is spent where it matters most.
+                Managing multiple influencers can be a logistical nightmare. Growthik Media simplifies this by handling the entire process: from initial outreach and negotiation to content briefing and final performance reporting. We ensure that every piece of content produced is on-brand and optimized for engagement. Our proprietary influencer marketing Pune database allows us to filter creators based on niche, location and proven ROI metrics, ensuring your budget is spent where it matters most.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Measuring ROI and Long-Term Brand Equity</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                We don’t just report on &quot;likes&quot;; we focus on the metrics that drive your business forward. Every brand influencer campaign we run is tracked for link clicks, conversions, and brand sentiment. By integrating influencer content into your broader digital marketing strategy, we help you create a library of user-generated content (UGC) that continues to provide value long after the campaign ends.
+                We don’t just report on &quot;likes&quot;; we focus on the metrics that drive your business forward. Every brand influencer campaign we run is tracked for link clicks, conversions and brand sentiment. By integrating influencer content into your broader digital marketing strategy, we help you create a library of user-generated content (UGC) that continues to provide value long after the campaign ends.
               </p>
             </div>
 
@@ -100,7 +100,7 @@ export default function InfluencerManagementPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">Can you help me find influencers specifically from Pune?</h3>
-                  <p className="text-(--text-secondary) text-center">Yes. We have a dedicated network of Pune-based influencers across niches like lifestyle, tech, food, and business who can help you dominate the local market.</p>
+                  <p className="text-(--text-secondary) text-center">Yes. We have a dedicated network of Pune-based influencers across niches like lifestyle, tech, food and business who can help you dominate the local market.</p>
                 </div>
               </div>
             </div>

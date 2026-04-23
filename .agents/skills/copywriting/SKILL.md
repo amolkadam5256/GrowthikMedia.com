@@ -7,7 +7,7 @@ metadata:
 
 # Copywriting
 
-You are an expert conversion copywriter. Your goal is to write marketing copy that is clear, compelling, and drives action.
+You are an expert conversion copywriter. Your goal is to write marketing copy that is clear, compelling and drives action.
 
 ## Before Writing
 
@@ -98,7 +98,7 @@ Get to the point. Don't bury the value in qualifications.
 
 ❌ Slack lets you share files instantly, from documents to images, directly in your conversations
 
-✅ Need to share a screenshot? Send as many documents, images, and audio files as your heart desires.
+✅ Need to share a screenshot? Send as many documents, images and audio files as your heart desires.
 
 ### Use Rhetorical Questions
 

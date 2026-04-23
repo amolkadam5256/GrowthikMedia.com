@@ -18,7 +18,7 @@ import {
   Phone,
   CheckCircle2,
 } from "lucide-react";
-import { CONTACT_INFO } from "@/constants/contact";
+import { CONTACT_INFO, STRUCTURED_DATA_IDS } from "@/constants/contact";
 
 // FilterableServices has interactive state and lives below the fold -
 // dynamic import keeps it out of the initial page bundle.
@@ -29,7 +29,7 @@ const FilterableServices = dynamic(() =>
 export const metadata: Metadata = {
   title: "Growthik Media | Honest Digital Marketing & SEO Services in Pune",
   description:
-    "We help Pune's ambitious brands grow with search strategies that work. High-performance SEO, predictable Google Ads, and fast websites that turn traffic into revenue. No fluff, just results.",
+    "We help Pune's ambitious brands grow with search strategies that work. High-performance SEO, predictable Google Ads and fast websites that turn traffic into revenue. No fluff, just results.",
   keywords:
     "digital marketing services pune, seo company pune, google ads agency pune, website development pune, ecommerce development, performance marketing pune, social media marketing pune, branding agency pune, growthik media services",
   alternates: {
@@ -67,7 +67,7 @@ export default function ServicesPage() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": `${CONTACT_INFO.website}/#organization`,
+        "@id": STRUCTURED_DATA_IDS.localBusiness,
         name: "Growthik Media",
         url: CONTACT_INFO.website,
         address: {
@@ -86,7 +86,7 @@ export default function ServicesPage() {
         "@type": "Service",
         name: "Digital Marketing & Website Development",
         provider: {
-          "@id": `${CONTACT_INFO.website}/#organization`,
+          "@id": STRUCTURED_DATA_IDS.organization,
         },
         areaServed: [
           "Pune",
@@ -98,6 +98,21 @@ export default function ServicesPage() {
           "Hadapsar",
           "Viman Nagar",
           "PCMC",
+        ],
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${CONTACT_INFO.website}/services/#service-catalog`,
+        name: "Growthik Media Services",
+        numberOfItems: 7,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, url: `${CONTACT_INFO.website}/services/seo/`, name: "SEO Services" },
+          { "@type": "ListItem", position: 2, url: `${CONTACT_INFO.website}/services/ppc-google-ads/`, name: "Google Ads Services" },
+          { "@type": "ListItem", position: 3, url: `${CONTACT_INFO.website}/services/meta-ads/`, name: "Meta Ads Services" },
+          { "@type": "ListItem", position: 4, url: `${CONTACT_INFO.website}/services/website-development/`, name: "Website Development" },
+          { "@type": "ListItem", position: 5, url: `${CONTACT_INFO.website}/services/web-application/`, name: "Web Application Development" },
+          { "@type": "ListItem", position: 6, url: `${CONTACT_INFO.website}/services/local-seo/`, name: "Local SEO" },
+          { "@type": "ListItem", position: 7, url: `${CONTACT_INFO.website}/services/branding-design/`, name: "Branding and Design" },
         ],
       },
       {
@@ -149,7 +164,7 @@ export default function ServicesPage() {
     {
       title: "Care & Maintenance",
       icon: Settings,
-      desc: "Ongoing support that keeps your site secure, fast, and always online.",
+      desc: "Ongoing support that keeps your site secure, fast and always online.",
       services: [
         { name: "Website Maintenance", link: "/services/website-maintenance/" },
         {
@@ -170,19 +185,19 @@ export default function ServicesPage() {
   const faqItems = [
     {
       q: "What are your core digital marketing services?",
-      a: "SEO (national & local), Google/Meta Ads, high-performance website development (Next.js & WordPress), and conversion-focused branding/creative.",
+      a: "SEO (national & local), Google/Meta Ads, high-performance website development (Next.js & WordPress) and conversion-focused branding/creative.",
     },
     {
       q: "How much do SEO services cost in Pune?",
-      a: "Typical retainers start from ₹15k–₹50k per month depending on competitiveness, pages, and link-building needs.",
+      a: "Typical retainers start from Rs 15k-Rs 50k per month depending on competitiveness, pages and link-building needs.",
     },
     {
       q: "How long until we see results?",
-      a: "Technical fixes ship in week one; rankings and leads usually compound over 3–6 months with consistent content and links.",
+      a: "Technical fixes ship in week one; rankings and leads usually compound over 3-6 months with consistent content and links.",
     },
     {
       q: "Do you work with startups and enterprises?",
-      a: "Yes. We have playbooks for seed-stage startups, D2C brands, and enterprise teams needing performance and governance.",
+      a: "Yes. We have playbooks for seed-stage startups, D2C brands and enterprise teams needing performance and governance.",
     },
   ];
 
@@ -190,8 +205,8 @@ export default function ServicesPage() {
     <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
       <AISchema
         question="What specialized digital services does Growthik Media provide?"
-        answer="Growthik Media provides a full suite of digital solutions including enterprise Next.js development, SEO (National & Local), Performance Marketing (Google/Meta Ads), and Branding services tailored for high-growth businesses."
-        summary="Expert digital services by Growthik Media: Next.js Web Apps, Advanced SEO Audits, result-driven PPC, and strategic Brand Identity. Specializing in scaling businesses across Hinjewadi, Baner, and Pune."
+        answer="Growthik Media provides a full suite of digital solutions including enterprise Next.js development, SEO (National & Local), Performance Marketing (Google/Meta Ads) and Branding services tailored for high-growth businesses."
+        summary="Expert digital services by Growthik Media: Next.js Web Apps, Advanced SEO Audits, result-driven PPC and strategic Brand Identity. Specializing in scaling businesses across Hinjewadi, Baner and Pune."
       />
       <Script
         id="schema-services"
@@ -604,7 +619,7 @@ export default function ServicesPage() {
                 },
                 {
                   title: "Omnichannel Approach",
-                  desc: "We don't operate in silos. Your SEO, Ads, and Website work synergistically.",
+                  desc: "We don't operate in silos. Your SEO, Ads and Website work synergistically.",
                 },
               ].map((item, idx) => (
                 <li key={idx} className="flex gap-4">
@@ -763,3 +778,4 @@ export default function ServicesPage() {
     </main>
   );
 }
+

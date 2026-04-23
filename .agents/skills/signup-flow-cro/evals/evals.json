@@ -3,8 +3,8 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Audit our signup flow. We have a 3-step process: Step 1 asks for email, password, and full name. Step 2 asks for company name, company size, role, and industry. Step 3 asks for use case and how they heard about us. Current completion rate is 45%.",
-      "expected_output": "Should check for product-marketing-context.md first. Should identify the flow type (likely B2B SaaS trial). Should apply the core principles: minimize required fields (which of these are genuinely needed before they can use the product?). Should evaluate each step: Step 1 is reasonable, Step 2 fields are mostly deferrable to progressive profiling, Step 3 is entirely deferrable. Should recommend cutting to Step 1 only or at most 2 steps. Should provide audit findings in structured format (Issue, Impact, Fix, Priority). Should include Quick Wins, High-Impact Changes, and Test Hypotheses.",
+      "prompt": "Audit our signup flow. We have a 3-step process: Step 1 asks for email, password and full name. Step 2 asks for company name, company size, role and industry. Step 3 asks for use case and how they heard about us. Current completion rate is 45%.",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify the flow type (likely B2B SaaS trial). Should apply the core principles: minimize required fields (which of these are genuinely needed before they can use the product?). Should evaluate each step: Step 1 is reasonable, Step 2 fields are mostly deferrable to progressive profiling, Step 3 is entirely deferrable. Should recommend cutting to Step 1 only or at most 2 steps. Should provide audit findings in structured format (Issue, Impact, Fix, Priority). Should include Quick Wins, High-Impact Changes and Test Hypotheses.",
       "assertions": [
         "Checks for product-marketing-context.md",
         "Identifies flow type",
@@ -62,7 +62,7 @@
     {
       "id": 5,
       "prompt": "What experiments should we run on our signup page? We want to improve our trial signup rate.",
-      "expected_output": "Should apply the experiment ideas section. Should provide experiments across categories: form design experiments (layout, field count, SSO), copy and messaging experiments (headline, CTA text, trust elements), trial and commitment experiments (credit card required vs not, trial length), and post-submit experiments. Should prioritize experiments by likely impact. Should cross-reference ab-test-setup for proper experiment design.",
+      "expected_output": "Should apply the experiment ideas section. Should provide experiments across categories: form design experiments (layout, field count, SSO), copy and messaging experiments (headline, CTA text, trust elements), trial and commitment experiments (credit card required vs not, trial length) and post-submit experiments. Should prioritize experiments by likely impact. Should cross-reference ab-test-setup for proper experiment design.",
       "assertions": [
         "Applies experiment ideas section",
         "Covers form design experiments",

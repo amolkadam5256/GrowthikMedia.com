@@ -1,6 +1,6 @@
 # Automated SEO Audit System
 
-This system performs a weekly SEO audit of `growthikmedia.com`, generates a health report, and sends alerts via Email and Slack.
+This system performs a weekly SEO audit of `growthikmedia.com`, generates a health report and sends alerts via Email and Slack.
 
 ## 🛠️ Components
 1. **GitHub Action**: Runs every Monday at 9:00 AM IST.

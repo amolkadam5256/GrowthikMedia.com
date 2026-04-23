@@ -40,7 +40,7 @@
         "Triggers on casual phrasing",
         "Applies content repurposing system",
         "Uses Blog Post → Social Content mapping",
-        "Provides format for LinkedIn, Twitter/X, and Instagram",
+        "Provides format for LinkedIn, Twitter/X and Instagram",
         "Follows the repurposing workflow",
         "Extracts 3-5 key insights to repurpose",
         "Provides platform-specific format recommendations"
@@ -79,7 +79,7 @@
     {
       "id": 6,
       "prompt": "Write me a 5-email welcome sequence for new email subscribers who came from my LinkedIn audience.",
-      "expected_output": "Should recognize this is an email sequence task, not social content. Should defer to or cross-reference the email-sequence skill, which handles welcome sequences, drip campaigns, and lifecycle emails. May note the social-to-email bridge context but should make clear that email-sequence is the right skill for writing email sequences.",
+      "expected_output": "Should recognize this is an email sequence task, not social content. Should defer to or cross-reference the email-sequence skill, which handles welcome sequences, drip campaigns and lifecycle emails. May note the social-to-email bridge context but should make clear that email-sequence is the right skill for writing email sequences.",
       "assertions": [
         "Recognizes this as email sequence work",
         "References or defers to email-sequence skill",

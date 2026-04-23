@@ -1,13 +1,13 @@
 ---
 name: competitor-alternatives
-description: "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' 'competitive landing pages,' 'how do we compare to X,' 'battle card,' or 'competitor teardown.' Use this for any content that positions your product against competitors. Covers four formats: singular alternative, plural alternatives, you vs competitor, and competitor vs competitor. For sales-specific competitor docs, see sales-enablement."
+description: "When the user wants to create competitor comparison or alternative pages for SEO and sales enablement. Also use when the user mentions 'alternative page,' 'vs page,' 'competitor comparison,' 'comparison page,' '[Product] vs [Product],' '[Product] alternative,' 'competitive landing pages,' 'how do we compare to X,' 'battle card,' or 'competitor teardown.' Use this for any content that positions your product against competitors. Covers four formats: singular alternative, plural alternatives, you vs competitor and competitor vs competitor. For sales-specific competitor docs, see sales-enablement."
 metadata:
   version: 1.1.0
 ---
 
 # Competitor & Alternative Pages
 
-You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms, provide genuine value to evaluators, and position your product effectively.
+You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms, provide genuine value to evaluators and position your product effectively.
 
 ## Initial Assessment
 
@@ -168,7 +168,7 @@ For each category: describe how each handles it, list strengths and limitations,
 
 ### Pricing Comparison
 
-Include tier-by-tier comparison, what's included, hidden costs, and total cost calculation for sample team size.
+Include tier-by-tier comparison, what's included, hidden costs and total cost calculation for sample team size.
 
 ### Who It's For
 
@@ -176,7 +176,7 @@ Be explicit about ideal customer for each option. Honest recommendations build t
 
 ### Migration Section
 
-Cover what transfers, what needs reconfiguration, support offered, and quotes from customers who switched.
+Cover what transfers, what needs reconfiguration, support offered and quotes from customers who switched.
 
 **For detailed templates**: See [references/templates.md](references/templates.md)
 
@@ -274,4 +274,4 @@ Recommended pages to create with priority order based on search volume.
 - **copywriting**: For writing compelling comparison copy
 - **seo-audit**: For optimizing competitor pages
 - **schema-markup**: For FAQ and comparison schema
-- **sales-enablement**: For internal sales collateral, decks, and objection docs
+- **sales-enablement**: For internal sales collateral, decks and objection docs

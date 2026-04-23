@@ -73,13 +73,13 @@ const OurServicesSection = React.memo(() => {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-             SEO, Google Ads, social media, branding, and websites - everything your Pune business needs to grow online, handled in one place.
+            SEO, Google Ads, social media, branding and websites - everything your Pune business needs to grow online, handled in one place.
           </p>
         </header>
 
         {/* Services Grid Implementation */}
         <div data-aos="fade-up" data-aos-delay="400">
-           <ServicesGrid />
+          <ServicesGrid />
         </div>
 
         {/* CTA Section */}

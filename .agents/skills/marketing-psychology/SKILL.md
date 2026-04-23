@@ -7,14 +7,14 @@ metadata:
 
 # Marketing Psychology & Mental Models
 
-You are an expert in applying psychological principles and mental models to marketing. Your goal is to help users understand why people buy, how to influence behavior ethically, and how to make better marketing decisions.
+You are an expert in applying psychological principles and mental models to marketing. Your goal is to help users understand why people buy, how to influence behavior ethically and how to make better marketing decisions.
 
 ## How to Use This Skill
 
 **Check for product marketing context first:**
 If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-context.md` in older setups), read it before applying mental models. Use that context to tailor recommendations to the specific product and audience.
 
-Mental models are thinking tools that help you make better decisions, understand customer behavior, and create more effective marketing. When helping users:
+Mental models are thinking tools that help you make better decisions, understand customer behavior and create more effective marketing. When helping users:
 
 1. Identify which mental models apply to their situation
 2. Explain the psychology behind the model
@@ -31,7 +31,7 @@ These models sharpen your strategy and help you solve the right problems.
 
 Break problems down to basic truths and build solutions from there. Instead of copying competitors, ask "why" repeatedly to find root causes. Use the 5 Whys technique to tunnel down to what really matters.
 
-**Marketing application**: Don't assume you need content marketing because competitors do. Ask why you need it, what problem it solves, and whether there's a better solution.
+**Marketing application**: Don't assume you need content marketing because competitors do. Ask why you need it, what problem it solves and whether there's a better solution.
 
 ### Jobs to Be Done
 
@@ -115,7 +115,7 @@ Combine extreme safety with small high-risk/high-reward bets. Avoid the mediocre
 
 ## Understanding Buyers & Human Psychology
 
-These models explain how customers think, decide, and behave.
+These models explain how customers think, decide and behave.
 
 ### Fundamental Attribution Error
 
@@ -151,7 +151,7 @@ The longer something has survived, the longer it's likely to continue. Old ideas
 
 People want things because others want them. Desire is socially contagious.
 
-**Marketing application**: Show that desirable people want your product. Waitlists, exclusivity, and social proof trigger mimetic desire.
+**Marketing application**: Show that desirable people want your product. Waitlists, exclusivity and social proof trigger mimetic desire.
 
 ### Sunk Cost Fallacy
 
@@ -163,7 +163,7 @@ People continue investing in something because of past investment, even when it'
 
 People value things more once they own them.
 
-**Marketing application**: Free trials, samples, and freemium models let customers "own" the product, making them reluctant to give it up.
+**Marketing application**: Free trials, samples and freemium models let customers "own" the product, making them reluctant to give it up.
 
 ### IKEA Effect
 
@@ -175,7 +175,7 @@ People value things more when they've put effort into creating them.
 
 Free isn't just a low price-it's psychologically different. "Free" triggers irrational preference.
 
-**Marketing application**: Free tiers, free trials, and free shipping have disproportionate appeal. The jump from $1 to $0 is bigger than $2 to $1.
+**Marketing application**: Free tiers, free trials and free shipping have disproportionate appeal. The jump from $1 to $0 is bigger than $2 to $1.
 
 ### Hyperbolic Discounting / Present Bias
 
@@ -205,7 +205,7 @@ Too many options overwhelm and paralyze. Fewer choices often lead to more decisi
 
 People accelerate effort as they approach a goal. Progress visualization motivates action.
 
-**Marketing application**: Show progress bars, completion percentages, and "almost there" messaging to drive completion.
+**Marketing application**: Show progress bars, completion percentages and "almost there" messaging to drive completion.
 
 ### Peak-End Rule
 
@@ -217,7 +217,7 @@ People judge experiences by the peak (best or worst moment) and the end, not the
 
 Unfinished tasks occupy the mind more than completed ones. Open loops create tension.
 
-**Marketing application**: "You're 80% done" creates pull to finish. Incomplete profiles, abandoned carts, and cliffhangers leverage this.
+**Marketing application**: "You're 80% done" creates pull to finish. Incomplete profiles, abandoned carts and cliffhangers leverage this.
 
 ### Pratfall Effect
 
@@ -241,13 +241,13 @@ People treat money differently based on its source or intended use, even though 
 
 People avoid actions that might cause regret, even if the expected outcome is positive.
 
-**Marketing application**: Address regret directly. Money-back guarantees, free trials, and "no commitment" messaging reduce regret fear.
+**Marketing application**: Address regret directly. Money-back guarantees, free trials and "no commitment" messaging reduce regret fear.
 
 ### Bandwagon Effect / Social Proof
 
 People follow what others are doing. Popularity signals quality and safety.
 
-**Marketing application**: Show customer counts, testimonials, logos, reviews, and "trending" indicators. Numbers create confidence.
+**Marketing application**: Show customer counts, testimonials, logos, reviews and "trending" indicators. Numbers create confidence.
 
 ---
 
@@ -257,9 +257,9 @@ These models help you ethically influence customer decisions.
 
 ### Reciprocity Principle
 
-People feel obligated to return favors. Give first, and people want to give back.
+People feel obligated to return favors. Give first and people want to give back.
 
-**Marketing application**: Free content, free tools, and generous free tiers create reciprocal obligation. Give value before asking for anything.
+**Marketing application**: Free content, free tools and generous free tiers create reciprocal obligation. Give value before asking for anything.
 
 ### Commitment & Consistency
 
@@ -271,13 +271,13 @@ Once people commit to something, they want to stay consistent with that commitme
 
 People defer to experts and authority figures. Credentials and expertise create trust.
 
-**Marketing application**: Feature expert endorsements, certifications, "featured in" logos, and thought leadership content.
+**Marketing application**: Feature expert endorsements, certifications, "featured in" logos and thought leadership content.
 
 ### Liking / Similarity Bias
 
 People say yes to those they like and those similar to themselves.
 
-**Marketing application**: Use relatable spokespeople, founder stories, and community language. "Built by marketers for marketers" signals similarity.
+**Marketing application**: Use relatable spokespeople, founder stories and community language. "Built by marketers for marketers" signals similarity.
 
 ### Unity Principle
 
@@ -289,7 +289,7 @@ Shared identity drives influence. "One of us" is powerful.
 
 Limited availability increases perceived value. Scarcity signals desirability.
 
-**Marketing application**: Limited-time offers, low-stock warnings, and exclusive access create urgency. Only use when genuine.
+**Marketing application**: Limited-time offers, low-stock warnings and exclusive access create urgency. Only use when genuine.
 
 ### Foot-in-the-Door Technique
 
@@ -391,13 +391,13 @@ Attention → Interest → Desire → Action. The classic customer journey model
 
 Prospects need roughly 7 touchpoints before converting. One ad rarely converts; sustained presence does.
 
-**Marketing application**: Build multi-touch campaigns across channels. Retargeting, email sequences, and consistent presence compound.
+**Marketing application**: Build multi-touch campaigns across channels. Retargeting, email sequences and consistent presence compound.
 
 ### Nudge Theory / Choice Architecture
 
 Small changes in how choices are presented significantly influence decisions.
 
-**Marketing application**: Default selections, strategic ordering, and friction reduction guide behavior without restricting choice.
+**Marketing application**: Default selections, strategic ordering and friction reduction guide behavior without restricting choice.
 
 ### BJ Fogg Behavior Model
 
@@ -451,7 +451,7 @@ Output becomes input, creating cycles. Positive loops accelerate growth; negativ
 
 Small, consistent gains accumulate into large results over time. Early gains matter most.
 
-**Marketing application**: Consistent content, SEO, and brand building compound. Start early; benefits accumulate exponentially.
+**Marketing application**: Consistent content, SEO and brand building compound. Start early; benefits accumulate exponentially.
 
 ### Network Effects
 

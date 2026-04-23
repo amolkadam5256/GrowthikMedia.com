@@ -12,15 +12,15 @@ Product context:
 
 ## Executive Summary
 
-The site has strong breadth: homepage, services hub, audit landing page, contact page, portfolio, blog, success stories, and many individual service/location pages. The current SEO crawler report is healthy overall at 98/100, and lint passes.
+The site has strong breadth: homepage, services hub, audit landing page, contact page, portfolio, blog, success stories and many individual service/location pages. The current SEO crawler report is healthy overall at 98/100 and lint passes.
 
 The biggest opportunity is not basic technical SEO. It is conversion clarity and experiment discipline:
 
 1. Choose one primary lead path per high-intent page: "Free Growth Audit" or "Book Strategy Call".
-2. Add consistent event tracking for all CTA clicks, form starts, form errors, successful submissions, WhatsApp clicks, phone clicks, and service-page lead intent.
+2. Add consistent event tracking for all CTA clicks, form starts, form errors, successful submissions, WhatsApp clicks, phone clicks and service-page lead intent.
 3. Reduce form friction on contact/audit pages and measure completion rate.
-4. Improve service-page specificity. Many service pages share a similar template and headline style, so tests should focus on intent-specific proof, offer, and CTA copy.
-5. Expand crawler coverage. The sitemap index includes 69 URLs across pages, services, and blog, but the latest stored crawler report includes 40 pages.
+4. Improve service-page specificity. Many service pages share a similar template and headline style, so tests should focus on intent-specific proof, offer and CTA copy.
+5. Expand crawler coverage. The sitemap index includes 69 URLs across pages, services and blog, but the latest stored crawler report includes 40 pages.
 
 ## Current Health Snapshot
 
@@ -90,7 +90,7 @@ Route:
 
 Strengths:
 - Strong SEO positioning for "digital marketing agency in Pune".
-- Many trust, proof, service, founder, roadmap, FAQ, and CTA sections.
+- Many trust, proof, service, founder, roadmap, FAQ and CTA sections.
 - Lead magnet section creates a lower-friction conversion path.
 - Trust strip appears early.
 
@@ -162,7 +162,7 @@ Strengths:
 - Contact metadata and schema are set.
 
 Issues:
-- Contact form is relatively heavy for first contact: name, email, phone, company, service, message, bot checkbox, and hidden website/budget fields in state.
+- Contact form is relatively heavy for first contact: name, email, phone, company, service, message, bot checkbox and hidden website/budget fields in state.
 - Budget and website exist in form state but are not currently collected in the visible form.
 - "I confirm I am not a robot" checkbox adds friction without meaningful bot protection.
 - In the code, timeout reset after success depends on stale `submitStatus` in the finally block, so the success reset may not behave as intended.
@@ -191,7 +191,7 @@ Route:
 - `/services/`
 
 Strengths:
-- Strong hub page with hero, local proof, results, service categories, filterable grid, process, testimonials, FAQ, and final CTA.
+- Strong hub page with hero, local proof, results, service categories, filterable grid, process, testimonials, FAQ and final CTA.
 - Good role as an internal linking hub.
 - Has specific service cards and CTAs.
 
@@ -253,7 +253,7 @@ Core high-intent routes include:
 - Branding and creative pages: brand identity, brand strategy, brand name, logo design, branding design, branding consulting, brochure, business card, letterhead, video production.
 
 Strengths:
-- Many pages have dedicated metadata, canonical URLs, schema, service-specific features, and CTAs.
+- Many pages have dedicated metadata, canonical URLs, schema, service-specific features and CTAs.
 - Service pages provide broad SEO coverage.
 - Some pages have deep content and strong word count.
 
@@ -299,14 +299,14 @@ Routes:
 - `/portfolio/digital-campaigns/`
 
 Strengths:
-- Portfolio page has useful stats, filterable grid, and project cards.
+- Portfolio page has useful stats, filterable grid and project cards.
 - Proof is a strong conversion lever for an agency.
 - Category pages can map to service intent.
 
 Issues:
 - Some portfolio category pages have minimal metadata and no canonical defined.
 - CTA often points to `/contact`, but the offer could be more contextual.
-- "Real Results" is stated, but conversion would improve if result cards had more concrete before/after, baseline, timeframe, and industry.
+- "Real Results" is stated, but conversion would improve if result cards had more concrete before/after, baseline, timeframe and industry.
 
 Recommended tests:
 - Test A: Add "Get a similar result" CTA on project/category pages.
@@ -333,7 +333,7 @@ Routes:
 - `/backlink-strategy/`
 
 Strengths:
-- Blog has search, filters, featured post, sidebar, and many SEO-focused topics.
+- Blog has search, filters, featured post, sidebar and many SEO-focused topics.
 - Blog metadata and schema are present.
 - Good educational route for organic visitors.
 
@@ -366,7 +366,7 @@ Route:
 - `/about/`
 
 Strengths:
-- Founder, process, philosophy, team, and final CTA are useful for trust.
+- Founder, process, philosophy, team and final CTA are useful for trust.
 - Good fit for mid-funnel visitors validating credibility.
 
 Issues:
@@ -403,7 +403,7 @@ Strengths:
 
 Issues:
 - They are outside `app/(public)` while the main public layout covers `(public)`. Confirm they get the intended header/footer/schema/tracking.
-- Sitemap currently lists `/awards/`, `/media/`, and `/testimonials/`, but route files are under `/success-stories/...`. This looks like a sitemap/route mismatch.
+- Sitemap currently lists `/awards/`, `/media/` and `/testimonials/`, but route files are under `/success-stories/...`. This looks like a sitemap/route mismatch.
 - The latest crawler report did not include these pages.
 
 Recommended tests:
@@ -569,7 +569,7 @@ Practical recommendation:
 Phase 1: Measurement foundation
 - Add a shared analytics helper.
 - Track CTA clicks with `cta_location` and `destination`.
-- Track form start, success, and error.
+- Track form start, success and error.
 - Track A/B exposure.
 - Confirm GA4 conversion events in GTM.
 
@@ -598,5 +598,5 @@ Phase 4: Expand proof and segmentation
 4. Tighten about/contact metadata.
 5. Remove or replace visible encoding artifacts.
 6. Standardize service-page H1s and CTAs.
-7. Add service-specific proof above the fold on SEO, PPC, website development, performance marketing, and lead generation pages.
+7. Add service-specific proof above the fold on SEO, PPC, website development, performance marketing and lead generation pages.
 

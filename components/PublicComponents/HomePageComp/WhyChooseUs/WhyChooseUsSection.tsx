@@ -17,7 +17,7 @@ const USP_ITEMS = [
     icon: Target,
     title: "ROI-Focused Strategies",
     description:
-      "We don't count page views. We track leads, calls, and sales - and that's what we report back to you every month.",
+      "We don't count page views. We track leads, calls and sales - and that's what we report back to you every month.",
   },
   {
     icon: UserCheck,
@@ -29,13 +29,13 @@ const USP_ITEMS = [
     icon: FileText,
     title: "Transparent Reporting",
     description:
-      "Every month you get a plain-English report showing what worked, what didn't, and what we're doing next. No jargon, no padded slides.",
+      "Every month you get a plain-English report showing what worked, what didn't and what we're doing next. No jargon, no padded slides.",
   },
   {
     icon: Award,
     title: "Industry-Specific Expertise",
     description:
-      "We've worked across healthcare, real estate, e-commerce, and SaaS. When we say we know your market - we mean it, not just your niche.",
+      "We've worked across healthcare, real estate, e-commerce and SaaS. When we say we know your market - we mean it, not just your niche.",
   },
   {
     icon: ShieldCheck,

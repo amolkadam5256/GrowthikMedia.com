@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  Mail, 
-  Send, 
-  Users, 
-  CheckCircle2, 
-  Clock, 
-  FileText, 
-  Calendar, 
+import {
+  Mail,
+  Send,
+  Users,
+  CheckCircle2,
+  Clock,
+  FileText,
+  Calendar,
   Bot,
   Copy,
   Check,
@@ -185,23 +185,23 @@ export default function EmailTemplateSystem() {
               Email <span className="text-red-600">Template</span> System
             </h1>
             <p className="text-gray-500 dark:text-gray-400 text-lg max-w-2xl font-medium">
-              Professional lead management infrastructure for Growthik Media. 
+              Professional lead management infrastructure for Growthik Media.
             </p>
           </div>
 
           <div className="bg-white dark:bg-[#111] p-4 rounded-3xl border border-gray-100 dark:border-white/5 shadow-xl flex items-center gap-4">
             <div className="flex flex-col">
-               <span className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Test Recipient</span>
-               <input 
-                  type="email" 
-                  value={testRecipient}
-                  onChange={(e) => setTestRecipient(e.target.value)}
-                  className="bg-transparent text-sm font-bold text-gray-900 dark:text-white focus:outline-none min-w-[200px]"
-                  placeholder="Enter email..."
-               />
+              <span className="text-[10px] font-black uppercase text-gray-400 tracking-widest">Test Recipient</span>
+              <input
+                type="email"
+                value={testRecipient}
+                onChange={(e) => setTestRecipient(e.target.value)}
+                className="bg-transparent text-sm font-bold text-gray-900 dark:text-white focus:outline-none min-w-[200px]"
+                placeholder="Enter email..."
+              />
             </div>
             <div className="w-10 h-10 rounded-full bg-red-600/10 flex items-center justify-center text-red-600">
-               <Mail size={18} />
+              <Mail size={18} />
             </div>
           </div>
         </div>
@@ -214,15 +214,13 @@ export default function EmailTemplateSystem() {
             <button
               key={template.id}
               onClick={() => setActiveTab(template.id)}
-              className={`w-full flex items-center gap-4 px-5 py-4 rounded-2xl transition-all text-left group ${
-                activeTab === template.id
+              className={`w-full flex items-center gap-4 px-5 py-4 rounded-2xl transition-all text-left group ${activeTab === template.id
                   ? "bg-red-600 text-white shadow-xl shadow-red-600/20"
                   : "bg-white dark:bg-[#111] text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-[#1a1a1a]"
-              }`}
+                }`}
             >
-              <div className={`p-2 rounded-xl transition-colors ${
-                activeTab === template.id ? "bg-white/20" : "bg-gray-100 dark:bg-[#222] group-hover:bg-gray-200 dark:group-hover:bg-[#333]"
-              }`}>
+              <div className={`p-2 rounded-xl transition-colors ${activeTab === template.id ? "bg-white/20" : "bg-gray-100 dark:bg-[#222] group-hover:bg-gray-200 dark:group-hover:bg-[#333]"
+                }`}>
                 <template.icon size={20} />
               </div>
               <div className="flex-1">
@@ -233,15 +231,15 @@ export default function EmailTemplateSystem() {
           ))}
 
           <div className="mt-8 p-6 bg-blue-50 dark:bg-blue-500/5 rounded-3xl border border-blue-100 dark:border-blue-500/20">
-             <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-3">
-                <Info size={18} />
-                <span className="font-bold text-xs uppercase tracking-widest">Internal Sync</span>
-             </div>
-             <p className="text-xs text-blue-800/70 dark:text-blue-400/70 leading-relaxed font-medium">
-                Admin emails are automatically CC'd to:
-                <br />
-                <span className="text-blue-600 dark:text-blue-300 font-bold">amolkadam1274@gmail.com</span>
-             </p>
+            <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 mb-3">
+              <Info size={18} />
+              <span className="font-bold text-xs uppercase tracking-widest">Internal Sync</span>
+            </div>
+            <p className="text-xs text-blue-800/70 dark:text-blue-400/70 leading-relaxed font-medium">
+              Admin emails are automatically CC'd to:
+              <br />
+              <span className="text-blue-600 dark:text-blue-300 font-bold">amolkadam1274@gmail.com</span>
+            </p>
           </div>
         </div>
 
@@ -256,18 +254,18 @@ export default function EmailTemplateSystem() {
               className="space-y-8"
             >
               {activeTab === "ai-prompt" ? (
-                 <AIPromptTab key="ai-prompt-tab" template={activeTemplate} onCopy={handleCopy} copyStatus={copyStatus} />
+                <AIPromptTab key="ai-prompt-tab" template={activeTemplate} onCopy={handleCopy} copyStatus={copyStatus} />
               ) : (
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                   {/* User Version */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between px-2">
-                       <h3 className="font-black text-gray-900 dark:text-white uppercase tracking-wider text-[10px]">A. User Version (Outbound)</h3>
-                       <span className="text-[10px] font-bold text-gray-400 bg-gray-100 dark:bg-[#111] px-2 py-1 rounded-full">SENT FIRST</span>
+                      <h3 className="font-black text-gray-900 dark:text-white uppercase tracking-wider text-[10px]">A. User Version (Outbound)</h3>
+                      <span className="text-[10px] font-bold text-gray-400 bg-gray-100 dark:bg-[#111] px-2 py-1 rounded-full">SENT FIRST</span>
                     </div>
-                    <EmailCard 
+                    <EmailCard
                       version="user"
-                      template={activeTemplate.userVersion} 
+                      template={activeTemplate.userVersion}
                       onCopy={(text) => handleCopy(text, `${activeTab}-user`)}
                       onSendTest={(s, b) => handleSendTest(s, b, `${activeTab}-user`)}
                       isCopied={copyStatus === `${activeTab}-user`}
@@ -280,12 +278,12 @@ export default function EmailTemplateSystem() {
                   {/* Admin Version */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between px-2">
-                       <h3 className="font-black text-gray-900 dark:text-white uppercase tracking-wider text-[10px]">B. Admin Version (Internal)</h3>
-                       <span className="text-[10px] font-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-full">TEAM ALERT</span>
+                      <h3 className="font-black text-gray-900 dark:text-white uppercase tracking-wider text-[10px]">B. Admin Version (Internal)</h3>
+                      <span className="text-[10px] font-bold text-red-500 bg-red-500/10 px-2 py-1 rounded-full">TEAM ALERT</span>
                     </div>
-                    <EmailCard 
+                    <EmailCard
                       version="admin"
-                      template={activeTemplate.adminVersion} 
+                      template={activeTemplate.adminVersion}
                       onCopy={(text) => handleCopy(text, `${activeTab}-admin`)}
                       onSendTest={(s, b) => handleSendTest(s, b, `${activeTab}-admin`)}
                       isCopied={copyStatus === `${activeTab}-admin`}
@@ -304,45 +302,43 @@ export default function EmailTemplateSystem() {
   );
 }
 
-function EmailCard({ 
-  template, 
-  onCopy, 
+function EmailCard({
+  template,
+  onCopy,
   onSendTest,
-  isCopied, 
+  isCopied,
   isSent,
   isError,
   isSending,
-  version 
-}: { 
-  template: any, 
-  onCopy: (text: string) => void, 
+  version
+}: {
+  template: any,
+  onCopy: (text: string) => void,
   onSendTest: (subject: string, body: string) => void,
-  isCopied: boolean, 
+  isCopied: boolean,
   isSent: boolean,
   isError: boolean,
   isSending: boolean,
-  version: "user" | "admin" 
+  version: "user" | "admin"
 }) {
   return (
-    <div className={`rounded-3xl border bg-white dark:bg-[#0a0a0a] shadow-2xl transition-all overflow-hidden h-full flex flex-col ${
-      version === "admin" ? "border-red-600/20" : "border-gray-200 dark:border-white/10"
-    }`}>
+    <div className={`rounded-3xl border bg-white dark:bg-[#0a0a0a] shadow-2xl transition-all overflow-hidden h-full flex flex-col ${version === "admin" ? "border-red-600/20" : "border-gray-200 dark:border-white/10"
+      }`}>
       {/* Subject Line */}
       <div className="p-6 border-b border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/2">
         <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-2">Subject Line</p>
         <div className="flex items-center justify-between gap-4">
           <p className="text-gray-900 dark:text-white font-bold text-sm">{template.subject}</p>
           <div className="flex items-center gap-1">
-            <button 
+            <button
               onClick={() => onSendTest(template.subject, template.body)}
               disabled={isSending}
-              className={`p-2 rounded-lg transition-colors flex items-center gap-2 text-xs font-bold ${
-                isSent 
-                  ? "bg-green-500/10 text-green-500" 
-                  : isError 
+              className={`p-2 rounded-lg transition-colors flex items-center gap-2 text-xs font-bold ${isSent
+                  ? "bg-green-500/10 text-green-500"
+                  : isError
                     ? "bg-red-500/10 text-red-500"
                     : "hover:bg-gray-200 dark:hover:bg-white/10 text-gray-400 hover:text-red-500"
-              }`}
+                }`}
               title="Send Test Email"
             >
               {isSending ? (
@@ -354,7 +350,7 @@ function EmailCard({
               )}
               {isSent ? "SENT" : isError ? "ERROR" : ""}
             </button>
-            <button 
+            <button
               onClick={() => onCopy(template.subject)}
               className="p-2 hover:bg-gray-200 dark:hover:bg-white/10 rounded-lg transition-colors text-gray-400 shrink-0"
             >
@@ -370,16 +366,16 @@ function EmailCard({
         <div className="bg-gray-50 dark:bg-[#111] rounded-2xl p-6 font-mono text-xs text-gray-600 dark:text-gray-300 whitespace-pre-wrap leading-relaxed border border-gray-100 dark:border-white/5 min-h-[400px]">
           {template.body}
         </div>
-        
+
         <div className="absolute bottom-10 right-10 flex items-center gap-2">
-          <button 
-             onClick={() => onSendTest(template.subject, template.body)}
-             disabled={isSending}
-             className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-xl font-bold text-[10px] shadow-xl active:scale-95 transition-all disabled:opacity-50"
+          <button
+            onClick={() => onSendTest(template.subject, template.body)}
+            disabled={isSending}
+            className="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-xl font-bold text-[10px] shadow-xl active:scale-95 transition-all disabled:opacity-50"
           >
-             {isSending ? "SENDING..." : isSent ? "TEST SENT" : "SEND TEST EMAIL"}
+            {isSending ? "SENDING..." : isSent ? "TEST SENT" : "SEND TEST EMAIL"}
           </button>
-          <button 
+          <button
             onClick={() => onCopy(template.body)}
             className="flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-black px-4 py-2 rounded-xl font-bold text-[10px] shadow-xl active:scale-95 transition-all"
           >
@@ -400,12 +396,12 @@ function EmailCard({
 
       {/* Footer Info */}
       <div className="p-4 px-6 bg-gray-50/30 dark:bg-white/1 flex items-center justify-between text-[10px] text-gray-400 font-bold uppercase tracking-widest mt-auto">
-         <span>Format: HTML/TEXT</span>
-         {version === "admin" ? (
-           <span className="text-red-500">To: Amol Kadam Team</span>
-         ) : (
-           <span>From: Growthik Media System</span>
-         )}
+        <span>Format: HTML/TEXT</span>
+        {version === "admin" ? (
+          <span className="text-red-500">To: Amol Kadam Team</span>
+        ) : (
+          <span>From: Growthik Media System</span>
+        )}
       </div>
     </div>
   );
@@ -424,7 +420,7 @@ COMPANY INFO:
 - Ethos: We replace guesswork with engineering precision.
 
 TASK:
-Improve the tone, clarity, and conversion potential of the following 7 email templates:
+Improve the tone, clarity and conversion potential of the following 7 email templates:
 1. General Inquiry
 2. Lead Capture
 3. Lead Confirmation
@@ -446,58 +442,58 @@ Provide the subject lines and bodies in markdown format, ready to be pasted into
 
   return (
     <div className="space-y-6">
-       <div className="bg-red-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl overflow-hidden relative group">
-          <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
-             <Bot size={200} />
-          </div>
-          <div className="relative z-10 space-y-4">
-             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">AI Master <span className="opacity-60">Prompt</span></h2>
-             <p className="text-red-100 text-lg max-w-xl font-medium">
-                Copy this prompt and paste it into Claude, ChatGPT, or Perplexity to generate highly customized, 
-                high-converting email variants for any industry.
-             </p>
-             <button 
-                onClick={() => onCopy(MASTER_PROMPT, "master-prompt")}
-                className="inline-flex items-center gap-3 bg-white text-red-600 px-6 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl hover:bg-gray-100 transition-all active:scale-95"
-             >
-                {copyStatus === "master-prompt" ? (
-                   <>
-                      <Check size={18} />
-                      PROMPT COPIED!
-                   </>
-                ) : (
-                  <>
-                    <Copy size={18} />
-                    COPY MASTER PROMPT
-                  </>
-                )}
-             </button>
-          </div>
-       </div>
+      <div className="bg-red-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl overflow-hidden relative group">
+        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform">
+          <Bot size={200} />
+        </div>
+        <div className="relative z-10 space-y-4">
+          <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">AI Master <span className="opacity-60">Prompt</span></h2>
+          <p className="text-red-100 text-lg max-w-xl font-medium">
+            Copy this prompt and paste it into Claude, ChatGPT, or Perplexity to generate highly customized,
+            high-converting email variants for any industry.
+          </p>
+          <button
+            onClick={() => onCopy(MASTER_PROMPT, "master-prompt")}
+            className="inline-flex items-center gap-3 bg-white text-red-600 px-6 py-4 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl hover:bg-gray-100 transition-all active:scale-95"
+          >
+            {copyStatus === "master-prompt" ? (
+              <>
+                <Check size={18} />
+                PROMPT COPIED!
+              </>
+            ) : (
+              <>
+                <Copy size={18} />
+                COPY MASTER PROMPT
+              </>
+            )}
+          </button>
+        </div>
+      </div>
 
-       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white dark:bg-[#0a0a0a] rounded-3xl border border-gray-100 dark:border-white/10">
-             <div className="w-10 h-10 bg-red-600/10 text-red-600 rounded-xl flex items-center justify-center mb-4">
-                <ExternalLink size={20} />
-             </div>
-             <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase text-[10px] tracking-widest">Step 1: Copy Prompt</h4>
-             <p className="text-xs text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Click the button above to copy the Growthik Media context prompt.</p>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="p-6 bg-white dark:bg-[#0a0a0a] rounded-3xl border border-gray-100 dark:border-white/10">
+          <div className="w-10 h-10 bg-red-600/10 text-red-600 rounded-xl flex items-center justify-center mb-4">
+            <ExternalLink size={20} />
           </div>
-          <div className="p-6 bg-white dark:bg-[#0a0a0a] rounded-3xl border border-gray-100 dark:border-white/10">
-             <div className="w-10 h-10 bg-blue-600/10 text-blue-600 rounded-xl flex items-center justify-center mb-4">
-                <Bot size={20} className="w-5 h-5" />
-             </div>
-             <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase text-[10px] tracking-widest">Step 2: Use AI</h4>
-             <p className="text-xs text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Paste into your preferred AI tool to get optimized variants.</p>
+          <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase text-[10px] tracking-widest">Step 1: Copy Prompt</h4>
+          <p className="text-xs text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Click the button above to copy the Growthik Media context prompt.</p>
+        </div>
+        <div className="p-6 bg-white dark:bg-[#0a0a0a] rounded-3xl border border-gray-100 dark:border-white/10">
+          <div className="w-10 h-10 bg-blue-600/10 text-blue-600 rounded-xl flex items-center justify-center mb-4">
+            <Bot size={20} className="w-5 h-5" />
           </div>
-          <div className="p-6 bg-white dark:bg-[#0a0a0a] rounded-3xl border border-gray-100 dark:border-white/10">
-             <div className="w-10 h-10 bg-green-600/10 text-green-600 rounded-xl flex items-center justify-center mb-4">
-                <Send size={20} />
-             </div>
-             <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase text-[10px] tracking-widest">Step 3: Deploy</h4>
-             <p className="text-xs text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Implement in Apollo.io or your CRM to automate your funnel.</p>
+          <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase text-[10px] tracking-widest">Step 2: Use AI</h4>
+          <p className="text-xs text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Paste into your preferred AI tool to get optimized variants.</p>
+        </div>
+        <div className="p-6 bg-white dark:bg-[#0a0a0a] rounded-3xl border border-gray-100 dark:border-white/10">
+          <div className="w-10 h-10 bg-green-600/10 text-green-600 rounded-xl flex items-center justify-center mb-4">
+            <Send size={20} />
           </div>
-       </div>
+          <h4 className="font-bold text-gray-900 dark:text-white mb-2 uppercase text-[10px] tracking-widest">Step 3: Deploy</h4>
+          <p className="text-xs text-gray-500 dark:text-gray-400 font-medium leading-relaxed">Implement in Apollo.io or your CRM to automate your funnel.</p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -71,7 +71,7 @@ const TechStackSection = () => {
           </h2>
           <p className="text-lg text-(--text-secondary) max-w-2xl mx-auto font-medium">
             We power predictable revenue systems using an advanced stack of web
-            engineering, artificial intelligence, and deep analytics.
+            engineering, artificial intelligence and deep analytics.
           </p>
         </div>
 

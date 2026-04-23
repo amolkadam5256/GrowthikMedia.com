@@ -8,15 +8,15 @@ This folder is the organized source library for all Growthik Media logo assets.
 - White: `#ffffff`
 
 ## Folder Structure
-- `logos/`: main logo files for website, print prep, and transparent usage
-- `favicons/`: browser, mobile, and shortcut icons
+- `logos/`: main logo files for website, print prep and transparent usage
+- `favicons/`: browser, mobile and shortcut icons
 - `manifest/`: PWA manifest and install icons
 - `palette/`: reusable color reference files
 
 ## File Naming Logic
 - `growthik-media-logo-transparent-primary.png`
   - Main transparent logo for website use
-  - Uses red `#ed1c24`, black `#231f20`, and transparent background
+  - Uses red `#ed1c24`, black `#231f20` and transparent background
 - `growthik-media-wordmark-primary.svg`
   - Vector wordmark source for crisp scaling
 - `growthik-media-brand-mark-primary.svg`

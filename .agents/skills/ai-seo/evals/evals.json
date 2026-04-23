@@ -33,14 +33,14 @@
     {
       "id": 3,
       "prompt": "What kind of content gets cited most by AI systems? We want to create content specifically optimized for AI search.",
-      "expected_output": "Should reference the content types that get cited most, including comparisons (~33% of AI citations), definitive guides (~15%), and other high-citation content types. Should explain why these formats work (they provide the structured, extractable, authoritative information AI systems need). Should provide specific recommendations for creating AI-optimized content: clear definitions, structured data, original statistics, comparison tables, expert quotes. Should reference the Princeton GEO research on what increases citation probability.",
+      "expected_output": "Should reference the content types that get cited most, including comparisons (~33% of AI citations), definitive guides (~15%) and other high-citation content types. Should explain why these formats work (they provide the structured, extractable, authoritative information AI systems need). Should provide specific recommendations for creating AI-optimized content: clear definitions, structured data, original statistics, comparison tables, expert quotes. Should reference the Princeton GEO research on what increases citation probability.",
       "assertions": [
         "References specific content types with citation rates",
         "Mentions comparisons as highest-cited format",
         "Explains why these formats work for AI",
         "Provides specific content creation recommendations",
         "References Princeton GEO research",
-        "Mentions structured data, statistics, and clear definitions"
+        "Mentions structured data, statistics and clear definitions"
       ],
       "files": []
     },
@@ -61,7 +61,7 @@
     },
     {
       "id": 5,
-      "prompt": "Can you audit our website for AI search readiness? We want to know how visible we are across ChatGPT, Perplexity, Google AI Overviews, and other AI platforms.",
+      "prompt": "Can you audit our website for AI search readiness? We want to know how visible we are across ChatGPT, Perplexity, Google AI Overviews and other AI platforms.",
       "expected_output": "Should run the full AI Visibility Audit. Should check each platform in the landscape (Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini, Copilot). Should evaluate all three pillars: Structure (content extractability, JSON-LD, clear definitions), Authority (citations, backlinks, E-E-A-T signals), Presence (AI bot access, platform-specific factors). Should provide findings organized by pillar. Should provide a prioritized action plan with specific fixes.",
       "assertions": [
         "Runs full AI Visibility Audit",
@@ -77,7 +77,7 @@
     {
       "id": 6,
       "prompt": "Our organic search traffic has dropped 30% this quarter. Can you do a full SEO audit to figure out what's going on?",
-      "expected_output": "Should recognize this is a traditional SEO audit request, not specifically an AI SEO task. Should defer to or cross-reference the seo-audit skill, which handles comprehensive traditional SEO audits including crawlability, technical foundations, on-page optimization, and content quality. May mention AI search as one factor to investigate but should make clear that seo-audit is the primary skill for this task.",
+      "expected_output": "Should recognize this is a traditional SEO audit request, not specifically an AI SEO task. Should defer to or cross-reference the seo-audit skill, which handles comprehensive traditional SEO audits including crawlability, technical foundations, on-page optimization and content quality. May mention AI search as one factor to investigate but should make clear that seo-audit is the primary skill for this task.",
       "assertions": [
         "Recognizes this as a traditional SEO audit request",
         "References or defers to seo-audit skill",

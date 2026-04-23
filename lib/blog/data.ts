@@ -8,7 +8,7 @@ export const AUTHORS: BlogAuthor[] = [
     name: "Amol Kadam",
     avatar: "",
     role: "Founder & CEO",
-    bio: "Digital strategist and founder of Growthik Media with 7+ years building data-driven marketing systems for Indian businesses. Specializes in SEO, performance marketing, and web architecture.",
+    bio: "Digital strategist and founder of Growthik Media with 7+ years building data-driven marketing systems for Indian businesses. Specializes in SEO, performance marketing and web architecture.",
     socialLinks: {
       linkedin: "https://linkedin.com/company/growthikmedia",
       twitter: "https://twitter.com/growthikmedia",
@@ -20,7 +20,7 @@ export const AUTHORS: BlogAuthor[] = [
     name: "Priya Sharma",
     avatar: "",
     role: "Head of SEO",
-    bio: "SEO specialist with expertise in technical audits, content strategy, and local search optimization for Pune-based businesses. Google certified.",
+    bio: "SEO specialist with expertise in technical audits, content strategy and local search optimization for Pune-based businesses. Google certified.",
     socialLinks: {
       linkedin: "https://linkedin.com/company/growthikmedia",
     },
@@ -30,7 +30,7 @@ export const AUTHORS: BlogAuthor[] = [
     name: "Rahul Desai",
     avatar: "",
     role: "Lead Developer",
-    bio: "Full-stack developer specializing in Next.js, performance optimization, and Core Web Vitals. Builds high-converting websites for Indian markets.",
+    bio: "Full-stack developer specializing in Next.js, performance optimization and Core Web Vitals. Builds high-converting websites for Indian markets.",
     socialLinks: {
       linkedin: "https://linkedin.com/company/growthikmedia",
       website: "https://www.growthikmedia.com",
@@ -147,7 +147,7 @@ export const BLOG_POSTS: BlogPost[] = [
     featured: true,
     trending: true,
     metaTitle: "Search Engine Submission Guide Pune | Growthik Media",
-    metaDescription: "Learn how businesses in Pune can improve website visibility across Google, Bing, and global search engines using SEO strategies, backlinks, and technical optimization.",
+    metaDescription: "Learn how businesses in Pune can improve website visibility across Google, Bing and global search engines using SEO strategies, backlinks and technical optimization.",
   },
 
   {
@@ -173,7 +173,7 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: true,
     metaTitle: "2025 SEO Audit Checklist: 50 Point Guide | Growthik Media",
     metaDescription:
-      "Use this comprehensive SEO audit checklist to identify and fix technical, on-page, and off-page issues that are hurting your rankings in 2025.",
+      "Use this comprehensive SEO audit checklist to identify and fix technical, on-page and off-page issues that are hurting your rankings in 2025.",
   },
   {
     id: "post-2",
@@ -198,7 +198,7 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: false,
     metaTitle: "Importance of SEO in 2025: Why It Matters | Growthik Media",
     metaDescription:
-      "Why is SEO important for your business in 2025? Discover how search engine optimization drives organic traffic, builds credibility, and generates consistent leads.",
+      "Why is SEO important for your business in 2025? Discover how search engine optimization drives organic traffic, builds credibility and generates consistent leads.",
   },
   {
     id: "post-3",
@@ -222,7 +222,7 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: true,
     metaTitle: "How to Choose a Web Design Company in Pune | Growthik Media",
     metaDescription:
-      "Discover 7 critical factors to evaluate before hiring a website design company in Pune - portfolio, process, SEO, and more.",
+      "Discover 7 critical factors to evaluate before hiring a website design company in Pune - portfolio, process, SEO and more.",
   },
   {
     id: "post-4",
@@ -246,7 +246,7 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: false,
     metaTitle: "Website Cost in Pune: 2025 Pricing Guide | Growthik Media",
     metaDescription:
-      "How much does a website cost in Pune? Get a complete 2025 pricing guide covering basic sites, eCommerce, custom web apps, and what factors affect the price.",
+      "How much does a website cost in Pune? Get a complete 2025 pricing guide covering basic sites, eCommerce, custom web apps and what factors affect the price.",
   },
   {
     id: "post-5",
@@ -271,14 +271,14 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: true,
     metaTitle: "Google Ads vs Meta Ads for Pune Businesses | Growthik Media",
     metaDescription:
-      "Google Ads or Meta Ads - which is better for your Pune business in 2025? Real campaign data, cost comparisons, and expert recommendations.",
+      "Google Ads or Meta Ads - which is better for your Pune business in 2025? Real campaign data, cost comparisons and expert recommendations.",
   },
   {
     id: "post-6",
     title: "Core Web Vitals in 2025: How to Score 100 on Google PageSpeed",
     slug: "core-web-vitals-guide",
     excerpt:
-      "Google's ranking algorithm heavily weights Core Web Vitals. This technical guide walks you through exactly how to fix LCP, CLS, and INP to hit perfect scores.",
+      "Google's ranking algorithm heavily weights Core Web Vitals. This technical guide walks you through exactly how to fix LCP, CLS and INP to hit perfect scores.",
     content: "core-web-vitals-guide",
     featuredImage:
       "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&q=80",
@@ -295,7 +295,7 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: true,
     metaTitle: "Core Web Vitals 2025: Score 100 on PageSpeed | Growthik Media",
     metaDescription:
-      "Complete technical guide to fixing LCP, CLS, and INP for perfect Core Web Vitals scores. Real fixes, real results.",
+      "Complete technical guide to fixing LCP, CLS and INP for perfect Core Web Vitals scores. Real fixes, real results.",
   },
   {
     id: "post-7",
@@ -303,7 +303,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Local SEO Strategy for Pune Businesses: Dominate the Map Pack in 2025",
     slug: "local-seo-pune",
     excerpt:
-      "Rank in Google's Map Pack for Pune area searches with this step-by-step local SEO strategy - Google Business Profile, citations, reviews, and hyper-local content.",
+      "Rank in Google's Map Pack for Pune area searches with this step-by-step local SEO strategy - Google Business Profile, citations, reviews and hyper-local content.",
     content: "local-seo-pune",
     featuredImage:
       "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&q=80",
@@ -320,7 +320,7 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: false,
     metaTitle: "Local SEO Pune 2025: Dominate Google Map Pack | Growthik Media",
     metaDescription:
-      "Step-by-step local SEO strategy for Pune businesses. Rank in Google Maps, optimize your Business Profile, and dominate 'near me' searches.",
+      "Step-by-step local SEO strategy for Pune businesses. Rank in Google Maps, optimize your Business Profile and dominate 'near me' searches.",
   },
   {
     id: "post-8",
@@ -345,7 +345,7 @@ export const BLOG_POSTS: BlogPost[] = [
     metaTitle:
       "Why Your Website Bounce Rate Is High & How to Fix It | Growthik Media",
     metaDescription:
-      "12 common reasons for high website bounce rate and exact fixes. Improve UX, speed, and conversions.",
+      "12 common reasons for high website bounce rate and exact fixes. Improve UX, speed and conversions.",
   },
   {
     id: "post-9",
@@ -369,14 +369,14 @@ export const BLOG_POSTS: BlogPost[] = [
     trending: false,
     metaTitle: "B2B Content Marketing Strategy for India | Growthik Media",
     metaDescription:
-      "Content marketing strategy built for Indian B2B companies. Tailored for Indian buying cycles, decision-makers, and digital behaviour.",
+      "Content marketing strategy built for Indian B2B companies. Tailored for Indian buying cycles, decision-makers and digital behaviour.",
   },
 ];
 
 // ─── Helper Accessors ─────────────────────────────────────────────────────────
 
 export const getFeaturedPosts = () => BLOG_POSTS.filter((p) => p.featured);
-export const getTrendingPosts = () => 
+export const getTrendingPosts = () =>
   [...BLOG_POSTS].sort((a, b) => b.views - a.views);
 export const getLatestPosts = () =>
   [...BLOG_POSTS].sort(

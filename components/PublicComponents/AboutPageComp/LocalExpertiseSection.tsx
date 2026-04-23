@@ -27,7 +27,7 @@ const LocalExpertiseSection = () => {
           <strong className="text-(--text-primary)">Wakad</strong>. Our
           local-first strategies help brands across{" "}
           <strong className="text-(--text-primary)">PCMC</strong>,{" "}
-          <strong className="text-(--text-primary)">Kothrud</strong>, and the
+          <strong className="text-(--text-primary)">Kothrud</strong> and the
           entire <strong className="text-(--text-primary)">Pune region</strong>{" "}
           capture high-intent organic traffic and scale efficiently.
         </p>

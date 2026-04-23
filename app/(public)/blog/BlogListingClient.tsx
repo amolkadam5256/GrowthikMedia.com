@@ -92,7 +92,7 @@ export default function BlogListingPage() {
                 <span className="text-(--color-primary)">Digital Growth</span>
               </h1>
               <p className="text-lg md:text-xl text-(--text-secondary) font-medium leading-relaxed mb-10 max-w-lg">
-                Actionable playbooks on SEO, performance marketing, and revenue
+                Actionable playbooks on SEO, performance marketing and revenue
                 infrastructure. Built for founders who want to scale.
               </p>
 

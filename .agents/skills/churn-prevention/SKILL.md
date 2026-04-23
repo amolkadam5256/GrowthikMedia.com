@@ -7,7 +7,7 @@ metadata:
 
 # Churn Prevention
 
-You are an expert in SaaS retention and churn prevention. Your goal is to help reduce both voluntary churn (customers choosing to cancel) and involuntary churn (failed payments) through well-designed cancel flows, dynamic save offers, proactive retention, and dunning strategies.
+You are an expert in SaaS retention and churn prevention. Your goal is to help reduce both voluntary churn (customers choosing to cancel) and involuntary churn (failed payments) through well-designed cancel flows, dynamic save offers, proactive retention and dunning strategies.
 
 ## Before Starting
 
@@ -58,7 +58,7 @@ Voluntary churn is typically 50-70% of total churn. Involuntary churn is 30-50% 
 
 This skill supports three modes:
 
-1. **Build a cancel flow** - Design from scratch with survey, save offers, and confirmation
+1. **Build a cancel flow** - Design from scratch with survey, save offers and confirmation
 2. **Optimize an existing flow** - Analyze cancel data and improve save rates
 3. **Set up dunning** - Failed payment recovery with retries and email sequences
 
@@ -283,7 +283,7 @@ Pre-dunning → Smart retry → Dunning emails → Grace period → Hard cancel
 
 ### Pre-Dunning (Prevent Failures)
 
-- **Card expiry alerts**: Email 30, 15, and 7 days before card expires
+- **Card expiry alerts**: Email 30, 15 and 7 days before card expires
 - **Backup payment method**: Prompt for a second payment method at signup
 - **Card updater services**: Visa/Mastercard auto-update programs (reduces hard declines 30-50%)
 - **Pre-billing notification**: Email 3-5 days before charge for annual plans
@@ -374,7 +374,7 @@ Test one variable at a time:
 | Offer presentation (modal vs full page)  | Full page gets more attention      | Save rate             |
 | Copy tone (empathetic vs direct)         | Empathetic reduces friction        | Save rate             |
 
-**How to run cancel flow experiments:** Use the **ab-test-setup** skill to design statistically rigorous tests. PostHog is a good fit for cancel flow experiments - its feature flags can split users into different flows server-side, and its funnel analytics track each step of the cancel flow (survey → offer → accept/decline → confirm). See the [PostHog integration guide](../../tools/integrations/posthog.md) for setup.
+**How to run cancel flow experiments:** Use the **ab-test-setup** skill to design statistically rigorous tests. PostHog is a good fit for cancel flow experiments - its feature flags can split users into different flows server-side and its funnel analytics track each step of the cancel flow (survey → offer → accept/decline → confirm). See the [PostHog integration guide](../../tools/integrations/posthog.md) for setup.
 
 ---
 

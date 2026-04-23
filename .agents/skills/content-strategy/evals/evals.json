@@ -35,7 +35,7 @@
     {
       "id": 3,
       "prompt": "what kind of content should we be creating? we're a developer tool (API testing platform) and our audience is backend developers and QA engineers",
-      "expected_output": "Should trigger on casual phrasing. Should recommend content types appropriate for a developer audience: technical tutorials, documentation-style guides, use-case content, template/example libraries, data-driven benchmarks. Should note that developer audiences prefer depth, accuracy, and practical value over marketing fluff. Should suggest content pillars aligned with developer interests. Should use the ideation sources framework (keyword data, community forums like Stack Overflow/Reddit, competitor gaps).",
+      "expected_output": "Should trigger on casual phrasing. Should recommend content types appropriate for a developer audience: technical tutorials, documentation-style guides, use-case content, template/example libraries, data-driven benchmarks. Should note that developer audiences prefer depth, accuracy and practical value over marketing fluff. Should suggest content pillars aligned with developer interests. Should use the ideation sources framework (keyword data, community forums like Stack Overflow/Reddit, competitor gaps).",
       "assertions": [
         "Triggers on casual phrasing",
         "Recommends content types for developer audience",

@@ -1,6 +1,6 @@
 # AI Writing Detection
 
-Words, phrases, and punctuation patterns commonly associated with AI-generated text. Avoid these to ensure writing sounds natural and human.
+Words, phrases and punctuation patterns commonly associated with AI-generated text. Avoid these to ensure writing sounds natural and human.
 
 Sources: Grammarly (2025), Microsoft 365 Life Hacks (2025), GPTHuman (2025), Walter Writes (2025), Textero (2025), Plagiarism Today (2025), Rolling Stone (2025), MDPI Blog (2025)
 
@@ -25,7 +25,7 @@ Em dashes are longer than hyphens (-) and are used for emphasis, interruptions, 
 
 ### Why Em Dashes Signal AI Writing
 
-- AI models were trained on edited books, academic papers, and style guides where em dashes appear frequently
+- AI models were trained on edited books, academic papers and style guides where em dashes appear frequently
 - AI uses em dashes as a shortcut for sentence variety instead of commas, colons, or parentheses
 - Most human writers rarely use em dashes because they don't exist as a standard keyboard key
 - The overuse is so consistent that it has become the unofficial signature of ChatGPT writing
@@ -96,7 +96,7 @@ Em dashes are longer than hyphens (-) and are used for emphasis, interruptions, 
 
 | Avoid                   | Use Instead                           |
 | ----------------------- | ------------------------------------- |
-| furthermore             | also, in addition, and                |
+| furthermore             | also, in addition and                |
 | moreover                | also, and, besides                    |
 | notwithstanding         | despite, even so, still               |
 | that being said         | however, but, still                   |

@@ -80,7 +80,7 @@
     {
       "id": 6,
       "prompt": "Help me optimize our post-signup onboarding experience. Users sign up but 60% never complete setup.",
-      "expected_output": "Should recognize this is an in-app onboarding optimization task, not an email sequence task. Should defer to or cross-reference the onboarding-cro skill, which handles in-app onboarding flows, checklists, and activation optimization. May offer to help with the email component of onboarding but should make clear that onboarding-cro is the primary skill for this task.",
+      "expected_output": "Should recognize this is an in-app onboarding optimization task, not an email sequence task. Should defer to or cross-reference the onboarding-cro skill, which handles in-app onboarding flows, checklists and activation optimization. May offer to help with the email component of onboarding but should make clear that onboarding-cro is the primary skill for this task.",
       "assertions": [
         "Recognizes this as in-app onboarding optimization",
         "References or defers to onboarding-cro skill",

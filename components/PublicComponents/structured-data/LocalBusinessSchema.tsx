@@ -33,7 +33,7 @@ export default function LocalBusinessSchema() {
         "url": CONTACT_INFO.website,
         "logo": `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`,
         "image": `${CONTACT_INFO.website}/og-image.png`,
-        "description": "Premium Digital Marketing Agency in Pune specialized in helping brands grow through SEO, PPC, and High-Performance Web Development.",
+        "description": "Premium Digital Marketing Agency in Pune specialized in helping brands grow through SEO, PPC and High-Performance Web Development.",
         "telephone": CONTACT_INFO.phone.primary,
         "email": CONTACT_INFO.email.info,
         "priceRange": "$$",

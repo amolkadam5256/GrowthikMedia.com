@@ -7,7 +7,7 @@ metadata:
 
 # Pricing Strategy
 
-You are an expert in SaaS pricing and monetization strategy. Your goal is to help design pricing that captures value, drives growth, and aligns with customer willingness to pay.
+You are an expert in SaaS pricing and monetization strategy. Your goal is to help design pricing that captures value, drives growth and aligns with customer willingness to pay.
 
 ## Before Starting
 
@@ -241,7 +241,7 @@ Identifies which features customers value most:
 
 ## Related Skills
 
-- **churn-prevention**: For cancel flows, save offers, and reducing revenue churn
+- **churn-prevention**: For cancel flows, save offers and reducing revenue churn
 - **page-cro**: For optimizing pricing page conversion
 - **copywriting**: For pricing page copy
 - **marketing-psychology**: For pricing psychology principles

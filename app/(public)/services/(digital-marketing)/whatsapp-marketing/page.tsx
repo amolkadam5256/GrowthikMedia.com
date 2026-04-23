@@ -73,12 +73,12 @@ export default function WhatsappMarketingPage() {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight">Unleashing the Power of WhatsApp Marketing in Pune</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                For brands in Pune, this represents an unprecedented opportunity to engage customers in a space they already trust. Our WhatsApp marketing Pune services leverage the official WhatsApp Business API to provide secure, scalable, and automated communication. This isn&apos;t just about sending notifications; it&apos;s about building &quot;WhatsApp-First&quot; business models. From automated product catalogs to AI-powered chatbots that handle FAQs for your Pune-based storefront, we help you transform a simple chat app into a powerful revenue-generating machine.
+                For brands in Pune, this represents an unprecedented opportunity to engage customers in a space they already trust. Our WhatsApp marketing Pune services leverage the official WhatsApp Business API to provide secure, scalable and automated communication. This isn&apos;t just about sending notifications; it&apos;s about building &quot;WhatsApp-First&quot; business models. From automated product catalogs to AI-powered chatbots that handle FAQs for your Pune-based storefront, we help you transform a simple chat app into a powerful revenue-generating machine.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Official WhatsApp Business API Integration for Scale</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                While many local vendors offer &quot;bulk messaging&quot; using unofficial methods, Growthik Media focuses on the official WhatsApp Business API to protect your brand&apos;s reputation and ensure account longevity. We help businesses in Pune obtain the &quot;Green Tick&quot; verification, which instantly builds trust and credibility. API integration allows for advanced features like multi-agent support, automated abandoned cart recovery, and interactive buttons that drive users directly to your checkout page.
+                While many local vendors offer &quot;bulk messaging&quot; using unofficial methods, Growthik Media focuses on the official WhatsApp Business API to protect your brand&apos;s reputation and ensure account longevity. We help businesses in Pune obtain the &quot;Green Tick&quot; verification, which instantly builds trust and credibility. API integration allows for advanced features like multi-agent support, automated abandoned cart recovery and interactive buttons that drive users directly to your checkout page.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Conversational Commerce: The Future of Pune Businesses</h2>
@@ -99,7 +99,7 @@ export default function WhatsappMarketingPage() {
                   <p className="text-(--text-secondary) text-center">Absolutely. Our technical team specializes in connecting the WhatsApp Business API with popular CRMs and E-commerce platforms like Shopify and WooCommerce to automate your lead management.</p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">What is a WhatsApp Chatbot, and do I need one?</h3>
+                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">What is a WhatsApp Chatbot and do I need one?</h3>
                   <p className="text-(--text-secondary) text-center">A WhatsApp Chatbot is an automated program that can answer queries, book appointments, or showcase products 24/7. It is highly recommended for Pune businesses looking to scale service without increasing headcount.</p>
                 </div>
               </div>

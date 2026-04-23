@@ -40,8 +40,8 @@ Detailed formulas and templates for writing high-converting ad copy.
 
 **Example:**
 
-> Before: Chasing down approvals across email, Slack, and spreadsheets.
-> After: Every approval tracked, automated, and on time.
+> Before: Chasing down approvals across email, Slack and spreadsheets.
+> After: Every approval tracked, automated and on time.
 > [Product] connects your tools and keeps projects moving.
 
 ---

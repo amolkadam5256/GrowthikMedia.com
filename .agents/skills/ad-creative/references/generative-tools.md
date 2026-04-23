@@ -1,6 +1,6 @@
 # Generative AI Tools for Ad Creative
 
-Reference for using AI image generators, video generators, and code-based video tools to produce ad visuals at scale.
+Reference for using AI image generators, video generators and code-based video tools to produce ad visuals at scale.
 
 ---
 
@@ -222,7 +222,7 @@ OpenAI's video generation model with synchronized audio.
 **Capabilities:**
 
 - Up to 60 seconds with synchronized audio
-- Dialogue, sound effects, and ambient audio
+- Dialogue, sound effects and ambient audio
 - sora-2 (fast) and sora-2-pro (quality) variants
 - Text-to-video and image-to-video
 
@@ -274,7 +274,7 @@ Full-stack video creation platform with cinematic camera controls.
 
 - 50+ professional camera movements (zooms, pans, FPV drone shots)
 - Image-to-video animation
-- Built-in editing, transitions, and keyframing
+- Built-in editing, transitions and keyframing
 - All-in-one workflow: image gen, animation, editing
 
 **Ad creative use cases:**
@@ -311,7 +311,7 @@ Many video generators (Veo, Kling, Sora, Seedance) now include native audio. Use
 - **Brand voice consistency** - Clone a specific voice for all ads
 - **Multi-language versions** - Same ad script in 20+ languages
 - **Script iteration** - Re-record voiceover without reshooting video
-- **Precise control** - Exact timing, emotion, and pacing
+- **Precise control** - Exact timing, emotion and pacing
 
 ---
 

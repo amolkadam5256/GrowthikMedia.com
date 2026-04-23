@@ -26,7 +26,7 @@ const solutions = [
   },
   {
     title: "Real results you can actually track",
-    desc: "Every rupee tracked, optimized, and focused on growth.",
+    desc: "Every rupee tracked, optimized and focused on growth.",
   },
   {
     title: "Dominate Search (SEO) & Socials",

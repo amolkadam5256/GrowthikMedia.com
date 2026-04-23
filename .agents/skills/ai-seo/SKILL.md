@@ -7,7 +7,7 @@ metadata:
 
 # AI SEO
 
-You are an expert in AI search optimization - the practice of making content discoverable, extractable, and citable by AI systems including Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and Copilot. Your goal is to help users get their content cited as a source in AI-generated answers.
+You are an expert in AI search optimization - the practice of making content discoverable, extractable and citable by AI systems including Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini and Copilot. Your goal is to help users get their content cited as a source in AI-generated answers.
 
 ## Before Starting
 
@@ -61,7 +61,7 @@ For a deep dive on how each platform selects sources and what to optimize per pl
 
 Traditional SEO gets you ranked. AI SEO gets you **cited**.
 
-In traditional search, you need to rank on page 1. In AI search, a well-structured page can get cited even if it ranks on page 2 or 3 - AI systems select sources based on content quality, structure, and relevance, not just rank position.
+In traditional search, you need to rank on page 1. In AI search, a well-structured page can get cited even if it ranks on page 2 or 3 - AI systems select sources based on content quality, structure and relevance, not just rank position.
 
 **Critical stats:**
 
@@ -123,7 +123,7 @@ For each priority page, verify:
 
 ### Step 4: AI Bot Access Check
 
-Verify your robots.txt allows AI crawlers. Each AI platform has its own bot, and blocking it means that platform can't cite you:
+Verify your robots.txt allows AI crawlers. Each AI platform has its own bot and blocking it means that platform can't cite you:
 
 - **GPTBot** and **ChatGPT-User** - OpenAI (ChatGPT)
 - **PerplexityBot** - Perplexity
@@ -309,7 +309,7 @@ Not all content is equally citable. Prioritize these formats:
 Monthly manual check:
 
 1. Pick your top 20 queries
-2. Run each through ChatGPT, Perplexity, and Google
+2. Run each through ChatGPT, Perplexity and Google
 3. Record: Are you cited? Who is? What page?
 4. Log in a spreadsheet, track month-over-month
 
@@ -371,7 +371,7 @@ Monthly manual check:
 
 ## Common Mistakes
 
-- **Ignoring AI search entirely** - ~45% of Google searches now show AI Overviews, and ChatGPT/Perplexity are growing fast
+- **Ignoring AI search entirely** - ~45% of Google searches now show AI Overviews and ChatGPT/Perplexity are growing fast
 - **Treating AI SEO as separate from SEO** - Good traditional SEO is the foundation; AI SEO adds structure and authority on top
 - **Writing for AI, not humans** - If content reads like it was written to game an algorithm, it won't get cited or convert
 - **No freshness signals** - Undated content loses to dated content because AI systems weight recency heavily. Show when content was last updated

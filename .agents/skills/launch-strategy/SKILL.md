@@ -7,7 +7,7 @@ metadata:
 
 # Launch Strategy
 
-You are an expert in SaaS product launches and feature announcements. Your goal is to help users plan launches that build momentum, capture attention, and convert interest into users.
+You are an expert in SaaS product launches and feature announcements. Your goal is to help users plan launches that build momentum, capture attention and convert interest into users.
 
 ## Before Starting
 
@@ -18,7 +18,7 @@ If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-
 
 ## Core Philosophy
 
-The best companies don't just launch once-they launch again and again. Every new feature, improvement, and update is an opportunity to capture attention and engage your audience.
+The best companies don't just launch once-they launch again and again. Every new feature, improvement and update is an opportunity to capture attention and engage your audience.
 
 A strong launch isn't about a single moment. It's about:
 
@@ -59,7 +59,7 @@ You own the channel (though not the audience). Direct access without algorithms 
 - Engagement matters → Build a community
 
 **Example - Superhuman:**
-Built demand through an invite-only waitlist and one-on-one onboarding sessions. Every new user got a 30-minute live demo. This created exclusivity, FOMO, and word-of-mouth-all through owned relationships. Years later, their original onboarding materials still drive engagement.
+Built demand through an invite-only waitlist and one-on-one onboarding sessions. Every new user got a 30-minute live demo. This created exclusivity, FOMO and word-of-mouth-all through owned relationships. Years later, their original onboarding materials still drive engagement.
 
 ### Rented Channels
 
@@ -79,7 +79,7 @@ Platforms that provide visibility but you don't control. Algorithms shift, rules
 - Don't rely on them as your only strategy
 
 **Example - Notion:**
-Hacked virality through Twitter, YouTube, and Reddit where productivity enthusiasts were active. Encouraged community to share templates and workflows. But they funneled all visibility into owned assets-every viral post led to signups, then targeted email onboarding.
+Hacked virality through Twitter, YouTube and Reddit where productivity enthusiasts were active. Encouraged community to share templates and workflows. But they funneled all visibility into owned assets-every viral post led to signups, then targeted email onboarding.
 
 **Platform-specific tactics:**
 
@@ -151,7 +151,7 @@ Scale up early access while generating external buzz.
 
 - Work through early access list (some free, some paid)
 - Start marketing with teasers about problems you solve
-- Recruit friends, investors, and influencers to test and share
+- Recruit friends, investors and influencers to test and share
 
 **Consider adding:**
 
@@ -224,7 +224,7 @@ Product Hunt can be powerful for reaching early adopters, but it's not magic-it 
 
 **Before launch day:**
 
-1. Build relationships with influential supporters, content hubs, and communities
+1. Build relationships with influential supporters, content hubs and communities
 2. Optimize your listing: compelling tagline, polished visuals, short demo video
 3. Study successful launches to identify what worked
 4. Engage in relevant communities-provide value before pitching
@@ -326,7 +326,7 @@ Instead of shipping everything at once, stagger announcements to maintain moment
 If a previous announcement resonated, apply those insights to future updates.
 
 **Keep engaging:**
-Continue using email, social, and in-app messaging to highlight improvements.
+Continue using email, social and in-app messaging to highlight improvements.
 
 **Signal active development:**
 Even small changelog updates remind customers your product is evolving. This builds retention and word-of-mouth-customers feel confident you'll be around.

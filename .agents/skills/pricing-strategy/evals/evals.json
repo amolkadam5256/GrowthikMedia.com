@@ -48,7 +48,7 @@
     },
     {
       "id": 4,
-      "prompt": "We have a Basic ($19), Pro ($49), and Enterprise (custom) plan. The Pro plan gets 70% of signups. Should we add a plan between Pro and Enterprise?",
+      "prompt": "We have a Basic ($19), Pro ($49) and Enterprise (custom) plan. The Pro plan gets 70% of signups. Should we add a plan between Pro and Enterprise?",
       "expected_output": "Should apply the good-better-best tier structure framework. Should analyze the current situation: Pro capturing 70% is actually healthy, but the gap to Enterprise suggests there may be mid-market customers underserved. Should evaluate whether a 4th tier makes sense: does it address a real gap, or will it create choice paralysis? Should apply pricing psychology (Hick's Law - more options can reduce decisions). Should recommend either a 4th tier with clear differentiation or adjusting the Pro plan to better bridge the gap.",
       "assertions": [
         "Applies good-better-best tier structure",
@@ -77,7 +77,7 @@
     {
       "id": 6,
       "prompt": "Our pricing page conversion rate is only 1.5%. Can you review the page and suggest improvements?",
-      "expected_output": "Should recognize this is a pricing page conversion optimization task, not a pricing strategy task. Should defer to or cross-reference the page-cro skill, which handles pricing page conversion rate optimization including plan comparison clarity, CTA optimization, and trust signals. Pricing-strategy focuses on the actual pricing decisions (what to charge, how to package), not the page design.",
+      "expected_output": "Should recognize this is a pricing page conversion optimization task, not a pricing strategy task. Should defer to or cross-reference the page-cro skill, which handles pricing page conversion rate optimization including plan comparison clarity, CTA optimization and trust signals. Pricing-strategy focuses on the actual pricing decisions (what to charge, how to package), not the page design.",
       "assertions": [
         "Recognizes this as pricing page CRO, not pricing strategy",
         "References or defers to page-cro skill",

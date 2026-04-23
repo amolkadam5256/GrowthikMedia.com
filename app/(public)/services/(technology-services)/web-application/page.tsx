@@ -27,7 +27,7 @@ import { images } from "@/app/assets/images/images";
 
 export const metadata: Metadata = {
   title: "Custom Web App Development in Pune | Growthik Media",
-  description: "Top web application company in Pune. We build custom, SEO-optimized, and mobile-responsive web apps for businesses looking to scale. Get a free quote!",
+  description: "Top web application company in Pune. We build custom, SEO-optimized and mobile-responsive web apps for businesses looking to scale. Get a free quote!",
   keywords:
     "Web Application in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom Web Application Pune",
   alternates: {
@@ -153,7 +153,7 @@ export default function ServicePage() {
                     name: "What is web application?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Website design involves planning, creating, and structuring websites for optimal user experience and functionality.",
+                      text: "Website design involves planning, creating and structuring websites for optimal user experience and functionality.",
                     },
                   },
                   {
@@ -395,7 +395,7 @@ export default function ServicePage() {
                 {
                   icon: Search,
                   title: "SEO-Optimized Structure",
-                  desc: "We deliver Web Application services with keyword-optimized headings, internal linking architecture, and schema markup.",
+                  desc: "We deliver Web Application services with keyword-optimized headings, internal linking architecture and schema markup.",
                 },
                 {
                   icon: Smartphone,
@@ -405,12 +405,12 @@ export default function ServicePage() {
                 {
                   icon: Zap,
                   title: "Fast Loading Speed",
-                  desc: "Optimized code, compressed images, and efficient caching to provide blazing-fast load times.",
+                  desc: "Optimized code, compressed images and efficient caching to provide blazing-fast load times.",
                 },
                 {
                   icon: Target,
                   title: "Conversion-Focused Design",
-                  desc: "Strategic placement of CTAs, forms, and trust signals to turn visitors into paying customers.",
+                  desc: "Strategic placement of CTAs, forms and trust signals to turn visitors into paying customers.",
                 },
                 {
                   icon: Shield,
@@ -455,7 +455,7 @@ export default function ServicePage() {
                 },
                 {
                   title: "E-Commerce Website Development",
-                  desc: "Sell products online with secure, scalable, and high-conversion eCommerce websites.",
+                  desc: "Sell products online with secure, scalable and high-conversion eCommerce websites.",
                 },
                 {
                   title: "WordPress Website Development",
@@ -673,7 +673,7 @@ export default function ServicePage() {
                 {
                   name: "Rahul Deshmukh",
                   comp: "Tech Solutions Pune",
-                  text: "Growthik Media transformed our business website. The new design is fast, modern, and has increased our daily leads by 3x! Highly recommended.",
+                  text: "Growthik Media transformed our business website. The new design is fast, modern and has increased our daily leads by 3x! Highly recommended.",
                 },
                 {
                   name: "Priya Sharma",
@@ -683,7 +683,7 @@ export default function ServicePage() {
                 {
                   name: "Amit Joshi",
                   comp: "Real Estate Agency",
-                  text: "Professional team, excellent communication, and outstanding results. They understood our complex requirements perfectly.",
+                  text: "Professional team, excellent communication and outstanding results. They understood our complex requirements perfectly.",
                 },
               ].map((t, i) => (
                 <article
@@ -802,7 +802,7 @@ export default function ServicePage() {
                 ))}
               </div>
               <p className="mt-6 text-xs text-(--text-secondary) text-center font-bold tracking-widest uppercase">
-                We ensure every website is secure, fast, and conversion-ready
+                We ensure every website is secure, fast and conversion-ready
                 before going live.
               </p>
             </div>
@@ -823,7 +823,7 @@ export default function ServicePage() {
                 Founded with a core mission to empower brands digitally, our
                 expert team combines creative web design with data-driven SEO.
                 We have proudly served industries across healthcare, real
-                estate, retail, and tech-building tailored digital experiences
+                estate, retail and tech-building tailored digital experiences
                 that rank and convert.
               </p>
               <div className="grid grid-cols-2 gap-6">
@@ -987,7 +987,7 @@ export default function ServicePage() {
               </ul>
               <p className="text-(--text-secondary) font-medium mb-8">
                 We offer affordable web application packages tailored for
-                startups, SMEs, and enterprises.
+                startups, SMEs and enterprises.
               </p>
               <Link
                 href="/contact"
@@ -1007,7 +1007,7 @@ export default function ServicePage() {
                 {[
                   {
                     q: "What is web application?",
-                    a: "Website design involves planning, creating, and structuring websites for optimal user experience and functionality.",
+                    a: "Website design involves planning, creating and structuring websites for optimal user experience and functionality.",
                   },
                   {
                     q: "How long does it take to deliver results?",

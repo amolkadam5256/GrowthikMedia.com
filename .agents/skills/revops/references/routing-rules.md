@@ -1,6 +1,6 @@
 # Lead Routing Rules
 
-Decision trees, platform-specific configurations, territory routing, ABM routing, and speed-to-lead benchmarks.
+Decision trees, platform-specific configurations, territory routing, ABM routing and speed-to-lead benchmarks.
 
 ## Routing Decision Tree
 

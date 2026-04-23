@@ -32,7 +32,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
     openGraph: {
       title: "Digital Marketing & SEO Blog Pune | Growthik Media",
       description:
-        "Expert digital marketing, SEO, and web design articles for Pune businesses. Fresh insights from the Growthik Media team.",
+        "Expert digital marketing, SEO and web design articles for Pune businesses. Fresh insights from the Growthik Media team.",
       url: canonical,
       siteName: "Growthik Media",
       type: "website",
@@ -65,7 +65,7 @@ const blogSchema = {
       "@id": "https://www.growthikmedia.com/blog/#blog",
       "name": "Growthik Media Blog - Digital Marketing & SEO Insights",
       "url": "https://www.growthikmedia.com/blog/",
-      "description": "Expert articles on SEO, Google Ads, web design, and digital marketing strategies for Pune and Indian businesses.",
+      "description": "Expert articles on SEO, Google Ads, web design and digital marketing strategies for Pune and Indian businesses.",
       "publisher": {
         "@type": "Organization",
         "name": "Growthik Media",

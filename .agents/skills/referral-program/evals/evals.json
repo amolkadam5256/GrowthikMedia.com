@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Help me design a referral program for our SaaS product. We're a $49/month project management tool with about 1,000 customers. We want to encourage word-of-mouth growth.",
-      "expected_output": "Should check for product-marketing-context.md first. Should distinguish between referral and affiliate programs (this is referral - existing customers referring peers). Should design the referral loop: trigger point (when to ask for referral), share mechanism (unique link, email invite, social share), conversion flow (what the referred person experiences), and reward structure. Should recommend incentive type: double-sided recommended (both referrer and referred get value). Should suggest specific incentives appropriate for $49/month SaaS (e.g., free month for both). Should include the launch checklist. Should recommend tool integrations (Rewardful, Tolt, etc.).",
+      "expected_output": "Should check for product-marketing-context.md first. Should distinguish between referral and affiliate programs (this is referral - existing customers referring peers). Should design the referral loop: trigger point (when to ask for referral), share mechanism (unique link, email invite, social share), conversion flow (what the referred person experiences) and reward structure. Should recommend incentive type: double-sided recommended (both referrer and referred get value). Should suggest specific incentives appropriate for $49/month SaaS (e.g., free month for both). Should include the launch checklist. Should recommend tool integrations (Rewardful, Tolt, etc.).",
       "assertions": [
         "Checks for product-marketing-context.md",
         "Distinguishes referral from affiliate",
@@ -23,7 +23,7 @@
       "assertions": [
         "Applies program optimization guidance",
         "Diagnoses potential causes of low participation",
-        "Checks awareness, timing, incentive, and friction",
+        "Checks awareness, timing, incentive and friction",
         "Recommends optimization tactics",
         "Suggests timing referral asks at satisfaction moments",
         "Provides experiment ideas"

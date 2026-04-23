@@ -34,19 +34,19 @@ export async function fetchUnrepliedReviews(authClient: any, accountId: string, 
     // Note: accountId and locationId are joined to form the full location name
     const locationName = `accounts/${accountId}/locations/${locationId}`;
     const url = `https://mybusiness.googleapis.com/v4/${locationName}/reviews`;
-    
+
     console.log(`Fetching reviews from: ${url}`);
-    
+
     const response = await authClient.request({
       url,
       method: 'GET'
     });
 
     const reviews = response.data.reviews || [];
-    
+
     // In v4, reviews without a reply don't have the 'reviewReply' property
     const unreplied = reviews.filter((review: any) => !review.reviewReply);
-    
+
     console.log(`Found ${reviews.length} total reviews, ${unreplied.length} unreplied.`);
     return unreplied;
   } catch (error: any) {
@@ -64,9 +64,9 @@ export async function replyToReview(authClient: any, reviewName: string, replyTe
   try {
     // In v4, reviewName is already in the format: accounts/*/locations/*/reviews/*
     const url = `https://mybusiness.googleapis.com/v4/${reviewName}/reply`;
-    
+
     console.log(`Replying to review at: ${url}`);
-    
+
     await authClient.request({
       url,
       method: "PUT",
@@ -74,7 +74,7 @@ export async function replyToReview(authClient: any, reviewName: string, replyTe
         comment: replyText,
       },
     });
-    
+
     console.log("Reply posted successfully.");
   } catch (error: any) {
     console.error(`Error replying to review ${reviewName}:`, error.message);
@@ -95,7 +95,7 @@ export async function generateAIResponse(rating: string, comment: string | null)
   }
 
   const genAI = new GoogleGenerativeAI(apiKey!);
-  const model = genAI.getGenerativeModel({ 
+  const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
     generationConfig: {
       temperature: 0.7,
@@ -108,7 +108,7 @@ export async function generateAIResponse(rating: string, comment: string | null)
   const prompt = `
 You are the owner of Growthik Media, a Pune-based digital marketing and branding agency, replying to a Google review.
 
-Your goal is to write a natural, human-like, and positive response that reflects professionalism, local expertise, and a strong brand presence.
+Your goal is to write a natural, human-like and positive response that reflects professionalism, local expertise and a strong brand presence.
 
 ---
 
@@ -148,8 +148,8 @@ Growthik Media is a digital marketing agency in Pune specializing in:
 ---
 
 ✍️ Writing Style:
-- Natural, conversational, and human
-- Warm, polite, and confident tone
+- Natural, conversational and human
+- Warm, polite and confident tone
 - Keep response between 40–80 words
 - Make each reply unique and non-repetitive
 - Keep it simple and easy to read
@@ -180,7 +180,7 @@ Rating: ${rating}
 
 ---
 
-Write a natural, positive, locally-aware, and Google policy-compliant reply as Growthik Media (Pune).
+Write a natural, positive, locally-aware and Google policy-compliant reply as Growthik Media (Pune).
 
 Reply:
 `;
@@ -188,12 +188,12 @@ Reply:
   try {
     const result = await model.generateContent(prompt);
     const text = result.response.text().trim();
-    
+
     // Safety check: Ensure we didn't get an empty or broken response
     if (!text || text.length < 5) {
       throw new Error("AI generated an empty or too short response.");
     }
-    
+
     return text;
   } catch (error: any) {
     console.error("Gemini Generation Error:", error.message);

@@ -16,7 +16,7 @@ const AIPhilosophySection = () => {
               </h2>
               <p className="text-(--text-secondary) mb-6">
                 Our AI-powered marketing systems combine semantic SEO analysis,
-                predictive ad bidding, and advanced conversion tracking to help
+                predictive ad bidding and advanced conversion tracking to help
                 businesses outperform competitors in search rankings and paid
                 media efficiency.
               </p>
@@ -96,18 +96,16 @@ const AIPhilosophySection = () => {
               ].map((item, i) => (
                 <div key={i} className="relative pl-8">
                   <div
-                    className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 ${
-                      item.current
+                    className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 ${item.current
                         ? "bg-(--color-primary) border-(--color-primary)"
                         : "bg-(--background) border-(--text-secondary)"
-                    }`}
+                      }`}
                   />
                   <span
-                    className={`text-sm font-bold uppercase tracking-widest ${
-                      item.current
+                    className={`text-sm font-bold uppercase tracking-widest ${item.current
                         ? "text-(--color-primary)"
                         : "text-(--text-secondary)"
-                    }`}
+                      }`}
                   >
                     {item.year}
                   </span>

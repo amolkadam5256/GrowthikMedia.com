@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { portfolioData } from '@/lib/data/portfolio';
 import ClientPortfolioGrid from '@/components/PublicComponents/portfolio/ClientPortfolioGrid';
 import PageHero from '@/components/PublicComponents/ui/PageHero';
+import { buildCollectionSchema, buildPortfolioItemListItems } from '@/lib/seo/collectionSchema';
 
 export const metadata: Metadata = {
   title: 'PPC & Meta Ads Performance Portfolio | Growthik Media',
@@ -13,14 +14,26 @@ export const metadata: Metadata = {
 
 export default function AdsPerformancePage() {
   const ads = portfolioData.filter((p) => p.industry === 'Real Estate' || p.category === 'digital-marketing');
+  const schema = buildCollectionSchema({
+    path: '/portfolio/ads-performance/',
+    name: 'Ads Performance Portfolio | Growthik Media',
+    description: 'Paid media and performance marketing examples with lead-generation and ROI-oriented outcomes.',
+    breadcrumbName: 'Ads Performance',
+    itemName: 'Ads Performance Projects',
+    items: buildPortfolioItemListItems(ads),
+  });
 
   return (
     <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-black overflow-hidden relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <PageHero
           eyebrow="Ads Performance"
           title="Conversion by The Numbers."
-          description="A selection of high-ROI paid media campaigns built securely over Facebook Meta, Google Ads, and Native placements."
+          description="A selection of high-ROI paid media campaigns built securely over Facebook Meta, Google Ads and Native placements."
           ctaText="Audit My Ad Campaigns"
           ctaLink="/contact"
         />

@@ -19,7 +19,7 @@
     },
     {
       "id": 2,
-      "prompt": "What should our onboarding checklist include? We're a design collaboration tool. Users need to upload a design, invite a team member, and leave a comment to get full value.",
+      "prompt": "What should our onboarding checklist include? We're a design collaboration tool. Users need to upload a design, invite a team member and leave a comment to get full value.",
       "expected_output": "Should apply the checklist pattern. Should include the 3 stated activation actions (upload design, invite team, leave comment). Should recommend 3-7 total items ordered by increasing commitment. Should suggest starting with the quickest win to build momentum. Should recommend progress indicators and completion rewards. Should address what happens when users skip items. Should provide specific UX recommendations for the checklist implementation.",
       "assertions": [
         "Applies checklist pattern",
@@ -67,7 +67,7 @@
       "prompt": "Should we use tooltips, a product tour, or a setup wizard for onboarding? What works best?",
       "expected_output": "Should apply the tooltips/guided tours guidance. Should compare the approaches: tooltips (contextual, on-demand, less intrusive), product tours (guided walkthrough, can overwhelm), setup wizards (structured, ensures key setup steps). Should recommend based on product complexity and onboarding goals. Should note that the best approach often combines elements. Should provide best practices for each: tooltip fatigue avoidance, tour length limits, wizard step count. Should recommend testing different approaches.",
       "assertions": [
-        "Compares tooltips, product tours, and setup wizards",
+        "Compares tooltips, product tours and setup wizards",
         "Explains when each works best",
         "Notes that combination approaches often work",
         "Provides best practices for each",
@@ -79,7 +79,7 @@
     {
       "id": 6,
       "prompt": "Our signup form has 8 fields and people keep dropping off. Can you help us fix the signup flow?",
-      "expected_output": "Should recognize this is a signup flow optimization task, not post-signup onboarding. Should defer to or cross-reference the signup-flow-cro skill, which handles signup form optimization, field reduction, and registration flow design. Onboarding-cro covers what happens after signup. Should make this distinction clear.",
+      "expected_output": "Should recognize this is a signup flow optimization task, not post-signup onboarding. Should defer to or cross-reference the signup-flow-cro skill, which handles signup form optimization, field reduction and registration flow design. Onboarding-cro covers what happens after signup. Should make this distinction clear.",
       "assertions": [
         "Recognizes this as signup flow optimization, not onboarding",
         "References or defers to signup-flow-cro skill",

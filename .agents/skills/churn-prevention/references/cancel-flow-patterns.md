@@ -1,6 +1,6 @@
 # Cancel Flow Patterns
 
-Detailed cancel flow patterns by business type, billing provider, and industry.
+Detailed cancel flow patterns by business type, billing provider and industry.
 
 ---
 
@@ -310,7 +310,7 @@ The most effective cancel flows use segmentation to show different offers to dif
 - [ ] Build health score from usage signals
 - [ ] Set up proactive intervention triggers
 - [ ] A/B test discount amounts and offer types
-- [ ] Segment flows by plan, tenure, and usage
+- [ ] Segment flows by plan, tenure and usage
 - [ ] Post-cancel win-back sequence (coordinate with email-sequence skill)
 - [ ] Cohort analysis: churn by channel, plan, tenure
 

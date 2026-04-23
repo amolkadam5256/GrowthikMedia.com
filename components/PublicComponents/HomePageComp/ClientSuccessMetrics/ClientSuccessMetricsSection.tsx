@@ -154,7 +154,7 @@ const ClientSuccessMetricsSection = () => {
           <div className="w-20 h-1 bg-(--color-primary) mb-6" />
 
           <p className="text-base text-(--text-secondary) leading-relaxed">
-            These numbers come from real campaigns - not cherry-picked case studies. Every client gets a dedicated contact, plain-English monthly updates, and a clear picture of what&apos;s working. We count leads, not likes.
+            These numbers come from real campaigns - not cherry-picked case studies. Every client gets a dedicated contact, plain-English monthly updates and a clear picture of what&apos;s working. We count leads, not likes.
           </p>
         </div>
       </div>

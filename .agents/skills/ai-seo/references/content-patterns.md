@@ -12,7 +12,7 @@ Reusable content block patterns optimized for answer engines and AI citation.
 
 ## Answer Engine Optimization (AEO) Patterns
 
-These patterns help content appear in featured snippets, AI Overviews, voice search results, and answer boxes.
+These patterns help content appear in featured snippets, AI Overviews, voice search results and answer boxes.
 
 ### Definition Block
 
@@ -28,7 +28,7 @@ Use for "What is [X]?" queries.
 ```markdown
 ## What is Answer Engine Optimization?
 
-Answer Engine Optimization (AEO) is the practice of structuring content so AI-powered systems can easily extract and present it as direct answers to user queries. Unlike traditional SEO that focuses on ranking in search results, AEO optimizes for featured snippets, AI Overviews, and voice assistant responses. This approach has become essential as over 60% of Google searches now end without a click.
+Answer Engine Optimization (AEO) is the practice of structuring content so AI-powered systems can easily extract and present it as direct answers to user queries. Unlike traditional SEO that focuses on ranking in search results, AEO optimizes for featured snippets, AI Overviews and voice assistant responses. This approach has become essential as over 60% of Google searches now end without a click.
 ```
 
 ### Step-by-Step Block
@@ -56,9 +56,9 @@ Use for "How to [X]" queries. Optimal for list snippets.
 Earning featured snippets requires strategic formatting and direct answers to search queries.
 
 1. **Identify snippet opportunities**: Use tools like Semrush or Ahrefs to find keywords where competitors have snippets you could capture.
-2. **Match the snippet format**: Analyze whether the current snippet is a paragraph, list, or table, and format your content accordingly.
+2. **Match the snippet format**: Analyze whether the current snippet is a paragraph, list, or table and format your content accordingly.
 3. **Answer the question directly**: Provide a clear, concise answer (40-60 words for paragraph snippets) immediately after the question heading.
-4. **Add supporting context**: Expand on your answer with examples, data, and expert insights in the following paragraphs.
+4. **Add supporting context**: Expand on your answer with examples, data and expert insights in the following paragraphs.
 5. **Use proper heading structure**: Place your target question as an H2 or H3, with the answer immediately following.
 
 Most featured snippets appear within 2-4 weeks of publishing well-optimized content.
@@ -158,7 +158,7 @@ Use for "Best [X]", "Top [X]", "[Number] ways to [X]" queries.
 
 ## Generative Engine Optimization (GEO) Patterns
 
-These patterns optimize content for citation by AI assistants like ChatGPT, Claude, Perplexity, and Gemini.
+These patterns optimize content for citation by AI assistants like ChatGPT, Claude, Perplexity and Gemini.
 
 ### Statistic Citation Block
 
@@ -170,7 +170,7 @@ Statistics increase AI citation rates by 15-30%. Always include sources.
 
 **Example:**
 ```markdown
-Mobile optimization is no longer optional for SEO success. According to Google's 2024 Core Web Vitals report, 70% of web traffic now comes from mobile devices, and pages failing mobile usability standards see 24% higher bounce rates. This makes mobile-first indexing a critical ranking factor.
+Mobile optimization is no longer optional for SEO success. According to Google's 2024 Core Web Vitals report, 70% of web traffic now comes from mobile devices and pages failing mobile usability standards see 24% higher bounce rates. This makes mobile-first indexing a critical ranking factor.
 ```
 
 ### Expert Quote Block
@@ -252,7 +252,7 @@ Different content domains benefit from different authority signals.
 - Cite recognized financial institutions
 
 ### Legal Content
-- Cite specific laws, statutes, and regulations
+- Cite specific laws, statutes and regulations
 - Reference jurisdiction clearly
 - Include professional disclaimers
 - Note when professional consultation is advised

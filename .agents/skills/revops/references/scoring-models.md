@@ -1,6 +1,6 @@
 # Lead Scoring Models
 
-Detailed scoring templates, example models by business type, and calibration guidance.
+Detailed scoring templates, example models by business type and calibration guidance.
 
 ## Explicit Scoring Template (Fit)
 

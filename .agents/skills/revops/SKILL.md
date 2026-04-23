@@ -7,7 +7,7 @@ metadata:
 
 # RevOps
 
-You are an expert in revenue operations. Your goal is to help design and optimize the systems that connect marketing, sales, and customer success into a unified revenue engine.
+You are an expert in revenue operations. Your goal is to help design and optimize the systems that connect marketing, sales and customer success into a unified revenue engine.
 
 ## Before Starting
 
@@ -35,15 +35,15 @@ One system of record for every lead and account. If data lives in multiple place
 
 ### Define Before Automate
 
-Get stage definitions, scoring criteria, and routing rules right on paper before building workflows. Automating a broken process just creates broken results faster.
+Get stage definitions, scoring criteria and routing rules right on paper before building workflows. Automating a broken process just creates broken results faster.
 
 ### Measure Every Handoff
 
-Every handoff between teams is a potential leak. Marketing-to-sales, SDR-to-AE, AE-to-CS - each needs an SLA, a tracking mechanism, and someone accountable for follow-through.
+Every handoff between teams is a potential leak. Marketing-to-sales, SDR-to-AE, AE-to-CS - each needs an SLA, a tracking mechanism and someone accountable for follow-through.
 
 ### Revenue Team Alignment
 
-Marketing, sales, and customer success must agree on definitions. If marketing calls something an MQL but sales won't work it, the definition is wrong. Alignment meetings aren't optional.
+Marketing, sales and customer success must agree on definitions. If marketing calls something an MQL but sales won't work it, the definition is wrong. Alignment meetings aren't optional.
 
 ---
 
@@ -114,7 +114,7 @@ Define response times and document them:
 3. Set point values for each attribute and behavior
 4. Set MQL threshold (typically 50-80 points on a 100-point scale)
 5. Test against historical data - does the model correctly identify past wins?
-6. Launch, measure, and recalibrate quarterly
+6. Launch, measure and recalibrate quarterly
 
 ### Common Scoring Mistakes
 
@@ -306,11 +306,11 @@ Build three views:
 
 When delivering RevOps recommendations, provide:
 
-1. **Lifecycle stage document** - Stage definitions with entry/exit criteria, owners, and SLAs
+1. **Lifecycle stage document** - Stage definitions with entry/exit criteria, owners and SLAs
 2. **Scoring specification** - Fit and engagement attributes with point values and MQL threshold
 3. **Routing rules document** - Decision tree with assignment logic and fallbacks
-4. **Pipeline configuration** - Stage definitions, required fields, and automation triggers
-5. **Metrics dashboard spec** - Key metrics, data sources, and target benchmarks
+4. **Pipeline configuration** - Stage definitions, required fields and automation triggers
+5. **Metrics dashboard spec** - Key metrics, data sources and target benchmarks
 
 Format each as a standalone document the user can implement directly. Include platform-specific guidance when the CRM is known.
 
@@ -337,7 +337,7 @@ For implementation, see the [tools registry](../../tools/REGISTRY.md). Key RevOp
 | **Calendly**       | Meeting scheduling, round-robin routing            | [calendly.md](../../tools/integrations/calendly.md)             |
 | **SavvyCal**       | Scheduling with priority-based availability        | [savvycal.md](../../tools/integrations/savvycal.md)             |
 | **Clearbit**       | Real-time lead enrichment and scoring              | [clearbit.md](../../tools/integrations/clearbit.md)             |
-| **Apollo**         | Contact data, enrichment, and outbound sequences   | [apollo.md](../../tools/integrations/apollo.md)                 |
+| **Apollo**         | Contact data, enrichment and outbound sequences   | [apollo.md](../../tools/integrations/apollo.md)                 |
 | **ActiveCampaign** | Marketing automation for SMBs, lead scoring        | [activecampaign.md](../../tools/integrations/activecampaign.md) |
 | **Zapier**         | Cross-tool automation and workflow glue            | [zapier.md](../../tools/integrations/zapier.md)                 |
 
@@ -350,4 +350,4 @@ For implementation, see the [tools registry](../../tools/REGISTRY.md). Key RevOp
 - **pricing-strategy**: For pricing decisions and packaging
 - **analytics-tracking**: For tracking pipeline metrics and attribution
 - **launch-strategy**: For go-to-market launch planning
-- **sales-enablement**: For sales collateral, decks, and objection handling
+- **sales-enablement**: For sales collateral, decks and objection handling

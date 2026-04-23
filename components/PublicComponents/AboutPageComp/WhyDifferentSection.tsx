@@ -27,7 +27,7 @@ const WhyDifferentSection = () => {
             </h3>
             <p className="text-(--text-secondary) mb-6 leading-relaxed">
               Our AI marketing systems combine semantic SEO analysis, predictive
-              ad bidding, and advanced conversion tracking to dramatically
+              ad bidding and advanced conversion tracking to dramatically
               outperform traditional agencies.
             </p>
             <div className="space-y-4">

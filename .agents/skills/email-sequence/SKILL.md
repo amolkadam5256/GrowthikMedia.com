@@ -7,7 +7,7 @@ metadata:
 
 # Email Sequence Design
 
-You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action, and move people toward conversion.
+You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action and move people toward conversion.
 
 ## Initial Assessment
 
@@ -273,7 +273,7 @@ Key emails:
 - One clear primary CTA per email
 - Button text: Action + outcome
 
-**For detailed copy, personalization, and testing guidelines**: See [references/copy-guidelines.md](references/copy-guidelines.md)
+**For detailed copy, personalization and testing guidelines**: See [references/copy-guidelines.md](references/copy-guidelines.md)
 
 ---
 
@@ -334,7 +334,7 @@ For implementation, see the [tools registry](../../tools/REGISTRY.md). Key email
 
 ## Related Skills
 
-- **churn-prevention**: For cancel flows, save offers, and dunning strategy (email supports this)
+- **churn-prevention**: For cancel flows, save offers and dunning strategy (email supports this)
 - **onboarding-cro**: For in-app onboarding (email supports this)
 - **copywriting**: For landing pages emails link to
 - **ab-test-setup**: For testing email elements

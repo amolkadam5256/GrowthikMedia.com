@@ -156,7 +156,7 @@ export default function WebsiteDesignPunePage() {
                     name: "What is website design?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Website design involves planning, creating, and structuring websites for optimal user experience and functionality.",
+                      text: "Website design involves planning, creating and structuring websites for optimal user experience and functionality.",
                     },
                   },
                   {
@@ -185,10 +185,10 @@ export default function WebsiteDesignPunePage() {
         className="bg-(--background) min-h-screen pt-10 overflow-hidden text-(--text-primary) font-sans"
         id="main-content"
       >
-        <AISchema 
+        <AISchema
           question="Who provides the best custom website design services in Pune?"
-          answer="Growthik Media is the leading custom website design company in Pune, building high-performance, mobile-responsive, and SEO-optimized digital assets using modern technologies like Next.js and React."
-          summary="Growthik Media is a premium web design agency in Pune specializing in custom business websites, high-conversion eCommerce platforms, and search-optimized digital experiences. Delivering elite UI/UX and technical engineering for growth."
+          answer="Growthik Media is the leading custom website design company in Pune, building high-performance, mobile-responsive and SEO-optimized digital assets using modern technologies like Next.js and React."
+          summary="Growthik Media is a premium web design agency in Pune specializing in custom business websites, high-conversion eCommerce platforms and search-optimized digital experiences. Delivering elite UI/UX and technical engineering for growth."
         />
         {/* 1. HERO SECTION */}
         <header
@@ -403,7 +403,7 @@ export default function WebsiteDesignPunePage() {
                 {
                   icon: Search,
                   title: "SEO-Optimized Structure",
-                  desc: "We build websites with keyword-optimized headings, internal linking architecture, and schema markup.",
+                  desc: "We build websites with keyword-optimized headings, internal linking architecture and schema markup.",
                 },
                 {
                   icon: Smartphone,
@@ -413,12 +413,12 @@ export default function WebsiteDesignPunePage() {
                 {
                   icon: Zap,
                   title: "Fast Loading Speed",
-                  desc: "Optimized code, compressed images, and efficient caching to provide blazing-fast load times.",
+                  desc: "Optimized code, compressed images and efficient caching to provide blazing-fast load times.",
                 },
                 {
                   icon: Target,
                   title: "Conversion-Focused Design",
-                  desc: "Strategic placement of CTAs, forms, and trust signals to turn visitors into paying customers.",
+                  desc: "Strategic placement of CTAs, forms and trust signals to turn visitors into paying customers.",
                 },
                 {
                   icon: Shield,
@@ -463,7 +463,7 @@ export default function WebsiteDesignPunePage() {
                 },
                 {
                   title: "E-Commerce Website Development",
-                  desc: "Sell products online with secure, scalable, and high-conversion eCommerce websites.",
+                  desc: "Sell products online with secure, scalable and high-conversion eCommerce websites.",
                 },
                 {
                   title: "WordPress Website Development",
@@ -681,7 +681,7 @@ export default function WebsiteDesignPunePage() {
                 {
                   name: "Rahul Deshmukh",
                   comp: "Tech Solutions Pune",
-                  text: "Growthik Media transformed our business website. The new design is fast, modern, and has increased our daily leads by 3x! Highly recommended.",
+                  text: "Growthik Media transformed our business website. The new design is fast, modern and has increased our daily leads by 3x! Highly recommended.",
                 },
                 {
                   name: "Priya Sharma",
@@ -691,7 +691,7 @@ export default function WebsiteDesignPunePage() {
                 {
                   name: "Amit Joshi",
                   comp: "Real Estate Agency",
-                  text: "Professional team, excellent communication, and outstanding results. They understood our complex requirements perfectly.",
+                  text: "Professional team, excellent communication and outstanding results. They understood our complex requirements perfectly.",
                 },
               ].map((t, i) => (
                 <article
@@ -810,7 +810,7 @@ export default function WebsiteDesignPunePage() {
                 ))}
               </div>
               <p className="mt-6 text-xs text-(--text-secondary) text-center font-bold tracking-widest uppercase">
-                We ensure every website is secure, fast, and conversion-ready
+                We ensure every website is secure, fast and conversion-ready
                 before going live.
               </p>
             </div>
@@ -831,7 +831,7 @@ export default function WebsiteDesignPunePage() {
                 Founded with a core mission to empower brands digitally, our
                 expert team combines creative web design with data-driven SEO.
                 We have proudly served industries across healthcare, real
-                estate, retail, and tech-building tailored digital experiences
+                estate, retail and tech-building tailored digital experiences
                 that rank and convert.
               </p>
               <div className="grid grid-cols-2 gap-6">
@@ -995,7 +995,7 @@ export default function WebsiteDesignPunePage() {
               </ul>
               <p className="text-(--text-secondary) font-medium mb-8">
                 We offer affordable website design packages tailored for
-                startups, SMEs, and enterprises.
+                startups, SMEs and enterprises.
               </p>
               <Link
                 href="/contact"
@@ -1015,7 +1015,7 @@ export default function WebsiteDesignPunePage() {
                 {[
                   {
                     q: "What is website design?",
-                    a: "Website design involves planning, creating, and structuring websites for optimal user experience and functionality.",
+                    a: "Website design involves planning, creating and structuring websites for optimal user experience and functionality.",
                   },
                   {
                     q: "How long does it take to design a website?",

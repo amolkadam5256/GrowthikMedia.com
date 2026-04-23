@@ -90,7 +90,7 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
           Subscribe to Our Newsletter
         </h2>
         <p className="text-(--text-secondary) font-medium mb-8 max-w-sm mx-auto">
-          Get weekly insights on SEO, web design, and digital marketing delivered straight to your inbox. No spam, unsubscribe anytime.
+          Get weekly insights on SEO, web design and digital marketing delivered straight to your inbox. No spam, unsubscribe anytime.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">

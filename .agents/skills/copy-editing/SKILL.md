@@ -419,7 +419,7 @@ Use these for faster reviews when a full seven-sweep process isn't needed.
 ### Problem: Buried CTA
 
 **Symptom:** The ask comes after too much buildup, or isn't clear
-**Fix:** Make the CTA obvious, early, and repeated
+**Fix:** Make the CTA obvious, early and repeated
 
 ### Problem: No Proof
 
@@ -429,7 +429,7 @@ Use these for faster reviews when a full seven-sweep process isn't needed.
 ### Problem: Generic Claims
 
 **Symptom:** "We help businesses grow"
-**Fix:** Specify who, how, and by how much
+**Fix:** Specify who, how and by how much
 
 ### Problem: Mixed Audiences
 

@@ -1,6 +1,6 @@
 # A/B Test Templates Reference
 
-Templates for planning, documenting, and analyzing experiments.
+Templates for planning, documenting and analyzing experiments.
 
 ## Contents
 

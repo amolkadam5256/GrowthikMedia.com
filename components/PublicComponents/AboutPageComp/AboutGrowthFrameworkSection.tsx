@@ -39,7 +39,7 @@ const AboutGrowthFrameworkSection = () => {
             {
               step: "01",
               title: "Discovery & Deep Audit",
-              desc: "Technical SEO, UX analysis, and funnel diagnostics.",
+              desc: "Technical SEO, UX analysis and funnel diagnostics.",
               icon: <Clock className="w-6 h-6" />,
             },
             {
@@ -51,7 +51,7 @@ const AboutGrowthFrameworkSection = () => {
             {
               step: "03",
               title: "High-Performance Execution",
-              desc: "Technical SEO execution, Performance Marketing ads, and CRO logic.",
+              desc: "Technical SEO execution, Performance Marketing ads and CRO logic.",
               icon: <Zap className="w-6 h-6" />,
             },
             {
@@ -97,7 +97,7 @@ const AboutGrowthFrameworkSection = () => {
             <strong className="text-(--text-primary)">
               AI-Powered SEO Optimization
             </strong>
-            , and highly scalable performance marketing architectures.
+            and highly scalable performance marketing architectures.
           </p>
         </div>
       </div>

@@ -6,14 +6,14 @@ import { CONTACT_INFO, STRUCTURED_DATA_IDS } from "@/constants/contact";
 export const metadata: Metadata = {
   title: "Growthik Media | Book a Free Strategy Call With Our Pune Experts",
   description:
-    "Connect with Growthik Media for SEO, Google Ads, and high-performance websites in Pune. Book your free growth strategy call today.",
+    "Connect with Growthik Media for SEO, Google Ads and high-performance websites in Pune. Book your free growth strategy call today.",
   keywords:
     "contact digital marketing agency Pune, hire SEO agency Pune, Growthik Media contact, digital marketing consultation Pune, best digital marketing company Pune, SEO services contact Pune, Google Ads agency Pune, free digital marketing audit Pune",
   authors: [{ name: "Growthik Media" }],
   openGraph: {
     title: "Request a Digital Strategy Call | Growthik Media Pune",
     description:
-      "Connect with Growthik Media for clear, result-driven SEO, Google Ads, and high-performance websites in Pune.",
+      "Connect with Growthik Media for clear, result-driven SEO, Google Ads and high-performance websites in Pune.",
     url: "https://www.growthikmedia.com/contact/",
     siteName: "Growthik Media",
     images: [
@@ -76,7 +76,7 @@ const faqSchema = {
       name: "What services does Growthik Media provide?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Growthik Media offers SEO, Social Media Marketing, PPC/Google Ads, Website Development, Branding & Design, and E-Commerce Solutions to businesses across Pune and India.",
+        text: "Growthik Media offers SEO, Social Media Marketing, PPC/Google Ads, Website Development, Branding & Design and E-Commerce Solutions to businesses across Pune and India.",
       },
     },
     {
@@ -84,7 +84,7 @@ const faqSchema = {
       name: "Do you work with businesses outside Pune?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, we scale businesses across India and internationally. While we are based in Pune, our digital marketing services are available to clients in Mumbai, Delhi, Bangalore, and globally.",
+        text: "Yes, we scale businesses across India and internationally. While we are based in Pune, our digital marketing services are available to clients in Mumbai, Delhi, Bangalore and globally.",
       },
     },
     {
@@ -92,7 +92,7 @@ const faqSchema = {
       name: "What is the cost of digital marketing services in Pune?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Our digital marketing packages are customised based on your business goals, competition, and channels required. Contact us for a free consultation and we'll provide a tailored proposal.",
+        text: "Our digital marketing packages are customised based on your business goals, competition and channels required. Contact us for a free consultation and we'll provide a tailored proposal.",
       },
     },
     {
@@ -113,7 +113,7 @@ const contactPageSchema = {
   name: "Contact Growthik Media - Digital Marketing Agency Pune",
   url: `${CONTACT_INFO.website}/contact/`,
   description:
-    "Contact page for Growthik Media, Pune's leading digital marketing agency specialising in SEO, Google Ads, social media marketing, and web development.",
+    "Contact page for Growthik Media, Pune's leading digital marketing agency specialising in SEO, Google Ads, social media marketing and web development.",
   isPartOf: {
     "@id": STRUCTURED_DATA_IDS.website,
   },

@@ -34,7 +34,7 @@ export default function HeroSection() {
             <p className="text-lg sm:text-xl text-(--text-secondary) font-medium mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed border-l-2 border-red-600/30 dark:border-red-600/50 pl-6">
               Looking for a reliable digital marketing agency in Pune? Growthik
               Media helps businesses grow through SEO, social media marketing,
-              PPC advertising, and high-performance websites.
+              PPC advertising and high-performance websites.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-12">
@@ -94,7 +94,7 @@ export default function HeroSection() {
             <div className="rounded-3xl relative bg-(--surface) border border-(--border) p-3 shadow-2xl transition-all hover:scale-[1.02] duration-500 overflow-hidden group">
               {/* Decorative Glow */}
               <div className="absolute -top-24 -right-24 w-48 h-48 bg-red-600/10 rounded-full blur-3xl group-hover:bg-red-600/20 transition-all"></div>
-              
+
               {/* Header bar */}
               <div className="flex justify-between items-center p-4 border-b border-(--border) bg-(--surface) rounded-t-2xl">
                 <div className="flex gap-2">
@@ -130,7 +130,7 @@ export default function HeroSection() {
 
                 {/* Block 2 (Visual Chart) */}
                 <div className="rounded-2xl border border-(--border) flex flex-col justify-end p-4 gap-2 h-44 bg-(--surface) overflow-hidden relative shadow-sm">
-                   <div className="absolute inset-0 bg-gradient-to-t from-red-600/5 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-red-600/5 to-transparent"></div>
                   <div className="flex items-end gap-1.5 h-full">
                     <div className="rounded-full w-full bg-red-600/20 h-[30%] hover:scale-y-110 transition-transform origin-bottom cursor-pointer"></div>
                     <div className="rounded-full w-full bg-red-600/40 h-[50%] hover:scale-y-110 transition-transform origin-bottom cursor-pointer"></div>

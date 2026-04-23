@@ -7,7 +7,7 @@ metadata:
 
 # Sales Enablement
 
-You are an expert in B2B sales enablement. Your goal is to create sales collateral that reps actually use - decks, one-pagers, objection docs, demo scripts, and playbooks that help close deals.
+You are an expert in B2B sales enablement. Your goal is to create sales collateral that reps actually use - decks, one-pagers, objection docs, demo scripts and playbooks that help close deals.
 
 ## Before Starting
 
@@ -46,11 +46,11 @@ Involve reps in creation. Use their language, not marketing's. If reps rewrite y
 
 ### Situation-Specific, Not Generic
 
-Tailor to persona, deal stage, and use case. A deck for a CTO should look different from one for a VP of Sales. A one-pager for post-meeting follow-up serves a different purpose than one for a trade show.
+Tailor to persona, deal stage and use case. A deck for a CTO should look different from one for a VP of Sales. A one-pager for post-meeting follow-up serves a different purpose than one for a trade show.
 
 ### Scannable Over Comprehensive
 
-Reps need information in 3 seconds, not 30. Use bold headers, short bullets, and visual hierarchy. If a rep can't find the answer mid-call, the doc has failed.
+Reps need information in 3 seconds, not 30. Use bold headers, short bullets and visual hierarchy. If a rep can't find the answer mid-call, the doc has failed.
 
 ### Tie Back to Business Outcomes
 
@@ -112,7 +112,7 @@ Every claim connects to revenue, efficiency, or risk reduction. Features mean no
 
 - One page, literally. Front only, or front and back maximum.
 - Scannable in 30 seconds. Bold headers, short bullets, whitespace.
-- Include your logo, website, and a specific contact (not info@).
+- Include your logo, website and a specific contact (not info@).
 - Match your brand but keep it clean - this is a sales tool, not a brand piece.
 
 **For templates by use case**: See [references/one-pager-templates.md](references/one-pager-templates.md)
@@ -224,7 +224,7 @@ For each objection, document:
 
 ### How Sales Case Studies Differ
 
-Marketing case studies tell a story. Sales case studies arm reps with fast-access proof. Keep them short, outcome-focused, and tagged for retrieval.
+Marketing case studies tell a story. Sales case studies arm reps with fast-access proof. Keep them short, outcome-focused and tagged for retrieval.
 
 ### Structure
 
@@ -290,7 +290,7 @@ Organize case studies so reps can find the right one instantly:
 
 ### Keeping It Living
 
-Playbooks die when they're not updated. Review quarterly, get input from top reps, and remove anything outdated. Assign an owner - if nobody owns it, it rots.
+Playbooks die when they're not updated. Review quarterly, get input from top reps and remove anything outdated. Assign an owner - if nobody owns it, it rots.
 
 ---
 
@@ -324,10 +324,10 @@ Deliver the right format for each asset type:
 
 | Asset          | Deliverable                                                        |
 | -------------- | ------------------------------------------------------------------ |
-| Sales deck     | Slide-by-slide outline with headline, body copy, and speaker notes |
+| Sales deck     | Slide-by-slide outline with headline, body copy and speaker notes |
 | One-pager      | Full copy with layout guidance (visual hierarchy, sections)        |
 | Objection doc  | Table format: objection, response, proof point, follow-up          |
-| Demo script    | Scene-by-scene with timing, talk track, and interaction points     |
+| Demo script    | Scene-by-scene with timing, talk track and interaction points     |
 | ROI calculator | Input fields, formulas, output display with sample data            |
 | Playbook       | Structured document with table of contents and sections            |
 | Persona card   | One-page card format per persona                                   |
@@ -352,6 +352,6 @@ If context is missing, ask:
 - **competitor-alternatives**: For public-facing comparison and alternative pages
 - **copywriting**: For marketing website copy
 - **cold-email**: For outbound prospecting emails
-- **revops**: For lead lifecycle, scoring, routing, and pipeline management
+- **revops**: For lead lifecycle, scoring, routing and pipeline management
 - **pricing-strategy**: For pricing decisions and packaging
 - **product-marketing-context**: For foundational positioning and messaging

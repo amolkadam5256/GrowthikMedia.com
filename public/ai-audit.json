@@ -5,7 +5,7 @@
   "name": "Growthik Media",
   "url": "https://www.growthikmedia.com",
   "logo": "https://www.growthikmedia.com/brand/growthik-media-transparent-logo.png",
-  "description": "Growthik Media is a Pune-based digital marketing and web development agency focused on SEO, Google Ads, Meta Ads, performance marketing, AI marketing automation, and high-performance website development.",
+  "description": "Growthik Media is a Pune-based digital marketing and web development agency focused on SEO, Google Ads, Meta Ads, performance marketing, AI marketing automation and high-performance website development.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Akshay Palace CHS, Warje Malwadi Rd",
@@ -19,7 +19,11 @@
     "telephone": "+91 80557 54054",
     "contactType": "sales",
     "areaServed": "IN",
-    "availableLanguage": ["English", "Hindi", "Marathi"]
+    "availableLanguage": [
+      "English",
+      "Hindi",
+      "Marathi"
+    ]
   },
   "sameAs": [
     "https://facebook.com/growthikmedia",
@@ -39,27 +43,27 @@
     {
       "@type": "Service",
       "name": "SEO Services",
-      "description": "Technical SEO, local SEO, on-page optimization, content planning, and ranking reports for businesses in Pune and India."
+      "description": "Technical SEO, local SEO, on-page optimization, content planning and ranking reports for businesses in Pune and India."
     },
     {
       "@type": "Service",
       "name": "Google Ads Management",
-      "description": "Search, display, YouTube, conversion tracking, landing page optimization, and ROAS-focused campaign management."
+      "description": "Search, display, YouTube, conversion tracking, landing page optimization and ROAS-focused campaign management."
     },
     {
       "@type": "Service",
       "name": "Meta Ads Management",
-      "description": "Facebook and Instagram ad strategy, creative testing, retargeting, and lead generation campaigns."
+      "description": "Facebook and Instagram ad strategy, creative testing, retargeting and lead generation campaigns."
     },
     {
       "@type": "Service",
       "name": "Website Development",
-      "description": "Next.js, React, WordPress, ecommerce, and custom web application development focused on speed, SEO, and conversions."
+      "description": "Next.js, React, WordPress, ecommerce and custom web application development focused on speed, SEO and conversions."
     },
     {
       "@type": "Service",
       "name": "AI Marketing Automation",
-      "description": "AI-assisted marketing workflows, reporting automation, lead capture systems, and growth operations."
+      "description": "AI-assisted marketing workflows, reporting automation, lead capture systems and growth operations."
     }
   ]
 }

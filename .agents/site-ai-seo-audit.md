@@ -15,19 +15,19 @@ Product context:
 Growthik Media is already ahead of many local agency sites for AI SEO. The site has:
 - `llms.txt`
 - AI bot allowances in `robots.txt`
-- FAQ, BlogPosting, LocalBusiness, Organization, Service, and ContactPage schema
+- FAQ, BlogPosting, LocalBusiness, Organization, Service and ContactPage schema
 - AI-focused summary components
 - Strong service-page coverage
-- Blog content with authors, dates, and article schema
+- Blog content with authors, dates and article schema
 - Local Pune entity coverage
 
-The biggest AI SEO opportunity is not "add AI keywords." It is making the site more reliable, extractable, and citable:
+The biggest AI SEO opportunity is not "add AI keywords." It is making the site more reliable, extractable and citable:
 
-1. Normalize entity facts across `CONTACT_INFO`, `llms.txt`, `ai-audit.json`, LocalBusiness schema, SEO schema, and page schema.
+1. Normalize entity facts across `CONTACT_INFO`, `llms.txt`, `ai-audit.json`, LocalBusiness schema, SEO schema and page schema.
 2. Remove broken encoded characters from AI-facing files and content.
 3. Replace hidden AI-only content with visible, human-useful extractable answer blocks where possible.
-4. Add source-backed stats, methodology, and named proof so AI systems can cite claims confidently.
-5. Build comparison, best-of, and original-data pages because those formats get cited heavily in AI answers.
+4. Add source-backed stats, methodology and named proof so AI systems can cite claims confidently.
+5. Build comparison, best-of and original-data pages because those formats get cited heavily in AI answers.
 6. Expand crawler and monitoring coverage from traditional SEO to AI visibility queries.
 
 ## Current AI SEO Assets
@@ -59,11 +59,11 @@ File:
 
 Strengths:
 - Gives a clear business summary.
-- Includes services, areas served, team, process, proof, blog hub, and AI usage policy.
+- Includes services, areas served, team, process, proof, blog hub and AI usage policy.
 - Good source-of-truth intent for AI systems.
 
 Issues:
-- Contains mojibake/broken characters such as broken dashes, rupee symbols, and apostrophes.
+- Contains mojibake/broken characters such as broken dashes, rupee symbols and apostrophes.
 - Contains several strong claims that need visible/public supporting evidence:
   - sub-1.5s load speeds
   - 98 percent satisfaction rating
@@ -114,7 +114,7 @@ Observed schema types:
 
 Strengths:
 - Strong breadth.
-- Blog detail pages include `BlogPosting`, author, date published, date modified, publisher, keywords, word count, and main entity.
+- Blog detail pages include `BlogPosting`, author, date published, date modified, publisher, keywords, word count and main entity.
 - Service pages include Service schema and ratings.
 - Global layout includes LocalBusiness schema.
 
@@ -156,7 +156,7 @@ Issues:
 
 Recommended AI SEO improvements:
 - Add a visible concise answer block near the top:
-  - "Growthik Media is a Pune-based digital marketing agency specializing in SEO, Google Ads, Meta Ads, website development, and AI marketing automation for startups, local businesses, ecommerce brands, and B2B companies."
+  - "Growthik Media is a Pune-based digital marketing agency specializing in SEO, Google Ads, Meta Ads, website development and AI marketing automation for startups, local businesses, ecommerce brands and B2B companies."
 - Add visible proof with methodology:
   - number of projects
   - timeframe
@@ -179,7 +179,7 @@ Route:
 
 Strengths:
 - Strong internal linking hub.
-- Contains service categories, local Pune signals, process, FAQ, and schema.
+- Contains service categories, local Pune signals, process, FAQ and schema.
 - Good page for "what services does Growthik Media offer" answers.
 
 Issues:
@@ -196,7 +196,7 @@ Recommended improvements:
 - Add a visible service comparison table.
 - Add an "Agency services summary" FAQ with direct answers.
 - Add `ItemList` schema for the full service catalog.
-- Use consistent service names across navigation, schema, sitemap, and headings.
+- Use consistent service names across navigation, schema, sitemap and headings.
 
 Priority queries:
 - digital marketing services Pune
@@ -251,7 +251,7 @@ Recommended page template for AI SEO:
 - Service schema linked to one canonical Organization/LocalBusiness ID.
 
 Example extractable block:
-- "Growthik Media provides SEO services in Pune for local businesses, startups, ecommerce brands, and B2B companies. The service includes technical SEO, keyword research, on-page optimization, local SEO, content planning, and reporting designed to increase qualified organic leads."
+- "Growthik Media provides SEO services in Pune for local businesses, startups, ecommerce brands and B2B companies. The service includes technical SEO, keyword research, on-page optimization, local SEO, content planning and reporting designed to increase qualified organic leads."
 
 Priority:
 - Very high for SEO, PPC, Meta Ads, Performance Marketing, Lead Generation, Website Development, Website Design, Local SEO.
@@ -299,9 +299,9 @@ Routes:
 
 Strengths:
 - Blog detail pages have BlogPosting schema.
-- Authors, bios, dates, categories, and tags exist.
+- Authors, bios, dates, categories and tags exist.
 - Some articles target AI-friendly formats: guides, checklists, pricing, comparisons.
-- Article pages include related posts, CTA, author card, and newsletter.
+- Article pages include related posts, CTA, author card and newsletter.
 
 Issues:
 - Several blog posts have no full content override, producing "content is being prepared" fallback. Thin article pages are unlikely to be cited.
@@ -385,7 +385,7 @@ Strengths:
 - Good place for entity disambiguation.
 
 Issues:
-- `getOrganizationSchema` exists but is not included in `combinedSchema`; only AboutPage, FAQ, and Person are included.
+- `getOrganizationSchema` exists but is not included in `combinedSchema`; only AboutPage, FAQ and Person are included.
 - Founder/team claims should be backed by sameAs links and consistent bios.
 - About metadata warning was fixed in the previous pass, but the current stored crawler report is older and still shows warnings.
 
@@ -452,7 +452,7 @@ Recommended improvements:
 
 Current inconsistent or risky facts:
 - Phone differs between `CONTACT_INFO` and `public/ai-audit.json`.
-- Opening hours differ between `llms.txt`, LocalBusiness schema, and SEO schema.
+- Opening hours differ between `llms.txt`, LocalBusiness schema and SEO schema.
 - Coordinates differ between LocalBusiness schema and SEO schema.
 - Entity IDs differ across schema files.
 - Social profiles are extensive; inactive/unverified profiles should be removed or kept out of schema.
@@ -531,7 +531,7 @@ These are the highest-value AI-citation formats for Growthik Media:
    - Balanced list, transparent criteria, includes competitors fairly.
 
 2. `Google Ads vs Meta Ads for Pune Businesses`
-   - Already exists; strengthen with a comparison table, costs, use cases, and examples.
+   - Already exists; strengthen with a comparison table, costs, use cases and examples.
 
 3. `Website Cost in Pune`
    - Already exists; strengthen with updated 2026 pricing tables.
@@ -553,7 +553,7 @@ These are the highest-value AI-citation formats for Growthik Media:
 
 ## Query Monitoring Plan
 
-Because live AI visibility changes constantly, run this monthly across ChatGPT search, Perplexity, Google AI Overviews, Gemini, and Copilot.
+Because live AI visibility changes constantly, run this monthly across ChatGPT search, Perplexity, Google AI Overviews, Gemini and Copilot.
 
 Priority queries:
 - best digital marketing agency in Pune
@@ -588,7 +588,7 @@ Track:
 
 ### Phase 1: Clean Entity Foundation
 
-- Normalize `CONTACT_INFO`, `llms.txt`, `ai-audit.json`, and schema facts.
+- Normalize `CONTACT_INFO`, `llms.txt`, `ai-audit.json` and schema facts.
 - Fix broken characters in AI-facing files.
 - Use one Organization ID across all schema.
 - Confirm real social profiles before including them in `sameAs`.
@@ -596,7 +596,7 @@ Track:
 
 ### Phase 2: Improve Extractability
 
-- Add visible answer blocks on homepage, services hub, top service pages, audit, and contact.
+- Add visible answer blocks on homepage, services hub, top service pages, audit and contact.
 - Add service deliverables tables.
 - Add "last updated" dates to service pages and blog posts.
 - Ensure every FAQ schema question appears visibly on the page.
@@ -626,9 +626,9 @@ Track:
 ## Priority Fix List
 
 1. Clean and normalize `public/llms.txt`.
-2. Fix `public/ai-audit.json` phone number, description, sameAs, and service coverage.
+2. Fix `public/ai-audit.json` phone number, description, sameAs and service coverage.
 3. Normalize Organization/LocalBusiness schema IDs.
-4. Fix mojibake in `constants/contact.ts`, blog data, and AI/GEO blocks.
+4. Fix mojibake in `constants/contact.ts`, blog data and AI/GEO blocks.
 5. Add visible extractable answer blocks to homepage and services hub.
 6. Add service deliverables tables to top service pages.
 7. Complete placeholder blog articles or noindex incomplete posts.

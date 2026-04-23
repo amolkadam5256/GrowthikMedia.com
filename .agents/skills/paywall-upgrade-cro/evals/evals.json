@@ -3,8 +3,8 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Help me design the upgrade paywall for our project management tool. Free users can have 3 projects, and we want to show an upgrade screen when they try to create a 4th project.",
-      "expected_output": "Should check for product-marketing-context.md first. Should identify this as a usage limit trigger point. Should apply the paywall screen components: headline (communicate the value of upgrading, not just the limit), value demonstration (show what they get with paid plan), plan comparison (free vs paid), social proof, CTA (specific and action-oriented), and escape hatch (option to go back). Should provide specific copy recommendations. Should address the emotional state of the user at this moment (frustrated by the limit). Should warn against anti-patterns.",
+      "prompt": "Help me design the upgrade paywall for our project management tool. Free users can have 3 projects and we want to show an upgrade screen when they try to create a 4th project.",
+      "expected_output": "Should check for product-marketing-context.md first. Should identify this as a usage limit trigger point. Should apply the paywall screen components: headline (communicate the value of upgrading, not just the limit), value demonstration (show what they get with paid plan), plan comparison (free vs paid), social proof, CTA (specific and action-oriented) and escape hatch (option to go back). Should provide specific copy recommendations. Should address the emotional state of the user at this moment (frustrated by the limit). Should warn against anti-patterns.",
       "assertions": [
         "Checks for product-marketing-context.md",
         "Identifies as usage limit trigger",
@@ -36,7 +36,7 @@
     {
       "id": 3,
       "prompt": "when should we show upgrade prompts? we don't want to be annoying but we also need to convert free users to paid.",
-      "expected_output": "Should trigger on casual phrasing. Should apply the timing and frequency rules. Should recommend trigger points from the skill: feature gates (when they try a paid feature), usage limits (when they hit a threshold), value moments (when they've just experienced success), and natural transition points. Should address frequency capping to avoid being annoying. Should recommend the anti-patterns to avoid (blocking basic functionality, too frequent popups, dark patterns). Should provide a balanced approach that respects user experience while driving upgrades.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the timing and frequency rules. Should recommend trigger points from the skill: feature gates (when they try a paid feature), usage limits (when they hit a threshold), value moments (when they've just experienced success) and natural transition points. Should address frequency capping to avoid being annoying. Should recommend the anti-patterns to avoid (blocking basic functionality, too frequent popups, dark patterns). Should provide a balanced approach that respects user experience while driving upgrades.",
       "assertions": [
         "Triggers on casual phrasing",
         "Applies timing and frequency rules",
@@ -51,7 +51,7 @@
     {
       "id": 4,
       "prompt": "Design a feature gate paywall. When free users click on 'Advanced Analytics' in our dashboard, we want to show them an upgrade prompt.",
-      "expected_output": "Should identify this as a feature gate trigger. Should apply the feature lock paywall type guidance. Should recommend: show a preview or screenshot of the advanced analytics feature, explain the specific benefit (not just 'this is a paid feature'), include a plan comparison relevant to analytics, provide a clear CTA to upgrade, and include an escape hatch to go back to basic analytics. Should recommend showing what insights they're missing. Should provide copy recommendations for the paywall screen.",
+      "expected_output": "Should identify this as a feature gate trigger. Should apply the feature lock paywall type guidance. Should recommend: show a preview or screenshot of the advanced analytics feature, explain the specific benefit (not just 'this is a paid feature'), include a plan comparison relevant to analytics, provide a clear CTA to upgrade and include an escape hatch to go back to basic analytics. Should recommend showing what insights they're missing. Should provide copy recommendations for the paywall screen.",
       "assertions": [
         "Identifies as feature gate trigger",
         "Applies feature lock paywall guidance",

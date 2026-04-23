@@ -5,7 +5,7 @@ Date: 2026-04-23
 Scope:
 - Full public site audit through the `.agents/skills` lens
 - No UI redesign recommendations
-- Focus only on non-UI improvements: content, SEO, AI SEO, schema, analytics, CRO logic, funnel clarity, forms, page architecture, launch/readiness, paid-media alignment, and sales enablement
+- Focus only on non-UI improvements: content, SEO, AI SEO, schema, analytics, CRO logic, funnel clarity, forms, page architecture, launch/readiness, paid-media alignment and sales enablement
 
 Site surface reviewed:
 - 65 public `page.tsx` routes under `app/(public)`
@@ -22,14 +22,14 @@ Product context:
 
 ## Executive Summary
 
-This site is already strong in breadth: homepage, service cluster, local/programmatic SEO routes, blog, portfolio, success stories, audit funnel, and contact funnel. The biggest improvements are not visual. They are operational and strategic:
+This site is already strong in breadth: homepage, service cluster, local/programmatic SEO routes, blog, portfolio, success stories, audit funnel and contact funnel. The biggest improvements are not visual. They are operational and strategic:
 
-1. Standardize entity facts, schema, and machine-readable assets.
+1. Standardize entity facts, schema and machine-readable assets.
 2. Strengthen measurement and funnel tracking across all lead paths.
-3. Improve extractable content quality on service, blog, and location pages.
+3. Improve extractable content quality on service, blog and location pages.
 4. Make page intent more explicit by page type.
-5. Build stronger proof systems: case studies, benchmarks, comparison pages, deliverable tables, and methodology notes.
-6. Expand audits beyond traditional SEO into AI visibility, CRO, paid-media readiness, sales readiness, and revops.
+5. Build stronger proof systems: case studies, benchmarks, comparison pages, deliverable tables and methodology notes.
+6. Expand audits beyond traditional SEO into AI visibility, CRO, paid-media readiness, sales readiness and revops.
 
 ## Skill-by-Skill Audit
 
@@ -93,7 +93,7 @@ Applies to:
 - Entire site, especially homepage, services, local pages, blog, portfolio
 
 Current state:
-- Good foundation with `llms.txt`, AI crawler access, blog schema, service schema, and AI-oriented content blocks.
+- Good foundation with `llms.txt`, AI crawler access, blog schema, service schema and AI-oriented content blocks.
 
 What to audit/fix:
 - entity consistency across schema and machine files
@@ -126,7 +126,7 @@ What to do:
 - Pick one canonical Organization ID
 - Pick one canonical LocalBusiness ID
 - Ensure all Service providers reference the same source
-- Align `Organization`, `LocalBusiness`, `ProfessionalService`, and `ai-audit.json`
+- Align `Organization`, `LocalBusiness`, `ProfessionalService` and `ai-audit.json`
 - Add `ItemList` where useful:
   - service directory
   - portfolio categories
@@ -169,7 +169,7 @@ Applies to:
 - Entire site
 
 Current state:
-- Tracking now includes page views, service intent, CTA clicks, contact clicks, form starts, lead submits, and errors.
+- Tracking now includes page views, service intent, CTA clicks, contact clicks, form starts, lead submits and errors.
 
 What still needs audit/fix:
 - GA4 event naming plan
@@ -855,14 +855,14 @@ These are only indirectly relevant:
 
 ### Tier 1: Foundation
 
-1. Normalize schema IDs, entity facts, hours, coordinates, and machine-readable files.
+1. Normalize schema IDs, entity facts, hours, coordinates and machine-readable files.
 2. Expand measurement so every lead path is attributable.
 3. Fix content encoding issues across AI-facing and SEO-facing files.
-4. Reconcile sitemap, route coverage, and crawler coverage.
+4. Reconcile sitemap, route coverage and crawler coverage.
 
 ### Tier 2: Revenue Pages
 
-5. Tighten homepage, audit, contact, and services hub copy and CRO logic.
+5. Tighten homepage, audit, contact and services hub copy and CRO logic.
 6. Standardize service-page template quality:
    - definition
    - proof
@@ -874,7 +874,7 @@ These are only indirectly relevant:
 ### Tier 3: Authority Growth
 
 8. Complete or noindex thin/placeholder blog articles.
-9. Build comparison pages, pricing guides, and benchmark content.
+9. Build comparison pages, pricing guides and benchmark content.
 10. Build a free audit or grader tool strategy around current audit positioning.
 
 ## Suggested Audit Execution Order

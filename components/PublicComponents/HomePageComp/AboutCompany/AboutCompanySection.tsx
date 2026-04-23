@@ -75,7 +75,7 @@ const AboutCompanySection = React.memo(() => {
                 <span className="text-(--color-primary) font-black">
                   Pune-based digital marketing agency
                 </span>{" "}
-                that helps businesses grow online - through SEO that ranks, ads that convert, and websites that bring in real leads.
+                that helps businesses grow online - through SEO that ranks, ads that convert and websites that bring in real leads.
               </p>
 
               <div className="w-20 h-1 bg-(--color-primary) mx-auto" />
@@ -84,11 +84,11 @@ const AboutCompanySection = React.memo(() => {
                 <p>
                   Digital marketing done right means being in front of the right people at the right time. We use{" "}
                   <Link href="/services/seo" className="text-(--color-primary) font-bold hover:underline">SEO</Link>,{" "}
-                  <Link href="/services/ppc-google-ads" className="text-(--color-primary) font-bold hover:underline">Google Ads</Link>, and smart content to do exactly that - for businesses in{" "}
-                  <span className="font-bold text-(--text-primary)">Baner, Wakad, Hinjewadi</span>, and across Pune.
+                  <Link href="/services/ppc-google-ads" className="text-(--color-primary) font-bold hover:underline">Google Ads</Link> and smart content to do exactly that - for businesses in{" "}
+                  <span className="font-bold text-(--text-primary)">Baner, Wakad, Hinjewadi</span> and across Pune.
                 </p>
                 <p>
-                  As one of <strong className="text-(--text-primary)">Pune&apos;s top-rated SEO agencies</strong>, our goal is simple - more traffic, better leads, and real sales. Not just rankings.
+                  As one of <strong className="text-(--text-primary)">Pune&apos;s top-rated SEO agencies</strong>, our goal is simple - more traffic, better leads and real sales. Not just rankings.
                 </p>
               </div>
             </div>

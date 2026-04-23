@@ -1,6 +1,6 @@
 ---
 name: product-marketing-context
-description: "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my target audience,' 'describe my product,' 'ICP,' 'ideal customer profile,' or wants to avoid repeating foundational information across marketing tasks. Use this at the start of any new project before using other marketing skills - it creates `.agents/product-marketing-context.md` that all other skills reference for product, audience, and positioning context."
+description: "When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my target audience,' 'describe my product,' 'ICP,' 'ideal customer profile,' or wants to avoid repeating foundational information across marketing tasks. Use this at the start of any new project before using other marketing skills - it creates `.agents/product-marketing-context.md` that all other skills reference for product, audience and positioning context."
 metadata:
   version: 1.1.0
 ---
@@ -25,7 +25,7 @@ First, check if `.agents/product-marketing-context.md` already exists. Also chec
 
 **If it doesn't exist, offer two options:**
 
-1. **Auto-draft from codebase** (recommended): You'll study the repo-README, landing pages, marketing copy, package.json, etc.-and draft a V1 of the context document. The user then reviews, corrects, and fills gaps. This is faster than starting from scratch.
+1. **Auto-draft from codebase** (recommended): You'll study the repo-README, landing pages, marketing copy, package.json, etc.-and draft a V1 of the context document. The user then reviews, corrects and fills gaps. This is faster than starting from scratch.
 
 2. **Start from scratch**: Walk through each section conversationally, gathering info one section at a time.
 
@@ -77,7 +77,7 @@ Push for verbatim customer language - exact phrases are more valuable than polis
 If multiple stakeholders are involved in buying, capture for each:
 
 - User, Champion, Decision Maker, Financial Buyer, Technical Influencer
-- What each cares about, their challenge, and the value you promise them
+- What each cares about, their challenge and the value you promise them
 
 ### 4. Problems & Pain Points
 

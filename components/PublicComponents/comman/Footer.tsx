@@ -109,11 +109,10 @@ export default function Footer() {
   return (
     <>
       <footer
-        className={`transition-all duration-500 relative ${
-          isDark
+        className={`transition-all duration-500 relative ${isDark
             ? "bg-[#0A0A0A] text-white"
             : "bg-linear-to-br from-gray-50 via-white to-gray-100 text-gray-900"
-        }`}
+          }`}
       >
         {/* Decorative Background Elements */}
         <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -123,11 +122,10 @@ export default function Footer() {
 
         {/* Newsletter Section with Enhanced Design */}
         <div
-          className={`relative ${
-            isDark
+          className={`relative ${isDark
               ? "bg-linear-to-r from-[#D90B1C] via-[#F22E52] to-[#D90B1C]"
               : "bg-linear-to-r from-[#D90B1C] via-[#F22E52] to-[#D90B1C]"
-          } transition-all duration-500`}
+            } transition-all duration-500`}
         >
           {/* Animated Background Pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -163,12 +161,11 @@ export default function Footer() {
                 </div>
 
                 <p
-                  className={`text-base leading-relaxed mb-6 ${
-                    isDark ? "text-gray-400" : "text-gray-600"
-                  }`}
+                  className={`text-base leading-relaxed mb-6 ${isDark ? "text-gray-400" : "text-gray-600"
+                    }`}
                 >
                   Helping Pune-based brands grow their online presence with
-                  SEO, Google Ads, and websites that actually work. No jargon,
+                  SEO, Google Ads and websites that actually work. No jargon,
                   just real results for local businesses.
                 </p>
 
@@ -176,14 +173,12 @@ export default function Footer() {
                 <div className="space-y-3">
                   <a
                     href={`tel:${CONTACT_INFO.phone.primary}`}
-                    className={`flex items-center gap-3 group ${
-                      isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
-                    } transition-colors`}
+                    className={`flex items-center gap-3 group ${isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
+                      } transition-colors`}
                   >
                     <div
-                      className={`p-2 rounded-lg ${
-                        isDark ? "bg-gray-800" : "bg-gray-100"
-                      } group-hover:bg-[#D90B1C] transition-colors`}
+                      className={`p-2 rounded-lg ${isDark ? "bg-gray-800" : "bg-gray-100"
+                        } group-hover:bg-[#D90B1C] transition-colors`}
                     >
                       <Phone className="w-4 h-4 group-hover:text-white" />
                     </div>
@@ -193,14 +188,12 @@ export default function Footer() {
                   </a>
                   <a
                     href={`mailto:${CONTACT_INFO.email.info}`}
-                    className={`flex items-center gap-3 group ${
-                      isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
-                    } transition-colors`}
+                    className={`flex items-center gap-3 group ${isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
+                      } transition-colors`}
                   >
                     <div
-                      className={`p-2 rounded-lg ${
-                        isDark ? "bg-gray-800" : "bg-gray-100"
-                      } group-hover:bg-[#D90B1C] transition-colors`}
+                      className={`p-2 rounded-lg ${isDark ? "bg-gray-800" : "bg-gray-100"
+                        } group-hover:bg-[#D90B1C] transition-colors`}
                     >
                       <Mail className="w-4 h-4 group-hover:text-white" />
                     </div>
@@ -209,14 +202,12 @@ export default function Footer() {
                     </span>
                   </a>
                   <div
-                    className={`flex items-start gap-3 ${
-                      isDark ? "text-gray-400" : "text-gray-600"
-                    }`}
+                    className={`flex items-start gap-3 ${isDark ? "text-gray-400" : "text-gray-600"
+                      }`}
                   >
                     <div
-                      className={`p-2 rounded-lg ${
-                        isDark ? "bg-gray-800" : "bg-gray-100"
-                      } mt-0.5`}
+                      className={`p-2 rounded-lg ${isDark ? "bg-gray-800" : "bg-gray-100"
+                        } mt-0.5`}
                     >
                       <MapPin className="w-4 h-4" />
                     </div>
@@ -237,9 +228,8 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className={`flex items-center gap-3 text-sm group ${
-                        isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
-                      } transition-all hover:translate-x-1`}
+                      className={`flex items-center gap-3 text-sm group ${isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
+                        } transition-all hover:translate-x-1`}
                     >
                       <link.icon className="w-4 h-4 opacity-60 group-hover:opacity-100" />
                       <span>{link.label}</span>
@@ -260,9 +250,8 @@ export default function Footer() {
                   <li key={service.href}>
                     <Link
                       href={service.href}
-                      className={`flex items-center gap-3 text-sm group ${
-                        isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
-                      } transition-all hover:translate-x-1`}
+                      className={`flex items-center gap-3 text-sm group ${isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
+                        } transition-all hover:translate-x-1`}
                     >
                       <service.icon className="w-4 h-4 opacity-60 group-hover:opacity-100 shrink-0" />
                       <span>{service.label}</span>
@@ -279,9 +268,8 @@ export default function Footer() {
                 <span className="absolute -bottom-2 left-0 w-12 h-1 bg-linear-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
               </h4>
               <div
-                className={`space-y-3 text-sm mb-6 ${
-                  isDark ? "text-gray-400" : "text-gray-600"
-                }`}
+                className={`space-y-3 text-sm mb-6 ${isDark ? "text-gray-400" : "text-gray-600"
+                  }`}
               >
                 <div className="flex justify-between items-center">
                   <span>Monday - Friday</span>
@@ -316,9 +304,8 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div
-          className={`border-t ${
-            isDark ? "border-gray-800" : "border-gray-200"
-          } relative z-10`}
+          className={`border-t ${isDark ? "border-gray-800" : "border-gray-200"
+            } relative z-10`}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             {/* SEO Paragraph */}
@@ -330,9 +317,9 @@ export default function Footer() {
               >
                 <strong>Growthik Media</strong> is a results-focused{" "}
                 <strong>Digital Marketing Agency in Pune</strong>. We help local
-                businesses in Baner, Hinjewadi, and across Pune grow through
+                businesses in Baner, Hinjewadi and across Pune grow through
                 practical <strong>SEO Services in Pune</strong>, targeted Google
-                Ads, and high-performance Website Development. Whether you're a
+                Ads and high-performance Website Development. Whether you're a
                 local startup or an established brand, we're here to help you
                 reach more customers and improve your ROI with honest,
                 data-backed strategies.
@@ -348,9 +335,8 @@ export default function Footer() {
                 </span>
                 <Link
                   href="/privacy-policy"
-                  className={`${
-                    isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
-                  } transition-colors`}
+                  className={`${isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
+                    } transition-colors`}
                 >
                   Privacy Policy
                 </Link>
@@ -359,9 +345,8 @@ export default function Footer() {
                 </span>
                 <Link
                   href="/terms"
-                  className={`${
-                    isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
-                  } transition-colors`}
+                  className={`${isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
+                    } transition-colors`}
                 >
                   Terms & Conditions
                 </Link>
@@ -370,9 +355,8 @@ export default function Footer() {
               {/* Social Media */}
               <div className="flex items-center gap-4">
                 <span
-                  className={`text-sm font-medium ${
-                    isDark ? "text-gray-400" : "text-gray-600"
-                  }`}
+                  className={`text-sm font-medium ${isDark ? "text-gray-400" : "text-gray-600"
+                    }`}
                 >
                   Follow Us
                 </span>
@@ -381,11 +365,10 @@ export default function Footer() {
                     href={CONTACT_INFO.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2.5 rounded-lg ${
-                      isDark
+                    className={`p-2.5 rounded-lg ${isDark
                         ? "bg-gray-800 hover:bg-[#D90B1C]"
                         : "bg-gray-100 hover:bg-[#D90B1C]"
-                    } hover:text-white transition-all hover:scale-110 group`}
+                      } hover:text-white transition-all hover:scale-110 group`}
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-5 h-5" />
@@ -394,11 +377,10 @@ export default function Footer() {
                     href={CONTACT_INFO.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2.5 rounded-lg ${
-                      isDark
+                    className={`p-2.5 rounded-lg ${isDark
                         ? "bg-gray-800 hover:bg-[#D90B1C]"
                         : "bg-gray-100 hover:bg-[#D90B1C]"
-                    } hover:text-white transition-all hover:scale-110 group`}
+                      } hover:text-white transition-all hover:scale-110 group`}
                     aria-label="Instagram"
                   >
                     <Instagram className="w-5 h-5" />
@@ -407,11 +389,10 @@ export default function Footer() {
                     href={CONTACT_INFO.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2.5 rounded-lg ${
-                      isDark
+                    className={`p-2.5 rounded-lg ${isDark
                         ? "bg-gray-800 hover:bg-[#D90B1C]"
                         : "bg-gray-100 hover:bg-[#D90B1C]"
-                    } hover:text-white transition-all hover:scale-110 group`}
+                      } hover:text-white transition-all hover:scale-110 group`}
                     aria-label="Facebook"
                   >
                     <Facebook className="w-5 h-5" />
@@ -420,11 +401,10 @@ export default function Footer() {
                     href={CONTACT_INFO.social.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2.5 rounded-lg ${
-                      isDark
+                    className={`p-2.5 rounded-lg ${isDark
                         ? "bg-gray-800 hover:bg-[#D90B1C]"
                         : "bg-gray-100 hover:bg-[#D90B1C]"
-                    } hover:text-white transition-all hover:scale-110 group`}
+                      } hover:text-white transition-all hover:scale-110 group`}
                     aria-label="Twitter/X"
                   >
                     <Twitter className="w-5 h-5" />
@@ -433,11 +413,10 @@ export default function Footer() {
                     href={CONTACT_INFO.social.youtube}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-2.5 rounded-lg ${
-                      isDark
+                    className={`p-2.5 rounded-lg ${isDark
                         ? "bg-gray-800 hover:bg-[#D90B1C]"
                         : "bg-gray-100 hover:bg-[#D90B1C]"
-                    } hover:text-white transition-all hover:scale-110 group`}
+                      } hover:text-white transition-all hover:scale-110 group`}
                     aria-label="YouTube"
                   >
                     <Youtube className="w-5 h-5" />
@@ -453,9 +432,8 @@ export default function Footer() {
                 rights reserved
               </p>
               <p
-                className={`text-sm ${
-                  isDark ? "text-gray-500" : "text-gray-500"
-                }`}
+                className={`text-sm ${isDark ? "text-gray-500" : "text-gray-500"
+                  }`}
               >
                 Designed & Developed with{" "}
                 <span className="text-[#D90B1C] animate-pulse">❤️</span> by{" "}
@@ -472,9 +450,8 @@ export default function Footer() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className={`fixed bottom-1 right-3 sm:bottom-1 sm:right-6 p-2 sm:p-3 transition-all transform hover:scale-110 z-50 group ${
-            isDark ? "text-white" : "text-black"
-          }`}
+          className={`fixed bottom-1 right-3 sm:bottom-1 sm:right-6 p-2 sm:p-3 transition-all transform hover:scale-110 z-50 group ${isDark ? "text-white" : "text-black"
+            }`}
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-y-1 transition-transform" />

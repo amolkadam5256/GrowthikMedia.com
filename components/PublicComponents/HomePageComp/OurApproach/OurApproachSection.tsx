@@ -142,7 +142,7 @@ export default function OurApproachSection() {
                 className="text-base md:text-lg leading-relaxed"
                 style={{ color: "var(--text-secondary)" }}
               >
-                We believe digital marketing should be simple and effective. As a Pune-based agency, we focus on what works: engaging social media, smart ad placements, and technical SEO that actually moves the needle. By using tools like Google Analytics and search data, we constantly refine your strategy to make sure your budget is spent on the right audience.
+                We believe digital marketing should be simple and effective. As a Pune-based agency, we focus on what works: engaging social media, smart ad placements and technical SEO that actually moves the needle. By using tools like Google Analytics and search data, we constantly refine your strategy to make sure your budget is spent on the right audience.
               </p>
             </article>
 

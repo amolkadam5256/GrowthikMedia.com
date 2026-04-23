@@ -221,7 +221,7 @@ For live calls. Find the objection, scan the response, reference the proof.
 
 **Proof point:** Multi-stakeholder case study showing how different personas were addressed.
 
-**Follow-up question:** "Who on the committee is most likely to push back, and what would their concern be?"
+**Follow-up question:** "Who on the committee is most likely to push back and what would their concern be?"
 
 ---
 
@@ -229,7 +229,7 @@ For live calls. Find the objection, scan the response, reference the proof.
 
 #### "What we have works fine"
 
-**Why they say it:** Inertia is real. The current solution may be adequate, and change has real costs.
+**Why they say it:** Inertia is real. The current solution may be adequate and change has real costs.
 
 **Response approach:**
 
@@ -288,7 +288,7 @@ For live calls. Find the objection, scan the response, reference the proof.
 
 **Talk track:**
 
-> "That's exactly the right question to ask. Here's our security overview - we're [SOC 2 Type II / ISO 27001 / etc.] certified, and I can share our full security documentation. We also have a security team that's happy to do a review call with your infosec team. What are your specific requirements?"
+> "That's exactly the right question to ask. Here's our security overview - we're [SOC 2 Type II / ISO 27001 / etc.] certified and I can share our full security documentation. We also have a security team that's happy to do a review call with your infosec team. What are your specific requirements?"
 
 **Proof point:** Security certifications, compliance documentation, customers in regulated industries.
 

@@ -17,7 +17,7 @@ const DifferentiatorsSection = () => {
             <p className="text-(--text-secondary) mb-6 font-medium leading-relaxed max-w-lg">
               Unlike traditional digital marketing agencies in Pune, Growthik
               Media integrates AI-driven analytics, advanced conversion
-              engineering, and technical SEO to build scalable growth ecosystems
+              engineering and technical SEO to build scalable growth ecosystems
               rather than isolated marketing campaigns.
             </p>
             <p className="text-(--text-secondary) mb-8 text-sm opacity-80">

@@ -130,7 +130,7 @@ Track how customers use your product:
 
 - Which usage patterns predict retention?
 - Which usage patterns predict expansion?
-- Which customers pay the most, and why?
+- Which customers pay the most and why?
 
 ### 3. Identify value thresholds
 

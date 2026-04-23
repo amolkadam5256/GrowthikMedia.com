@@ -57,9 +57,9 @@ const HeroHeadline = () => {
           className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto font-medium leading-[1.6] px-4"
           style={{ color: "var(--color-white)" }}
         >
-          We&apos;re Pune&apos;s digital marketing team helping businesses in Baner, Hinjewadi, and PCMC get more traffic, better leads, and real ROI -{" "}
+          We&apos;re Pune&apos;s digital marketing team helping businesses in Baner, Hinjewadi and PCMC get more traffic, better leads and real ROI -{" "}
           <strong className="text-(--color-primary) font-black">
-            through SEO, Google Ads, and websites that actually work.
+            through SEO, Google Ads and websites that actually work.
           </strong>
         </p>
 

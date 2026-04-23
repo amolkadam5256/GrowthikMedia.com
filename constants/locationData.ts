@@ -41,7 +41,7 @@ export const locationMapping: Record<string, LocationData> = {
     subheadline:
       "We design and develop high-performance, SEO-ready websites for businesses in Aundh, Pune that rank on Google and turn visitors into leads - guaranteed.",
     areaDescription:
-      "Aundh is one of Pune's most vibrant business hubs, home to IT firms, retail shops, clinics, coaching institutes, and restaurants. With increasing digital competition, having a professional website isn't enough - you need a site that loads fast, ranks high, and converts. Growthik Media has built 350+ websites for Pune businesses, and we understand exactly what the Aundh audience expects from an online experience.",
+      "Aundh is one of Pune's most vibrant business hubs, home to IT firms, retail shops, clinics, coaching institutes and restaurants. With increasing digital competition, having a professional website isn't enough - you need a site that loads fast, ranks high and converts. Growthik Media has built 350+ websites for Pune businesses and we understand exactly what the Aundh audience expects from an online experience.",
     services: [
       {
         icon: Monitor,
@@ -56,7 +56,7 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: Search,
         name: "SEO-Optimized Development",
-        desc: "Sites built from day one with Core Web Vitals, schema markup, and on-page SEO best practices.",
+        desc: "Sites built from day one with Core Web Vitals, schema markup and on-page SEO best practices.",
       },
       {
         icon: Target,
@@ -71,7 +71,7 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: BarChart,
         name: "eCommerce Websites",
-        desc: "Online stores with payment gateway integration, product catalogs, and order management systems.",
+        desc: "Online stores with payment gateway integration, product catalogs and order management systems.",
       },
     ],
     faqs: [
@@ -85,31 +85,31 @@ export const locationMapping: Record<string, LocationData> = {
       },
       {
         q: "Will my website rank on Google?",
-        a: "Every website we build includes on-page SEO setup, schema markup, Core Web Vitals optimization, and Google Search Console integration. We also offer ongoing SEO services to continuously improve your rankings in Aundh and across Pune.",
+        a: "Every website we build includes on-page SEO setup, schema markup, Core Web Vitals optimization and Google Search Console integration. We also offer ongoing SEO services to continuously improve your rankings in Aundh and across Pune.",
       },
       {
         q: "Do you offer website maintenance after launch?",
-        a: "Yes, we offer monthly maintenance packages covering security updates, content edits, performance optimization, and technical support so your website stays fast, secure, and up-to-date.",
+        a: "Yes, we offer monthly maintenance packages covering security updates, content edits, performance optimization and technical support so your website stays fast, secure and up-to-date.",
       },
     ],
   },
   "website-design-company-baner": {
     title: "Web Design Company in Baner Pune | Growthik Media",
     description:
-      "Best web design company in Baner, Pune. We build fast, SEO-optimized, and conversion-focused websites for local businesses. Get a free quote today.",
+      "Best web design company in Baner, Pune. We build fast, SEO-optimized and conversion-focused websites for local businesses. Get a free quote today.",
     keywords:
       "website design company baner, web design baner pune, website development baner, best web design company baner pune",
     ogTitle: "Web Design Company in Baner Pune | Growthik Media",
     ogDescription:
-      "Best website design company in Baner, Pune - premium websites for startups, agencies, and businesses in Baner & Balewadi area.",
+      "Best website design company in Baner, Pune - premium websites for startups, agencies and businesses in Baner & Balewadi area.",
     area: "Baner",
     city: "Pune",
     primaryService: "Website Design Company",
     headline: "Top Website Design Company in Baner",
     subheadline:
-      "Premium website design and development for startups, agencies, restaurants, clinics, and retail businesses in Baner and Balewadi - built to rank, designed to convert.",
+      "Premium website design and development for startups, agencies, restaurants, clinics and retail businesses in Baner and Balewadi - built to rank, designed to convert.",
     areaDescription:
-      "Baner is at the heart of Pune's entrepreneurial ecosystem - a thriving mix of tech startups, boutique agencies, premium restaurants, fitness studios, healthcare clinics, and upscale retail. Businesses in Baner serve one of Pune's most digitally active and affluent audiences. A poorly designed or slow-loading website is a competitive disadvantage you can't afford. Growthik Media creates stunning, lightning-fast websites for Baner businesses that make an exceptional first impression and rank prominently in Google's search results for high-intent local keywords.",
+      "Baner is at the heart of Pune's entrepreneurial ecosystem - a thriving mix of tech startups, boutique agencies, premium restaurants, fitness studios, healthcare clinics and upscale retail. Businesses in Baner serve one of Pune's most digitally active and affluent audiences. A poorly designed or slow-loading website is a competitive disadvantage you can't afford. Growthik Media creates stunning, lightning-fast websites for Baner businesses that make an exceptional first impression and rank prominently in Google's search results for high-intent local keywords.",
     services: [
       {
         icon: Monitor,
@@ -119,45 +119,45 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: Globe,
         name: "Restaurant & Hospitality Websites",
-        desc: "Visually rich, mobile-optimized websites for Baner's restaurants, cafes, and hospitality businesses with online reservations.",
+        desc: "Visually rich, mobile-optimized websites for Baner's restaurants, cafes and hospitality businesses with online reservations.",
       },
       {
         icon: Search,
         name: "Local SEO & Baner Rankings",
-        desc: "Dominate 'near me' searches for your business category in Baner, Balewadi, and surrounding areas.",
+        desc: "Dominate 'near me' searches for your business category in Baner, Balewadi and surrounding areas.",
       },
       {
         icon: Target,
         name: "Agency & Professional Websites",
-        desc: "Portfolio-led websites for agencies, consultants, and professional service firms in the Baner/Aundh corridor.",
+        desc: "Portfolio-led websites for agencies, consultants and professional service firms in the Baner/Aundh corridor.",
       },
       {
         icon: Zap,
         name: "Performance-First Development",
-        desc: "Industry-leading 90+ PageSpeed scores, zero CLS, and sub-2-second load times on every website we build.",
+        desc: "Industry-leading 90+ PageSpeed scores, zero CLS and sub-2-second load times on every website we build.",
       },
       {
         icon: BarChart,
         name: "Conversion Optimization",
-        desc: "Strategic UX, CTAs, and landing page design that turns Baner's web traffic into qualified business leads.",
+        desc: "Strategic UX, CTAs and landing page design that turns Baner's web traffic into qualified business leads.",
       },
     ],
     faqs: [
       {
         q: "What makes Growthik Media the best website design company in Baner?",
-        a: "We combine three things that most agencies in Baner lack: premium design quality, technical performance excellence (90+ PageSpeed), and SEO built into every website from day one. We also offer transparent pricing and dedicated account management.",
+        a: "We combine three things that most agencies in Baner lack: premium design quality, technical performance excellence (90+ PageSpeed) and SEO built into every website from day one. We also offer transparent pricing and dedicated account management.",
       },
       {
         q: "Do you design websites for restaurants and cafes in Baner?",
-        a: "Yes. We have experience building visually stunning websites for restaurants and hospitality businesses in Baner - complete with menu displays, photo galleries, online reservations, Google Maps integration, and local SEO for food-related searches.",
+        a: "Yes. We have experience building visually stunning websites for restaurants and hospitality businesses in Baner - complete with menu displays, photo galleries, online reservations, Google Maps integration and local SEO for food-related searches.",
       },
       {
         q: "What is the cost of a website for a startup in Baner?",
-        a: "Startup websites typically cost ₹25,000–₹1,50,000 depending on the features required. We offer startup-friendly packages that include product/service pages, an about page, team section, contact form, and basic SEO setup.",
+        a: "Startup websites typically cost ₹25,000–₹1,50,000 depending on the features required. We offer startup-friendly packages that include product/service pages, an about page, team section, contact form and basic SEO setup.",
       },
       {
         q: "Can you help with digital marketing beyond just the website?",
-        a: "Absolutely. We offer a full suite of digital marketing services - SEO, Google Ads, Meta Ads, social media management, and content marketing - making us a single-vendor solution for your entire digital presence in Baner.",
+        a: "Absolutely. We offer a full suite of digital marketing services - SEO, Google Ads, Meta Ads, social media management and content marketing - making us a single-vendor solution for your entire digital presence in Baner.",
       },
     ],
   },
@@ -175,34 +175,34 @@ export const locationMapping: Record<string, LocationData> = {
     primaryService: "Website Development",
     headline: "Professional Website Development in Hadapsar",
     subheadline:
-      "We develop powerful, fast, and SEO-driven websites for businesses in Hadapsar - built to rank on Google, handle real traffic, and convert every visitor into a business opportunity.",
+      "We develop powerful, fast and SEO-driven websites for businesses in Hadapsar - built to rank on Google, handle real traffic and convert every visitor into a business opportunity.",
     areaDescription:
-      "Hadapsar is one of Pune's rapidly developing corridors, home to Magarpatta City, SP Infocity, manufacturing units, residential societies, and a growing retail ecosystem. The digital transformation of Hadapsar's business landscape is accelerating - and companies that invest in quality web development now will enjoy first-mover advantage in Google rankings. Growthik Media provides premium website development services for Hadapsar businesses of all sizes, with a focus on performance, scalability, and local search dominance.",
+      "Hadapsar is one of Pune's rapidly developing corridors, home to Magarpatta City, SP Infocity, manufacturing units, residential societies and a growing retail ecosystem. The digital transformation of Hadapsar's business landscape is accelerating - and companies that invest in quality web development now will enjoy first-mover advantage in Google rankings. Growthik Media provides premium website development services for Hadapsar businesses of all sizes, with a focus on performance, scalability and local search dominance.",
     services: [
       {
         icon: Monitor,
         name: "Custom Web Development",
-        desc: "Fully custom-coded websites using Next.js or WordPress - built for performance, scalability, and long-term maintainability.",
+        desc: "Fully custom-coded websites using Next.js or WordPress - built for performance, scalability and long-term maintainability.",
       },
       {
         icon: Globe,
         name: "Corporate Website Development",
-        desc: "Enterprise-grade corporate websites for Hadapsar's IT companies, manufacturing firms, and professional service providers.",
+        desc: "Enterprise-grade corporate websites for Hadapsar's IT companies, manufacturing firms and professional service providers.",
       },
       {
         icon: Search,
         name: "SEO-Integrated Development",
-        desc: "Technical SEO baked into development - proper heading hierarchy, schema markup, canonical URLs, and Core Web Vitals optimization.",
+        desc: "Technical SEO baked into development - proper heading hierarchy, schema markup, canonical URLs and Core Web Vitals optimization.",
       },
       {
         icon: Target,
         name: "eCommerce Development",
-        desc: "WooCommerce and Next.js eCommerce solutions with Razorpay payment integration, inventory management, and order tracking.",
+        desc: "WooCommerce and Next.js eCommerce solutions with Razorpay payment integration, inventory management and order tracking.",
       },
       {
         icon: Zap,
         name: "Web App Development",
-        desc: "High-performance web applications for complex business processes - portals, dashboards, booking systems, and SaaS products.",
+        desc: "High-performance web applications for complex business processes - portals, dashboards, booking systems and SaaS products.",
       },
       {
         icon: BarChart,
@@ -213,11 +213,11 @@ export const locationMapping: Record<string, LocationData> = {
     faqs: [
       {
         q: "What technologies do you use for website development in Hadapsar?",
-        a: "We primarily build with Next.js (React) for high-performance web apps and WordPress for content-managed websites. We choose the technology stack based on your specific requirements, budget, and long-term maintenance needs.",
+        a: "We primarily build with Next.js (React) for high-performance web apps and WordPress for content-managed websites. We choose the technology stack based on your specific requirements, budget and long-term maintenance needs.",
       },
       {
         q: "Can you develop a website for a manufacturing or industrial company in Hadapsar?",
-        a: "Yes. We have experience building B2B and manufacturing websites with product catalogs, industrial specification pages, ISO certification showcases, and inquiry management systems - all optimized for Google B2B searches.",
+        a: "Yes. We have experience building B2B and manufacturing websites with product catalogs, industrial specification pages, ISO certification showcases and inquiry management systems - all optimized for Google B2B searches.",
       },
       {
         q: "How long does website development take?",
@@ -225,14 +225,14 @@ export const locationMapping: Record<string, LocationData> = {
       },
       {
         q: "Do you guarantee website speed and performance?",
-        a: "Yes. Every website we develop is optimized to achieve 90+ Google PageSpeed scores on mobile and desktop, with zero Cumulative Layout Shift (CLS), fast Largest Contentful Paint (LCP), and excellent Core Web Vitals - a critical ranking factor in 2025.",
+        a: "Yes. Every website we develop is optimized to achieve 90+ Google PageSpeed scores on mobile and desktop, with zero Cumulative Layout Shift (CLS), fast Largest Contentful Paint (LCP) and excellent Core Web Vitals - a critical ranking factor in 2025.",
       },
     ],
   },
   "website-design-company-kothrud": {
     title: "Web Design Company in Kothrud Pune | Growthik Media",
     description:
-      "Best web design company in Kothrud, Pune. We create modern, fast, and SEO-optimized websites for local businesses. Get a free quote today.",
+      "Best web design company in Kothrud, Pune. We create modern, fast and SEO-optimized websites for local businesses. Get a free quote today.",
     keywords:
       "website design company kothrud, web design kothrud pune, website development kothrud, best web design company kothrud pune",
     ogTitle: "Web Design Company in Kothrud Pune | Growthik Media",
@@ -243,9 +243,9 @@ export const locationMapping: Record<string, LocationData> = {
     primaryService: "Website Design Company",
     headline: "Best Website Design Company in Kothrud",
     subheadline:
-      "We build high-performance, beautifully designed websites for Kothrud businesses that rank on Google, engage visitors, and convert them into loyal customers.",
+      "We build high-performance, beautifully designed websites for Kothrud businesses that rank on Google, engage visitors and convert them into loyal customers.",
     areaDescription:
-      "Kothrud is one of Pune's most densely populated and commercially active areas - home to educational institutions, healthcare clinics, coaching centers, retail outlets, and professional services. It's a market with strong local search behavior, where 'near me' Google searches drive significant footfall. Growthik Media has built several websites for Kothrud-based businesses and understands what local customers in this market respond to. Our websites combine clean modern design with technical SEO excellence to put your business front and center when locals search for your services.",
+      "Kothrud is one of Pune's most densely populated and commercially active areas - home to educational institutions, healthcare clinics, coaching centers, retail outlets and professional services. It's a market with strong local search behavior, where 'near me' Google searches drive significant footfall. Growthik Media has built several websites for Kothrud-based businesses and understands what local customers in this market respond to. Our websites combine clean modern design with technical SEO excellence to put your business front and center when locals search for your services.",
     services: [
       {
         icon: Monitor,
@@ -270,7 +270,7 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: Zap,
         name: "Performance-First Development",
-        desc: "90+ PageSpeed scores, zero CLS, and optimal Core Web Vitals on every site we build.",
+        desc: "90+ PageSpeed scores, zero CLS and optimal Core Web Vitals on every site we build.",
       },
       {
         icon: BarChart,
@@ -281,11 +281,11 @@ export const locationMapping: Record<string, LocationData> = {
     faqs: [
       {
         q: "Which types of businesses in Kothrud do you typically work with?",
-        a: "We work with a wide range of Kothrud businesses: clinics and hospitals, coaching institutes, law firms, restaurants, real estate agencies, retail shops, coaching classes, and professional service providers.",
+        a: "We work with a wide range of Kothrud businesses: clinics and hospitals, coaching institutes, law firms, restaurants, real estate agencies, retail shops, coaching classes and professional service providers.",
       },
       {
         q: "Does the website you build appear in local Kothrud searches?",
-        a: "Yes. Our process includes Google Business Profile setup and optimization, local schema markup, Kothrud-specific keyword targeting, and NAP consistency across directories - giving your site maximum visibility for local searches.",
+        a: "Yes. Our process includes Google Business Profile setup and optimization, local schema markup, Kothrud-specific keyword targeting and NAP consistency across directories - giving your site maximum visibility for local searches.",
       },
       {
         q: "What is the cost of a website in Kothrud?",
@@ -293,7 +293,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
       {
         q: "Do you provide content writing for the website?",
-        a: "Yes, we offer professional copywriting and content creation as part of our website packages. Our content is SEO-optimized, conversion-driven, and written in a tone that resonates with your target audience.",
+        a: "Yes, we offer professional copywriting and content creation as part of our website packages. Our content is SEO-optimized, conversion-driven and written in a tone that resonates with your target audience.",
       },
     ],
   },
@@ -313,12 +313,12 @@ export const locationMapping: Record<string, LocationData> = {
     subheadline:
       "We design and develop powerful, SEO-optimized websites for businesses in Pimpri Chinchwad Municipal Corporation (PCMC) - from manufacturing companies to retail shops and service providers.",
     areaDescription:
-      "PCMC (Pimpri-Chinchwad) is one of Maharashtra's fastest-growing industrial and residential zones, spanning areas like Pimpri, Chinchwad, Akurdi, Nigdi, and Bhosari. With a massive mix of manufacturing industries, auto ancillary companies, IT firms, and consumer businesses, competition for online visibility is intensifying rapidly. Growthik Media brings enterprise-level website design and digital marketing capabilities to PCMC businesses at competitive pricing, helping you establish a strong digital presence that generates real business results.",
+      "PCMC (Pimpri-Chinchwad) is one of Maharashtra's fastest-growing industrial and residential zones, spanning areas like Pimpri, Chinchwad, Akurdi, Nigdi and Bhosari. With a massive mix of manufacturing industries, auto ancillary companies, IT firms and consumer businesses, competition for online visibility is intensifying rapidly. Growthik Media brings enterprise-level website design and digital marketing capabilities to PCMC businesses at competitive pricing, helping you establish a strong digital presence that generates real business results.",
     services: [
       {
         icon: Monitor,
         name: "Business Website Design",
-        desc: "Professional, mobile-first website designs for manufacturers, traders, service firms, and retailers in PCMC.",
+        desc: "Professional, mobile-first website designs for manufacturers, traders, service firms and retailers in PCMC.",
       },
       {
         icon: Globe,
@@ -333,27 +333,27 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: Target,
         name: "eCommerce Development",
-        desc: "Sell your products online with a fully integrated eCommerce website - Razorpay, inventory management, and GST billing included.",
+        desc: "Sell your products online with a fully integrated eCommerce website - Razorpay, inventory management and GST billing included.",
       },
       {
         icon: Zap,
         name: "Speed & Performance",
-        desc: "All websites we build achieve 90+ PageSpeed scores, zero CLS, and fast LCP - critical for both rankings and user experience.",
+        desc: "All websites we build achieve 90+ PageSpeed scores, zero CLS and fast LCP - critical for both rankings and user experience.",
       },
       {
         icon: BarChart,
         name: "Analytics Setup",
-        desc: "Google Analytics 4, Search Console, and conversion tracking configured so you measure what matters.",
+        desc: "Google Analytics 4, Search Console and conversion tracking configured so you measure what matters.",
       },
     ],
     faqs: [
       {
         q: "Do you serve businesses across all of PCMC - Pimpri, Chinchwad, Akurdi, Nigdi?",
-        a: "Yes. We work with businesses across all of PCMC including Pimpri, Chinchwad, Akurdi, Nigdi, Bhosari, Kalewadi, and Wakad areas. We also serve the broader Pune region.",
+        a: "Yes. We work with businesses across all of PCMC including Pimpri, Chinchwad, Akurdi, Nigdi, Bhosari, Kalewadi and Wakad areas. We also serve the broader Pune region.",
       },
       {
         q: "Can you create a website for a manufacturing company?",
-        a: "Absolutely. We have experience building B2B and industrial websites with product catalogs, material specifications, inquiry forms, and certification showcases. These are designed to rank on Google for industry-specific keywords.",
+        a: "Absolutely. We have experience building B2B and industrial websites with product catalogs, material specifications, inquiry forms and certification showcases. These are designed to rank on Google for industry-specific keywords.",
       },
       {
         q: "How much does website design cost in PCMC?",
@@ -361,14 +361,14 @@ export const locationMapping: Record<string, LocationData> = {
       },
       {
         q: "Will my PCMC website rank on Google?",
-        a: "Every website includes on-page SEO setup, Google Business Profile optimization, local schema markup, and Core Web Vitals optimization. We also offer ongoing SEO services for sustained ranking growth.",
+        a: "Every website includes on-page SEO setup, Google Business Profile optimization, local schema markup and Core Web Vitals optimization. We also offer ongoing SEO services for sustained ranking growth.",
       },
     ],
   },
   "website-design-company-viman-nagar": {
     title: "Web Design in Viman Nagar Pune | Growthik Media",
     description:
-      "Professional web design in Viman Nagar, Pune. We build fast, beautiful, and conversion-focused websites for businesses in Viman Nagar. Get a free quote.",
+      "Professional web design in Viman Nagar, Pune. We build fast, beautiful and conversion-focused websites for businesses in Viman Nagar. Get a free quote.",
     keywords:
       "web design viman nagar, website design company viman nagar pune, website development viman nagar, best web design viman nagar",
     ogTitle: "Web Design in Viman Nagar Pune | Growthik Media",
@@ -379,9 +379,9 @@ export const locationMapping: Record<string, LocationData> = {
     primaryService: "Web Design",
     headline: "Expert Web Design in Viman Nagar",
     subheadline:
-      "Premium website design services for businesses in Viman Nagar - crafted to rank on Google, load in under 2 seconds, and convert visitors into paying customers.",
+      "Premium website design services for businesses in Viman Nagar - crafted to rank on Google, load in under 2 seconds and convert visitors into paying customers.",
     areaDescription:
-      "Viman Nagar is Pune's cosmopolitan hub - a blend of corporate offices, upscale residences, premium retail, and thriving restaurants. Businesses here serve a digitally sophisticated audience that expects best-in-class online experiences. Growthik Media designs websites for Viman Nagar businesses that match the premium expectations of this market, combining cutting-edge design with high-performance Next.js or WordPress development and deep local SEO expertise.",
+      "Viman Nagar is Pune's cosmopolitan hub - a blend of corporate offices, upscale residences, premium retail and thriving restaurants. Businesses here serve a digitally sophisticated audience that expects best-in-class online experiences. Growthik Media designs websites for Viman Nagar businesses that match the premium expectations of this market, combining cutting-edge design with high-performance Next.js or WordPress development and deep local SEO expertise.",
     services: [
       {
         icon: Monitor,
@@ -391,7 +391,7 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: Globe,
         name: "eCommerce Development",
-        desc: "Sell online with powerful eCommerce stores - fully integrated with Razorpay, Shiprocket, and GST billing.",
+        desc: "Sell online with powerful eCommerce stores - fully integrated with Razorpay, Shiprocket and GST billing.",
       },
       {
         icon: Search,
@@ -406,7 +406,7 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: Zap,
         name: "Performance Optimization",
-        desc: "Technical optimization for 90+ PageSpeed scores, fast LCP, and zero layout shift (CLS = 0).",
+        desc: "Technical optimization for 90+ PageSpeed scores, fast LCP and zero layout shift (CLS = 0).",
       },
       {
         icon: BarChart,
@@ -417,15 +417,15 @@ export const locationMapping: Record<string, LocationData> = {
     faqs: [
       {
         q: "How much does web design cost in Viman Nagar?",
-        a: "Web design in Viman Nagar typically costs ₹20,000–₹1,50,000 for a business website depending on the number of pages, custom features, and complexity. We provide a detailed, transparent quote before any work begins.",
+        a: "Web design in Viman Nagar typically costs ₹20,000–₹1,50,000 for a business website depending on the number of pages, custom features and complexity. We provide a detailed, transparent quote before any work begins.",
       },
       {
         q: "Can you redesign my existing website?",
-        a: "Absolutely. We handle complete website redesigns - improving the design, performance, and SEO while preserving your existing content and rankings. Our average redesign client sees a 40% improvement in Google PageSpeed scores.",
+        a: "Absolutely. We handle complete website redesigns - improving the design, performance and SEO while preserving your existing content and rankings. Our average redesign client sees a 40% improvement in Google PageSpeed scores.",
       },
       {
         q: "Do you build websites that rank on Google in Viman Nagar?",
-        a: "Yes. Every website we build includes on-page SEO, local schema markup, Core Web Vitals optimization, and Google Business Profile setup - giving your business the best foundation for ranking in Viman Nagar and Pune.",
+        a: "Yes. Every website we build includes on-page SEO, local schema markup, Core Web Vitals optimization and Google Business Profile setup - giving your business the best foundation for ranking in Viman Nagar and Pune.",
       },
       {
         q: "What is your design process?",
@@ -436,7 +436,7 @@ export const locationMapping: Record<string, LocationData> = {
   "website-design-company-wakad": {
     title: "Web Design Company in Wakad Pune | Growthik Media",
     description:
-      "Top web design company in Wakad, Pune. Fast, SEO-optimized websites for IT companies, startups, and local businesses. Get a free consultation.",
+      "Top web design company in Wakad, Pune. Fast, SEO-optimized websites for IT companies, startups and local businesses. Get a free consultation.",
     keywords:
       "website design company wakad, web design wakad pune, website development wakad, best web design company wakad pune",
     ogTitle: "Web Design Company in Wakad Pune | Growthik Media",
@@ -449,7 +449,7 @@ export const locationMapping: Record<string, LocationData> = {
     subheadline:
       "We build premium, performance-first websites for businesses in Wakad - from IT companies and real estate agencies to restaurants and professional service providers.",
     areaDescription:
-      "Wakad has transformed into one of Pune's fastest-growing mixed-use localities - a blend of IT professionals, young families, startups, healthcare providers, and thriving local businesses. With its proximity to Hinjewadi IT Park and excellent connectivity, Wakad's businesses are increasingly competing for digital visibility. Growthik Media delivers enterprise-quality website design to Wakad businesses at competitive pricing, with a strong focus on local search rankings, user experience, and conversion rate optimization.",
+      "Wakad has transformed into one of Pune's fastest-growing mixed-use localities - a blend of IT professionals, young families, startups, healthcare providers and thriving local businesses. With its proximity to Hinjewadi IT Park and excellent connectivity, Wakad's businesses are increasingly competing for digital visibility. Growthik Media delivers enterprise-quality website design to Wakad businesses at competitive pricing, with a strong focus on local search rankings, user experience and conversion rate optimization.",
     services: [
       {
         icon: Monitor,
@@ -459,22 +459,22 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: Globe,
         name: "Real Estate Websites",
-        desc: "Property showcase websites for Wakad real estate agents and builders - with listing pages, virtual tours, and lead capture forms.",
+        desc: "Property showcase websites for Wakad real estate agents and builders - with listing pages, virtual tours and lead capture forms.",
       },
       {
         icon: Search,
         name: "Wakad Local SEO",
-        desc: "Rank your business for location-specific searches in Wakad, Hinjewadi, and surrounding areas.",
+        desc: "Rank your business for location-specific searches in Wakad, Hinjewadi and surrounding areas.",
       },
       {
         icon: Target,
         name: "eCommerce Websites",
-        desc: "Sell products online with a fully featured eCommerce site - Razorpay integration, GST billing, and mobile-optimized shopping.",
+        desc: "Sell products online with a fully featured eCommerce site - Razorpay integration, GST billing and mobile-optimized shopping.",
       },
       {
         icon: Zap,
         name: "Speed Optimization",
-        desc: "Every website we build is optimized for sub-2-second load times, 90+ PageSpeed scores, and zero CLS on all devices.",
+        desc: "Every website we build is optimized for sub-2-second load times, 90+ PageSpeed scores and zero CLS on all devices.",
       },
       {
         icon: BarChart,
@@ -485,11 +485,11 @@ export const locationMapping: Record<string, LocationData> = {
     faqs: [
       {
         q: "Do you work with IT companies and startups in Wakad?",
-        a: "Yes, we have significant experience building websites for IT companies, software agencies, and tech startups in Wakad and the Hinjewadi corridor. Our Next.js development capabilities are particularly well-suited for tech businesses.",
+        a: "Yes, we have significant experience building websites for IT companies, software agencies and tech startups in Wakad and the Hinjewadi corridor. Our Next.js development capabilities are particularly well-suited for tech businesses.",
       },
       {
         q: "Can you create a real estate website for Wakad properties?",
-        a: "Absolutely. We build specialized real estate websites with property listings, filter/search functionality, virtual tour embedding, inquiry forms, EMI calculators, and local area guides - all optimized for Google real estate searches.",
+        a: "Absolutely. We build specialized real estate websites with property listings, filter/search functionality, virtual tour embedding, inquiry forms, EMI calculators and local area guides - all optimized for Google real estate searches.",
       },
       {
         q: "How much does a website cost in Wakad?",
@@ -515,14 +515,14 @@ export const locationMapping: Record<string, LocationData> = {
     primaryService: "SEO Company",
     headline: "SEO Company in Hinjewadi Pune",
     subheadline:
-      "We provide specialized SEO services for IT companies, software firms, and startups in Hinjewadi - designed to rank you globally and locally for high-intent B2B keywords.",
+      "We provide specialized SEO services for IT companies, software firms and startups in Hinjewadi - designed to rank you globally and locally for high-intent B2B keywords.",
     areaDescription:
-      "Hinjewadi is the IT heart of Pune, housing hundreds of global technology giants and fast-growing startups. For businesses in Hinjewadi, local competition isn't just about footfall - it's about being found by decision-makers looking for specialized tech services. Growthik Media understands the unique SEO needs of Hinjewadi-based businesses. We don't just focus on ranking; we focus on 'Quality Lead Generation' by targeting keywords that developers, CEOs, and CTOs are searching for.",
+      "Hinjewadi is the IT heart of Pune, housing hundreds of global technology giants and fast-growing startups. For businesses in Hinjewadi, local competition isn't just about footfall - it's about being found by decision-makers looking for specialized tech services. Growthik Media understands the unique SEO needs of Hinjewadi-based businesses. We don't just focus on ranking; we focus on 'Quality Lead Generation' by targeting keywords that developers, CEOs and CTOs are searching for.",
     services: [
       {
         icon: Search,
         name: "Technical SEO Audit",
-        desc: "Deep analysis of your website's architecture, indexing, and Core Web Vitals to ensure a solid foundation for ranking.",
+        desc: "Deep analysis of your website's architecture, indexing and Core Web Vitals to ensure a solid foundation for ranking.",
       },
       {
         icon: Globe,
@@ -532,7 +532,7 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: Target,
         name: "Content Marketing",
-        desc: "Strategic blog posts, whitepapers, and case studies that establish your authority in the Hinjewadi tech ecosystem.",
+        desc: "Strategic blog posts, whitepapers and case studies that establish your authority in the Hinjewadi tech ecosystem.",
       },
       {
         icon: Zap,
@@ -542,7 +542,7 @@ export const locationMapping: Record<string, LocationData> = {
       {
         icon: Monitor,
         name: "On-Page Optimization",
-        desc: "Perfecting your meta tags, heading hierarchy, and internal linking to maximize keyword relevance.",
+        desc: "Perfecting your meta tags, heading hierarchy and internal linking to maximize keyword relevance.",
       },
       {
         icon: BarChart,
@@ -561,7 +561,7 @@ export const locationMapping: Record<string, LocationData> = {
       },
       {
         q: "Do you focus on international SEO or just Pune?",
-        a: "For tech companies in Hinjewadi, we almost always implement Global SEO strategies alongside local optimization, ensuring you rank for your services in markets like the USA, UK, and Europe.",
+        a: "For tech companies in Hinjewadi, we almost always implement Global SEO strategies alongside local optimization, ensuring you rank for your services in markets like the USA, UK and Europe.",
       },
       {
         q: "Will you provide a free SEO audit for my website?",
@@ -571,16 +571,16 @@ export const locationMapping: Record<string, LocationData> = {
   },
   "website-design-company-pune": {
     title: "Website Design Company in Pune | Growthik Media",
-    description: "Leading website design company in Pune. We create stunning, mobile-responsive, and conversion-focused designs.",
+    description: "Leading website design company in Pune. We create stunning, mobile-responsive and conversion-focused designs.",
     keywords: "website design company pune, web design pune, best website design pune",
     ogTitle: "Website Design Company in Pune | Growthik Media",
-    ogDescription: "Leading website design company in Pune. We create stunning, mobile-responsive, and conversion-focused designs.",
+    ogDescription: "Leading website design company in Pune. We create stunning, mobile-responsive and conversion-focused designs.",
     area: "Pune",
     city: "Pune",
     primaryService: "Website Design",
     headline: "Creative Website Design Company in Pune",
     subheadline: "Stunning visual identities and user-centric designs that differentiate your brand in the Pune market.",
-    areaDescription: "Design is not just about aesthetics; it's about business results. Our designs are engineered to engage, convince, and convert your target audience in Pune.",
+    areaDescription: "Design is not just about aesthetics; it's about business results. Our designs are engineered to engage, convince and convert your target audience in Pune.",
     services: [
       {
         icon: Target,

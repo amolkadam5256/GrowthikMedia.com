@@ -1,6 +1,6 @@
 # How Each AI Platform Picks Sources
 
-Each AI search platform has its own search index, ranking logic, and content preferences. This guide covers what matters for getting cited on each one.
+Each AI search platform has its own search index, ranking logic and content preferences. This guide covers what matters for getting cited on each one.
 
 Sources cited throughout: Princeton GEO study (KDD 2024), SE Ranking domain authority study, ZipTie content-answer fit analysis.
 
@@ -22,13 +22,13 @@ Beyond these basics, each platform weights different signals. Here's what matter
 
 Google AI Overviews pull from Google's own index and lean heavily on E-E-A-T signals (Experience, Expertise, Authoritativeness, Trustworthiness). They appear in roughly 45% of Google searches.
 
-**What makes Google AI Overviews different:** They already have your traditional SEO signals - backlinks, page authority, topical relevance. The additional AI layer adds a preference for content with cited sources and structured data. Research shows that including authoritative citations in your content correlates with a 132% visibility boost, and writing with an authoritative (not salesy) tone adds another 89%.
+**What makes Google AI Overviews different:** They already have your traditional SEO signals - backlinks, page authority, topical relevance. The additional AI layer adds a preference for content with cited sources and structured data. Research shows that including authoritative citations in your content correlates with a 132% visibility boost and writing with an authoritative (not salesy) tone adds another 89%.
 
 **Importantly, AI Overviews don't just recycle the traditional Top 10.** Only about 15% of AI Overview sources overlap with conventional organic results. Pages that wouldn't crack page 1 in traditional search can still get cited if they have strong structured data and clear, extractable answers.
 
 **What to focus on:**
 
-- Schema markup is the single biggest lever - Article, FAQPage, HowTo, and Product schemas give AI Overviews structured context to work with (30-40% visibility boost)
+- Schema markup is the single biggest lever - Article, FAQPage, HowTo and Product schemas give AI Overviews structured context to work with (30-40% visibility boost)
 - Build topical authority through content clusters with strong internal linking
 - Include named, sourced citations in your content (not just claims)
 - Author bios with real credentials matter - E-E-A-T is weighted heavily
@@ -45,9 +45,9 @@ ChatGPT's web search draws from a Bing-based index. It combines this with its tr
 
 **Freshness is a major differentiator.** Content updated within the last 30 days gets cited about 3.2x more often than older content. ChatGPT clearly favors recent information.
 
-**The most important signal is content-answer fit** - a ZipTie analysis of 400,000 pages found that how well your content's style and structure matches ChatGPT's own response format accounts for about 55% of citation likelihood. This is far more important than domain authority (12%) or on-page structure (14%) alone. Write the way ChatGPT would answer the question, and you're more likely to be the source it cites.
+**The most important signal is content-answer fit** - a ZipTie analysis of 400,000 pages found that how well your content's style and structure matches ChatGPT's own response format accounts for about 55% of citation likelihood. This is far more important than domain authority (12%) or on-page structure (14%) alone. Write the way ChatGPT would answer the question and you're more likely to be the source it cites.
 
-**Where ChatGPT looks beyond your site:** Wikipedia accounts for 7.8% of all ChatGPT citations, Reddit for 1.8%, and Forbes for 1.1%. Brand official sites are cited frequently but third-party mentions carry significant weight.
+**Where ChatGPT looks beyond your site:** Wikipedia accounts for 7.8% of all ChatGPT citations, Reddit for 1.8% and Forbes for 1.1%. Brand official sites are cited frequently but third-party mentions carry significant weight.
 
 **What to focus on:**
 
@@ -63,7 +63,7 @@ ChatGPT's web search draws from a Bing-based index. It combines this with its tr
 
 Perplexity always cites its sources with clickable links, making it the most transparent AI search platform. It combines its own index with Google's and runs results through multiple reranking passes - initial relevance retrieval, then traditional ranking factor scoring, then ML-based quality evaluation that can discard entire result sets if they don't meet quality thresholds.
 
-**What makes Perplexity different:** It's the most "research-oriented" AI search engine, and its citation behavior reflects that. Perplexity maintains curated lists of authoritative domains (Amazon, GitHub, major academic sites) that get inherent ranking boosts. It uses a time-decay algorithm that evaluates new content quickly, giving fresh publishers a real shot at citation.
+**What makes Perplexity different:** It's the most "research-oriented" AI search engine and its citation behavior reflects that. Perplexity maintains curated lists of authoritative domains (Amazon, GitHub, major academic sites) that get inherent ranking boosts. It uses a time-decay algorithm that evaluates new content quickly, giving fresh publishers a real shot at citation.
 
 **Perplexity has unique content preferences:**
 
@@ -85,7 +85,7 @@ Perplexity always cites its sources with clickable links, making it the most tra
 
 ## Microsoft Copilot
 
-Copilot is embedded across Microsoft's ecosystem - Edge, Windows, Microsoft 365, and Bing Search. It relies entirely on Bing's index, so if Bing hasn't indexed your content, Copilot can't cite it.
+Copilot is embedded across Microsoft's ecosystem - Edge, Windows, Microsoft 365 and Bing Search. It relies entirely on Bing's index, so if Bing hasn't indexed your content, Copilot can't cite it.
 
 **What makes Copilot different:** The Microsoft ecosystem connection creates unique optimization opportunities. Mentions and content on LinkedIn and GitHub provide ranking boosts that other platforms don't offer. Copilot also puts more weight on page speed - sub-2-second load times are a clear threshold.
 
@@ -140,11 +140,11 @@ Allow: /
 
 If you're optimizing for AI search for the first time, focus your effort where your audience actually is:
 
-**Start with Google AI Overviews** - They reach the most users (45%+ of Google searches) and you likely already have Google SEO foundations in place. Add schema markup, include cited sources in your content, and strengthen E-E-A-T signals.
+**Start with Google AI Overviews** - They reach the most users (45%+ of Google searches) and you likely already have Google SEO foundations in place. Add schema markup, include cited sources in your content and strengthen E-E-A-T signals.
 
-**Then address ChatGPT** - It's the most-used standalone AI search tool for tech and business audiences. Focus on freshness (update content monthly), domain authority, and matching your content structure to how ChatGPT formats its responses.
+**Then address ChatGPT** - It's the most-used standalone AI search tool for tech and business audiences. Focus on freshness (update content monthly), domain authority and matching your content structure to how ChatGPT formats its responses.
 
-**Then expand to Perplexity** - Especially valuable if your audience includes researchers, early adopters, or tech professionals. Add FAQ schema, publish PDF resources, and write in clear, self-contained paragraphs.
+**Then expand to Perplexity** - Especially valuable if your audience includes researchers, early adopters, or tech professionals. Add FAQ schema, publish PDF resources and write in clear, self-contained paragraphs.
 
 **Copilot and Claude are lower priority** unless your audience skews enterprise/Microsoft (Copilot) or developer/analyst (Claude). But the fundamentals - structured content, cited sources, schema markup - help across all platforms.
 

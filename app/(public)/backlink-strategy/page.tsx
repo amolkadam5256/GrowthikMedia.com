@@ -1,21 +1,21 @@
 import { Metadata } from "next";
 import { CONTACT_INFO } from "@/constants/contact";
 import Link from "next/link";
-import { 
-  Lightbulb, 
-  Globe, 
-  Send, 
-  Link as LinkIcon, 
-  ShieldCheck, 
-  TrendingUp, 
-  MapPin, 
-  Rocket 
+import {
+  Lightbulb,
+  Globe,
+  Send,
+  Link as LinkIcon,
+  ShieldCheck,
+  TrendingUp,
+  MapPin,
+  Rocket
 } from "lucide-react";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.growthikmedia.com/services/backlink-strategy/" },
   title: "AI-Powered SEO & Backlink Strategy for Pune Businesses | Growthik Media",
-  description: "Boost your Pune-based business with our AI-driven SEO strategy. Explore high-quality backlink ideas, guest posting sites, and outreach templates tailored for Pune, AI, and SEO.",
+  description: "Boost your Pune-based business with our AI-driven SEO strategy. Explore high-quality backlink ideas, guest posting sites and outreach templates tailored for Pune, AI and SEO.",
   openGraph: {
     title: "AI-Powered SEO & Backlink Strategy for Pune Businesses",
     description: "The ultimate guide to generating high-authority backlinks for Pune-based AI and SEO services.",
@@ -74,7 +74,7 @@ export default function BacklinkStrategyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-red-900/20 via-black to-black -z-10" />
@@ -96,7 +96,7 @@ export default function BacklinkStrategyPage() {
       {/* Grid Content */}
       <section className="py-20 container mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-8 mb-20">
-          
+
           {/* Blog Ideas Card */}
           <div className="p-8 rounded-3xl bg-neutral-900/50 border border-white/5 hover:border-red-500/30 transition-all group">
             <div className="flex items-center gap-4 mb-6">
@@ -160,7 +160,7 @@ export default function BacklinkStrategyPage() {
             {outreachTemplates.map((template, i) => (
               <div key={i} className="p-6 rounded-2xl bg-neutral-900 border border-white/5 relative group overflow-hidden">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
-                   <ShieldCheck className="w-12 h-12 text-red-500" />
+                  <ShieldCheck className="w-12 h-12 text-red-500" />
                 </div>
                 <h3 className="text-xl font-bold text-red-500 mb-2">{template.title}</h3>
                 <div className="space-y-4">
@@ -200,7 +200,7 @@ export default function BacklinkStrategyPage() {
             <MapPin className="w-8 h-8 text-red-500 mb-4" />
             <h3 className="text-xl font-bold mb-2 uppercase">Local Citations</h3>
             <p className="text-gray-400 text-sm">
-              Ensure your NAP (Name, Address, Phone) is consistent across Justdial, Sulekha, and Google Business Profile for Pune regional authority.
+              Ensure your NAP (Name, Address, Phone) is consistent across Justdial, Sulekha and Google Business Profile for Pune regional authority.
             </p>
           </div>
         </div>
@@ -212,14 +212,14 @@ export default function BacklinkStrategyPage() {
             Let our senior engineers build your automated SEO engine and backlink profile. Start your growth journey today.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link 
-              href="/audit" 
+            <Link
+              href="/audit"
               className="px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-bold rounded-full transition-all uppercase tracking-widest shadow-lg shadow-red-500/20"
             >
               Get Free SEO Audit
             </Link>
-            <Link 
-              href="/contact" 
+            <Link
+              href="/contact"
               className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold rounded-full transition-all border border-white/10 uppercase tracking-widest"
             >
               Schedule Strategy Call

@@ -22,13 +22,15 @@ export default function WebsiteDevelopmentPage() {
   const service = "Website Development";
   return (
     <>
-      <Script id={`schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org", "@type": "Service", serviceType: service, provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` }, areaServed: { "@type": "City", name: "Pune" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
-      })}} />
+      <Script id={`schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org", "@type": "Service", serviceType: service, provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` }, areaServed: { "@type": "City", name: "Pune" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
+        })
+      }} />
       <FAQSchema
         questions={[
           { q: "How long does a new website project take?", a: "Most corporate sites launch in 4–8 weeks depending on scope; ecommerce and complex integrations can take 10–14 weeks." },
-          { q: "Do you optimize for SEO and speed by default?", a: "Yes. Every build ships with technical SEO, schema, image optimization, and Core Web Vitals tuning baked in." },
+          { q: "Do you optimize for SEO and speed by default?", a: "Yes. Every build ships with technical SEO, schema, image optimization and Core Web Vitals tuning baked in." },
           { q: "Which stack do you use?", a: "We specialize in Next.js with headless CMS options, but also deliver high-speed WordPress where it fits budget and workflows." },
         ]}
       />

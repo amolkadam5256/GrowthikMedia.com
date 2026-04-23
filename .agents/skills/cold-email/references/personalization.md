@@ -61,7 +61,7 @@ Tapping into what prospects are passionate about drives significantly higher res
 
 ## Observation-Based Openers (highest performing)
 
-**Trigger-event:** "Congrats on the recent funding round - scaling the team from here is exciting, and I imagine [challenge] is top of mind."
+**Trigger-event:** "Congrats on the recent funding round - scaling the team from here is exciting and I imagine [challenge] is top of mind."
 
 **Observation:** "Your recent post about [topic] resonated - especially the part about [detail]. Got me thinking about how that applies to [challenge]."
 

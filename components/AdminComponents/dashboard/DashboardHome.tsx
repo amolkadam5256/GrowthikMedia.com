@@ -265,7 +265,7 @@ export default function DashboardHome() {
             Live Operations Dashboard
           </h1>
           <p className="text-sm text-gray-500">
-            Real-time pulse across leads, content, reviews, and system health.
+            Real-time pulse across leads, content, reviews and system health.
           </p>
         </div>
         <div className="flex items-center gap-3">

@@ -3,7 +3,7 @@ import PageHero from '@/components/PublicComponents/ui/PageHero';
 
 export const metadata: Metadata = {
   title: 'Awards & Recognition | Growthik Media',
-  description: 'Our agency accreditations from Google, HubSpot, and Web Design institutions.',
+  description: 'Our agency accreditations from Google, HubSpot and Web Design institutions.',
 };
 
 export default function AwardsPage() {
@@ -19,8 +19,8 @@ export default function AwardsPage() {
         />
 
         <div className="py-20 text-center border-t border-gray-200 dark:border-gray-800">
-           <h2 className="text-3xl text-gray-500 font-bold mb-4">Content Updating</h2>
-           <p className="text-gray-400">Certificates are currently being synchronized to our portal.</p>
+          <h2 className="text-3xl text-gray-500 font-bold mb-4">Content Updating</h2>
+          <p className="text-gray-400">Certificates are currently being synchronized to our portal.</p>
         </div>
       </main>
     </div>

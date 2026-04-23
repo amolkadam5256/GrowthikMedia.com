@@ -14,9 +14,9 @@ const STEPS = [
   {
     title: "Finding the Gaps",
     benefit:
-      "A deep look at your SEO, current ads, and why visitors might be leaving without buying.",
+      "A deep look at your SEO, current ads and why visitors might be leaving without buying.",
     description:
-      "We start by taking a close look at your current setup. Our team identifies speed issues, broken links, and conversion leaks before we spend a single rupee.",
+      "We start by taking a close look at your current setup. Our team identifies speed issues, broken links and conversion leaks before we spend a single rupee.",
     icon: ClipboardCheck,
     keywords: ["Digital Marketing Company in Pune", "SEO Services in Pune"],
   },
@@ -32,7 +32,7 @@ const STEPS = [
   {
     title: "Getting to Work",
     benefit:
-      "Smart ads, SEO that works, and content your customers actually care about.",
+      "Smart ads, SEO that works and content your customers actually care about.",
     description:
       "Our team launches focused campaigns across the right platforms. We focus on people who are actually looking for what you sell, driving real sales through honest marketing.",
     icon: Rocket,
@@ -41,7 +41,7 @@ const STEPS = [
   {
     title: "Watch & Improve",
     benefit:
-      "Regular updates, testing new ideas, and doing more of what works.",
+      "Regular updates, testing new ideas and doing more of what works.",
     description:
       "Marketing is never 'finished'. We keep testing new ideas and improving your site to ensure your results keep getting better while we help you grow.",
     icon: TrendingUp,

@@ -223,7 +223,7 @@ Subject: Last chance to keep your [Product] account active
 Hi [Name],
 
 This is our last reminder. Your payment of $[amount] is past
-due, and your account will be paused tomorrow ([date]).
+due and your account will be paused tomorrow ([date]).
 
 [Update Payment Method →]
 

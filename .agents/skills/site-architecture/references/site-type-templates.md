@@ -1,6 +1,6 @@
 # Site Type Templates
 
-Full page hierarchy templates with ASCII trees, URL maps, and navigation recommendations for common site types.
+Full page hierarchy templates with ASCII trees, URL maps and navigation recommendations for common site types.
 
 ---
 
@@ -252,7 +252,7 @@ Homepage (/)
 
 **Header (7 items + CTA)**: Product | Solutions | Pricing | Resources | Blog | Docs | Integrations | [Start Free Trial]
 
-Use mega menus for Product (features list), Solutions (use cases + industries), and Resources (blog, guides, templates, webinars, case studies).
+Use mega menus for Product (features list), Solutions (use cases + industries) and Resources (blog, guides, templates, webinars, case studies).
 
 ---
 

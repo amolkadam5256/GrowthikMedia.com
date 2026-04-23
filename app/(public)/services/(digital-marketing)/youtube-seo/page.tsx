@@ -9,14 +9,14 @@ import RelatedServices from "@/components/PublicComponents/RelatedServices";
 export const metadata: Metadata = {
   title: "YouTube Video SEO Services in Pune | Growthik Media",
   description:
-    "Dominate video search with expert YouTube Video SEO services in Pune. Growthik Media helps you rank higher, increase views, and grow your channel content.",
+    "Dominate video search with expert YouTube Video SEO services in Pune. Growthik Media helps you rank higher, increase views and grow your channel content.",
   alternates: {
     canonical: "https://www.growthikmedia.com/services/youtube-seo/",
   },
   openGraph: {
     title: "YouTube Video SEO Services in Pune | Growthik Media",
     description:
-      "Dominate video search with expert YouTube Video SEO services in Pune. Growthik Media helps you rank higher, increase views, and grow your channel content.",
+      "Dominate video search with expert YouTube Video SEO services in Pune. Growthik Media helps you rank higher, increase views and grow your channel content.",
     url: `${CONTACT_INFO.website}/services/youtube-seo/`,
     siteName: "Growthik Media",
     locale: "en_IN",
@@ -85,7 +85,7 @@ export default function YoutubeSeoPage() {
                 For businesses in Pune looking to establish authority, a
                 well-optimized YouTube channel acts as a 24/7 lead generation
                 engine. At Growthik Media, we analyze your competitors, identify
-                high-intent keywords relevant to the Pune market, and implement
+                high-intent keywords relevant to the Pune market and implement
                 a strategy that ensures your videos appear when your potential
                 customers are looking for answers.
               </p>
@@ -100,7 +100,7 @@ export default function YoutubeSeoPage() {
                 high-conversion thumbnails and &quot;hook&quot; scripts that
                 grab attention immediately. We handle every aspect of the
                 technical SEO process, including optimized titles, detailed
-                descriptions, strategic tagging, and closed captions.
+                descriptions, strategic tagging and closed captions.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">
@@ -109,7 +109,7 @@ export default function YoutubeSeoPage() {
               <p className="text-(--text-secondary) leading-relaxed">
                 Ranking is just the first step; building a loyal community is
                 what creates long-term value. We help you implement interactive
-                elements like Cards, End Screens, and Community Tab posts to
+                elements like Cards, End Screens and Community Tab posts to
                 keep viewers on your channel longer. Growthik Media is the
                 leading YouTube video SEO partner in Pune for brands that want
                 measurable, sustainable channel growth rather than just vanity

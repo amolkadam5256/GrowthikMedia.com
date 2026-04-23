@@ -71,7 +71,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.growthikmedia.com'),
   title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
-  description: `${CONTACT_INFO.companyName} is Pune's leading digital marketing agency helping businesses grow with professional SEO, Google Ads, and smart marketing automation.`,
+  description: `${CONTACT_INFO.companyName} is Pune's leading digital marketing agency helping businesses grow with professional SEO, Google Ads and smart marketing automation.`,
   manifest: "/brand/site.webmanifest",
   icons: {
     icon: [

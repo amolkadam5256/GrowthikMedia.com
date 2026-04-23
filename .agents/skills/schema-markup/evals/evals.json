@@ -47,7 +47,7 @@
     {
       "id": 4,
       "prompt": "We're an e-commerce site selling physical products. What schema markup do we need for our product pages?",
-      "expected_output": "Should implement Product schema with full properties: name, description, image, brand, sku, offers (with price, priceCurrency, availability, url). Should recommend AggregateRating if they have reviews, and Review schema for individual reviews. Should include BreadcrumbList for navigation. Should address common e-commerce schema types: Product, Offer, AggregateRating, Review. Should provide complete JSON-LD code. Should note that Product schema can enable rich results (price, availability, ratings in search).",
+      "expected_output": "Should implement Product schema with full properties: name, description, image, brand, sku, offers (with price, priceCurrency, availability, url). Should recommend AggregateRating if they have reviews and Review schema for individual reviews. Should include BreadcrumbList for navigation. Should address common e-commerce schema types: Product, Offer, AggregateRating, Review. Should provide complete JSON-LD code. Should note that Product schema can enable rich results (price, availability, ratings in search).",
       "assertions": [
         "Implements Product schema with full properties",
         "Includes Offer with price, availability",

@@ -235,7 +235,7 @@ They get [their reward] too.
 
 ## Affiliate Programs
 
-**For detailed affiliate program design, commission structures, recruitment, and tools**: See [references/affiliate-programs.md](references/affiliate-programs.md)
+**For detailed affiliate program design, commission structures, recruitment and tools**: See [references/affiliate-programs.md](references/affiliate-programs.md)
 
 ---
 

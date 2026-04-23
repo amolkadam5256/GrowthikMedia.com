@@ -20,7 +20,7 @@
     {
       "id": 2,
       "prompt": "Write a 'HubSpot vs Salesforce' comparison page. We're HubSpot and want to show why we're the better choice for SMBs.",
-      "expected_output": "Should identify this as the 'you vs competitor' format. Should include structured comparison sections: overview of both, feature-by-feature comparison, pricing comparison, pros/cons of each, who each is best for, and migration path. Should be factually accurate about the competitor while strategically positioning the user's product. Should include a TL;DR at the top. Should address the SMB angle throughout. Should use the centralized competitor data architecture pattern.",
+      "expected_output": "Should identify this as the 'you vs competitor' format. Should include structured comparison sections: overview of both, feature-by-feature comparison, pricing comparison, pros/cons of each, who each is best for and migration path. Should be factually accurate about the competitor while strategically positioning the user's product. Should include a TL;DR at the top. Should address the SMB angle throughout. Should use the centralized competitor data architecture pattern.",
       "assertions": [
         "Identifies as 'you vs competitor' format",
         "Includes structured comparison sections",
@@ -81,7 +81,7 @@
     {
       "id": 6,
       "prompt": "I need to create a battle card for our sales team comparing us to Zendesk. It should help reps handle competitive objections during sales calls.",
-      "expected_output": "Should recognize this as internal sales enablement material, not a public comparison page. Should defer to or cross-reference the sales-enablement skill, which handles battle cards, objection handling docs, and internal competitive collateral. May provide some competitive positioning advice but should make clear that sales-enablement is the right skill for internal sales materials.",
+      "expected_output": "Should recognize this as internal sales enablement material, not a public comparison page. Should defer to or cross-reference the sales-enablement skill, which handles battle cards, objection handling docs and internal competitive collateral. May provide some competitive positioning advice but should make clear that sales-enablement is the right skill for internal sales materials.",
       "assertions": [
         "Recognizes this as internal sales enablement material",
         "References or defers to sales-enablement skill",

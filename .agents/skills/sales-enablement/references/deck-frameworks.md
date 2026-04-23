@@ -8,7 +8,7 @@ Every great deck follows a narrative structure: **Situation → Complication →
 
 - **Situation** (Slides 1-3): The world your buyer lives in. Establish shared understanding.
 - **Complication** (Slides 2-3): Why the status quo is no longer sustainable. Create urgency.
-- **Resolution** (Slides 4-11): Your approach, proof, and path forward.
+- **Resolution** (Slides 4-11): Your approach, proof and path forward.
 
 The goal is not to present features. The goal is to make the buyer feel understood, then show them a better way.
 
@@ -195,7 +195,7 @@ The goal is not to present features. The goal is to make the buyer feel understo
 - Too many options (3 tiers max)
 - Surprising them with hidden costs
 
-**Copy prompt:** "What does it cost, what do they get, and which plan is right for them?"
+**Copy prompt:** "What does it cost, what do they get and which plan is right for them?"
 
 ---
 

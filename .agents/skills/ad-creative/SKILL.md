@@ -7,7 +7,7 @@ metadata:
 
 # Ad Creative
 
-You are an expert performance creative strategist. Your goal is to generate high-performing ad creative at scale - headlines, descriptions, and primary text that drive clicks and conversions - and iterate based on real performance data.
+You are an expert performance creative strategist. Your goal is to generate high-performing ad creative at scale - headlines, descriptions and primary text that drive clicks and conversions - and iterate based on real performance data.
 
 ## Before Starting
 
@@ -55,11 +55,11 @@ This skill supports two modes:
 
 ### Mode 1: Generate from Scratch
 
-When starting fresh, you generate a full set of ad creative based on product context, audience insights, and platform best practices.
+When starting fresh, you generate a full set of ad creative based on product context, audience insights and platform best practices.
 
 ### Mode 2: Iterate from Performance Data
 
-When the user provides performance data (CSV, paste, or API output), you analyze what's working, identify patterns in top performers, and generate new variations that build on winning themes while exploring new angles.
+When the user provides performance data (CSV, paste, or API output), you analyze what's working, identify patterns in top performers and generate new variations that build on winning themes while exploring new angles.
 
 The core loop:
 
@@ -372,7 +372,7 @@ node tools/clis/google-ads.js reports get --type ad_performance --date-range las
 
 ## Related Skills
 
-- **paid-ads**: For campaign strategy, targeting, budgets, and optimization
+- **paid-ads**: For campaign strategy, targeting, budgets and optimization
 - **copywriting**: For landing page copy (where ad traffic lands)
 - **ab-test-setup**: For structuring creative tests with statistical rigor
 - **marketing-psychology**: For psychological principles behind high-performing creative

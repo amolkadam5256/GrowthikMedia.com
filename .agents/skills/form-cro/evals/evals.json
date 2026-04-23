@@ -3,8 +3,8 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Audit our demo request form. It currently has these fields: First Name, Last Name, Work Email, Phone Number, Company Name, Company Size, Job Title, Industry, Current Solution, Budget Range, and a 'Tell us about your needs' textarea. Our conversion rate is 3.1% and we want to improve it.",
-      "expected_output": "Should check for product-marketing-context.md first. Should apply the 'every field has a cost' principle - 11 fields is excessive for a demo form. Should reference the field cost data (3 fields baseline, 7+ fields = 25-50% conversion reduction). Should evaluate each field: which are essential for demo prep, which can be collected later or inferred. Should recommend cutting to essential fields (likely Work Email, Company Name, and maybe one qualifier). Should provide audit findings in the structured format (Issue, Impact, Fix, Priority). Should recommend Quick Wins, High-Impact Changes, and Test Ideas.",
+      "prompt": "Audit our demo request form. It currently has these fields: First Name, Last Name, Work Email, Phone Number, Company Name, Company Size, Job Title, Industry, Current Solution, Budget Range and a 'Tell us about your needs' textarea. Our conversion rate is 3.1% and we want to improve it.",
+      "expected_output": "Should check for product-marketing-context.md first. Should apply the 'every field has a cost' principle - 11 fields is excessive for a demo form. Should reference the field cost data (3 fields baseline, 7+ fields = 25-50% conversion reduction). Should evaluate each field: which are essential for demo prep, which can be collected later or inferred. Should recommend cutting to essential fields (likely Work Email, Company Name and maybe one qualifier). Should provide audit findings in the structured format (Issue, Impact, Fix, Priority). Should recommend Quick Wins, High-Impact Changes and Test Ideas.",
       "assertions": [
         "Checks for product-marketing-context.md",
         "Applies 'every field has a cost' principle",
@@ -18,7 +18,7 @@
     },
     {
       "id": 2,
-      "prompt": "Our contact form just has Name, Email, and Message fields but we're getting a lot of spam submissions and low-quality leads. How do we fix this without adding too much friction?",
+      "prompt": "Our contact form just has Name, Email and Message fields but we're getting a lot of spam submissions and low-quality leads. How do we fix this without adding too much friction?",
       "expected_output": "Should apply the contact form type guidance. Should address spam with non-friction solutions first: honeypot fields, reCAPTCHA, server-side validation. Should then address lead quality: suggest adding one qualifying field (company name or budget range) to filter without excessive friction. Should apply the error handling guidance for validation. Should recommend form layout and submit button optimization. Should balance quality vs quantity in recommendations.",
       "assertions": [
         "Applies contact form type guidance",
@@ -32,7 +32,7 @@
     },
     {
       "id": 3,
-      "prompt": "should we use a single-step or multi-step form for our quote request? we need company info, project details, timeline, and budget.",
+      "prompt": "should we use a single-step or multi-step form for our quote request? we need company info, project details, timeline and budget.",
       "expected_output": "Should trigger on casual phrasing. Should apply the multi-step form guidance - with this many required data types, multi-step is likely better. Should reference the threshold: multi-step recommended when more than 5-6 fields. Should recommend grouping by type (contact info → project details → budget/timeline). Should include progress indicator recommendation. Should apply best practices: easy questions first, save progress, allow back navigation. Should note that multi-step often increases completion for longer forms.",
       "assertions": [
         "Triggers on casual phrasing",
@@ -78,7 +78,7 @@
     {
       "id": 6,
       "prompt": "Our signup form has too many fields and people keep abandoning it halfway through. Can you help optimize it?",
-      "expected_output": "Should recognize this is about signup/registration form optimization, not general form CRO. Should defer to or cross-reference the signup-flow-cro skill, which specifically handles signup, registration, and account creation flows. May provide general form friction advice but should make clear that signup-flow-cro is the right skill for signup forms.",
+      "expected_output": "Should recognize this is about signup/registration form optimization, not general form CRO. Should defer to or cross-reference the signup-flow-cro skill, which specifically handles signup, registration and account creation flows. May provide general form friction advice but should make clear that signup-flow-cro is the right skill for signup forms.",
       "assertions": [
         "Recognizes this as signup flow optimization",
         "References or defers to signup-flow-cro skill",

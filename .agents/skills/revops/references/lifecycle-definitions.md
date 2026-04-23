@@ -1,6 +1,6 @@
 # Lifecycle Stage Definitions
 
-Complete templates for lead lifecycle stages, MQL criteria by business type, SLAs, and rejection/recycling workflows.
+Complete templates for lead lifecycle stages, MQL criteria by business type, SLAs and rejection/recycling workflows.
 
 ## Stage Templates
 
@@ -99,7 +99,7 @@ Complete templates for lead lifecycle stages, MQL criteria by business type, SLA
 **Entry criteria:**
 
 - Formal opportunity created in CRM
-- Deal value, close date, and stage assigned
+- Deal value, close date and stage assigned
 
 **Exit criteria:**
 

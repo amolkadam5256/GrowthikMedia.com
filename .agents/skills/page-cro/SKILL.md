@@ -31,7 +31,7 @@ Analyze the page across these dimensions, in order of impact:
 **Check for:**
 
 - Can a visitor understand what this is and why they should care within 5 seconds?
-- Is the primary benefit clear, specific, and differentiated?
+- Is the primary benefit clear, specific and differentiated?
 - Is it written in the customer's language (not company jargon)?
 
 **Common issues:**
@@ -54,7 +54,7 @@ Analyze the page across these dimensions, in order of impact:
 - Specificity: Include numbers, timeframes, or concrete details
 - Social proof: "Join 10,000+ teams who..."
 
-### 3. CTA Placement, Copy, and Hierarchy
+### 3. CTA Placement, Copy and Hierarchy
 
 **Primary CTA assessment:**
 

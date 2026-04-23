@@ -164,7 +164,7 @@ Source: Plain English Campaign A-Z of Alternative Words (2001), Australian Gover
 | forward | send |
 | frequently | often |
 | furnish | give, provide |
-| furthermore | also, and |
+| furthermore | also and |
 
 ---
 
@@ -223,7 +223,7 @@ Source: Plain English Campaign A-Z of Alternative Words (2001), Australian Gover
 | (it is) mandatory | (you) must |
 | manner | way |
 | modification | change |
-| moreover | also, and |
+| moreover | also and |
 
 ---
 

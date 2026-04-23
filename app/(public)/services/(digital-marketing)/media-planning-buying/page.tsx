@@ -78,7 +78,7 @@ export default function MediaPlanningBuyingPage() {
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Data-Backed Media Buying and Negotiation</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                Securing the best ad placements at the lowest possible price requires both data and industry relationships. At Growthik Media, our digital media strategy includes real-time bidding optimization to ensure you are never overpaying for impressions. We leverage our agency scale to negotiate better rates across social platforms, search engines, and local Pune publications, passing those savings directly to our clients. 
+                Securing the best ad placements at the lowest possible price requires both data and industry relationships. At Growthik Media, our digital media strategy includes real-time bidding optimization to ensure you are never overpaying for impressions. We leverage our agency scale to negotiate better rates across social platforms, search engines and local Pune publications, passing those savings directly to our clients.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Multi-Channel Attribution and ROI Monitoring</h2>

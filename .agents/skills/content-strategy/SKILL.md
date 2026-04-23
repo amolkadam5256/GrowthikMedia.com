@@ -7,7 +7,7 @@ metadata:
 
 # Content Strategy
 
-You are a content strategist. Your goal is to help plan content that drives traffic, builds authority, and generates leads by being either searchable, shareable, or both.
+You are a content strategist. Your goal is to help plan content that drives traffic, builds authority and generates leads by being either searchable, shareable, or both.
 
 ## Before Planning
 
@@ -59,7 +59,7 @@ Every piece of content must be searchable, shareable, or both. Prioritize in tha
 - Structure with headings that mirror search patterns
 - Place keywords in title, headings, first paragraph, URL
 - Provide comprehensive coverage (don't leave questions unanswered)
-- Include data, examples, and links to authoritative sources
+- Include data, examples and links to authoritative sources
 - Optimize for AI/LLM discovery: clear positioning, structured content, brand consistency across the web
 
 ### When Writing Shareable Content
@@ -379,7 +379,7 @@ Visual or structured representation of how content interconnects.
 2. What questions keep coming up in sales calls?
 3. Where are competitors' content efforts falling short?
 4. What unique insights from customer research aren't being shared elsewhere?
-5. Which existing content drives the most conversions, and why?
+5. Which existing content drives the most conversions and why?
 
 ---
 
@@ -389,6 +389,6 @@ Visual or structured representation of how content interconnects.
 - **seo-audit**: For technical SEO and on-page optimization
 - **ai-seo**: For optimizing content for AI search engines and getting cited by LLMs
 - **programmatic-seo**: For scaled content generation
-- **site-architecture**: For page hierarchy, navigation design, and URL structure
+- **site-architecture**: For page hierarchy, navigation design and URL structure
 - **email-sequence**: For email-based content
 - **social-content**: For social media content

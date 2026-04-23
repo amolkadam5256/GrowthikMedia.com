@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { portfolioData } from '@/lib/data/portfolio';
 import ClientPortfolioGrid from '@/components/PublicComponents/portfolio/ClientPortfolioGrid';
+import { buildCollectionSchema, buildPortfolioItemListItems } from '@/lib/seo/collectionSchema';
 
 export const metadata: Metadata = {
   title: 'Web Design & Digital Marketing Portfolio | Growthik Media - Pune',
@@ -50,35 +51,15 @@ export const metadata: Metadata = {
   },
 };
 
-const portfolioSchema = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'CollectionPage',
-      name: 'Growthik Media Portfolio - Web Design & Digital Marketing Projects',
-      url: 'https://www.growthikmedia.com/portfolio/',
-      description:
-        'Explore 50+ real client projects in web design, SEO, digital marketing, and web development by Growthik Media, Pune.',
-    },
-    {
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: 'https://www.growthikmedia.com/',
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Portfolio',
-          item: 'https://www.growthikmedia.com/portfolio/',
-        },
-      ],
-    },
-  ],
-};
+const portfolioSchema = buildCollectionSchema({
+  path: '/portfolio/',
+  name: 'Growthik Media Portfolio - Web Design and Digital Marketing Projects',
+  description:
+    'Explore Growthik Media portfolio projects covering websites, SEO campaigns, branding, and digital marketing work for businesses in Pune and beyond.',
+  breadcrumbName: 'Portfolio',
+  itemName: 'Portfolio Projects',
+  items: buildPortfolioItemListItems(portfolioData),
+});
 
 export default function PortfolioPage() {
   return (
@@ -122,7 +103,7 @@ export default function PortfolioPage() {
             <div className="text-center">
               <span className="block text-3xl font-black text-gray-900 dark:text-white">2</span>
               <span className="text-xs text-gray-500 uppercase font-semibold">Global Markets</span>
-            </div>
+            </div> and  and
           </div>
         </section>
 

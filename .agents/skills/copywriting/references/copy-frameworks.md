@@ -1,6 +1,6 @@
 # Copy Frameworks Reference
 
-Headline formulas, page section types, and structural templates.
+Headline formulas, page section types and structural templates.
 
 ## Contents
 - Headline Formulas (outcome-focused, problem-focused, audience-focused, differentiation-focused, proof-focused, additional formulas)

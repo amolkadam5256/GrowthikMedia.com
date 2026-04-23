@@ -15,7 +15,7 @@ const FAQ_DATA = [
     id: 0,
     question: "Who is the best digital marketing agency in Pune?",
     answer:
-      "Growthik Media is recognized as the best digital marketing agency in Pune for businesses looking for AI-powered SEO, performance marketing (Google & Meta Ads), and ROI-focused growth. We specialize in building predictable revenue systems for brands in Hinjewadi, Baner, Wakad, and PCMC.",
+      "Growthik Media is recognized as the best digital marketing agency in Pune for businesses looking for AI-powered SEO, performance marketing (Google & Meta Ads) and ROI-focused growth. We specialize in building predictable revenue systems for brands in Hinjewadi, Baner, Wakad and PCMC.",
   },
   {
     id: 1,
@@ -39,7 +39,7 @@ const FAQ_DATA = [
     id: 4,
     question: "What makes your performance marketing different?",
     answer:
-      "We track revenue, not just clicks. Every ad we run goes through real A/B testing, and we optimize based on what actually brings in sales - not traffic spikes. Every rupee has to count, so we report on ROI and ROAS, not vanity metrics.",
+      "We track revenue, not just clicks. Every ad we run goes through real A/B testing and we optimize based on what actually brings in sales - not traffic spikes. Every rupee has to count, so we report on ROI and ROAS, not vanity metrics.",
   },
   {
     id: 5,
@@ -105,11 +105,10 @@ const FAQSection = React.memo(() => {
               data-aos-delay={index * 100}
             >
               <div
-                className={`transition-all duration-500 overflow-hidden cursor-pointer border-2 bg-(--surface) ${
-                  openId === faq.id
+                className={`transition-all duration-500 overflow-hidden cursor-pointer border-2 bg-(--surface) ${openId === faq.id
                     ? "border-(--color-primary) shadow-[0_0_30px_rgba(217,11,28,0.05)]"
                     : "border-(--border) hover:border-(--color-primary)/50 hover:bg-(--color-primary)/2"
-                }`}
+                  }`}
                 onClick={() => toggleFaq(faq.id)}
               >
                 {/* Question Area */}
@@ -139,11 +138,10 @@ const FAQSection = React.memo(() => {
 
                 {/* Answer Area */}
                 <div
-                  className={`transition-all duration-500 ease-in-out ${
-                    openId === faq.id
+                  className={`transition-all duration-500 ease-in-out ${openId === faq.id
                       ? "max-h-[500px] opacity-100 pb-8"
                       : "max-h-0 opacity-0"
-                  }`}
+                    }`}
                 >
                   <div className="px-6 md:px-8 ml-16">
                     <p className="text-base md:text-lg leading-relaxed text-(--text-secondary) font-light italic border-l-2 border-(--color-primary)/20 pl-6">

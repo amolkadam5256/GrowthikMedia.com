@@ -104,7 +104,7 @@ export default function ServicePage() {
           <p className="text-lg md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
             Looking for professional ${name} in Pune? We create
             custom, data-driven, SEO-optimized solutions that help
-            businesses generate leads, increase visibility, and grow revenue. As
+            businesses generate leads, increase visibility and grow revenue. As
             a leading Digital Marketing Agency in Pune, we don’t just deliver
             services - we build high-performance digital assets that rank on
             Google and convert visitors into customers.
@@ -482,7 +482,7 @@ export default function ServicePage() {
             </ul>
             <p className="text-(--text-secondary) font-medium mb-8">
               We offer affordable, transparent packages customized for startups,
-              SMEs, and enterprises.
+              SMEs and enterprises.
             </p>
             <Link
               href="/contact"
@@ -502,7 +502,7 @@ export default function ServicePage() {
               {[
                 {
                   q: \`What does ${name} include?\`,
-                  a: \`Our ${name} involves comprehensive planning, execution, and continuous optimization tailored to maximize business impact.\`,
+                  a: \`Our ${name} involves comprehensive planning, execution and continuous optimization tailored to maximize business impact.\`,
                 },
                 {
                   q: "How long does it take to see results?",
@@ -514,7 +514,7 @@ export default function ServicePage() {
                 },
                 {
                   q: "Do you provide ongoing support?",
-                  a: "Absolutely. We offer robust ongoing maintenance, reporting, and strategic support to ensure continued success.",
+                  a: "Absolutely. We offer robust ongoing maintenance, reporting and strategic support to ensure continued success.",
                 },
               ].map((faq, idx) => (
                 <details

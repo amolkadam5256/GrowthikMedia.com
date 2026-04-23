@@ -20,7 +20,7 @@
     {
       "id": 2,
       "prompt": "We want to launch on Product Hunt. Any tips? We've never done it before.",
-      "expected_output": "Should apply the Product Hunt strategy section. Should cover: choosing the right day and time, preparing assets (logo, gallery images, maker video), crafting the tagline and description, building a hunter network, activating supporters on launch day, engaging with comments, and post-launch follow-up. Should recommend preparation timeline (start 2-4 weeks before). Should mention common mistakes to avoid. Should set realistic expectations about outcomes.",
+      "expected_output": "Should apply the Product Hunt strategy section. Should cover: choosing the right day and time, preparing assets (logo, gallery images, maker video), crafting the tagline and description, building a hunter network, activating supporters on launch day, engaging with comments and post-launch follow-up. Should recommend preparation timeline (start 2-4 weeks before). Should mention common mistakes to avoid. Should set realistic expectations about outcomes.",
       "assertions": [
         "Applies Product Hunt strategy section",
         "Covers timing (day and time selection)",
@@ -35,14 +35,14 @@
     {
       "id": 3,
       "prompt": "we just shipped a major feature update. how should we announce it? it's not a full product launch, just a big new feature.",
-      "expected_output": "Should trigger on casual phrasing. Should apply the ongoing launch strategy section, specifically the major/medium/minor update matrix. Should identify this as a major feature update. Should recommend appropriate channels and tactics for a feature launch (less than a full product launch but more than a changelog entry). Should include: announcement email, blog post, social media push, in-app notification, and possibly a mini Product Hunt launch. Should provide a feature announcement framework.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the ongoing launch strategy section, specifically the major/medium/minor update matrix. Should identify this as a major feature update. Should recommend appropriate channels and tactics for a feature launch (less than a full product launch but more than a changelog entry). Should include: announcement email, blog post, social media push, in-app notification and possibly a mini Product Hunt launch. Should provide a feature announcement framework.",
       "assertions": [
         "Triggers on casual phrasing",
         "Applies ongoing launch strategy / update matrix",
         "Identifies as major feature update",
         "Scales tactics appropriately (not full launch)",
         "Recommends announcement channels",
-        "Includes email, blog, social, and in-app notification",
+        "Includes email, blog, social and in-app notification",
         "Provides feature announcement framework"
       ],
       "files": []

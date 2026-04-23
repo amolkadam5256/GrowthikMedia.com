@@ -6,8 +6,8 @@
     "white": "#ffffff"
   },
   "usage": {
-    "logoPrimary": "Use for website header, footer, metadata, and transparent placements.",
-    "brandMark": "Use for favicon, compact branding, and square icon placements.",
+    "logoPrimary": "Use for website header, footer, metadata and transparent placements.",
+    "brandMark": "Use for favicon, compact branding and square icon placements.",
     "wordmark": "Use for vector-first placements and high-resolution exports."
   }
 }

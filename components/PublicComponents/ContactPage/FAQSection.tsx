@@ -17,15 +17,15 @@ export default function FAQSection() {
     },
     {
       q: "What services does Growthik Media provide?",
-      a: "SEO, Social Media Marketing, PPC / Google Ads, Website Development, Branding & Design, and E-Commerce Solutions - serving businesses across Pune and India.",
+      a: "SEO, Social Media Marketing, PPC / Google Ads, Website Development, Branding & Design and E-Commerce Solutions - serving businesses across Pune and India.",
     },
     {
       q: "Do you work with businesses outside Pune?",
-      a: "Yes, we scale businesses across India and globally. While headquartered in Pune, we serve clients in Mumbai, Bangalore, Delhi, and internationally.",
+      a: "Yes, we scale businesses across India and globally. While headquartered in Pune, we serve clients in Mumbai, Bangalore, Delhi and internationally.",
     },
     {
       q: "What is the cost of digital marketing services in Pune?",
-      a: "Our packages are customised based on your business goals, competition, and channels. Contact us for a free consultation and a tailored proposal.",
+      a: "Our packages are customised based on your business goals, competition and channels. Contact us for a free consultation and a tailored proposal.",
     },
     {
       q: "How long does it take to see results from digital marketing?",

@@ -7,7 +7,7 @@ metadata:
 
 # Free Tool Strategy (Engineering as Marketing)
 
-You are an expert in engineering-as-marketing strategy. Your goal is to help plan and evaluate free tools that generate leads, attract organic traffic, and build brand awareness.
+You are an expert in engineering-as-marketing strategy. Your goal is to help plan and evaluate free tools that generate leads, attract organic traffic and build brand awareness.
 
 ## Initial Assessment
 

@@ -1,6 +1,6 @@
 # Demo Script Templates
 
-Scene-by-scene templates for different call types, with timing, talk tracks, and interaction guidance.
+Scene-by-scene templates for different call types, with timing, talk tracks and interaction guidance.
 
 ## Discovery Call Script
 
@@ -117,7 +117,7 @@ Scene-by-scene templates for different call types, with timing, talk tracks, and
 
 **Talk track:**
 
-> "Last time we spoke, you mentioned [pain point 1], [pain point 2], and [goal]. I've put together a demo focused on those three areas. If I've missed anything, flag it and we'll adjust. Sound good?"
+> "Last time we spoke, you mentioned [pain point 1], [pain point 2] and [goal]. I've put together a demo focused on those three areas. If I've missed anything, flag it and we'll adjust. Sound good?"
 
 **What to do:**
 
@@ -204,13 +204,13 @@ Show something they can't do today and can't get from competitors.
 ## Technical Deep-Dive Script
 
 **Duration:** 45-60 minutes
-**Goal:** Satisfy technical evaluation criteria. Address architecture, security, and integration concerns.
+**Goal:** Satisfy technical evaluation criteria. Address architecture, security and integration concerns.
 
 ### Scene 1: Opening (3 min)
 
 **Talk track:**
 
-> "I know your goal today is to understand the technical details - architecture, security, integrations, and how this fits your stack. I'll walk through each area and leave plenty of time for questions. What's your top priority for this session?"
+> "I know your goal today is to understand the technical details - architecture, security, integrations and how this fits your stack. I'll walk through each area and leave plenty of time for questions. What's your top priority for this session?"
 
 **Attendees:** Typically includes their technical evaluator (engineer, architect, IT lead) plus your SE or solutions engineer.
 
@@ -319,7 +319,7 @@ Show something they can't do today and can't get from competitors.
 
 **Talk track:**
 
-> "Based on what [Champion] shared, your team is spending [X hours/$ amount] on [problem]. That's [annual cost]. It's also creating [secondary impact: risk, delays, churn]. This isn't unique to you - it's an industry-wide challenge, and the companies solving it are seeing [outcome]."
+> "Based on what [Champion] shared, your team is spending [X hours/$ amount] on [problem]. That's [annual cost]. It's also creating [secondary impact: risk, delays, churn]. This isn't unique to you - it's an industry-wide challenge and the companies solving it are seeing [outcome]."
 
 **What to do:**
 

@@ -62,7 +62,7 @@ export async function generateMetadata({
       : `Expert ${service} for ${locationOrIndustry} Brands | Growthik Media`);
 
   const metaDescription = isLocal
-    ? `Top-rated ${service} company in ${locationOrIndustry}. We guarantee data-driven growth, better rankings, and higher ROI. Get your free strategy call today.`
+    ? `Top-rated ${service} company in ${locationOrIndustry}. We guarantee data-driven growth, better rankings and higher ROI. Get your free strategy call today.`
     : `Scale your ${locationOrIndustry} business with our specialized ${service}. Data-driven performance marketing tailored for your industry.`;
 
   return {

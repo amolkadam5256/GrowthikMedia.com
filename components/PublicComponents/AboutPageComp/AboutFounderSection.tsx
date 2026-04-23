@@ -58,7 +58,7 @@ const AboutFounderSection = () => {
                   As an authority in Growth Engineering, Amol Kadam bridges the
                   gap between complex web infrastructure and aggressive
                   performance marketing. By combining Next.js architecture,
-                  AI-driven SEO automation, and high-conversion full-stack
+                  AI-driven SEO automation and high-conversion full-stack
                   funnels, he builds scalable digital ecosystems that turn
                   startups and established brands into market leaders.
                 </p>
@@ -172,7 +172,7 @@ const AboutFounderSection = () => {
             </div>
 
             <p className="text-(--text-secondary) max-w-xs text-sm font-medium leading-relaxed border-l border-(--color-primary)/20 pl-6 hidden md:block">
-              A collective of growth engineers, AI strategists, and performance
+              A collective of growth engineers, AI strategists and performance
               architects obsessed with one thing: your revenue.
             </p>
           </div>

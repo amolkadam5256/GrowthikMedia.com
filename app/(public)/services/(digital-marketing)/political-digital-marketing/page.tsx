@@ -11,13 +11,13 @@ import { CONTACT_INFO } from "@/constants/contact";
 
 export const metadata: Metadata = {
   title: "Top Political Digital Marketing Pune | Growthik Media",
-  description: "Win elections with the top political digital marketing agency in Pune. Professional social media management, sentiment analysis, and voter outreach strategies.",
+  description: "Win elections with the top political digital marketing agency in Pune. Professional social media management, sentiment analysis and voter outreach strategies.",
   alternates: {
     canonical: "https://www.growthikmedia.com/services/political-digital-marketing/",
   },
   openGraph: {
     title: "Top Political Digital Marketing Pune | Growthik Media",
-    description: "Win elections with the top political digital marketing agency in Pune. Professional social media management, sentiment analysis, and voter outreach strategies.",
+    description: "Win elections with the top political digital marketing agency in Pune. Professional social media management, sentiment analysis and voter outreach strategies.",
     url: `${CONTACT_INFO.website}/services/political-digital-marketing/`,
     siteName: "Growthik Media",
     locale: "en_IN",
@@ -83,7 +83,7 @@ export default function PoliticalDigitalMarketingPage() {
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Reputation Management and Rapid Response Teams</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                Politics is fast-paced, and digital narratives can change in an instant. Growthik Media provides a dedicated rapid response team that monitors for misinformation and negative campaigning, allowing for immediate course correction. We focus on building a positive, visionary brand for the candidate through high-quality storytelling and compliance with EC guidelines.
+                Politics is fast-paced and digital narratives can change in an instant. Growthik Media provides a dedicated rapid response team that monitors for misinformation and negative campaigning, allowing for immediate course correction. We focus on building a positive, visionary brand for the candidate through high-quality storytelling and compliance with EC guidelines.
               </p>
             </div>
 
@@ -92,11 +92,11 @@ export default function PoliticalDigitalMarketingPage() {
               <div className="grid gap-8">
                 <div>
                   <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">Is political digital marketing different from corporate marketing?</h3>
-                  <p className="text-(--text-secondary) text-center">Yes. Political marketing in Pune involves shorter timelines, higher emotional engagement, and a focus on &quot;conversion&quot; to a vote rather than a product sale.</p>
+                  <p className="text-(--text-secondary) text-center">Yes. Political marketing in Pune involves shorter timelines, higher emotional engagement and a focus on &quot;conversion&quot; to a vote rather than a product sale.</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">How do you target specific voters in a Pune constituency?</h3>
-                  <p className="text-(--text-secondary) text-center">We use advanced demographic data including age, location (down to the society level), and interest-based targeting to ensure your message reaches the right electorate.</p>
+                  <p className="text-(--text-secondary) text-center">We use advanced demographic data including age, location (down to the society level) and interest-based targeting to ensure your message reaches the right electorate.</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">How do you handle fake news or negative campaigns?</h3>

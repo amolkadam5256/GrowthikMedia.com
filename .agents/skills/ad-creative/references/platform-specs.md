@@ -1,6 +1,6 @@
 # Platform Specs Reference
 
-Complete character limits, format requirements, and best practices for each ad platform.
+Complete character limits, format requirements and best practices for each ad platform.
 
 ---
 

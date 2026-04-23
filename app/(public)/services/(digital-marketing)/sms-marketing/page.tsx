@@ -73,12 +73,12 @@ export default function SmsMarketingPage() {
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight">Direct Engagement through Precision SMS Campaigns in Pune</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                Text messages boast a 98% open rate, with most being read within three minutes of delivery. Our strategy focuses on timing, personalization, and clear calls to action (CTAs) to ensure your message doesn&apos;t just land but also leads to action. Whether you are a retail outlet in Kothrud or a real estate developer in Hinjewadi, our local Pune expertise allows us to craft messages that resonate with the regional demographic. We handle everything from database segmentation to DLT registration assistance, ensuring your promotional SMS service is compliant and effective from day one.
+                Text messages boast a 98% open rate, with most being read within three minutes of delivery. Our strategy focuses on timing, personalization and clear calls to action (CTAs) to ensure your message doesn&apos;t just land but also leads to action. Whether you are a retail outlet in Kothrud or a real estate developer in Hinjewadi, our local Pune expertise allows us to craft messages that resonate with the regional demographic. We handle everything from database segmentation to DLT registration assistance, ensuring your promotional SMS service is compliant and effective from day one.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Strategic Bulk SMS Services for Business Growth</h2>
               <p className="text-(--text-secondary) leading-relaxed">
-                Effective SMS campaigns in India require more than just a list of numbers; they require a data-driven approach. We specialize in both transactional and promotional SMS services, helping Pune businesses automate their customer journey. Our platforms provide real-time delivery reports and link-tracking capabilities, so you can measure the exact ROI of every campaign. We understand the Pune market&apos;s unique pulse-leveraging local festivals, shopping habits, and business cycles to schedule your broadcasts for maximum impact. By integrating SMS with your wider digital marketing funnel, we create a multi-touchpoint experience that keeps your brand top-of-mind.
+                Effective SMS campaigns in India require more than just a list of numbers; they require a data-driven approach. We specialize in both transactional and promotional SMS services, helping Pune businesses automate their customer journey. Our platforms provide real-time delivery reports and link-tracking capabilities, so you can measure the exact ROI of every campaign. We understand the Pune market&apos;s unique pulse-leveraging local festivals, shopping habits and business cycles to schedule your broadcasts for maximum impact. By integrating SMS with your wider digital marketing funnel, we create a multi-touchpoint experience that keeps your brand top-of-mind.
               </p>
 
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mt-12">Technical Excellence and DLT Compliance</h2>
@@ -92,7 +92,7 @@ export default function SmsMarketingPage() {
               <div className="grid gap-8">
                 <div>
                   <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">What is the difference between promotional and transactional SMS?</h3>
-                  <p className="text-(--text-secondary) text-center">Promotional SMS is used for marketing offers and discounts during specific hours, while transactional SMS is used for alerts, OTPs, and order confirmations 24/7.</p>
+                  <p className="text-(--text-secondary) text-center">Promotional SMS is used for marketing offers and discounts during specific hours, while transactional SMS is used for alerts, OTPs and order confirmations 24/7.</p>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">How long does it take to set up an SMS campaign in Pune?</h3>
