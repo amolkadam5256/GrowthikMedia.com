@@ -1,45 +1,56 @@
-# Optimized robots.txt for Growthik Media
 User-agent: *
 Allow: /
+# Disallow sensitive/system paths
 Disallow: /admin/
 Disallow: /api/
-Disallow: /chat/
-Disallow: /privacy-policy/
-Disallow: /terms/
-Disallow: /blog/?category=*
-Disallow: /blog/?tag=*
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /dashboard/
+Disallow: /_next/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /cart/
+Disallow: /checkout/
 
-# Directives for AI search bots
+# Disallow low-value pagination and search queries
+Disallow: /search?
+Disallow: /*?
+Disallow: /*?replytocom=
+Disallow: /author/
+Disallow: /tag/
+
+# Explicitly allow important assets
+Allow: /_next/static/
+Allow: /_next/image/
+Allow: /public/
+Allow: /images/
+Allow: /fonts/
+
+# Optimization for AI search and chat bots
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /admin/
 Disallow: /api/
-Disallow: /chat/
 
 User-agent: OAI-SearchBot
 Allow: /
-Disallow: /admin/
-Disallow: /api/
 
 User-agent: Google-Extended
 Allow: /
-Disallow: /admin/
-Disallow: /api/
 
 User-agent: PerplexityBot
 Allow: /
-Disallow: /admin/
-Disallow: /api/
 
 User-agent: ClaudeBot
 Allow: /
-Disallow: /admin/
-Disallow: /api/
 
 User-agent: anthropic-ai
 Allow: /
-Disallow: /admin/
-Disallow: /api/
 
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap and AI reference links
 Sitemap: https://www.growthikmedia.com/sitemap.xml
 Llms-txt: https://www.growthikmedia.com/llms.txt
