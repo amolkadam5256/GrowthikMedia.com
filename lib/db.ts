@@ -1,13 +1,26 @@
-import { PrismaClient } from "../generated/client";
+import { PrismaClient } from "@prisma/client";
 
 const prismaClientSingleton = () => {
   return new PrismaClient();
 };
 
 declare global {
-  var prisma: undefined | ReturnType<typeof prismaClientSingleton>;
+  var prisma: PrismaClient | undefined;
 }
 
-export const db = globalThis.prisma ?? prismaClientSingleton();
+function getPrismaClient() {
+  if (!globalThis.prisma) {
+    globalThis.prisma = prismaClientSingleton();
+  }
 
-if (process.env.NODE_ENV !== "production") globalThis.prisma = db;
+  return globalThis.prisma;
+}
+
+export const db = new Proxy({} as PrismaClient, {
+  get(_target, prop) {
+    const client = getPrismaClient();
+    const value = Reflect.get(client, prop);
+
+    return typeof value === "function" ? value.bind(client) : value;
+  },
+}) as PrismaClient;
