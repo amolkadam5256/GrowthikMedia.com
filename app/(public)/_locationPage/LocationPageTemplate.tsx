@@ -45,7 +45,7 @@ export default function LocationPageTemplate({
   services,
   faqs,
 }: LocationPageProps) {
-  const pageUrl = `${CONTACT_INFO.website}/${slug}`;
+  const pageUrl = `${CONTACT_INFO.website}/${slug}/`;
 
   // Schema markup
   const schema = {
@@ -101,11 +101,11 @@ export default function LocationPageTemplate({
             name: "Home",
             item: CONTACT_INFO.website,
           },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: `${primaryService} in ${area}`,
-            item: pageUrl,
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: `${primaryService} in ${area}`,
+                item: pageUrl,
           },
         ],
       },

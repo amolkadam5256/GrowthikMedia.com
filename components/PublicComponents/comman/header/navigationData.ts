@@ -47,7 +47,7 @@ export const navigationData: {
             description: "Website & Application Development",
             items: [
               {
-                href: "/services/website-design-company-pune",
+                href: "/services/website-design-company-pune/",
                 label: "Website Design",
               },
               {
@@ -72,11 +72,11 @@ export const navigationData: {
                 label: "Web Application Development",
               },
               {
-                href: "/services/website-maintenance",
+                href: "/services/website-maintenance/",
                 label: "Website Maintenance",
               },
               {
-                href: "/services/application-maintenance",
+                href: "/services/application-maintenance/",
                 label: "Application Maintenance",
               },
             ],
@@ -243,7 +243,7 @@ export const navigationData: {
         icon: FiCode,
         items: [
           {
-            href: "/services/website-design-company-pune",
+            href: "/services/website-design-company-pune/",
             label: "Website Design",
           },
           {
@@ -267,11 +267,11 @@ export const navigationData: {
             label: "Software Development",
           },
           {
-            href: "/services/website-maintenance",
+            href: "/services/website-maintenance/",
             label: "Website Maintenance",
           },
           {
-            href: "/services/application-maintenance",
+            href: "/services/application-maintenance/",
             label: "Application Maintenance",
           },
         ],

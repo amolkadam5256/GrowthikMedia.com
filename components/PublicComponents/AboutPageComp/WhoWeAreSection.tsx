@@ -97,7 +97,7 @@ const WhoWeAreSection = () => {
                 </Link>
                 , and{" "}
                 <Link
-                  href="/services/development"
+                  href="/services/website-development/"
                   className="text-(--color-primary) font-bold hover:underline mx-1"
                 >
                   Web Architecture

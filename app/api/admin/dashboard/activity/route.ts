@@ -60,7 +60,7 @@ export async function GET(request: NextRequest) {
     ]);
 
     const mapped: ActivityItem[] = [
-      ...inquiries.map((item) => ({
+      ...inquiries.map((item: (typeof inquiries)[number]) => ({
         id: item.id,
         type: "inquiry" as const,
         name: item.name,
@@ -68,7 +68,7 @@ export async function GET(request: NextRequest) {
         status: item.status,
         createdAt: item.createdAt,
       })),
-      ...chatLeads.map((item) => ({
+      ...chatLeads.map((item: (typeof chatLeads)[number]) => ({
         id: item.id,
         type: "chat_lead" as const,
         name: item.name,
@@ -77,7 +77,7 @@ export async function GET(request: NextRequest) {
         status: item.status,
         createdAt: item.createdAt,
       })),
-      ...reviews.map((item) => ({
+      ...reviews.map((item: (typeof reviews)[number]) => ({
         id: item.id,
         type: "review_reply" as const,
         reviewer: item.reviewer,

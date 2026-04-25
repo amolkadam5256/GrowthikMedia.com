@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       "Best Website Design Company in Pune | Custom & SEO-Friendly Websites",
     description:
       "Looking for a professional website design company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses.",
-    url: `${CONTACT_INFO.website}/services/website-design-company-pune`,
+    url: `${CONTACT_INFO.website}/services/website-design-company-pune/`,
     siteName: "Growthik Media",
     images: [
       {
@@ -142,7 +142,7 @@ export default function WebsiteDesignPunePage() {
                     "@type": "ListItem",
                     position: 3,
                     item: {
-                      "@id": `${CONTACT_INFO.website}/services/website-design-company-pune`,
+                      "@id": `${CONTACT_INFO.website}/services/website-design-company-pune/`,
                       name: "Website Design Company Pune",
                     },
                   },

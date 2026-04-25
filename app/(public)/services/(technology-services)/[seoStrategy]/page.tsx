@@ -27,12 +27,12 @@ export async function generateMetadata({
     description: data.description,
     keywords: data.keywords,
     alternates: {
-      canonical: "https://www.growthikmedia.com/services/[seoStrategy]/",
+      canonical: `${CONTACT_INFO.website}/services/${seoStrategy}/`,
     },
     openGraph: {
       title: data.ogTitle,
       description: data.ogDescription,
-      url: `${CONTACT_INFO.website}/services/${seoStrategy}`,
+      url: `${CONTACT_INFO.website}/services/${seoStrategy}/`,
       siteName: "Growthik Media",
       type: "website",
     },

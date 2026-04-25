@@ -16,17 +16,14 @@ export default function AISchema({
 }) {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: answer,
-        },
-      },
-    ],
+    "@type": "WebPage",
+    name: question,
+    description: answer,
+    about: {
+      "@type": "Thing",
+      name: question,
+      description: answer,
+    },
   };
 
   return (

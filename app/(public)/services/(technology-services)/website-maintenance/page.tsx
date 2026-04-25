@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Best Website Maintenance in Pune | Custom & SEO-Friendly Websites",
     description:
       "Looking for a professional website maintenance company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses.",
-    url: `${CONTACT_INFO.website}/services/website-maintenance`,
+    url: `${CONTACT_INFO.website}/services/website-maintenance/`,
     siteName: "Growthik Media",
     images: [
       {
@@ -139,7 +139,7 @@ export default function ServicePage() {
                     "@type": "ListItem",
                     position: 3,
                     item: {
-                      "@id": `${CONTACT_INFO.website}/services/website-maintenance`,
+                      "@id": `${CONTACT_INFO.website}/services/website-maintenance/`,
                       name: "Website Maintenance Company Pune",
                     },
                   },

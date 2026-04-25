@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.growthikmedia.com/services/backlink-strategy/" },
+  alternates: { canonical: "https://www.growthikmedia.com/backlink-strategy/" },
   title: "AI-Powered SEO & Backlink Strategy for Pune Businesses | Growthik Media",
   description: "Boost your Pune-based business with our AI-driven SEO strategy. Explore high-quality backlink ideas, guest posting sites and outreach templates tailored for Pune, AI and SEO.",
   openGraph: {

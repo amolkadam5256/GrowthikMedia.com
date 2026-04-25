@@ -44,8 +44,8 @@ export async function submitSitemapToIndexNow() {
     const commonUrls = [
       CONTACT_INFO.website,
       `${CONTACT_INFO.website}/services/seo-services-in-pune`,
-      `${CONTACT_INFO.website}/services/services/website-design-company-pune/`,
-      `${CONTACT_INFO.website}/blog/website-cost-in-pune`,
+      `${CONTACT_INFO.website}/services/website-design-company-pune/`,
+      `${CONTACT_INFO.website}/blog/website-cost-in-pune/`,
     ];
 
     return await submitToIndexNow(commonUrls);
