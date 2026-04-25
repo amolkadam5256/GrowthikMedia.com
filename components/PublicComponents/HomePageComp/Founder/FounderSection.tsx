@@ -46,7 +46,7 @@ const FounderSection = () => {
               <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-(--color-primary) z-0" />
 
               {/* Badge */}
-              <div className="absolute -right-6 top-10 bg-(--color-primary) text-white px-6 py-2 font-black uppercase tracking-widest text-xs rotate-90 origin-right shadow-xl">
+              <div className="absolute -right-6 top-10 bg-(--color-primary) text-white px-6 py-4 font-black uppercase tracking-widest text-xs rotate-90 origin-right shadow-xl">
                 Founder & Lead
               </div>
             </div>
