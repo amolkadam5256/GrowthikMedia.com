@@ -148,6 +148,8 @@ const FounderSection = () => {
                 <Button
                   variant="primary"
                   className="rounded-full px-10 py-4 font-black uppercase tracking-widest text-xs"
+                  fbEvent="ViewContent"
+                  fbEventData={{ content_name: 'Founder Full Story' }}
                 >
                   Full Story <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -156,6 +158,8 @@ const FounderSection = () => {
                 <Button
                   variant="outline"
                   className="rounded-full px-10 py-4 font-black uppercase tracking-widest text-xs border-2"
+                  fbEvent="Contact"
+                  fbEventData={{ content_name: "Founder Let's Connect" }}
                 >
                   Let&apos;s Connect
                 </Button>

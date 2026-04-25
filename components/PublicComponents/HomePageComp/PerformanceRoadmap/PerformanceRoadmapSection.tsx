@@ -3,6 +3,7 @@
 import React from "react";
 import { Rocket, BarChart2, Crown, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 const roadmapDisplay = [
   {
@@ -127,6 +128,7 @@ const PerformanceRoadmapSection = () => {
         <div className="mt-16 text-center" data-aos="fade-up">
           <Link
             href="/contact"
+            onClick={() => trackEvent("Lead", { content_name: "90-Day Growth Plan CTA" })}
             className="inline-block border-2 border-(--color-primary) text-(--text-primary) px-10 py-4 font-bold uppercase tracking-wider hover:bg-(--color-primary) hover:text-white transition-all duration-300"
           >
             Start Your 90-Day Growth Plan

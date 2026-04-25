@@ -5,6 +5,7 @@ import PortfolioCard from "./PortfolioCard";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import { images } from "@/app/assets/images/images";
+import { trackEvent } from "@/lib/analytics";
 
 import { portfolioData, getFeaturedProjects } from "@/lib/data/portfolio";
 
@@ -81,6 +82,7 @@ const PortfolioHighlightsSection = React.memo(() => {
         <div className="mt-32 flex justify-center" data-aos="fade-up">
           <Link
             href="/portfolio"
+            onClick={() => trackEvent("ViewContent", { content_name: "Portfolio All Projects" })}
             className="group relative inline-flex items-center gap-6 px-12 py-5 border-2 border-(--color-primary) transition-all duration-500 hover:bg-(--color-primary) hover:scale-105 shadow-xl hover:shadow-(--color-primary)/20"
           >
             <span className="relative z-10 text-(--color-primary) group-hover:text-white font-black uppercase tracking-[0.3em] text-sm transition-colors duration-300">

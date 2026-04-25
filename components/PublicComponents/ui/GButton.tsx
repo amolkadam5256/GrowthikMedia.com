@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "gradient" | "outline";
@@ -6,6 +9,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: React.ReactNode;
   children: React.ReactNode;
   className?: string; // Allow custom classes to merge
+  fbEvent?: string; // Facebook Standard Event Name (e.g., 'Lead', 'Contact', 'ViewContent')
+  fbEventData?: Record<string, any>;
 }
 
 export const Button = ({
@@ -14,6 +19,9 @@ export const Button = ({
   icon,
   children,
   className = "",
+  fbEvent,
+  fbEventData,
+  onClick,
   ...props
 }: ButtonProps) => {
   const baseStyles =
@@ -36,9 +44,19 @@ export const Button = ({
     lg: "px-8 md:px-12 py-4 md:py-5 text-lg md:text-xl",
   };
 
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (fbEvent) {
+      trackEvent(fbEvent, fbEventData);
+    }
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
   return (
     <button
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className} group`}
+      onClick={handleClick}
       {...props}
     >
       {children}
@@ -51,5 +69,4 @@ export const Button = ({
   );
 };
 
-export default Button; 
-
+export default Button;

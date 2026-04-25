@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import ServiceButton from "./ServiceButton";
 import ServicesGrid from "@/components/PublicComponents/ServicesGrid";
+import { trackEvent } from "@/lib/analytics";
 
 const OurServicesSection = React.memo(() => {
   return (
@@ -90,10 +91,10 @@ const OurServicesSection = React.memo(() => {
         >
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/services">
-              <ServiceButton text="Explore All Services" />
+              <ServiceButton text="Explore All Services" onClick={() => trackEvent("ViewContent", { content_name: "All Services" })} />
             </Link>
             <Link href="/contact">
-              <ServiceButton text="Get Started Today" />
+              <ServiceButton text="Get Started Today" onClick={() => trackEvent("Lead", { content_name: "Services Section CTA" })} />
             </Link>
           </div>
 

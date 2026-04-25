@@ -11,6 +11,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Counter } from "@/components/PublicComponents/ui/GCounter";
+import { trackEvent } from "@/lib/analytics";
 
 const USP_ITEMS = [
   {
@@ -131,6 +132,7 @@ const WhyChooseUsSection = React.memo(() => {
             Ready to experience the Growthik difference?
           </p>
           <Link href="/contact"
+            onClick={() => trackEvent("Contact", { content_name: "Why Choose Us CTA" })}
             className="inline-flex items-center gap-4 px-10 py-4 bg-(--color-primary) text-white font-black uppercase tracking-[0.2em] text-sm hover:bg-(--color-primary-light) transition-all duration-300 shadow-xl hover:shadow-primary/30 hover:scale-105"
           >
             <span>Let&apos;s Talk Growth</span>

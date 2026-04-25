@@ -63,6 +63,9 @@ export const metadata: Metadata = {
   manifest: "/brand/site.webmanifest",
 };
 
+import { Suspense } from "react";
+import MetaPixel from "@/components/PublicComponents/Analytics/MetaPixel";
+
 export default function RootLayout({
   children,
 }: {
@@ -78,6 +81,9 @@ export default function RootLayout({
         suppressHydrationWarning
         className="antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
       >
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
         {children}
       </body>
     </html>

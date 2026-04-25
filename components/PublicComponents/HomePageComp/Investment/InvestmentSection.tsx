@@ -156,6 +156,8 @@ const InvestmentSection = () => {
                 <Button
                   variant={tier.popular ? "primary" : "outline"}
                   className="w-full rounded-none py-6 font-black uppercase tracking-widest text-xs flex items-center justify-center gap-2"
+                  fbEvent="InitiateCheckout"
+                  fbEventData={{ content_name: tier.name, value: tier.price }}
                 >
                   {tier.cta}
                   <ArrowRight className="w-4 h-4" />

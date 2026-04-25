@@ -96,6 +96,8 @@ const HeroHeadline = () => {
                   size="lg"
                   className="rounded-full px-8 py-3 md:px-12 md:py-4 text-base md:text-lg font-bold text-white shadow-2xl hover:shadow-3xl transition-all transform hover:-translate-y-1 flex items-center gap-2 border-0"
                   style={{ backgroundColor: "#d90b1c" }}
+                  fbEvent="Contact"
+                  fbEventData={{ content_name: 'Hero Strategy Call' }}
                 >
                   Book Your Free Strategy Call
                   <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -103,7 +105,7 @@ const HeroHeadline = () => {
               </Link>
             </div>
           </div>
-
+ 
           {/* Secondary CTA */}
           <div className="relative group">
             <Link href="/portfolio">
@@ -114,6 +116,8 @@ const HeroHeadline = () => {
                 style={{
                   borderColor: "var(--color-primary)",
                 }}
+                fbEvent="ViewContent"
+                fbEventData={{ content_name: 'Hero Portfolio View' }}
               >
                 View Case Studies
               </Button>

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Send } from "lucide-react";
+import { trackLead } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -43,12 +44,8 @@ export default function ContactForm() {
       if (response.ok) {
         setSubmitStatus("success");
         
-        // Meta Pixel Lead Tracking
-        if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
-          (window as any).fbq("track", "Lead", {
-            content_name: "General Contact Form",
-          });
-        }
+        // Centralized Analytics Tracking (Meta Pixel, GA4, GTM)
+        trackLead("General Contact Form");
 
         setFormData({
           name: "",

@@ -105,6 +105,8 @@ const LeadMagnetSection = () => {
                     <Button
                     variant="outline"
                     className="w-full flex items-center justify-center gap-2 font-black uppercase tracking-widest text-xs py-5 border-2 border-(--color-primary)! text-(--color-primary)! hover:bg-(--color-primary)! hover:text-white! transition-all duration-300 rounded-full!"
+                    fbEvent="Lead"
+                    fbEventData={{ content_name: magnet.title }}
                   >
                     {idx === 0 ? "Request Guide" : magnet.cta}
                     <ArrowRight className="w-4 h-4" />

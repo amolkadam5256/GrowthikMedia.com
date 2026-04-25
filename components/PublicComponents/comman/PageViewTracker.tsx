@@ -91,34 +91,27 @@ export default function PageViewTracker() {
       });
     }
 
-    // 2. Meta Pixel PageView Tracking
-    if (
-      typeof window !== "undefined" &&
-      typeof window.fbq === "function"
-    ) {
-      window.fbq("track", "PageView");
+    // 2. Service Page Tracking (Meta Pixel & GA4)
+    const isServicePage =
+      pathname.includes("/services/") ||
+      pathname.includes("-marketing") ||
+      pathname.includes("-ads") ||
+      pathname.includes("seo") ||
+      pathname.includes("development");
 
-      // 3. Service Page Tracking
-      const isServicePage =
-        pathname.includes("/services/") ||
-        pathname.includes("-marketing") ||
-        pathname.includes("-ads") ||
-        pathname.includes("seo") ||
-        pathname.includes("development");
-      if (isServicePage) {
-        window.fbq("track", "ViewContent", {
-          content_category: "Service",
-        });
-        trackEvent("service_intent", {
-          page_path: pathname,
-          page_group,
-          intent_action: "view",
-        });
-      }
+    if (isServicePage) {
+      trackEvent("ViewContent", {
+        content_category: "Service",
+      });
+      trackEvent("service_intent", {
+        page_path: pathname,
+        page_group,
+        intent_action: "view",
+      });
     }
   }, [pathname]);
 
-  // 4. Global Click Event Listener for WhatsApp & Tel Links
+  // 3. Global Click Event Listener for WhatsApp & Tel Links
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const link = (e.target as HTMLElement).closest("a");
@@ -143,18 +136,29 @@ export default function PageViewTracker() {
           cta_text: label,
           destination: href,
         });
+
+        // Map to Meta Pixel 'Contact' or 'Lead'
+        if (href.includes("/audit")) {
+          trackEvent("Lead", { content_name: `Audit Request: ${label}` });
+        } else if (!href.includes("wa.me") && !href.includes("api.whatsapp.com") && !href.startsWith("tel:")) {
+          trackEvent("Contact", { content_name: `Contact Click: ${label}` });
+        }
+      }
+
+      // Track Service & Portfolio Views
+      if (href.includes("/services/") || href.includes("/portfolio/") || href.includes("/blog/")) {
+        trackEvent("ViewContent", {
+          content_name: label,
+          content_category: href.includes("/services/") ? "Service" : href.includes("/portfolio/") ? "Portfolio" : "Blog",
+          content_type: "product",
+        });
       }
 
       // WhatsApp Tracking
       if (href.includes("wa.me") || href.includes("api.whatsapp.com")) {
-        if (
-          typeof window !== "undefined" &&
-          typeof window.fbq === "function"
-        ) {
-          window.fbq("track", "Contact", {
-            content_name: "WhatsApp Click",
-          });
-        }
+        trackEvent("Contact", {
+          content_name: "WhatsApp Click",
+        });
         trackEvent("contact_click", {
           page_path: pathname,
           page_group: getPageGroup(pathname),
@@ -165,14 +169,9 @@ export default function PageViewTracker() {
 
       // Phone Call Tracking
       if (href.startsWith("tel:")) {
-        if (
-          typeof window !== "undefined" &&
-          typeof window.fbq === "function"
-        ) {
-          window.fbq("track", "Contact", {
-            content_name: "Phone Call",
-          });
-        }
+        trackEvent("Contact", {
+          content_name: "Phone Call",
+        });
         trackEvent("contact_click", {
           page_path: pathname,
           page_group: getPageGroup(pathname),
@@ -191,6 +190,9 @@ export default function PageViewTracker() {
       }
 
       if (href.includes("calendar.app.google")) {
+        trackEvent("Schedule", {
+          content_name: "Google Calendar Booking",
+        });
         trackEvent("contact_click", {
           page_path: pathname,
           page_group: getPageGroup(pathname),

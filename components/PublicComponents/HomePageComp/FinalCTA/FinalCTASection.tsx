@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Zap, ArrowRight, Sparkles } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const FinalCTASection = React.memo(() => {
   return (
@@ -78,6 +79,7 @@ const FinalCTASection = React.memo(() => {
             {/* Primary CTA */}
             <Link
               href="/contact"
+              onClick={() => trackEvent("Contact", { content_name: "Final CTA Session" })}
               className="group relative inline-flex items-center gap-4 px-10 py-5 bg-(--color-primary) text-white font-black uppercase tracking-[0.2em] text-sm hover:bg-(--color-primary-light) transition-all duration-300 shadow-2xl hover:shadow-primary/30 hover:scale-105 overflow-hidden"
             >
               {/* Animated Background */}
@@ -91,6 +93,7 @@ const FinalCTASection = React.memo(() => {
             {/* Secondary CTA */}
             <Link
               href="/portfolio"
+              onClick={() => trackEvent("ViewContent", { content_name: "Final CTA Portfolio View" })}
               className="group inline-flex items-center gap-3 px-8 py-5 bg-transparent border-2 border-(--border) text-(--text-primary) font-bold uppercase tracking-[0.2em] text-sm hover:bg-(--surface) hover:border-(--color-primary) transition-all duration-300"
             >
               <span>View Our Work</span>

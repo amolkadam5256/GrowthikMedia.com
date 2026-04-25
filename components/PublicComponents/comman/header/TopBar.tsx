@@ -72,22 +72,22 @@ export function TopBar() {
       <div className="h-full w-full max-w-screen-2xl mx-auto flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-1 sm:gap-3 px-3 sm:px-6 lg:px-10 relative">
         {/* Left Side: Contact Info */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm leading-none">
-          <div className="flex items-center group cursor-pointer">
+          <a href={`tel:${CONTACT_INFO.phone.primary}`} className="flex items-center group cursor-pointer">
             <div className="mr-2 p-1 rounded-md transition-colors bg-white/15 group-hover:bg-white/25">
               <MdPhone className="text-white w-4 h-4" />
             </div>
             <span className="font-medium hover:text-white/85 transition-colors whitespace-nowrap">
               {CONTACT_INFO.phone.primary}
             </span>
-          </div>
-          <div className="flex items-center group cursor-pointer">
+          </a>
+          <a href={`mailto:${CONTACT_INFO.email.info}`} className="flex items-center group cursor-pointer">
             <div className="mr-2 p-1 rounded-md transition-colors bg-white/15 group-hover:bg-white/25">
               <MdEmail className="text-white w-4 h-4" />
             </div>
             <span className="font-medium hover:text-white/85 transition-colors whitespace-nowrap">
               {CONTACT_INFO.email.info}
             </span>
-          </div>
+          </a>
         </div>
 
         {/* Right Side: Creative Social Media Icons */}

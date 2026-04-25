@@ -9,6 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 const STEPS = [
   {
@@ -119,6 +120,7 @@ const GrowthFrameworkSection = React.memo(() => {
         <div className="mt-20 text-center" data-aos="zoom-in">
           <Link
             href="/audit"
+            onClick={() => trackEvent("Lead", { content_name: "Growth Blueprint Audit" })}
             className="group relative inline-flex items-center gap-6 px-12 py-5 border-2 border-(--color-primary) transition-all duration-500 hover:bg-(--color-primary) hover:scale-105 shadow-xl hover:shadow-primary/20"
           >
             <span className="relative z-10 text-(--color-primary) group-hover:text-white font-black uppercase tracking-[0.2em] text-sm transition-colors duration-300">

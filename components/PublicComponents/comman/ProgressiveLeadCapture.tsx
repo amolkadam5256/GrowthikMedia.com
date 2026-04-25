@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ArrowRight, Check, Send, Sparkles, Loader2 } from "lucide-react";
+import { trackEvent, trackLead } from "@/lib/analytics";
 
 const STEPS = {
   IDENTIFY: 1, // Start with Email or Phone
@@ -75,6 +76,10 @@ const ProgressiveLeadCapture = () => {
 
   const transitionToStep = (nextStep: number, delay = 800) => {
     setIsVisible(false);
+    trackEvent("form_step_complete", {
+      step_number: currentStep,
+      form_type: "Progressive Lead Capture",
+    });
     setTimeout(() => {
       setCurrentStep(nextStep);
       setIsVisible(true);
@@ -204,10 +209,18 @@ const ProgressiveLeadCapture = () => {
       });
 
       localStorage.setItem("lead_completed", "true");
+      trackLead("Progressive Lead Capture Success", {
+        form_type: "Progressive Lead Capture",
+        service_interest: formData.service,
+      });
       setCurrentStep(STEPS.COMPLETED);
       setTimeout(() => setIsVisible(false), 3000);
     } catch (err) {
       setError("Failed to save. Please try again.");
+      trackEvent("form_submit_error", {
+        form_type: "Progressive Lead Capture",
+        error_type: "api_failure",
+      });
     } finally {
       setIsLoading(false);
     }

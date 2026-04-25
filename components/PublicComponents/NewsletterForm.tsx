@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Mail, CheckCircle, ArrowRight } from "lucide-react";
+import { trackLead, trackEvent } from "@/lib/analytics";
 
 export default function NewsletterForm({ inline = false }: { inline?: boolean }) {
   const [formData, setFormData] = useState({ email: "", name: "" });
@@ -10,6 +11,7 @@ export default function NewsletterForm({ inline = false }: { inline?: boolean })
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
+    trackEvent("form_start", { form_type: "Newsletter" });
 
     try {
       const res = await fetch("/api/send-email", {
@@ -20,9 +22,11 @@ export default function NewsletterForm({ inline = false }: { inline?: boolean })
 
       if (res.ok) {
         setStatus("sent");
+        trackLead("Newsletter Subscription", { form_type: "Newsletter" });
         setFormData({ email: "", name: "" });
       } else {
         setStatus("error");
+        trackEvent("form_submit_error", { form_type: "Newsletter" });
       }
     } catch (err) {
       console.error(err);

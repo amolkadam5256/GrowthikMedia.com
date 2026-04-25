@@ -9,6 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 const FAQ_DATA = [
   {
@@ -181,6 +182,7 @@ const FAQSection = React.memo(() => {
 
               <Link
                 href="/contact"
+                onClick={() => trackEvent("Contact", { content_name: "FAQ Chat CTA" })}
                 className="group/btn relative inline-flex items-center gap-6 px-12 py-5 bg-(--color-primary) hover:bg-(--color-primary-light) transition-all duration-300 shadow-xl hover:shadow-primary/30"
               >
                 <span className="text-white font-black uppercase tracking-[0.2em] text-sm">
