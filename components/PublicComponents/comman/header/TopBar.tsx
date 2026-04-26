@@ -67,7 +67,7 @@ export function TopBar() {
     <div
       className={`block fixed top-0 left-0 right-0 z-40 h-10 px-3 sm:px-4 transition-all duration-500 ease-in-out ${
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-      } bg-(--color-primary) text-white shadow`}
+      } bg-primary text-white shadow`}
     >
       <div className="h-full w-full max-w-screen-2xl mx-auto flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-1 sm:gap-3 px-3 sm:px-6 lg:px-10 relative">
         {/* Left Side: Contact Info */}
@@ -98,7 +98,7 @@ export function TopBar() {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`relative flex items-center justify-center w-7 h-7 rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg bg-white/10 text-white ${social.hoverBg.replace("text-white", "text-white")} group socials-item`}
+              className={`relative flex items-center justify-center w-7 h-7 rounded-md transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg bg-white/10 text-white ${social.hoverBg} group socials-item`}
               aria-label={social.label}
             >
               <social.icon className="w-3 h-3 transition-transform duration-300 group-hover:scale-110" />
