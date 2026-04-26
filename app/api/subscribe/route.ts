@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendEmail, TEAM_EMAILS } from "@/lib/mailer";
+import { sendSlackAlert } from "@/lib/slack";
 
 export async function POST(req: Request) {
   try {
@@ -32,6 +33,16 @@ export async function POST(req: Request) {
       to: email,
       subject: `Welcome to Growthik Media!`,
       html: userHtml,
+    });
+
+    // Slack Alert
+    await sendSlackAlert({
+      title: "📧 New Newsletter Subscriber",
+      color: "#2eb886", // Slack Green
+      fields: [
+        { label: "Email", value: email },
+        { label: "Name", value: name || "Not provided" },
+      ],
     });
 
     return NextResponse.json({ success: true, message: "Subscribed!" });

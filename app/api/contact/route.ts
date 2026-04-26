@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { sendUnifiedEmail } from "@/lib/mailer";
 import { db as prisma } from "@/lib/db";
+import { sendSlackAlert } from "@/lib/slack";
 
 export async function POST(req: Request) {
   try {
@@ -36,6 +37,18 @@ export async function POST(req: Request) {
         service: finalService,
         source: "Main Contact Form"
       }
+    });
+
+    // Slack Alert
+    await sendSlackAlert({
+      title: "🔥 New Lead from Contact Form",
+      fields: [
+        { label: "Name", value: name },
+        { label: "Email", value: email },
+        { label: "Phone", value: phone || "N/A" },
+        { label: "Service", value: finalService },
+        { label: "Message", value: message || "N/A" },
+      ],
     });
 
     return NextResponse.json({ success: true, message: "Enquiry sent! We'll be in touch." });

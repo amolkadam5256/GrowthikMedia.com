@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { sendUnifiedEmail } from "@/lib/mailer";
 import { db as prisma } from "@/lib/db";
+import { sendSlackAlert } from "@/lib/slack";
 
 export async function POST(req: Request) {
   try {
@@ -47,6 +48,20 @@ export async function POST(req: Request) {
         source: "Audit Request Form"
       },
       userSubject: `Your Audit Request Form - Growthik Media`
+    });
+
+    // Slack Alert
+    await sendSlackAlert({
+      title: "🚀 New Audit Request",
+      color: "#FFD700", // Gold for Audit
+      fields: [
+        { label: "Business", value: finalBusiness },
+        { label: "Website", value: finalWebsite },
+        { label: "Name", value: name },
+        { label: "Email", value: email },
+        { label: "Budget", value: monthlyBudget || "N/A" },
+        { label: "Goal", value: finalGoal },
+      ],
     });
 
     return NextResponse.json({ success: true, message: "Audit booked! Check your email for confirmation." });

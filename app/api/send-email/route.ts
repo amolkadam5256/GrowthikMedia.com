@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { sendUnifiedEmail, getUserAutoReplyHTML, getAdminNotificationHTML } from "@/lib/mailer";
+import { sendUnifiedEmail } from "@/lib/mailer";
 import { db as prisma } from "@/lib/db";
+import { sendSlackAlert } from "@/lib/slack";
 
 /**
  * Unified Email API Route
@@ -57,6 +58,19 @@ export async function POST(req: Request) {
       adminSubject: adminSubject,
       adminData: adminData,
       userSubject: `Thank you for contacting Growthik Media - We are reviewing your request`,
+    });
+
+    // 5. Slack Alert
+    await sendSlackAlert({
+      title: `🔔 New ${formType} Lead`,
+      fields: [
+        { label: "Name", value: name },
+        { label: "Email", value: email },
+        { label: "Phone", value: phone || "N/A" },
+        { label: "Form", value: formType },
+        { label: "Message", value: message || "N/A" },
+        { label: "Business/Website", value: body.businessName || body.website || "N/A" },
+      ],
     });
 
     // 6. Final Status Check
