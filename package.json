@@ -13,7 +13,8 @@
     "audit:email": "node --env-file=.env automation/seo-audit/send-email.mjs",
     "audit:slack": "node --env-file=.env automation/seo-audit/alert-slack.mjs",
     "audit:test": "node automation/seo-audit/crawler.mjs --test-mode && node automation/seo-audit/generate-report.mjs",
-    "audit:full": "node automation/seo-audit/crawler.mjs && node automation/seo-audit/generate-report.mjs && node --env-file=.env automation/seo-audit/send-email.mjs && node --env-file=.env automation/seo-audit/alert-slack.mjs"
+    "audit:full": "node automation/seo-audit/crawler.mjs && node automation/seo-audit/generate-report.mjs && node --env-file=.env automation/seo-audit/send-email.mjs && node --env-file=.env automation/seo-audit/alert-slack.mjs",
+    "indexnow:submit": "node automation/indexnow/submit.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

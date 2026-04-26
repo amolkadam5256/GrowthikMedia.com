@@ -1,0 +1,28 @@
+name: IndexNow Submission
+
+on:
+  workflow_dispatch: # Allows manual trigger
+  deployment_status: # Triggers on deployment
+    types: [success]
+
+jobs:
+  indexnow:
+    if: github.event.deployment_status.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Submit to IndexNow
+        env:
+          SITE_URL: "https://www.growthikmedia.com"
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY || '7b7a8d5e8c4b4f5a9b7e7a8d5e8c4b4f' }}
+        run: npm run indexnow:submit

@@ -17,8 +17,11 @@ automation/
 │   ├── send-email.mjs          ← Emails the HTML report via SMTP/Gmail
 │   └── alert-slack.mjs         ← Posts Slack alert on issues
 │
+├── indexnow/                   ← Auto-submit new pages to IndexNow
+│   ├── submit.mjs              ← Fetches sitemap and submits to Bing/Yandex
+│   └── (key).txt               ← In public/ for ownership verification
+│
 └── (future automations here)
-    ├── indexnow/               ← Auto-submit new pages to IndexNow
     ├── backlink-monitor/       ← Monitor backlinks weekly
     └── sitemap-ping/           ← Ping search engines on deploy
 ```
@@ -30,6 +33,7 @@ automation/
 | Workflow | File | Schedule | Description |
 |---|---|---|---|
 | Weekly SEO Audit | `.github/workflows/seo-audit.yml` | Mon 9:00 AM IST | Crawls all pages, generates HTML report, sends email + Slack |
+| IndexNow Submission | `.github/workflows/indexnow.yml` | On Deploy / Manual | Submits sitemap URLs to IndexNow endpoints |
 
 ---
 
@@ -43,6 +47,7 @@ Go to **GitHub → Settings → Secrets and variables → Actions** and add:
 | `SMTP_PASS` | Gmail App Password (not regular password) |
 | `REPORT_EMAIL` | Recipient email for the audit report |
 | `SLACK_WEBHOOK_URL` | (Optional) Slack incoming webhook URL |
+| `INDEXNOW_KEY` | (Optional) Custom IndexNow API key |
 
 > **Tip:** For Gmail, generate an App Password at: https://myaccount.google.com/apppasswords
 
@@ -56,6 +61,9 @@ npm run audit:test
 
 # Run the full audit pipeline
 npm run audit:full
+
+# Submit all sitemap URLs to IndexNow
+npm run indexnow:submit
 
 # Individual steps
 npm run audit:crawl      # Step 1: Crawl all pages
