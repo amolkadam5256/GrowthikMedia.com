@@ -15,7 +15,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
     <section className="mt-16 pt-12 border-t border-(--border)">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h2 className="text-2xl md:text-3xl font-black text-(--text-primary)">
+          <h2 className="text-xl md:text-2xl font-black text-(--text-primary)">
             Related Articles
           </h2>
           <p className="text-(--text-secondary) font-medium text-sm mt-1">

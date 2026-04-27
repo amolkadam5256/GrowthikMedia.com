@@ -36,6 +36,7 @@ const FounderSection = () => {
                   src={images.founder.amol1}
                   alt="Amol Kadam - Founder of Growthik Media"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
                   priority
                 />

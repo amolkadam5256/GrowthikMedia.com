@@ -65,6 +65,7 @@ export const metadata: Metadata = {
 
 import { Suspense } from "react";
 import MetaPixel from "@/components/PublicComponents/Analytics/MetaPixel";
+import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
 
 export default function RootLayout({
   children,
@@ -81,10 +82,18 @@ export default function RootLayout({
         suppressHydrationWarning
         className="antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
       >
-        <Suspense fallback={null}>
-          <MetaPixel />
-        </Suspense>
-        {children}
+        {/* Blocking script: sets 'dark' class before first paint — no FOUC */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,
+          }}
+        />
+        <ThemeProviderWrapper>
+          <Suspense fallback={null}>
+            <MetaPixel />
+          </Suspense>
+          {children}
+        </ThemeProviderWrapper>
       </body>
     </html>
   );

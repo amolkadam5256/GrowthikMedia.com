@@ -7,7 +7,7 @@ import { Badge } from "@/components/PublicComponents/ui/GBadge";
 const HeroHeadline = () => {
   return (
     <header
-      className="flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto px-4 py-12 md:py-12"
+      className="flex flex-col justify-center items-start text-left relative max-w-6xl mx-auto px-4 py-12 md:py-20"
       role="banner"
     >
       {/* Main Content Container */}
@@ -54,7 +54,7 @@ const HeroHeadline = () => {
 
         {/* Subheadline - The Core Identity Line */}
         <p
-          className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto font-medium leading-[1.6] px-4"
+          className="text-lg sm:text-xl md:text-2xl max-w-4xl font-medium leading-[1.6]"
           style={{ color: "var(--color-white)" }}
         >
           We&apos;re Pune&apos;s digital marketing team helping businesses in Baner, Hinjewadi and PCMC get more traffic, better leads and real ROI -{" "}
@@ -64,7 +64,7 @@ const HeroHeadline = () => {
         </p>
 
         {/* CTA Section */}
-        <div className="relative flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
+        <div className="relative flex flex-col sm:flex-row items-center justify-start gap-6 pt-6">
           {/* Annotation: Free Growth Audit */}
           <div className="absolute -left-20 md:-left-32 top-0 hidden lg:block">
             <p
@@ -126,7 +126,7 @@ const HeroHeadline = () => {
         </div>
 
         {/* Trust Indicators */}
-        <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-4 opacity-80 list-none p-0">
+        <ul className="flex flex-wrap items-center justify-start gap-4 md:gap-8 pt-4 opacity-80 list-none p-0">
           <li className="flex items-center gap-2">
             <svg
               className="w-5 h-5"

@@ -53,7 +53,7 @@ function TrendingPosts({ currentPostId }: { currentPostId?: string }) {
             className="group flex gap-4 items-center p-2 -mx-2 rounded-xl hover:bg-(--background) transition-colors"
           >
             <span
-              className="text-3xl font-black shrink-0 w-8 text-center"
+              className="text-2xl font-black shrink-0 w-8 text-center"
               style={{
                 color: idx === 0 ? "var(--color-primary)" : "var(--border)",
                 opacity: idx === 0 ? 1 : 0.5,

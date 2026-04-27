@@ -1,0 +1,73 @@
+import { NextResponse } from "next/server";
+import { db } from "@/lib/db";
+
+// Fetch comments
+export async function GET(
+  req: Request,
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  try {
+    const { slug } = await params;
+
+    const comments = await db.blogComment.findMany({
+      where: {
+        post: { slug },
+        parentId: null, // Get top-level comments
+        isApproved: true,
+      },
+      include: {
+        replies: {
+          where: { isApproved: true },
+          orderBy: { createdAt: "asc" },
+        },
+      },
+      orderBy: { createdAt: "desc" },
+    });
+
+    return NextResponse.json(comments);
+  } catch (error) {
+    console.error("Fetch comments error:", error);
+    return NextResponse.json({ error: "Failed to fetch comments" }, { status: 500 });
+  }
+}
+
+// Add comment
+export async function POST(
+  req: Request,
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  try {
+    const { slug } = await params;
+    const body = await req.json();
+    const { authorName, authorEmail, content, parentId } = body;
+
+    if (!authorName || !content) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    // Find the post ID
+    const post = await db.blogPost.findUnique({
+      where: { slug },
+      select: { id: true },
+    });
+
+    if (!post) {
+      return NextResponse.json({ error: "Post not found" }, { status: 404 });
+    }
+
+    const comment = await db.blogComment.create({
+      data: {
+        postId: post.id,
+        authorName,
+        authorEmail,
+        content,
+        parentId,
+      },
+    });
+
+    return NextResponse.json(comment);
+  } catch (error) {
+    console.error("Add comment error:", error);
+    return NextResponse.json({ error: "Failed to add comment" }, { status: 500 });
+  }
+}

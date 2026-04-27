@@ -1,7 +1,7 @@
 "use client";
 import "./assets/styles/globals.css";
 import React, { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/lib/theme";
 import Link from "next/link";
 import {
   Home,

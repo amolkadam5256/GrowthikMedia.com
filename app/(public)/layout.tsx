@@ -7,7 +7,6 @@ import AOSInit from "@/components/PublicComponents/comman/AOSInit";
 import { CONTACT_INFO } from "@/constants/contact";
 
 import ClientUtilities from "@/components/PublicComponents/comman/ClientUtilities";
-import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
 import { Metadata } from "next";
 
 // The ClientUtilities component now handles the deferred loading of
@@ -87,17 +86,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ThemeProviderWrapper>
+    <>
+      <SEO />
+      <GTM />
       <ClientUtilities />
       <AOSInit />
       <PageViewTracker />
-      <GTM />
-      <SEO />
       <Header />
       <main id="main-content" tabIndex={-1}>
         {children}
       </main>
       <Footer />
-    </ThemeProviderWrapper>
+    </>
   );
 }

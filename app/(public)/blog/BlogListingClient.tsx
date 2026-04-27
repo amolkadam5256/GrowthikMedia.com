@@ -59,14 +59,14 @@ export default function BlogListingPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-(--background) pt-18">
+    <div className="min-h-screen bg-(--background) pt-16">
       {/* ──────────────── HERO SECTION ──────────────── */}
-      <section className="relative overflow-hidden border-b border-(--border) bg-(--background) py-20 lg:py-32">
+      <section className="relative overflow-hidden border-b border-(--border) bg-(--background) py-12 lg:py-16">
         {/* Abstract animated background */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-1/4 -right-1/4 w-[800px] h-[800px] bg-gradient-to-br from-(--color-primary)/30 to-rose-600/10 rounded-full blur-[120px] mix-blend-screen animate-pulse duration-10000" />
           <div className="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-blue-600/20 to-purple-600/10 rounded-full blur-[100px] mix-blend-screen" />
-          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay" />
+
           <div
             className="absolute inset-0 opacity-20 dark:opacity-20 opacity-50"
             style={{
@@ -79,8 +79,7 @@ export default function BlogListingPage() {
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12">
           {/* Top label */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--surface) border border-(--border) shadow-sm dark:shadow-xl mb-8 text-sm font-bold text-(--text-primary) tracking-wide uppercase">
-            <Sparkles className="w-4 h-4 text-amber-500" />
+          <div className="inline-flex items-center gap-2 px-2 py-2 text-sm font-bold text-(--text-primary) tracking-wide uppercase">
             Growthik Media Insights
           </div>
 
@@ -123,7 +122,7 @@ export default function BlogListingPage() {
 
             {/* Right - Featured Hero Post */}
             {featured && !isFiltered && (
-              <div className="relative lg:ml-auto w-full max-w-lg group">
+              <div className="relative lg:ml-auto w-full max-w-2xl group">
                 <div className="absolute -inset-4 bg-gradient-to-r from-(--color-primary) to-orange-500 rounded-[2.5rem] opacity-20 group-hover:opacity-30 blur-2xl transition-opacity duration-500" />
                 <div className="relative transform transition-transform duration-500 group-hover:-translate-y-2">
                   <BlogCard post={featured} variant="featured" priority />

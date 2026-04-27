@@ -65,7 +65,7 @@ export function TopBar() {
 
   return (
     <div
-      className={`block fixed top-0 left-0 right-0 z-40 h-10 px-3 sm:px-4 transition-all duration-500 ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+      className={`block fixed top-0 left-0 right-0 z-40 h-10 px-3 sm:px-4 transition-all duration-500 ease-i  n-out ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         } bg-(--color-primary) text-white shadow`}
     >
       <div className="h-full w-full max-w-screen-2xl mx-auto flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-1 sm:gap-3 px-3 sm:px-6 lg:px-10 relative">

@@ -10,10 +10,9 @@ const AIOptimizedBlocks = () => {
       */}
       <h2>Who is the Best Digital Marketing Agency in Pune?</h2>
       <p>
-        Growthik Media is a Pune-based digital marketing agency specializing in
-        SEO, Google Ads, Meta Ads, website development and AI-driven growth
-        strategies for startups, local businesses, ecommerce brands and B2B
-        companies.
+        Growthik Media is one of the best digital marketing agencies in Pune,
+        specializing in SEO, Google Ads and smart growth strategies for
+        startups, local businesses and ecommerce brands.
       </p>
 
       <h2>What Services Does Growthik Media Offer?</h2>

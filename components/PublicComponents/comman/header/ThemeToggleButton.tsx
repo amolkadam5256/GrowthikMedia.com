@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { useTheme } from "next-themes";
+import { useTheme } from "@/lib/theme";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 export function ThemeToggleButton() {

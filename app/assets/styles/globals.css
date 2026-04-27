@@ -135,22 +135,22 @@ body {
 
 /* ─── Blog Article Body Styles ─────────────────────────────────────────────── */
 .blog-body h2 {
-  font-size: 1.75rem;
+  font-size: 1.35rem; /* ~22px */
   font-weight: 900;
   color: var(--text-primary);
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.4rem;
   border-bottom: 1px solid var(--border);
   line-height: 1.3;
 }
 
 .blog-body h3 {
-  font-size: 1.35rem;
+  font-size: 1.15rem; /* ~18px */
   font-weight: 800;
   color: var(--text-primary);
-  margin-top: 2.25rem;
-  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+  margin-bottom: 0.7rem;
   line-height: 1.4;
 }
 
@@ -165,23 +165,23 @@ body {
 .blog-body p,
 .blog-body .lead {
   color: var(--text-secondary);
-  font-size: 1.125rem;
-  line-height: 1.85;
-  margin-bottom: 1.5rem;
+  font-size: 0.95rem; /* ~15px */
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
   font-weight: 500;
 }
 
 .blog-body .lead {
-  font-size: 1.3rem;
+  font-size: 1.1rem; /* ~17.5px */
   color: var(--text-primary);
   font-weight: 600;
-  border-left: 4px solid var(--color-primary);
-  padding-left: 1.25rem;
-  margin-bottom: 2.5rem;
+  border-left: 3px solid var(--color-primary);
+  padding-left: 1rem;
+  margin-bottom: 2rem;
   background: var(--surface);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-radius: 0 8px 8px 0;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 0 6px 6px 0;
 }
 
 .blog-body ul,
@@ -199,10 +199,10 @@ body {
 
 .blog-body li {
   color: var(--text-secondary);
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 0.9rem; /* ~14.5px */
+  line-height: 1.7;
   font-weight: 500;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .blog-body li::marker {

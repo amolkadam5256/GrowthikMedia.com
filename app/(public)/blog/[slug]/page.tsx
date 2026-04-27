@@ -30,6 +30,8 @@ import { POST_CONTENT } from "@/lib/blog/content";
 import { CategoryBadge } from "@/components/PublicComponents/Blog/BlogCard";
 import BlogSidebar from "@/components/PublicComponents/Blog/BlogSidebar";
 import RelatedPosts from "@/components/PublicComponents/Blog/RelatedPosts";
+import CommentSection from "@/components/PublicComponents/Blog/CommentSection";
+import { db } from "@/lib/db";
 
 // Lazily load interactive-only widgets - they are below the fold and
 // do not appear in the initial server-rendered HTML, so splitting them
@@ -136,6 +138,14 @@ export default async function BlogDetailPage({
   const related = getRelatedPosts(post, 3);
   const pageUrl = `${CONTACT_INFO.website}/blog/${slug}`;
 
+  // Get dynamic stats from DB
+  const dbPost = await db.blogPost.findUnique({
+    where: { slug },
+    select: { views: true },
+  });
+
+  const liveViews = dbPost?.views || post.views;
+
   // Schema markup
   const schema = {
     "@context": "https://schema.org",
@@ -180,11 +190,11 @@ export default async function BlogDetailPage({
       {/* Reading progress bar */}
       <ReadingProgress />
 
-      <div className="min-h-screen bg-(--background) pt-24">
+      <div className="min-h-screen bg-(--background) pt-16">
         <header className="bg-(--background) pt-12 pb-8 border-b border-(--border)/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12 text-left">
             {/* Breadcrumb */}
-            <nav className="flex items-center justify-center gap-2 text-sm text-(--text-secondary) font-medium mb-8">
+            <nav className="flex items-center justify-start gap-2 text-sm text-(--text-secondary) font-medium mb-8">
               <Link
                 href="/"
                 className="hover:text-(--color-primary) transition-colors"
@@ -205,7 +215,7 @@ export default async function BlogDetailPage({
             </nav>
 
             {/* Category + Trending */}
-            <div className="flex items-center justify-center gap-3 mb-6 flex-wrap">
+            <div className="flex items-center justify-start gap-3 mb-6 flex-wrap">
               <span
                 className="inline-block text-xs font-bold px-3 py-1.5 rounded-full"
                 style={{
@@ -224,12 +234,12 @@ export default async function BlogDetailPage({
             </div>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-(--text-primary) leading-[1.1] tracking-tight mb-8">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-(--text-primary) leading-[1.2] tracking-tight mb-8">
               {post.title}
             </h1>
 
             {/* Meta row */}
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-(--text-secondary) font-medium py-4 border-y border-(--border)/50">
+            <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-3 text-sm text-(--text-secondary) font-medium py-4 border-y border-(--border)/50">
               <div className="flex items-center gap-2">
                 <AuthorAvatar name={post.author.name} size={32} />
                 <span className="font-bold text-(--text-primary)">
@@ -246,14 +256,14 @@ export default async function BlogDetailPage({
               </span>
               <span className="flex items-center gap-1.5">
                 <Eye className="w-4 h-4" />
-                {formatNumber(post.views)} views
+                {formatNumber(liveViews)} views
               </span>
             </div>
           </div>
 
           {/* Featured Image */}
-          <div className="max-w-6xl mx-auto px-6 mt-12">
-            <div className="relative aspect-video lg:aspect-21/9 rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5 dark:ring-white/10">
+          <div className="max-w-7xl mx-auto px-6 mt-8">
+            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/10">
               <Image
                 src={post.featuredImage}
                 alt={post.featuredImageAlt}
@@ -271,7 +281,7 @@ export default async function BlogDetailPage({
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-14 items-start">
             {/* Sticky Sidebar (Left) */}
-            <div className="order-2 lg:order-1 sticky top-28">
+            <div className="order-2 lg:order-1 lg:sticky lg:top-28 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto custom-scrollbar pr-1">
               <BlogSidebar currentPostId={post.id} />
             </div>
 
@@ -418,6 +428,9 @@ export default async function BlogDetailPage({
                   </div>
                 </div>
               </div>
+
+              {/* Comments Section */}
+              <CommentSection slug={slug} />
 
               {/* Related Posts */}
               <RelatedPosts posts={related} />

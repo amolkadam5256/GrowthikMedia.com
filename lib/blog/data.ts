@@ -103,6 +103,27 @@ export const TAGS: BlogTag[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "post-12",
+    title: "Raja Shivaji Movie: Pune's Biggest Marketing Trend",
+    slug: "raja-shivaji-marathi-movie-bookings-pune-marketing-trend",
+    excerpt: "आज संपूर्ण महाराष्ट्रात आणि विशेषतः पुण्याच्या रस्त्यांवर एकच चर्चा आहे — #RajaShivajiMarathiBookings. Learn how businesses can tap into this cultural phenomenon for growth.",
+    content: "raja-shivaji-marathi-movie-bookings-pune-marketing-trend",
+    featuredImage: "/images/blog/raja-shivaji-marathi-movie-bookings-pune.jpg",
+    featuredImageAlt: "Raja Shivaji Marathi Movie Bookings Trending Pune",
+    category: CATEGORIES[2],
+    tags: [TAGS[3], TAGS[2], TAGS[0], TAGS[7]],
+    author: AUTHORS[0],
+    publishDate: "2026-04-27T10:00:00Z",
+    readingTime: 18,
+    views: 0,
+    commentsCount: 0,
+    likesCount: 0,
+    featured: true,
+    trending: true,
+    metaTitle: "Raja Shivaji Marathi Movie Bookings Pune | Marketing Trend 2026",
+    metaDescription: "Explore why Raja Shivaji movie bookings are trending in Pune and how digital marketing strategies can turn this viral wave into business growth. Growthik Media insights.",
+  },
+  {
     id: "post-11",
     title:
       "The 2026 SEO Blueprint: How We Rank Pune Businesses on Page 1 Organically",

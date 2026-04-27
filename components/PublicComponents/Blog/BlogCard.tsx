@@ -122,8 +122,7 @@ function FeaturedCard({ post, priority }: { post: BlogPost; priority?: boolean }
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group relative rounded-2xl overflow-hidden block"
-      style={{ minHeight: 480 }}
+      className="group relative rounded-2xl overflow-hidden block aspect-video w-full"
     >
       {/* Background image */}
       <div className="absolute inset-0">
@@ -131,55 +130,18 @@ function FeaturedCard({ post, priority }: { post: BlogPost; priority?: boolean }
           src={post.featuredImage}
           alt={post.featuredImageAlt}
           fill
-          sizes="100vw"
+          sizes="(max-width: 1280px) 100vw, 1200px"
           className="object-cover group-hover:scale-105 transition-transform duration-700"
           priority={priority}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
       </div>
 
       {/* Overlay content */}
-      <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-10">
-        <div className="flex items-center gap-3 mb-4">
-          <CategoryBadge name={post.category.name} color={post.category.color} />
-          <span className="text-white/70 text-xs font-medium flex items-center gap-1">
-            <Clock className="w-3 h-3" /> {post.readingTime} min read
-          </span>
-          {post.trending && (
-            <span className="bg-red-600/90 backdrop-blur-md text-white text-[10px] sm:text-xs font-black uppercase tracking-widest px-2.5 py-1 rounded-full border border-white/20 shadow-lg flex items-center gap-1.5 z-10">
-              <span className="w-1.5 h-1.5 rounded-full bg-yellow-300 animate-[pulse_1.5s_ease-in-out_infinite]"></span>
-              Trending
-            </span>
-          )}
-        </div>
-
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight mb-4 group-hover:text-(--color-primary-light) transition-colors">
+      <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 lg:p-8">
+        <h2 className="text-lg md:text-xl lg:text-2xl font-black text-white leading-tight mb-2 group-hover:text-(--color-primary-light) transition-colors max-w-xl">
           {post.title}
         </h2>
-
-        <p className="text-white/75 text-sm md:text-base leading-relaxed mb-6 max-w-2xl line-clamp-2">
-          {post.excerpt}
-        </p>
-
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <AuthorAvatar name={post.author.name} size={36} />
-            <div>
-              <p className="text-sm font-bold text-white">{post.author.name}</p>
-              <p className="text-xs text-white/60">{formatDate(post.publishDate)}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4 text-white/70 text-sm">
-            <span className="flex items-center gap-1.5">
-              <Eye className="w-4 h-4" />
-              {formatNumber(post.views)}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Heart className="w-4 h-4" />
-              {formatNumber(post.likesCount)}
-            </span>
-          </div>
-        </div>
       </div>
     </Link>
   );
