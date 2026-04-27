@@ -25,6 +25,7 @@ const AboutFounderSection = () => {
                     src={images.founder?.amol1 || "/placeholder-founder.jpg"} // Fallback if needed
                     alt="Amol Kadam - Founder & Growth Architect"
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     className="object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-105"
                   />
                 </div>

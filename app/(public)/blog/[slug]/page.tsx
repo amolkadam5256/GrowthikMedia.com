@@ -262,14 +262,14 @@ export default async function BlogDetailPage({
           </div>
 
           {/* Featured Image */}
-          <div className="max-w-7xl mx-auto px-6 mt-8">
-            <div className="relative aspect-video rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/10">
+          <div className="max-w-4xl mx-auto px-6 mt-8">
+            <div className="relative h-[300px] sm:h-[450px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/10 bg-(--surface)">
               <Image
                 src={post.featuredImage}
                 alt={post.featuredImageAlt}
                 fill
                 sizes="(max-width: 1200px) 100vw, 1200px"
-                className="object-cover transition-transform duration-700 hover:scale-105"
+                className="object-contain transition-transform duration-700 hover:scale-105"
                 priority
               />
               <div className="absolute inset-0 border border-black/10 dark:border-white/10 rounded-3xl pointer-events-none" />
@@ -281,7 +281,7 @@ export default async function BlogDetailPage({
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
           <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-14 items-start">
             {/* Sticky Sidebar (Left) */}
-            <div className="order-2 lg:order-1 lg:sticky lg:top-28 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto custom-scrollbar pr-1">
+            <div className="order-2 lg:order-1 lg:sticky lg:top-28">
               <BlogSidebar currentPostId={post.id} />
             </div>
 
