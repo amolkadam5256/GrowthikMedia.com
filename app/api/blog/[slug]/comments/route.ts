@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+import type { Prisma } from "@prisma/client";
 import { db } from "@/lib/db";
+import { getPostBySlug } from "@/lib/blog/data";
 
 // Fetch comments
 export async function GET(
@@ -45,14 +47,34 @@ export async function POST(
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // Find the post ID
-    const post = await db.blogPost.findUnique({
+    // Static blog posts may not be synced to the database yet. Upsert the
+    // current post on demand so comment submission works for newly added posts.
+    let post = await db.blogPost.findUnique({
       where: { slug },
       select: { id: true },
     });
 
     if (!post) {
-      return NextResponse.json({ error: "Post not found" }, { status: 404 });
+      const staticPost = getPostBySlug(slug);
+
+      if (!staticPost) {
+        return NextResponse.json({ error: "Post not found" }, { status: 404 });
+      }
+
+      post = await db.blogPost.create({
+        data: {
+          slug: staticPost.slug,
+          title: staticPost.title,
+          excerpt: staticPost.excerpt,
+          author: staticPost.author.name,
+          image: staticPost.featuredImage,
+          isPublished: true,
+          publishedAt: new Date(staticPost.publishDate),
+          tags: staticPost.tags as unknown as Prisma.InputJsonValue,
+          views: staticPost.views,
+        },
+        select: { id: true },
+      });
     }
 
     const comment = await db.blogComment.create({

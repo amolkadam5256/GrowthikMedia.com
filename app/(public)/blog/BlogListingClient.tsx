@@ -146,7 +146,7 @@ export default function BlogListingPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10 lg:gap-14 items-start">
           {/* ── Blog Grid (Left) ── */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1">
             {visiblePosts.length === 0 ? (
               <div className="text-center py-20">
                 <p className="text-5xl mb-4">🔍</p>
@@ -209,7 +209,7 @@ export default function BlogListingPage() {
           </div>
 
           {/* ── Sidebar (Right) ── */}
-          <div className="order-1 lg:order-2 sticky top-28">
+          <div className="order-2 lg:self-start">
             <BlogSidebar />
           </div>
         </div>

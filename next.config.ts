@@ -42,9 +42,6 @@ const nextConfig: NextConfig = {
       { source: "/seo-services-pune", destination: "/services/seo/", permanent: true },
       { source: "/services/seo-company-in-pune", destination: "/services/seo/", permanent: true },
       
-      // Blog Redirects
-      { source: "/blog/why-seo-is-important", destination: "/blog/why-seo-is-important/", permanent: true },
-      
       // Legacy Specifics & Misc
       { source: "/quote", destination: "/contact/", permanent: true },
       

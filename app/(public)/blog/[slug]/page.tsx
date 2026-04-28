@@ -17,6 +17,7 @@ import {
   ExternalLink,
   CheckCircle2,
   Quote,
+  HelpCircle,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { BLOG_POSTS, getPostBySlug, getRelatedPosts } from "@/lib/blog/data";
@@ -27,6 +28,7 @@ import {
   stringToColor,
 } from "@/lib/blog/utils";
 import { POST_CONTENT } from "@/lib/blog/content";
+import { BLOG_FAQS } from "@/lib/blog/faqs";
 import { CategoryBadge } from "@/components/PublicComponents/Blog/BlogCard";
 import BlogSidebar from "@/components/PublicComponents/Blog/BlogSidebar";
 import RelatedPosts from "@/components/PublicComponents/Blog/RelatedPosts";
@@ -146,8 +148,10 @@ export default async function BlogDetailPage({
 
   const liveViews = dbPost?.views || post.views;
 
+  const faqs = BLOG_FAQS[slug] || [];
+
   // Schema markup
-  const schema = {
+  const schema: any = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
@@ -177,6 +181,25 @@ export default async function BlogDetailPage({
     articleSection: post.category.name,
   };
 
+  if (faqs.length > 0) {
+    // Add FAQ Schema side-by-side with Article using @graph or an array
+    // However, typical implementation is just generating two scripts or using a @graph.
+    // For simplicity, we'll just inject a second schema script block in the render for FAQPage.
+  }
+
+  const faqSchema = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+      }
+    }))
+  } : null;
+
   const content = POST_CONTENT[slug];
 
   return (
@@ -186,6 +209,13 @@ export default async function BlogDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      {faqSchema && (
+        <Script
+          id={`schema-faq-${slug}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Reading progress bar */}
       <ReadingProgress />
@@ -324,6 +354,28 @@ export default async function BlogDetailPage({
                     >
                       Browse All Articles
                     </Link>
+                  </div>
+                </div>
+              )}
+
+              {/* Dynamic FAQ Section */}
+              {faqs.length > 0 && (
+                <div className="mt-12 pt-8 border-t border-(--border)">
+                  <h2 className="text-2xl font-black mb-6 flex items-center gap-2">
+                    <HelpCircle className="w-6 h-6 text-(--color-primary)" />
+                    Frequently Asked Questions
+                  </h2>
+                  <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                      <div key={index} className="p-5 bg-(--surface) rounded-xl border border-(--border)">
+                        <h3 className="font-bold text-(--text-primary) mb-2">
+                          {faq.question}
+                        </h3>
+                        <p className="text-sm text-(--text-secondary) mb-0 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}

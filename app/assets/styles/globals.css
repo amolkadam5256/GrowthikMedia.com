@@ -264,6 +264,11 @@ body {
   text-decoration-thickness: 2px;
 }
 
+.blog-body .blog-cta-link,
+.blog-body .blog-cta-link:hover {
+  text-decoration: none;
+}
+
 .blog-body strong {
   font-weight: 800;
   color: var(--text-primary);

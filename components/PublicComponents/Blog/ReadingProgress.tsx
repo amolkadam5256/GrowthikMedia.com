@@ -3,20 +3,30 @@ import React, { useEffect, useState } from "react";
 
 export default function ReadingProgress() {
   const [progress, setProgress] = useState(0);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const panel = document.querySelector<HTMLElement>(".blog-scroll-panel");
+
     const handleScroll = () => {
-      const el = document.documentElement;
-      const scrollTop = el.scrollTop || document.body.scrollTop;
+      const panelIsScrollable =
+        panel && panel.scrollHeight > panel.clientHeight + 1;
+      const el = panelIsScrollable ? panel : document.documentElement;
+      const scrollTop = panelIsScrollable
+        ? panel.scrollTop
+        : el.scrollTop || document.body.scrollTop;
       const scrollHeight = el.scrollHeight - el.clientHeight;
       const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
       setProgress(pct);
-      setVisible(scrollTop > 100);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    panel?.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      panel?.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (

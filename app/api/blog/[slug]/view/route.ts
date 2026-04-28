@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+import type { Prisma } from "@prisma/client";
 import { db } from "@/lib/db";
+import { getPostBySlug } from "@/lib/blog/data";
 
 export async function POST(
   req: Request,
@@ -8,12 +10,33 @@ export async function POST(
   try {
     const { slug } = await params;
 
-    // We use upsert so that if the post doesn't exist in DB yet (it's from static data), 
-    // we don't crash, though ideally we should have a seed script.
-    // For now, let's just increment if it exists.
-    const post = await db.blogPost.update({
+    const staticPost = getPostBySlug(slug);
+
+    if (!staticPost) {
+      return NextResponse.json({ error: "Post not found" }, { status: 404 });
+    }
+
+    const post = await db.blogPost.upsert({
       where: { slug },
-      data: {
+      create: {
+        slug: staticPost.slug,
+        title: staticPost.title,
+        excerpt: staticPost.excerpt,
+        author: staticPost.author.name,
+        image: staticPost.featuredImage,
+        isPublished: true,
+        publishedAt: new Date(staticPost.publishDate),
+        tags: staticPost.tags as unknown as Prisma.InputJsonValue,
+        views: staticPost.views + 1,
+      },
+      update: {
+        title: staticPost.title,
+        excerpt: staticPost.excerpt,
+        author: staticPost.author.name,
+        image: staticPost.featuredImage,
+        isPublished: true,
+        publishedAt: new Date(staticPost.publishDate),
+        tags: staticPost.tags as unknown as Prisma.InputJsonValue,
         views: {
           increment: 1,
         },

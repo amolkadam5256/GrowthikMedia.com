@@ -1,20 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import {
-  TrendingUp,
   Clock,
   Bookmark,
   Flame,
   ArrowRight,
-  Tag,
-  Mail,
   Rss,
 } from "lucide-react";
-import type { BlogPost } from "@/lib/blog/types";
-import { getTrendingPosts, getLatestPosts, CATEGORIES, TAGS } from "@/lib/blog/data";
+import { getTrendingPosts, getLatestPosts, CATEGORIES } from "@/lib/blog/data";
 import { formatDate, formatNumber } from "@/lib/blog/utils";
 import BlogCard from "./BlogCard";
-import NewsletterForm from "./NewsletterForm";
 
 interface BlogSidebarProps {
   currentPostId?: string;
@@ -45,7 +40,7 @@ function TrendingPosts({ currentPostId }: { currentPostId?: string }) {
 
   return (
     <SidebarSection title="Trending" icon={Flame}>
-      <div className="space-y-4">
+      <div className="space-y-3">
         {posts.map((post, idx) => (
           <Link
             key={post.id}
@@ -138,7 +133,7 @@ function CategoriesWidget() {
 // ─── Main Sidebar ─────────────────────────────────────────────────────────────
 export default function BlogSidebar({ currentPostId }: BlogSidebarProps) {
   return (
-    <aside className="space-y-6">
+    <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start lg:h-fit">
       {/* Trending */}
       <TrendingPosts currentPostId={currentPostId} />
 
