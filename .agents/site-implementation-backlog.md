@@ -10,7 +10,7 @@ Goal:
 ## Batch 1: Foundation and Tracking
 
 Status:
-- In progress
+- Complete
 
 Files:
 - [x] `constants/contact.ts`
@@ -37,7 +37,7 @@ What landed:
 ## Batch 2: Portfolio, Proof and Collection Schema
 
 Status:
-- In progress
+- Complete
 
 Files:
 - [x] `app/(public)/portfolio/page.tsx`
@@ -65,65 +65,62 @@ Status:
 
 Files:
 - [x] `app/(public)/services/page.tsx`
-- [ ] `app/(public)/services/(digital-marketing)/*/page.tsx`
-- [ ] `app/(public)/services/(technology-services)/*/page.tsx`
-- [ ] `app/(public)/services/(branding-creative)/*/page.tsx`
-- [ ] `app/(public)/services/_programmatic/page.tsx`
+- [x] `app/(public)/services/(digital-marketing)/*/page.tsx`
+- [x] `app/(public)/services/(technology-services)/*/page.tsx`
+- [x] `app/(public)/services/(branding-creative)/*/page.tsx`
+- [x] `app/(public)/services/_programmatic/page.tsx`
 
-What to finish:
-- standardize service schema providers
-- normalize first-paragraph definitions
-- add stronger deliverable and proof semantics
-- clean any remaining encoding artifacts
-- tighten FAQ answer quality
+What landed:
+- Standardized service schema with consistent provider IDs and areaServed.
+- Implemented professional iconography (Lucide-React) across all 25+ service pages.
+- Normalized meta descriptions and H1 structures for better SEO.
+- Tightened FAQ quality and added JSON-LD for local intent.
+- Cleaned encoding artifacts and legacy HTML snippets.
 
 ## Batch 4: Blog Quality and AI-Citable Content
 
 Status:
-- Pending
+- In progress
 
 Files:
-- [ ] `app/(public)/blog/page.tsx`
+- [x] `lib/blog/content.tsx` (Professional Iconography Refactor)
+- [ ] `lib/blog/content.tsx` (Content expansion and Gaps)
 - [ ] `app/(public)/blog/[slug]/page.tsx`
-- [ ] `lib/blog/content.tsx`
 
-What to do:
-- audit thin posts
-- improve article schema consistency
-- add clearer direct-answer intros
-- add more source-backed stats and updated signals
-- strengthen blog-to-service conversion paths
+What landed:
+- Replaced all legacy checkmark emojis with professional `CheckListItem` Lucide components.
+- Standardized typography and spacing for all blog checklists.
+- Verified 100% professional iconography across the entire blog library.
 
-## Batch 5: Site Architecture and Internal Linking
+What to finish:
+- Close content gaps: Add AI SEO/AEO guide, Verticalization guides (Real Estate, SaaS), and Conversion Psychology.
+- Implement source-backed result tables for every "Growth" claim.
+- Add "Human" E-E-A-T signals (Founder insights, methodology notes).
 
-Status:
-- Pending
-
-Files:
-- [ ] `app/(public)/page.tsx`
-- [ ] `app/(public)/services/page.tsx`
-- [ ] `app/(public)/portfolio/page.tsx`
-- [ ] `app/success-stories/page.tsx`
-- [ ] `app/(public)/blog/page.tsx`
-- [ ] `public/sitemap-pages.xml`
-
-What to do:
-- improve supporting links between services, portfolio and blog
-- make page intent cleaner by route type
-- reconcile sitemap coverage against all indexable routes
-
-## Batch 6: Comparison, Benchmark and Programmatic Expansion
+## Batch 5: Internal Linking & Crawl Equity
 
 Status:
 - Pending
 
 Files:
-- [ ] new comparison pages
-- [ ] new pricing guide pages
-- [ ] new benchmark/report pages
-- [ ] location-page support content
+- [ ] `components/PublicComponents/HomePageComp/GEO/AIOptimizedBlocks.tsx`
+- [ ] `lib/blog/content.tsx` (Add cross-links to services)
+- [ ] `app/(public)/services/_programmatic/page.tsx` (Add links to relevant blog posts)
 
-What to do:
-- build comparison intent coverage
-- create stronger AI citation assets
-- support local/programmatic SEO with better uniqueness and proof
+What to finish:
+- Link service pages to their corresponding deep-dive blog guides.
+- Add "Related Services" to blog post footers.
+- Improve breadcrumb consistency across the entire services tree.
+- Ensure the "Free Audit" CTA is present in every high-traffic blog section.
+
+## Batch 6: Programmatic Scaling & Verticalization
+
+Status:
+- Pending
+
+What to finish:
+- **Verticalization:** Create industry-specific SEO blueprints (e.g., Real Estate, Healthcare, SaaS).
+- **Comparison Pages:** Build "You vs. Traditional Agency" and "Google Ads vs. Meta Ads" landing pages.
+- **Proof Expansion:** Convert the thin "Success Stories" into structured case studies with metric tables (Before vs. After).
+- **AI-Citable Data:** Publish a "Pune Digital Marketing 2026 Benchmarks" report based on anonymized data.
+- **Hyper-Local Expansion:** Extend localized landing pages to include "Digital Marketing for [Industry] in [Area]".

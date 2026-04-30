@@ -103,6 +103,34 @@ export const TAGS: BlogTag[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "post-13",
+    title: "Real Estate SEO in Pune: The 2026 Strategy to Dominate Luxury & Commercial Search",
+    slug: "seo-for-real-estate-pune-guide",
+    excerpt: "Pune's real estate market is fierce. Learn how to rank for high-intent property keywords in Baner, Kharadi and Hinjewadi using technical SEO and local intent.",
+    content: "seo-for-real-estate-pune-guide",
+    featuredImage: "/images/blog/real-estate-seo-pune-strategy.jpg",
+    featuredImageAlt: "Real Estate SEO Strategy for Pune Developers",
+    category: CATEGORIES[0],
+    tags: [TAGS[0], TAGS[3], TAGS[7], TAGS[11]],
+    author: AUTHORS[0],
+    publishDate: "2026-04-30T10:00:00Z",
+    readingTime: 10,
+    views: 0,
+    commentsCount: 0,
+    likesCount: 0,
+    featured: true,
+    trending: true,
+    metaTitle: "Real Estate SEO Pune: 2026 Strategy for Developers | Growthik",
+    metaDescription: "Dominate Pune's property search market. A deep-dive guide for real estate developers into local SEO, technical property schema and intent-led lead generation.",
+    seoKeywords: [
+      "real estate SEO Pune",
+      "digital marketing for real estate Pune",
+      "property marketing Pune",
+      "real estate leads Pune",
+      "local SEO for developers Pune",
+    ],
+  },
+  {
     id: "post-12",
     title: "Raja Shivaji Movie: Pune's Biggest Marketing Trend",
     slug: "raja-shivaji-marathi-movie-bookings-pune-marketing-trend",
@@ -128,40 +156,6 @@ export const BLOG_POSTS: BlogPost[] = [
       "Marathi movie marketing",
       "local business marketing Pune",
       "social media marketing Pune",
-    ],
-  },
-  {
-    id: "post-11",
-    title:
-      "SEO Services in Pune: The 2026 Blueprint for Page 1 Rankings",
-    slug: "complete-beginner-guide-to-seo-2026",
-    excerpt:
-      "A practical SEO services blueprint for Pune businesses. See how startups, local companies and B2B teams can earn Page 1 rankings and organic leads.",
-    content: "complete-beginner-guide-to-seo-2026",
-    featuredImage:
-      "/images/blog/seo-services-in-pune-rank-1-google-growthik-media-thumbnail.png",
-    featuredImageAlt:
-      "SEO Services in Pune - Rank 1 on Google with Growthik Media",
-    category: CATEGORIES[0],
-    tags: [TAGS[0], TAGS[3], TAGS[2], TAGS[7]],
-    author: AUTHORS[0],
-    publishDate: "2026-03-19T10:00:00Z",
-    readingTime: 12,
-    views: 0,
-    commentsCount: 0,
-    likesCount: 0,
-    featured: true,
-    trending: true,
-    metaTitle: "SEO Services in Pune: 2026 Ranking Blueprint | Growthik",
-    metaDescription:
-      "Learn the 2026 SEO framework Growthik uses for Pune businesses: search intent, local SEO, content, technical fixes and organic lead generation.",
-    seoKeywords: [
-      "SEO services in Pune",
-      "SEO company Pune",
-      "SEO agency Pune",
-      "organic lead generation Pune",
-      "local SEO Pune",
-      "technical SEO Pune",
     ],
   },
   {
@@ -200,7 +194,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "technical-seo-audit-checklist",
     excerpt:
       "Use this Pune SEO audit checklist to find technical, content, local SEO and trust issues that stop your website from earning search traffic.",
-    content: "",
+    content: "technical-seo-audit-checklist",
     featuredImage:
       "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=80",
     featuredImageAlt: "SEO audit checklist on a laptop screen",
@@ -233,7 +227,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "why-seo-is-important",
     excerpt:
       "If your Pune business is invisible on Google, you pay for every lead. Learn why SEO compounds traffic, trust and enquiries in 2026.",
-    content: "",
+    content: "why-seo-is-important",
     featuredImage:
       "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80",
     featuredImageAlt: "Google analytics dashboard showing SEO growth",

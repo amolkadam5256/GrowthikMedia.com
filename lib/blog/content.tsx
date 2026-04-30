@@ -10,7 +10,16 @@ import {
   MapPin,
   CheckCircle2,
   HelpCircle,
+  Code2,
+  Zap,
 } from "lucide-react";
+
+const CheckListItem = ({ children }: { children: React.ReactNode }) => (
+  <li className="flex items-start gap-3">
+    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+    <span>{children}</span>
+  </li>
+);
 
 export const POST_CONTENT: Record<string, React.ReactNode> = {
   "complete-beginner-guide-to-seo-2026": (
@@ -411,24 +420,24 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         Before you write a single word of content, you need to fix the engine. If Google&apos;s bots are hitting dead ends or slow loads, your authority is zero.
       </p>
       <ul>
-        <li>
-          ✅ Is your site indexed by Google? (Check:{" "}
+        <CheckListItem>
+          Is your site indexed by Google? (Check:{" "}
           <code>site:yourdomain.com</code>)
-        </li>
-        <li>✅ Is HTTPS enabled on all pages?</li>
-        <li>
-          ✅ Is there a robots.txt file? Does it block any important pages?
-        </li>
-        <li>✅ Is your XML sitemap submitted to Google Search Console?</li>
-        <li>✅ Are there any crawl errors in Google Search Console?</li>
-        <li>✅ Is the canonical tag properly set on all pages?</li>
-        <li>✅ Are there duplicate pages (www vs non-www, HTTP vs HTTPS)?</li>
-        <li>
-          ✅ Is your site mobile-friendly? (Use Google&apos;s Mobile-Friendly
+        </CheckListItem>
+        <CheckListItem>Is HTTPS enabled on all pages?</CheckListItem>
+        <CheckListItem>
+          Is there a robots.txt file? Does it block any important pages?
+        </CheckListItem>
+        <CheckListItem>Is your XML sitemap submitted to Google Search Console?</CheckListItem>
+        <CheckListItem>Are there any crawl errors in Google Search Console?</CheckListItem>
+        <CheckListItem>Is the canonical tag properly set on all pages?</CheckListItem>
+        <CheckListItem>Are there duplicate pages (www vs non-www, HTTP vs HTTPS)?</CheckListItem>
+        <CheckListItem>
+          Is your site mobile-friendly? (Use Google&apos;s Mobile-Friendly
           Test)
-        </li>
-        <li>✅ What are your Core Web Vitals scores? (LCP, CLS, INP)</li>
-        <li>✅ Is your page loading speed under 3 seconds?</li>
+        </CheckListItem>
+        <CheckListItem>What are your Core Web Vitals scores? (LCP, CLS, INP)</CheckListItem>
+        <CheckListItem>Is your page loading speed under 3 seconds?</CheckListItem>
       </ul>
 
       <blockquote>
@@ -443,31 +452,31 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         &quot;website design company in Pune&quot; and &quot;digital marketing agency Pune&quot;.
       </p>
       <ul>
-        <li>
-          ✅ Does every page have a unique, keyword-rich title tag (50–60
+        <CheckListItem>
+          Does every page have a unique, keyword-rich title tag (50–60
           chars)?
-        </li>
-        <li>
-          ✅ Does every page have a unique meta description (150–160 chars)?
-        </li>
-        <li>
-          ✅ Is there a single H1 tag per page containing the target keyword?
-        </li>
-        <li>✅ Are H2/H3 headings used logically with secondary keywords?</li>
-        <li>
-          ✅ Is your target keyword used naturally in the first 100 words?
-        </li>
-        <li>✅ Are images compressed and do they have descriptive alt text?</li>
-        <li>✅ Do internal links use descriptive anchor text?</li>
-        <li>
-          ✅ Are URLs short, descriptive and keyword-rich (no IDs or ?=)?
-        </li>
-        <li>
-          ✅ Is your content longer and more comprehensive than competing pages?
-        </li>
-        <li>
-          ✅ Is schema markup (JSON-LD) implemented for your business type?
-        </li>
+        </CheckListItem>
+        <CheckListItem>
+          Does every page have a unique meta description (150–160 chars)?
+        </CheckListItem>
+        <CheckListItem>
+          Is there a single H1 tag per page containing the target keyword?
+        </CheckListItem>
+        <CheckListItem>Are H2/H3 headings used logically with secondary keywords?</CheckListItem>
+        <CheckListItem>
+          Is your target keyword used naturally in the first 100 words?
+        </CheckListItem>
+        <CheckListItem>Are images compressed and do they have descriptive alt text?</CheckListItem>
+        <CheckListItem>Do internal links use descriptive anchor text?</CheckListItem>
+        <CheckListItem>
+          Are URLs short, descriptive and keyword-rich (no IDs or ?=)?
+        </CheckListItem>
+        <CheckListItem>
+          Is your content longer and more comprehensive than competing pages?
+        </CheckListItem>
+        <CheckListItem>
+          Is schema markup (JSON-LD) implemented for your business type?
+        </CheckListItem>
       </ul>
 
       <h2>Section 3: Content Quality & E-E-A-T</h2>
@@ -477,22 +486,22 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         penalized.
       </p>
       <ul>
-        <li>
-          ✅ Does your content demonstrate first-hand experience and expertise?
-        </li>
-        <li>
-          ✅ Is there original research, data, or unique insights in your key
+        <CheckListItem>
+          Does your content demonstrate first-hand experience and expertise?
+        </CheckListItem>
+        <CheckListItem>
+          Is there original research, data, or unique insights in your key
           pages?
-        </li>
-        <li>✅ Are there clear author bios with credentials?</li>
-        <li>✅ Is your blog content regularly updated?</li>
-        <li>
-          ✅ Do you have thin content pages with under 300 words that need
+        </CheckListItem>
+        <CheckListItem>Are there clear author bios with credentials?</CheckListItem>
+        <CheckListItem>Is your blog content regularly updated?</CheckListItem>
+        <CheckListItem>
+          Do you have thin content pages with under 300 words that need
           expansion?
-        </li>
-        <li>
-          ✅ Are there any pages with duplicate or near-duplicate content?
-        </li>
+        </CheckListItem>
+        <CheckListItem>
+          Are there any pages with duplicate or near-duplicate content?
+        </CheckListItem>
       </ul>
 
       <h2>Section 4: Backlink Profile</h2>
@@ -501,20 +510,20 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         and quality of sites linking to you matter significantly.
       </p>
       <ul>
-        <li>
-          ✅ How many unique domains are linking to your site? (Check
+        <CheckListItem>
+          How many unique domains are linking to your site? (Check
           Ahrefs/SEMrush)
-        </li>
-        <li>✅ Are your top linking domains relevant to your industry?</li>
-        <li>
-          ✅ Are there any toxic or spammy backlinks pointing to your site?
-        </li>
-        <li>✅ Do competitors have significantly more backlinks than you?</li>
-        <li>
-          ✅ Have you submitted your business to key Indian directories
+        </CheckListItem>
+        <CheckListItem>Are your top linking domains relevant to your industry?</CheckListItem>
+        <CheckListItem>
+          Are there any toxic or spammy backlinks pointing to your site?
+        </CheckListItem>
+        <CheckListItem>Do competitors have significantly more backlinks than you?</CheckListItem>
+        <CheckListItem>
+          Have you submitted your business to key Indian directories
           (Justdial, IndiaMart)?
-        </li>
-        <li>✅ Is your Google Business Profile complete and optimized?</li>
+        </CheckListItem>
+        <CheckListItem>Is your Google Business Profile complete and optimized?</CheckListItem>
       </ul>
 
       <h2>Section 5: Local SEO (For Pune Businesses)</h2>
@@ -523,23 +532,23 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         city-specific searches - critical for Pune-based businesses.
       </p>
       <ul>
-        <li>
-          ✅ Is your Google Business Profile fully completed with photos, hours,
+        <CheckListItem>
+          Is your Google Business Profile fully completed with photos, hours,
           and services?
-        </li>
-        <li>
-          ✅ Are your NAP details (Name, Address, Phone) consistent across all
+        </CheckListItem>
+        <CheckListItem>
+          Are your NAP details (Name, Address, Phone) consistent across all
           directories?
-        </li>
-        <li>
-          ✅ Do you have 10+ Google reviews with responses from the business?
-        </li>
-        <li>
-          ✅ Do you have location-specific pages for different Pune areas?
-        </li>
-        <li>
-          ✅ Is LocalBusiness schema implemented on your contact/about page?
-        </li>
+        </CheckListItem>
+        <CheckListItem>
+          Do you have 10+ Google reviews with responses from the business?
+        </CheckListItem>
+        <CheckListItem>
+          Do you have location-specific pages for different Pune areas?
+        </CheckListItem>
+        <CheckListItem>
+          Is LocalBusiness schema implemented on your contact/about page?
+        </CheckListItem>
       </ul>
 
       <h2>Conclusion</h2>
@@ -804,15 +813,15 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <h2>Step 1: Optimize Your Google Business Profile in Pune</h2>
       <p>Your Google Business Profile (GBP) is the single most important local SEO asset. Follow this optimization checklist:</p>
       <ul>
-        <li>✅ Claim your GBP listing at business.google.com</li>
-        <li>✅ Choose the most specific primary category (e.g., &quot;Digital Marketing Agency&quot; not just &quot;Marketing Agency&quot;)</li>
-        <li>✅ Add all relevant secondary categories</li>
-        <li>✅ Write a keyword-rich business description (750 chars max)</li>
-        <li>✅ Upload 10+ high-quality photos of your office/team/work</li>
-        <li>✅ Add complete services list with descriptions and prices</li>
-        <li>✅ Set accurate business hours including special hours</li>
-        <li>✅ Enable messaging and respond within 24 hours</li>
-        <li>✅ Post weekly GBP updates (events, offers, news)</li>
+        <CheckListItem>Claim your GBP listing at business.google.com</CheckListItem>
+        <CheckListItem>Choose the most specific primary category (e.g., &quot;Digital Marketing Agency&quot; not just &quot;Marketing Agency&quot;)</CheckListItem>
+        <CheckListItem>Add all relevant secondary categories</CheckListItem>
+        <CheckListItem>Write a keyword-rich business description (750 chars max)</CheckListItem>
+        <CheckListItem>Upload 10+ high-quality photos of your office/team/work</CheckListItem>
+        <CheckListItem>Add complete services list with descriptions and prices</CheckListItem>
+        <CheckListItem>Set accurate business hours including special hours</CheckListItem>
+        <CheckListItem>Enable messaging and respond within 24 hours</CheckListItem>
+        <CheckListItem>Post weekly GBP updates (events, offers, news)</CheckListItem>
       </ul>
       <h2>Step 2: Build Local Citations</h2>
       <p>Citations are mentions of your business Name, Address and Phone (NAP) on other websites. Consistency is critical - even a small discrepancy can hurt rankings.</p>
@@ -1003,4 +1012,89 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       </div>
     </div>
   ),
+  "seo-for-real-estate-pune-guide": (
+    <div className="blog-content">
+      <p className="lead">
+        Pune&apos;s real estate market is no longer about just hoarding land. It is about capturing attention. From the luxury high-rises of <strong>Baner and Balewadi</strong> to the commercial hubs of <strong>Kharadi and Hinjewadi</strong>, every developer is fighting for the same high-intent buyer. Here is the 2026 technical SEO blueprint to dominate Pune real estate search.
+      </p>
+
+      <h2>The Real Estate Search Landscape in Pune</h2>
+      <p>
+        In Pune, real estate searches are hyper-local. Buyers don&apos;t just search for &quot;flats in Pune&quot;. They search for:
+      </p>
+      <ul>
+        <li>&quot;2 BHK luxury flats in Baner near highway&quot;</li>
+        <li>&quot;Commercial office space for lease in Kharadi IT park&quot;</li>
+        <li>&quot;Under construction projects in Wakad with amenities&quot;</li>
+      </ul>
+      <p>If your website is not optimized for these long-tail, high-intent queries, you are handing leads to your competitors and aggregators like Housing.com or 99acres.</p>
+
+      <h2 className="flex items-center gap-3">
+        <MapPin className="w-6 h-6 text-(--color-primary)" /> Step 1: Neighborhood-First SEO
+      </h2>
+      <p>
+        Stop building generic &quot;Projects&quot; pages. Build <strong>Location Authority Pages</strong>. If you have a project in Mamurdi, your content shouldn&apos;t just talk about the building; it should talk about the proximity to the Mumbai-Pune Expressway, the upcoming metro connectivity, and the ROI of that specific micro-market.
+      </p>
+      <ul className="space-y-2">
+        <CheckListItem>Create dedicated pages for each micro-market (e.g., /real-estate-pune/baner/)</CheckListItem>
+        <CheckListItem>Embed custom Google Maps with local landmarks (schools, hospitals, IT parks)</CheckListItem>
+        <CheckListItem>Include &quot;Distance From&quot; tables to key Pune hubs</CheckListItem>
+      </ul>
+
+      <h2 className="flex items-center gap-3">
+        <Code2 className="w-6 h-6 text-(--color-primary)" /> Step 2: Technical Property Schema
+      </h2>
+      <p>
+        To get cited by AI search engines and show up in rich snippets, you must use <strong>RealEstateListing</strong> and <strong>Place</strong> schema. This tells Google exactly how many units are available, the price range, and the floor plan details in a machine-readable format.
+      </p>
+      <blockquote>We recently helped a developer in Bavdhan increase their &quot;organic unit enquiries&quot; by 40% simply by implementing clean JSON-LD schema that allowed Google to show their prices directly in search results.</blockquote>
+
+      <h2 className="flex items-center gap-3">
+        <Zap className="w-6 h-6 text-(--color-primary)" /> Step 3: Speed is the Ultimate Conversion Lever
+      </h2>
+      <p>
+        Real estate sites are usually bloated with heavy 4K images and videos. In Pune, where many buyers browse on mobile while commuting, a 10-second load time is a death sentence.
+      </p>
+      <ul>
+        <li>Use <strong>Next.js Image Optimization</strong> to serve WebP formats</li>
+        <li>Lazy-load virtual tours and heavy drone footage</li>
+        <li>Ensure your &quot;Check Price&quot; or &quot;Download Brochure&quot; buttons work instantly</li>
+      </ul>
+
+      <h2 className="flex items-center gap-3">
+        <BarChart3 className="w-6 h-6 text-(--color-primary)" /> Step 4: The &quot;Social Proof&quot; Engine
+      </h2>
+      <p>
+        Pune buyers are referral-heavy. They trust what other Punekars say. Your SEO strategy must include:
+      </p>
+      <ol className="space-y-2">
+        <li><strong>Video Testimonials:</strong> Real residents talking about the lifestyle, not just the brick and mortar.</li>
+        <li><strong>Google Business Profile:</strong> Dominating the &quot;near me&quot; search for your site office location.</li>
+        <li><strong>Comparison Content:</strong> &quot;Why [Project A] is the best investment in Hinjewadi Phase 3 compared to Phase 1.&quot;</li>
+      </ol>
+
+      <div className="bg-(--surface) p-6 rounded-2xl border border-(--border) my-8">
+        <h4 className="font-black uppercase mb-3 flex items-center gap-2">
+          <HelpCircle className="w-5 h-5 text-(--color-primary)" /> Growthik Insight
+        </h4>
+        <p className="mb-0 italic text-(--text-secondary)">
+          Don&apos;t just target buyers. Target <strong>Channel Partners</strong>. Create content that helps brokers sell your project (downloadable kits, RERA details, commission transparency). This builds a secondary organic traffic stream that converts into high-volume site visits.
+        </p>
+      </div>
+
+      <h2>Final Verdict</h2>
+      <p>
+        Real Estate SEO in Pune is about being the most useful resource in a specific neighborhood. When you combine technical speed with deep local knowledge, you stop being an &quot;advertiser&quot; and start being the <strong>market leader</strong>.
+      </p>
+
+      <div className="mt-8 text-center bg-(--color-primary) text-white p-6 md:p-8 rounded-2xl">
+        <div className="mb-4 text-white font-black">Ready to dominate the Pune Real Estate market?</div>
+        <Link href="/contact" className="blog-cta-link bg-white text-(--color-primary) px-6 py-2.5 rounded-full inline-block font-bold hover:opacity-90 transition-opacity">
+          Book a Growth Strategy Call
+        </Link>
+      </div>
+    </div>
+  ),
 };
+
+

@@ -130,6 +130,7 @@ model BlogComment {
   post        BlogPost  @relation(fields: [postId], references: [id], onDelete: Cascade)
   authorName  String
   authorEmail String?
+  userId      String?   // Added to identify comment author for editing/deleting
   content     String    @db.Text
   likesCount  Int       @default(0)
   isApproved  Boolean   @default(true)
@@ -144,6 +145,18 @@ model BlogComment {
 
   @@map("blog_comments")
 }
+
+model Visitor {
+  id        String   @id @default(cuid())
+  path      String   // URL path visited
+  ip        String?  // Masked or hashed IP if needed for privacy
+  userAgent String?
+  referrer  String?
+  createdAt DateTime @default(now())
+
+  @@map("visitors")
+}
+
 
 // Contact
 model Inquiry {

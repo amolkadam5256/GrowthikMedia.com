@@ -7,11 +7,11 @@ import { Badge } from "@/components/PublicComponents/ui/GBadge";
 const HeroHeadline = () => {
   return (
     <header
-      className="flex flex-col justify-center items-start text-left relative max-w-6xl mx-auto px-4 py-12 md:py-15"
+      className="flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto px-4 py-12 md:py-15"
       role="banner"
     >
       {/* Main Content Container */}
-      <div className="relative z-10 space-y-6 md:space-y-8">
+      <div className="relative z-10 space-y-6 md:space-y-8 flex flex-col items-center">
         {/* New Core Identity Message */}
         <div
           className="inline-block px-6 py-2 rounded-full border border-(--color-primary)/30 bg-(--color-primary)/5 backdrop-blur-sm shadow-xl shadow-primary/10 animate-fade-in"
@@ -54,7 +54,7 @@ const HeroHeadline = () => {
 
         {/* Subheadline - The Core Identity Line */}
         <p
-          className="text-lg sm:text-xl md:text-2xl max-w-4xl font-medium leading-[1.6]"
+          className="text-lg sm:text-xl md:text-2xl max-w-4xl font-medium leading-[1.6] mx-auto"
           style={{ color: "var(--color-white)" }}
         >
           We&apos;re Pune&apos;s digital marketing team helping businesses in Baner, Hinjewadi and PCMC get more traffic, better leads and real ROI -{" "}
@@ -64,7 +64,7 @@ const HeroHeadline = () => {
         </p>
 
         {/* CTA Section */}
-        <div className="relative flex flex-col sm:flex-row items-center justify-start gap-6 pt-6">
+        <div className="relative flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
           {/* Annotation: Free Growth Audit */}
           <div className="absolute -left-20 md:-left-32 top-0 hidden lg:block">
             <p
@@ -126,7 +126,7 @@ const HeroHeadline = () => {
         </div>
 
         {/* Trust Indicators */}
-        <ul className="flex flex-wrap items-center justify-start gap-4 md:gap-8 pt-4 opacity-80 list-none p-0">
+        <ul className="flex flex-wrap items-center justify-center gap-4 md:gap-8 pt-4 opacity-80 list-none p-0 mx-auto">
           <li className="flex items-center gap-2">
             <svg
               className="w-5 h-5"

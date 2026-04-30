@@ -82,18 +82,18 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
       <div className="absolute top-0 right-0 w-64 h-64 bg-(--color-primary)/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-xl text-left">
+      <div className="relative max-w-2xl mx-auto text-center flex flex-col items-center">
         <div className="w-14 h-14 bg-(--color-primary)/10 rounded-2xl flex items-center justify-center mb-6">
           <Mail className="w-7 h-7 text-(--color-primary)" />
         </div>
         <h2 className="text-2xl md:text-3xl font-black text-(--text-primary) mb-3">
           Subscribe to Our Newsletter
         </h2>
-        <p className="text-(--text-secondary) font-medium mb-8 max-w-sm">
+        <p className="text-(--text-secondary) font-medium mb-8 max-w-sm mx-auto">
           Get weekly insights on SEO, web design and digital marketing delivered straight to your inbox. No spam, unsubscribe anytime.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-lg">
           <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="email"
@@ -116,7 +116,7 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
             </button>
           </div>
 
-          <div className="flex items-center gap-3 justify-start">
+          <div className="flex items-center gap-3 justify-center">
             <input
               id="agree-full"
               type="checkbox"
@@ -133,7 +133,7 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
           </div>
         </form>
 
-        <p className="text-xs text-(--text-secondary) mt-4">
+        <p className="text-xs text-(--text-secondary) mt-6">
           Join 1,200+ digital marketers and business owners. Unsubscribe anytime.
         </p>
       </div>

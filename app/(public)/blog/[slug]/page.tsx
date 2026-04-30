@@ -508,14 +508,19 @@ export default async function BlogDetailPage({
               {/* Comments Section */}
               <CommentSection slug={slug} />
 
-              {/* Related Posts */}
-              <RelatedPosts posts={related} />
             </article>
           </div>
         </div>
 
+        {/* Full-width Related Posts section */}
+        <div className="bg-(--surface)/30 border-y border-(--border)/50 mt-16 py-16">
+          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <RelatedPosts posts={related} />
+          </div>
+        </div>
+
         {/* Newsletter section */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
+        <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
           <NewsletterForm />
         </section>
       </div>

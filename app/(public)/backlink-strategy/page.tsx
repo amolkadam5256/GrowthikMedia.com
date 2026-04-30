@@ -14,8 +14,8 @@ import {
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.growthikmedia.com/backlink-strategy/" },
-  title: "AI-Powered SEO & Backlink Strategy for Pune Businesses | Growthik Media",
-  description: "Boost your Pune-based business with our AI-driven SEO strategy. Explore high-quality backlink ideas, guest posting sites and outreach templates tailored for Pune, AI and SEO.",
+  title: "AI-Powered SEO & Backlink Strategy for Pune | Growthik Media",
+  description: "Boost your Pune-based business with our AI-driven SEO strategy. Explore high-quality backlink ideas and outreach templates tailored for Pune, AI and SEO.",
   openGraph: {
     title: "AI-Powered SEO & Backlink Strategy for Pune Businesses",
     description: "The ultimate guide to generating high-authority backlinks for Pune-based AI and SEO services.",

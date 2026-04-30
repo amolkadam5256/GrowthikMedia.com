@@ -12,7 +12,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
   if (!posts.length) return null;
 
   return (
-    <section className="mt-16 pt-12 border-t border-(--border)">
+    <section className="">
       <div className="flex items-center justify-between mb-8">
         <div>
           <h2 className="text-xl md:text-2xl font-black text-(--text-primary)">

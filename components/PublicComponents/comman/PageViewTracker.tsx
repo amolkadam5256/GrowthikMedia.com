@@ -79,6 +79,23 @@ export default function PageViewTracker() {
       ai_referral: referrer_source === "ai",
     });
 
+    // Internal Visitor Tracking
+    const logInternalVisit = async () => {
+      try {
+        await fetch("/api/visitor", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            path: pathname,
+            referrer: typeof document !== "undefined" ? document.referrer : "direct",
+          }),
+        });
+      } catch (err) {
+        console.error("Internal tracking error:", err);
+      }
+    };
+    logInternalVisit();
+
     // 1. Google Analytics Tracking
     if (
       typeof window !== "undefined" &&

@@ -29,7 +29,7 @@ const FilterableServices = dynamic(() =>
 export const metadata: Metadata = {
   title: "Growthik Media | Honest Digital Marketing & SEO Services in Pune",
   description:
-    "We help Pune's ambitious brands grow with search strategies that work. High-performance SEO, predictable Google Ads and fast websites that turn traffic into revenue. No fluff, just results.",
+    "We help Pune's ambitious brands grow with search strategies that work. High-performance SEO, predictable Google Ads and websites that turn traffic into revenue.",
   keywords:
     "digital marketing services pune, seo company pune, google ads agency pune, website development pune, ecommerce development, performance marketing pune, social media marketing pune, branding agency pune, growthik media services",
   alternates: {
@@ -189,7 +189,7 @@ export default function ServicesPage() {
     },
     {
       q: "How much do SEO services cost in Pune?",
-      a: "Typical retainers start from Rs 15k-Rs 50k per month depending on competitiveness, pages and link-building needs.",
+      a: "Typical retainers start from ₹15,000 to ₹50,000 per month depending on competitiveness, pages and link-building needs.",
     },
     {
       q: "How long until we see results?",

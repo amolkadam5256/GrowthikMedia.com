@@ -7,13 +7,19 @@ import {
   Reply, 
   User,
   Loader2,
-  CheckCircle2
+  CheckCircle2,
+  Edit2,
+  Trash2,
+  X,
+  Check
 } from "lucide-react";
 import { formatDate } from "@/lib/blog/utils";
 
 interface Comment {
   id: string;
   authorName: string;
+  authorEmail: string | null;
+  userId: string | null;
   content: string;
   likesCount: number;
   createdAt: string;
@@ -25,11 +31,27 @@ interface CommentSectionProps {
   slug: string;
 }
 
+// Simple unique ID for current session/user to allow edit/delete
+const getStoredUserId = () => {
+  if (typeof window === "undefined") return "";
+  let id = localStorage.getItem("growthik_user_id");
+  if (!id) {
+    id = "user_" + Math.random().toString(36).substring(2, 11);
+    localStorage.setItem("growthik_user_id", id);
+  }
+  return id;
+};
+
 export default function CommentSection({ slug }: CommentSectionProps) {
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [currentUserId, setCurrentUserId] = useState("");
+  
+  // Edit state
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editContent, setEditContent] = useState("");
   
   // Form state
   const [formData, setFormData] = useState({
@@ -41,14 +63,11 @@ export default function CommentSection({ slug }: CommentSectionProps) {
 
   const [replyTo, setReplyTo] = useState<string | null>(null);
 
-  // Load comments and increment view
   useEffect(() => {
+    setCurrentUserId(getStoredUserId());
     const init = async () => {
       try {
-        // Increment view
         await fetch(`/api/blog/${slug}/view`, { method: "POST" });
-        
-        // Fetch comments
         const res = await fetch(`/api/blog/${slug}/comments`);
         const data = await res.json();
         if (Array.isArray(data)) {
@@ -72,20 +91,16 @@ export default function CommentSection({ slug }: CommentSectionProps) {
       const res = await fetch(`/api/blog/${slug}/comments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, userId: currentUserId })
       });
       
       if (res.ok) {
         setSuccess(true);
-        // Refresh comments
         const freshRes = await fetch(`/api/blog/${slug}/comments`);
         const freshData = await freshRes.json();
         setComments(freshData);
-        
-        // Reset form
         setFormData({ authorName: "", authorEmail: "", content: "", parentId: null });
         setReplyTo(null);
-        
         setTimeout(() => setSuccess(false), 3000);
       }
     } catch (err) {
@@ -95,21 +110,63 @@ export default function CommentSection({ slug }: CommentSectionProps) {
     }
   };
 
+  const handleEdit = async (commentId: string) => {
+    if (!editContent.trim()) return;
+    try {
+      const res = await fetch(`/api/blog/comment/${commentId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content: editContent, userId: currentUserId })
+      });
+      if (res.ok) {
+        setEditingId(null);
+        // Refresh local state
+        const refresh = async () => {
+          const res = await fetch(`/api/blog/${slug}/comments`);
+          const data = await res.json();
+          setComments(data);
+        };
+        refresh();
+      }
+    } catch (err) {
+      console.error("Edit error:", err);
+    }
+  };
+
+  const handleDelete = async (commentId: string) => {
+    if (!confirm("Are you sure you want to delete this comment?")) return;
+    try {
+      const res = await fetch(`/api/blog/comment/${commentId}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: currentUserId })
+      });
+      if (res.ok) {
+        setComments(prev => {
+          const filterItem = (items: Comment[]): Comment[] => {
+            return items.filter(item => item.id !== commentId).map(item => ({
+              ...item,
+              replies: item.replies ? filterItem(item.replies) : []
+            }));
+          };
+          return filterItem(prev);
+        });
+      }
+    } catch (err) {
+      console.error("Delete error:", err);
+    }
+  };
+
   const handleLike = async (commentId: string) => {
     try {
       const res = await fetch(`/api/blog/comment/${commentId}/like`, { method: "POST" });
       if (res.ok) {
         const data = await res.json();
-        // Update local state
         setComments(prev => {
           const updateItem = (items: Comment[]): Comment[] => {
             return items.map(item => {
-              if (item.id === commentId) {
-                return { ...item, likesCount: data.likesCount };
-              }
-              if (item.replies) {
-                return { ...item, replies: updateItem(item.replies) };
-              }
+              if (item.id === commentId) return { ...item, likesCount: data.likesCount };
+              if (item.replies) return { ...item, replies: updateItem(item.replies) };
               return item;
             });
           };
@@ -121,49 +178,86 @@ export default function CommentSection({ slug }: CommentSectionProps) {
     }
   };
 
-  const CommentItem = ({ comment, isReply = false }: { comment: Comment, isReply?: boolean }) => (
-    <div className={`flex gap-4 ${isReply ? "mt-4 ml-12 border-l-2 border-(--border)/30 pl-4" : "mt-8"}`}>
-      <div className="w-10 h-10 rounded-full bg-(--surface-secondary) flex items-center justify-center shrink-0 border border-(--border)/50">
-        <User className="w-5 h-5 text-(--text-tertiary)" />
-      </div>
-      <div className="flex-1">
-        <div className="flex items-center justify-between mb-1">
-          <h4 className="text-sm font-black text-(--text-primary)">{comment.authorName}</h4>
-          <span className="text-[10px] font-bold text-(--text-tertiary) uppercase tracking-widest">
-            {formatDate(comment.createdAt)}
-          </span>
+  const CommentItem = ({ comment, isReply = false }: { comment: Comment, isReply?: boolean }) => {
+    const isAuthor = comment.userId === currentUserId;
+    const isEditing = editingId === comment.id;
+
+    return (
+      <div className={`flex gap-4 ${isReply ? "mt-4 ml-12 border-l-2 border-(--border)/30 pl-4" : "mt-8"}`}>
+        <div className="w-10 h-10 rounded-full bg-(--surface-secondary) flex items-center justify-center shrink-0 border border-(--border)/50">
+          <User className="w-5 h-5 text-(--text-tertiary)" />
         </div>
-        <p className="text-sm text-(--text-secondary) leading-relaxed mb-3">
-          {comment.content}
-        </p>
-        <div className="flex items-center gap-4">
-          <button 
-            onClick={() => handleLike(comment.id)}
-            className="flex items-center gap-1 text-[11px] font-bold text-(--text-tertiary) hover:text-(--color-primary) transition-colors"
-          >
-            <ThumbsUp className="w-3.5 h-3.5" />
-            {comment.likesCount}
-          </button>
-          {!isReply && (
+        <div className="flex-1">
+          <div className="flex items-center justify-between mb-1">
+            <h4 className="text-sm font-black text-(--text-primary)">{comment.authorName}</h4>
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] font-bold text-(--text-tertiary) uppercase tracking-widest">
+                {formatDate(comment.createdAt)}
+              </span>
+              {isAuthor && !isEditing && (
+                <div className="flex items-center gap-2">
+                  <button onClick={() => { setEditingId(comment.id); setEditContent(comment.content); }} className="text-(--text-tertiary) hover:text-(--color-primary)">
+                    <Edit2 className="w-3 h-3" />
+                  </button>
+                  <button onClick={() => handleDelete(comment.id)} className="text-(--text-tertiary) hover:text-red-500">
+                    <Trash2 className="w-3 h-3" />
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+          
+          {isEditing ? (
+            <div className="mt-2">
+              <textarea 
+                value={editContent}
+                onChange={e => setEditContent(e.target.value)}
+                className="w-full p-3 text-sm border rounded-xl bg-(--background) focus:outline-none focus:border-(--color-primary)"
+              />
+              <div className="flex justify-end gap-2 mt-2">
+                <button onClick={() => setEditingId(null)} className="p-1.5 rounded-lg bg-gray-100 text-gray-600">
+                  <X className="w-4 h-4" />
+                </button>
+                <button onClick={() => handleEdit(comment.id)} className="p-1.5 rounded-lg bg-(--color-primary) text-white">
+                  <Check className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          ) : (
+            <p className="text-sm text-(--text-secondary) leading-relaxed mb-3">
+              {comment.content}
+            </p>
+          )}
+
+          <div className="flex items-center gap-4">
             <button 
-              onClick={() => {
-                setReplyTo(comment.authorName);
-                setFormData(prev => ({ ...prev, parentId: comment.id }));
-                document.getElementById("comment-form")?.scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={() => handleLike(comment.id)}
               className="flex items-center gap-1 text-[11px] font-bold text-(--text-tertiary) hover:text-(--color-primary) transition-colors"
             >
-              <Reply className="w-3.5 h-3.5" />
-              Reply
+              <ThumbsUp className="w-3.5 h-3.5" />
+              {comment.likesCount}
             </button>
-          )}
+            {!isReply && (
+              <button 
+                onClick={() => {
+                  setReplyTo(comment.authorName);
+                  setFormData(prev => ({ ...prev, parentId: comment.id }));
+                  document.getElementById("comment-form")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="flex items-center gap-1 text-[11px] font-bold text-(--text-tertiary) hover:text-(--color-primary) transition-colors"
+              >
+                <Reply className="w-3.5 h-3.5" />
+                Reply
+              </button>
+            )}
+          </div>
+          {comment.replies && comment.replies.map(reply => (
+            <CommentItem key={reply.id} comment={reply} isReply />
+          ))}
         </div>
-        {comment.replies && comment.replies.map(reply => (
-          <CommentItem key={reply.id} comment={reply} isReply />
-        ))}
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="mt-16 pt-12 border-t border-(--border)">
@@ -179,7 +273,6 @@ export default function CommentSection({ slug }: CommentSectionProps) {
         </div>
       </div>
 
-      {/* Comment Form */}
       <div id="comment-form" className="bg-(--surface) border border-(--border) rounded-3xl p-6 lg:p-8 mb-12 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-(--color-primary)/5 rounded-full blur-3xl pointer-events-none" />
         
@@ -250,7 +343,6 @@ export default function CommentSection({ slug }: CommentSectionProps) {
         )}
       </div>
 
-      {/* Comments List */}
       <div className="space-y-2">
         {loading ? (
           <div className="flex justify-center py-12">
