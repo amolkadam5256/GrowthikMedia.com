@@ -219,6 +219,7 @@ const AboutFounderSection = () => {
                       alt={member.name}
                       fill
                       className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
                   ) : (
                     <div className="flex flex-col items-center gap-4 text-(--text-secondary)/20 group-hover:text-white/40 transition-colors">

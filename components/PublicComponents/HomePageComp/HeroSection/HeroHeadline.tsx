@@ -7,7 +7,7 @@ import { Badge } from "@/components/PublicComponents/ui/GBadge";
 const HeroHeadline = () => {
   return (
     <header
-      className="flex flex-col justify-center items-start text-left relative max-w-6xl mx-auto px-4 py-12 md:py-20"
+      className="flex flex-col justify-center items-start text-left relative max-w-6xl mx-auto px-4 py-12 md:py-15"
       role="banner"
     >
       {/* Main Content Container */}
@@ -34,7 +34,7 @@ const HeroHeadline = () => {
               Digital Marketing Agency
             </span>
             <svg
-              className="absolute w-full h-4 md:h-6 -bottom-2 md:-bottom-3 left-0"
+              className="absolute w-full h-4 md:h-6 -bottom-3 md:-bottom-5 left-0"
               style={{ color: "var(--color-primary)" }}
               viewBox="0 0 200 9"
               fill="none"
@@ -105,7 +105,7 @@ const HeroHeadline = () => {
               </Link>
             </div>
           </div>
- 
+
           {/* Secondary CTA */}
           <div className="relative group">
             <Link href="/portfolio">

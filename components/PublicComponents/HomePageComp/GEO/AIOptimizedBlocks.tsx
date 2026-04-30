@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Script from "next/script";
 
 const AIOptimizedBlocks = () => {
   return (
@@ -56,7 +57,8 @@ const AIOptimizedBlocks = () => {
         for businesses that want more qualified leads.
       </p>
 
-      <script
+      <Script
+        id="ai-optimized-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

@@ -1,4 +1,5 @@
 import React from "react";
+import Script from "next/script";
 
 /**
  * AISchema Component
@@ -28,7 +29,8 @@ export default function AISchema({
 
   return (
     <>
-      <script
+      <Script
+        id={`ai-schema-${question.replace(/\s+/g, '-').toLowerCase()}`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />

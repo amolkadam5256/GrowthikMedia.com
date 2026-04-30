@@ -46,6 +46,9 @@ const NewsletterForm = dynamic(
   () => import("@/components/PublicComponents/Blog/NewsletterForm"),
 );
 
+const toAbsoluteUrl = (url: string) =>
+  url.startsWith("http") ? url : `${CONTACT_INFO.website}${url}`;
+
 // ─── Generate Static Params ───────────────────────────────────────────────────
 
 export async function generateStaticParams() {
@@ -66,25 +69,29 @@ export async function generateMetadata({
     return { title: "Article Not Found | Growthik Media" };
   }
 
+  const pageUrl = `${CONTACT_INFO.website}/blog/${slug}/`;
+  const imageUrl = toAbsoluteUrl(post.featuredImage);
+  const seoKeywords = post.seoKeywords ?? post.tags.map((t) => t.name);
+
   return {
     title: post.metaTitle,
     description: post.metaDescription,
-    keywords: post.tags.map((t) => t.name).join(", "),
+    keywords: seoKeywords.join(", "),
     authors: [{ name: post.author.name }],
     alternates: {
-      canonical: `${CONTACT_INFO.website}/blog/${slug}`,
+      canonical: pageUrl,
     },
     openGraph: {
       title: post.metaTitle,
       description: post.metaDescription,
-      url: `${CONTACT_INFO.website}/blog/${slug}`,
+      url: pageUrl,
       siteName: "Growthik Media",
       type: "article",
       publishedTime: post.publishDate,
       authors: [post.author.name],
       images: [
         {
-          url: post.featuredImage,
+          url: imageUrl,
           width: 1200,
           height: 630,
           alt: post.featuredImageAlt,
@@ -95,7 +102,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: post.metaTitle,
       description: post.metaDescription,
-      images: [post.featuredImage],
+      images: [imageUrl],
       creator: "@growthikmedia",
     },
   };
@@ -138,13 +145,21 @@ export default async function BlogDetailPage({
   }
 
   const related = getRelatedPosts(post, 3);
-  const pageUrl = `${CONTACT_INFO.website}/blog/${slug}`;
+  const pageUrl = `${CONTACT_INFO.website}/blog/${slug}/`;
+  const imageUrl = toAbsoluteUrl(post.featuredImage);
+  const logoUrl = `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`;
+  const seoKeywords = post.seoKeywords ?? post.tags.map((t) => t.name);
 
   // Get dynamic stats from DB
-  const dbPost = await db.blogPost.findUnique({
-    where: { slug },
-    select: { views: true },
-  });
+  let dbPost = null;
+  try {
+    dbPost = await db.blogPost.findUnique({
+      where: { slug },
+      select: { views: true },
+    });
+  } catch (error) {
+    console.error(`Failed to fetch dynamic views for ${slug}:`, error);
+  }
 
   const liveViews = dbPost?.views || post.views;
 
@@ -156,12 +171,16 @@ export default async function BlogDetailPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription,
-    image: post.featuredImage,
+    image: imageUrl,
     datePublished: post.publishDate,
     dateModified: post.updatedDate || post.publishDate,
     url: pageUrl,
-    keywords: post.tags.map((t) => t.name).join(", "),
+    keywords: seoKeywords.join(", "),
     wordCount: post.readingTime * 200,
+    about: seoKeywords.slice(0, 6).map((keyword) => ({
+      "@type": "Thing",
+      name: keyword,
+    })),
     author: {
       "@type": "Person",
       name: post.author.name,
@@ -174,8 +193,13 @@ export default async function BlogDetailPage({
     },
     publisher: {
       "@type": "Organization",
+      "@id": `${CONTACT_INFO.website}/#organization`,
       name: CONTACT_INFO.companyName,
       url: CONTACT_INFO.website,
+      logo: {
+        "@type": "ImageObject",
+        url: logoUrl,
+      },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
     articleSection: post.category.name,
@@ -344,7 +368,7 @@ export default async function BlogDetailPage({
                   <div className="flex gap-4 mt-8">
                     <Link
                       href="/contact"
-                      className="px-6 py-3 bg-(--color-primary) text-white font-bold rounded-xl text-sm hover:opacity-90 transition-all"
+                      className="px-6 py-3 bg-(--color-primary) text-white font-bold    nded-xl text-sm hover:opacity-90 transition-all"
                     >
                       Get Free Consultation
                     </Link>

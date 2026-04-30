@@ -41,13 +41,13 @@ export const AUTHORS: BlogAuthor[] = [
 // ─── Categories ───────────────────────────────────────────────────────────────
 
 export const CATEGORIES: BlogCategory[] = [
-  { id: "cat-1", name: "SEO", slug: "seo", color: "#d90b1c", count: 4 },
+  { id: "cat-1", name: "SEO", slug: "seo", color: "#d90b1c", count: 5 },
   {
     id: "cat-2",
     name: "Web Design",
     slug: "web-design",
     color: "#2563eb",
-    count: 3,
+    count: 2,
   },
   {
     id: "cat-3",
@@ -68,7 +68,7 @@ export const CATEGORIES: BlogCategory[] = [
     name: "Google Ads",
     slug: "google-ads",
     color: "#d97706",
-    count: 2,
+    count: 1,
   },
 ];
 
@@ -120,16 +120,23 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 0,
     featured: true,
     trending: true,
-    metaTitle: "Raja Shivaji Marathi Movie Bookings Pune | Marketing Trend",
-    metaDescription: "Raja Shivaji Marathi movie bookings are trending in Pune. See what local businesses can learn from this cultural moment and how to turn attention into leads.",
+    metaTitle: "Raja Shivaji Movie Marketing Trend in Pune | Growthik",
+    metaDescription: "See how Raja Shivaji movie searches became a Pune marketing trend and what local businesses can learn about timing, content and leads.",
+    seoKeywords: [
+      "Raja Shivaji movie bookings Pune",
+      "Pune marketing trends",
+      "Marathi movie marketing",
+      "local business marketing Pune",
+      "social media marketing Pune",
+    ],
   },
   {
     id: "post-11",
     title:
-      "The 2026 SEO Blueprint: How We Rank Pune Businesses on Page 1 Organically",
+      "SEO Services in Pune: The 2026 Blueprint for Page 1 Rankings",
     slug: "complete-beginner-guide-to-seo-2026",
     excerpt:
-      "Stop guessing how Google's 2026 algorithms work. We break down the exact search framework we use at Growthik to generate organic leads for startups in Baner and Hinjewadi.",
+      "A practical SEO services blueprint for Pune businesses. See how startups, local companies and B2B teams can earn Page 1 rankings and organic leads.",
     content: "complete-beginner-guide-to-seo-2026",
     featuredImage:
       "/images/blog/seo-services-in-pune-rank-1-google-growthik-media-thumbnail.png",
@@ -145,15 +152,23 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 0,
     featured: true,
     trending: true,
-    metaTitle: "What is SEO? | Beginner Guide to SEO 2026 | Growthik Media",
+    metaTitle: "SEO Services in Pune: 2026 Ranking Blueprint | Growthik",
     metaDescription:
-      "The ultimate 2026 guide to SEO for beginners. Learn how search engines work and how to rank your Pune business on Page 1 organically.",
+      "Learn the 2026 SEO framework Growthik uses for Pune businesses: search intent, local SEO, content, technical fixes and organic lead generation.",
+    seoKeywords: [
+      "SEO services in Pune",
+      "SEO company Pune",
+      "SEO agency Pune",
+      "organic lead generation Pune",
+      "local SEO Pune",
+      "technical SEO Pune",
+    ],
   },
   {
     id: "post-10",
-    title: "Stop Waiting for Google: The Growthik Guide to Fast-Tracking Your Site's Visibility",
+    title: "Search Engine Submission Guide for Pune Business Websites",
     slug: "search-engine-submission-guide-pune",
-    excerpt: "Just launched a new site? Most agencies say 'wait for the crawl.' We don't. Here is how we force-index Pune business pages across search engines in hours, not weeks.",
+    excerpt: "Just launched a Pune business website? Learn how to submit it to Google, Bing and IndexNow so important service pages get discovered faster.",
     content: "search-engine-submission-guide-pune",
     featuredImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
     featuredImageAlt: "Global digital ecosystem and SEO strategy",
@@ -167,17 +182,24 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 0,
     featured: true,
     trending: true,
-    metaTitle: "Search Engine Submission Guide Pune | Growthik Media",
-    metaDescription: "Learn how businesses in Pune can improve website visibility across Google, Bing and global search engines using SEO strategies, backlinks and technical optimization.",
+    metaTitle: "Search Engine Submission Guide for Pune Websites",
+    metaDescription: "Learn how Pune businesses can submit websites to Google, Bing and IndexNow, improve crawlability and speed up discovery of key pages.",
+    seoKeywords: [
+      "search engine submission Pune",
+      "submit website to Google Pune",
+      "IndexNow submission",
+      "website indexing Pune",
+      "technical SEO Pune",
+    ],
   },
 
   {
     id: "post-1",
     title:
-      "The Expert SEO Audit: 50 Signals We Check to Uncover Your Competitor's Edge",
+      "SEO Audit Checklist for Pune Businesses: 50 Ranking Signals",
     slug: "technical-seo-audit-checklist",
     excerpt:
-      "Most SEO audits are generic PDF exports. Ours isn't. This 50-point checklist reveals the technical and E-E-A-T signals we use to dominate local searches in Pune.",
+      "Use this Pune SEO audit checklist to find technical, content, local SEO and trust issues that stop your website from earning search traffic.",
     content: "",
     featuredImage:
       "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=80",
@@ -186,23 +208,31 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: [TAGS[0], TAGS[4], TAGS[2]],
     author: AUTHORS[1],
     publishDate: "2025-03-01T09:00:00Z",
+    updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 12,
     views: 4821,
     commentsCount: 18,
     likesCount: 142,
     featured: true,
     trending: true,
-    metaTitle: "2025 SEO Audit Checklist: 50 Point Guide | Growthik Media",
+    metaTitle: "SEO Audit Checklist for Pune Websites | Growthik",
     metaDescription:
-      "Use this comprehensive SEO audit checklist to identify and fix technical, on-page and off-page issues that are hurting your rankings in 2025.",
+      "Run a Pune-focused SEO audit with 50 checks for crawlability, local SEO, content, Core Web Vitals, internal links and lead-focused pages.",
+    seoKeywords: [
+      "SEO audit Pune",
+      "technical SEO audit Pune",
+      "SEO checklist Pune",
+      "website SEO audit Pune",
+      "Core Web Vitals audit",
+    ],
   },
   {
     id: "post-2",
     title:
-      "Why Your Business is Losing Money Without a 2025 SEO Strategy",
+      "Why SEO Is Important for Pune Businesses in 2026",
     slug: "why-seo-is-important",
     excerpt:
-      "In 2025, if your business isn't on Page 1 for Pune searches, you're handing leads to your competitors. Here's why SEO is the only marketing channel that compounds value.",
+      "If your Pune business is invisible on Google, you pay for every lead. Learn why SEO compounds traffic, trust and enquiries in 2026.",
     content: "",
     featuredImage:
       "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80",
@@ -211,15 +241,23 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: [TAGS[0], TAGS[3], TAGS[7]],
     author: AUTHORS[1],
     publishDate: "2025-02-05T09:00:00Z",
+    updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 10,
     views: 6234,
     commentsCount: 24,
     likesCount: 208,
     featured: true,
     trending: false,
-    metaTitle: "Importance of SEO in 2025: Why It Matters | Growthik Media",
+    metaTitle: "Why SEO Is Important for Pune Businesses | Growthik",
     metaDescription:
-      "Why is SEO important for your business in 2025? Discover how search engine optimization drives organic traffic, builds credibility and generates consistent leads.",
+      "Learn why SEO matters for Pune businesses in 2026: local visibility, compounding organic traffic, trust, lower lead cost and better sales intent.",
+    seoKeywords: [
+      "importance of SEO Pune",
+      "why SEO is important",
+      "SEO for Pune businesses",
+      "organic traffic Pune",
+      "local SEO Pune",
+    ],
   },
   {
     id: "post-3",
@@ -241,16 +279,23 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 97,
     featured: false,
     trending: true,
-    metaTitle: "How to Choose a Web Design Company in Pune | Growthik Media",
+    metaTitle: "Website Design Company in Pune: 7 Checks | Growthik",
     metaDescription:
-      "Discover 7 critical factors to evaluate before hiring a website design company in Pune - portfolio, process, SEO and more.",
+      "Hiring a website design company in Pune? Use these 7 checks to compare portfolio quality, SEO basics, pricing, process and support.",
+    seoKeywords: [
+      "website design company in Pune",
+      "web design agency Pune",
+      "website development Pune",
+      "hire web designer Pune",
+      "SEO friendly website Pune",
+    ],
   },
   {
     id: "post-4",
-    title: "Website Cost in Pune: A Complete 2025 Pricing Guide",
+    title: "Website Cost in Pune: A Complete 2026 Pricing Guide",
     slug: "website-cost-in-pune",
     excerpt:
-      "How much does a website cost in Pune in 2025? A complete breakdown from ₹8,000 basic sites to ₹20 lakh+ custom web apps - with what each price range actually gets you.",
+      "How much does a website cost in Pune in 2026? A complete breakdown from basic sites to custom web apps, with what each price range actually includes.",
     content: "website-cost-in-pune",
     featuredImage:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
@@ -259,20 +304,28 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: [TAGS[1], TAGS[2], TAGS[8]],
     author: AUTHORS[2],
     publishDate: "2025-01-20T09:00:00Z",
+    updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 8,
     views: 5120,
     commentsCount: 31,
     likesCount: 164,
     featured: false,
     trending: false,
-    metaTitle: "Website Cost in Pune: 2025 Pricing Guide | Growthik Media",
+    metaTitle: "Website Cost in Pune 2026: Pricing Guide | Growthik",
     metaDescription:
-      "How much does a website cost in Pune? Get a complete 2025 pricing guide covering basic sites, eCommerce, custom web apps and what factors affect the price.",
+      "How much does a website cost in Pune in 2026? Compare pricing for basic sites, eCommerce, custom apps and key cost factors.",
+    seoKeywords: [
+      "website cost in Pune",
+      "website development cost Pune",
+      "eCommerce website cost Pune",
+      "web design pricing Pune",
+      "custom website Pune",
+    ],
   },
   {
     id: "post-5",
     title:
-      "Google Ads vs Meta Ads: Which Platform Should Pune Businesses Use in 2025?",
+      "Google Ads vs Meta Ads: Which Platform Should Pune Businesses Use in 2026?",
     slug: "google-ads-vs-meta-ads",
     excerpt:
       "Google Ads gives you intent. Meta Ads gives you scale. But which is better for YOUR Pune business? We break down the real differences with real data from our campaigns.",
@@ -284,19 +337,27 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: [TAGS[6], TAGS[3], TAGS[2]],
     author: AUTHORS[0],
     publishDate: "2025-01-10T09:00:00Z",
+    updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 11,
     views: 7432,
     commentsCount: 42,
     likesCount: 289,
     featured: true,
     trending: true,
-    metaTitle: "Google Ads vs Meta Ads for Pune Businesses | Growthik Media",
+    metaTitle: "Google Ads vs Meta Ads for Pune Businesses | Growthik",
     metaDescription:
-      "Google Ads or Meta Ads - which is better for your Pune business in 2025? Real campaign data, cost comparisons and expert recommendations.",
+      "Google Ads or Meta Ads for Pune businesses? Compare intent, cost, targeting and campaign fit using practical performance marketing guidance.",
+    seoKeywords: [
+      "Google Ads Pune",
+      "Meta Ads Pune",
+      "PPC agency Pune",
+      "performance marketing Pune",
+      "lead generation ads Pune",
+    ],
   },
   {
     id: "post-6",
-    title: "Core Web Vitals in 2025: How to Score 100 on Google PageSpeed",
+    title: "Core Web Vitals in 2026: How to Score 100 on Google PageSpeed",
     slug: "core-web-vitals-guide",
     excerpt:
       "Google's ranking algorithm heavily weights Core Web Vitals. This technical guide walks you through exactly how to fix LCP, CLS and INP to hit perfect scores.",
@@ -308,20 +369,28 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: [TAGS[4], TAGS[5], TAGS[0]],
     author: AUTHORS[2],
     publishDate: "2024-12-15T09:00:00Z",
+    updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 14,
     views: 8901,
     commentsCount: 36,
     likesCount: 312,
     featured: false,
     trending: true,
-    metaTitle: "Core Web Vitals 2025: Score 100 on PageSpeed | Growthik Media",
+    metaTitle: "Core Web Vitals for Pune Websites: 2026 Guide",
     metaDescription:
-      "Complete technical guide to fixing LCP, CLS and INP for perfect Core Web Vitals scores. Real fixes, real results.",
+      "Learn how Pune websites can fix LCP, CLS and INP, improve PageSpeed scores and build faster pages that support SEO and conversions.",
+    seoKeywords: [
+      "Core Web Vitals Pune",
+      "PageSpeed optimization Pune",
+      "website speed optimization Pune",
+      "technical SEO Pune",
+      "LCP CLS INP fixes",
+    ],
   },
   {
     id: "post-7",
     title:
-      "Local SEO Strategy for Pune Businesses: Dominate the Map Pack in 2025",
+      "Local SEO Strategy for Pune Businesses: Dominate the Map Pack in 2026",
     slug: "local-seo-pune",
     excerpt:
       "Rank in Google's Map Pack for Pune area searches with this step-by-step local SEO strategy - Google Business Profile, citations, reviews and hyper-local content.",
@@ -333,15 +402,23 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: [TAGS[7], TAGS[2], TAGS[0]],
     author: AUTHORS[1],
     publishDate: "2024-12-05T09:00:00Z",
+    updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 10,
     views: 4567,
     commentsCount: 22,
     likesCount: 178,
     featured: false,
     trending: false,
-    metaTitle: "Local SEO Pune 2025: Dominate Google Map Pack | Growthik Media",
+    metaTitle: "Local SEO Pune: 2026 Google Maps Strategy | Growthik",
     metaDescription:
       "Step-by-step local SEO strategy for Pune businesses. Rank in Google Maps, optimize your Business Profile and dominate 'near me' searches.",
+    seoKeywords: [
+      "local SEO Pune",
+      "Google Maps ranking Pune",
+      "Google Business Profile Pune",
+      "near me SEO Pune",
+      "local SEO agency Pune",
+    ],
   },
   {
     id: "post-8",
@@ -357,6 +434,7 @@ export const BLOG_POSTS: BlogPost[] = [
     tags: [TAGS[4], TAGS[1], TAGS[3]],
     author: AUTHORS[0],
     publishDate: "2024-11-20T09:00:00Z",
+    updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 8,
     views: 5234,
     commentsCount: 19,
@@ -364,16 +442,23 @@ export const BLOG_POSTS: BlogPost[] = [
     featured: false,
     trending: false,
     metaTitle:
-      "Why Your Website Bounce Rate Is High & How to Fix It | Growthik Media",
+      "High Bounce Rate Fixes for Pune Websites | Growthik",
     metaDescription:
-      "12 common reasons for high website bounce rate and exact fixes. Improve UX, speed and conversions.",
+      "Find why Pune website visitors leave quickly and fix bounce rate issues with better page speed, messaging, UX, content and conversion paths.",
+    seoKeywords: [
+      "high bounce rate Pune website",
+      "website conversion optimization Pune",
+      "website UX Pune",
+      "landing page optimization Pune",
+      "page speed Pune",
+    ],
   },
   {
     id: "post-9",
-    title: "Content Marketing Strategy That Actually Works for B2B in India",
+    title: "B2B Content Marketing Strategy for Pune and Indian Companies",
     slug: "b2b-content-marketing-india",
     excerpt:
-      "Most B2B content marketing in India fails because it copies Western playbooks. Here's a strategy built specifically for Indian B2B buying cycles and decision-makers.",
+      "Most B2B content in India fails because it copies Western playbooks. Here is a Pune-friendly strategy for Indian buyers and longer sales cycles.",
     content: "b2b-content-marketing-india",
     featuredImage:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
@@ -388,9 +473,16 @@ export const BLOG_POSTS: BlogPost[] = [
     likesCount: 98,
     featured: false,
     trending: false,
-    metaTitle: "B2B Content Marketing Strategy for India | Growthik Media",
+    metaTitle: "B2B Content Marketing Strategy for Pune | Growthik",
     metaDescription:
-      "Content marketing strategy built for Indian B2B companies. Tailored for Indian buying cycles, decision-makers and digital behaviour.",
+      "Build a B2B content marketing strategy for Pune and Indian companies with topic clusters, case studies, SEO pages and sales-led content.",
+    seoKeywords: [
+      "B2B content marketing Pune",
+      "content marketing strategy India",
+      "B2B SEO Pune",
+      "content marketing agency Pune",
+      "lead generation content",
+    ],
   },
 ];
 

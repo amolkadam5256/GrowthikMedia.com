@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 
 /**
  * Reusable FAQPage Structured Data
@@ -24,7 +25,8 @@ export default function FAQSchema({ questions }: FAQProps) {
   };
 
   return (
-    <script
+    <Script
+      id="faq-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />

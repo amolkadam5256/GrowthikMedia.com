@@ -1,4 +1,5 @@
 import React from 'react';
+import Script from 'next/script';
 import {
   BUSINESS_GEO,
   CONTACT_INFO,
@@ -77,7 +78,8 @@ export default function LocalBusinessSchema() {
   };
 
   return (
-    <script
+    <Script
+      id="local-business-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />

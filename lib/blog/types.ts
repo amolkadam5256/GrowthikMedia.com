@@ -49,6 +49,7 @@ export interface BlogPost {
   trending: boolean;
   metaTitle: string;
   metaDescription: string;
+  seoKeywords?: string[];
 }
 
 // ─── Filter / Search Types ───────────────────────────────────────────────────

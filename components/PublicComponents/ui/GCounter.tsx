@@ -50,7 +50,7 @@ export const Counter = ({
   return (
     <span className={className}>
       {prefix}
-      <span ref={ref} />
+      <span ref={ref}>{direction === "down" ? value : 0}</span>
       {suffix}
     </span>
   );

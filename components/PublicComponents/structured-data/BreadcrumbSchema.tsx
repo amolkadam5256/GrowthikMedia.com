@@ -3,6 +3,7 @@
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import { CONTACT_INFO } from '@/constants/contact';
+import Script from 'next/script';
 
 /**
  * Growthik Media: Dynamic Breadcrumb Schema
@@ -45,7 +46,8 @@ export default function BreadcrumbSchema() {
   };
 
   return (
-    <script
+    <Script
+      id="breadcrumb-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
