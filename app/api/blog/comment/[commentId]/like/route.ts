@@ -3,13 +3,13 @@ import { db } from "@/lib/db";
 
 export async function POST(
   req: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ commentId: string }> }
 ) {
   try {
-    const { id } = await params;
+    const { commentId } = await params;
 
     const comment = await db.blogComment.update({
-      where: { id },
+      where: { id: commentId },
       data: {
         likesCount: {
           increment: 1,
