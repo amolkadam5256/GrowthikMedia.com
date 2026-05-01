@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useMemo } from "react";
 import Link from "next/link";
 import {
   Clock,
@@ -10,6 +12,7 @@ import {
 import { getTrendingPosts, getLatestPosts, CATEGORIES } from "@/lib/blog/data";
 import { formatDate, formatNumber } from "@/lib/blog/utils";
 import BlogCard from "./BlogCard";
+import { useBlogPostsWithStats } from "./useBlogStats";
 
 interface BlogSidebarProps {
   currentPostId?: string;
@@ -34,7 +37,8 @@ function SidebarSection({ title, icon: Icon, children }: {
 
 // ─── Trending Posts ───────────────────────────────────────────────────────────
 function TrendingPosts({ currentPostId }: { currentPostId?: string }) {
-  const posts = getTrendingPosts()
+  const trendingPosts = useMemo(() => getTrendingPosts(), []);
+  const posts = useBlogPostsWithStats(trendingPosts)
     .filter((p) => p.id !== currentPostId)
     .slice(0, 3);
 
@@ -80,7 +84,8 @@ function TrendingPosts({ currentPostId }: { currentPostId?: string }) {
 
 // ─── Latest Posts ─────────────────────────────────────────────────────────────
 function LatestPosts({ currentPostId }: { currentPostId?: string }) {
-  const posts = getLatestPosts()
+  const latestPosts = useMemo(() => getLatestPosts(), []);
+  const posts = useBlogPostsWithStats(latestPosts)
     .filter((p) => p.id !== currentPostId)
     .slice(0, 4);
 

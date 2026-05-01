@@ -24,7 +24,7 @@ export default function AwardsPage() {
             <div>
               <h2 className="text-3xl font-black mb-6 text-gray-900 dark:text-white">Our Commitment to Industry Standards</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-                At Growthik Media, excellence isn't just a goal—it's our baseline. We consistently invest in certifications and training to ensure our Pune-based team remains at the bleeding edge of digital marketing and web engineering.
+                At Growthik Media, excellence isn't just a goal - it's our baseline. We consistently invest in certifications and training to ensure our Pune-based team remains at the bleeding edge of digital marketing and web engineering.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-400">
                 From Google Ads Search and Display certifications to advanced Next.js architecture and UI/UX design awards, our recognition reflects our dedication to delivering measurable ROI for our clients globally.
@@ -53,7 +53,7 @@ export default function AwardsPage() {
           <div className="text-center bg-zinc-100 dark:bg-zinc-900/50 p-12 rounded-3xl border border-dashed border-gray-300 dark:border-zinc-800">
             <h2 className="text-2xl text-gray-500 font-bold mb-4 uppercase tracking-widest">Digital Accreditation Portal</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Our full gallery of digital certificates from Google, HubSpot, and Meta is currently being synchronized. This portal will allow you to verify our active credentials in real-time.
+              Our full gallery of digital certificates from Google, HubSpot and Meta is currently being synchronized. This portal will allow you to verify our active credentials in real-time.
             </p>
           </div>
         </div>

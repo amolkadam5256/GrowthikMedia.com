@@ -93,7 +93,7 @@ What landed:
 - Verified 100% professional iconography across the entire blog library.
 
 What to finish:
-- Close content gaps: Add AI SEO/AEO guide, Verticalization guides (Real Estate, SaaS), and Conversion Psychology.
+- Close content gaps: Add AI SEO/AEO guide, Verticalization guides (Real Estate, SaaS) and Conversion Psychology.
 - Implement source-backed result tables for every "Growth" claim.
 - Add "Human" E-E-A-T signals (Founder insights, methodology notes).
 

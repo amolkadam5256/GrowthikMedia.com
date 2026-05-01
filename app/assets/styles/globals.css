@@ -251,7 +251,7 @@ body {
   color: #fff;
 }
 
-.blog-body a {
+.blog-body a:not(.blog-cta-link) {
   color: var(--color-primary);
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -259,7 +259,7 @@ body {
   transition: opacity 0.2s;
 }
 
-.blog-body a:hover {
+.blog-body a:not(.blog-cta-link):hover {
   opacity: 0.8;
   text-decoration-thickness: 2px;
 }

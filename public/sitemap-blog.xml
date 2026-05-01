@@ -3,12 +3,14 @@
   <!-- Blog Index -->
   <url>
     <loc>https://www.growthikmedia.com/blog/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Blog Posts -->
+  <url><loc>https://www.growthikmedia.com/blog/rcb-vs-gt-ipl-2026-marketing-lessons-pune/</loc><lastmod>2026-05-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.growthikmedia.com/blog/seo-for-real-estate-pune-guide/</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.growthikmedia.com/blog/raja-shivaji-marathi-movie-bookings-pune-marketing-trend/</loc><lastmod>2026-04-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.growthikmedia.com/blog/complete-beginner-guide-to-seo-2026/</loc><lastmod>2026-03-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.growthikmedia.com/blog/search-engine-submission-guide-pune/</loc><lastmod>2026-03-16</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

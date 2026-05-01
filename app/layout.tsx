@@ -82,7 +82,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className="antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
       >
-        {/* Blocking script: sets 'dark' class before first paint — no FOUC */}
+        {/* Blocking script: sets 'dark' class before first paint  -  no FOUC */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,

@@ -9,7 +9,6 @@ import {
   ArrowLeft,
   Calendar,
   Clock,
-  Eye,
   Tag,
   ArrowRight,
   ExternalLink,
@@ -20,7 +19,6 @@ import { CONTACT_INFO } from "@/constants/contact";
 import { BLOG_POSTS, getPostBySlug, getRelatedPosts } from "@/lib/blog/data";
 import {
   formatDate,
-  formatNumber,
   getInitials,
   stringToColor,
 } from "@/lib/blog/utils";
@@ -29,6 +27,7 @@ import { BLOG_FAQS } from "@/lib/blog/faqs";
 import BlogSidebar from "@/components/PublicComponents/Blog/BlogSidebar";
 import RelatedPosts from "@/components/PublicComponents/Blog/RelatedPosts";
 import CommentSection from "@/components/PublicComponents/Blog/CommentSection";
+import BlogViewCounter from "@/components/PublicComponents/Blog/BlogViewCounter";
 import { db } from "@/lib/db";
 
 // Lazily load interactive-only widgets - they are below the fold and
@@ -157,7 +156,7 @@ export default async function BlogDetailPage({
     console.error(`Failed to fetch dynamic views for ${slug}:`, error);
   }
 
-  const liveViews = dbPost?.views || post.views;
+  const liveViews = dbPost?.views ?? post.views;
 
   const faqs = BLOG_FAQS[slug] || [];
 
@@ -298,10 +297,7 @@ export default async function BlogDetailPage({
                 <Clock className="w-4 h-4" />
                 {post.readingTime} min read
               </span>
-              <span className="flex items-center gap-1.5">
-                <Eye className="w-4 h-4" />
-                {formatNumber(liveViews)} views
-              </span>
+              <BlogViewCounter slug={slug} initialViews={liveViews} />
             </div>
           </div>
 
@@ -358,13 +354,13 @@ export default async function BlogDetailPage({
                   <div className="flex gap-4 mt-8">
                     <Link
                       href="/contact"
-                      className="px-6 py-3 bg-(--color-primary) text-white font-bold rounded-xl text-sm hover:opacity-90 transition-all"
+                      className="blog-cta-link px-6 py-3 bg-(--color-primary) text-white font-bold rounded-xl text-sm hover:opacity-90 transition-all"
                     >
                       Get Free Consultation
                     </Link>
                     <Link
                       href="/blog"
-                      className="px-6 py-3 border border-(--border) text-(--text-primary) font-bold rounded-xl text-sm hover:border-(--color-primary)/50 transition-all"
+                      className="blog-cta-link px-6 py-3 border border-(--border) text-(--text-primary) font-bold rounded-xl text-sm hover:border-(--color-primary)/50 transition-all"
                     >
                       Browse All Articles
                     </Link>

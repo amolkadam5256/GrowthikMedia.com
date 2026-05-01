@@ -17,7 +17,7 @@ export default function BrandingWorkPage() {
   const schema = buildCollectionSchema({
     path: '/portfolio/branding-work/',
     name: 'Branding Work Portfolio | Growthik Media',
-    description: 'Brand identity, creative, and communications work delivered by Growthik Media for client brands.',
+    description: 'Brand identity, creative and communications work delivered by Growthik Media for client brands.',
     breadcrumbName: 'Branding Work',
     itemName: 'Branding Projects',
     items: buildPortfolioItemListItems(branding),

@@ -6,12 +6,12 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import type { BlogFilters } from "@/lib/blog/types";
 import {
   BLOG_POSTS,
-  getFeaturedPosts,
   filterAndSortPosts,
   CATEGORIES,
 } from "@/lib/blog/data";
 import BlogCard from "@/components/PublicComponents/Blog/BlogCard";
 import SearchAndFilter from "@/components/PublicComponents/Blog/SearchAndFilter";
+import { useBlogPostsWithStats } from "@/components/PublicComponents/Blog/useBlogStats";
 
 // Sidebar content is off-screen on mobile and non-critical on desktop first paint.
 const BlogSidebar = dynamic(() => import("@/components/PublicComponents/Blog/BlogSidebar"), {
@@ -32,18 +32,22 @@ const DEFAULT_FILTERS: BlogFilters = {
 export default function BlogListingPage() {
   const [filters, setFilters] = useState<BlogFilters>(DEFAULT_FILTERS);
   const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
+  const postsWithStats = useBlogPostsWithStats(BLOG_POSTS);
 
-  const featured = useMemo(() => getFeaturedPosts().slice(0, 1)[0], []);
+  const featured = useMemo(
+    () => postsWithStats.filter((post) => post.featured).slice(0, 1)[0],
+    [postsWithStats],
+  );
 
   // Apply filters
   const filteredPosts = useMemo(() => {
     const isFiltered =
       filters.search || filters.category || filters.tag || filters.author;
     const posts = isFiltered
-      ? BLOG_POSTS
-      : BLOG_POSTS.filter((p) => p.id !== featured?.id);
+      ? postsWithStats
+      : postsWithStats.filter((p) => p.id !== featured?.id);
     return filterAndSortPosts(posts, filters);
-  }, [filters, featured]);
+  }, [filters, featured, postsWithStats]);
 
   const visiblePosts = filteredPosts.slice(0, visibleCount);
   const hasMore = visibleCount < filteredPosts.length;

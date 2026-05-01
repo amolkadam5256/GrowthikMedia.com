@@ -41,9 +41,12 @@ export async function POST(
   try {
     const { slug } = await params;
     const body = await req.json();
-    const { authorName, authorEmail, content, parentId } = body;
+    const { authorName, authorEmail, content, parentId, userId } = body;
+    const cleanAuthorName = typeof authorName === "string" ? authorName.trim() : "";
+    const cleanAuthorEmail = typeof authorEmail === "string" ? authorEmail.trim() : "";
+    const cleanContent = typeof content === "string" ? content.trim() : "";
 
-    if (!authorName || !content) {
+    if (!cleanAuthorName || !cleanContent) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
@@ -77,13 +80,29 @@ export async function POST(
       });
     }
 
+    if (parentId) {
+      const parent = await db.blogComment.findFirst({
+        where: {
+          id: parentId,
+          postId: post.id,
+          parentId: null,
+        },
+        select: { id: true },
+      });
+
+      if (!parent) {
+        return NextResponse.json({ error: "Parent comment not found" }, { status: 404 });
+      }
+    }
+
     const comment = await db.blogComment.create({
       data: {
         postId: post.id,
-        authorName,
-        authorEmail,
-        content,
-        parentId,
+        authorName: cleanAuthorName,
+        authorEmail: cleanAuthorEmail || null,
+        userId: typeof userId === "string" ? userId : null,
+        content: cleanContent,
+        parentId: parentId || null,
       },
     });
 

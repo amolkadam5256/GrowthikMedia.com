@@ -67,7 +67,6 @@ export default function CommentSection({ slug }: CommentSectionProps) {
     setCurrentUserId(getStoredUserId());
     const init = async () => {
       try {
-        await fetch(`/api/blog/${slug}/view`, { method: "POST" });
         const res = await fetch(`/api/blog/${slug}/comments`);
         const data = await res.json();
         if (Array.isArray(data)) {
@@ -98,7 +97,9 @@ export default function CommentSection({ slug }: CommentSectionProps) {
         setSuccess(true);
         const freshRes = await fetch(`/api/blog/${slug}/comments`);
         const freshData = await freshRes.json();
-        setComments(freshData);
+        if (Array.isArray(freshData)) {
+          setComments(freshData);
+        }
         setFormData({ authorName: "", authorEmail: "", content: "", parentId: null });
         setReplyTo(null);
         setTimeout(() => setSuccess(false), 3000);
@@ -124,7 +125,9 @@ export default function CommentSection({ slug }: CommentSectionProps) {
         const refresh = async () => {
           const res = await fetch(`/api/blog/${slug}/comments`);
           const data = await res.json();
-          setComments(data);
+          if (Array.isArray(data)) {
+            setComments(data);
+          }
         };
         refresh();
       }

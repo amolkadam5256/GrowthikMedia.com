@@ -39,7 +39,7 @@ export default function TestimonialsPage() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">138+ Five-Star Reviews</h3>
                 <p className="text-gray-400 text-sm">
-                  Across Google Business, Clutch, and direct client feedback surveys. We maintain a 4.9/5 average rating by focusing on lead quality and technical performance.
+                  Across Google Business, Clutch and direct client feedback surveys. We maintain a 4.9/5 average rating by focusing on lead quality and technical performance.
                 </p>
               </div>
             </div>
@@ -48,7 +48,7 @@ export default function TestimonialsPage() {
           <div className="text-center bg-zinc-100 dark:bg-zinc-900/50 p-12 rounded-3xl border border-dashed border-gray-300 dark:border-zinc-800">
             <h2 className="text-2xl text-gray-500 font-bold mb-4 uppercase tracking-widest">Video Testimonial Pipeline</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              We are currently finalizing a series of video case studies featuring founders from Baner, Hinjewadi, and Wakad. These "deep-dive" testimonials will showcase the exact workflows used to achieve their scaling milestones.
+              We are currently finalizing a series of video case studies featuring founders from Baner, Hinjewadi and Wakad. These "deep-dive" testimonials will showcase the exact workflows used to achieve their scaling milestones.
             </p>
           </div>
         </div>

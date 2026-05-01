@@ -431,7 +431,7 @@ export default function ServicesPage() {
               Helping Local Pune Brands Win
             </h2>
             <p className="text-(--text-secondary) font-medium mb-6 text-lg">
-              We build search experiences that help you stand out in the neighborhoods where your customers actually live—from the IT hubs of Hinjewadi to the busy streets of Kothrud.
+              We build search experiences that help you stand out in the neighborhoods where your customers actually live - from the IT hubs of Hinjewadi to the busy streets of Kothrud.
             </p>
             <p className="text-(--text-secondary) font-medium">
               Our local-first approach ensures you dominate Google Map packs and AI answers when someone searches for your services "near me" in Pune.

@@ -52,7 +52,7 @@ export default function MediaPage() {
           <div className="text-center bg-zinc-100 dark:bg-zinc-900/50 p-12 rounded-3xl border border-dashed border-gray-300 dark:border-zinc-800">
             <h2 className="text-2xl text-gray-500 font-bold mb-4 uppercase tracking-widest">Media Archive Synchronizing</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Our archive of interviews, press releases, and editorial features is currently being migrated to this new layout. We are ensuring all external links are verified for your seamless reading experience.
+              Our archive of interviews, press releases and editorial features is currently being migrated to this new layout. We are ensuring all external links are verified for your seamless reading experience.
             </p>
           </div>
         </div>

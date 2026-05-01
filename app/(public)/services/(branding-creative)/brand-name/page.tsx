@@ -21,9 +21,9 @@ const features = [
 ];
 
 const processSteps = [
-  { icon: Target, title: "1. Discovery & Strategy", desc: "We dive deep into your business goals, target audience, and market landscape." },
+  { icon: Target, title: "1. Discovery & Strategy", desc: "We dive deep into your business goals, target audience and market landscape." },
   { icon: Lightbulb, title: "2. Ideation & Brainstorming", desc: "Our creative team generates hundreds of potential names based on strategic angles." },
-  { icon: ShieldCheck, title: "3. Screening & Vetting", desc: "We filter names for trademark viability, domain availability, and linguistic checks." },
+  { icon: ShieldCheck, title: "3. Screening & Vetting", desc: "We filter names for trademark viability, domain availability and linguistic checks." },
   { icon: Rocket, title: "4. Presentation & Selection", desc: "We present the top contenders with rationales, helping you choose the perfect fit." }
 ];
 

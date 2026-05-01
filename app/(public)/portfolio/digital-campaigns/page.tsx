@@ -17,7 +17,7 @@ export default function DigitalCampaignsPage() {
   const schema = buildCollectionSchema({
     path: '/portfolio/digital-campaigns/',
     name: 'Digital Campaign Portfolio | Growthik Media',
-    description: 'Campaign-focused portfolio examples that combine SEO, paid media, and conversion-ready web experiences.',
+    description: 'Campaign-focused portfolio examples that combine SEO, paid media and conversion-ready web experiences.',
     breadcrumbName: 'Digital Campaigns',
     itemName: 'Digital Campaign Projects',
     items: buildPortfolioItemListItems(campaigns),

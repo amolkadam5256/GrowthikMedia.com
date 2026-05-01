@@ -18,7 +18,7 @@ import {
 
 const CheckListItem = ({ children }: { children: React.ReactNode }) => (
   <li className="flex items-start gap-3">
-    <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+    <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-0.5 shrink-0" />
     <span>{children}</span>
   </li>
 );
@@ -70,7 +70,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       </p>
 
       <h2 className="flex items-center gap-3">
-        <Search className="w-6 h-6 text-primary" /> The Real Definition of SEO in 2026
+        <Search className="w-6 h-6 text-(--color-primary)" /> The Real Definition of SEO in 2026
       </h2>
       <p>
         Forget "improving visibility." In 2026, SEO is about <strong>Search Intent Domination</strong>. It’s the art of ensuring your business is the only logical answer to a potential customer’s problem.
@@ -86,22 +86,22 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <h3>By making your website:</h3>
       <ul className="space-y-2">
         <li className="flex items-start gap-2">
-          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-1 shrink-0" />
           <span><strong>Relevant:</strong> Matching user intent perfectly.</span>
         </li>
         <li className="flex items-start gap-2">
-          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-1 shrink-0" />
           <span><strong>Trustworthy:</strong> Building authority through quality backlinks.</span>
         </li>
         <li className="flex items-start gap-2">
-          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-1 shrink-0" />
           <span><strong>Technically Optimized:</strong> Ensuring fast speed and crawlability.</span>
         </li>
       </ul>
 
       <div className="bg-(--surface) p-6 rounded-2xl border border-(--border) my-8">
         <h4 className="font-black uppercase mb-3 flex items-center gap-2">
-          <MapPin className="w-5 h-5 text-primary" /> Real-World Example:
+          <MapPin className="w-5 h-5 text-(--color-primary)" /> Real-World Example:
         </h4>
         <p className="mb-0 italic text-(--text-secondary)">
           If someone searches <strong>&quot;Best SEO agency in Pune&quot;</strong>, SEO helps your business appear on Page 1 results instead of being buried on Page 10 where no one looks.
@@ -109,7 +109,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       </div>
 
       <h2 className="flex items-center gap-3">
-        <BarChart3 className="w-6 h-6 text-primary" /> What is SERP?
+        <BarChart3 className="w-6 h-6 text-(--color-primary)" /> What is SERP?
       </h2>
       <p>
         When you search anything on Google, the page you see is called a SERP (Search Engine Results Page). It displays results based on your query and helps you find the most relevant information quickly.
@@ -118,78 +118,78 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <h3>Core SERP Elements:</h3>
       <ul className="space-y-4">
         <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</div>
+          <div className="w-6 h-6 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">1</div>
           <div><strong>Organic Results:</strong> The non-paid websites Google trusts based on relevance.</div>
         </li>
         <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</div>
+          <div className="w-6 h-6 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">2</div>
           <div><strong>Paid Ads:</strong> Results with the &quot;Sponsored&quot; label (Google Ads).</div>
         </li>
         <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</div>
+          <div className="w-6 h-6 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">3</div>
           <div><strong>Local Map Listings:</strong> Crucial for <Link href="/blog/local-seo-pune">Local SEO in Pune</Link>.</div>
         </li>
         <li className="flex items-start gap-3">
-          <div className="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</div>
+          <div className="w-6 h-6 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">4</div>
           <div><strong>Featured Snippets:</strong> Direct answers shown at the top.</div>
         </li>
       </ul>
 
       <h2 className="flex items-center gap-3">
-        <Settings className="w-6 h-6 text-primary" /> How Search Engines Work
+        <Settings className="w-6 h-6 text-(--color-primary)" /> How Search Engines Work
       </h2>
       <p>Search engines follow a structured four-stage process to deliver results:</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
         <div className="p-4 bg-(--surface) rounded-xl border border-(--border)">
-          <div className="font-bold text-primary mb-1">1. Crawling</div>
+          <div className="font-bold text-(--color-primary) mb-1">1. Crawling</div>
           <p className="text-sm text-(--text-secondary) mb-0">Search bots scan websites and discover new/updated content.</p>
         </div>
         <div className="p-4 bg-(--surface) rounded-xl border border-(--border)">
-          <div className="font-bold text-primary mb-1">2. Indexing</div>
+          <div className="font-bold text-(--color-primary) mb-1">2. Indexing</div>
           <p className="text-sm text-(--text-secondary) mb-0">Pages are stored in a massive database for quick retrieval.</p>
         </div>
         <div className="p-4 bg-(--surface) rounded-xl border border-(--border)">
-          <div className="font-bold text-primary mb-1">3. Processing</div>
+          <div className="font-bold text-(--color-primary) mb-1">3. Processing</div>
           <p className="text-sm text-(--text-secondary) mb-0">Algorithms analyze content relevance and intent.</p>
         </div>
         <div className="p-4 bg-(--surface) rounded-xl border border-(--border)">
-          <div className="font-bold text-primary mb-1">4. Ranking</div>
+          <div className="font-bold text-(--color-primary) mb-1">4. Ranking</div>
           <p className="text-sm text-(--text-secondary) mb-0">The best results are displayed based on 200+ authority factors.</p>
         </div>
       </div>
 
-      <div className="bg-primary/5 p-6 rounded-2xl border border-primary/20 my-8">
-        <h4 className="font-black text-primary uppercase mb-2 flex items-center gap-2">
+      <div className="bg-(--color-primary)/5 p-6 rounded-2xl border border-(--color-primary)/20 my-8">
+        <h4 className="font-black text-(--color-primary) uppercase mb-2 flex items-center gap-2">
           <HelpCircle className="w-5 h-5" /> Pro Insight:
         </h4>
         <p className="mb-0 italic">
           For a deep dive into how Google processes data at scale, check out this
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7440457319219359744" target="_blank" rel="noopener noreferrer" className="ml-1 text-primary font-bold hover:underline inline-flex items-center gap-1">
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7440457319219359744" target="_blank" rel="noopener noreferrer" className="ml-1 text-(--color-primary) font-bold hover:underline inline-flex items-center gap-1">
             exclusive insight on LinkedIn <ExternalLink className="w-3 h-3" />
           </a>.
         </p>
       </div>
 
       <h2 className="flex items-center gap-3">
-        <Rocket className="w-6 h-6 text-primary" /> Why SEO is Critical for Growth
+        <Rocket className="w-6 h-6 text-(--color-primary)" /> Why SEO is Critical for Growth
       </h2>
       <ul className="space-y-3">
         <li className="flex items-start gap-2 italic">
-          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-1 shrink-0" />
           <span><strong>Sustainable Traffic:</strong> Continuous flow of visitors without recurring ad costs.</span>
         </li>
         <li className="flex items-start gap-2 italic">
-          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-1 shrink-0" />
           <span><strong>High-Intent Conversion:</strong> Users searching for solutions are ready to buy.</span>
         </li>
         <li className="flex items-start gap-2 italic">
-          <CheckCircle2 className="w-5 h-5 text-primary mt-1 shrink-0" />
+          <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-1 shrink-0" />
           <span><strong>Industry Authority:</strong> Ranking #1 builds instant trust and market leadership.</span>
         </li>
       </ul>
 
       <h2 className="flex items-center gap-3">
-        <Briefcase className="w-6 h-6 text-primary" /> Why Pune Businesses Choose Us
+        <Briefcase className="w-6 h-6 text-(--color-primary)" /> Why Pune Businesses Choose Us
       </h2>
       <p>
         At Growthik Media, we specialize in <strong>&quot;Growth Engineering&quot;</strong>-combining deep code optimization with aggressive performance marketing.
@@ -211,9 +211,9 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <p className="mt-8 text-center bg-primary text-white p-8 rounded-3xl">
+      <p className="mt-8 text-center bg-(--color-primary) text-white p-8 rounded-3xl">
         <strong>Ready to rank on Page 1?</strong><br />
-        <Link href="/audit" className="bg-white text-primary px-6 py-2 rounded-full inline-block mt-4 font-bold hover:opacity-90 transition-opacity">
+        <Link href="/audit" className="blog-cta-link bg-white text-(--color-primary) px-6 py-2 rounded-full inline-block mt-4 font-bold hover:opacity-90 transition-opacity">
           Get Your Free SEO Audit Now
         </Link>
       </p>
@@ -943,7 +943,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         }}
       />
       <p className="lead">
-        In Pune, <strong>Raja Shivaji Marathi movie bookings</strong> are more than an entertainment topic. They combine cultural attention, local pride and search demand. Chhatrapati Shivaji Maharaj are an emotion for Maharashtra, and smart Pune businesses can learn how attention turns into action.
+        In Pune, <strong>Raja Shivaji Marathi movie bookings</strong> are more than an entertainment topic. They combine cultural attention, local pride and search demand. Chhatrapati Shivaji Maharaj are an emotion for Maharashtra and smart Pune businesses can learn how attention turns into action.
       </p>
 
       <p>
@@ -980,7 +980,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         <BarChart3 className="w-6 h-6 text-(--color-primary)" /> Trend-Based Marketing Strategy
       </h2>
       <p>
-        At Growthik Media, we call this <strong>trend-aware marketing</strong>: do not copy the movie, do not misuse cultural emotion, and do not force your brand into the conversation. Instead, build campaigns around the audience behavior happening around the release.
+        At Growthik Media, we call this <strong>trend-aware marketing</strong>: do not copy the movie, do not misuse cultural emotion and do not force your brand into the conversation. Instead, build campaigns around the audience behavior happening around the release.
       </p>
       <ol className="space-y-2">
         <li><strong>Create one local SEO page or post:</strong> Target useful searches such as &quot;Raja Shivaji movie bookings Pune&quot;, &quot;Raja Shivaji show timings Pune&quot; and &quot;Marathi movie bookings Pune&quot; only if your content genuinely helps the reader.</li>
@@ -1035,7 +1035,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         <MapPin className="w-6 h-6 text-(--color-primary)" /> Step 1: Neighborhood-First SEO
       </h2>
       <p>
-        Stop building generic &quot;Projects&quot; pages. Build <strong>Location Authority Pages</strong>. If you have a project in Mamurdi, your content shouldn&apos;t just talk about the building; it should talk about the proximity to the Mumbai-Pune Expressway, the upcoming metro connectivity, and the ROI of that specific micro-market.
+        Stop building generic &quot;Projects&quot; pages. Build <strong>Location Authority Pages</strong>. If you have a project in Mamurdi, your content shouldn&apos;t just talk about the building; it should talk about the proximity to the Mumbai-Pune Expressway, the upcoming metro connectivity and the ROI of that specific micro-market.
       </p>
       <ul className="space-y-2">
         <CheckListItem>Create dedicated pages for each micro-market (e.g., /real-estate-pune/baner/)</CheckListItem>
@@ -1047,7 +1047,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         <Code2 className="w-6 h-6 text-(--color-primary)" /> Step 2: Technical Property Schema
       </h2>
       <p>
-        To get cited by AI search engines and show up in rich snippets, you must use <strong>RealEstateListing</strong> and <strong>Place</strong> schema. This tells Google exactly how many units are available, the price range, and the floor plan details in a machine-readable format.
+        To get cited by AI search engines and show up in rich snippets, you must use <strong>RealEstateListing</strong> and <strong>Place</strong> schema. This tells Google exactly how many units are available, the price range and the floor plan details in a machine-readable format.
       </p>
       <blockquote>We recently helped a developer in Bavdhan increase their &quot;organic unit enquiries&quot; by 40% simply by implementing clean JSON-LD schema that allowed Google to show their prices directly in search results.</blockquote>
 
@@ -1114,7 +1114,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
           The Match at a Glance: GT Edges Out RCB
         </h3>
         <p className="text-sm leading-relaxed mb-4 text-(--text-secondary)">
-          It was a night of high drama. <strong>Virat Kohli</strong>, despite being dropped on the very first ball, went on to anchor the innings with a gritty 81. However, the momentum shifted when <strong>Jason Holder</strong> delivered a masterclass in death bowling, followed by a spectacular catch that silenced the Chinnaswamy. 
+          It was a night of high drama. <strong>Virat Kohli</strong>, despite being dropped on the very first ball, went on to anchor the innings with a gritty 81. However, the momentum shifted when <strong>Jason Holder</strong> delivered a masterclass in death bowling, followed by a spectacular catch that silenced the Chinnaswamy.
         </p>
         <p className="text-sm leading-relaxed mb-0 text-(--text-secondary)">
           In the chase, <strong>Shubman Gill</strong> provided the strategic foundation, but it was <strong>Jos Buttler’s</strong> explosive cameo that sealed the deal, leading Gujarat Titans to a clinical 4-wicket win.
@@ -1123,21 +1123,21 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
 
       <h2>Why This Matters for Your Pune Business</h2>
       <p>
-        You might be wondering: <em>"What does a Shubman Gill cover drive have to do with my digital marketing agency in Pune?"</em> The answer lies in <strong>attention economics</strong>. The IPL is the only time in India when 1.4 billion people are focused on a single event. For a business in a competitive hub like Pune—from Hinjewadi’s tech startups to Baner’s luxury real estate—this is the ultimate testing ground for <strong>real-time marketing in India</strong>.
+        You might be wondering: <em>"What does a Shubman Gill cover drive have to do with my digital marketing agency in Pune?"</em> The answer lies in <strong>attention economics</strong>. The IPL is the only time in India when 1.4 billion people are focused on a single event. For a business in a competitive hub like Pune - from Hinjewadi’s tech startups to Baner’s luxury real estate - this is the ultimate testing ground for <strong>real-time marketing in India</strong>.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
-        <div className="p-8 bg-surface border border-border rounded-3xl hover:shadow-xl transition-all border-b-4 border-b-primary">
-          <Zap className="w-10 h-10 text-primary mb-4" />
+        <div className="p-8 bg-(--surface) border border-(--border) rounded-3xl hover:shadow-xl transition-all border-b-4 border-b-(--color-primary)">
+          <Zap className="w-10 h-10 text-(--color-primary) mb-4" />
           <h3 className="text-xl font-black mb-3">Lesson 1: Moment Marketing & The "Drop" Policy</h3>
           <p className="text-sm text-secondary leading-relaxed">
             When GT dropped Virat Kohli on the first ball, social media exploded. Brands like Zomato and Blinkit didn't wait for the match to end; they posted <em>within seconds</em>.
           </p>
-          <p className="text-sm font-bold text-primary mt-4 italic">
+          <p className="text-sm font-bold text-(--color-primary) mt-4 italic">
             Actionable Insight: Set up "War Rooms" during trending events. If your Pune brand can't react in under 5 minutes, you're not in the game.
           </p>
         </div>
 
-        <div className="p-8 bg-surface border border-border rounded-3xl hover:shadow-xl transition-all border-b-4 border-b-blue-600">
+        <div className="p-8 bg-(--surface) border border-(--border) rounded-3xl hover:shadow-xl transition-all border-b-4 border-b-blue-600">
           <Users className="w-10 h-10 text-blue-600 mb-4" />
           <h3 className="text-xl font-black mb-3">Lesson 2: The Power of Personal Branding (The Kohli Effect)</h3>
           <p className="text-sm text-secondary leading-relaxed">
@@ -1157,13 +1157,13 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         Many Pune businesses run "instinct-based" ads. They think they know their audience, but they don't look at the heatmaps. In 2026, marketing is a game of millimeters. If your landing page has a 0.5s lag, you've "dropped the catch" of a high-intent lead.
       </p>
 
-      <div className="my-12 p-8 bg-surface border border-border rounded-3xl">
+      <div className="my-12 p-8 bg-(--surface) border border-(--border) rounded-3xl">
         <h3 className="flex items-center gap-2 font-black mb-6">
-          <BarChart3 className="w-6 h-6 text-primary" />
+          <BarChart3 className="w-6 h-6 text-(--color-primary)" />
           Lesson 4: Efficiency Under Pressure (ROI)
         </h3>
         <p>
-          Jos Buttler didn't play 60 balls; he played enough to win. In performance marketing, it's not about how many impressions you get; it's about the <strong>Cost Per Lead (CPL)</strong>. 
+          Jos Buttler didn't play 60 balls; he played enough to win. In performance marketing, it's not about how many impressions you get; it's about the <strong>Cost Per Lead (CPL)</strong>.
         </p>
         <ul className="space-y-4">
           <CheckListItem>
@@ -1219,23 +1219,23 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         <li><strong>Play for the Long Game:</strong> SEO is a Test Match played at T20 speed. You need consistent output to win the championship.</li>
       </ul>
 
-      <div className="mt-16 p-10 bg-surface rounded-[2.5rem] border-2 border-primary/20 text-center relative overflow-hidden">
-        <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-        <Rocket className="w-16 h-16 text-primary mx-auto mb-6" />
+      <div className="mt-16 p-10 bg-(--surface) rounded-[2.5rem] border-2 border-(--color-primary)/20 text-center relative overflow-hidden">
+        <div className="absolute -top-24 -left-24 w-64 h-64 bg-(--color-primary)/5 rounded-full blur-3xl" />
+        <Rocket className="w-16 h-16 text-(--color-primary) mx-auto mb-6" />
         <h2 className="text-3xl font-black mb-4 border-none text-(--text-primary)">Don't Just Watch the Game. Own the Field.</h2>
         <p className="text-(--text-secondary) max-w-2xl mx-auto mb-10 text-lg">
           The RCB vs GT trend will fade by tomorrow, but your business growth shouldn't. Let <strong>Growthik Media</strong>, Pune's leading digital marketing agency, build an <strong>IPL-level marketing strategy</strong> for your brand.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link 
-            href="/contact" 
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-(--color-primary) text-white font-black rounded-2xl hover:scale-105 transition-all shadow-2xl shadow-(--color-primary)/30 text-lg"
+          <Link
+            href="/contact"
+            className="blog-cta-link w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-(--color-primary) text-white font-black rounded-2xl hover:scale-105 transition-all shadow-2xl shadow-(--color-primary)/30 text-lg"
           >
             Get Your Free Strategy Audit <Rocket className="w-5 h-5" />
           </Link>
-          <Link 
-            href="/services" 
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-surface border border-border text-text-primary font-bold rounded-2xl hover:bg-border/50 transition-all text-lg"
+          <Link
+            href="/services"
+            className="blog-cta-link w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 bg-(--surface) border border-(--border) text-(--text-primary) font-bold rounded-2xl hover:bg-(--border)/50 transition-all text-lg"
           >
             Explore Our Services
           </Link>

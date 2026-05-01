@@ -17,7 +17,7 @@ export default function WebsiteProjectsPage() {
   const schema = buildCollectionSchema({
     path: '/portfolio/website-projects/',
     name: 'Website Projects Portfolio | Growthik Media',
-    description: 'Website development work delivered by Growthik Media across lead generation, business sites, and performance-focused builds.',
+    description: 'Website development work delivered by Growthik Media across lead generation, business sites and performance-focused builds.',
     breadcrumbName: 'Website Projects',
     itemName: 'Website Projects',
     items: buildPortfolioItemListItems(websites),

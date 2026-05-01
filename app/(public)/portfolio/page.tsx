@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Web Design & Digital Marketing Portfolio | Growthik Media',
     description:
-      'Explore 50+ real client projects - web design, SEO campaigns, digital marketing, and web apps built by Growthik Media for businesses in Pune and India.',
+      'Explore 50+ real client projects - web design, SEO campaigns, digital marketing and web apps built by Growthik Media for businesses in Pune and India.',
     url: 'https://www.growthikmedia.com/portfolio/',
     siteName: 'Growthik Media',
     images: [
@@ -55,7 +55,7 @@ const portfolioSchema = buildCollectionSchema({
   path: '/portfolio/',
   name: 'Growthik Media Portfolio - Web Design and Digital Marketing Projects',
   description:
-    'Explore Growthik Media portfolio projects covering websites, SEO campaigns, branding, and digital marketing work for businesses in Pune and beyond.',
+    'Explore Growthik Media portfolio projects covering websites, SEO campaigns, branding and digital marketing work for businesses in Pune and beyond.',
   breadcrumbName: 'Portfolio',
   itemName: 'Portfolio Projects',
   items: buildPortfolioItemListItems(portfolioData),
@@ -84,7 +84,7 @@ export default function PortfolioPage() {
               Web Design &amp; Digital Marketing <br className="hidden md:block" /> Portfolio - Real Results.
             </h1>
             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-              Explore 50+ of our latest web design, digital marketing, SEO campaigns, and full-stack web applications - built for businesses across Pune, India, and Dubai.
+              Explore 50+ of our latest web design, digital marketing, SEO campaigns and full-stack web applications - built for businesses across Pune, India and Dubai.
             </p>
           </div>
 

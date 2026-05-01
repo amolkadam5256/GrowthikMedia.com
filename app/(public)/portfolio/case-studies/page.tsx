@@ -17,7 +17,7 @@ export default function CaseStudiesPage() {
   const schema = buildCollectionSchema({
     path: '/portfolio/case-studies/',
     name: 'Case Studies Portfolio | Growthik Media',
-    description: 'Detailed case studies showing how Growthik Media approaches website projects, SEO, and campaign execution.',
+    description: 'Detailed case studies showing how Growthik Media approaches website projects, SEO and campaign execution.',
     breadcrumbName: 'Case Studies',
     itemName: 'Case Study Projects',
     items: buildPortfolioItemListItems(caseStudies),

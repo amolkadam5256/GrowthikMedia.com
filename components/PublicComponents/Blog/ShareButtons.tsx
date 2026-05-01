@@ -78,7 +78,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
       {/* Copy link */}
       <button
         onClick={copyLink}
-        className="flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-black transition-all hover:scale-105 active:scale-95 bg-linear-to-r from-primary to-rose-600 text-white shadow-lg shadow-primary/20"
+        className="flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-black transition-all hover:scale-105 active:scale-95 bg-linear-to-r from-[#d90b1c] to-[#f22e52] text-white shadow-lg shadow-[#d90b1c]/20"
         aria-label="Copy link"
       >
         {copied ? (
