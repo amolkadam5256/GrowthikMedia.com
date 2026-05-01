@@ -13,7 +13,7 @@ import {
   X,
   Check
 } from "lucide-react";
-import { formatDate } from "@/lib/blog/utils";
+import { formatDate, getInitials, stringToColor } from "@/lib/blog/utils";
 
 interface Comment {
   id: string;
@@ -181,13 +181,17 @@ export default function CommentSection({ slug }: CommentSectionProps) {
   const CommentItem = ({ comment, isReply = false }: { comment: Comment, isReply?: boolean }) => {
     const isAuthor = comment.userId === currentUserId;
     const isEditing = editingId === comment.id;
+    const avatarColor = stringToColor(comment.authorName);
 
     return (
-      <div className={`flex gap-4 ${isReply ? "mt-4 ml-12 border-l-2 border-(--border)/30 pl-4" : "mt-8"}`}>
-        <div className="w-10 h-10 rounded-full bg-(--surface-secondary) flex items-center justify-center shrink-0 border border-(--border)/50">
-          <User className="w-5 h-5 text-(--text-tertiary)" />
+      <div className={`flex gap-4 ${isReply ? "mt-6 ml-6 md:ml-12 border-l-2 border-(--border)/30 pl-6" : "mt-10"}`}>
+        <div
+          className="w-10 h-10 rounded-full flex items-center justify-center shrink-0 border-2 border-white shadow-sm text-white font-black text-xs"
+          style={{ backgroundColor: avatarColor }}
+        >
+          {getInitials(comment.authorName)}
         </div>
-        <div className="flex-1">
+        <div className="flex-1 bg-(--surface) p-5 rounded-2xl border border-(--border)/50 hover:border-(--color-primary)/30 transition-all shadow-sm">
           <div className="flex items-center justify-between mb-1">
             <h4 className="text-sm font-black text-(--text-primary)">{comment.authorName}</h4>
             <div className="flex items-center gap-3">

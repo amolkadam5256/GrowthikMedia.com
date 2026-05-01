@@ -85,11 +85,11 @@ const LeadMagnetSection = () => {
             >
               {/* Card Accent Glow */}
               <div
-                className={`absolute inset-0 bg-linear-to-br ${magnet.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                className={`absolute inset-0 bg-(--color-primary)/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
               />
 
               <div className="relative z-10 flex flex-col h-full">
-                <div className="w-14 h-14 bg-linear-to-br from-(--color-primary) to-(--color-primary-light) flex items-center justify-center mb-8 shadow-lg shadow-(--color-primary)/20 group-hover:scale-110 transition-transform duration-500 text-white">
+                <div className="w-14 h-14 bg-(--surface) border border-(--color-primary)/20 flex items-center justify-center mb-8 shadow-md group-hover:scale-110 transition-transform duration-500 text-(--color-primary) rounded-xl">
                   <magnet.icon className="w-7 h-7" />
                 </div>
 

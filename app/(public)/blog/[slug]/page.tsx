@@ -10,13 +10,10 @@ import {
   Calendar,
   Clock,
   Eye,
-  Heart,
-  MessageCircle,
   Tag,
   ArrowRight,
   ExternalLink,
   CheckCircle2,
-  Quote,
   HelpCircle,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
@@ -29,7 +26,6 @@ import {
 } from "@/lib/blog/utils";
 import { POST_CONTENT } from "@/lib/blog/content";
 import { BLOG_FAQS } from "@/lib/blog/faqs";
-import { CategoryBadge } from "@/components/PublicComponents/Blog/BlogCard";
 import BlogSidebar from "@/components/PublicComponents/Blog/BlogSidebar";
 import RelatedPosts from "@/components/PublicComponents/Blog/RelatedPosts";
 import CommentSection from "@/components/PublicComponents/Blog/CommentSection";
@@ -205,12 +201,6 @@ export default async function BlogDetailPage({
     articleSection: post.category.name,
   };
 
-  if (faqs.length > 0) {
-    // Add FAQ Schema side-by-side with Article using @graph or an array
-    // However, typical implementation is just generating two scripts or using a @graph.
-    // For simplicity, we'll just inject a second schema script block in the render for FAQPage.
-  }
-
   const faqSchema = faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -368,7 +358,7 @@ export default async function BlogDetailPage({
                   <div className="flex gap-4 mt-8">
                     <Link
                       href="/contact"
-                      className="px-6 py-3 bg-(--color-primary) text-white font-bold    nded-xl text-sm hover:opacity-90 transition-all"
+                      className="px-6 py-3 bg-(--color-primary) text-white font-bold rounded-xl text-sm hover:opacity-90 transition-all"
                     >
                       Get Free Consultation
                     </Link>
@@ -471,19 +461,19 @@ export default async function BlogDetailPage({
               </div>
 
               {/* CTA Banner */}
-              <div className="mt-10 rounded-2xl overflow-hidden bg-linear-to-br from-(--color-primary) via-rose-600 to-rose-700 p-6 md:p-8 text-white relative">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="mt-10 rounded-3xl overflow-hidden bg-(--surface) border-2 border-(--color-primary)/20 p-6 md:p-8 text-(--text-primary) relative shadow-lg">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-(--color-primary)/5 rounded-full blur-3xl pointer-events-none" />
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-3">
-                    <CheckCircle2 className="w-5 h-5" />
-                    <span className="text-sm font-black uppercase tracking-wider opacity-90">
+                    <CheckCircle2 className="w-5 h-5 text-(--color-primary)" />
+                    <span className="text-sm font-black uppercase tracking-wider text-(--color-primary)">
                       Free Offer
                     </span>
                   </div>
-                  <h3 className="text-xl md:text-2xl font-black mb-2">
+                  <h3 className="text-xl md:text-2xl font-black mb-2 text-(--text-primary)">
                     Get a Free Website & SEO Audit
                   </h3>
-                  <p className="text-sm text-white/85 font-medium mb-6 max-w-lg">
+                  <p className="text-sm text-(--text-secondary) font-medium mb-6 max-w-lg">
                     Let our experts audit your website for performance, SEO, and
                     conversion opportunities - completely free, no strings
                     attached.
@@ -491,13 +481,13 @@ export default async function BlogDetailPage({
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                       href="/audit"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-(--color-primary) font-black rounded-xl text-sm hover:opacity-90 transition-opacity shadow-lg"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-(--color-primary) text-white font-black rounded-xl text-sm hover:opacity-90 transition-opacity shadow-lg shadow-(--color-primary)/20"
                     >
                       Start Free Audit <ArrowRight className="w-4 h-4" />
                     </Link>
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/20 border border-white/30 text-white font-bold rounded-xl text-sm hover:bg-white/30 transition-all"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-(--surface) border border-(--border) text-(--text-primary) font-bold rounded-xl text-sm hover:border-(--color-primary)/50 transition-all"
                     >
                       Talk to an Expert
                     </Link>

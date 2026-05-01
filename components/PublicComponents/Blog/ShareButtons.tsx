@@ -78,18 +78,18 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
       {/* Copy link */}
       <button
         onClick={copyLink}
-        className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold transition-all hover:scale-105 bg-(--surface) border border-(--border) text-(--text-secondary) hover:border-(--color-primary)/50"
+        className="flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-black transition-all hover:scale-105 active:scale-95 bg-linear-to-r from-primary to-rose-600 text-white shadow-lg shadow-primary/20"
         aria-label="Copy link"
       >
         {copied ? (
           <>
-            <CheckCircle2 className="w-3.5 h-3.5 text-green-500" />
-            <span className="text-green-500">Copied!</span>
+            <CheckCircle2 className="w-4 h-4" />
+            <span>Link Copied!</span>
           </>
         ) : (
           <>
-            <Link2 className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Copy Link</span>
+            <Link2 className="w-4 h-4" />
+            <span>Copy Link</span>
           </>
         )}
       </button>

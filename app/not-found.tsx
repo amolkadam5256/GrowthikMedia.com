@@ -97,7 +97,7 @@ function NotFoundContent() {
             </div>
 
             <div className="relative">
-              <h1 className="text-[80px] sm:text-[120px] md:text-[180px] font-black leading-none bg-linear-to-br from-(--color-primary) via-(--color-primary-light) to-(--color-primary) bg-clip-text text-transparent animate-[shimmer_3s_ease-in-out_infinite]">
+              <h1 className="text-[80px] sm:text-[120px] md:text-[180px] font-black leading-none text-(--color-primary) animate-pulse">
                 404
               </h1>
             </div>
@@ -111,7 +111,7 @@ function NotFoundContent() {
           {/* Error Message */}
           <div className="text-center mb-12 max-w-2xl">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-[fadeIn_0.5s_ease-in]">
-              <span className="bg-linear-to-r from-(--color-primary) to-(--color-primary-light) bg-clip-text text-transparent">
+              <span className="text-(--color-primary)">
                 Lost in Digital Space?
               </span>
             </h2>
@@ -128,7 +128,7 @@ function NotFoundContent() {
           <div className="flex flex-wrap gap-4 justify-center mb-16 animate-[fadeIn_0.9s_ease-in]">
             <Link
               href="/"
-              className="group flex items-center gap-2 px-8 py-4 bg-linear-to-r from-(--color-primary) to-(--color-primary-light) text-white font-semibold rounded-full shadow-lg hover:shadow-2xl hover:shadow-(--color-primary)/30 transition-all duration-300 hover:scale-105"
+              className="group flex items-center gap-2 px-8 py-4 bg-(--color-primary) text-white font-semibold rounded-full shadow-lg hover:shadow-2xl hover:shadow-(--color-primary)/30 transition-all duration-300 hover:scale-105"
             >
               <Home className="w-5 h-5" />
               Back to Home
@@ -192,7 +192,7 @@ function NotFoundContent() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group p-3 bg-linear-to-br from-(--color-primary) to-(--color-primary-light) rounded-full hover:shadow-lg hover:shadow-(--color-primary)/30 transition-all duration-300 hover:scale-110"
+                  className="group p-3 bg-(--color-primary) rounded-full hover:shadow-lg hover:shadow-(--color-primary)/30 transition-all duration-300 hover:scale-110"
                   aria-label={label}
                 >
                   <Icon className="w-5 h-5 text-white" />

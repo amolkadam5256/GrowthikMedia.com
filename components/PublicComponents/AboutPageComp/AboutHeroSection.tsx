@@ -73,7 +73,7 @@ const AboutHeroSection = () => {
                   </div>
                 </div>
                 <div className="text-xs font-bold text-(--text-secondary) uppercase tracking-wider">
-                  Trusted by 50+ Growth-stage Brands
+                  Trusted by 100+ Growth-stage Brands
                 </div>
               </div>
 

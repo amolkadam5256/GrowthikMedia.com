@@ -12,7 +12,7 @@ export default function WhyChooseUs() {
         Why Choose <span className="text-red-600">Growthik Media</span>
       </h2>
       <p className="text-(--text-secondary) text-sm font-medium mb-6 -mt-4">
-        Pune&apos;s results-driven digital marketing agency trusted by 50+ brands.
+        Pune&apos;s results-driven digital marketing agency trusted by 100+ brands.
       </p>
       <ul className="space-y-3">
         {[

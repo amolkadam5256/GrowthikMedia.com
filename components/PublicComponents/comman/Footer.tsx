@@ -111,7 +111,7 @@ export default function Footer() {
       <footer
         className={`transition-all duration-500 relative ${isDark
             ? "bg-[#0A0A0A] text-white"
-            : "bg-linear-to-br from-gray-50 via-white to-gray-100 text-gray-900"
+            : "bg-white text-gray-900"
           }`}
       >
         {/* Decorative Background Elements */}
@@ -122,10 +122,7 @@ export default function Footer() {
 
         {/* Newsletter Section with Enhanced Design */}
         <div
-          className={`relative ${isDark
-              ? "bg-linear-to-r from-[#D90B1C] via-[#F22E52] to-[#D90B1C]"
-              : "bg-linear-to-r from-[#D90B1C] via-[#F22E52] to-[#D90B1C]"
-            } transition-all duration-500`}
+          className={`relative bg-[#D90B1C] transition-all duration-500`}
         >
           {/* Animated Background Pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -221,7 +218,7 @@ export default function Footer() {
             <div className="lg:col-span-2">
               <h4 className="text-lg font-bold mb-6 relative inline-block">
                 Quick Links
-                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-linear-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
+                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#D90B1C] rounded-full"></span>
               </h4>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
@@ -243,7 +240,7 @@ export default function Footer() {
             <div className="lg:col-span-3">
               <h4 className="text-lg font-bold mb-6 relative inline-block">
                 Our Services
-                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-linear-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
+                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#D90B1C] rounded-full"></span>
               </h4>
               <ul className="space-y-3">
                 {topServices.map((service) => (
@@ -265,7 +262,7 @@ export default function Footer() {
             <div className="lg:col-span-3">
               <h4 className="text-lg font-bold mb-6 relative inline-block">
                 Business Hours
-                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-linear-to-r from-[#D90B1C] to-[#F22E52] rounded-full"></span>
+                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#D90B1C] rounded-full"></span>
               </h4>
               <div
                 className={`space-y-3 text-sm mb-6 ${isDark ? "text-gray-400" : "text-gray-600"
@@ -293,7 +290,7 @@ export default function Footer() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-[#D90B1C] to-[#F22E52] hover:from-[#F22E52] hover:to-[#D90B1C] text-white rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105 group"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#D90B1C] hover:bg-[#F22E52] text-white rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl hover:scale-105 group"
               >
                 Get Started Today
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -437,7 +434,7 @@ export default function Footer() {
               >
                 Designed & Developed with{" "}
                 <span className="text-[#D90B1C] animate-pulse">❤️</span> by{" "}
-                <span className="font-bold bg-linear-to-r from-[#D90B1C] to-[#F22E52] bg-clip-text text-transparent">
+                <span className="font-bold text-[#D90B1C]">
                   {CONTACT_INFO.companyName}
                 </span>
               </p>

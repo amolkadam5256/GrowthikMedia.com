@@ -77,13 +77,13 @@ export default function BacklinkStrategyPage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-red-900/20 via-black to-black -z-10" />
+        <div className="absolute top-0 left-0 w-full h-full bg-red-950/20 -z-10" />
         <div className="container mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-6 animate-pulse">
             <Rocket className="w-4 h-4 text-red-500" />
             <span className="text-red-500 text-sm font-medium">Elevate Your Authority</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-linear-to-b from-white to-gray-400">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
             Backlink Strategy <br />
             <span className="text-red-500 italic font-outline-2">For AI & SEO</span>
           </h1>
@@ -182,21 +182,21 @@ export default function BacklinkStrategyPage() {
 
         {/* Strategies Section */}
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-linear-to-br from-neutral-900 to-black border border-white/5">
+          <div className="p-6 rounded-2xl bg-neutral-900 border border-white/5">
             <LinkIcon className="w-8 h-8 text-red-500 mb-4" />
             <h3 className="text-xl font-bold mb-2 uppercase">Internal Linking</h3>
             <p className="text-gray-400 text-sm">
               Map your "Money Pages" (Services) to high-traffic blog posts. Use descriptive anchor text like "SEO Agency Pune" over "click here".
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-linear-to-br from-neutral-900 to-black border border-white/5">
+          <div className="p-6 rounded-2xl bg-neutral-900 border border-white/5">
             <TrendingUp className="w-8 h-8 text-red-500 mb-4" />
             <h3 className="text-xl font-bold mb-2 uppercase">Competitor Analysis</h3>
             <p className="text-gray-400 text-sm">
               Use tools like Ahrefs or Semrush to find where your top Pune competitors are getting their backlinks from and aim for those targets.
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-linear-to-br from-neutral-900 to-black border border-white/5">
+          <div className="p-6 rounded-2xl bg-neutral-900 border border-white/5">
             <MapPin className="w-8 h-8 text-red-500 mb-4" />
             <h3 className="text-xl font-bold mb-2 uppercase">Local Citations</h3>
             <p className="text-gray-400 text-sm">
@@ -206,7 +206,7 @@ export default function BacklinkStrategyPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-24 text-center p-12 rounded-3xl border border-red-500/20 bg-linear-to-b from-red-500/5 to-transparent">
+        <div className="mt-24 text-center p-12 rounded-3xl border border-red-500/20 bg-red-950/10">
           <h2 className="text-4xl font-bold mb-6 uppercase">Ready to Dominate Search?</h2>
           <p className="text-gray-400 mb-8 max-w-xl mx-auto">
             Let our senior engineers build your automated SEO engine and backlink profile. Start your growth journey today.
@@ -229,7 +229,7 @@ export default function BacklinkStrategyPage() {
       </section>
 
       {/* Footer Decoration */}
-      <div className="h-2 w-full bg-linear-to-r from-red-600 via-transparent to-red-600 opacity-20" />
+      <div className="h-2 w-full bg-red-600/20" />
     </div>
   );
 }

@@ -1107,16 +1107,16 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         At <strong>Growthik Media</strong>, we don't just watch the scoreboard; we watch the <em>search board</em>. While Gujarat Titans (GT) secured a thrilling 4-wicket victory against Royal Challengers Bengaluru (RCB), the real game was being played in the minds of millions of consumers. As a Pune-based business or marketer, if you're not seeing the marketing goldmines hidden in these match highlights, you're missing out on the biggest <strong>IPL marketing strategy</strong> of the year.
       </p>
 
-      <div className="p-8 bg-linear-to-br from-red-600/10 to-blue-600/10 rounded-3xl border border-red-500/20 my-12 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-3xl" />
-        <h3 className="flex items-center gap-3 font-black mb-4">
+      <div className="p-8 bg-(--surface) border-2 border-(--color-primary)/10 rounded-3xl my-12 relative overflow-hidden shadow-sm">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-(--color-primary)/5 rounded-full blur-3xl" />
+        <h3 className="flex items-center gap-3 font-black mb-4 text-(--text-primary)">
           <Trophy className="w-8 h-8 text-yellow-500" />
           The Match at a Glance: GT Edges Out RCB
         </h3>
-        <p className="text-sm leading-relaxed mb-4">
+        <p className="text-sm leading-relaxed mb-4 text-(--text-secondary)">
           It was a night of high drama. <strong>Virat Kohli</strong>, despite being dropped on the very first ball, went on to anchor the innings with a gritty 81. However, the momentum shifted when <strong>Jason Holder</strong> delivered a masterclass in death bowling, followed by a spectacular catch that silenced the Chinnaswamy. 
         </p>
-        <p className="text-sm leading-relaxed mb-0">
+        <p className="text-sm leading-relaxed mb-0 text-(--text-secondary)">
           In the chase, <strong>Shubman Gill</strong> provided the strategic foundation, but it was <strong>Jos Buttler’s</strong> explosive cameo that sealed the deal, leading Gujarat Titans to a clinical 4-wicket win.
         </p>
       </div>
@@ -1183,27 +1183,28 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         <strong>Lesson:</strong> Own your geography. If you are a real estate developer in Kharadi, don't just target "Pune." Target "Luxury home buyers in EON IT Park." Hyper-localization is the secret sauce of IPL's commercial success.
       </p>
 
-      <div className="bg-linear-to-br from-primary to-rose-700 p-10 rounded-3xl text-white my-16 shadow-2xl">
-        <h2 className="text-white border-none mt-0">Local SEO: Dominating Pune's "Map Pack"</h2>
-        <p className="opacity-90 mb-8">
+      <div className="bg-(--surface) border-2 border-(--color-primary)/20 p-10 rounded-3xl my-16 shadow-xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-48 h-48 bg-(--color-primary)/5 rounded-full blur-3xl" />
+        <h2 className="text-(--text-primary) border-none mt-0">Local SEO: Dominating Pune's "Map Pack"</h2>
+        <p className="text-(--text-secondary) mb-8">
           While the world searches for the match, your customers are searching for <em>you</em>. Here is how to use the "IPL Energy" to boost your local rankings:
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="bg-white/10 p-5 rounded-2xl border-white/20 border">
-            <h4 className="font-bold mb-2">Target High-Intent Areas</h4>
-            <p className="text-xs opacity-80">Use keywords like "Digital marketing for startups in Baner" or "SEO agency in Hinjewadi Phase 3."</p>
+          <div className="bg-(--surface-secondary) p-6 rounded-2xl border border-(--border) hover:border-(--color-primary)/30 transition-colors shadow-sm">
+            <h4 className="font-bold mb-2 text-(--text-primary)">Target High-Intent Areas</h4>
+            <p className="text-xs text-(--text-secondary) opacity-80 leading-relaxed">Use keywords like "Digital marketing for startups in Baner" or "SEO agency in Hinjewadi Phase 3."</p>
           </div>
-          <div className="bg-white/10 p-5 rounded-2xl border-white/20 border">
-            <h4 className="font-bold mb-2">Leverage Trends</h4>
-            <p className="text-xs opacity-80">Create "Moment Marketing" posts on Google Business Profile during major events like IPL.</p>
+          <div className="bg-(--surface-secondary) p-6 rounded-2xl border border-(--border) hover:border-(--color-primary)/30 transition-colors shadow-sm">
+            <h4 className="font-bold mb-2 text-(--text-primary)">Leverage Trends</h4>
+            <p className="text-xs text-(--text-secondary) opacity-80 leading-relaxed">Create "Moment Marketing" posts on Google Business Profile during major events like IPL.</p>
           </div>
-          <div className="bg-white/10 p-5 rounded-2xl border-white/20 border">
-            <h4 className="font-bold mb-2">Schema Markup</h4>
-            <p className="text-xs opacity-80">Use LocalBusiness schema so Google knows you are the top-rated agency in Pune.</p>
+          <div className="bg-(--surface-secondary) p-6 rounded-2xl border border-(--border) hover:border-(--color-primary)/30 transition-colors shadow-sm">
+            <h4 className="font-bold mb-2 text-(--text-primary)">Schema Markup</h4>
+            <p className="text-xs text-(--text-secondary) opacity-80 leading-relaxed">Use LocalBusiness schema so Google knows you are the top-rated agency in Pune.</p>
           </div>
-          <div className="bg-white/10 p-5 rounded-2xl border-white/20 border">
-            <h4 className="font-bold mb-2">Backlink Strategy</h4>
-            <p className="text-xs opacity-80">Get mentions from Pune-based news portals and directories during trending movie/match releases.</p>
+          <div className="bg-(--surface-secondary) p-6 rounded-2xl border border-(--border) hover:border-(--color-primary)/30 transition-colors shadow-sm">
+            <h4 className="font-bold mb-2 text-(--text-primary)">Backlink Strategy</h4>
+            <p className="text-xs text-(--text-secondary) opacity-80 leading-relaxed">Get mentions from Pune-based news portals and directories during trending movie/match releases.</p>
           </div>
         </div>
       </div>

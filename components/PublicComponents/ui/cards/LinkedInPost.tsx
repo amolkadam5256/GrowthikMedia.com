@@ -110,7 +110,7 @@ export default function LinkedInPost({
         </div>
 
         {/* LinkedIn Image */}
-        <div className="relative bg-linear-to-br from-blue-600 to-blue-700 aspect-video flex items-center justify-center">
+        <div className="relative aspect-square bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
           {imageUrl ? (
             <NextImage
               src={imageUrl}
@@ -121,11 +121,11 @@ export default function LinkedInPost({
           ) : (
             <div className="text-center">
               <div className="inline-flex items-center gap-1 sm:gap-2">
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight">
+                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-400 tracking-tight">
                   Linked
                 </span>
-                <div className="bg-white rounded px-2 py-1 sm:px-2.5 sm:py-1.5 flex items-center justify-center">
-                  <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-blue-600">
+                <div className="bg-gray-400 rounded px-2 py-1 sm:px-2.5 sm:py-1.5 flex items-center justify-center">
+                  <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white">
                     in
                   </span>
                 </div>
@@ -150,19 +150,19 @@ export default function LinkedInPost({
             <div className="flex items-center gap-2">
               {/* Reaction Icons */}
               <div className="flex items-center -space-x-1">
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-500 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-blue-600 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center">
                   <ThumbsUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white fill-white" />
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-600 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
                   👏
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-red-500 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-red-600 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
                   ❤️
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-amber-400 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-amber-600 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
                   💡
                 </div>
-                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-purple-500 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-purple-600 rounded-full border-2 border-white dark:border-(--surface) flex items-center justify-center text-xs">
                   😊
                 </div>
               </div>

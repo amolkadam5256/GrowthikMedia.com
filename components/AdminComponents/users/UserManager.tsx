@@ -215,7 +215,7 @@ export default function UserManager() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <h2 className="text-3xl font-extrabold bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
             User Management
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-sm mt-1 flex items-center gap-2">
@@ -231,7 +231,7 @@ export default function UserManager() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleOpenAdd}
-            className="flex items-center gap-2 px-6 py-3 bg-linear-to-r from-red-600 to-red-700 text-white rounded-xl shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all duration-300 font-semibold"
+            className="flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-xl shadow-lg shadow-red-500/20 hover:bg-red-700 transition-all duration-300 font-semibold"
           >
             <FiPlus className="text-xl" /> Add New Admin
           </motion.button>
@@ -330,8 +330,8 @@ export default function UserManager() {
                           <div
                             className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-inner ${
                               user.role === "SUPER_ADMIN"
-                                ? "bg-linear-to-br from-red-500 to-rose-600"
-                                : "bg-linear-to-br from-slate-600 to-slate-800"
+                                ? "bg-red-600"
+                                : "bg-slate-800"
                             }`}
                           >
                             {user.name?.charAt(0) || "A"}
@@ -433,7 +433,7 @@ export default function UserManager() {
             >
               {/* Modal Banner */}
               <div
-                className={`h-32 bg-linear-to-r ${modalType === "add" ? "from-red-600 to-rose-700" : "from-blue-600 to-indigo-700"} p-8 relative`}
+                className={`h-32 ${modalType === "add" ? "bg-red-600" : "bg-blue-600"} p-8 relative`}
               >
                 <div className="relative z-10">
                   <h3 className="text-2xl font-black text-white">
@@ -448,12 +448,12 @@ export default function UserManager() {
                 <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-3xl" />
               </div>
 
-              <form onSubmit={handleSubmit} className="p-8 pt-12 space-y-6">
+              <form onSubmit={handleSubmit} className="p-8 space-y-6">
                 {error && (
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-900/30 rounded-2xl flex items-center gap-3 text-red-600 text-sm font-medium"
+                    className="bg-red-50 border border-red-200 p-4 rounded-xl flex items-center gap-3 text-red-600 text-sm font-medium"
                   >
                     <FiAlertCircle size={20} /> {error}
                   </motion.div>
@@ -461,7 +461,7 @@ export default function UserManager() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-1">
                       Full Name
                     </label>
                     <div className="relative">
@@ -474,32 +474,29 @@ export default function UserManager() {
                         onChange={(e) =>
                           setFormData({ ...formData, name: e.target.value })
                         }
-                        className="w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-white/5 border-0 rounded-2xl focus:ring-2 focus:ring-red-500 outline-none transition-all dark:text-white"
+                        className="w-full pl-12 pr-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-1">
                       Email Address
                     </label>
-                    <div className="relative">
-                      <FiCheck className="absolute right-4 top-1/2 -translate-y-1/2 text-green-500" />
-                      <input
-                        required
-                        type="email"
-                        placeholder="admin@growthik.com"
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData({ ...formData, email: e.target.value })
-                        }
-                        className="w-full px-4 py-3.5 bg-gray-50 dark:bg-gray-800/80 border-0 rounded-2xl focus:ring-2 focus:ring-red-500 outline-none transition-all dark:text-white"
-                      />
-                    </div>
+                    <input
+                      required
+                      type="email"
+                      placeholder="admin@growthik.com"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white"
+                    />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-1">
                       {modalType === "add"
                         ? "Set Password"
                         : "Reset Password (Optional)"}
@@ -512,12 +509,12 @@ export default function UserManager() {
                       onChange={(e) =>
                         setFormData({ ...formData, password: e.target.value })
                       }
-                      className="w-full px-4 py-3.5 bg-gray-50 dark:bg-gray-800/80 border-0 rounded-2xl focus:ring-2 focus:ring-red-500 outline-none transition-all dark:text-white"
+                      className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white"
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-gray-400 uppercase tracking-widest pl-1">
+                    <label className="text-xs font-bold text-gray-500 uppercase tracking-widest pl-1">
                       Access Role
                     </label>
                     <select
@@ -525,7 +522,7 @@ export default function UserManager() {
                       onChange={(e) =>
                         setFormData({ ...formData, role: e.target.value })
                       }
-                      className="w-full px-4 py-3.5 bg-gray-50 dark:bg-gray-800/80 border-0 rounded-2xl focus:ring-2 focus:ring-red-500 outline-none transition-all dark:text-white appearance-none cursor-pointer"
+                      className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all dark:text-white appearance-none cursor-pointer"
                     >
                       <option value="SUPER_ADMIN">Main Admin (Super)</option>
                       <option value="ADMIN">Administrator</option>
@@ -534,13 +531,10 @@ export default function UserManager() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800/50 rounded-2xl">
+                <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">
                   <div className="flex flex-col">
-                    <span className="text-sm font-bold dark:text-white">
+                    <span className="text-sm font-bold text-gray-900 dark:text-white">
                       Active Status
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      Enable or disable account access
                     </span>
                   </div>
                   <button
@@ -548,15 +542,15 @@ export default function UserManager() {
                     onClick={() =>
                       setFormData({ ...formData, isActive: !formData.isActive })
                     }
-                    className={`w-14 h-8 rounded-full transition-all duration-300 relative ${formData.isActive ? "bg-green-500" : "bg-gray-300 hover:bg-gray-400"}`}
+                    className={`w-14 h-8 rounded-full transition-all duration-300 relative ${formData.isActive ? "bg-green-500" : "bg-gray-300"}`}
                   >
                     <div
-                      className={`absolute top-1 w-6 h-6 bg-white rounded-full shadow-md transition-all duration-300 ${formData.isActive ? "left-7" : "left-1"}`}
+                      className={`absolute top-1 w-6 h-6 bg-white rounded-full shadow-sm transition-all duration-300 ${formData.isActive ? "left-7" : "left-1"}`}
                     />
                   </button>
                 </div>
 
-                <div className="flex gap-4 mt-8 pt-4">
+                <div className="flex gap-4 pt-4">
                   <button
                     type="button"
                     disabled={submitting}

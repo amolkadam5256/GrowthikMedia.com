@@ -108,7 +108,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "rcb-vs-gt-ipl-2026-marketing-lessons-pune",
     excerpt: "The RCB vs GT clash isn't just about cricket; it's a masterclass in branding and real-time engagement. Discover how Pune businesses can steal these IPL marketing strategies.",
     content: "rcb-vs-gt-ipl-2026-marketing-lessons-pune",
-    featuredImage: "/images/blog/rcb-vs-gt-marketing-lessons.jpg",
+    featuredImage: "/images/blog/rcb-vs-gt-ipl-2026.jpg",
     featuredImageAlt: "RCB vs GT IPL 2026 Marketing Lessons for Pune Businesses",
     category: CATEGORIES[2],
     tags: [TAGS[3], TAGS[11], TAGS[9], TAGS[10]],

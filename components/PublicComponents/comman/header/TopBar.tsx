@@ -40,8 +40,7 @@ export function TopBar() {
       icon: FaInstagram,
       href: CONTACT_INFO.social.instagram,
       label: "Instagram",
-      hoverBg:
-        "hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7]",
+      hoverBg: "hover:bg-rose-500",
     },
     {
       icon: FaLinkedinIn,
@@ -102,8 +101,7 @@ export function TopBar() {
             >
               <social.icon className="w-3 h-3 transition-transform duration-300 group-hover:scale-110" />
 
-              {/* Glossy Overlay effect on hover */}
-              <span className="absolute inset-0 rounded-lg bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></span>
+
             </Link>
           ))}
         </div>

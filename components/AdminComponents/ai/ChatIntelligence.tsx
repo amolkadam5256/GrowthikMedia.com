@@ -656,7 +656,7 @@ export default function ChatIntelligence() {
                     </div>
                     <div className="h-2 w-full bg-[#0b0f14] rounded-full overflow-hidden border border-[#1f2a36] p-0.5">
                       <div
-                        className="h-full bg-linear-to-r from-blue-600 to-indigo-500 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(37,99,235,0.4)]"
+                        className="h-full bg-blue-600 rounded-full transition-all duration-1000 shadow-[0_0_15px_rgba(37,99,235,0.4)]"
                         style={{
                           width: `${selectedLead?.intentScore || selectedLead?.score || 45}%`,
                         }}
@@ -754,7 +754,7 @@ export default function ChatIntelligence() {
                 </div>
 
                 {/* AI Summary Memo (NEW) */}
-                <div className="bg-linear-to-br from-blue-600/10 to-transparent border border-blue-500/20 p-5 rounded-xl">
+                <div className="bg-blue-900/10 border border-blue-500/20 p-5 rounded-xl">
                   <h5 className="text-[8px] font-black text-blue-400 uppercase tracking-[0.3em] mb-2 flex items-center gap-2">
                     <FiInfo size={10} /> Neural Insight
                   </h5>

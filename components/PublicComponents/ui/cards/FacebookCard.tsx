@@ -51,7 +51,7 @@ const FacebookCard = ({
         <div className="p-4 border-b border-gray-200 dark:border-(--border)">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-linear-to-br from-blue-400 to-blue-600 rounded-full shrink-0"></div>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full shrink-0"></div>
               <div>
                 <h3 className="font-semibold text-gray-900 dark:text-(--text-primary) text-sm sm:text-base">
                   {username}
@@ -79,7 +79,7 @@ const FacebookCard = ({
         </div>
 
         {/* Image Section */}
-        <div className="bg-linear-to-br from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-800 aspect-video flex items-center justify-center relative">
+        <div className="bg-gray-200 dark:bg-gray-800 aspect-video flex items-center justify-center relative">
           {imageUrl ? (
             <NextImage
               src={imageUrl}
@@ -197,7 +197,7 @@ const FacebookCard = ({
         {/* Comment Section */}
         <div className="p-4">
           <div className="flex items-start space-x-2">
-            <div className="w-8 h-8 bg-linear-to-br from-purple-400 to-purple-600 rounded-full shrink-0"></div>
+            <div className="w-8 h-8 bg-purple-600 rounded-full shrink-0"></div>
             <div className="flex-1">
               <input
                 type="text"

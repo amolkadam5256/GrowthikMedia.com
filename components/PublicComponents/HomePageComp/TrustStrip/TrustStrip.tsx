@@ -42,13 +42,13 @@ const TrustStrip = React.memo(() => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
         {/* Left Section: Big Text */}
         <div className="flex flex-col justify-center text-center md:text-left">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-(--text-primary) leading-tight tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) leading-tight tracking-tight">
             Trusted by <br className="hidden md:block" />
             <span className="text-(--color-primary)">
-              <Counter value={50} suffix="+ Happy Clients" />
+              <Counter value={100} suffix="+ Happy Clients" />
             </span>
           </h2>
         </div>
