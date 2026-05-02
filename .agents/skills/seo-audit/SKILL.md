@@ -1,450 +1,117 @@
 ---
 name: seo-audit
-description: When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," "SEO health check," "my traffic dropped," "lost rankings," "not showing up in Google," "site isn't ranking," "Google update hit me," "page speed," "core web vitals," "crawl errors," or "indexing issues." Use this even if the user just says something vague like "my SEO is bad" or "help with SEO" - start with an audit. For building pages at scale to target keywords, see programmatic-seo. For adding structured data, see schema-markup. For AI search optimization, see ai-seo.
+description: When the user wants to audit, review, or diagnose SEO issues on their site using the 14-Step Master Audit System. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta tags review," "SEO health check," "my traffic dropped," "lost rankings," "not showing up in Google," "site isn't ranking," "Google update hit me," "page speed," "core web vitals," "crawl errors," or "indexing issues." Use this even if the user just says something vague like "my SEO is bad" or "help with SEO" - start with an audit.
 metadata:
-  version: 1.1.0
+  version: 2.0.0
 ---
 
-# SEO Audit
+# SEO Audit (Master 14-Step System)
 
-You are an expert in search engine optimization. Your goal is to identify SEO issues and provide actionable recommendations to improve organic search performance.
+You are an expert in search engine optimization, executing audits based strictly on the **Growthik Media 14-Step Master Audit & Fix System**. Your goal is to identify SEO issues, rank brands, and provide actionable recommendations.
 
 ## Initial Assessment
 
 **Check for product marketing context first:**
-If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-context.md` in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
-
-Before auditing, understand:
-
-1. **Site Context**
-   - What type of site? (SaaS, e-commerce, blog, etc.)
-   - What's the primary business goal for SEO?
-   - What keywords/topics are priorities?
-
-2. **Current State**
-   - Any known issues or concerns?
-   - Current organic traffic level?
-   - Recent changes or migrations?
-
-3. **Scope**
-   - Full site audit or specific pages?
-   - Technical + on-page, or one focus area?
-   - Access to Search Console / analytics?
-
----
-
-## Audit Framework
+If `.agents/product-marketing-context.md` exists, read it before asking questions. Use that context.
 
 ### Schema Markup Detection Limitation
-
-**`web_fetch` and `curl` cannot reliably detect structured data / schema markup.**
-
-Many CMS plugins (AIOSEO, Yoast, RankMath) inject JSON-LD via client-side JavaScript - it won't appear in static HTML or `web_fetch` output (which strips `<script>` tags during conversion).
-
-**To accurately check for schema markup, use one of these methods:**
-
-1. **Browser tool** - render the page and run: `document.querySelectorAll('script[type="application/ld+json"]')`
-2. **Google Rich Results Test** - https://search.google.com/test/rich-results
-3. **Screaming Frog export** - if the client provides one, use it (SF renders JavaScript)
-
-Reporting "no schema found" based solely on `web_fetch` or `curl` leads to false audit findings - these tools can't see JS-injected schema.
-
-### Priority Order
-
-1. **Crawlability & Indexation** (can Google find and index it?)
-2. **Technical Foundations** (is the site fast and functional?)
-3. **On-Page Optimization** (is content optimized?)
-4. **Content Quality** (does it deserve to rank?)
-5. **Authority & Links** (does it have credibility?)
+**`web_fetch` and `curl` cannot reliably detect structured data / schema markup.** Many CMS plugins inject JSON-LD via client-side JavaScript. To accurately check, use the browser tool, Google Rich Results Test, or Screaming Frog. Do not report "no schema found" based solely on `web_fetch`.
 
 ---
 
-## Technical SEO Audit
-
-### Crawlability
-
-**Robots.txt**
-
-- Check for unintentional blocks
-- Verify important pages allowed
-- Check sitemap reference
-
-**XML Sitemap**
-
-- Exists and accessible
-- Submitted to Search Console
-- Contains only canonical, indexable URLs
-- Updated regularly
-- Proper formatting
-
-**Site Architecture**
-
-- Important pages within 3 clicks of homepage
-- Logical hierarchy
-- Internal linking structure
-- No orphan pages
-
-**Crawl Budget Issues** (for large sites)
-
-- Parameterized URLs under control
-- Faceted navigation handled properly
-- Infinite scroll with pagination fallback
-- Session IDs not in URLs
-
-### Indexation
-
-**Index Status**
-
-- site:domain.com check
-- Search Console coverage report
-- Compare indexed vs. expected
-
-**Indexation Issues**
-
-- Noindex tags on important pages
-- Canonicals pointing wrong direction
-- Redirect chains/loops
-- Soft 404s
-- Duplicate content without canonicals
-
-**Canonicalization**
-
-- All pages have canonical tags
-- Self-referencing canonicals on unique pages
-- HTTP → HTTPS canonicals
-- www vs. non-www consistency
-- Trailing slash consistency
-
-### Site Speed & Core Web Vitals
-
-**Core Web Vitals**
-
-- LCP (Largest Contentful Paint): < 2.5s
-- INP (Interaction to Next Paint): < 200ms
-- CLS (Cumulative Layout Shift): < 0.1
-
-**Speed Factors**
-
-- Server response time (TTFB)
-- Image optimization
-- JavaScript execution
-- CSS delivery
-- Caching headers
-- CDN usage
-- Font loading
-
-**Tools**
-
-- PageSpeed Insights
-- WebPageTest
-- Chrome DevTools
-- Search Console Core Web Vitals report
-
-### Mobile-Friendliness
-
-- Responsive design (not separate m. site)
-- Tap target sizes
-- Viewport configured
-- No horizontal scroll
-- Same content as desktop
-- Mobile-first indexing readiness
-
-### Security & HTTPS
-
-- HTTPS across entire site
-- Valid SSL certificate
-- No mixed content
-- HTTP → HTTPS redirects
-- HSTS header (bonus)
-
-### URL Structure
-
-- Readable, descriptive URLs
-- Keywords in URLs where natural
-- Consistent structure
-- No unnecessary parameters
-- Lowercase and hyphen-separated
-
----
-
-## On-Page SEO Audit
-
-### Title Tags
-
-**Check for:**
-
-- Unique titles for each page
-- Primary keyword near beginning
-- 50-60 characters (visible in SERP)
-- Compelling and click-worthy
-- Brand name placement (end, usually)
-
-**Common issues:**
-
-- Duplicate titles
-- Too long (truncated)
-- Too short (wasted opportunity)
-- Keyword stuffing
-- Missing entirely
-
-### Meta Descriptions
-
-**Check for:**
-
-- Unique descriptions per page
-- 150-160 characters
-- Includes primary keyword
-- Clear value proposition
-- Call to action
-
-**Common issues:**
-
-- Duplicate descriptions
-- Auto-generated garbage
-- Too long/short
-- No compelling reason to click
-
-### Heading Structure
-
-**Check for:**
-
-- One H1 per page
-- H1 contains primary keyword
-- Logical hierarchy (H1 → H2 → H3)
-- Headings describe content
-- Not just for styling
-
-**Common issues:**
-
-- Multiple H1s
-- Skip levels (H1 → H3)
-- Headings used for styling only
-- No H1 on page
-
-### Content Optimization
-
-**Primary Page Content**
-
-- Keyword in first 100 words
-- Related keywords naturally used
-- Sufficient depth/length for topic
-- Answers search intent
-- Better than competitors
-
-**Thin Content Issues**
-
-- Pages with little unique content
-- Tag/category pages with no value
-- Doorway pages
-- Duplicate or near-duplicate content
-
-### Image Optimization
-
-**Check for:**
-
-- Descriptive file names
-- Alt text on all images
-- Alt text describes image
-- Compressed file sizes
-- Modern formats (WebP)
-- Lazy loading implemented
-- Responsive images
-
-### Internal Linking
-
-**Check for:**
-
-- Important pages well-linked
-- Descriptive anchor text
-- Logical link relationships
-- No broken internal links
-- Reasonable link count per page
-
-**Common issues:**
-
-- Orphan pages (no internal links)
-- Over-optimized anchor text
-- Important pages buried
-- Excessive footer/sidebar links
-
-### Keyword Targeting
-
-**Per Page**
-
-- Clear primary keyword target
-- Title, H1, URL aligned
-- Content satisfies search intent
-- Not competing with other pages (cannibalization)
-
-**Site-Wide**
-
-- Keyword mapping document
-- No major gaps in coverage
-- No keyword cannibalization
-- Logical topical clusters
-
----
-
-## Content Quality Assessment
-
-### E-E-A-T Signals
-
-**Experience**
-
-- First-hand experience demonstrated
-- Original insights/data
-- Real examples and case studies
-
-**Expertise**
-
-- Author credentials visible
-- Accurate, detailed information
-- Properly sourced claims
-
-**Authoritativeness**
-
-- Recognized in the space
-- Cited by others
-- Industry credentials
-
-**Trustworthiness**
-
-- Accurate information
-- Transparent about business
-- Contact information available
-- Privacy policy, terms
-- Secure site (HTTPS)
-
-### Content Depth
-
-- Comprehensive coverage of topic
-- Answers follow-up questions
-- Better than top-ranking competitors
-- Updated and current
-
-### User Engagement Signals
-
-- Time on page
-- Bounce rate in context
-- Pages per session
-- Return visits
-
----
-
-## Common Issues by Site Type
-
-### SaaS/Product Sites
-
-- Product pages lack content depth
-- Blog not integrated with product pages
-- Missing comparison/alternative pages
-- Feature pages thin on content
-- No glossary/educational content
-
-### E-commerce
-
-- Thin category pages
-- Duplicate product descriptions
-- Missing product schema
-- Faceted navigation creating duplicates
-- Out-of-stock pages mishandled
-
-### Content/Blog Sites
-
-- Outdated content not refreshed
-- Keyword cannibalization
-- No topical clustering
-- Poor internal linking
-- Missing author pages
-
-### Local Business
-
-- Inconsistent NAP
-- Missing local schema
-- No Google Business Profile optimization
-- Missing location pages
-- No local content
+## The 14-Step Master Audit & Fix Framework
+
+When conducting an SEO audit or creating an SEO report, you MUST structure your analysis around these 14 core pillars:
+
+### 1. SEO FOUNDATION (Goal Alignment)
+- Verify the main goals: Traffic, Leads, Brand authority.
+
+### 2. FULL WEBSITE AUDIT (Technical Health)
+- **Website speed:** Must be < 3 sec.
+- **Mobile-friendly:** Responsive design check.
+- **HTTPS:** SSL active check.
+- **Broken links:** Identify and fix 404s.
+- **Sitemap + robots.txt:** Verify accessibility.
+*Rule: Technical issues = ranking drop.*
+
+### 3. KEYWORD STRATEGY
+- Are long-tail keywords being targeted?
+- **Rule:** 1 page = 1 main keyword + 3 supporting keywords.
+- Check for keyword cannibalization (1 page mapping to 10 keywords is wrong).
+
+### 4. ON-PAGE SEO
+- **Title:** Keyword included.
+- **Meta description:** Clickable and compelling.
+- **Headings:** H1, H2, H3 logical structure.
+- **URL:** Clean + keyword included.
+- **Internal linking:** Are pages well-linked?
+*Rule: Keyword in Title, URL, First paragraph, Headings, Conclusion.*
+
+### 5. CONTENT SEO (MOST IMPORTANT)
+- Check for regular blog writing and user problem solving.
+- Assess EEAT (Experience, Expertise, Authority, Trust).
+- **Strategy Check:** Pillar page (main topic) + Cluster blogs (subtopics) + Internal linking.
+*Rule: Google ranks content, not tricks. Quality content = #1 ranking factor.*
+
+### 6. OFF-PAGE SEO
+- Assess backlink profile (quality > quantity).
+- Check for guest posting, business listings, and social signals.
+
+### 7. LOCAL SEO (Crucial for Pune/Local Businesses)
+- **Google Business Profile:** Is it optimized?
+- **Reviews & ratings:** Are they present and managed?
+- **Local keywords:** e.g., “SEO expert Pune”.
+- **NAP consistency:** Name, Address, Phone.
+
+### 8. TECHNICAL SEO (Backend Power)
+- **Core Web Vitals:** LCP (< 2.5s), INP (< 200ms), CLS (< 0.1).
+- **Image optimization:** Compressed, WebP, alt text.
+- **Clean code:** Minified assets.
+
+### 9. CONTENT UPDATE SYSTEM
+- Are old blogs being updated with fresh data and improved content?
+*Rule: Fresh content = better ranking signal.*
+
+### 10. ANALYTICS & TRACKING
+- Ensure tools are in place: Google Search Console, Google Analytics, Ahrefs/Screaming Frog.
+- Metrics to track: Traffic, Keywords ranking, CTR, Bounce rate, Conversion tracking.
+
+### 11. BRAND BUILDING (Advanced)
+- Assess brand name searches, social presence, authority content, and trust signals.
+*Rule: SEO + Branding = long-term dominance.*
+
+### 12. FINAL SEO FORMULA
+Keep in mind: `SEO = (Content + Keywords + Technical + Backlinks + UX + Consistency)`
+
+### 13. REALITY CHECK
+- Set expectations: SEO takes 3–6 months.
+- Consistency wins over simple keyword insertion.
+
+### 14. ACTION PLAN
+Structure your recommended next steps strictly into this timeline:
+- **Week 1:** Audit website & Fix technical issues
+- **Week 2:** Keyword research & Optimize pages
+- **Week 3:** Start blog content & internal linking
+- **Week 4+:** Backlinks + tracking + continuous updates
 
 ---
 
 ## Output Format
 
-### Audit Report Structure
+When delivering an audit report to the user, you MUST use the following structure based on the 14-Step Master System:
 
-**Executive Summary**
-
-- Overall health assessment
-- Top 3-5 priority issues
-- Quick wins identified
-
-**Technical SEO Findings**
-For each issue:
-
-- **Issue**: What's wrong
-- **Impact**: SEO impact (High/Medium/Low)
-- **Evidence**: How you found it
-- **Fix**: Specific recommendation
-- **Priority**: 1-5 or High/Medium/Low
-
-**On-Page SEO Findings**
-Same format as above
-
-**Content Findings**
-Same format as above
-
-**Prioritized Action Plan**
-
-1. Critical fixes (blocking indexation/ranking)
-2. High-impact improvements
-3. Quick wins (easy, immediate benefit)
-4. Long-term recommendations
-
----
-
-## References
-
-- [AI Writing Detection](references/ai-writing-detection.md): Common AI writing patterns to avoid (em dashes, overused phrases, filler words)
-- For AI search optimization (AEO, GEO, LLMO, AI Overviews), see the **ai-seo** skill
-
----
-
-## Tools Referenced
-
-**Free Tools**
-
-- Google Search Console (essential)
-- Google PageSpeed Insights
-- Bing Webmaster Tools
-- Rich Results Test (**use this for schema validation - it renders JavaScript**)
-- Mobile-Friendly Test
-- Schema Validator
-
-> **Note on schema detection:** `web_fetch` strips `<script>` tags (including JSON-LD) and cannot detect JS-injected schema. Use the browser tool, Rich Results Test, or Screaming Frog instead - they render JavaScript and capture dynamically-injected markup. See the Schema Markup Detection Limitation section above.
-
-**Paid Tools** (if available)
-
-- Screaming Frog
-- Ahrefs / Semrush
-- Sitebulb
-- ContentKing
-
----
-
-## Task-Specific Questions
-
-1. What pages/keywords matter most?
-2. Do you have Search Console access?
-3. Any recent changes or migrations?
-4. Who are your top organic competitors?
-5. What's your current organic traffic baseline?
+1. **Executive Summary** (Foundation & Reality Check)
+2. **Technical & Backend Audit** (Steps 2 & 8)
+3. **Keyword & On-Page Audit** (Steps 3 & 4)
+4. **Content Strategy & Updates** (Steps 5 & 9)
+5. **Off-Page & Local SEO** (Steps 6 & 7)
+6. **Analytics & Brand Building** (Steps 10 & 11)
+7. **The 4-Week Action Plan** (Step 14)
 
 ---
 
 ## Related Skills
-
-- **ai-seo**: For optimizing content for AI search engines (AEO, GEO, LLMO)
+- **ai-seo**: For optimizing content for AI search engines
 - **programmatic-seo**: For building SEO pages at scale
-- **site-architecture**: For page hierarchy, navigation design and URL structure
+- **site-architecture**: For page hierarchy and navigation
 - **schema-markup**: For implementing structured data
-- **page-cro**: For optimizing pages for conversion (not just ranking)
-- **analytics-tracking**: For measuring SEO performance

@@ -215,7 +215,7 @@ export default function UserManager() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="text-3xl font-extrabold bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
             User Management
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-sm mt-1 flex items-center gap-2">
@@ -328,11 +328,10 @@ export default function UserManager() {
                       <td className="py-5 px-6">
                         <div className="flex items-center gap-4">
                           <div
-                            className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-inner ${
-                              user.role === "SUPER_ADMIN"
+                            className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-inner ${user.role === "SUPER_ADMIN"
                                 ? "bg-red-600"
                                 : "bg-slate-800"
-                            }`}
+                              }`}
                           >
                             {user.name?.charAt(0) || "A"}
                           </div>
@@ -358,13 +357,12 @@ export default function UserManager() {
                       </td>
                       <td className="py-5 px-6">
                         <span
-                          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${
-                            user.role === "SUPER_ADMIN"
+                          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${user.role === "SUPER_ADMIN"
                               ? "bg-red-50 text-red-600 dark:bg-red-900/20 dark:text-red-400"
                               : user.role === "ADMIN"
                                 ? "bg-slate-100 text-slate-600 dark:bg-slate-800/50 dark:text-slate-400"
                                 : "bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400"
-                          }`}
+                            }`}
                         >
                           <FiShield className="text-[10px]" />
                           {user.role === "SUPER_ADMIN"
@@ -562,11 +560,10 @@ export default function UserManager() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className={`flex-[2] px-6 py-4 rounded-2xl font-bold text-white shadow-xl flex items-center justify-center gap-2 group transition-all ${
-                      modalType === "add"
+                    className={`flex-[2] px-6 py-4 rounded-2xl font-bold text-white shadow-xl flex items-center justify-center gap-2 group transition-all ${modalType === "add"
                         ? "bg-red-600 shadow-red-500/20 hover:bg-red-700"
                         : "bg-blue-600 shadow-blue-500/20 hover:bg-blue-700"
-                    }`}
+                      }`}
                   >
                     {submitting ? (
                       <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
