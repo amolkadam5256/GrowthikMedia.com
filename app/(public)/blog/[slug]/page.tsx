@@ -303,13 +303,13 @@ export default async function BlogDetailPage({
 
           {/* Featured Image */}
           <div className="max-w-4xl mx-auto px-6 mt-8">
-            <div className="relative h-[300px] sm:h-[450px] rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/10 bg-(--surface)">
+            <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/10 bg-(--surface)">
               <Image
                 src={post.featuredImage}
                 alt={post.featuredImageAlt}
-                fill
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                className="object-contain transition-transform duration-700 hover:scale-105"
+                width={1200}
+                height={630}
+                className="w-full h-auto"
                 priority
               />
               <div className="absolute inset-0 border border-black/10 dark:border-white/10 rounded-3xl pointer-events-none" />

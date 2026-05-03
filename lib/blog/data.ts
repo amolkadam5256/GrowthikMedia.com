@@ -479,8 +479,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "A high bounce rate kills your conversions and tanks your SEO. Here are the 12 most common causes of bounce rate - and exact, actionable fixes for each one.",
     content: "fix-high-bounce-rate",
     featuredImage:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    featuredImageAlt: "Website analytics showing bounce rate trends",
+      "/images/blog/fix-high-bounce-rate-pune-website-seo-2026.jpg",
+    featuredImageAlt: "High bounce rate fix Pune website SEO 2026",
     category: CATEGORIES[3],
     tags: [TAGS[4], TAGS[1], TAGS[3]],
     author: AUTHORS[0],
