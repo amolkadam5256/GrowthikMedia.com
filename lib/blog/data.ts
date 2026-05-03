@@ -512,7 +512,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Most B2B content in India fails because it copies Western playbooks. Here is a Pune-friendly strategy for Indian buyers and longer sales cycles.",
     content: "b2b-content-marketing-india",
     featuredImage:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
+      "/images/blog/b2b-content-marketing-strategy-pune-india-2026.png",
     featuredImageAlt: "Content marketing strategy planning session",
     category: CATEGORIES[2],
     tags: [TAGS[10], TAGS[3], TAGS[9]],
