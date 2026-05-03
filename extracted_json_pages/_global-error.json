@@ -1,0 +1,13 @@
+{
+  "url": "/_global-error",
+  "title": "500: This page couldn’t load",
+  "description": "",
+  "faqs": [],
+  "sections": [
+    {
+      "heading": "This page couldn’t load",
+      "content": "This page couldn’t loadA server error occurred. Reload to try again.Reload"
+    }
+  ],
+  "rawText": "This page couldn’t loadA server error occurred. Reload to try again.Reload"
+}

@@ -1,0 +1,17 @@
+{
+  "url": "/admin/login",
+  "title": "Admin Portal - Growthik Media",
+  "description": "Administrative access only - Authorized personnel only",
+  "faqs": [],
+  "sections": [
+    {
+      "heading": "Admin Portal",
+      "content": "Admin PortalRestricted Access. Authorized Personnel Only.Email AddressPasswordLogin to Dashboard Return to Public Website"
+    },
+    {
+      "heading": "Admin Portal",
+      "content": "Admin PortalRestricted Access. Authorized Personnel Only."
+    }
+  ],
+  "rawText": "Admin PortalRestricted Access. Authorized Personnel Only.Email AddressPasswordLogin to Dashboard Return to Public Website"
+}
