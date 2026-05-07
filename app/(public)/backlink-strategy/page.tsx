@@ -83,7 +83,7 @@ export default function BacklinkStrategyPage() {
             <Rocket className="w-4 h-4 text-red-500" />
             <span className="text-red-500 text-sm font-medium">Elevate Your Authority</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
             Backlink Strategy <br />
             <span className="text-red-500 italic font-outline-2">For AI & SEO</span>
           </h1>

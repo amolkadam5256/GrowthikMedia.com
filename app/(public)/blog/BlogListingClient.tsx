@@ -90,7 +90,7 @@ export default function BlogListingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left text */}
             <div>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6 text-(--text-primary)">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight mb-6 text-(--text-primary)">
                 Master the Art of{" "}
                 <span className="text-(--color-primary)">Digital Growth</span>
               </h1>

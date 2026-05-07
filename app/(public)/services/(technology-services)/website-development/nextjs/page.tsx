@@ -46,7 +46,7 @@ export default function ServicePage() {
             <Globe className="w-4 h-4" />
             Next.js Development Services Pune
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-8 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
             Best Next.js Development Services in Pune –{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-primary) to-(--color-primary-light)">
               Custom, SEO-Friendly & Conversion-Focused

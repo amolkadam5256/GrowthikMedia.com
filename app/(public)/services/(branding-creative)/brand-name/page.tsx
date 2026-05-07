@@ -61,7 +61,7 @@ export default function BrandNamePage() {
                 Local Digital Marketing Agency In Pune
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-[1.1] text-(--text-primary)">
+              <h1 className="text-5xl md:text-6xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.1] text-(--text-primary)">
                 Brand Names That <br className="hidden lg:block" />
                 <span className="relative inline-block mt-1 mb-2">
                   <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) via-red-500 to-orange-500 animate-gradient bg-300%">

@@ -56,7 +56,7 @@ export default function SmsMarketingPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--background) border border-(--border) shadow-sm mb-6 text-sm font-bold text-(--color-primary) tracking-wide uppercase">
               <Award className="w-4 h-4" /> Specialized Agency Services
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">{h1}</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">{h1}</h1>
             <p className="text-lg md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
               In an era of digital noise, bulk SMS marketing remains one of the most reliable ways to reach your audience instantly. At Growthik Media, we provide end-to-end SMS marketing services in Pune that cut through the clutter.
             </p>

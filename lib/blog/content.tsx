@@ -14,6 +14,11 @@ import {
   Zap,
   Trophy,
   Users,
+  Lightbulb,
+  Target,
+  Sparkles,
+  Compass,
+  ShieldCheck,
 } from "lucide-react";
 
 const CheckListItem = ({ children }: { children: React.ReactNode }) => (
@@ -1295,6 +1300,459 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
             Explore Our Services
           </Link>
         </div>
+      </div>
+    </div>
+  ),
+  "what-is-marketing-guide-pune": (
+    <div className="blog-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "BlogPosting",
+                "@id": "https://www.growthikmedia.com/blog/what-is-marketing-guide-pune/#article",
+                "headline": "What is Marketing? The Ultimate Guide for Pune Businesses (2026 Edition)",
+                "description": "Understand real marketing in 2026. A complete guide for Pune entrepreneurs on needs, demands, STP, and digital strategies to build a profitable brand.",
+                "image": "https://www.growthikmedia.com/images/blog/What-Is-Marketing-Blog-Thumbnail-2026.jpg",
+                "datePublished": "2026-05-07T10:00:00Z",
+                "dateModified": "2026-05-07T18:00:00Z",
+                "author": {
+                  "@type": "Person",
+                  "name": "Amol Kadam",
+                  "url": "https://www.growthikmedia.com/authors/amol-kadam"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "Growthik Media",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.growthikmedia.com/logo.png"
+                  }
+                },
+                "mainEntityOfPage": {
+                  "@type": "WebPage",
+                  "@id": "https://www.growthikmedia.com/blog/what-is-marketing-guide-pune"
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "Marketing Kya Hai?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Marketing matlab customer ki problem samajhkar uska profitable solution provide karna."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Why is marketing important for business growth?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Marketing generates revenue, builds brands, creates customer loyalty, and offers career growth."
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.growthikmedia.com"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Blog",
+                    "item": "https://www.growthikmedia.com/blog"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "What is Marketing Guide",
+                    "item": "https://www.growthikmedia.com/blog/what-is-marketing-guide-pune"
+                  }
+                ]
+              }
+            ]
+          }),
+        }}
+      />
+
+      {/* Table of Contents Section */}
+      <div className="my-10 p-8 bg-(--surface) border border-(--border) rounded-3xl shadow-sm">
+        <h3 className="text-xl font-black mb-6 flex items-center gap-2">
+          <Settings className="w-5 h-5 text-(--color-primary)" />
+          Guide Table of Contents
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-3 text-sm">
+          {[
+            "1. Marketing Kya Hai?",
+            "2. Real Meaning of Marketing",
+            "3. Sales vs. Marketing",
+            "4. Why Marketing is Important?",
+            "5. How Markets Work?",
+            "6. Types of Marketing in Details",
+            "7. B2B vs B2C",
+            "8. Need vs. Want vs. Demand",
+            "9. The STP Framework",
+            "10. The Marketing Funnel",
+            "11. Modern Marketing in 2026",
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-center gap-2 hover:text-(--color-primary) transition-colors cursor-default">
+              <span className="w-1.5 h-1.5 rounded-full bg-(--color-primary)/40" />
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <p className="lead">
+        Marketing ka matlab sirf “sale karna” ya “ads chalana” nahi hota. Marketing ek complete process hai jisme business pehle customer ko samajhta hai, fir uski problem solve karta hai, aur uske baad us product/service ko <strong>sahi way me promote</strong> karta hai.
+        According to <a href="https://www.ama.org/the-definition-of-marketing-what-is-marketing/" target="_blank" rel="noopener noreferrer" className="text-(--color-primary) underline font-bold">American Marketing Association</a>, marketing is the activity, set of institutions, and processes for creating, communicating, delivering, and exchanging offerings that have value for customers.
+      </p>
+
+      <div className="bg-(--surface) p-8 rounded-3xl border border-(--border) my-12">
+        <h2 className="text-2xl font-black mt-0 mb-4">Aapke liye Marketing ka main goal hai:</h2>
+        <blockquote className="text-xl italic font-bold text-(--color-primary) border-none p-0 m-0">
+          “Customer ki need ko samajhkar usko profitable way me fulfill karna.”
+        </blockquote>
+      </div>
+
+      <h2 className="flex items-center gap-3">
+        <Lightbulb className="w-6 h-6 text-(--color-primary)" /> 1. Marketing Kya Hai? (Very Simple)
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div className="p-6 bg-(--surface-secondary) rounded-2xl border border-(--border)">
+          <h4 className="font-bold mb-2">Simple English</h4>
+          <p className="text-sm mb-0"><strong>Marketing means:</strong> Understanding what people need, creating a solution, and making people interested in buying it.</p>
+        </div>
+        <div className="p-6 bg-(--surface-secondary) rounded-2xl border border-(--border)">
+          <h4 className="font-bold mb-2">Hinglish</h4>
+          <p className="text-sm mb-0"><strong>Marketing matlab:</strong> Logo ko kya problem hai woh samajhna, uska solution banana, aur fir logo tak usko sahi tarike se pahuchana.</p>
+        </div>
+      </div>
+
+      <h2 className="flex items-center gap-3">
+        <Target className="w-6 h-6 text-(--color-primary)" /> 2. Real Meaning of Marketing
+      </h2>
+      <p>Most people think marketing is just about making noise. But the reality is different:</p>
+      <div className="space-y-4 my-6">
+        <div className="flex items-center gap-3 p-4 bg-red-500/5 rounded-xl border border-red-500/20">
+          <span className="text-red-500 font-bold">❌</span>
+          <p className="mb-0">Marketing = Selling / Advertisement (This is a Myth)</p>
+        </div>
+        <div className="flex items-center gap-3 p-4 bg-green-500/5 rounded-xl border border-green-500/20">
+          <span className="text-green-500 font-bold">✅</span>
+          <p className="mb-0">Marketing starts <strong>BEFORE</strong> product is made and continues <strong>AFTER</strong> customer buys.</p>
+        </div>
+      </div>
+
+      <div className="my-12 p-8 bg-(--surface) border border-(--border) rounded-3xl relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-4 opacity-10">
+          <MapPin className="w-24 h-24" />
+        </div>
+        <h3 className="text-2xl font-black mb-6">Simple Example: The Pune Chai Wala</h3>
+        <p>Imagine a chai wala in Pune. How does he think?</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h4 className="text-red-500 font-bold uppercase mb-3">Wrong Thinking (Sales)</h4>
+            <p className="italic">“Main chai banata hu, ab kaise bechu?”</p>
+            <p className="text-sm text-(--text-secondary)">This is just sales thinking.</p>
+          </div>
+          <div>
+            <h4 className="text-green-600 font-bold uppercase mb-3">Correct Thinking (Marketing)</h4>
+            <p className="italic">“Office employees ko evening me strong tea chahiye with fast service.”</p>
+            <p className="text-sm text-(--text-secondary)">Now the business understands: Audience, Need, Timing, and Taste.</p>
+          </div>
+        </div>
+        <div className="mt-8 flex flex-wrap gap-4">
+          <span className="px-4 py-2 bg-(--background) rounded-full text-xs font-bold border border-(--border)">Fast Chai Counter</span>
+          <span className="px-4 py-2 bg-(--background) rounded-full text-xs font-bold border border-(--border)">Online Ordering</span>
+          <span className="px-4 py-2 bg-(--background) rounded-full text-xs font-bold border border-(--border)">Combo Offers</span>
+          <span className="px-4 py-2 bg-(--background) rounded-full text-xs font-bold border border-(--border)">WhatsApp Ordering</span>
+        </div>
+      </div>
+
+      <h2 className="flex items-center gap-3">
+        <Zap className="w-6 h-6 text-(--color-primary)" /> 3. Sales vs. Marketing: The Bald Person Example
+      </h2>
+      <p>There is a famous example that explains the difference perfectly:</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div className="p-6 border border-(--border) rounded-2xl bg-(--surface-secondary)">
+          <h4 className="font-black mb-4">Sales Trick</h4>
+          <p>“Ganhe aadmi ko comb (kanghi) bech do.”</p>
+          <p className="text-sm text-(--text-secondary)">This is a trick, not a relationship.</p>
+        </div>
+        <div className="p-6 border border-(--color-primary)/30 rounded-2xl bg-(--color-primary)/5">
+          <h4 className="font-black mb-4">Real Marketing</h4>
+          <p>Understand the real problem: Hair loss, Confidence issues, Styling needs.</p>
+          <p className="text-sm font-bold">Solution: Hair oil, Treatment, Wig, or Transplant.</p>
+        </div>
+      </div>
+      <p className="text-center italic font-bold">Marketing always solves a <strong>REAL problem</strong>.</p>
+
+      <h2 className="flex items-center gap-3">
+        <Trophy className="w-6 h-6 text-(--color-primary)" /> 4. Why Marketing is Important?
+      </h2>
+      <ul className="space-y-6 my-8">
+        <li className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center shrink-0 mt-1">1</div>
+          <div>
+            <h4 className="font-bold mb-1">Revenue Generate Karta Hai</h4>
+            <p className="text-sm mb-0">Without marketing, customers won't come, sales won't happen, and the business won't grow.</p>
+          </div>
+        </li>
+        <li className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center shrink-0 mt-1">2</div>
+          <div>
+            <h4 className="font-bold mb-1">Brand Banata Hai</h4>
+            <p className="text-sm mb-0">People trust Apple, Nike, or Zomato because of strong marketing and branding.</p>
+          </div>
+        </li>
+        <li className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center shrink-0 mt-1">3</div>
+          <div>
+            <h4 className="font-bold mb-1">Customer Loyalty</h4>
+            <p className="text-sm mb-0">Good experience + Trust + Helpful content = Customers keep coming back.</p>
+          </div>
+        </li>
+        <li className="flex items-start gap-4">
+          <div className="w-10 h-10 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center shrink-0 mt-1">4</div>
+          <div>
+            <h4 className="font-bold mb-1">Career Growth</h4>
+            <p className="text-sm mb-0">Learn marketing to become a freelancer, start an agency, or grow as an influencer.</p>
+          </div>
+        </li>
+      </ul>
+
+      <h2 className="flex items-center gap-3">
+        <MapPin className="w-6 h-6 text-(--color-primary)" /> 5. How Markets Work?
+      </h2>
+      <p>Marketing ko samajhne se pehle "Market" ko samajhna zaroori hai. Market woh jagah hai jahan buyers (kharidne wale) aur sellers (bechne wale) milte hain.</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div className="p-6 bg-(--surface-secondary) rounded-2xl border border-(--border)">
+          <h4 className="font-bold mb-3 flex items-center gap-2">
+            <Users className="w-4 h-4 text-(--color-primary)" /> Demand (Buyers)
+          </h4>
+          <p className="text-sm mb-0">Logo ki zaroorat (Needs) aur unki kharidne ki shamta (Buying power) demand banati hai. Agar demand zyada hai toh marketing easy ho jati hai.</p>
+        </div>
+        <div className="p-6 bg-(--surface-secondary) rounded-2xl border border-(--border)">
+          <h4 className="font-bold mb-3 flex items-center gap-2">
+            <Briefcase className="w-4 h-4 text-(--color-primary)" /> Supply (Sellers)
+          </h4>
+          <p className="text-sm mb-0">Aapka product ya service supply hai. Market me competition tab hota hai jab supply zyada ho aur demand kam, ya fir bahut sare sellers same cheez bech rahe hon.</p>
+        </div>
+      </div>
+      <p className="p-4 bg-(--surface) border-l-4 border-(--color-primary) italic mb-12">
+        <strong>Market Equilibrium:</strong> Jab sahi price pe demand aur supply match ho jaye. Marketing ka kaam hai aapke product ki demand badhana taaki aap better price le saken.
+      </p>
+
+      <h2 className="flex items-center gap-3">
+        <Code2 className="w-6 h-6 text-(--color-primary)" /> 6. Types of Marketing in Details
+      </h2>
+      <p>Marketing ke bahut saare types hote hain, lekin 2026 me ye niche diye gaye types sabse zyada effective hain:</p>
+
+      <div className="space-y-8 my-8">
+        {/* Digital Marketing Section */}
+        <div className="p-8 bg-(--surface) border border-(--border) rounded-3xl">
+          <h3 className="text-xl font-black mb-6 flex items-center gap-2">
+            <Zap className="w-5 h-5 text-(--color-primary)" /> Digital Marketing (The Future)
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-(--color-primary)">1. Inbound Marketing</h4>
+                <p className="text-sm text-(--text-secondary)">Customer ko "khinchna". Aap valuable content banate ho (Blogs, Videos) jise dekh kar customer khud aapke paas aata hai.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-(--color-primary)">2. SEO (Search Engine Optimization)</h4>
+                <p className="text-sm text-(--text-secondary)">Google me Top pe aana. Pune me agar koi search kare "Best Digital Marketing Agency", toh Growthik top pe dikhega.</p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-(--color-primary)">3. Performance Marketing</h4>
+                <p className="text-sm text-(--text-secondary)">Results ke liye pay karna. Ads chalana (Meta/Google) jahan aap tabhi pay karte ho jab koi click kare ya lead generate ho.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-(--color-primary)">4. Content Marketing</h4>
+                <p className="text-sm text-(--text-secondary)">Directly nahi bechna, balki help karna. Helpful guides aur tips share karna taaki log aap par trust karen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Traditional & Specialized Marketing */}
+        <div className="p-8 bg-(--surface-secondary) border border-(--border) rounded-3xl">
+          <h3 className="text-xl font-black mb-6 flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-(--color-primary)" /> Traditional & Specialized Marketing
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-(--text-primary)">1. Outbound Marketing</h4>
+                <p className="text-sm text-(--text-secondary)">Logo tak "pahunchna". Cold calls, TV ads, aur hoardings jahan aap message sabko bhejte ho, chahe unhe zaroorat ho ya nahi.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-(--text-primary)">2. Guerrilla Marketing</h4>
+                <p className="text-sm text-(--text-secondary)">Kam budget me bada asar. Kuch aisa creative karna jo log kabhi na bhulen (e.g. creative street art or flash mobs).</p>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-bold text-(--text-primary)">3. Influencer Marketing</h4>
+                <p className="text-sm text-(--text-secondary)">Trust borrow karna. Popular logo se apna product promote karwana taaki unki audience aap par bharosa kare.</p>
+              </div>
+              <div>
+                <h4 className="font-bold text-(--text-primary)">4. Relationship Marketing</h4>
+                <p className="text-sm text-(--text-secondary)">Customer ko "Fan" banana. Loyal customers ke liye special rewards aur personalized support dena.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-(--surface-secondary) p-8 rounded-3xl border border-(--border) my-12 text-center">
+        <h2 className="mt-0">7. B2B vs B2C</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-6 text-left">
+          <div className="p-4 bg-(--background) rounded-xl border border-(--border)">
+            <h4 className="font-bold text-(--color-primary)">B2C (Business to Customer)</h4>
+            <p className="text-sm mb-0">Direct sales to people. Example: Clothing website.</p>
+          </div>
+          <div className="p-4 bg-(--background) rounded-xl border border-(--border)">
+            <h4 className="font-bold text-(--color-primary)">B2B (Business to Business)</h4>
+            <p className="text-sm mb-0">Selling to other companies. Example: <Link href="/">Growthik Media</Link> providing services to real estate developers.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 className="flex items-center gap-3">
+        <Search className="w-6 h-6 text-(--color-primary)" /> 8. Need vs. Want vs. Demand
+      </h2>
+      <div className="space-y-4 my-8">
+        <div className="p-4 border-l-4 border-blue-500 bg-blue-500/5">
+          <strong>Need:</strong> Basic necessity (Food, Water).
+        </div>
+        <div className="p-4 border-l-4 border-orange-500 bg-orange-500/5">
+          <strong>Want:</strong> Specific form of need (Pizza).
+        </div>
+        <div className="p-4 border-l-4 border-green-500 bg-green-500/5">
+          <strong>Demand:</strong> Want + Money + Buying power (iPhone).
+        </div>
+      </div>
+
+      <h2 className="flex items-center gap-3">
+        <Sparkles className="w-6 h-6 text-(--color-primary)" /> 9. The STP Framework
+      </h2>
+      <p>This is the secret sauce of powerful business marketing:</p>
+      <div className="my-8 space-y-4">
+        <div className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
+          <h4 className="font-black text-xl mb-2">S = Segmentation</h4>
+          <p className="text-sm mb-0">Audience ko groups me divide karna (e.g. Men, Women, Students, Professionals).</p>
+        </div>
+        <div className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
+          <h4 className="font-black text-xl mb-2">T = Targeting</h4>
+          <p className="text-sm mb-0">Choosing the best group (e.g. Target Working Professionals age 25–40 for a gym).</p>
+        </div>
+        <div className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
+          <h4 className="font-black text-xl mb-2">P = Positioning</h4>
+          <p className="text-sm mb-0">Customer ke mind me image banana (e.g. "Premium gym for busy professionals").</p>
+        </div>
+      </div>
+
+      <div className="my-12 p-8 bg-(--surface) border-2 border-(--color-primary)/20 rounded-3xl">
+        <h3 className="text-2xl font-black mb-6 flex items-center gap-2">
+          <Rocket className="w-6 h-6 text-(--color-primary)" />
+          Real Example: Numerology Consultation
+        </h3>
+        <p className="mb-4">How would a Numerologist use STP?</p>
+        <ul className="space-y-2 mb-6">
+          <li><strong>Segmentation:</strong> Business owners, Students, Couples, Career pros.</li>
+          <li><strong>Targeting:</strong> Business owners.</li>
+          <li><strong>Positioning:</strong> “Scientific numerology for better business decisions.”</li>
+        </ul>
+        <p className="mb-0 font-bold">Result: The marketing becomes 10x more powerful.</p>
+      </div>
+
+      <h2 className="flex items-center gap-3">
+        <Compass className="w-6 h-6 text-(--color-primary)" /> 10. The Marketing Funnel
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 my-8">
+        <div className="p-4 bg-red-500/10 rounded-xl text-center border border-red-500/20">
+          <div className="font-black mb-1">Awareness</div>
+          <div className="text-[10px] uppercase opacity-70">IG Reel</div>
+        </div>
+        <div className="p-4 bg-orange-500/10 rounded-xl text-center border border-orange-500/20">
+          <div className="font-black mb-1">Interest</div>
+          <div className="text-[10px] uppercase opacity-70">Blog Reading</div>
+        </div>
+        <div className="p-4 bg-yellow-500/10 rounded-xl text-center border border-yellow-500/20">
+          <div className="font-black mb-1">Desire</div>
+          <div className="text-[10px] uppercase opacity-70">"I need this"</div>
+        </div>
+        <div className="p-4 bg-green-500/10 rounded-xl text-center border border-green-500/20">
+          <div className="font-black mb-1">Action</div>
+          <div className="text-[10px] uppercase opacity-70">Book a Call</div>
+        </div>
+      </div>
+
+      <h2 className="flex items-center gap-3">
+        <Zap className="w-6 h-6 text-(--color-primary)" /> 11. Modern Marketing in 2026
+      </h2>
+      <p>Marketing is changing because of AI. Today, businesses in Pune need:</p>
+      <div className="flex flex-wrap gap-3 my-8">
+        {['SEO', 'GEO (AI Optimization)', 'Personal Branding', 'Video Marketing', 'AI Content', 'Community Trust', 'LinkedIn Authority'].map((item) => (
+          <span key={item} className="px-6 py-3 bg-(--surface) border border-(--border) rounded-2xl text-sm font-bold shadow-sm">
+            {item}
+          </span>
+        ))}
+      </div>
+
+      <div className="bg-(--color-primary) text-white p-10 rounded-[2.5rem] my-16 text-center">
+        <h2 className="text-white border-none mt-0 mb-4">Final Understanding</h2>
+        <p className="text-xl mb-8">
+          <strong>OLD WAY:</strong> “Product banao aur becho.” <br />
+          <strong>NEW WAY:</strong> “Customer ki problem samjho aur best solution do.”
+        </p>
+        <p className="text-lg font-black uppercase tracking-widest opacity-80 mb-0">THIS is real marketing.</p>
+      </div>
+
+      <h2 className="text-2xl font-black mb-8">Frequently Asked Questions</h2>
+      <div className="space-y-4">
+        <div className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
+          <h4 className="font-bold mb-2">Marketing vs Sales me kya difference hai?</h4>
+          <p className="text-sm mb-0">Sales ka focus product bechna hota hai, jabki Marketing ka focus customer ki need samajhna aur problem solve karna hota hai.</p>
+        </div>
+        <div className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
+          <h4 className="font-bold mb-2">Kya bina ads ke marketing ho sakti hai?</h4>
+          <p className="text-sm mb-0">Haan! SEO, Content Marketing, aur Relationship building ke through aap organic marketing kar sakte ho.</p>
+        </div>
+        <div className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
+          <h4 className="font-bold mb-2">Beginners ke liye best marketing type kya hai?</h4>
+          <p className="text-sm mb-0">Digital Marketing (Social Media + Content) sabse easy aur low-budget tarika hai start karne ka.</p>
+        </div>
+      </div>
+
+      <div className="mt-16 p-10 bg-(--surface) rounded-[2.5rem] border-2 border-(--color-primary)/20 text-center relative overflow-hidden">
+        <Rocket className="w-16 h-16 text-(--color-primary) mx-auto mb-6" />
+        <h2 className="text-3xl font-black mb-4 border-none text-(--text-primary)">We are the Best Marketing Agency in Pune</h2>
+        <p className="text-(--text-secondary) max-w-2xl mx-auto mb-10 text-lg">
+          At Growthik Media, we don't just run ads. We engineer growth. Whether it's SEO, SMM, or custom-built performance systems, we help Pune businesses scale profitably.
+        </p>
+        <Link
+          href="/contact"
+          className="blog-cta-link inline-flex items-center justify-center gap-3 px-10 py-5 bg-(--color-primary) text-white font-black rounded-2xl hover:scale-105 transition-all shadow-2xl shadow-(--color-primary)/30 text-lg"
+        >
+          Grow Your Business with Us <Rocket className="w-5 h-5" />
+        </Link>
       </div>
     </div>
   ),

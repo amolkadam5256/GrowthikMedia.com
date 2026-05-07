@@ -25,7 +25,7 @@ const HeroHeadline = () => {
 
         {/* Main Headline - Single clean H1 for SEO and Accessibility */}
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black leading-[1.05] tracking-tight"
           style={{ color: "var(--color-white)" }}
         >
           Best

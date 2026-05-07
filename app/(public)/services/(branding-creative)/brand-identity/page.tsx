@@ -77,7 +77,7 @@ export default function BrandIdentityPage() {
               Specialized Agency Services
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
               Top Agency For <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">
                 {h1}
