@@ -2,7 +2,6 @@ import Header from "@/components/PublicComponents/comman/header/Header";
 import Footer from "@/components/PublicComponents/comman/Footer";
 import SEO from "@/components/PublicComponents/comman/SEO";
 import PageViewTracker from "@/components/PublicComponents/comman/PageViewTracker";
-import GTM from "@/components/PublicComponents/comman/GTM";
 import AOSInit from "@/components/PublicComponents/comman/AOSInit";
 import { CONTACT_INFO } from "@/constants/contact";
 
@@ -88,7 +87,6 @@ export default function RootLayout({
   return (
     <>
       <SEO />
-      <GTM />
       <ClientUtilities />
       <AOSInit />
       <PageViewTracker />

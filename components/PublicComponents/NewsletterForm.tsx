@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Mail, CheckCircle, ArrowRight } from "lucide-react";
-import { trackLead, trackEvent } from "@/lib/analytics";
+import { trackLead, trackEvent, trackRegistration } from "@/lib/analytics";
 
 export default function NewsletterForm({ inline = false }: { inline?: boolean }) {
   const [formData, setFormData] = useState({ email: "", name: "" });
@@ -23,6 +23,10 @@ export default function NewsletterForm({ inline = false }: { inline?: boolean })
       if (res.ok) {
         setStatus("sent");
         trackLead("Newsletter Subscription", { form_type: "Newsletter" });
+        trackRegistration("Newsletter Subscription", {
+          form_type: "Newsletter",
+          content_category: "Newsletter",
+        });
         setFormData({ email: "", name: "" });
       } else {
         setStatus("error");

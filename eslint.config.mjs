@@ -14,6 +14,7 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     "generated/**",
     "scripts/**",
+    "scratch/**",
     "tmp/**",
     "summary.js",
     // Additional ignores previously in .eslintignore

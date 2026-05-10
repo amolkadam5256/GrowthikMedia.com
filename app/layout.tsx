@@ -65,6 +65,7 @@ export const metadata: Metadata = {
 
 import { Suspense } from "react";
 import MetaPixel from "@/components/PublicComponents/Analytics/MetaPixel";
+import GTM from "@/components/PublicComponents/comman/GTM";
 import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
 
 export default function RootLayout({
@@ -88,6 +89,7 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,
           }}
         />
+        <GTM />
         <ThemeProviderWrapper>
           <Suspense fallback={null}>
             <MetaPixel />

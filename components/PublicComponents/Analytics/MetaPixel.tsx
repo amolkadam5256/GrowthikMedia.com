@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation'
 import Script from 'next/script'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { trackEvent } from '@/lib/analytics'
 
 export const FB_PIXEL_ID = '911738005183270'
@@ -10,8 +10,14 @@ export const FB_PIXEL_ID = '911738005183270'
 const MetaPixel = () => {
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const hasTrackedInitialPageView = useRef(false)
 
   useEffect(() => {
+    if (!hasTrackedInitialPageView.current) {
+      hasTrackedInitialPageView.current = true
+      return
+    }
+
     trackEvent('PageView')
   }, [pathname, searchParams])
 
@@ -31,6 +37,7 @@ const MetaPixel = () => {
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '${FB_PIXEL_ID}');
+            fbq('track', 'PageView');
           `,
         }}
       />

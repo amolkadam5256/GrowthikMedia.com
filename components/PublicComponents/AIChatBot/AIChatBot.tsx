@@ -13,6 +13,7 @@ import {
   Maximize2,
   Headphones,
 } from "lucide-react";
+import { trackContact, trackEvent, trackLead, trackRegistration } from "@/lib/analytics";
 
 interface Message {
   id: string;
@@ -77,6 +78,16 @@ const AIChatBot = () => {
         setShowLeadForm(false);
         localStorage.setItem("growthik_chat_lead", JSON.stringify(leadData));
         localStorage.setItem("growthik_chat_session", data.sessionId);
+        trackLead("AI Chat Lead Form", {
+          form_type: "AI Chat Lead",
+          content_category: "Chat",
+          returning_lead: Boolean(data.isReturning),
+        });
+        trackRegistration("AI Chat Consultation Started", {
+          form_type: "AI Chat Lead",
+          content_category: "Chat",
+          returning_lead: Boolean(data.isReturning),
+        });
 
         // Add personalized welcome message
         const welcomeMsg: Message = {
@@ -89,6 +100,10 @@ const AIChatBot = () => {
       }
     } catch (error) {
       console.error("Lead Error:", error);
+      trackEvent("form_submit_error", {
+        form_type: "AI Chat Lead",
+        error_type: "api_failure",
+      });
     } finally {
       setIsSubmittingLead(false);
     }
@@ -372,6 +387,13 @@ const AIChatBot = () => {
       {/* Floating Trigger */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
+        onMouseDown={() => {
+          if (!isOpen) {
+            trackContact("AI Chat Open", {
+              content_category: "Chat",
+            });
+          }
+        }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         animate={{

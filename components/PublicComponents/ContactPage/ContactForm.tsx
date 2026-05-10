@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { Send, CheckCircle2, ChevronDown } from "lucide-react";
-import { trackEvent, trackLead } from "@/lib/analytics";
+import { trackContact, trackEvent, trackLead } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -57,6 +57,10 @@ export default function ContactForm() {
       if (res.ok) {
         setSubmitStatus("success");
         trackLead("Contact Form", {
+          form_type: "Detailed Contact Form",
+          service: formData.service,
+        });
+        trackContact("Contact Form Submit", {
           form_type: "Detailed Contact Form",
           service: formData.service,
         });

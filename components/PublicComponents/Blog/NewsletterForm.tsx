@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Mail, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import { trackEvent, trackLead, trackRegistration } from "@/lib/analytics";
 
 interface NewsletterFormProps {
   compact?: boolean;
@@ -16,9 +17,20 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
     e.preventDefault();
     if (!email || !agreed) return;
     setStatus("loading");
+    trackEvent("form_start", {
+      form_type: compact ? "Blog Newsletter Compact" : "Blog Newsletter",
+    });
     // Simulate API call
     await new Promise((r) => setTimeout(r, 1200));
     setStatus("success");
+    trackLead("Blog Newsletter Subscription", {
+      form_type: compact ? "Blog Newsletter Compact" : "Blog Newsletter",
+      content_category: "Newsletter",
+    });
+    trackRegistration("Blog Newsletter Subscription", {
+      form_type: compact ? "Blog Newsletter Compact" : "Blog Newsletter",
+      content_category: "Newsletter",
+    });
     setEmail("");
   };
 

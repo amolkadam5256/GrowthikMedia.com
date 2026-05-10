@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, trackMetaStandardEvent } from "@/lib/analytics";
 
 function getPageGroup(pathname: string) {
   if (pathname === "/") return "home";
@@ -60,6 +60,19 @@ function getReferrerSource(referrer: string) {
   } catch {
     return "unknown";
   }
+}
+
+function textIncludes(value: string, terms: string[]) {
+  return terms.some((term) => value.includes(term));
+}
+
+function getElementLabel(element: HTMLElement) {
+  return (
+    element.getAttribute("aria-label") ||
+    element.getAttribute("title") ||
+    element.textContent?.trim().replace(/\s+/g, " ").slice(0, 100) ||
+    ""
+  );
 }
 
 export default function PageViewTracker() {
@@ -128,15 +141,81 @@ export default function PageViewTracker() {
     }
   }, [pathname]);
 
-  // 3. Global Click Event Listener for WhatsApp & Tel Links
+  // 3. Scroll Depth Tracking
+  useEffect(() => {
+    const firedThresholds = new Set<number>();
+    const thresholds = [25, 50, 75, 90];
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const viewportHeight = window.innerHeight;
+      const documentHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+      );
+      const scrollableHeight = documentHeight - viewportHeight;
+
+      if (scrollableHeight <= 0) return;
+
+      const scrollPercent = Math.min(
+        100,
+        Math.round(((scrollTop + viewportHeight) / documentHeight) * 100),
+      );
+
+      thresholds.forEach((threshold) => {
+        if (scrollPercent >= threshold && !firedThresholds.has(threshold)) {
+          firedThresholds.add(threshold);
+          trackEvent("scroll_depth", {
+            page_path: pathname,
+            page_group: getPageGroup(pathname),
+            percent_scrolled: threshold,
+          });
+        }
+      });
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
+
+  // 4. Global Click Event Listener for WhatsApp & Tel Links
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      const link = (e.target as HTMLElement).closest("a");
-      if (!link) return;
+      const clickable = (e.target as HTMLElement).closest(
+        "a, button, [role='button'], [data-analytics-event]",
+      ) as HTMLElement | null;
 
-      const href = link.href || "";
-      const label =
-        link.textContent?.trim().replace(/\s+/g, " ").slice(0, 80) || "";
+      if (!clickable) return;
+
+      const href =
+        clickable instanceof HTMLAnchorElement ? clickable.href || "" : "";
+      const label = getElementLabel(clickable);
+      const actionText = `${label} ${href} ${
+        clickable.dataset.analyticsEvent || ""
+      }`.toLowerCase();
+      const commonParams = {
+        page_path: pathname,
+        page_group: getPageGroup(pathname),
+        content_name: label,
+        destination: href || undefined,
+      };
+
+      const explicitEvent = clickable.dataset.analyticsEvent;
+      if (explicitEvent) {
+        trackEvent(explicitEvent, {
+          ...commonParams,
+          content_category: clickable.dataset.analyticsCategory,
+          content_type: clickable.dataset.analyticsType,
+          value: clickable.dataset.analyticsValue
+            ? Number(clickable.dataset.analyticsValue)
+            : undefined,
+          currency: clickable.dataset.analyticsCurrency,
+        });
+      }
 
       if (
         href.includes("/contact") ||
@@ -148,10 +227,8 @@ export default function PageViewTracker() {
         href.includes("calendar.app.google")
       ) {
         trackEvent("cta_click", {
-          page_path: pathname,
-          page_group: getPageGroup(pathname),
+          ...commonParams,
           cta_text: label,
-          destination: href,
         });
 
         // Map to Meta Pixel 'Contact' or 'Lead'
@@ -168,6 +245,57 @@ export default function PageViewTracker() {
           content_name: label,
           content_category: href.includes("/services/") ? "Service" : href.includes("/portfolio/") ? "Portfolio" : "Blog",
           content_type: "product",
+        });
+      }
+
+      if (textIncludes(actionText, ["add to cart", "cart"])) {
+        trackMetaStandardEvent("AddToCart", {
+          ...commonParams,
+          content_category: "Commerce",
+        });
+      }
+
+      if (textIncludes(actionText, ["wishlist", "save for later", "bookmark"])) {
+        trackMetaStandardEvent("AddToWishlist", {
+          ...commonParams,
+          content_category: "Commerce",
+        });
+      }
+
+      if (
+        textIncludes(actionText, [
+          "checkout",
+          "book consultation",
+          "book a call",
+          "schedule call",
+          "claim my free growth audit",
+        ])
+      ) {
+        trackMetaStandardEvent("InitiateCheckout", {
+          ...commonParams,
+          content_category: "Lead Funnel",
+        });
+      }
+
+      if (textIncludes(actionText, ["payment", "billing", "card details"])) {
+        trackMetaStandardEvent("AddPaymentInfo", {
+          ...commonParams,
+          content_category: "Commerce",
+        });
+      }
+
+      if (textIncludes(actionText, ["purchase", "buy now", "pay now", "order"])) {
+        trackMetaStandardEvent("Purchase", {
+          ...commonParams,
+          content_category: "Commerce",
+          currency: "INR",
+        });
+      }
+
+      if (textIncludes(actionText, ["donate", "donation", "contribute"])) {
+        trackMetaStandardEvent("Donate", {
+          ...commonParams,
+          content_category: "Donation",
         });
       }
 

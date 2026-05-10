@@ -48,6 +48,12 @@ export default function AuditRequestForm() {
           content_category: "Audit Request",
           goal: formData.goal,
         });
+        trackEvent("InitiateCheckout", {
+          form_type: "Audit Request (Detailed)",
+          content_category: "Lead Funnel",
+          content_name: "Free SEO Audit",
+          goal: formData.goal,
+        });
         setFormData({ name: "", email: "", phone: "", website: "", goal: "SEO Audit" });
       } else {
         setSubmitStatus("error");
