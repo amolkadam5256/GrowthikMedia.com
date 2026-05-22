@@ -7,7 +7,7 @@ import { Badge } from "@/components/PublicComponents/ui/GBadge";
 const HeroHeadline = () => {
   return (
     <header
-      className="flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto px-4 py-8 md:py-10"
+      className="flex flex-col justify-center items-center text-center relative max-w-6xl mx-auto px-4 pt-4 pb-8 md:pt-4 md:pb-10"
       role="banner"
     >
       {/* Main Content Container */}
