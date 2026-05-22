@@ -109,6 +109,63 @@ export function trackMetaStandardEvent(
   trackEvent(eventName, params);
 }
 
+// ==========================================
+// Meta Pixel Standard Event Helpers
+// ==========================================
+
+export function trackAddPaymentInfo(params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("AddPaymentInfo", params);
+}
+
+export function trackAddToCart(contentName: string, params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("AddToCart", {
+    content_name: contentName,
+    ...params,
+  });
+}
+
+export function trackAddToWishlist(contentName: string, params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("AddToWishlist", {
+    content_name: contentName,
+    ...params,
+  });
+}
+
+export function trackCompleteRegistration(contentName: string, params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("CompleteRegistration", {
+    content_name: contentName,
+    status: true,
+    ...params,
+  });
+}
+
+export function trackContact(contentName: string, params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("Contact", {
+    content_name: contentName,
+    content_category: "Contact",
+    ...params,
+  });
+}
+
+export function trackCustomizeProduct(contentName: string, params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("CustomizeProduct", {
+    content_name: contentName,
+    ...params,
+  });
+}
+
+export function trackDonate(params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("Donate", params);
+}
+
+export function trackFindLocation(params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("FindLocation", params);
+}
+
+export function trackInitiateCheckout(params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("InitiateCheckout", params);
+}
+
 export function trackLead(contentName: string, params: AnalyticsParams = {}) {
   // Track as generic form success for GTM/GA4
   trackEvent("form_submit_success", {
@@ -123,21 +180,43 @@ export function trackLead(contentName: string, params: AnalyticsParams = {}) {
   });
 }
 
-export function trackContact(contentName: string, params: AnalyticsParams = {}) {
-  trackMetaStandardEvent("Contact", {
-    content_name: contentName,
-    content_category: "Contact",
+export function trackPurchase(value: number, currency: string = 'INR', params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("Purchase", {
+    value,
+    currency,
     ...params,
   });
 }
 
-export function trackRegistration(
-  contentName: string,
-  params: AnalyticsParams = {},
-) {
-  trackMetaStandardEvent("CompleteRegistration", {
-    content_name: contentName,
-    status: true,
+export function trackSchedule(params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("Schedule", params);
+}
+
+export function trackSearch(searchString: string, params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("Search", {
+    search_string: searchString,
     ...params,
   });
 }
+
+export function trackStartTrial(params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("StartTrial", params);
+}
+
+export function trackSubmitApplication(params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("SubmitApplication", params);
+}
+
+export function trackSubscribe(params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("Subscribe", params);
+}
+
+export function trackViewContent(contentName: string, params: AnalyticsParams = {}) {
+  trackMetaStandardEvent("ViewContent", {
+    content_name: contentName,
+    ...params,
+  });
+}
+
+// Maintain backward compatibility for trackRegistration
+export const trackRegistration = trackCompleteRegistration;
