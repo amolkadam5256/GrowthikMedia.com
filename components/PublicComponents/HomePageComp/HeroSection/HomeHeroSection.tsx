@@ -7,7 +7,7 @@ import { images } from "@/app/assets/images/images";
 
 const HomeHeroSection = React.memo(() => {
   return (
-    <section className="relative w-full overflow-hidden flex flex-col items-center justify-center pt-12 md:pt-20 min-h-[500px] md:min-h-[700px]">
+    <section className="relative w-full overflow-hidden flex flex-col items-center justify-center pt-24 md:pt-32 lg:pt-40 min-h-[500px] md:min-h-[700px]">
       {/* Background Image for Headline */}
       <div className="absolute inset-0 z-0">
         <Image
