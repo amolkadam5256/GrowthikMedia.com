@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import { trackEvent, trackMetaStandardEvent } from "@/lib/analytics";
+import { trackEvent, trackMetaStandardEvent, trackWhatsAppClick, trackPhoneCall, fireGoogleAdsConversion, GOOGLE_ADS_CONVERSIONS } from "@/lib/analytics";
 
 function getPageGroup(pathname: string) {
   if (pathname === "/") return "home";
@@ -234,8 +234,10 @@ export default function PageViewTracker() {
         // Map to Meta Pixel 'Contact' or 'Lead'
         if (href.includes("/audit")) {
           trackEvent("Lead", { content_name: `Audit Request: ${label}` });
+          fireGoogleAdsConversion(GOOGLE_ADS_CONVERSIONS.lead, { content_name: `Audit Request: ${label}` });
         } else if (!href.includes("wa.me") && !href.includes("api.whatsapp.com") && !href.startsWith("tel:")) {
           trackEvent("Contact", { content_name: `Contact Click: ${label}` });
+          fireGoogleAdsConversion(GOOGLE_ADS_CONVERSIONS.contact, { content_name: `Contact Click: ${label}` });
         }
       }
 
@@ -299,29 +301,23 @@ export default function PageViewTracker() {
         });
       }
 
-      // WhatsApp Tracking
+      // WhatsApp Tracking — fires GA4, GTM, Meta Pixel & Google Ads
       if (href.includes("wa.me") || href.includes("api.whatsapp.com")) {
-        trackEvent("Contact", {
-          content_name: "WhatsApp Click",
-        });
-        trackEvent("contact_click", {
+        trackWhatsAppClick({
           page_path: pathname,
           page_group: getPageGroup(pathname),
-          channel: "whatsapp",
           destination: href,
+          cta_text: label,
         });
       }
 
-      // Phone Call Tracking
+      // Phone Call Tracking — fires GA4, GTM, Meta Pixel & Google Ads
       if (href.startsWith("tel:")) {
-        trackEvent("Contact", {
-          content_name: "Phone Call",
-        });
-        trackEvent("contact_click", {
+        trackPhoneCall({
           page_path: pathname,
           page_group: getPageGroup(pathname),
-          channel: "phone",
           destination: href,
+          cta_text: label,
         });
       }
 

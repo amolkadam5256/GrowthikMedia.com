@@ -30,8 +30,20 @@ declare global {
     dataLayer?: unknown[];
     gtag?: (command: string, eventName: string, params?: AnalyticsParams) => void;
     fbq?: (command: string, eventName: string, params?: AnalyticsParams) => void;
+    fbqInitialized?: boolean;
   }
 }
+
+// ==========================================
+// Google Ads Conversion Config
+// ==========================================
+export const GOOGLE_ADS_ID = "AW-CONVERSION_ID"; // TODO: Replace with your real Google Ads Conversion ID
+export const GOOGLE_ADS_CONVERSIONS = {
+  whatsapp_click:  "AW-CONVERSION_ID/WHATSAPP_LABEL",   // TODO: Replace
+  phone_call:      "AW-CONVERSION_ID/PHONE_LABEL",       // TODO: Replace
+  lead:            "AW-CONVERSION_ID/LEAD_LABEL",        // TODO: Replace
+  contact:         "AW-CONVERSION_ID/CONTACT_LABEL",     // TODO: Replace
+};
 
 export const META_STANDARD_EVENTS: MetaStandardEvent[] = [
   "AddPaymentInfo",
@@ -220,3 +232,64 @@ export function trackViewContent(contentName: string, params: AnalyticsParams = 
 
 // Maintain backward compatibility for trackRegistration
 export const trackRegistration = trackCompleteRegistration;
+
+// ==========================================
+// Google Ads Conversion Helpers
+// ==========================================
+
+/**
+ * Fire a Google Ads conversion event.
+ * conversionLabel should be the full "AW-ID/label" string.
+ */
+export function fireGoogleAdsConversion(
+  conversionLabel: string,
+  params: AnalyticsParams = {},
+) {
+  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  window.gtag("event", "conversion", {
+    send_to: conversionLabel,
+    ...params,
+  });
+}
+
+// ==========================================
+// Contact Channel Helpers
+// ==========================================
+
+/** Track a WhatsApp click — GA4 + GTM + Meta Pixel + Google Ads */
+export function trackWhatsAppClick(params: AnalyticsParams = {}) {
+  // GA4 / GTM custom event
+  trackEvent("whatsapp_click", {
+    channel: "whatsapp",
+    content_category: "Contact",
+    content_name: "WhatsApp Click",
+    ...params,
+  });
+  // Meta Pixel standard
+  trackMetaStandardEvent("Contact", {
+    content_name: "WhatsApp Click",
+    content_category: "whatsapp",
+    ...params,
+  });
+  // Google Ads conversion
+  fireGoogleAdsConversion(GOOGLE_ADS_CONVERSIONS.whatsapp_click, params);
+}
+
+/** Track a phone call click — GA4 + GTM + Meta Pixel + Google Ads */
+export function trackPhoneCall(params: AnalyticsParams = {}) {
+  // GA4 / GTM custom event
+  trackEvent("phone_call", {
+    channel: "phone",
+    content_category: "Contact",
+    content_name: "Phone Call",
+    ...params,
+  });
+  // Meta Pixel standard
+  trackMetaStandardEvent("Contact", {
+    content_name: "Phone Call",
+    content_category: "phone",
+    ...params,
+  });
+  // Google Ads conversion
+  fireGoogleAdsConversion(GOOGLE_ADS_CONVERSIONS.phone_call, params);
+}
