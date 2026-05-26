@@ -11,25 +11,6 @@ import {
 export default function SEO() {
   return (
     <>
-      {/* Google Analytics gtag.js */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-30C78ZK2G8"
-        strategy="afterInteractive"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-30C78ZK2G8');
-          `,
-        }}
-      />
-
       {/* Structured Data JSON-LD - Organization */}
       <Script
         id="structured-data-organization"

@@ -98,12 +98,7 @@ export function trackEvent(eventName: string, params: AnalyticsParams = {}) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: eventName, ...eventParams });
 
-  // 2. Google Analytics (gtag)
-  if (typeof window.gtag === "function") {
-    window.gtag("event", eventName, eventParams);
-  }
-
-  // 3. Meta Pixel (Facebook)
+  // 2. Meta Pixel (Facebook)
   if (typeof window.fbq === "function") {
     const isStandard = META_STANDARD_EVENT_SET.has(eventName);
     if (isStandard) {
@@ -245,10 +240,12 @@ export function fireGoogleAdsConversion(
   conversionLabel: string,
   params: AnalyticsParams = {},
 ) {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
-  window.gtag("event", "conversion", {
-    send_to: conversionLabel,
-    ...params,
+  if (typeof window === "undefined") return;
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "google_ads_conversion",
+    conversion_label: conversionLabel,
+    ...enrichParams(params),
   });
 }
 

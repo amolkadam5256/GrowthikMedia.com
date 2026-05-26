@@ -109,19 +109,7 @@ export default function PageViewTracker() {
     };
     logInternalVisit();
 
-    // 1. Google Analytics Tracking
-    if (
-      typeof window !== "undefined" &&
-      typeof window.gtag === "function"
-    ) {
-      window.gtag("config", "G-30C78ZK2G8", {
-        page_path: pathname,
-        page_title: document.title,
-        page_group,
-      });
-    }
-
-    // 2. Service Page Tracking (Meta Pixel & GA4)
+    // 1. Service Page Tracking (Meta Pixel & GA4)
     const isServicePage =
       pathname.includes("/services/") ||
       pathname.includes("-marketing") ||
