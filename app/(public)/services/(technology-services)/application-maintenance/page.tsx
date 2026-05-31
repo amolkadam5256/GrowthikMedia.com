@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   title:
     "Best Application Maintenance in Pune | Custom & SEO-Friendly Websites",
   description:
-    "Looking for a professional application maintenance company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!",
+    "Professional application maintenance in Pune. Custom, SEO-optimized, and mobile-responsive website services for business growth. Get a free audit today!",
   keywords:
     "Application Maintenance in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom Application Maintenance Pune",
   alternates: {

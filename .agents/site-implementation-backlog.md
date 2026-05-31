@@ -61,7 +61,7 @@ What landed:
 ## Batch 3: Services Hub and Service Template Consistency
 
 Status:
-- In progress
+- Complete
 
 Files:
 - [x] `app/(public)/services/page.tsx`

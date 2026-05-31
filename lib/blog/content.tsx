@@ -29,6 +29,213 @@ const CheckListItem = ({ children }: { children: React.ReactNode }) => (
 );
 
 export const POST_CONTENT: Record<string, React.ReactNode> = {
+  "cockroach-janta-party-viral-marketing-case-study-2026": (
+    <div className="blog-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                "name": "What is the Cockroach Janta Party viral marketing lesson?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The Cockroach Janta Party conversation shows how humor, timing, identity and a simple shareable hook can create attention quickly. The business lesson is to connect that attention to trust, offers, landing pages and tracking."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Pune businesses use viral marketing safely?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, but brands should avoid copying controversy blindly. A safer strategy is to borrow the mechanics of viral content: fast timing, audience insight, relatable humor, clear context, a strong brand fit and measurable conversion paths."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why is attention the most valuable asset in 2026?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "In a crowded digital market, people don't buy because you have a website; they buy because they notice you first. Attention is the first step in the cycle: Attention → Trust → Leads → Revenue."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes people share content online?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "People share emotion, identity, humor, and community, not boring promotions. Relatability and timing are the keys to organic reach on WhatsApp and Instagram in markets like Pune."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does viral attention become business growth?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Growth happens when attention is funneled into a system. Combining SEO, content, ads, and tracking ensures that temporary spikes in traffic turn into long-term customer relationships."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the role of humor in marketing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Humor reduces friction and humanizes a brand. The viral Cockroach Janta Party movement succeeded because it used simple, relatable humor to create a sense of belonging."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why do businesses need a marketing system?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Random posting and ads waste budget. A systematic approach (SEO + Meta Ads + GA4 Tracking) creates a predictable flow of leads and revenue."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How important is local visibility for Pune companies?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Extremely. When people in areas like Warje or Baner search for 'Digital Marketing Agency' or 'SEO Company', appearing in those local results is a massive growth opportunity."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does branding need to be perfect to go viral?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Visibility often beats perfection. Being present in the conversation with a sharp hook is more effective than waiting for 'perfect' branding that misses the trend window."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is 'Attention Economics'?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It is the management of human attention as a scarce resource. Campaigns that use psychological triggers like identity and recognition win the attention war."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can a local agency help with trending marketing?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A local agency stays on top of regional trends and cultural nuances, allowing for faster and more respectful marketing interventions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What should a viral campaign include?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A sharp hook, simple creative, fast publishing, community participation, a dedicated landing page, and robust conversion tracking."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How to track the ROI of a viral post?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use GA4 to track link clicks, website visit spikes, mention volume, and increases in brand-name searches in Google Search Console."
+                }
+              }
+            ],
+          }),
+        }}
+      />
+
+      <p className="lead">
+        The <strong>Cockroach Janta Party viral marketing case study</strong> is more than just a trend. It is a masterclass in how Indian internet attention moves when a topic hits the sweet spot of humor, identity, and community.
+      </p>
+
+      <p>
+        For businesses, the lesson is clear: <strong>Don't just chase trends; understand why they spread.</strong> At <Link href="/">Growthik Media</Link>, we help Pune brands turn attention from search, social, and WhatsApp into measurable leads.
+      </p>
+
+      <div className="bg-(--surface) p-8 rounded-3xl border border-(--border) my-12">
+        <h2 className="text-2xl font-black mt-0 mb-4 text-(--color-primary)">The Core Message</h2>
+        <blockquote className="text-xl italic font-bold border-none p-0 m-0">
+          "Attention is the most valuable asset in 2026. Without it, your website and ads are invisible."
+        </blockquote>
+      </div>
+
+      <div className="bg-(--surface) p-6 rounded-2xl border border-(--border) my-8 shadow-sm">
+        <h2 className="mt-0 flex items-center gap-3">
+          <MapPin className="w-6 h-6 text-(--color-primary)" /> Quick Local Keyword Map
+        </h2>
+        <p className="mb-4 text-sm text-(--text-secondary)">
+          Visibility in local Pune hubs like Warje and Baner starts with ranking for high-intent searches.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            "top digital marketing agency in Pune",
+            "digital marketing agency near DMart Warje",
+            "digital marketing company in Warje",
+            "best digital marketing agency Pune",
+            "SEO company Pune",
+            "SEO services in Warje Pune",
+            "Google Ads agency Pune",
+            "Meta Ads agency Pune",
+            "social media marketing agency Pune",
+            "website development and digital marketing Pune",
+          ].map((keyword) => (
+            <div key={keyword} className="p-3 rounded-xl bg-(--surface-secondary) border border-(--border) text-sm font-semibold">
+              {keyword}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="my-16 p-10 bg-(--color-primary) text-white rounded-[2.5rem] text-center relative overflow-hidden shadow-2xl">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32" />
+        <h2 className="text-3xl font-black mb-4 text-white border-none">Ready to Turn Attention into Revenue?</h2>
+        <p className="text-lg opacity-90 max-w-2xl mx-auto mb-10">
+          We don't just post content. We build systems that capture attention, build trust, and drive conversions.
+        </p>
+        <Link href="/contact" className="px-10 py-5 bg-white text-(--color-primary) font-black rounded-2xl hover:scale-105 transition-all shadow-xl">
+          Start Your Growth Journey →
+        </Link>
+      </div>
+
+      <h2 className="flex items-center gap-3">
+        <Trophy className="w-6 h-6 text-(--color-primary)" /> What Makes a Marketing Agency "Top Tier" in Pune?
+      </h2>
+      <p>
+        A real growth agency connects every activity to business outcomes. In 2026, that means combining:
+      </p>
+
+      <ul className="space-y-4 my-8">
+        <CheckListItem><strong>Attention Economics:</strong> Capturing intent when people are already searching.</CheckListItem>
+        <CheckListItem><strong>Emotional Connection:</strong> Using identity and humor over boring promotions.</CheckListItem>
+        <CheckListItem><strong>Systematic Delivery:</strong> Integrating SEO, Ads, and Analytics into one growth engine.</CheckListItem>
+        <CheckListItem><strong>Local Authority:</strong> Dominating 'near me' searches in Warje, Baner, and Kothrud.</CheckListItem>
+      </ul>
+
+      <h2 className="flex items-center gap-3">
+        <Zap className="w-6 h-6 text-(--color-primary)" /> Conclusion: Visibility Over Perfection
+      </h2>
+      <p>
+        The viral movement succeeded because it was visible, timely, and relatable. Marketing in 2026 is about being part of the conversation at the right time with a clear offer and tracking in place.
+      </p>
+
+      <div className="mt-16 p-10 bg-(--surface) rounded-[2.5rem] border-2 border-(--color-primary)/20 text-center">
+        <Rocket className="w-16 h-16 text-(--color-primary) mx-auto mb-6" />
+        <h2 className="text-3xl font-black mb-4 border-none text-(--text-primary)">We Engineer Growth in Pune</h2>
+        <p className="text-(--text-secondary) max-w-2xl mx-auto mb-10 text-lg">
+          Whether it's SEO, SMM, or custom-built performance systems, we help businesses in Pune and Warje scale profitably.
+        </p>
+        <Link
+          href="/contact"
+          className="blog-cta-link inline-flex items-center justify-center gap-3 px-10 py-5 bg-(--color-primary) text-white font-black rounded-2xl hover:scale-105 transition-all shadow-2xl shadow-(--color-primary)/30 text-lg"
+        >
+          Grow Your Business with Us <Rocket className="w-5 h-5" />
+        </Link>
+      </div>
+    </div>
+  ),
   "complete-beginner-guide-to-seo-2026": (
     <div className="blog-content">
       <script
@@ -1346,15 +1553,79 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
                     "name": "What is Marketing?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Marketing is the process of understanding a customer's problem and providing a profitable solution."
+                      "text": "Marketing is the complete process of understanding customer needs, developing solutions, and building relationships to deliver value profitably."
                     }
                   },
                   {
                     "@type": "Question",
-                    "name": "Why is marketing important for business growth?",
+                    "name": "Why is marketing important for Pune businesses?",
                     "acceptedAnswer": {
                       "@type": "Answer",
-                      "text": "Marketing generates revenue, builds brands, creates customer loyalty, and offers business growth."
+                      "text": "Marketing is essential for building local brand authority, generating high-intent leads, and staying competitive in Pune's rapidly growing digital economy."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the STP framework in marketing?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "STP stands for Segmentation, Targeting, and Positioning. It is used to identify the most valuable customer segments and tailor a brand's message to them."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How does digital marketing differ from traditional marketing?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Digital marketing uses online channels like SEO and social media to allow for precise targeting, real-time measurement, and two-way interaction, unlike one-way traditional ads."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the marketing funnel?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The marketing funnel represents the customer journey from first awareness to interest, desire, and finally the action of purchasing or enquiring."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is Guerrilla Marketing?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Guerrilla marketing uses low-cost, unconventional, and high-impact tactics to create surprise and buzz, making it ideal for startups and local brands."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Why do businesses need branding?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Branding creates a unique identity that builds trust and loyalty, allowing a business to command higher prices and stand out from competitors."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is the difference between Sales and Marketing?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Marketing focuses on creating demand and building long-term systems, while Sales focuses on converting that demand into immediate transactions."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How can a Pune business measure marketing ROI?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "By tracking key metrics like Cost Per Lead (CPL), Customer Acquisition Cost (CAC), and overall conversion rates through tools like GA4 and GTM."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What is B2B vs B2C marketing?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "B2B (Business-to-Business) focuses on logic and long-term value for professional buyers, while B2C (Business-to-Consumer) often focuses on emotion and immediate personal benefits."
                     }
                   }
                 ]
@@ -1775,18 +2046,53 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
 
       <h2 className="text-2xl font-black mb-8">Frequently Asked Questions</h2>
       <div className="space-y-4">
-        <div className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
-          <h4 className="font-bold mb-2">What is the difference between Marketing and Sales?</h4>
-          <p className="text-sm mb-0">Sales focuses purely on selling a product, while marketing focuses on understanding the customer's needs and solving their problem.</p>
-        </div>
-        <div className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
-          <h4 className="font-bold mb-2">Can marketing be done without paid ads?</h4>
-          <p className="text-sm mb-0">Yes! You can use organic marketing strategies like SEO, Content Marketing, and Relationship Building to grow your business for free.</p>
-        </div>
-        <div className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
-          <h4 className="font-bold mb-2">What is the best marketing type for beginners?</h4>
-          <p className="text-sm mb-0">Digital Marketing (Social Media combined with Content Marketing) is the easiest and most budget-friendly way to start.</p>
-        </div>
+        {[
+          {
+            q: "What is Marketing?",
+            a: "Marketing is the complete process of understanding customer needs, developing solutions, and building relationships to deliver value profitably."
+          },
+          {
+            q: "Why is marketing important for Pune businesses?",
+            a: "Marketing is essential for building local brand authority, generating high-intent leads, and staying competitive in Pune's rapidly growing digital economy."
+          },
+          {
+            q: "What is the STP framework in marketing?",
+            a: "STP stands for Segmentation, Targeting, and Positioning. It is used to identify the most valuable customer segments and tailor a brand's message to them."
+          },
+          {
+            q: "How does digital marketing differ from traditional marketing?",
+            a: "Digital marketing uses online channels like SEO and social media to allow for precise targeting, real-time measurement, and two-way interaction, unlike one-way traditional ads."
+          },
+          {
+            q: "What is the marketing funnel?",
+            a: "The marketing funnel represents the customer journey from first awareness to interest, desire, and finally the action of purchasing or enquiring."
+          },
+          {
+            q: "What is Guerrilla Marketing?",
+            a: "Guerrilla marketing uses low-cost, unconventional, and high-impact tactics to create surprise and buzz, making it ideal for startups and local brands."
+          },
+          {
+            q: "Why do businesses need branding?",
+            a: "Branding creates a unique identity that builds trust and loyalty, allowing a business to command higher prices and stand out from competitors."
+          },
+          {
+            q: "What is the difference between Sales and Marketing?",
+            a: "Marketing focuses on creating demand and building long-term systems, while Sales focuses on converting that demand into immediate transactions."
+          },
+          {
+            q: "How can a Pune business measure marketing ROI?",
+            a: "By tracking key metrics like Cost Per Lead (CPL), Customer Acquisition Cost (CAC), and overall conversion rates through tools like GA4 and GTM."
+          },
+          {
+            q: "What is B2B vs B2C marketing?",
+            a: "B2B (Business-to-Business) focuses on logic and long-term value for professional buyers, while B2C (Business-to-Consumer) often focuses on emotion and immediate personal benefits."
+          }
+        ].map((faq, idx) => (
+          <div key={idx} className="p-6 bg-(--surface) border border-(--border) rounded-2xl">
+            <h4 className="font-bold mb-2">{faq.q}</h4>
+            <p className="text-sm mb-0">{faq.a}</p>
+          </div>
+        ))}
       </div>
 
       <div className="mt-16 p-10 bg-(--surface) rounded-[2.5rem] border-2 border-(--color-primary)/20 text-center relative overflow-hidden">
