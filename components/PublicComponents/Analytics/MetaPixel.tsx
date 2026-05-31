@@ -25,7 +25,7 @@ const MetaPixel = () => {
     <>
       <Script
         id="fb-pixel"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             !function(f,b,e,v,n,t,s)

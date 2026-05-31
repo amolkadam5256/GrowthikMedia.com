@@ -25,11 +25,10 @@ const GrowthStrategistBot = dynamic(
 );
 
 export default function ClientUtilities() {
-  const [mounted, setMounted] = useState(false);
+  const [loadStep, setLoadStep] = useState(0);
 
   useEffect(() => {
-    // Use requestIdleCallback when available so the browser prioritises
-    // painting before we trigger the widget chunk downloads.
+    // 1. Initial trigger: prioritize painting basic UI first
     const schedule =
       typeof window !== "undefined" && "requestIdleCallback" in window
         ? (cb: () => void) =>
@@ -39,9 +38,9 @@ export default function ClientUtilities() {
                   requestIdleCallback: (cb: () => void) => number;
                 }
             ).requestIdleCallback(cb)
-        : (cb: () => void) => setTimeout(cb, 200);
+        : (cb: () => void) => setTimeout(cb, 500);
 
-    const id = schedule(() => setMounted(true));
+    const id = schedule(() => setLoadStep(1));
     return () => {
       if (typeof window !== "undefined" && "cancelIdleCallback" in window) {
         (
@@ -52,15 +51,33 @@ export default function ClientUtilities() {
     };
   }, []);
 
-  if (!mounted) return null;
+  useEffect(() => {
+    // 2. Continuous staging: load heavier elements one by one with gaps
+    if (loadStep > 0 && loadStep < 3) {
+      const delay = loadStep === 1 ? 1500 : 3000;
+      const timer = setTimeout(() => {
+        setLoadStep((prev) => prev + 1);
+      }, delay);
+      return () => clearTimeout(timer);
+    }
+  }, [loadStep]);
+
+  if (loadStep === 0) return null;
 
   return (
     <>
       <ScrollProgressBar />
-      <ProgressiveLeadCapture />
-      <FloatingSocials />
-      <FloatingWhatsApp />
-      <GrowthStrategistBot />
+      {/* Social contacts: fast to parse, high priority for conversion */}
+      {loadStep >= 1 && (
+        <>
+          <FloatingSocials />
+          <FloatingWhatsApp />
+        </>
+      )}
+      {/* Interaction forms: medium weight */}
+      {loadStep >= 2 && <ProgressiveLeadCapture />}
+      {/* Heavy chatbot: last to load so TBT stays low during initial session */}
+      {loadStep >= 3 && <GrowthStrategistBot />}
     </>
   );
 }

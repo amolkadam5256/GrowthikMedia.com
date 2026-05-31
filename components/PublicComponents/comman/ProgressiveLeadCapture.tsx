@@ -64,14 +64,9 @@ const ProgressiveLeadCapture = () => {
     let startStep = STEPS.IDENTIFY;
     if ((savedEmail || savedPhone) && !(savedEmail && savedPhone))
       startStep = STEPS.COLLECT_SECOND;
-    // 3. Logic: Time Gap - Start after 15s (1st visit) or immediately if resuming
-    // const delay = savedEmail || savedPhone ? 5000 : 15000;
-    // const timer = setTimeout(() => {
-    //   setCurrentStep(startStep);
-    //   setIsVisible(true);
-    // }, delay);
-
-    // return () => clearTimeout(timer);
+    
+    // Auto-trigger logic removed as per user request to avoid annoying popups
+    // We can trigger it based on specific events if needed.
   }, []);
 
   const transitionToStep = (nextStep: number, delay = 800) => {
@@ -125,7 +120,7 @@ const ProgressiveLeadCapture = () => {
           localStorage.setItem("lead_phone", formData.identifier);
         }
 
-        // Strategy: Ask for the missing one after a 5s gap (short, since we just started)
+        // Strategy: Ask for the missing one after a 5s gap
         setIsVisible(false);
         setTimeout(() => {
           transitionToStep(STEPS.COLLECT_SECOND, 0);
@@ -144,7 +139,6 @@ const ProgressiveLeadCapture = () => {
     const inputVal = formData.identifier;
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /^\d{10}$/;
 
     if (!inputVal.trim()) {
       setError(isMissingEmail ? "Email is required" : "Phone is required");
@@ -183,11 +177,11 @@ const ProgressiveLeadCapture = () => {
     }
     localStorage.setItem("lead_name", formData.name);
 
-    // Time gap logic: Wait 60s (1 min) before asking for service
+    // Time gap logic: Wait 60s before asking for service
     setIsVisible(false);
     setTimeout(() => {
       transitionToStep(STEPS.SERVICE, 0);
-    }, 60000); // 1 min Gap
+    }, 60000); 
   };
 
   const handleFinalSubmit = async () => {
@@ -222,10 +216,6 @@ const ProgressiveLeadCapture = () => {
       setTimeout(() => setIsVisible(false), 3000);
     } catch (err) {
       setError("Failed to save. Please try again.");
-      trackEvent("form_submit_error", {
-        form_type: "Progressive Lead Capture",
-        error_type: "api_failure",
-      });
     } finally {
       setIsLoading(false);
     }
@@ -234,16 +224,14 @@ const ProgressiveLeadCapture = () => {
   const handleClose = () => {
     setIsVisible(false);
 
-    // If they close on the very first step WITHOUT filling anything
     if (currentStep === STEPS.IDENTIFY && !formData.identifier) {
       setTimeout(() => {
         const isCompleted = localStorage.getItem("lead_completed") === "true";
         if (!isCompleted) setIsVisible(true);
-      }, 10000); // 10 sec retry for empty first step
+      }, 10000);
       return;
     }
 
-    // Default retry for other steps (partial fills)
     if (!hasSkipped) {
       setHasSkipped(true);
       setTimeout(() => {
@@ -278,8 +266,8 @@ const ProgressiveLeadCapture = () => {
             {/* Progress Bar */}
             <div className="h-1.5 w-full bg-gray-100 dark:bg-white/5 flex">
               <div
-                className="h-full bg-[#d90b1c] transition-all duration-700"
-                style={{ width: `${(currentStep / 4) * 100}%` }}
+                className="h-full w-full bg-[#d90b1c] transition-transform duration-700 origin-left"
+                style={{ transform: `scaleX(${(currentStep / 4)})` }}
               />
             </div>
 
@@ -288,6 +276,7 @@ const ProgressiveLeadCapture = () => {
                 <button
                   onClick={handleClose}
                   className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white transition-colors"
+                  aria-label="Close lead capture form"
                 >
                   <X size={18} />
                 </button>
@@ -303,7 +292,7 @@ const ProgressiveLeadCapture = () => {
                     className="space-y-4"
                   >
                     <div className="flex items-center gap-2 text-[#d90b1c]">
-                      <Sparkles size={18} />
+                      <Sparkles size={18} aria-hidden="true" />
                       <span className="text-xs font-bold uppercase tracking-wider">
                         Welcome
                       </span>
@@ -335,6 +324,7 @@ const ProgressiveLeadCapture = () => {
                       <button
                         onClick={handleIdentityCheck}
                         disabled={isLoading || !formData.identifier.trim()}
+                        aria-label="Next Step"
                         className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-[#d90b1c] text-white rounded-lg disabled:opacity-30 transition-all"
                       >
                         {isLoading ? (
@@ -365,7 +355,7 @@ const ProgressiveLeadCapture = () => {
                     className="space-y-4"
                   >
                     <div className="flex items-center gap-2 text-[#d90b1c]">
-                      <Sparkles size={18} />
+                      <Sparkles size={18} aria-hidden="true" />
                       <span className="text-xs font-bold uppercase tracking-wider">
                         Almost there!
                       </span>
@@ -400,6 +390,7 @@ const ProgressiveLeadCapture = () => {
                       <button
                         onClick={handleSecondIdSubmit}
                         disabled={isLoading || !formData.identifier.trim()}
+                        aria-label="Next Step"
                         className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-[#d90b1c] text-white rounded-lg disabled:opacity-30 transition-all"
                       >
                         <ArrowRight size={18} />
@@ -426,7 +417,7 @@ const ProgressiveLeadCapture = () => {
                     className="space-y-4"
                   >
                     <div className="flex items-center gap-2 text-[#d90b1c]">
-                      <Sparkles size={18} />
+                      <Sparkles size={18} aria-hidden="true" />
                       <span className="text-xs font-bold uppercase tracking-wider">
                         Nice to meet you!
                       </span>
@@ -452,6 +443,7 @@ const ProgressiveLeadCapture = () => {
                       <button
                         onClick={handleNameSubmit}
                         disabled={!formData.name.trim()}
+                        aria-label="Next Step"
                         className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-[#d90b1c] text-white rounded-lg disabled:opacity-30 transition-all"
                       >
                         <ArrowRight size={18} />
@@ -478,7 +470,7 @@ const ProgressiveLeadCapture = () => {
                     className="space-y-4"
                   >
                     <div className="flex items-center gap-2 text-[#d90b1c]">
-                      <Sparkles size={18} />
+                      <Sparkles size={18} aria-hidden="true" />
                       <span className="text-xs font-bold uppercase tracking-wider">
                         One Last Thing
                       </span>
@@ -535,7 +527,7 @@ const ProgressiveLeadCapture = () => {
                     className="py-4 text-center space-y-3"
                   >
                     <div className="w-16 h-16 bg-green-100 dark:bg-green-500/10 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mx-auto">
-                      <Check size={32} />
+                      <Check size={32} aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                       {formData.service

@@ -82,6 +82,7 @@ const MobileRecursiveList = ({
                     e.stopPropagation();
                     toggle(idx);
                   }}
+                  aria-label={isOpen ? "Collapse menu" : "Expand menu"}
                 >
                   {isOpen ? <FiMinus /> : <FiPlus />}
                 </button>

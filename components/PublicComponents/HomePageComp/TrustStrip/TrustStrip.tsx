@@ -113,6 +113,7 @@ const TrustStrip = React.memo(() => {
               WebkitMaskImage:
                 "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
             }}
+            aria-hidden="true"
           >
             <motion.div
               className="flex gap-12 md:gap-16 items-center whitespace-nowrap w-max will-change-transform"

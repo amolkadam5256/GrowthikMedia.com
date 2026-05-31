@@ -14,7 +14,9 @@ export function MobileMenuButton({
     <button
       className="lg:hidden py-2.5 px-4 rounded-full transition-colors relative bg-white dark:bg-neutral-900 shadow-sm"
       onClick={toggleMobileMenu}
-      aria-label="Toggle menu"
+      aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+      aria-haspopup="true"
+      aria-expanded={isMobileMenuOpen}
     >
       {isMobileMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
       {!isMobileMenuOpen && (

@@ -127,6 +127,8 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
               ? "text-sm tracking-tight px-3 py-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-900 dark:text-white"
               : `text-[14px] ${isOpen ? activeStyles : idleStyles}`
             }`}
+          aria-haspopup="true"
+          aria-expanded={isOpen}
         >
           {itemContent}
           {hasChildren && !isTopLevel && (
@@ -145,7 +147,7 @@ const RecursiveNavItem = ({ item, depth }: RecursiveNavItemProps) => {
       {/* Underline for top-level hover state */}
       {isTopLevel && (
         <div
-          className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-[2px] bg-[#D90B1C] transition-all duration-300 ${isOpen ? "w-4/5" : "w-0"}`}
+          className={`absolute bottom-0 left-1/2 w-4/5 h-[2px] bg-[#D90B1C] transition-transform duration-300 origin-center -translate-x-1/2 ${isOpen ? "scale-x-100" : "scale-x-0"}`}
         ></div>
       )}
 

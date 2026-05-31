@@ -52,7 +52,7 @@ const ComparisonSection = () => {
                 <th className="p-6 text-xs font-black uppercase tracking-[0.2em] text-(--text-secondary) border-r border-(--border)/50">
                   Feature
                 </th>
-                <th className="p-6 text-xs font-black uppercase tracking-[0.2em] text-red-500/40 border-r border-(--border)/50 text-center">
+                <th className="p-6 text-xs font-black uppercase tracking-[0.2em] text-red-600 border-r border-(--border)/50 text-center">
                   Others
                 </th>
                 <th className="p-6 text-xs font-black uppercase tracking-[0.2em] text-(--color-primary) bg-(--color-primary)/5 text-center">
@@ -70,8 +70,8 @@ const ComparisonSection = () => {
                     {row.item}
                   </td>
                   <td className="p-6 border-r border-(--border)/50">
-                    <div className="flex items-center gap-3 text-sm font-medium text-(--text-secondary)/50 italic">
-                      <X className="w-4 h-4 text-red-500/40 shrink-0" />
+                    <div className="flex items-center gap-3 text-sm font-medium text-(--text-secondary) italic">
+                      <X className="w-4 h-4 text-red-600 shrink-0" />
                       <span>{row.traditional}</span>
                     </div>
                   </td>

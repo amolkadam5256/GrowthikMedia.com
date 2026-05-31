@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Caveat } from "next/font/google";
 import "./assets/styles/globals.css";
-import "./assets/styles/fonts.css";
 
 const rostex = localFont({
   src: [

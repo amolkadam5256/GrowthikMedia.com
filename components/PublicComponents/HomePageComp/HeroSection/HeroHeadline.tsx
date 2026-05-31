@@ -18,7 +18,7 @@ const HeroHeadline = () => {
           data-aos="fade-down"
         >
           <p className="text-xs md:text-sm font-bold tracking-wider text-white flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-(--color-primary) animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-(--color-primary) animate-pulse" aria-hidden="true" />
             Pune's Digital Marketing Agency - Trusted Since 2019
           </p>
         </div>
@@ -39,6 +39,7 @@ const HeroHeadline = () => {
               viewBox="0 0 200 9"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <path
                 d="M2.00025 6.99997C69.5002 4.00003 128.5 -1.50002 198 2.49997"
@@ -83,6 +84,7 @@ const HeroHeadline = () => {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
+              aria-hidden="true"
             >
               <path d="M50,25 Q30,5 5,20 L10,15 M5,20 L15,22" />
             </svg>
@@ -133,6 +135,7 @@ const HeroHeadline = () => {
               style={{ color: "var(--color-primary)" }}
               fill="currentColor"
               viewBox="0 0 20 20"
+              aria-hidden="true"
             >
               <path
                 fillRule="evenodd"
@@ -153,6 +156,7 @@ const HeroHeadline = () => {
               style={{ color: "var(--color-primary)" }}
               fill="currentColor"
               viewBox="0 0 20 20"
+              aria-hidden="true"
             >
               <path
                 fillRule="evenodd"
@@ -173,6 +177,7 @@ const HeroHeadline = () => {
               style={{ color: "var(--color-primary)" }}
               fill="currentColor"
               viewBox="0 0 20 20"
+              aria-hidden="true"
             >
               <path
                 fillRule="evenodd"
@@ -209,6 +214,7 @@ const HeroHeadline = () => {
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
+          aria-hidden="true"
         >
           <path d="M10,10 Q50,5 50,40 L45,30 M50,40 L55,30" />
         </svg>
@@ -224,6 +230,7 @@ const HeroHeadline = () => {
           stroke="var(--color-white)"
           strokeWidth="3"
           strokeLinecap="round"
+          aria-hidden="true"
         >
           <path d="M10 20L15 25L30 10" />
         </svg>

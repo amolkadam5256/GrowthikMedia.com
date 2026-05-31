@@ -158,23 +158,25 @@ const CircularRevealSection = React.memo(() => {
 
       {/* Interactive Navigation Zones (Arrows) */}
       <div className="absolute inset-0 z-30 flex pointer-events-none">
-        <div
-          className="w-1/4 h-full cursor-pointer pointer-events-auto group relative flex items-center justify-start pl-6 md:pl-10"
+        <button
+          className="w-1/4 h-full cursor-pointer pointer-events-auto group relative flex items-center justify-start pl-6 md:pl-10 bg-transparent border-none"
           onClick={(e) => navigate("prev", `${e.clientX}px ${e.clientY}px`)}
+          aria-label="Previous Slide"
         >
           <div className="p-3 rounded-full border border-white/10 hover:border-(--color-primary) hover:bg-(--color-primary) transition-all duration-300 opacity-0 group-hover:opacity-100">
             <ChevronLeft className="text-white w-5 h-5" />
           </div>
-        </div>
+        </button>
         <div className="flex-1" />
-        <div
-          className="w-1/4 h-full cursor-pointer pointer-events-auto group relative flex items-center justify-end pr-6 md:pr-10"
+        <button
+          className="w-1/4 h-full cursor-pointer pointer-events-auto group relative flex items-center justify-end pr-6 md:pr-10 bg-transparent border-none"
           onClick={(e) => navigate("next", `${e.clientX}px ${e.clientY}px`)}
+          aria-label="Next Slide"
         >
           <div className="p-3 rounded-full border border-white/10 hover:border-(--color-primary) hover:bg-(--color-primary) transition-all duration-300 opacity-0 group-hover:opacity-100">
             <ChevronRight className="text-white w-5 h-5" />
           </div>
-        </div>
+        </button>
       </div>
     </section>
   );

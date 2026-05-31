@@ -110,10 +110,13 @@ const FAQSection = React.memo(() => {
                     ? "border-(--color-primary) shadow-[0_0_30px_rgba(217,11,28,0.05)]"
                     : "border-(--border) hover:border-(--color-primary)/50 hover:bg-(--color-primary)/2"
                   }`}
-                onClick={() => toggleFaq(faq.id)}
               >
-                {/* Question Area */}
-                <div className="p-6 md:p-8 flex items-center justify-between gap-6">
+                <button
+                  className="w-full text-left p-6 md:p-8 flex items-center justify-between gap-6 bg-transparent border-none focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-primary)"
+                  onClick={() => toggleFaq(faq.id)}
+                  aria-expanded={openId === faq.id}
+                  aria-controls={`faq-answer-${faq.id}`}
+                >
                   <div className="flex items-center gap-6">
                     <span className="text-xl font-black text-(--color-primary) opacity-40 group-hover:opacity-100 transition-opacity">
                       0{index + 1}
@@ -135,10 +138,11 @@ const FAQSection = React.memo(() => {
                       )}
                     </div>
                   </div>
-                </div>
+                </button>
 
                 {/* Answer Area */}
                 <div
+                  id={`faq-answer-${faq.id}`}
                   className={`transition-all duration-500 ease-in-out ${openId === faq.id
                       ? "max-h-[500px] opacity-100 pb-8"
                       : "max-h-0 opacity-0"

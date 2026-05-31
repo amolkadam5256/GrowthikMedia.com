@@ -179,16 +179,18 @@ const AIChatBot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="fixed bottom-0 left-0 w-full h-[85vh] md:absolute md:bottom-20 md:right-0 md:left-auto md:w-[400px] md:h-[500px] bg-(--surface) border border-(--border) shadow-2xl flex flex-col overflow-hidden rounded-t-2xl md:rounded-xl"
+            role="dialog"
+            aria-labelledby="chat-bot-title"
           >
             {/* Chat Header */}
             <div className="bg-(--color-primary) p-4 flex items-center justify-between border-b border-white/10 text-white">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 flex items-center justify-center relative">
-                  <Bot className="w-6 h-6 text-white" />
+                  <Bot className="w-6 h-6 text-white" aria-hidden="true" />
                   <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-(--color-primary) rounded-full shadow-lg" />
                 </div>
                 <div>
-                  <h3 className="font-black uppercase tracking-widest text-xs">
+                  <h3 id="chat-bot-title" className="font-black uppercase tracking-widest text-xs">
                     Growthik AI
                   </h3>
                   <p className="text-[10px] opacity-80 flex items-center gap-1">
@@ -198,12 +200,16 @@ const AIChatBot = () => {
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <button className="p-1.5 hover:bg-white/10 transition-colors rounded-lg">
+                <button 
+                  className="p-1.5 hover:bg-white/10 transition-colors rounded-lg"
+                  aria-label="Minimize Chat"
+                >
                   <Minus className="w-4 h-4" />
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-1.5  transition-colors rounded-lg group/close"
+                  aria-label="Close Chat"
                 >
                   <X className="w-4 h-4 text-white group-hover/close:scale-110 transition-transform" />
                 </button>
@@ -222,7 +228,7 @@ const AIChatBot = () => {
                   className="h-full flex flex-col justify-center items-center text-center p-4"
                 >
                   <div className="w-16 h-16 bg-(--color-primary)/10 rounded-full flex items-center justify-center mb-6">
-                    <Sparkles className="w-8 h-8 text-(--color-primary)" />
+                    <Sparkles className="w-8 h-8 text-(--color-primary)" aria-hidden="true" />
                   </div>
                   <h4 className="text-xl font-black text-(--text-primary) uppercase tracking-tighter mb-2">
                     Unlock{" "}
@@ -303,9 +309,9 @@ const AIChatBot = () => {
                           }
                         >
                           {msg.sender === "user" ? (
-                            <User className="w-4 h-4" />
+                            <User className="w-4 h-4" aria-hidden="true" />
                           ) : (
-                            <Bot className="w-4 h-4" />
+                            <Bot className="w-4 h-4" aria-hidden="true" />
                           )}
                         </div>
                         <div>
@@ -332,7 +338,7 @@ const AIChatBot = () => {
                     <div className="flex justify-start">
                       <div className="flex gap-3 max-w-[85%] items-center">
                         <div className="w-8 h-8 rounded-full bg-(--color-primary)/10 text-(--color-primary) flex items-center justify-center">
-                          <Bot className="w-4 h-4" />
+                          <Bot className="w-4 h-4" aria-hidden="true" />
                         </div>
                         <div className="bg-(--surface) border border-(--border) p-3">
                           <div className="flex gap-1">
@@ -363,6 +369,7 @@ const AIChatBot = () => {
                   <button
                     onClick={handleSend}
                     disabled={!inputValue.trim()}
+                    aria-label="Send Message"
                     className="absolute right-1 w-10 h-10 flex items-center justify-center bg-(--color-primary) text-white disabled:opacity-50 hover:bg-(--color-primary-light) transition-all"
                   >
                     <Send className="w-4 h-4" />
@@ -371,7 +378,7 @@ const AIChatBot = () => {
                 <div className="mt-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] text-(--text-secondary) uppercase tracking-widest font-bold opacity-60 flex items-center gap-1">
-                      <Sparkles className="w-3 h-3" /> AI Engine v2.0
+                      <Sparkles className="w-3 h-3" aria-hidden="true" /> AI Engine v2.0
                     </span>
                   </div>
                   <p className="text-[9px] text-(--text-secondary)/60 italic">
@@ -407,6 +414,7 @@ const AIChatBot = () => {
             ? "bg-black rounded-xl shadow-xl overflow-hidden hidden md:flex"
             : "bg-transparent drop-shadow-[0_0_20px_rgba(217,11,28,0.2)]"
         }`}
+        aria-label={isOpen ? "Close AI Assistant" : "Talk to Growthik AI Assistant"}
       >
         <div className="absolute inset-0 pointer-events-none" />
 

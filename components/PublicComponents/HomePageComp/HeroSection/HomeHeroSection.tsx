@@ -15,12 +15,12 @@ const HomeHeroSection = React.memo(() => {
           alt="Growthik Media - Best AI-Powered Digital Marketing Agency in Pune providing SEO and Ads Services"
           fill
           priority
-          quality={90}
+          quality={80}
           className="object-cover"
           sizes="100vw"
         />
         {/* Semi-transparent overlay for both light and dark modes */}
-        <div className="absolute inset-0 bg-white/20 dark:bg-black/20 backdrop-brightness-75"></div>
+        <div className="absolute inset-0 bg-white/20 dark:bg-black/40 backdrop-brightness-50"></div>
       </div>
 
       {/* Headline Content */}

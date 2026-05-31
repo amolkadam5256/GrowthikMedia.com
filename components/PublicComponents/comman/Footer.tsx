@@ -310,7 +310,7 @@ export default function Footer() {
               className={`mb-8 pb-8 border-b ${isDark ? "border-gray-800" : "border-gray-200"}`}
             >
               <p
-                className={`text-xs leading-relaxed text-justify ${isDark ? "text-gray-500" : "text-gray-500"}`}
+                className={`text-xs leading-relaxed text-justify ${isDark ? "text-gray-400" : "text-gray-600"}`}
               >
                 <strong>Growthik Media</strong> is a results-focused{" "}
                 <strong>Digital Marketing Agency in Pune</strong>. We help local
