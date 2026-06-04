@@ -14,7 +14,7 @@ import {
   FiTrendingUp,
 } from "react-icons/fi";
 import { images } from "@/app/assets/images/images";
-import { ThemeToggleButton } from "@/components/PublicComponents/comman/header/ThemeToggleButton";
+import { ThemeToggleButton } from "@/components/PublicComponents/common/header/ThemeToggleButton";
 type TabId =
   | "dashboard"
   | "users"

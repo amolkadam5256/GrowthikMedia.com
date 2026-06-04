@@ -8,6 +8,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { SOCIAL_PROMOTIONS_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
   title: "Social Media Promotions Agency in Pune | Growthik Media",
@@ -95,6 +97,12 @@ export default function SocialMediaPromotionsPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={SOCIAL_PROMOTIONS_FAQ} 
+          title="Social Promotions: Reach & Engagement"
+          subtitle="Expert answers to help you understand how our promotional strategies drive results."
+        />
       </main>
     </>
   );

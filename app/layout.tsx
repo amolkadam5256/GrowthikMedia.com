@@ -64,8 +64,9 @@ export const metadata: Metadata = {
 
 import { Suspense } from "react";
 import MetaPixel from "@/components/PublicComponents/Analytics/MetaPixel";
-import GTM from "@/components/PublicComponents/comman/GTM";
-import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
+import GTM from "@/components/PublicComponents/common/GTM";
+import ConsentBanner from "@/components/PublicComponents/common/ConsentBanner";
+import ThemeProviderWrapper from "@/components/PublicComponents/common/ThemeProviderWrapper";
 
 export default function RootLayout({
   children,
@@ -88,12 +89,19 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme:dark)').matches);if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,
           }}
         />
+        {/* GTM Consent Mode V2 Default */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('consent', 'default', { 'ad_storage': 'denied', 'analytics_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied' });`,
+          }}
+        />
         <GTM />
         <ThemeProviderWrapper>
           <Suspense fallback={null}>
             <MetaPixel />
           </Suspense>
           {children}
+          <ConsentBanner />
         </ThemeProviderWrapper>
       </body>
     </html>

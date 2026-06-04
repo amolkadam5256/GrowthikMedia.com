@@ -8,6 +8,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { INFLUENCER_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
   title: "Influencer Management Agency Pune | Growthik Media",
@@ -87,23 +89,11 @@ export default function InfluencerManagementPage() {
               </p>
             </div>
 
-            <div className="border-t border-(--border) pt-16">
-              <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-8 text-center">Frequently Asked Questions</h2>
-              <div className="grid gap-8">
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">Do I need a huge budget for influencer marketing in Pune?</h3>
-                  <p className="text-(--text-secondary) text-center">No. Micro-influencers in Pune often provide higher engagement at a much lower cost than major celebrities. We help you find the right tier of influencers for your specific budget.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">How do you ensure influencers actually post on time?</h3>
-                  <p className="text-(--text-secondary) text-center">We use legally binding contracts and professional management systems to ensure all deliverables are met according to the agreed schedule and quality standards.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">Can you help me find influencers specifically from Pune?</h3>
-                  <p className="text-(--text-secondary) text-center">Yes. We have a dedicated network of Pune-based influencers across niches like lifestyle, tech, food and business who can help you dominate the local market.</p>
-                </div>
-              </div>
-            </div>
+            <ServiceFAQ 
+              faqs={INFLUENCER_FAQ} 
+              title="Influencer Marketing Pune: Expert FAQs"
+              subtitle="Everything you need to know about working with local and national creators."
+            />
 
             <div className="bg-(--surface) p-8 md:p-12 rounded-4xl border border-(--border) text-center">
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-4">Ready to Get Started?</h2>

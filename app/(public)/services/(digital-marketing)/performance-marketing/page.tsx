@@ -8,6 +8,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { PERFORMANCE_MARKETING_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
   title: "Performance Marketing Agency in Pune | Growthik Media",
@@ -95,6 +97,12 @@ export default function PerformanceMarketingPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={PERFORMANCE_MARKETING_FAQ} 
+          title="Performance Marketing: Results & Strategy"
+          subtitle="Data-driven answers for Pune brands looking to scale their revenue efficiently."
+        />
       </main>
     </>
   );

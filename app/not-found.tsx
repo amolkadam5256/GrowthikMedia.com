@@ -27,8 +27,10 @@ import {
   FaPinterest,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
+import ThemeProviderWrapper from "@/components/PublicComponents/common/ThemeProviderWrapper";
 import { CONTACT_INFO } from "@/constants/contact";
+
+import { trackEvent } from "@/lib/analytics";
 
 function NotFoundContent() {
   const { resolvedTheme } = useTheme();
@@ -36,6 +38,11 @@ function NotFoundContent() {
 
   useEffect(() => {
     setMounted(true);
+    // Track 404 error
+    trackEvent("404_error", {
+      page_path: typeof window !== "undefined" ? window.location.pathname : "unknown",
+      referrer: typeof document !== "undefined" ? document.referrer : "none",
+    });
   }, []);
 
   // Determine current theme for conditional rendering if needed

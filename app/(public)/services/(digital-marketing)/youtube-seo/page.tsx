@@ -4,6 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { CheckCircle2, Award, ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { YOUTUBE_SEO_FAQ } from "@/constants/faqData";
 import RelatedServices from "@/components/PublicComponents/RelatedServices";
 
 export const metadata: Metadata = {
@@ -117,44 +119,11 @@ export default function YoutubeSeoPage() {
               </p>
             </div>
 
-            <div className="border-t border-(--border) pt-16">
-              <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-8 text-center">
-                Frequently Asked Questions
-              </h2>
-              <div className="grid gap-8">
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">
-                    How long does it take for YouTube SEO to show results?
-                  </h3>
-                  <p className="text-(--text-secondary) text-center">
-                    While some optimizations can lead to an immediate jump in
-                    traffic, significant search-driven growth typically takes
-                    4-8 weeks as the algorithm collects data on your content
-                    performance.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">
-                    Do I need a high-end camera for successful YouTube SEO?
-                  </h3>
-                  <p className="text-(--text-secondary) text-center">
-                    Content quality and value are more important than cinematic
-                    production. Many successful channels in Pune start with
-                    basic equipment while focusing on technical SEO excellence.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">
-                    Can YouTube SEO help my local Pune business?
-                  </h3>
-                  <p className="text-(--text-secondary) text-center">
-                    Yes. By targeting &quot;near me&quot; or &quot;in Pune&quot;
-                    keywords in your titles and descriptions, you can attract
-                    local customers looking for specific services in their city.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ServiceFAQ 
+              faqs={YOUTUBE_SEO_FAQ} 
+              title="YouTube SEO Pune: Expert FAQs"
+              subtitle="Everything you need to know about video ranking, channel growth and production."
+            />
 
             <RelatedServices
               category="social"

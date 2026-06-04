@@ -4,6 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { SOFTWARE_DEV_FAQ } from "@/constants/faqData";
 
 const slug = "software-development";
 const title = "Custom Software Development Company in Pune | Growthik Media";
@@ -61,6 +63,12 @@ export default function SoftwareDevelopmentPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={SOFTWARE_DEV_FAQ} 
+          title="Custom Software: Systems & ROI"
+          subtitle="Expert answers on building scalable, enterprise-grade software solutions in Pune."
+        />
       </main>
     </>
   );

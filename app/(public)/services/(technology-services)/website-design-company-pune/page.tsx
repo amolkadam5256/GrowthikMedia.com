@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
-import AISchema from "@/components/PublicComponents/comman/AISchema";
+import AISchema from "@/components/PublicComponents/common/AISchema";
 import {
   CheckCircle2,
   Monitor,
@@ -24,6 +24,8 @@ import {
   Globe,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { WEBSITE_DESIGN_FAQ } from "@/constants/faqData";
 import { images } from "@/app/assets/images/images";
 
 export const metadata: Metadata = {
@@ -144,35 +146,6 @@ export default function WebsiteDesignPunePage() {
                     item: {
                       "@id": `${CONTACT_INFO.website}/services/website-design-company-pune/`,
                       name: "Website Design Company Pune",
-                    },
-                  },
-                ],
-              },
-              {
-                "@type": "FAQPage",
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: "What is website design?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Website design involves planning, creating and structuring websites for optimal user experience and functionality.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "How long does it take to design a website?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Typically 2-6 weeks depending on project complexity.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Is SEO included in website design?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Yes. Our websites are SEO-optimized from the beginning.",
                     },
                   },
                 ],
@@ -1006,46 +979,12 @@ export default function WebsiteDesignPunePage() {
             </div>
 
             {/* FAQs */}
-            <div>
-              <h2 className="text-3xl font-black mb-4 uppercase tracking-tight text-(--text-primary)">
-                FAQs
-              </h2>
-              <div className="w-16 h-1.5 bg-(--color-primary) mb-8"></div>
-              <div className="space-y-4">
-                {[
-                  {
-                    q: "What is website design?",
-                    a: "Website design involves planning, creating and structuring websites for optimal user experience and functionality.",
-                  },
-                  {
-                    q: "How long does it take to design a website?",
-                    a: "Typically 2-6 weeks depending on project complexity.",
-                  },
-                  {
-                    q: "Is SEO included in website design?",
-                    a: "Yes. Our websites are SEO-optimized from the beginning.",
-                  },
-                  {
-                    q: "Do you provide website maintenance?",
-                    a: "Yes. We offer ongoing website maintenance and support.",
-                  },
-                ].map((faq, idx) => (
-                  <details
-                    key={idx}
-                    className="group bg-(--background) p-6 rounded-2xl border border-(--border) cursor-pointer [&_summary::-webkit-details-marker]:hidden transition-all hover:border-(--color-primary)/30"
-                  >
-                    <summary className="flex justify-between items-center font-bold text-lg outline-none text-(--text-primary)">
-                      {faq.q}
-                      <span className="transition group-open:rotate-180 bg-(--surface) p-2 rounded-full border border-(--border)">
-                        <ChevronDown className="w-4 h-4 text-(--text-secondary)" />
-                      </span>
-                    </summary>
-                    <p className="text-(--text-secondary) font-medium mt-4 leading-relaxed bg-(--surface) p-4 rounded-xl border border-(--border)/50">
-                      {faq.a}
-                    </p>
-                  </details>
-                ))}
-              </div>
+            <div className="lg:col-span-1">
+              <ServiceFAQ 
+                faqs={WEBSITE_DESIGN_FAQ} 
+                title="FAQs"
+                subtitle=""
+              />
             </div>
           </div>
         </section>

@@ -4,7 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { Award, CheckCircle2, ArrowRight, BarChart2, Rocket } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
-import FAQSchema from "@/components/PublicComponents/structured-data/FAQSchema";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { SEO_FAQ } from "@/constants/faqData";
 
 const slug = "seo";
 const title = "SEO Company in Pune | Growthik Media";
@@ -33,42 +34,6 @@ export default function SEOCompanyPunePage() {
         "areaServed": { "@type": "City", name: "Pune" },
         "aggregateRating": { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "142" },
       })}} />
-      <FAQSchema
-        questions={[
-          {
-            q: "How does Growthik Media improve rankings for Pune websites?",
-            a: "We use a 14-step SEO audit system that covers technical SEO, Core Web Vitals, high-intent keyword mapping, and authority building specifically for the Indian market."
-          },
-          {
-            q: "Is SEO better than Google Ads for my Pune business?",
-            a: "SEO provides long-term organic growth and trust (zero cost-per-click), while Google Ads provides immediate visibility. We recommend a balanced approach for maximum ROI."
-          },
-          {
-            q: "Do you specialize in SEO for real estate or healthcare in Pune?",
-            a: "Yes, we have deep experience in high-competition niches like Real Estate (Baner/Hinjewadi) and Healthcare (Kothrud/Aundh), where trust and technical authority are critical."
-          },
-          {
-            q: "What is the monthly retainer for SEO services?",
-            a: "Our SEO services in Pune start from ₹15,000 per month for local businesses and go up to ₹75,000+ for enterprise-level national SEO projects."
-          },
-          {
-            q: "How do you handle the 2026 AI Search (SGE/GEO) updates?",
-            a: "We optimize your content for LLMs and Answer Engines (ChatGPT/Gemini) by using structured data and entity-based content strategies that get you cited as a source."
-          },
-          {
-            q: "Will you provide a dedicated SEO manager for my project?",
-            a: "Every client at Growthik Media gets a dedicated growth engineer who understands both the technical code (Next.js/React) and the marketing strategy."
-          },
-          {
-            q: "how can I track the progress of my SEO campaign?",
-            a: "We provide monthly transparent ROI reports tracking keyword positions, organic traffic lift, and most importantly, the number of qualified leads generated."
-          },
-          {
-            q: "Which areas in Pune do you serve for SEO?",
-            a: "While we work nationally, we are the top choice for businesses in Baner, Hinjewadi, Wakad, Kothrud, Kharadi, and Warje."
-          }
-        ]}
-      />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />
@@ -142,10 +107,16 @@ export default function SEOCompanyPunePage() {
               <Rocket className="w-12 h-12 text-(--color-primary) mb-6" />
               <h3 className="text-xl font-bold mb-4">SEO ROI Calculator</h3>
               <p className="text-sm text-(--text-secondary) mb-6">Stop guessing your marketing spend. See exactly how much organic traffic is worth to your bottom line.</p>
-              <Link href="/audit" className="block w-full text-center py-4 bg-(--color-primary) text-white font-bold rounded-xl">Analyze My Site</Link>
+              <Link href="/audit" className="block w-full text-center py-4 bg-(--color-primary) text-white font-bold rounded-xl transition-all hover:bg-black">Analyze My Site</Link>
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={SEO_FAQ} 
+          title="SEO Services in Pune: Frequently Asked Questions"
+          subtitle="Expert answers to help you understand how our search optimization can scale your business."
+        />
       </main>
     </>
   );

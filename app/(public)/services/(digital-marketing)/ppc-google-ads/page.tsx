@@ -2,11 +2,10 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Target, MousePointer2, TrendingUp, BarChart, Rocket } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
-
-import FAQSchema from "@/components/PublicComponents/structured-data/FAQSchema";
-import { Target, MousePointer2, TrendingUp, BarChart, Rocket } from "lucide-react";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { PPC_FAQ } from "@/constants/faqData";
 
 const slug = "ppc-google-ads";
 const title = "Google Ads Agency in Pune | High ROI PPC Management | Growthik";
@@ -41,42 +40,6 @@ export default function GoogleAdsPage() {
         "areaServed": { "@type": "City", name: "Pune" },
         "aggregateRating": { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "135" },
       })}} />
-      <FAQSchema
-        questions={[
-          {
-            q: "Why should I hire a Google Ads agency in Pune instead of doing it myself?",
-            a: "A professional agency like Growthik Media optimizes your Quality Score, reduces CPC (Cost Per Click), and ensures your budget isn't wasted on irrelevant 'junk' keywords. We focus on conversion tracking to ensure every rupee spent contributes to your ROI."
-          },
-          {
-            q: "What is the management fee for Google Ads in Pune?",
-            a: "Our management fees typically start from ₹15,000 per month or a percentage of the ad spend, depending on the complexity of your campaigns and the number of search channels involved."
-          },
-          {
-            q: "How do you track leads from Google Ads?",
-            a: "We implement advanced server-side GTM tracking, Meta Pixel, and Google Ads Conversion Tags to track everything from form submissions to WhatsApp clicks and phone calls."
-          },
-          {
-            q: "Do you focus on ROAS or just traffic?",
-            a: "Traffic is a vanity metric. We focus strictly on ROAS (Return on Ad Spend) and CPL (Cost Per Lead) to ensure your business stays profitable while scaling."
-          },
-          {
-            q: "Can you target specific areas like Hinjewadi or Baner?",
-            a: "Yes, we use hyper-local geo-fencing to show your ads only to people within specific Pune neighborhoods or near major landmarks like EON IT Park or Magarpatta City."
-          },
-          {
-            q: "Do you provide landing pages for PPC?",
-            a: "Absolutely. We build high-performance Next.js landing pages that score 90+ on PageSpeed Insights, which significantly improves your ad rank and conversion rates."
-          },
-          {
-            q: "How soon can we see leads from Google Ads?",
-            a: "Unlike SEO, Google Ads provides immediate visibility. Most of our clients start seeing qualified inquiries within the first 48-72 hours of campaign launch."
-          },
-          {
-            q: "Are you a certified Google Partner agency?",
-            a: "Yes, our team consists of certified Google Ads experts with over 7 years of experience in managing high-ticket budgets for B2B and D2C brands."
-          }
-        ]}
-      />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />
@@ -139,6 +102,12 @@ export default function GoogleAdsPage() {
              <Link href="/audit" className="inline-flex items-center gap-3 px-10 py-5 bg-black text-white dark:bg-white dark:text-black font-black rounded-2xl hover:scale-105 transition-all">Analyze My Google Ads <Rocket className="w-5 h-5" /></Link>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={PPC_FAQ} 
+          title="Google Ads & PPC: Frequently Asked Questions"
+          subtitle="Everything you need to know about scaling your revenue with precision search advertising."
+        />
       </main>
     </>
   );

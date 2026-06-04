@@ -8,6 +8,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { SMS_MARKETING_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
   title: "Bulk SMS Marketing Services in Pune | Growthik Media",
@@ -87,23 +89,11 @@ export default function SmsMarketingPage() {
               </p>
             </div>
 
-            <div className="border-t border-(--border) pt-16">
-              <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-8 text-center">Frequently Asked Questions</h2>
-              <div className="grid gap-8">
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">What is the difference between promotional and transactional SMS?</h3>
-                  <p className="text-(--text-secondary) text-center">Promotional SMS is used for marketing offers and discounts during specific hours, while transactional SMS is used for alerts, OTPs and order confirmations 24/7.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">How long does it take to set up an SMS campaign in Pune?</h3>
-                  <p className="text-(--text-secondary) text-center">Once your DLT registration is complete and templates are approved, a campaign can be launched in minutes. We assist Pune business owners with the initial setup to ensure a smooth start.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">Can I track who clicked the links in my SMS?</h3>
-                  <p className="text-(--text-secondary) text-center">Yes, our advanced bulk SMS platform includes link-shortening and tracking features, providing you with clear ROI data for your campaigns in Pune.</p>
-                </div>
-              </div>
-            </div>
+            <ServiceFAQ 
+              faqs={SMS_MARKETING_FAQ} 
+              title="SMS Marketing Pune: Expert FAQs"
+              subtitle="Everything you need to know about bulk messaging, compliance, and ROI."
+            />
 
             <div className="bg-(--surface) p-8 md:p-12 rounded-4xl border border-(--border) text-center">
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-4">Ready to Get Started?</h2>

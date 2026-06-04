@@ -4,6 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { WORDPRESS_FAQ } from "@/constants/faqData";
 
 const slug = "wordpress-development";
 const title = "WordPress Development Agency in Pune | Growthik Media";
@@ -61,6 +63,12 @@ export default function WordpressDevelopmentPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={WORDPRESS_FAQ} 
+          title="WordPress Development: Expert FAQs"
+          subtitle="Answers to common questions about themes, security, and WooCommerce stores."
+        />
       </main>
     </>
   );

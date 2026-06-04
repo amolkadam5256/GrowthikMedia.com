@@ -2,11 +2,10 @@ import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import { ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
-
-import FAQSchema from "@/components/PublicComponents/structured-data/FAQSchema";
-import { MapPin, Search, Rocket, MessageSquare, Star } from "lucide-react";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { LOCAL_SEO_FAQ } from "@/constants/faqData";
+import { MapPin, Search, Rocket, MessageSquare, Star, ArrowRight } from "lucide-react";
 
 const slug = "local-seo";
 const title = "Local SEO Agency in Pune | Google Maps SEO | Growthik";
@@ -48,42 +47,6 @@ export default function LocalSEOPage() {
         ],
         "aggregateRating": { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
       })}} />
-      <FAQSchema
-        questions={[
-          {
-            q: "What is Local SEO and why does my Pune business need it?",
-            a: "Local SEO optimizes your online presence to attract more business from relevant local searches on Google and other search engines. For Pune businesses, it means showing up when someone searches for your services 'near me' in areas like Baner, Hinjewadi, or Kothrud."
-          },
-          {
-            q: "How long does it take to rank in the Google Maps '3-Pack' in Pune?",
-            a: "While basic GMB optimization shows results in 2-4 weeks, consistently ranking in the top 3 for competitive Pune keywords usually takes 3 to 6 months of active management."
-          },
-          {
-            q: "Do you provide services near DMart Warje or Hinjewadi IT Park?",
-            a: "Yes, we provide hyper-local SEO services across all major Pune landmarks, including DMart Warje, EON IT Park Kharadi, Magarpatta City, and Balewadi High Street."
-          },
-          {
-            q: "What is the cost of Local SEO in Pune?",
-            a: "Local SEO packages in Pune typically range from ₹12,000 to ₹35,000 per month, depending on the number of locations and the competitiveness of your industry."
-          },
-          {
-            q: "How do you handle Google Business Profile (GMB) suspended accounts?",
-            a: "We have a dedicated process for GMB reinstatement and compliance to ensure your Pune business listing stays live and follows all Google guidelines."
-          },
-          {
-            q: "Can you help with local reviews and reputation management?",
-            a: "Absolutely. We implement systems to help you gather authentic 5-star reviews from your Pune customers, which is a critical ranking factor for local search."
-          },
-          {
-            q: "What is AEO/GEO for local business?",
-            a: "AEO (Answer Engine Optimization) and GEO (Generative Engine Optimization) ensure your business is cited by AI tools like ChatGPT or Google's AI Overviews for local queries."
-          },
-          {
-            q: "Which areas of Pune do you cover?",
-            a: "We cover all major hubs including Baner, Wakad, Hinjewadi, Kharadi, PCMC, Kothrud, Aundh, Viman Nagar, and Hadapsar."
-          }
-        ]}
-      />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />
@@ -95,7 +58,7 @@ export default function LocalSEOPage() {
               Dominate Your Hood: <br /><span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">{h1}</span>
             </h1>
             <p className="text-lg md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
-              If your business isn't in the Google Maps Top 3, you're invisible. We bridge the gap between your site office and your local customers near <strong>DMart Warje, Hinjewadi IT Park, and Kharadi</strong>.
+              If your business isn&apos;t in the Google Maps Top 3, you&apos;re invisible. We bridge the gap between your site office and your local customers near <strong>DMart Warje, Hinjewadi IT Park, and Kharadi</strong>.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Link href="/contact" className="px-8 py-4 bg-(--color-primary) text-white font-bold rounded-xl hover:bg-black transition-all duration-300 shadow-lg shadow-(--color-primary)/30 flex items-center justify-center gap-2 w-full sm:w-auto">Start Local Dominance <ArrowRight className="w-5 h-5" /></Link>
@@ -110,7 +73,7 @@ export default function LocalSEOPage() {
               <h2 className="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tight text-(--text-primary)">Target Every Corner of Pune</h2>
               <div className="w-16 h-1.5 bg-(--color-primary) mb-8"></div>
               <p className="text-(--text-secondary) font-medium text-lg mb-6 leading-relaxed">
-                Generic SEO doesn't work for high-intent 'near me' searches. We optimize for specific Pune landmarks and neighborhoods so your customers find you first.
+                Generic SEO doesn&apos;t work for high-intent &apos;near me&apos; searches. We optimize for specific Pune landmarks and neighborhoods so your customers find you first.
               </p>
               <div className="grid grid-cols-2 gap-3 mt-8">
                 {["Baner High Street", "Hinjewadi Phase 3", "EON IT Park", "Phoenix Mall Area", "Amanora Park Town", "FC Road & JM Road"].map((landmark) => (
@@ -125,12 +88,18 @@ export default function LocalSEOPage() {
                 <div key={idx} className="bg-(--surface) p-6 rounded-2xl border border-(--border) group hover:border-(--color-primary) transition-colors">
                   <Star className="w-10 h-10 text-(--color-primary) mb-4 opacity-50 group-hover:opacity-100" />
                   <h3 className="font-bold text-lg mb-2 text-(--text-primary)">{feature}</h3>
-                  <p className="text-xs text-(--text-secondary)">Engineered for maximum visibility in Pune's local algorithm.</p>
+                  <p className="text-xs text-(--text-secondary)">Engineered for maximum visibility in Pune&apos;s local algorithm.</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={LOCAL_SEO_FAQ} 
+          title="Local SEO: Pune Authority"
+          subtitle="Everything you need to know about dominating Google Maps and local search in Pune's neighborhoods."
+        />
 
         {/* Local Advantage Section */}
         <section className="px-6 lg:px-12 py-24 bg-(--surface) border-y border-(--border)">
@@ -157,7 +126,6 @@ export default function LocalSEOPage() {
           </div>
         </section>
 
-        {/* Final CTA */}
         <section className="px-6 lg:px-12 py-20 bg-(--background)">
           <div className="max-w-4xl mx-auto text-center border-2 border-dashed border-(--border) p-12 rounded-[2.5rem]">
             <h2 className="text-3xl font-black mb-6">Stop Being a Secret in Your Own City</h2>

@@ -29,7 +29,12 @@ declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (command: string, eventName: string, params?: AnalyticsParams) => void;
-    fbq?: (command: string, eventName: string, params?: AnalyticsParams) => void;
+    fbq?: (
+      command: string,
+      eventName: string,
+      params?: AnalyticsParams,
+      options?: { eventID?: string }
+    ) => void;
     fbqInitialized?: boolean;
   }
 }
@@ -84,10 +89,17 @@ function enrichParams(params: AnalyticsParams) {
   };
 }
 
+/** Generate a unique ID for event deduplication (Meta CAPI / Google Enhanced Conversions) */
+export function generateEventId() {
+  return "ev-" + Math.random().toString(36).substring(2, 11) + "-" + Date.now();
+}
+
 export function trackEvent(eventName: string, params: AnalyticsParams = {}) {
   if (typeof window === "undefined") return;
 
-  const eventParams = enrichParams(params);
+  // Use provided event_id or generate a new one
+  const event_id = (params.event_id as string) || generateEventId();
+  const eventParams = { ...enrichParams(params), event_id };
 
   // Debug logging for development
   if (process.env.NODE_ENV === "development") {
@@ -102,9 +114,9 @@ export function trackEvent(eventName: string, params: AnalyticsParams = {}) {
   if (typeof window.fbq === "function") {
     const isStandard = META_STANDARD_EVENT_SET.has(eventName);
     if (isStandard) {
-      window.fbq("track", eventName, eventParams);
+      window.fbq("track", eventName, eventParams, { eventID: event_id });
     } else {
-      window.fbq("trackCustom", eventName, eventParams);
+      window.fbq("trackCustom", eventName, eventParams, { eventID: event_id });
     }
   }
 }

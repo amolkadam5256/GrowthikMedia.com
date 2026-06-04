@@ -8,6 +8,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { EMAIL_MARKETING_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
   title: "Email Marketing Agency in Pune | Growthik Media",
@@ -95,6 +97,12 @@ export default function EmailMarketingPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={EMAIL_MARKETING_FAQ} 
+          title="Email Marketing Pune: Expert FAQs"
+          subtitle="Everything you need to know about scaling your retention and revenue through email."
+        />
       </main>
     </>
   );

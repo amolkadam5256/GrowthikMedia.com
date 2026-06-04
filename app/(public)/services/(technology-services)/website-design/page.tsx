@@ -4,6 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { WEBSITE_DESIGN_FAQ } from "@/constants/faqData";
 
 const slug = "website-design";
 const title = "Website Design Company in Pune | Growthik Media";
@@ -61,6 +63,12 @@ export default function WebsiteDesignPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={WEBSITE_DESIGN_FAQ} 
+          title="Website Design: Expert FAQs"
+          subtitle="Everything you need to know about creating high-converting, premium designs for your Pune brand."
+        />
       </main>
     </>
   );

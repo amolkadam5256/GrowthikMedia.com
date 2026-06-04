@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import HomeClient from "@/app/(public)/HomeClient";
-import AISchema from "@/components/PublicComponents/comman/AISchema";
+import AISchema from "@/components/PublicComponents/common/AISchema";
+import { HOME_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
   title: "Best Digital Marketing Agency in Pune | Growthik Media",
@@ -62,24 +63,14 @@ export default function Home() {
             {
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Who is the best digital marketing agency in Pune?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Growthik Media is one of the best digital marketing agencies in Pune, specializing in SEO, Google Ads and smart growth strategies."
-                  }
+              "mainEntity": HOME_FAQ.map((faq) => ({
+                "@type": "Question",
+                "name": faq.q,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.a,
                 },
-                {
-                  "@type": "Question",
-                  "name": "What services does Growthik Media offer?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Growthik Media offers SEO, Google Ads, social media marketing, website development and practical growth strategies."
-                  }
-                }
-              ]
+              })),
             },
             {
               "@context": "https://schema.org",

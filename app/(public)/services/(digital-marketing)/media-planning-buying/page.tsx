@@ -8,6 +8,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { MEDIA_PLANNING_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
   title: "Expert Media Planning and Buying Pune | Growthik Media",
@@ -87,23 +89,11 @@ export default function MediaPlanningBuyingPage() {
               </p>
             </div>
 
-            <div className="border-t border-(--border) pt-16">
-              <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-8 text-center">Frequently Asked Questions</h2>
-              <div className="grid gap-8">
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">How do you decide which media platforms are right for my Pune business?</h3>
-                  <p className="text-(--text-secondary) text-center">We start with an intensive audience research phase to identify where your potential customers spend their time online and offline in Pune, ensuring we target the most effective channels.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">What is the difference between media planning and media buying?</h3>
-                  <p className="text-(--text-secondary) text-center">Media planning is the strategic phase of identifying the best channels, while media buying is the execution phase where we negotiate and purchase the actual ad space.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">Can you manage small media budgets for local startups in Pune?</h3>
-                  <p className="text-(--text-secondary) text-center">Yes. We specialize in budget efficiency, ensuring that even small-scale campaigns are optimized for maximum reach and conversion within the local Pune market.</p>
-                </div>
-              </div>
-            </div>
+            <ServiceFAQ 
+              faqs={MEDIA_PLANNING_FAQ} 
+              title="Media Planning Pune: Expert FAQs"
+              subtitle="Insights into strategic ad placement and budget optimization for maximum impact."
+            />
 
             <div className="bg-(--surface) p-8 md:p-12 rounded-4xl border border-(--border) text-center">
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-4">Ready to Get Started?</h2>

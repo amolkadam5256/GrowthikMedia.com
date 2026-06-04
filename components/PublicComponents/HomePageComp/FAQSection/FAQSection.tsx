@@ -9,52 +9,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
+import { HOME_FAQ } from "@/constants/faqData";
 import { trackEvent } from "@/lib/analytics";
-
-const FAQ_DATA = [
-  {
-    id: 0,
-    question: "Who is the best digital marketing agency in Pune?",
-    answer:
-      "Growthik Media is recognized as the best digital marketing agency in Pune for businesses looking for AI-powered SEO, performance marketing (Google & Meta Ads) and ROI-focused growth. We specialize in building predictable revenue systems for brands in Hinjewadi, Baner, Wakad and PCMC.",
-  },
-  {
-    id: 1,
-    question: "How long until SEO shows measurable results?",
-    answer:
-      "SEO is a process, not an overnight fix. While technical updates and local SEO can show movement in 4-6 weeks, seeing real growth for competitive keywords in Pune typically takes 3 to 6 months. We focus on building traffic that actually turns into revenue.",
-  },
-  {
-    id: 2,
-    question: "Do you work with small businesses and startups?",
-    answer:
-      "Yes, absolutely. Whether you're just starting out in Pune or have been running for a few years and want to grow faster - we tailor everything to your budget and goals. No one-size-fits-all packages, no locked-in contracts.",
-  },
-  {
-    id: 3,
-    question: "Why should I choose a Pune-based digital marketing agency?",
-    answer:
-      "Local expertise matters. Choosing a Pune-based digital marketing company like Growthik Media means we understand the local market nuances, consumer behavior and regional competition. We provide on-ground support and face-to-face strategy sessions that off-shore or distant agencies simply cannot match.",
-  },
-  {
-    id: 4,
-    question: "What makes your performance marketing different?",
-    answer:
-      "We track revenue, not just clicks. Every ad we run goes through real A/B testing and we optimize based on what actually brings in sales - not traffic spikes. Every rupee has to count, so we report on ROI and ROAS, not vanity metrics.",
-  },
-  {
-    id: 5,
-    question: "Do you provide comprehensive monthly reporting?",
-    answer:
-      "Transparency is our core value. You will receive detailed monthly reports tracking traffic growth, lead conversion and keyword rankings. We schedule monthly strategy calls to review results and plan the next steps for your business.",
-  },
-  {
-    id: 6,
-    question: "How much does digital marketing cost in Pune?",
-    answer:
-      "Pricing depends on your goals and the channels you want to focus on. Most clients start between \u20b915,000 - \u20b950,000/month for a focused SEO or Google Ads campaign. We build custom plans around what your business actually needs - no padded packages, no compulsory lock-ins. Book a free call and we'll give you a straight answer.",
-  },
-];
 
 const FAQSection = React.memo(() => {
   const [openId, setOpenId] = useState<number | null>(1);
@@ -98,40 +54,40 @@ const FAQSection = React.memo(() => {
 
         {/* FAQ Items */}
         <div className="space-y-4">
-          {FAQ_DATA.map((faq, index) => (
+          {HOME_FAQ.map((faq, index) => (
             <div
-              key={faq.id}
+              key={index}
               className="group transition-all duration-300"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
               <div
-                className={`transition-all duration-500 overflow-hidden cursor-pointer border-2 bg-(--surface) ${openId === faq.id
-                    ? "border-(--color-primary) shadow-[0_0_30px_rgba(217,11,28,0.05)]"
-                    : "border-(--border) hover:border-(--color-primary)/50 hover:bg-(--color-primary)/2"
+                className={`transition-all duration-500 overflow-hidden cursor-pointer border-2 bg-(--surface) ${openId === index
+                  ? "border-(--color-primary) shadow-[0_0_30px_rgba(217,11,28,0.05)]"
+                  : "border-(--border) hover:border-(--color-primary)/50 hover:bg-(--color-primary)/2"
                   }`}
               >
                 <button
                   className="w-full text-left p-6 md:p-8 flex items-center justify-between gap-6 bg-transparent border-none focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-primary)"
-                  onClick={() => toggleFaq(faq.id)}
-                  aria-expanded={openId === faq.id}
-                  aria-controls={`faq-answer-${faq.id}`}
+                  onClick={() => toggleFaq(index)}
+                  aria-expanded={openId === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
                   <div className="flex items-center gap-6">
                     <span className="text-xl font-black text-(--color-primary) opacity-40 group-hover:opacity-100 transition-opacity">
-                      0{index + 1}
+                      {index + 1 < 10 ? `0${index + 1}` : index + 1}
                     </span>
                     <h3
-                      className={`text-lg md:text-xl font-black uppercase tracking-tight transition-colors duration-300 ${openId === faq.id ? "text-(--color-primary)" : "text-(--text-primary)"}`}
+                      className={`text-lg md:text-xl font-black uppercase tracking-tight transition-colors duration-300 ${openId === index ? "text-(--color-primary)" : "text-(--text-primary)"}`}
                     >
-                      {faq.question}
+                      {faq.q}
                     </h3>
                   </div>
                   <div className="shrink-0">
                     <div
-                      className={`w-10 h-10 flex items-center justify-center border-2 transition-all duration-300 ${openId === faq.id ? "border-(--color-primary) bg-(--color-primary) text-white rotate-180" : "border-(--border) text-(--text-secondary) group-hover:border-(--color-primary) group-hover:text-(--color-primary)"}`}
+                      className={`w-10 h-10 flex items-center justify-center border-2 transition-all duration-300 ${openId === index ? "border-(--color-primary) bg-(--color-primary) text-white rotate-180" : "border-(--border) text-(--text-secondary) group-hover:border-(--color-primary) group-hover:text-(--color-primary)"}`}
                     >
-                      {openId === faq.id ? (
+                      {openId === index ? (
                         <Minus className="w-5 h-5" />
                       ) : (
                         <Plus className="w-5 h-5" />
@@ -142,15 +98,15 @@ const FAQSection = React.memo(() => {
 
                 {/* Answer Area */}
                 <div
-                  id={`faq-answer-${faq.id}`}
-                  className={`transition-all duration-500 ease-in-out ${openId === faq.id
-                      ? "max-h-[500px] opacity-100 pb-8"
-                      : "max-h-0 opacity-0"
+                  id={`faq-answer-${index}`}
+                  className={`transition-all duration-500 ease-in-out ${openId === index
+                    ? "max-h-[800px] opacity-100 pb-8"
+                    : "max-h-0 opacity-0"
                     }`}
                 >
-                  <div className="px-6 md:px-8 ml-16">
+                  <div className="px-6 md:px-8 sm:ml-16">
                     <p className="text-base md:text-lg leading-relaxed text-(--text-secondary) font-light italic border-l-2 border-(--color-primary)/20 pl-6">
-                      {faq.answer}
+                      {faq.a}
                     </p>
                   </div>
                 </div>

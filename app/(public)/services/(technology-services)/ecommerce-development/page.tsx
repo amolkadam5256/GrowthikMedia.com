@@ -4,6 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { ECOMMERCE_FAQ } from "@/constants/faqData";
 
 const slug = "ecommerce-development";
 const title = "eCommerce Website Development Agency in Pune | Growthik Media";
@@ -61,6 +63,12 @@ export default function EcommerceDevelopmentPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={ECOMMERCE_FAQ} 
+          title="eCommerce Development: Profit-First FAQs"
+          subtitle="Answers to common questions about platforms, payments, and scaling your online store in Pune."
+        />
       </main>
     </>
   );

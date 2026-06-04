@@ -1,11 +1,11 @@
-import Header from "@/components/PublicComponents/comman/header/Header";
-import Footer from "@/components/PublicComponents/comman/Footer";
-import SEO from "@/components/PublicComponents/comman/SEO";
-import PageViewTracker from "@/components/PublicComponents/comman/PageViewTracker";
-import AOSInit from "@/components/PublicComponents/comman/AOSInit";
+import Header from "@/components/PublicComponents/common/header/Header";
+import Footer from "@/components/PublicComponents/common/Footer";
+import SEO from "@/components/PublicComponents/common/SEO";
+import PageViewTracker from "@/components/PublicComponents/common/PageViewTracker";
+import AOSInit from "@/components/PublicComponents/common/AOSInit";
 import { CONTACT_INFO } from "@/constants/contact";
 
-import ClientUtilities from "@/components/PublicComponents/comman/ClientUtilities";
+import ClientUtilities from "@/components/PublicComponents/common/ClientUtilities";
 import { Metadata } from "next";
 
 // The ClientUtilities component now handles the deferred loading of

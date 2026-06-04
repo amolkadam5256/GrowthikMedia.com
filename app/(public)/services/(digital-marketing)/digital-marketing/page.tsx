@@ -4,6 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { DIGITAL_MARKETING_FAQ } from "@/constants/faqData";
 
 const slug = "digital-marketing";
 const title = "Digital Marketing Agency in Pune | Growthik Media";
@@ -61,6 +63,12 @@ export default function DigitalMarketingPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={DIGITAL_MARKETING_FAQ} 
+          title="Digital Marketing Pune: Expert FAQs"
+          subtitle="Clear answers to help you navigate digital growth in the Pune market."
+        />
       </main>
     </>
   );

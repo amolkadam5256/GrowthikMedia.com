@@ -3,8 +3,9 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
 import { ArrowRight, BarChart2, Rocket, Code2, Zap } from "lucide-react";
-import FAQSchema from "@/components/PublicComponents/structured-data/FAQSchema";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { WEB_DEV_FAQ } from "@/constants/faqData";
 
 const slug = "website-development";
 const title = "Website Development Company in Pune | Next.js Experts | Growthik";
@@ -41,18 +42,6 @@ export default function WebsiteDevelopmentPage() {
           "aggregateRating": { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "145" },
         })
       }} />
-      <FAQSchema
-        questions={[
-          { q: "Why choose Next.js for our Pune business website?", a: "Next.js offers superior speed, automatic SEO optimization, and server-side rendering, which helps your brand rank faster and stay ahead of competitors in high-traffic Pune business hubs." },
-          { q: "How long is the typical website development timeline?", a: "Most corporate sites launch in 4–8 weeks; complex web applications and e-commerce platforms can take 10–16 weeks depending on custom features." },
-          { q: "Do you offer web design services near Baner and Hinjewadi?", a: "Yes, we are a local Pune agency providing end-to-end design and development services for startups in Baner, Hinjewadi IT Park, and Magarpatta City." },
-          { q: "Will our new website be 100% SEO-friendly?", a: "Unlike generic agencies, Growthik Media builds websites with 'Technical SEO First' logic, including schema markup, fast LCP scores, and crawl-friendly structures." },
-          { q: "Do you provide website maintenance in Pune?", a: "Yes, we offer monthly maintenance retainers to keep your site updated, secure, and performing at peak speeds (90+ on PageSpeed Insights)." },
-          { q: "Is custom development better than WordPress?", a: "For brands that need scalability, high security, and extreme speed, a custom Next.js build is superior. However, we also provide optimized WordPress solutions for content-heavy sites." },
-          { q: "What is the cost of website development in Pune?", a: "Professional business website development in Pune starts from ₹25,000 for WordPress and ₹65,000+ for custom Next.js applications." },
-          { q: "Can you integrate our CRM and Google Ads tracking?", a: "Yes, we handle the full technical integration of CRM (Hubspot/Zoho), GTM, Meta Pixel, and Google Ads conversion tracking as part of our build process." }
-        ]}
-      />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />
@@ -110,10 +99,16 @@ export default function WebsiteDevelopmentPage() {
           </div>
         </section>
 
+        <ServiceFAQ 
+          faqs={WEB_DEV_FAQ} 
+          title="Website Development: Frequently Asked Questions"
+          subtitle="Expert insights into building high-performance digital infrastructure for Pune brands."
+        />
+
         {/* Tech Stack section */}
         <section className="px-6 lg:px-12 py-24 bg-(--surface) border-y border-(--border)">
            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-black mb-6">Built for Scaling, Powered by Next.js</h2>
+              <h2 className="text-3xl font-black mb-6 uppercase">Built for Scaling, Powered by Next.js</h2>
               <p className="text-(--text-secondary) mb-12">Whether you're building a real estate portal for <strong>Kothrud</strong>, an edtech platform in <strong>Baner</strong>, or a service site for <strong>Wakad</strong>, we have the stack to scale your vision.</p>
               <div className="flex flex-wrap justify-center gap-6">
                  {["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "Headless CMS"].map(tech => (
@@ -127,8 +122,8 @@ export default function WebsiteDevelopmentPage() {
         <section className="px-6 lg:px-12 py-20 bg-(--background)">
           <div className="max-w-4xl mx-auto text-center border-2 border-dashed border-(--border) p-12 rounded-[2.5rem]">
             <h2 className="text-3xl font-black mb-6 uppercase">Ready to Own Your Space Online?</h2>
-            <p className="text-lg text-(--text-secondary) mb-8">Get a technical audit of your current site or a roadmap for your new build.</p>
-            <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-(--color-primary) text-white font-black rounded-2xl hover:scale-105 transition-all shadow-2xl">Get Free Project Roadmap <Rocket className="w-5 h-5" /></Link>
+            <p className="text-lg text-(--text-secondary) mb-8 font-medium">Get a technical audit of your current site or a roadmap for your new build.</p>
+            <Link href="/contact" className="inline-flex items-center gap-3 px-10 py-5 bg-(--color-primary) text-white font-black rounded-2xl hover:scale-105 transition-all shadow-2xl uppercase tracking-tighter">Get Free Project Roadmap <Rocket className="w-5 h-5" /></Link>
           </div>
         </section>
       </main>

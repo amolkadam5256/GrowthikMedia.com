@@ -8,6 +8,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { WHATSAPP_MARKETING_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
   title: "Top WhatsApp Marketing Services Pune | Growthik Media",
@@ -87,23 +89,11 @@ export default function WhatsappMarketingPage() {
               </p>
             </div>
 
-            <div className="border-t border-(--border) pt-16">
-              <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-8 text-center">Frequently Asked Questions</h2>
-              <div className="grid gap-8">
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">Is bulk WhatsApp messaging legal for my business in Pune?</h3>
-                  <p className="text-(--text-secondary) text-center">Yes, when done through the official WhatsApp Business API and with proper user opt-in, it is a fully compliant and legal marketing channel. We assist Pune businesses in navigating these regulations.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">Can I integrate WhatsApp with my existing CRM or Website?</h3>
-                  <p className="text-(--text-secondary) text-center">Absolutely. Our technical team specializes in connecting the WhatsApp Business API with popular CRMs and E-commerce platforms like Shopify and WooCommerce to automate your lead management.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">What is a WhatsApp Chatbot and do I need one?</h3>
-                  <p className="text-(--text-secondary) text-center">A WhatsApp Chatbot is an automated program that can answer queries, book appointments, or showcase products 24/7. It is highly recommended for Pune businesses looking to scale service without increasing headcount.</p>
-                </div>
-              </div>
-            </div>
+            <ServiceFAQ 
+              faqs={WHATSAPP_MARKETING_FAQ} 
+              title="WhatsApp Marketing Pune: Expert FAQs"
+              subtitle="Everything you need to know about API integration, compliance and conversational commerce."
+            />
 
             <div className="bg-(--surface) p-8 md:p-12 rounded-4xl border border-(--border) text-center">
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-4">Ready to Get Started?</h2>

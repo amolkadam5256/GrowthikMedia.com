@@ -8,6 +8,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { POLITICAL_MARKETING_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
   title: "Top Political Digital Marketing Pune | Growthik Media",
@@ -87,23 +89,11 @@ export default function PoliticalDigitalMarketingPage() {
               </p>
             </div>
 
-            <div className="border-t border-(--border) pt-16">
-              <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-8 text-center">Frequently Asked Questions</h2>
-              <div className="grid gap-8">
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">Is political digital marketing different from corporate marketing?</h3>
-                  <p className="text-(--text-secondary) text-center">Yes. Political marketing in Pune involves shorter timelines, higher emotional engagement and a focus on &quot;conversion&quot; to a vote rather than a product sale.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">How do you target specific voters in a Pune constituency?</h3>
-                  <p className="text-(--text-secondary) text-center">We use advanced demographic data including age, location (down to the society level) and interest-based targeting to ensure your message reaches the right electorate.</p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-(--text-primary) mb-3 text-center">How do you handle fake news or negative campaigns?</h3>
-                  <p className="text-(--text-secondary) text-center">We provide 24/7 monitoring and a response framework to debunk misinformation immediately with facts and positive narratives, protecting your reputation in Pune.</p>
-                </div>
-              </div>
-            </div>
+            <ServiceFAQ 
+              faqs={POLITICAL_MARKETING_FAQ} 
+              title="Political Marketing Pune: Expert FAQs"
+              subtitle="Critical answers on digital voter outreach, sentiment analysis, and reputation management."
+            />
 
             <div className="bg-(--surface) p-8 md:p-12 rounded-4xl border border-(--border) text-center">
               <h2 className="text-3xl font-black text-(--text-primary) uppercase tracking-tight mb-4">Ready to Get Started?</h2>

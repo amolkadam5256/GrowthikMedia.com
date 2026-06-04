@@ -4,6 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { Award, CheckCircle2, ArrowRight } from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
+import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
+import { MOBILE_APP_FAQ } from "@/constants/faqData";
 
 const slug = "mobile-app-development";
 const title = "Mobile App Development Company in Pune | Growthik Media";
@@ -61,6 +63,12 @@ export default function MobileAppDevelopmentPage() {
             </div>
           </div>
         </section>
+
+        <ServiceFAQ 
+          faqs={MOBILE_APP_FAQ} 
+          title="Mobile App Development: Expert FAQs"
+          subtitle="Answers to common questions about building high-performance iOS and Android applications."
+        />
       </main>
     </>
   );

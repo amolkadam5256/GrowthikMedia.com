@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ThemeProviderWrapper from "@/components/PublicComponents/comman/ThemeProviderWrapper";
+import ThemeProviderWrapper from "@/components/PublicComponents/common/ThemeProviderWrapper";
 
 export const metadata: Metadata = {
   title: "Admin Portal - Growthik Media",
