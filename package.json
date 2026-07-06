@@ -14,7 +14,8 @@
     "audit:slack": "node --env-file=.env automation/seo-audit/alert-slack.mjs",
     "audit:test": "node automation/seo-audit/crawler.mjs --test-mode && node automation/seo-audit/generate-report.mjs",
     "audit:full": "node automation/seo-audit/crawler.mjs && node automation/seo-audit/generate-report.mjs && node --env-file=.env automation/seo-audit/send-email.mjs && node --env-file=.env automation/seo-audit/alert-slack.mjs",
-    "indexnow:submit": "node automation/indexnow/submit.mjs"
+    "indexnow:submit": "node automation/indexnow/submit.mjs",
+    "seo:validate": "node scripts/validate-seo.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -40,6 +41,8 @@
     "node-fetch": "^2.7.0",
     "nodemailer": "^8.0.5",
     "prisma": "^5.10.2",
+    "prisma-erd-generator": "^2.4.2",
+    "puppeteer": "^24.40.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-icons": "^5.5.0",
