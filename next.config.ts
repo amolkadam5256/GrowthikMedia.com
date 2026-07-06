@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
     // Enabled for better LCP/FCP
     unoptimized: false,
     formats: ["image/avif", "image/webp"],
-    qualities: [75, 90],
+    qualities: [75, 80, 90],
     remotePatterns: [
       {
         protocol: "https",
