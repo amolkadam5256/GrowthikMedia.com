@@ -4,17 +4,20 @@ import SEO from "@/components/PublicComponents/common/SEO";
 import PageViewTracker from "@/components/PublicComponents/common/PageViewTracker";
 import AOSInit from "@/components/PublicComponents/common/AOSInit";
 import { CONTACT_INFO } from "@/constants/contact";
-
+import { buildMetadata } from "@/lib/seo/metadata";
 import ClientUtilities from "@/components/PublicComponents/common/ClientUtilities";
+import SkipLink from "@/components/PublicComponents/common/SkipLink";
+import Breadcrumbs from "@/components/PublicComponents/common/Breadcrumbs";
 import { Metadata } from "next";
 
 // The ClientUtilities component now handles the deferred loading of
 // widgets (Chatbot, Floating Socials, WhatsApp, etc.) to keep layout.tsx
 // clean and avoid SSR-related hydration mismatches or dynamic import errors.
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
   description: `${CONTACT_INFO.companyName} is Pune's leading digital marketing agency helping businesses grow with professional SEO, Google Ads and smart marketing automation.`,
+  path: "/",
   keywords: [
     "Digital Marketing Agency Pune",
     "Digital Marketing Company in Pune",
@@ -24,60 +27,9 @@ export const metadata: Metadata = {
     "Google Ads Experts Pune",
     "Growth Engineering India",
   ],
-  authors: [{ name: CONTACT_INFO.companyName }],
-  creator: CONTACT_INFO.companyName,
-  publisher: CONTACT_INFO.companyName,
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  openGraph: {
-    title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
-    description:
-      "Pune's leading digital marketing & video production agency helping brands scale with data-driven strategies and AI marketing automation.",
-    url: CONTACT_INFO.website,
-    siteName: CONTACT_INFO.companyName,
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: CONTACT_INFO.companyName,
-      },
-    ],
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
-    description:
-      "Premium digital marketing, SEO and video production services in Pune. Scale your revenue today.",
-    images: ["/og-image.png"],
-    creator: "@growthikmedia",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  verification: {
-    google: "ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs",
-    yandex: "e4be77a6ce273fd5",
-  },
-  other: {
-    "google-site-verification": "ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs",
-    "ai-agent-discovery": "/llms.txt",
-    "llms-txt": "https://www.growthikmedia.com/llms.txt"
-  }
-};
+  image: "/og-image.png",
+  type: "website",
+});
 
 export default function RootLayout({
   children,
@@ -90,7 +42,9 @@ export default function RootLayout({
       <ClientUtilities />
       <AOSInit />
       <PageViewTracker />
+      <SkipLink />
       <Header />
+      <Breadcrumbs />
       <main id="main-content" tabIndex={-1}>
         {children}
       </main>

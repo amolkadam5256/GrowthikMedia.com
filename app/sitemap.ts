@@ -4,8 +4,8 @@ import { CONTACT_INFO } from "@/constants/contact";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = CONTACT_INFO.website;
+  const now = new Date();
 
-  // 1. Static Routes
   const staticRoutes = [
     "",
     "/services",
@@ -29,19 +29,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/software-development",
     "/services/website-maintenance",
     "/services/application-maintenance",
-  ].map((route) => ({
-    url: `${baseUrl}${route}/`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: route === "" ? 1.0 : 0.8,
-  }));
+  ].map((route) => {
+    const changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] =
+      route === "/blog" || route === "/services" ? "weekly" : "monthly";
 
-  // 2. Dynamic Blog Routes
+    return {
+      url: `${baseUrl}${route === "" ? "" : route}/`,
+      lastModified: now,
+      changeFrequency,
+      priority: route === "" ? 1.0 : route === "/blog" || route === "/services" ? 0.9 : 0.8,
+    };
+  });
+
   const blogRoutes = BLOG_POSTS.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}/`,
     lastModified: new Date(post.updatedDate || post.publishDate),
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.7,
   }));
 
   return [...staticRoutes, ...blogRoutes];

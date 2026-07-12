@@ -2,51 +2,27 @@ import { Metadata } from "next";
 import HomeClient from "@/app/(public)/HomeClient";
 import AISchema from "@/components/PublicComponents/common/AISchema";
 import { HOME_FAQ } from "@/constants/faqData";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: "Best Digital Marketing Agency in Pune | Growthik Media",
   description: "Growthik Media is a Pune-based digital marketing agency offering SEO, Google Ads, website development and smart growth strategies. Get a free audit today!",
-  keywords:
-    "digital marketing agency pune, SEO services pune, performance marketing pune, google ads agency pune, Growthik Media, best digital marketing company pune, AI marketing Pune, growth engineering, website development pune, social media marketing pune",
-  openGraph: {
-    title: "Best Digital Marketing Agency in Pune | Growthik Media",
-    description:
-      "Scale your brand with Pune's premier digital marketing agency. Data-driven SEO and performance marketing delivering measurable results.",
-    url: "https://www.growthikmedia.com/",
-    siteName: "Growthik Media",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Growthik Media - Digital Marketing Agency Pune",
-      },
-    ],
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    description:
-      "Scale your brand with Pune's leading digital marketing agency. SEO and Performance Marketing driving measurable results.",
-    images: ["/og-image.png"],
-    creator: "@growthikmedia",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: "https://www.growthikmedia.com/",
-  },
-};
+  path: "/",
+  keywords: [
+    "digital marketing agency pune",
+    "SEO services pune",
+    "performance marketing pune",
+    "google ads agency pune",
+    "Growthik Media",
+    "best digital marketing company pune",
+    "AI marketing Pune",
+    "growth engineering",
+    "website development pune",
+    "social media marketing pune",
+  ],
+  image: "/og-image.png",
+  type: "website",
+});
 
 export default function Home() {
   return (

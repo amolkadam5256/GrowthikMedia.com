@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Caveat } from "next/font/google";
+import { buildMetadata } from "@/lib/seo/metadata";
 import "./assets/styles/globals.css";
 
 const rostex = localFont({
@@ -49,18 +50,13 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.growthikmedia.com"),
-  icons: {
-    icon: [
-      { url: "/brand/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-      { url: "/brand/favicon.svg", type: "image/svg+xml" },
-    ],
-    shortcut: "/brand/favicon.ico",
-    apple: [{ url: "/brand/apple-touch-icon.png", sizes: "180x180" }],
-  },
-  manifest: "/brand/site.webmanifest",
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Growthik Media | SEO, Ads, Branding & Web Development",
+  description:
+    "AI-powered digital growth for modern brands with SEO, Google Ads, web development and performance marketing.",
+  path: "/",
+  type: "website",
+});
 
 import { Suspense } from "react";
 import MetaPixel from "@/components/PublicComponents/Analytics/MetaPixel";
