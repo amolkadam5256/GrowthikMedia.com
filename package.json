@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postinstall": "prisma generate",
+    "postinstall": "prisma generate --generator client",
     "start": "next start",
     "lint": "node --no-warnings ./node_modules/eslint/bin/eslint.js",
     "audit:crawl": "node automation/seo-audit/crawler.mjs",
