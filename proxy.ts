@@ -3,10 +3,9 @@ import type { NextRequest } from "next/server";
 
 /**
  * Growthik Media: Technical SEO proxy
- * 1. Handles 410 Gone for deactivated services
- * 2. Processes remaining legacy redirects
- * 3. Strips query params for AI/Search bots to prevent duplicate content
- * 4. Logs broken link hits for technical audit
+ * 1. Processes remaining legacy redirects
+ * 2. Strips query params for AI/Search bots to prevent duplicate content
+ * 3. Logs broken link hits for technical audit
  */
 export function proxy(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
@@ -21,11 +20,6 @@ export function proxy(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = stripRouteGroups;
     return NextResponse.redirect(url, 301);
-  }
-
-  if (pathname.startsWith("/services/video-production")) {
-    console.warn(`[SEO-AUDIT] 410 Gone hit: ${pathname}`);
-    return new NextResponse(null, { status: 410 });
   }
 
   if (isBot && pathname.startsWith("/blog") && searchParams.toString().length > 0) {
