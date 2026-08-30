@@ -15,7 +15,9 @@
     "audit:test": "node automation/seo-audit/crawler.mjs --test-mode && node automation/seo-audit/generate-report.mjs",
     "audit:full": "node automation/seo-audit/crawler.mjs && node automation/seo-audit/generate-report.mjs && node --env-file=.env automation/seo-audit/send-email.mjs && node --env-file=.env automation/seo-audit/alert-slack.mjs",
     "indexnow:submit": "node automation/indexnow/submit.mjs",
-    "seo:validate": "node scripts/validate-seo.mjs"
+    "seo:validate": "node scripts/validate-seo.mjs",
+    "generate:llms": "node scripts/generate-llms.mjs",
+    "test:knowledge": "node scripts/test-knowledge.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
