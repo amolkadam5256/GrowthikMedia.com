@@ -147,7 +147,7 @@ export default function AboutUsSection() {
                     className="text-3xl font-bold mb-1"
                     style={{ color: "var(--color-primary)" }}
                   >
-                    5+
+                    3+
                   </div>
                   <div
                     className="text-xs"
@@ -161,13 +161,13 @@ export default function AboutUsSection() {
                     className="text-3xl font-bold mb-1"
                     style={{ color: "var(--color-primary)" }}
                   >
-                    200+
+                    50+
                   </div>
                   <div
                     className="text-xs"
                     style={{ color: "var(--text-secondary)" }}
                   >
-                    Projects Done
+                    Projects Completed
                   </div>
                 </div>
                 <div className="text-center">
@@ -175,13 +175,13 @@ export default function AboutUsSection() {
                     className="text-3xl font-bold mb-1"
                     style={{ color: "var(--color-primary)" }}
                   >
-                    100%
+                    3
                   </div>
                   <div
                     className="text-xs"
                     style={{ color: "var(--text-secondary)" }}
                   >
-                    Client Satisfaction
+                    Team Members
                   </div>
                 </div>
               </div>

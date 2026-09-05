@@ -75,6 +75,14 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${rostex.variable} ${rostexOutline.variable} ${caveat.variable}`}
     >
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-2209927581524030" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209927581524030"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         suppressHydrationWarning
         className="antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white"

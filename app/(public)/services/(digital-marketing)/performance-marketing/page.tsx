@@ -31,6 +31,11 @@ export default function PerformanceMarketingPage() {
   const serviceName = "Performance Marketing";
   const h1 = "Performance Marketing Agency in Pune";
   const features = ["ROAS Optimization", "CPA Management", "Cross-Channel Marketing", "Attribution Modeling", "Funnel Optimization", "Data Analytics"];
+  const growthSegments = [
+    "Performance marketing in Pune and Hyderabad for teams that need measurable pipeline, not vanity reach.",
+    "Real estate, education and healthcare campaigns built around lead quality, call tracking and landing page conversion.",
+    "B2B SaaS performance systems with LinkedIn, Google Search, retargeting and CRM feedback loops.",
+  ];
 
   return (
     <>
@@ -103,6 +108,20 @@ export default function PerformanceMarketingPage() {
           title="Performance Marketing: Results & Strategy"
           subtitle="Data-driven answers for Pune brands looking to scale their revenue efficiently."
         />
+
+        <section className="px-6 lg:px-12 py-20 bg-(--surface) border-t border-(--border)">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-(--text-primary)">Performance Campaigns by Market</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {growthSegments.map((segment) => (
+                <div key={segment} className="bg-(--background) border border-(--border) rounded-2xl p-6">
+                  <CheckCircle2 className="w-8 h-8 text-(--color-primary) mb-4" />
+                  <p className="text-sm leading-6 text-(--text-secondary)">{segment}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );

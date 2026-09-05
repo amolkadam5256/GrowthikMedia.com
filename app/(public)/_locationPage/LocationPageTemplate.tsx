@@ -170,7 +170,7 @@ export default function LocationPageTemplate({
               {[
                 {
                   icon: CheckCircle2,
-                  label: "350+ Websites Built",
+                  label: "50+ Projects Completed",
                   color: "text-green-500",
                 },
                 {
@@ -226,7 +226,7 @@ export default function LocationPageTemplate({
         <section className="px-6 lg:px-12 py-12 bg-(--surface) border-y border-(--border)">
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Globe, value: "350+", label: "Websites Launched" },
+              { icon: Globe, value: "50+", label: "Projects Completed" },
               { icon: Users, value: "400+", label: "Happy Clients" },
               { icon: TrendingUp, value: "7+", label: "Years Experience" },
               { icon: Award, value: "100%", label: "Result Oriented" },

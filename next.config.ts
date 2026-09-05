@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
   // we recommend server-side optimization or using a loader.
   // output: "export",
   trailingSlash: true,
+  skipTrailingSlashRedirect: true,
   compress: true, // Enable gzip/brotli compression
   poweredByHeader: false, // Remove X-Powered-By header for security
   images: {
@@ -39,7 +40,6 @@ const nextConfig: NextConfig = {
       // Major Category & Service Cleanup
       { source: "/services/digital-marketing", destination: "/services/", permanent: true },
       { source: "/services/google-ads", destination: "/services/ppc-google-ads/", permanent: true },
-      { source: "/seo-services-pune", destination: "/services/seo/", permanent: true },
       { source: "/services/seo-company-in-pune", destination: "/services/seo/", permanent: true },
       
       // Legacy Specifics & Misc

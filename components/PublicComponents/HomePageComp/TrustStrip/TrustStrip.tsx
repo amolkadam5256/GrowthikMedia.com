@@ -48,7 +48,7 @@ const TrustStrip = React.memo(() => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) leading-tight tracking-tight">
             Trusted by <br className="hidden md:block" />
             <span className="text-(--color-primary)">
-              <Counter value={100} suffix="+ Happy Clients" />
+              <Counter value={10} suffix="+ Happy Clients" />
             </span>
           </h2>
         </div>

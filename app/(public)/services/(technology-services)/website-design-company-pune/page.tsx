@@ -809,7 +809,7 @@ export default function WebsiteDesignPunePage() {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { icon: Monitor, stat: "350+", label: "Websites Designed" },
+                  { icon: Monitor, stat: "50+", label: "Projects Completed" },
                   { icon: Users, stat: "400+", label: "Happy Clients" },
                   { icon: Award, stat: "7+ Years", label: "Experience" },
                   { icon: Target, stat: "40+", label: "Expert Team Members" },

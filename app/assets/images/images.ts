@@ -36,7 +36,9 @@ export const publicAssets = {
     robotMascot2: "/robot-mascot-2.mp4",
   },
   portfolio: {
-      // NOTE: Removed previous portfolio images during cleanup. Keeping the demo project image.
+      demoProjectShowcase: "/images/portfolio/demo-project-showcase.jpg",
+      skincareEcommerce: "/images/portfolio/skincare-serum-facewash-ecommerce.jpg",
+      mangoPulpCampaign: "/images/portfolio/mango-pulp-whatsapp-campaign.jpg",
       growthikmediaOfficial: "/images/portfolio/growthikmedia-official-website.jpg",
   },
 } as const;

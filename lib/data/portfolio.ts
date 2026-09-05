@@ -44,28 +44,55 @@ export type PortfolioProject = {
 
 export const portfolioData: PortfolioProject[] = [
   {
-    id: 'demo-01',
-    slug: 'demo-project',
-    title: 'Demo Project - Showcase of Excellence',
-    client: 'Demo Client',
-    industry: 'Technology & Innovation',
-    shortDesc: "A demonstration of our high-performance web development and digital strategy capabilities.",
-    fullDesc: "This is a demo project designed to showcase the features and aesthetics of our portfolio. It includes detailed descriptions, results and a comprehensive tech stack to illustrate how we present our professional work to potential clients.",
-    challenge: "Demonstrating complex features in a clear, concise and visually appealing manner for a wide audience.",
-    solution: "We implemented a minimalist design focused on key performance metrics and clear value propositions, ensuring the most important information is easily accessible.",
-    category: 'website-dev',
-    location: 'global',
-    techStack: ['Next.js', 'React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    thumbnail: '/images/portfolio/growthikmedia-official-website.jpg',
+    id: 'hydr-01',
+    slug: 'skincare-serum-facewash-ecommerce-campaign',
+    title: 'Skincare Serum & Facewash Ecommerce Campaign',
+    client: 'Confidential',
+    industry: 'Ecommerce Skincare',
+    shortDesc: 'Search visibility and conversion measurement for an ecommerce skincare brand offering serum and facewash products.',
+    fullDesc: 'A skincare ecommerce brand needed a clearer route from marketing activity to qualified business action for serum and facewash products. The work focused on Google Ads, SEO, search-intent research, conversion-focused messaging and reliable measurement so future optimization decisions could be based on cleaner campaign and analytics data.',
+    challenge: 'Create a clearer route from marketing activity to qualified business action while keeping the measurement framework useful for future optimization.',
+    solution: 'We combined channel-specific setup, search-intent research, conversion-focused messaging, landing-page alignment and tracking review across GA4, GTM and relevant campaign tools.',
+    category: 'digital-marketing',
+    location: 'india',
+    techStack: ['Google Ads', 'SEO', 'GA4', 'GTM', 'Conversion Tracking', 'Ecommerce Marketing'],
+    thumbnail: '/images/portfolio/skincare-serum-facewash-ecommerce.jpg',
     featured: true,
     isClientWork: true,
     isCaseStudy: true,
     status: 'completed',
-    completedDate: 'April 2026',
+    completedDate: '2026',
     results: [
-      { metric: 'User Engagement', value: '45% Increase' },
-      { metric: 'Load Speed', value: '< 1.5s' },
-      { metric: 'Mobile Performance', value: '99/100' },
+      { metric: 'Primary Focus', value: 'Google Ads + SEO' },
+      { metric: 'Product Category', value: 'Serum & Facewash' },
+      { metric: 'Measurement Setup', value: 'GA4 + GTM' },
+      { metric: 'Campaign Learning', value: 'Ongoing Iteration' },
+    ],
+  },
+  {
+    id: 'mango-01',
+    slug: 'mango-pulp-whatsapp-lead-generation-campaign',
+    title: 'Mango Pulp WhatsApp Lead Generation Campaign',
+    client: 'Confidential',
+    industry: 'Food & Beverage Ecommerce',
+    shortDesc: 'A Meta Ads and WhatsApp lead generation campaign for mango pulp and cashew product enquiries across India.',
+    fullDesc: 'A mango pulp product campaign needed to reach wholesale buyers, distributors, juice centres, ice cream manufacturers, bakeries, hotels and retail consumers across India without relying on a large sales team or established distribution network. The campaign used Meta Ads message campaigns with WhatsApp-first lead capture, manual CRM tagging and structured follow-up so every enquiry could be classified by buyer type, location, product interest, quantity intent and lead temperature.',
+    challenge: 'Build awareness for a seasonal food product, qualify genuine B2B and B2C buyers at scale, and track every WhatsApp enquiry through a usable CRM process.',
+    solution: 'We used Meta message campaigns with WhatsApp CTAs, broad food and business-owner audiences, product-specific creative, manual lead segmentation, sample-order follow-up and pan-India geographic demand tracking.',
+    category: 'digital-marketing',
+    location: 'india',
+    techStack: ['Meta Ads', 'WhatsApp CTA', 'CRM Tracking', 'Lead Generation', 'B2B Marketing', 'B2C Marketing'],
+    thumbnail: '/images/portfolio/mango-pulp-whatsapp-campaign.jpg',
+    featured: true,
+    isClientWork: true,
+    isCaseStudy: true,
+    status: 'completed',
+    completedDate: 'June-August 2026',
+    results: [
+      { metric: 'Leads Generated', value: '1,714' },
+      { metric: 'Meta Ads Spend', value: 'INR 22,338' },
+      { metric: 'Average CPL', value: 'Approx. INR 13' },
+      { metric: 'States Reached', value: '20+' },
     ],
   },
 ]
@@ -95,9 +122,12 @@ export function getProjectsByLocation(location: ProjectLocation) {
 export function getRelatedProjects(slug: string, count = 3) {
   const project = getProjectBySlug(slug)
   if (!project) return []
-  return portfolioData
-    .filter(p => p.slug !== slug && p.category === project.category)
-    .slice(0, count)
+  const sameCategory = portfolioData.filter(p => p.slug !== slug && p.category === project.category)
+  if (sameCategory.length >= count) {
+    return sameCategory.slice(0, count)
+  }
+  const otherProjects = portfolioData.filter(p => p.slug !== slug && p.category !== project.category)
+  return [...sameCategory, ...otherProjects].slice(0, count)
 }
 
 export const portfolioStats = {
@@ -107,4 +137,3 @@ export const portfolioStats = {
   dubaiProjects: portfolioData.filter(p => p.location === 'dubai').length,
   puneProjects: portfolioData.filter(p => p.location === 'pune').length,
 }
-

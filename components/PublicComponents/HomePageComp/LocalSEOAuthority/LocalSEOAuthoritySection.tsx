@@ -116,9 +116,9 @@ const LocalSEOAuthoritySection = () => {
           <p className="text-base md:text-lg text-(--text-secondary) leading-relaxed mb-6">
             We've helped{" "}
             <span className="text-(--color-primary) font-bold">
-              50+ Pune businesses
+              10+ Happy Clients
             </span>{" "}
-            scale from local players to market leaders. Our team lives, works,
+            improve their digital presence. Our team lives, works,
             and breathes Pune's digital landscape-giving you the competitive
             edge that off-shore agencies simply cannot match.
           </p>

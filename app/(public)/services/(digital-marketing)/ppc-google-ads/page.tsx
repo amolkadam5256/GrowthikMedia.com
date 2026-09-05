@@ -13,6 +13,12 @@ const description = "Certified Google Ads agency in Pune. Maximizing ROAS and le
 const h1 = "Google Ads Agency in Pune";
 const canonical = `https://www.growthikmedia.com/services/${slug}/`;
 const features = ["Search & Performance Max", "Remarketing Display Ads", "E-commerce Shopping Ads", "B2B Lead Generation Ads", "Landing Page CRO", "Negative Keyword Scrubbing"];
+const googleAdsIntents = [
+  { title: "Startups", desc: "Lean search campaigns for early-stage companies that need pipeline without wasting budget on broad discovery terms." },
+  { title: "Real Estate", desc: "Project and location-led campaigns with call tracking, lead forms, landing page testing and negative keyword control." },
+  { title: "Healthcare", desc: "Compliant, intent-focused Google Ads for clinics and healthcare providers that depend on local appointment searches." },
+  { title: "Mumbai Expansion", desc: "Campaign structures for Pune teams selling into Mumbai with separate geo bidding, copy and conversion tracking." },
+];
 
 export const metadata: Metadata = {
   title, description, alternates: { canonical },
@@ -100,6 +106,20 @@ export default function GoogleAdsPage() {
              <h2 className="text-3xl font-black mb-6 uppercase">Are You Wasting 30% of Your Ad Budget?</h2>
              <p className="text-(--text-secondary) mb-10">Most Pune businesses are losing money on 'Broad Match' keywords and poor landing pages. We'll audit your account for FREE and show you the gaps.</p>
              <Link href="/audit" className="inline-flex items-center gap-3 px-10 py-5 bg-black text-white dark:bg-white dark:text-black font-black rounded-2xl hover:scale-105 transition-all">Analyze My Google Ads <Rocket className="w-5 h-5" /></Link>
+          </div>
+        </section>
+
+        <section className="px-6 lg:px-12 py-20 bg-(--background)">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-(--text-primary)">Google Ads Use Cases Covered</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {googleAdsIntents.map((intent) => (
+                <article key={intent.title} className="bg-(--surface) border border-(--border) rounded-2xl p-6">
+                  <h3 className="text-lg font-black mb-3 text-(--text-primary)">{intent.title}</h3>
+                  <p className="text-sm leading-6 text-(--text-secondary)">{intent.desc}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 

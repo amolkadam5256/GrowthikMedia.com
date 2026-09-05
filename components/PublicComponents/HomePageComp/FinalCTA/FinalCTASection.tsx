@@ -136,7 +136,7 @@ const FinalCTASection = React.memo(() => {
               >
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              <span>100% Honest Reporting</span>
+              <span>Honest Reporting</span>
             </div>
             <div className="flex items-center gap-2">
               <svg

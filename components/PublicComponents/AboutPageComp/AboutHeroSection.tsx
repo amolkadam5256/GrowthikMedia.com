@@ -242,7 +242,7 @@ const AboutHeroSection = () => {
                     50+
                   </span>
                   <span className="text-[10px] md:text-xs text-(--text-secondary) whitespace-nowrap">
-                    Projects Done
+                    Projects Completed
                   </span>
                 </div>
               </motion.div>

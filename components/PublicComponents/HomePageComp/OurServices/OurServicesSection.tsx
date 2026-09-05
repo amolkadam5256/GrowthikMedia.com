@@ -107,9 +107,9 @@ const OurServicesSection = React.memo(() => {
           >
             {[
               { number: "50+", label: "Projects Completed" },
-              { number: "50+", label: "Happy Clients" },
-              { number: "10+", label: "Team Members" },
-              { number: "6+", label: "Years Experience" },
+              { number: "10+", label: "Happy Clients" },
+              { number: "3", label: "Team Members" },
+              { number: "3+", label: "Years Experience" },
             ].map((stat, index) => (
               <li
                 key={index}

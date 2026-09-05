@@ -92,7 +92,7 @@ export default function PortfolioPage() {
           <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-6 shadow-xl flex gap-8">
             <div className="text-center">
               <span className="block text-3xl font-black text-gray-900 dark:text-white">50+</span>
-              <span className="text-xs text-gray-500 uppercase font-semibold">Projects Built</span>
+              <span className="text-xs text-gray-500 uppercase font-semibold">Projects Completed</span>
             </div>
             <div className="w-px bg-gray-200 dark:bg-gray-800" />
             <div className="text-center">

@@ -41,7 +41,7 @@ export const locationMapping: Record<string, LocationData> = {
     subheadline:
       "We design and develop high-performance, SEO-ready websites for businesses in Aundh, Pune that rank on Google and turn visitors into leads - guaranteed.",
     areaDescription:
-      "Aundh is one of Pune's most vibrant business hubs, home to IT firms, retail shops, clinics, coaching institutes and restaurants. With increasing digital competition, having a professional website isn't enough - you need a site that loads fast, ranks high and converts. Growthik Media has built 350+ websites for Pune businesses and we understand exactly what the Aundh audience expects from an online experience.",
+      "Aundh is one of Pune's most vibrant business hubs, home to IT firms, retail shops, clinics, coaching institutes and restaurants. With increasing digital competition, having a professional website isn't enough - you need a site that loads fast, ranks high and converts. Growthik Media has completed 50+ projects for Pune businesses and we understand exactly what the Aundh audience expects from an online experience.",
     services: [
       {
         icon: Monitor,

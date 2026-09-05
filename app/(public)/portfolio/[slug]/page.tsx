@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { portfolioData, getProjectBySlug, getRelatedProjects } from '@/lib/data/portfolio';
 import { CONTACT_INFO, STRUCTURED_DATA_IDS } from '@/constants/contact';
+import { LegacyPageContent, legacyPortfolioPages } from '@/lib/seo/legacyPages';
 
 // Generate static routes for all portfolio entries
 export async function generateStaticParams() {
@@ -14,6 +15,17 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
+  const legacyPage = legacyPortfolioPages[slug];
+  if (!project && !legacyPage) return { title: 'Not Found | Growthik Media' };
+  if (legacyPage) {
+    return {
+      title: legacyPage.title,
+      description: legacyPage.description,
+      alternates: {
+        canonical: `https://www.growthikmedia.com/portfolio/${slug}/`,
+      },
+    };
+  }
   if (!project) return { title: 'Not Found | Growthik Media' };
 
   return {
@@ -33,9 +45,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function PortfolioProjectPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
+  const legacyPage = legacyPortfolioPages[slug];
+
+  if (legacyPage) {
+    return <LegacyPageContent page={legacyPage} pathPrefix="/portfolio" />;
+  }
 
   if (!project) {
     notFound();
+    return null;
   }
 
   // Schema for individual case study
@@ -82,6 +100,12 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
           {
             '@type': 'ListItem',
             position: 3,
+            name: 'Success Stories',
+            item: `${CONTACT_INFO.website}/success-stories/`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
             name: project.title,
             item: `${CONTACT_INFO.website}/portfolio/${slug}/`,
           },
@@ -115,12 +139,12 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Breadcrumbs */}
-        <nav aria-label="Breadcrumb" className="flex items-center text-sm text-gray-500 mb-8 pt-6">
+        <nav aria-label="Breadcrumb" className="flex items-center flex-wrap text-sm text-gray-500 mb-8 pt-6 gap-y-1">
           <Link href="/" className="hover:text-red-600 transition-colors">Home</Link>
           <span className="mx-2">/</span>
           <Link href="/portfolio" className="hover:text-red-600 transition-colors">Our Work</Link>
           <span className="mx-2">/</span>
-          <span className="text-gray-900 dark:text-gray-300 capitalize">{project.category.replace('-', ' ')}</span>
+          <Link href="/success-stories" className="hover:text-red-600 transition-colors">Success Stories</Link>
           <span className="mx-2">/</span>
           <span className="text-gray-900 dark:text-gray-300 font-medium truncate">{project.title}</span>
         </nav>
@@ -161,7 +185,7 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
             </div>
           </div>
 
-          <div className="relative w-full aspect-21/9 rounded-2xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 mb-12 group">
+          <div className="relative w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-800 mb-12 group">
             <Image
               src={project.thumbnail}
               alt={`${project.title} - Digital Marketing Project by Growthik Media`}
@@ -170,12 +194,14 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
               sizes="100vw"
               priority
             />
-            <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-8 mb-16 shadow-sm">
             <div>
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Our Client</span>
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">
+                {project.client === 'Confidential' ? 'Case Study' : 'Our Client'}
+              </span>
               <span className="text-lg font-bold text-gray-900 dark:text-gray-100">{project.client}</span>
             </div>
             <div>
@@ -230,7 +256,7 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
           </div>
 
           <aside className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-8 h-fit sticky top-24 shadow-sm">
-            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-wider text-sm">Tech & Tools</h3>
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-wider text-sm">Tech &amp; Tools</h3>
             <div className="flex flex-wrap gap-2 mb-8">
               {project.techStack.map((tech, i) => (
                 <span key={i} className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-xs font-bold rounded-md uppercase tracking-tight">
@@ -240,6 +266,13 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
             </div>
 
             <hr className="border-gray-100 dark:border-gray-800 mb-8" />
+
+            <Link
+              href="/success-stories"
+              className="block text-center w-full px-4 py-3 mb-4 border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-bold rounded-lg transition-all"
+            >
+              View All Success Stories
+            </Link>
 
             <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">Wanna see similar results?</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed">
@@ -256,10 +289,10 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
             <div className="flex justify-between items-end mb-10">
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">More Work Like This</h2>
-                <p className="text-gray-600 dark:text-gray-400">Hand-picked case studies from our {project.category.replace('-', ' ')} portfolio.</p>
+                <p className="text-gray-600 dark:text-gray-400">Hand-picked case studies from our portfolio.</p>
               </div>
-              <Link href="/portfolio" className="text-red-600 font-bold hover:underline hidden sm:block">
-                View Full Portfolio &rarr;
+              <Link href="/success-stories" className="text-red-600 font-bold hover:underline hidden sm:block">
+                View All Success Stories &rarr;
               </Link>
             </div>
 
@@ -280,4 +313,3 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
     </div>
   );
 }
-

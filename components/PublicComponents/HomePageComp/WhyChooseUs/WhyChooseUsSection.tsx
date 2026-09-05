@@ -40,7 +40,7 @@ const USP_ITEMS = [
   },
   {
     icon: ShieldCheck,
-    title: "100% White-Hat Methods",
+    title: "White-Hat Methods",
     description: (
       <>
         Ethical, sustainable growth is our promise. We use only Google-approved,

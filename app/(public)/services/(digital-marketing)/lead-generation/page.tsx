@@ -13,6 +13,11 @@ const description = "Top lead generation agency in Pune. We build automated B2B 
 const h1 = "Lead Generation Agency in Pune";
 const canonical = `https://www.growthikmedia.com/services/${slug}/`;
 const features = ["B2B Lead Acquisition", "Meta Lead Gen Ads", "Google Ads Optimization", "High-Converting Landing Pages", "CRM & Sales Alignment", "Lead Scoring Systems"];
+const aiMarketCoverage = [
+  "AI-assisted lead generation for Pune companies that need faster qualification and lower manual follow-up.",
+  "Hyderabad, Delhi and Mumbai campaign support through search, paid social, landing pages and CRM automation.",
+  "Ecommerce and real estate funnels with audience segmentation, remarketing and conversion-focused nurturing.",
+];
 
 export const metadata: Metadata = {
   title, description, alternates: { canonical },
@@ -99,6 +104,20 @@ export default function LeadGenerationPage() {
           title="Lead Generation: Systems & ROI"
           subtitle="Discover how we build high-performance acquisition engines for Pune's market leaders."
         />
+
+        <section className="px-6 lg:px-12 py-20 bg-(--background)">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-(--text-primary)">AI Marketing Intent Covered Here</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {aiMarketCoverage.map((item) => (
+                <article key={item} className="bg-(--surface) border border-(--border) rounded-2xl p-6">
+                  <Target className="w-8 h-8 text-(--color-primary) mb-4" />
+                  <p className="text-sm leading-6 text-(--text-secondary)">{item}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="px-6 lg:px-12 py-24 bg-(--surface) border-y border-(--border)">

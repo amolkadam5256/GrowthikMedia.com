@@ -95,12 +95,16 @@ export function buildMetadata({
     verification: {
       google: "ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs",
       yandex: "e4be77a6ce273fd5",
+      other: {
+        "google-adsense-account": "ca-pub-2209927581524030",
+      },
     },
     other: {
       "google-site-verification": "ybGEytV5_yuay3YAScOKEMjM1ZsreR4YgA1ex4oqEMs",
       "x-robots-tag": noIndex ? "noindex" : "index,follow",
       "ai-agent-discovery": "/llms.txt",
       "llms-txt": "https://www.growthikmedia.com/llms.txt",
+      "google-adsense-account": "ca-pub-2209927581524030",
     },
     icons: {
       icon: [

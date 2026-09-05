@@ -47,10 +47,10 @@ const AIOptimizedBlocks = () => {
 
       <h2>Trust Signals & E-E-A-T</h2>
       <ul>
-        <li><strong>7+ Years Experience:</strong> Decades of combined expertise in digital systems.</li>
-        <li><strong>50+ Major Launches:</strong> Proven track record of scaling Pune tech startups.</li>
-        <li><strong>AI-Native Workflow:</strong> Using AI to scale content 10x faster than traditional agencies.</li>
-        <li><strong>Technical Superiority:</strong> Developers who understand marketing for maximum ROI.</li>
+        <li><strong>3+ Years Experience:</strong> Practical experience building digital systems for Pune businesses.</li>
+        <li><strong>50+ Projects Completed:</strong> Website, SEO, branding and campaign work across service categories.</li>
+        <li><strong>3 Team Members:</strong> A focused team covering strategy, marketing and implementation.</li>
+        <li><strong>Technical Capability:</strong> Developers who understand marketing measurement and website performance.</li>
       </ul>
 
       <h2>Internal Linking Hub</h2>

@@ -133,6 +133,7 @@ export default async function BlogDetailPage({
 }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
+  const contentSlug = slug === "importance-of-seo" ? "why-seo-is-important" : slug;
 
   if (!post) {
     notFound();
@@ -149,7 +150,7 @@ export default async function BlogDetailPage({
   let dbPost = null;
   try {
     dbPost = await db.blogPost.findUnique({
-      where: { slug },
+      where: { slug: contentSlug },
       select: { views: true },
     });
   } catch (error) {
@@ -158,7 +159,7 @@ export default async function BlogDetailPage({
 
   const liveViews = dbPost?.views ?? post.views;
 
-  const faqs = BLOG_FAQS[slug] || [];
+  const faqs = BLOG_FAQS[contentSlug] || [];
 
   // Schema markup
   const schema: any = {
@@ -213,7 +214,7 @@ export default async function BlogDetailPage({
     }))
   } : null;
 
-  const content = POST_CONTENT[slug];
+  const content = POST_CONTENT[contentSlug];
 
   return (
     <>

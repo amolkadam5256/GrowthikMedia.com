@@ -611,7 +611,7 @@ export const getLatestPosts = () =>
       new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(),
   );
 export const getPostBySlug = (slug: string) =>
-  BLOG_POSTS.find((p) => p.slug === slug);
+  BLOG_POSTS.find((p) => p.slug === (slug === "importance-of-seo" ? "why-seo-is-important" : slug));
 export const getRelatedPosts = (post: BlogPost, count = 3): BlogPost[] =>
   BLOG_POSTS.filter(
     (p) =>

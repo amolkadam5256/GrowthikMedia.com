@@ -13,6 +13,11 @@ const description = "ROI-driven Meta Ads (Facebook & Instagram) management in Pu
 const h1 = "Meta Ads Agency in Pune";
 const canonical = `https://www.growthikmedia.com/services/${slug}/`;
 const features = ["Instagram Reels Strategy", "Facebook Advantage+ Ads", "UGC Creative Production", "Dynamic Product Catalog", "Multi-Stage Retargeting", "Custom CAPI Integration"];
+const marketIntents = [
+  "Meta Ads agency for Pune service businesses that need qualified WhatsApp and form leads.",
+  "Facebook and Instagram ads for Bangalore, Mumbai and Hyderabad brands expanding beyond referrals.",
+  "Real estate Meta Ads campaigns with creative testing, project-aware retargeting and lead quality checks.",
+];
 
 export const metadata: Metadata = {
   title, description, alternates: { canonical },
@@ -100,6 +105,20 @@ export default function MetaAdsPage() {
           title="Meta Ads: Scale & Creative"
           subtitle="Discover how we engineer high-performance Facebook & Instagram campaigns for Pune's market leaders."
         />
+
+        <section className="px-6 lg:px-12 py-20 bg-(--background)">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-(--text-primary)">Campaign Intent We Consolidate</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {marketIntents.map((intent) => (
+                <div key={intent} className="bg-(--surface) border border-(--border) rounded-2xl p-6">
+                  <Facebook className="w-8 h-8 text-(--color-primary) mb-4" />
+                  <p className="text-sm leading-6 text-(--text-secondary)">{intent}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Audit Callout */}
         <section className="px-6 lg:px-12 py-20 bg-(--surface) border-y border-(--border)">

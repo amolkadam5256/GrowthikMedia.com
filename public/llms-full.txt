@@ -4,8 +4,8 @@ Generated from local project source files. This document is public AI-readable c
 
 ## Coverage Summary
 
-- Total documents: 105
-- Public route documents: 95
+- Total documents: 106
+- Public route documents: 96
 - Service pages: 44
 - Blog route patterns/pages: 0
 - Policy pages: 4
@@ -380,6 +380,8 @@ Extracted public page content:
 - summary_large_image
 - @growthikmedia
 - rounded-full flex items-center justify-center text-white font-black shrink-0
+- importance-of-seo
+- why-seo-is-important
 - /brand/growthik-media-transparent-logo.png
 - Failed to fetch dynamic views for :
 - @context
@@ -447,8 +449,6 @@ Extracted public page content:
 - noopener noreferrer
 - flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:opacity-70 transition-opacity
 - flex items-center gap-1.5 text-xs font-bold text-(--color-primary) hover:opacity-70 transition-opacity
-- mt-10 rounded-3xl overflow-hidden bg-(--surface) border-2 border-(--color-primary)/20 p-6 md:p-8 text-(--text-primary) relative shadow-lg
-- absolute top-0 right-0 w-40 h-40 bg-(--color-primary)/5 rounded-full blur-3xl pointer-events-none
 
 ## Page: Growthik Media | Book a Free Strategy Call With Our Pune Experts
 
@@ -587,9 +587,10 @@ Extracted public page content:
 - next/image
 - next/link
 - Not Found | Growthik Media
-- - Case Study | Growthik Media
 - https://www.growthikmedia.com/portfolio//
+- - Case Study | Growthik Media
 - | Growthik Media Portfolio
+- /portfolio
 - @context
 - https://schema.org
 - /portfolio//#article
@@ -605,7 +606,6 @@ Extracted public page content:
 - Breadcrumb
 - flex items-center text-sm text-gray-500 mb-8 pt-6
 - hover:text-red-600 transition-colors
-- /portfolio
 - text-gray-900 dark:text-gray-300 capitalize
 - text-gray-900 dark:text-gray-300 font-medium truncate
 - text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight
@@ -626,6 +626,9 @@ Extracted public page content:
 - absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none
 - grid grid-cols-2 lg:grid-cols-4 gap-6 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-8 mb-16 shadow-sm
 - text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1
+- Confidential
+- Case Study
+- Our Client
 - text-lg font-bold text-gray-900 dark:text-gray-100
 - text-lg font-bold text-gray-900 dark:text-gray-100 capitalize
 - grid grid-cols-1 lg:grid-cols-3 gap-12
@@ -660,9 +663,6 @@ Extracted public page content:
 - text-red-600 font-bold hover:underline hidden sm:block
 - grid grid-cols-1 md:grid-cols-3 gap-8
 - group block
-- relative h-48 w-full rounded-xl overflow-hidden mb-4 bg-gray-100 dark:bg-gray-800 border border-gray-100 dark:border-gray-800 shadow-sm
-- object-cover group-hover:scale-105 transition-transform duration-500
-- text-lg font-bold text-gray-900 dark:text-white group-hover:text-red-600 transition-colors uppercase tracking-tight
 
 ## Page: PPC & Meta Ads Performance Portfolio | Growthik Media
 
@@ -1029,7 +1029,7 @@ Extracted public page content:
 - Projects Completed
 - Happy Clients
 - Years Experience
-- Result Guaranteed
+- Team Members
 - What are your core digital marketing services?
 - SEO (national & local), Google/Meta Ads, high-performance website development (Next.js & WordPress) and conversion-focused branding/creative.
 - How much do SEO services cost in Pune?
@@ -1057,6 +1057,39 @@ Extracted public page content:
 - next/navigation
 - /services//
 - Growthik Media
+- /services
+
+## Page: Website Maintenance Services | Growthik Media
+
+URL: /services/[seoStrategy]/website-maintenance
+Canonical URL: https://www.growthikmedia.com/services/[seoStrategy]/website-maintenance/
+Type: Dynamic Route Pattern
+Source: app/(public)/services/[seoStrategy]/website-maintenance/page.tsx
+
+Summary:
+Website maintenance, updates, performance fixes and technical support by Growthik Media.
+
+Key information:
+Title: Website Maintenance Services | Growthik Media
+
+Description: Website maintenance, updates, performance fixes and technical support by Growthik Media.
+
+Extracted public page content:
+- Website Maintenance Services | Growthik Media
+- Website maintenance, updates, performance fixes and technical support by Growthik Media.
+- https://www.growthikmedia.com/services/(technology-services)/website-maintenance/
+- (technology-services)/website-maintenance
+- Website Maintenance Services
+- businesses looking for ongoing website care, fixes and performance support
+- Growthik Media maintains business websites with updates, backups, speed checks, content edits and technical SEO monitoring.
+- Maintenance protects rankings by keeping pages fast, secure, crawlable and aligned with current business offers.
+- This legacy URL is served directly because it appeared in the Search Console export.
+- Website Maintenance
+- /services/website-maintenance/
+- Website Development
+- /services/website-development/
+- /contact/
+- /services
 
 ## Page: Best Application Maintenance in Pune | Custom & SEO-Friendly Websites
 
@@ -2088,6 +2121,9 @@ Extracted public page content:
 - High-Converting Landing Pages
 - CRM & Sales Alignment
 - Lead Scoring Systems
+- AI-assisted lead generation for Pune companies that need faster qualification and lower manual follow-up.
+- Hyderabad, Delhi and Mumbai campaign support through search, paid social, landing pages and CRM automation.
+- Ecommerce and real estate funnels with audience segmentation, remarketing and conversion-focused nurturing.
 - Growthik Media
 - /og-image.png
 - Lead Generation Agency Pune
@@ -2132,6 +2168,12 @@ Extracted public page content:
 - text-xs text-(--text-secondary)
 - Lead Generation: Systems & ROI
 - Discover how we build high-performance acquisition engines for Pune's market leaders.
+- max-w-6xl mx-auto
+- text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-(--text-primary)
+- grid grid-cols-1 md:grid-cols-3 gap-6
+- bg-(--surface) border border-(--border) rounded-2xl p-6
+- w-8 h-8 text-(--color-primary) mb-4
+- text-sm leading-6 text-(--text-secondary)
 - px-6 lg:px-12 py-24 bg-(--surface) border-y border-(--border)
 - max-w-4xl mx-auto text-center border-2 border-(--color-primary)/20 p-12 rounded-[2.5rem] bg-(--background)
 - text-3xl font-black mb-6 uppercase
@@ -2420,6 +2462,9 @@ Extracted public page content:
 - Dynamic Product Catalog
 - Multi-Stage Retargeting
 - Custom CAPI Integration
+- Meta Ads agency for Pune service businesses that need qualified WhatsApp and form leads.
+- Facebook and Instagram ads for Bangalore, Mumbai and Hyderabad brands expanding beyond referrals.
+- Real estate Meta Ads campaigns with creative testing, project-aware retargeting and lead quality checks.
 - Growthik Media
 - /og-image.png
 - Meta Ads Agency Pune
@@ -2465,6 +2510,12 @@ Extracted public page content:
 - font-bold text-lg mb-2 text-(--text-primary)
 - Meta Ads: Scale & Creative
 - Discover how we engineer high-performance Facebook & Instagram campaigns for Pune's market leaders.
+- max-w-6xl mx-auto
+- text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-(--text-primary)
+- grid grid-cols-1 md:grid-cols-3 gap-6
+- bg-(--surface) border border-(--border) rounded-2xl p-6
+- w-8 h-8 text-(--color-primary) mb-4
+- text-sm leading-6 text-(--text-secondary)
 - px-6 lg:px-12 py-20 bg-(--surface) border-y border-(--border)
 - max-w-4xl mx-auto text-center
 - text-3xl font-black mb-6 uppercase
@@ -2555,6 +2606,9 @@ Extracted public page content:
 - Attribution Modeling
 - Funnel Optimization
 - Data Analytics
+- Performance marketing in Pune and Hyderabad for teams that need measurable pipeline, not vanity reach.
+- Real estate, education and healthcare campaigns built around lead quality, call tracking and landing page conversion.
+- B2B SaaS performance systems with LinkedIn, Google Search, retargeting and CRM feedback loops.
 - schema-performance-marketing
 - @context
 - https://schema.org
@@ -2587,6 +2641,13 @@ Extracted public page content:
 - font-bold text-lg mb-2 text-(--text-primary)
 - Performance Marketing: Results & Strategy
 - Data-driven answers for Pune brands looking to scale their revenue efficiently.
+- px-6 lg:px-12 py-20 bg-(--surface) border-t border-(--border)
+- max-w-6xl mx-auto
+- text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-(--text-primary)
+- grid grid-cols-1 md:grid-cols-3 gap-6
+- bg-(--background) border border-(--border) rounded-2xl p-6
+- w-8 h-8 text-(--color-primary) mb-4
+- text-sm leading-6 text-(--text-secondary)
 
 ## Page: Top Political Digital Marketing Pune | Growthik Media
 
@@ -2671,6 +2732,14 @@ Extracted public page content:
 - B2B Lead Generation Ads
 - Landing Page CRO
 - Negative Keyword Scrubbing
+- Startups
+- Lean search campaigns for early-stage companies that need pipeline without wasting budget on broad discovery terms.
+- Real Estate
+- Project and location-led campaigns with call tracking, lead forms, landing page testing and negative keyword control.
+- Healthcare
+- Compliant, intent-focused Google Ads for clinics and healthcare providers that depend on local appointment searches.
+- Mumbai Expansion
+- Campaign structures for Pune teams selling into Mumbai with separate geo bidding, copy and conversion tracking.
 - Growthik Media
 - /og-image.png
 - Google Ads Agency Pune
@@ -2722,8 +2791,13 @@ Extracted public page content:
 - text-(--text-secondary) mb-10
 - Broad Match
 - inline-flex items-center gap-3 px-10 py-5 bg-black text-white dark:bg-white dark:text-black font-black rounded-2xl hover:scale-105 transition-all
+- max-w-7xl mx-auto
+- text-3xl md:text-4xl font-black mb-8 uppercase tracking-tight text-(--text-primary)
+- grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6
+- bg-(--surface) border border-(--border) rounded-2xl p-6
+- text-lg font-black mb-3 text-(--text-primary)
+- text-sm leading-6 text-(--text-secondary)
 - Google Ads & PPC: Frequently Asked Questions
-- Everything you need to know about scaling your revenue with precision search advertising.
 
 ## Page: Real Estate Website Development in Pune | Growthik Media
 
@@ -2788,7 +2862,7 @@ Extracted public page content:
 - w-10 h-10 text-(--color-primary) mb-4
 - font-bold text-lg mb-2 text-(--text-primary)
 
-## Page: SEO Company in Pune | Growthik Media
+## Page: SEO Company in Pune for Sustainable Organic Growth | Growthik Media
 
 URL: /services/seo
 Canonical URL: https://www.growthikmedia.com/services/seo/
@@ -2796,88 +2870,94 @@ Type: Service Page
 Source: app/(public)/services/(digital-marketing)/seo/page.tsx
 
 Summary:
-Top-rated SEO company in Pune. Rank on Page 1 of Google with our data-driven SEO strategies. Get a free SEO audit today.
+SEO services in Pune by Growthik Media: technical SEO, local SEO, content strategy, ecommerce SEO, SaaS/B2B SEO, audits and ROI measurement.
 
 Key information:
-Title: SEO Company in Pune | Growthik Media
+Title: SEO Company in Pune for Sustainable Organic Growth | Growthik Media
 
-Description: Top-rated SEO company in Pune. Rank on Page 1 of Google with our data-driven SEO strategies. Get a free SEO audit today.
+Description: SEO services in Pune by Growthik Media: technical SEO, local SEO, content strategy, ecommerce SEO, SaaS/B2B SEO, audits and ROI measurement.
 
 Extracted public page content:
 - next/link
 - next/script
 - lucide-react
-- SEO Company in Pune | Growthik Media
-- Top-rated SEO company in Pune. Rank on Page 1 of Google with our data-driven SEO strategies. Get a free SEO audit today.
-- SEO Company in Pune
 - /services/seo/
-- Technical SEO Audit
-- Keyword Research
-- On-Page SEO
-- Authority Link Building
-- Content Hub Strategy
-- Quarterly ROI Reports
-- Growthik Media
-- @context
-- https://schema.org
-- Professional SEO Services Pune
-- serviceType
-- provider
-- /#localbusiness
-- areaServed
-- aggregateRating
-- AggregateRating
-- bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans
-- relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)
-- absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none
-- relative z-10 max-w-5xl mx-auto
-- inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--background) border border-(--border) shadow-sm mb-6 text-sm font-bold text-(--color-primary) tracking-wide uppercase
-- text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)
-- text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500
-- text-lg md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-10 leading-relaxed
-- flex flex-col sm:flex-row items-center justify-center gap-4 mb-12
-- px-8 py-4 bg-(--color-primary) text-white font-bold rounded-xl hover:bg-black transition-all duration-300 shadow-lg shadow-(--color-primary)/30 flex items-center justify-center gap-2 w-full sm:w-auto
-- /contact
-- px-8 py-4 bg-(--surface) text-(--text-primary) border border-(--border) font-bold rounded-xl hover:bg-(--border) transition-all flex items-center justify-center gap-2 w-full sm:w-auto
-- text-sm text-(--text-secondary)
-- px-6 lg:px-12 py-20 bg-(--background)
-- max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center
-- text-3xl md:text-4xl font-black mb-6 uppercase tracking-tight text-(--text-primary)
-- w-16 h-1.5 bg-(--color-primary) mb-8
-- text-(--text-secondary) font-medium text-lg mb-6 leading-relaxed
-- mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4
-- Avg. traffic lift
-- 41% in 90 days
-- Core Web Vitals score
-- 95+ on Mobile
-- High-Intent Rankings
-- Top 3 Targets
-- rounded-2xl border border-(--border) bg-(--surface) p-4 flex items-center gap-3
-- w-5 h-5 text-(--color-primary)
-- text-sm font-bold text-(--text-primary)
-- text-xs text-(--text-secondary)
-- grid grid-cols-1 sm:grid-cols-2 gap-6
-- bg-(--surface) p-6 rounded-2xl border border-(--border) group hover:border-(--color-primary) transition-all
-- w-10 h-10 text-(--color-primary) mb-4 opacity-70 group-hover:opacity-100
-- font-bold text-lg mb-2 text-(--text-primary)
-- px-6 lg:px-12 py-24 bg-(--surface) border-y border-(--border)
-- max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12
-- max-w-xl
-- text-3xl font-black mb-6
-- s Neighborhood Intent</h2> <p className="text-(--text-secondary) mb-8">Whether you
-- flex flex-wrap gap-2
-- Local SEO
-- E-commerce SEO
+- SEO Company in Pune for Sustainable Organic Growth | Growthik Media
+- SEO services in Pune by Growthik Media: technical SEO, local SEO, content strategy, ecommerce SEO, SaaS/B2B SEO, audits and ROI measurement.
 - Technical SEO
+- Crawling, indexing, rendering, status codes, canonicals, redirects, XML sitemaps, robots.txt, JavaScript SEO, structured data, Core Web Vitals and URL architecture.
+- On-Page SEO
+- Titles, meta descriptions, H1-H6 hierarchy, search intent alignment, entity relevance, content structure, image optimization and contextual internal linking.
+- Keyword Research
+- Commercial, informational, navigational and transactional intent research across long-tail queries, topic clusters and competitor content gaps.
+- Content SEO
+- Pillar pages, supporting articles, entity coverage, semantic relationships and content refresh plans that build topical authority over time.
+- Local SEO
+- Google Business Profile support, local landing pages, NAP consistency, citations, reviews, neighborhood relevance and local-intent content.
+- Ecommerce SEO
+- Category pages, product pages, faceted navigation, crawl control, product structured data, internal links and ecommerce search intent mapping.
+- SaaS & B2B SEO
+- Solution pages, use cases, comparison pages, integrations, problem-aware searches and bottom-of-funnel content for longer buying journeys.
+- Healthcare SEO
+- Careful service discovery, local search, provider and service information, trust signals, author/entity clarity and sensitive-content review where applicable.
+- Real Estate SEO
+- Property and service intent, location intent, project pages, local search, lead generation paths and content architecture for discovery and enquiries.
 - International SEO
-- px-4 py-2 bg-(--background) border border-(--border) rounded-full text-xs font-bold
-- w-full md:w-1/3 p-8 bg-(--background) rounded-3xl border-2 border-(--color-primary)/20 shadow-2xl
-- w-12 h-12 text-(--color-primary) mb-6
-- text-xl font-bold mb-4
-- text-sm text-(--text-secondary) mb-6
-- block w-full text-center py-4 bg-(--color-primary) text-white font-bold rounded-xl transition-all hover:bg-black
-- SEO Services in Pune: Frequently Asked Questions
-- Expert answers to help you understand how our search optimization can scale your business.
+- Country targeting, language targeting, hreflang planning, international content and regional search-intent mapping when the business is ready to scale beyond India.
+- Crawl analysis
+- Indexability
+- Technical architecture
+- URL audit
+- Canonical audit
+- Redirect audit
+- Sitemap audit
+- Robots audit
+- Keyword research
+- Search intent mapping
+- On-page optimization
+- Internal linking
+- Content and authority analysis
+- Measurement and reporting
+- HTTP status
+- Canonical
+- Robots directives
+- XML sitemap
+- Crawlability
+- Redirects
+- Duplicate URLs
+- Trailing slash consistency
+- JavaScript rendering
+- Mobile usability
+- Core Web Vitals
+- Structured data
+- Image SEO
+- Pagination where applicable
+- Orphan pages
+- Broken links
+- 404 and 410 handling
+- Use-case pages, integration pages and comparison content help buyers understand fit before a demo conversation.
+- Long-cycle buying needs educational pages, proof assets and internal links that support researchers, managers and decision makers.
+- Healthcare
+- Healthcare SEO focuses on accurate service information, local discovery and trust. Medical claims need careful review.
+- Ecommerce
+- Category architecture, product data, crawl controls and internal links help shoppers and search engines reach the right products.
+- Real Estate
+- Location intent, project pages, amenity content and enquiry paths are mapped together instead of publishing duplicate locality text.
+- Startups
+- Early-stage SEO prioritizes the pages most likely to generate qualified demand: problems, alternatives, use cases and service pages.
+- Local Businesses
+- Local SEO connects service pages, Google Business Profile signals, reviews, citations and neighborhood relevance.
+- /services/local-seo/
+- Google Ads
+- /services/ppc-google-ads/
+- Meta Ads
+- /services/meta-ads/
+- Performance Marketing
+- /services/performance-marketing/
+- Website Development
+- /services/website-development/
+- Lead Generation
+- /services/lead-generation/
 
 ## Page: Bulk SMS Marketing Services in Pune | Growthik Media
 
@@ -4382,36 +4462,46 @@ What is the best digital marketing company in Pune for lead generation?
 - Proper tracking allows us to see exactly which actions users take on your site, telling us which marketing channels drive revenue and which ones waste money. We set up advanced event tracking for every client to make data-backed decisions that accelerate growth in the Pune market.
 - How do I get started with Growthik Media for my digital growth?
 - Simply book a 'Free Strategy Call' or request a 'Digital Audit' through our website. We'll understand your goals, conduct a preliminary audit, and provide a customized 'Growth Roadmap' with no obligation to hire us. We believe in providing value first.
-- What is the best SEO company in Pune for high-competition industries?
-- Growthik Media is widely regarded as the leading SEO company in Pune for sectors like real estate, healthcare, and IT. Our approach focuses on 'Growth Engineering,' including technical-first optimization, advanced schema markups, and high-authority backlink profiles that outlast algorithm updates.
-- How long does it take for a Pune SEO company to deliver measurable results?
-- Measurable SEO results in Pune typically take 3 to 6 months. While technical fixes can show movement within 30 days, sustainable organic growth requires building trust with Google through consistent content hubs and strategic backlink acquisitions.
-- How much do SEO services in Pune cost for SMBs?
-- SEO services in Pune for SMBs generally range from ₹15,000 to ₹50,000 per month. At Growthik Media, we provide custom packages tailored to your specific business goals, prioritizing honesty and ROI over one-size-fits-all plans.
-- What is the difference between Local SEO and National SEO for my Pune brand?
-- Local SEO targets vicinity-based searches (e.g., 'SEO agency in Baner') and focuses on Google Business Profile optimization. National SEO aims for broad, location-independent keywords across the country, essential for E-commerce or SaaS companies.
-- How does your 14-step SEO audit system work?
-- Our proprietary audit deep-dives into server-side configuration, Core Web Vitals, content decay, and internal linking. We fix the technical foundation first to ensure all future marketing efforts are amplified by a technically perfect website.
-- Is SEO better than Google Ads (PPC) for my Pune-based business?
-- Neither is objectively 'better'; they serve different purposes. Google Ads (PPC) provides immediate visibility (a 'sprint'), while SEO builds a long-term asset (a 'marathon'). An integrated approach using both often yields the best ROI.
-- Do you specialize in SEO for specific industries like Real Estate or IT?
-- Yes, we have specialized frameworks for Real Estate, IT/SaaS, Healthcare, and Education in Pune. We understand industry-specific search behaviors and implement proven strategies that drive genuine growth for these niches.
-- How can I track the ROI of my SEO campaign with Growthik Media?
-- We provide custom GA4 dashboards that track actual business outcomes—like phone calls, WhatsApp inquiries, and form submissions—rather than just keyword rankings, ensuring complete transparency on lead generation.
-- How do you handle the 2026 Google AI Search (SGE/GEO) updates?
-- We optimize content using structured JSON-LD data and entity-based optimization to ensure AI agents like ChatGPT and Gemini cite your website as a primary source, keeping you ahead as search evolves in 2026.
-- Do you provide transparent backlink building or 'off-page' SEO?
-- Yes, we focus on strategic guest posting on niche-relevant sites, digital PR, and broken link building. We provide a full list of acquired links in our monthly reports, ensuring you see the authority-building work being done.
-- What is an 'SEO Content Hub' and why does my business need one?
-- An SEO Content Hub is a collection of high-quality content organized around a single topic. This signals absolute authority to Google, making it easier to rank for all related keywords while keeping users on your site longer.
-- Will you fix technical SEO issues on my website directly?
-- Yes, our team of growth engineers can implement technical fixes directly on Next.js, WordPress, or Shopify, handling everything from schema injection to fixing Core Web Vitals quickly and correctly.
-- Why is site speed and Core Web Vitals critical for SEO in 2026?
-- Site speed is a core ranking factor. A slow site leads to high bounce rates and lost rankings. We optimize performance through modern coding practices, often achieving 90+ Lighthouse scores for our clients.
-- Do you work with non-Pune businesses for National or International SEO?
-- Yes, we manage campaigns for clients across India, Singapore, Dubai, and the USA. Our experience in high-competition international markets allows us to bring global-standard strategies to our local Pune clients.
-- Why should I hire an agency like Growthik Media over a freelancer for SEO?
-- SEO in 2026 requires a multi-disciplinary team of engineers, writers, and analysts. We provide the stability, professional reporting, and enterprise-level tools that freelancers typically cannot offer.
+- What does an SEO company in Pune do?
+- An SEO company improves how your website is crawled, understood and found in search. For Pune businesses, that can include technical SEO, local SEO, content planning, on-page optimization and conversion tracking.
+- How much do SEO services cost?
+- SEO pricing depends on website size, competition, industry, location coverage, technical complexity, content requirements and business goals. Growthik Media scopes the work after reviewing the site and search opportunity.
+- How long does SEO take?
+- Technical fixes can often be implemented quickly, but indexing, rankings and authority take time. Meaningful SEO growth usually requires months of consistent technical, content and authority work.
+- What is included in an SEO audit?
+- An SEO audit can include crawl analysis, indexability checks, technical architecture, URLs, canonicals, redirects, sitemap, robots.txt, keyword mapping, on-page content, internal links and measurement setup.
+- What is technical SEO?
+- Technical SEO improves the foundation search engines use to crawl, render, index and evaluate a site. It covers items such as status codes, JavaScript rendering, structured data, Core Web Vitals and URL architecture.
+- What is local SEO?
+- Local SEO helps a business appear for location-aware searches. It can include Google Business Profile work, NAP consistency, local citations, reviews, service-area relevance and location-focused content.
+- Do you provide ecommerce SEO?
+- Yes. Ecommerce SEO usually focuses on category pages, product pages, faceted navigation, product structured data, crawl controls, internal linking and search intent across the buying journey.
+- Do you work with SaaS companies?
+- Yes. SaaS SEO often includes solution pages, use-case content, comparison pages, integration pages, problem-aware searches and bottom-of-funnel content that supports demo or sales conversations.
+- Do you work with B2B businesses?
+- Yes. B2B SEO needs content for longer buying cycles, multiple decision makers and higher-consideration enquiries. The strategy usually combines service pages, educational content, proof assets and clear conversion paths.
+- Do you provide healthcare SEO?
+- Yes, with careful language and review where needed. Healthcare SEO should improve service discovery, local visibility, provider information and trust without making unsupported medical claims.
+- Do you provide real estate SEO?
+- Yes. Real estate SEO can cover project pages, location intent, property or service searches, internal linking, local visibility and lead-generation paths for enquiries.
+- Can you fix technical SEO issues directly?
+- Yes. Growthik Media has web development capability, so many technical SEO fixes can be implemented directly on supported websites instead of being limited to recommendations.
+- How do you measure SEO ROI?
+- SEO ROI is measured by connecting organic traffic to landing-page engagement, leads, conversions and revenue where tracking exists. GA4, GTM and Search Console data help connect visibility to business outcomes.
+- Do you work outside Pune?
+- Yes. Growthik Media is Pune-based, but SEO work can support businesses targeting other Indian markets or international audiences when the campaign scope requires it.
+- What is the difference between SEO and Google Ads?
+- Google Ads can create paid visibility quickly while SEO builds organic visibility over time. Many businesses use ads for immediate demand capture and SEO for longer-term acquisition.
+- How do you approach AI search and GEO?
+- We improve entity clarity, structured information, FAQs, crawlable content and answer-focused sections. These practices can support AI search understanding, but no agency can guarantee AI citations.
+- How often do you report SEO performance?
+- Reporting frequency depends on the engagement, but SEO performance should be reviewed regularly using Search Console, GA4, lead quality and completed implementation work.
+- How do you build backlinks?
+- Backlink work should focus on relevance, quality and editorial usefulness. Depending on the campaign, this can include digital PR, partner mentions, guest contributions and fixing missed citation opportunities.
+- What happens during the first month?
+- The first month usually focuses on discovery, technical audit, keyword and intent research, priority fixes, measurement checks and a roadmap for content and authority development.
+- How can I request an SEO audit?
+- Use the SEO audit form or book a strategy call. Growthik Media will review the website, business goals and search opportunity before recommending the next steps.
 - Why should I hire a Google Ads agency in Pune instead of managing it myself?
 - A professional agency prevents 'budget bleed' by optimizing Quality Scores, lowering Cost-Per-Click (CPC), and performing surgical negative keyword scrubbing. We stay ahead of algorithm updates and use advanced bidding strategies to ensure you pay less than competitors for top-of-page visibility.
 - How long does it take to see results from a Google Ads (PPC) campaign?
@@ -4422,16 +4512,6 @@ What is the best digital marketing company in Pune for lead generation?
 - Yes, hyper-local targeting is a core strength. We use geo-fencing and radius targeting to show ads only to users in specific neighborhoods or near landmarks like EON IT Park, ensuring your budget is spent on high-intent local users.
 - How do you track 'Conversions' and ROI for Google Ads?
 - We use a multi-layered setup with GTM and GA4 to capture every valuable action—calls, WhatsApp inquiries, and form submissions. This allows us to scale winning keywords and cut losers, ensuring your budget moves toward the highest-performing segments.
-- Will you build custom landing pages for my Google Ads campaigns?
-- Yes, we build high-performance Next.js landing pages designed to align with your ad copy. These pages load instantly and use conversion psychology to lower your CPC and increase your overall conversion rates.
-- Why is my CPC so high, and how can you lower it?
-- High CPCs are often due to low Quality Scores or broad keyword bidding. We lower your CPC by optimizing ad copy, keyword relevance, and landing page speed, helping you win auctions at a lower price and get more leads for the same budget.
-- Do you manage both Search Ads and Performance Max (PMax)?
-- Yes, we manage Search, Display, YouTube, Shopping, and Performance Max (PMax) ads. We use Search for high-intent B2B demand and PMax for broad e-commerce reach, always providing manual overrides to ensure optimal ROI.
-- What is 'Remarketing' and why does my Pune business need it?
-- Remarketing shows ads to previous website visitors who didn't convert. Since many users need multiple touchpoints before a decision, remarketing keeps you top-of-mind and significantly increases your overall conversion rate.
-- How do you handle 'Negative Keywords' to save my ad budget?
-- We conduct weekly Search Term Audits to filter out irrelevant queries like 'free' or 'jobs.' This constant scrubbing ensures 100% of your budget is directed toward high-intent 'Money Keywords' that lead to conversions.
 
 ## Page: constants/locationData.ts
 
@@ -4453,7 +4533,7 @@ lucide-react
 - Website Design Company
 - Best Website Design Company in Aundh
 - We design and develop high-performance, SEO-ready websites for businesses in Aundh, Pune that rank on Google and turn visitors into leads - guaranteed.
-- Aundh is one of Pune's most vibrant business hubs, home to IT firms, retail shops, clinics, coaching institutes and restaurants. With increasing digital competition, having a professional website isn't enough - you need a site that loads fast, ranks high and converts. Growthik Media has built 350+ websites for Pune businesses and we understand exactly what the Aundh audience expects from an online experience.
+- Aundh is one of Pune's most vibrant business hubs, home to IT firms, retail shops, clinics, coaching institutes and restaurants. With increasing digital competition, having a professional website isn't enough - you need a site that loads fast, ranks high and converts. Growthik Media has completed 50+ projects for Pune businesses and we understand exactly what the Aundh audience expects from an online experience.
 - Custom Website Design
 - Pixel-perfect, mobile-first designs built specifically for your brand and Aundh audience.
 - WordPress Development
@@ -4654,6 +4734,46 @@ website-dev
 - 45% Increase
 - Load Speed
 - Mobile Performance
+- skincare-serum-facewash-ecommerce-campaign
+- Skincare Serum & Facewash Ecommerce Campaign
+- Confidential
+- Ecommerce Skincare
+- Search visibility and conversion measurement for an ecommerce skincare brand offering serum and facewash products.
+- A skincare ecommerce brand needed a clearer route from marketing activity to qualified business action for serum and facewash products. The work focused on Google Ads, SEO, search-intent research, conversion-focused messaging and reliable measurement so future optimization decisions could be based on cleaner campaign and analytics data.
+- Create a clearer route from marketing activity to qualified business action while keeping the measurement framework useful for future optimization.
+- We combined channel-specific setup, search-intent research, conversion-focused messaging, landing-page alignment and tracking review across GA4, GTM and relevant campaign tools.
+- Google Ads
+- Conversion Tracking
+- Ecommerce Marketing
+- Primary Focus
+- Google Ads + SEO
+- Product Category
+- Serum & Facewash
+- Measurement Setup
+- GA4 + GTM
+- Campaign Learning
+- Ongoing Iteration
+- mango-01
+- mango-pulp-whatsapp-lead-generation-campaign
+- Mango Pulp WhatsApp Lead Generation Campaign
+- Food & Beverage Ecommerce
+- A Meta Ads and WhatsApp lead generation campaign for mango pulp and cashew product enquiries across India.
+- A mango pulp product campaign needed to reach wholesale buyers, distributors, juice centres, ice cream manufacturers, bakeries, hotels and retail consumers across India without relying on a large sales team or established distribution network. The campaign used Meta Ads message campaigns with WhatsApp-first lead capture, manual CRM tagging and structured follow-up so every enquiry could be classified by buyer type, location, product interest, quantity intent and lead temperature.
+- Build awareness for a seasonal food product, qualify genuine B2B and B2C buyers at scale, and track every WhatsApp enquiry through a usable CRM process.
+- We used Meta message campaigns with WhatsApp CTAs, broad food and business-owner audiences, product-specific creative, manual lead segmentation, sample-order follow-up and pan-India geographic demand tracking.
+- Meta Ads
+- WhatsApp CTA
+- CRM Tracking
+- Lead Generation
+- B2B Marketing
+- B2C Marketing
+- June-August 2026
+- Leads Generated
+- Meta Ads Spend
+- INR 22,338
+- Average CPL
+- Approx. INR 13
+- States Reached
 
 ## Page: components/PublicComponents/common/header/navigationData.ts
 
@@ -4917,26 +5037,71 @@ Type: Structured Source
 Source: app/sitemap.ts
 
 Summary:
-/services /portfolio /contact /privacy-policy /services/seo
+/services /services/application-maintenance /services/brand-identity /services/brand-marketing-communications /services/brand-name
 
 Key information:
 /services
-- /portfolio
-- /contact
-- /privacy-policy
-- /services/seo
-- /services/ppc-google-ads
-- /services/meta-ads
-- /services/website-development
-- /services/web-application
-- /services/local-seo
-- /services/branding-design
-- /services/website-design-company-pune
-- /services/wordpress-development
-- /services/ecommerce-development
-- /services/software-development
-- /services/website-maintenance
 - /services/application-maintenance
+- /services/brand-identity
+- /services/brand-marketing-communications
+- /services/brand-name
+- /services/brand-strategy
+- /services/branding-consulting
+- /services/branding-design
+- /services/brochure-design
+- /services/business-card-design
+- /services/content-marketing
+- /services/digital-marketing
+- /services/ecommerce-development
+- /services/ecommerce-website-development
+- /services/educational-website-development
+- /services/email-marketing
+- /services/influencer-management
+- /services/lead-generation
+- /services/letterhead-design
+- /services/local-seo
+- /services/logo-design
+- /services/media-planning-buying
+- /services/meta-ads
+- /services/mobile-app-development
+- /services/performance-marketing
+- /services/political-digital-marketing
+- /services/ppc-google-ads
+- /services/real-estate-website-development
+- /services/seo
+- /services/sms-marketing
+- /services/social-media-marketing
+- /services/social-media-promotions
+- /services/software-development
+- /services/video-production
+- /services/web-application
+- /services/website-design
+- /services/website-design-company-pune
+- /services/website-development
+- /services/website-development/full-stack
+- /services/website-development/nextjs
+- /services/website-development/react
+- /services/website-maintenance
+- /services/whatsapp-marketing
+- /services/wordpress-development
+- /services/youtube-seo
+- /backlink-strategy
+- /contact
+- /portfolio
+- /portfolio/ads-performance
+- /portfolio/branding-work
+- /portfolio/case-studies
+- /portfolio/digital-campaigns
+- /portfolio/social-media-creatives
+- /portfolio/website-projects
+- /privacy-policy
+- /refund-policy
+- /shipping-policy
+- /success-stories
+- /success-stories/awards
+- /success-stories/media
+- /success-stories/testimonials
+- /services/
 - changeFrequency
 
 ## Page: app/robots.ts
@@ -5531,6 +5696,7 @@ Description: Most B2B content in India fails because it copies Western playbooks
 - , excerpt:
 - , category: CATEGORIES[2], tags: [TAGS[10], TAGS[3], TAGS[9]], author: AUTHORS[0], publishDate:
 - , readingTime: 13, views: 3211, commentsCount: 16, likesCount: 98, featured: false, trending: false, metaTitle:
+- , ], }, ]; // ─── Helper Accessors ───────────────────────────────────────────────────────── export const getFeaturedPosts = () => BLOG_POSTS.filter((p) => p.featured); export const getTrendingPosts = () => [...BLOG_POSTS].sort((a, b) => b.views - a.views); export const getLatestPosts = () => [...BLOG_POSTS].sort( (a, b) => new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(), ); export const getPostBySlug = (slug: string) => BLOG_POSTS.find((p) => p.slug === (slug ===
 
 ## Page: Best Web Design Company in Aundh Pune | Growthik Media
 
@@ -5556,7 +5722,7 @@ lucide-react
 - Website Design Company
 - Best Website Design Company in Aundh
 - We design and develop high-performance, SEO-ready websites for businesses in Aundh, Pune that rank on Google and turn visitors into leads - guaranteed.
-- Aundh is one of Pune's most vibrant business hubs, home to IT firms, retail shops, clinics, coaching institutes and restaurants. With increasing digital competition, having a professional website isn't enough - you need a site that loads fast, ranks high and converts. Growthik Media has built 350+ websites for Pune businesses and we understand exactly what the Aundh audience expects from an online experience.
+- Aundh is one of Pune's most vibrant business hubs, home to IT firms, retail shops, clinics, coaching institutes and restaurants. With increasing digital competition, having a professional website isn't enough - you need a site that loads fast, ranks high and converts. Growthik Media has completed 50+ projects for Pune businesses and we understand exactly what the Aundh audience expects from an online experience.
 - Custom Website Design
 - Pixel-perfect, mobile-first designs built specifically for your brand and Aundh audience.
 - WordPress Development

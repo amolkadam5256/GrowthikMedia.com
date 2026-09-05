@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CONTACT_INFO } from "@/constants/contact";
 import { locationMapping } from "@/constants/locationData";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
+import { LegacyPageContent, legacyRootPages } from "@/lib/seo/legacyPages";
 
 // Generate paths for static generation
 export async function generateStaticParams() {
@@ -19,8 +20,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const data = locationMapping[slug];
+  const legacyPage = legacyRootPages[slug];
 
-  if (!data) return {};
+  if (!data && !legacyPage) return {};
+
+  if (legacyPage) {
+    return {
+      title: legacyPage.title,
+      description: legacyPage.description,
+      alternates: {
+        canonical: `${CONTACT_INFO.website}/${slug}/`,
+      },
+      robots: legacyPage.noIndex ? { index: false, follow: true } : { index: true, follow: true },
+    };
+  }
 
   return {
     title: data.title,
@@ -47,6 +60,11 @@ export default async function GenericLocationPage({
 }) {
   const { slug } = await params;
   const data = locationMapping[slug];
+  const legacyPage = legacyRootPages[slug];
+
+  if (legacyPage) {
+    return <LegacyPageContent page={legacyPage} />;
+  }
 
   if (!data) {
     return notFound();

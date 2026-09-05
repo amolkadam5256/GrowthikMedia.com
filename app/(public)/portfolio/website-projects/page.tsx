@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { portfolioData } from '@/lib/data/portfolio';
 import ClientPortfolioGrid from '@/components/PublicComponents/portfolio/ClientPortfolioGrid';
 import PageHero from '@/components/PublicComponents/ui/PageHero';
@@ -14,6 +15,12 @@ export const metadata: Metadata = {
 
 export default function WebsiteProjectsPage() {
   const websites = portfolioData.filter((p) => p.category === 'website-dev');
+
+  // If no website projects exist yet, serve a proper 404
+  if (websites.length === 0) {
+    notFound();
+  }
+
   const schema = buildCollectionSchema({
     path: '/portfolio/website-projects/',
     name: 'Website Projects Portfolio | Growthik Media',
@@ -33,7 +40,7 @@ export default function WebsiteProjectsPage() {
         <PageHero
           eyebrow="Website Projects"
           title="Digital Experiences Crafted for Growth."
-          description="We've built 14+ high-converting websites connecting businesses in Pune and Dubai with their ideal customers. From Real Estate to Logistics, our solutions scale."
+          description="We've built high-converting websites connecting businesses in Pune and Dubai with their ideal customers. From Real Estate to Logistics, our solutions scale."
           ctaText="Start Your Web Project"
           ctaLink="/contact"
         />

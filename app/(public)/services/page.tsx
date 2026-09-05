@@ -177,9 +177,9 @@ export default function ServicesPage() {
 
   const metrics = [
     { icon: Globe, value: "50+", label: "Projects Completed" },
-    { icon: Users, value: "50+", label: "Happy Clients" },
-    { icon: Briefcase, value: "7+", label: "Years Experience" },
-    { icon: Award, value: "100%", label: "Result Guaranteed" },
+    { icon: Users, value: "10+", label: "Happy Clients" },
+    { icon: Briefcase, value: "3+", label: "Years Experience" },
+    { icon: Award, value: "3", label: "Team Members" },
   ];
 
   const faqItems = [

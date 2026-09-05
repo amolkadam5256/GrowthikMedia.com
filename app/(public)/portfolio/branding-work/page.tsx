@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import { portfolioData } from '@/lib/data/portfolio';
 import ClientPortfolioGrid from '@/components/PublicComponents/portfolio/ClientPortfolioGrid';
 import PageHero from '@/components/PublicComponents/ui/PageHero';
@@ -14,6 +15,12 @@ export const metadata: Metadata = {
 
 export default function BrandingWorkPage() {
   const branding = portfolioData.filter((p) => p.category === 'branding');
+
+  // If no branding projects exist yet, serve a proper 404
+  if (branding.length === 0) {
+    notFound();
+  }
+
   const schema = buildCollectionSchema({
     path: '/portfolio/branding-work/',
     name: 'Branding Work Portfolio | Growthik Media',

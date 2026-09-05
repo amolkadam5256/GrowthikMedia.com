@@ -15,13 +15,6 @@ export function proxy(request: NextRequest) {
 
   const isBot = /bot|googlebot|crawler|spider|robot|crawling/i.test(userAgent);
 
-  const stripRouteGroups = pathname.replace(/\/\([^/]+\)/g, "");
-  if (stripRouteGroups !== pathname) {
-    const url = request.nextUrl.clone();
-    url.pathname = stripRouteGroups;
-    return NextResponse.redirect(url, 301);
-  }
-
   if (isBot && pathname.startsWith("/blog") && searchParams.toString().length > 0) {
     const url = request.nextUrl.clone();
     url.search = "";
@@ -32,17 +25,13 @@ export function proxy(request: NextRequest) {
   }
 
   const legacyMappings: Record<string, string> = {
-    "/seo-services-pune": "/services/seo/",
-    "/google-ads-pune": "/services/ppc-google-ads/",
     "/website-development-pune": "/services/website-development/",
-    "/seo-company-in-hinjewadi": "/services/seo/",
     "/website-redesign-local": "/services/website-design-company-pune/",
     "/services/services/website-design-company-pune": "/services/website-design-company-pune/",
     "/services/services/seo": "/services/seo/",
     "/services/backlink-strategy": "/backlink-strategy/",
     "/services/development": "/services/website-development/",
     "/portfolio/awards": "/success-stories/awards/",
-    "/portfolio/client-stories": "/success-stories/",
   };
 
   if (legacyMappings[pathnameWithoutTrailingSlash]) {
@@ -56,14 +45,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    "/services/:path*",
-    "/portfolio/:path*",
-    "/blog/:path*",
-    "/seo-services-pune",
-    "/google-ads-pune",
-    "/website-development-pune",
-    "/seo-company-in-hinjewadi",
-    "/website-redesign-local",
-  ],
+  matcher: ["/:path*"],
 };

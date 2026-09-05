@@ -99,9 +99,9 @@ const PortfolioHighlightsSection = React.memo(() => {
         <div className="mt-32 pt-20 border-t border-(--border) flex flex-wrap justify-between items-center gap-12">
           <div className="flex flex-wrap gap-12 md:gap-20">
             {[
-              { val: "50+", label: "Projects Done" },
-              { val: "50+", label: "Happy Clients" },
-              { val: "100%", label: "Client Commitment" },
+              { val: "50+", label: "Projects Completed" },
+              { val: "10+", label: "Happy Clients" },
+              { val: "3+", label: "Years Experience" },
             ].map((stat, i) => (
               <div
                 key={i}

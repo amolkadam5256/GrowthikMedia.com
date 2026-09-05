@@ -206,7 +206,7 @@ const TestimonialSection = React.memo(() => {
           <p className="text-(--text-secondary) font-light">
             Working with over{" "}
             <span className="text-(--color-primary) font-bold">
-              50+ Happy Clients
+              10+ Happy Clients
             </span>{" "}
             across Maharashtra to help local businesses grow.
           </p>

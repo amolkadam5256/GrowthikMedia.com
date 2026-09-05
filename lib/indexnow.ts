@@ -43,7 +43,7 @@ export async function submitSitemapToIndexNow() {
     // but for simplicity, let's assume we want to submit current page + common pages
     const commonUrls = [
       CONTACT_INFO.website,
-      `${CONTACT_INFO.website}/services/seo-services-in-pune`,
+      `${CONTACT_INFO.website}/services/seo/`,
       `${CONTACT_INFO.website}/services/website-design-company-pune/`,
       `${CONTACT_INFO.website}/blog/website-cost-in-pune/`,
     ];
