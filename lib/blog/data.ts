@@ -41,7 +41,7 @@ export const AUTHORS: BlogAuthor[] = [
 // ─── Categories ───────────────────────────────────────────────────────────────
 
 export const CATEGORIES: BlogCategory[] = [
-  { id: "cat-1", name: "SEO", slug: "seo", color: "#d90b1c", count: 5 },
+  { id: "cat-1", name: "SEO", slug: "seo", color: "#d90b1c", count: 6 },
   {
     id: "cat-2",
     name: "Web Design",
@@ -75,33 +75,70 @@ export const CATEGORIES: BlogCategory[] = [
 // ─── Tags ─────────────────────────────────────────────────────────────────────
 
 export const TAGS: BlogTag[] = [
-  { id: "tag-1", name: "SEO", slug: "seo", count: 6 },
+  { id: "tag-1", name: "SEO", slug: "seo", count: 7 },
   { id: "tag-2", name: "Web Design", slug: "web-design", count: 5 },
   { id: "tag-3", name: "Pune", slug: "pune", count: 9 },
   {
     id: "tag-4",
     name: "Digital Marketing",
     slug: "digital-marketing",
-    count: 6,
+    count: 7,
   },
-  { id: "tag-5", name: "Core Web Vitals", slug: "core-web-vitals", count: 3 },
+  { id: "tag-5", name: "Core Web Vitals", slug: "core-web-vitals", count: 4 },
   { id: "tag-6", name: "Next.js", slug: "nextjs", count: 2 },
   { id: "tag-7", name: "Google Ads", slug: "google-ads", count: 3 },
-  { id: "tag-8", name: "Local SEO", slug: "local-seo", count: 5 },
+  { id: "tag-8", name: "Local SEO", slug: "local-seo", count: 6 },
   { id: "tag-9", name: "WordPress", slug: "wordpress", count: 2 },
   { id: "tag-10", name: "Branding", slug: "branding", count: 2 },
   {
     id: "tag-11",
     name: "Content Marketing",
     slug: "content-marketing",
-    count: 4,
+    count: 5,
   },
   { id: "tag-12", name: "Social Media", slug: "social-media", count: 3 },
+  { id: "tag-13", name: "AI Search", slug: "ai-search", count: 1 },
 ];
 
 // ─── Blog Posts ───────────────────────────────────────────────────────────────
 
 export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: "post-17",
+    title: "AI Search Optimization in 2026: Complete SEO, AEO, GEO & AI Visibility Guide",
+    slug: "ai-search-optimization-2026-seo-aeo-geo-guide",
+    excerpt: "A practical guide to AI search optimization for Indian businesses: SEO, AEO, GEO, technical SEO, internal linking, content quality and measuring AI visibility in 2026.",
+    content: "ai-search-optimization-2026-seo-aeo-geo-guide",
+    featuredImage: "/images/blog/ai-search-optimization-2026-seo-aeo-geo-guide.png",
+    featuredImageAlt: "AI Search Optimization for 2026 with SEO, AEO and GEO visibility strategy",
+    category: CATEGORIES[0],
+    tags: [TAGS[0], TAGS[12], TAGS[3], TAGS[7], TAGS[4], TAGS[10]],
+    author: AUTHORS[0],
+    publishDate: "2026-09-20T09:00:00Z",
+    updatedDate: "2026-09-20T09:00:00Z",
+    readingTime: 18,
+    views: 0,
+    commentsCount: 0,
+    likesCount: 0,
+    featured: true,
+    trending: true,
+    metaTitle: "AI Search Optimization 2026: SEO, AEO & GEO Guide | Growthik",
+    metaDescription: "Learn AI search optimization in 2026: SEO, AEO, GEO, Google AI Overviews, technical SEO, content quality, internal linking and AI visibility measurement.",
+    seoKeywords: [
+      "AI search optimization",
+      "GEO SEO",
+      "AEO SEO",
+      "AI SEO services",
+      "AI visibility",
+      "Google AI Overviews SEO",
+      "Google AI Mode SEO",
+      "technical SEO for AI search",
+      "AI SEO agency in Pune",
+      "generative engine optimization",
+      "answer engine optimization",
+      "SEO AEO GEO guide",
+    ],
+  },
   {
     id: "post-16",
     title: "Cockroach Janta Party Viral Marketing Case Study 2026",

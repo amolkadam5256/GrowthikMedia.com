@@ -33,7 +33,10 @@ export async function GET() {
       ),
     );
   } catch (error) {
-    console.error("Blog stats error:", error);
-    return NextResponse.json({ error: "Failed to fetch blog stats" }, { status: 500 });
+    console.warn(
+      "Blog stats unavailable; falling back to static blog metadata.",
+      error instanceof Error ? error.message : error,
+    );
+    return NextResponse.json({});
   }
 }
