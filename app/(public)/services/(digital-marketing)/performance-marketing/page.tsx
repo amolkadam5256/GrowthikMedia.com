@@ -5,8 +5,7 @@ import Script from "next/script";
 import {
   CheckCircle2,
   Award,
-  ArrowRight,
-} from "lucide-react";
+  ArrowRight} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
 import { PERFORMANCE_MARKETING_FAQ } from "@/constants/faqData";
@@ -15,17 +14,14 @@ export const metadata: Metadata = {
   title: "Performance Marketing Agency in Pune | Growthik Media",
   description: "Data-driven performance marketing for Pune businesses. Result-oriented campaigns for ROAS, CPA and revenue growth.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/performance-marketing/",
-  },
+    canonical: "https://www.growthikmedia.com/services/performance-marketing/"},
   openGraph: {
     title: "Performance Marketing Agency in Pune | Growthik Media",
     description: "Data-driven performance marketing for Pune businesses. Result-oriented campaigns for ROAS, CPA and revenue growth.",
     url: `${CONTACT_INFO.website}/services/performance-marketing/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function PerformanceMarketingPage() {
   const serviceName = "Performance Marketing";
@@ -34,8 +30,7 @@ export default function PerformanceMarketingPage() {
   const growthSegments = [
     "Performance marketing in Pune and Hyderabad for teams that need measurable pipeline, not vanity reach.",
     "Real estate, education and healthcare campaigns built around lead quality, call tracking and landing page conversion.",
-    "B2B SaaS performance systems with LinkedIn, Google Search, retargeting and CRM feedback loops.",
-  ];
+    "B2B SaaS performance systems with LinkedIn, Google Search, retargeting and CRM feedback loops."];
 
   return (
     <>
@@ -48,14 +43,7 @@ export default function PerformanceMarketingPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

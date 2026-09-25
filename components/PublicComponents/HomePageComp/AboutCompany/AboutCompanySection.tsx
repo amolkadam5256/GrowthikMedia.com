@@ -84,11 +84,10 @@ const AboutCompanySection = React.memo(() => {
                 <p>
                   Digital marketing done right means being in front of the right people at the right time. We use{" "}
                   <Link href="/services/seo" className="text-(--color-primary) font-bold hover:underline">SEO</Link>,{" "}
-                  <Link href="/services/ppc-google-ads" className="text-(--color-primary) font-bold hover:underline">Google Ads</Link> and smart content to do exactly that - for businesses in{" "}
-                  <span className="font-bold text-(--text-primary)">Baner, Wakad, Hinjewadi</span> and across Pune.
+                  <Link href="/services/ppc-google-ads" className="text-(--color-primary) font-bold hover:underline">Google Ads</Link> and conversion-focused websites to do that for businesses across Pune and PCMC.
                 </p>
                 <p>
-                  As one of <strong className="text-(--text-primary)">Pune&apos;s top-rated SEO agencies</strong>, our goal is simple - more traffic, better leads and real sales. Not just rankings.
+                  The goal is simple — more traffic, better leads and real sales. Not just rankings.
                 </p>
               </div>
             </div>

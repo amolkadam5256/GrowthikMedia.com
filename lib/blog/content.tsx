@@ -20,6 +20,7 @@ import {
   Compass,
   ShieldCheck,
 } from "lucide-react";
+import BlogInlineCTA from "@/components/PublicComponents/Blog/BlogInlineCTA";
 
 const CheckListItem = ({ children }: { children: React.ReactNode }) => (
   <li className="flex items-start gap-3">
@@ -345,13 +346,13 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/audit/"
-            className="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-(--color-primary) text-white font-semibold hover:opacity-90 transition-all shadow-md"
+            className="blog-cta-link blog-cta-primary inline-flex items-center justify-center px-8 py-3 rounded-xl bg-(--color-primary) text-white font-semibold hover:opacity-90 transition-all shadow-md"
           >
             Get Free Audit
           </Link>
           <Link
             href="/contact/"
-            className="inline-flex items-center justify-center px-8 py-3 rounded-xl bg-(--surface) border border-(--border) text-(--text-primary) font-semibold hover:bg-(--surface-hover) transition-all"
+            className="blog-cta-link inline-flex items-center justify-center px-8 py-3 rounded-xl bg-white border border-(--border) text-(--text-primary) font-semibold hover:border-(--color-primary)/40 transition-all"
           >
             Speak with an SEO Strategist
           </Link>
@@ -361,209 +362,316 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
   ),
   "cockroach-janta-party-viral-marketing-case-study-2026": (
     <div className="blog-content">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                "name": "What is the Cockroach Janta Party viral marketing lesson?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "The Cockroach Janta Party conversation shows how humor, timing, identity and a simple shareable hook can create attention quickly. The business lesson is to connect that attention to trust, offers, landing pages and tracking."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can Pune businesses use viral marketing safely?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, but brands should avoid copying controversy blindly. A safer strategy is to borrow the mechanics of viral content: fast timing, audience insight, relatable humor, clear context, a strong brand fit and measurable conversion paths."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Why is attention the most valuable asset in 2026?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "In a crowded digital market, people don't buy because you have a website; they buy because they notice you first. Attention is the first step in the cycle: Attention → Trust → Leads → Revenue."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What makes people share content online?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "People share emotion, identity, humor, and community, not boring promotions. Relatability and timing are the keys to organic reach on WhatsApp and Instagram in markets like Pune."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How does viral attention become business growth?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Growth happens when attention is funneled into a system. Combining SEO, content, ads, and tracking ensures that temporary spikes in traffic turn into long-term customer relationships."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What is the role of humor in marketing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Humor reduces friction and humanizes a brand. The viral Cockroach Janta Party movement succeeded because it used simple, relatable humor to create a sense of belonging."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Why do businesses need a marketing system?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Random posting and ads waste budget. A systematic approach (SEO + Meta Ads + GA4 Tracking) creates a predictable flow of leads and revenue."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How important is local visibility for Pune companies?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Extremely. When people in areas like Warje or Baner search for 'Digital Marketing Agency' or 'SEO Company', appearing in those local results is a massive growth opportunity."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Does branding need to be perfect to go viral?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No. Visibility often beats perfection. Being present in the conversation with a sharp hook is more effective than waiting for 'perfect' branding that misses the trend window."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What is 'Attention Economics'?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "It is the management of human attention as a scarce resource. Campaigns that use psychological triggers like identity and recognition win the attention war."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How can a local agency help with trending marketing?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "A local agency stays on top of regional trends and cultural nuances, allowing for faster and more respectful marketing interventions."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What should a viral campaign include?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "A sharp hook, simple creative, fast publishing, community participation, a dedicated landing page, and robust conversion tracking."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How to track the ROI of a viral post?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Use GA4 to track link clicks, website visit spikes, mention volume, and increases in brand-name searches in Google Search Console."
-                }
-              }
-            ],
-          }),
-        }}
+      <p className="lead">
+        The Cockroach Janta Party (CJP) is a 2026 Indian political and social movement that started online and later moved into street protests. Marketers study it because a short, unusual name, a live public conversation, and easy ways to join helped the message travel far beyond the first post.
+      </p>
+      <p>
+        This article is a marketing case study, not a political endorsement. The facts below come from published reporting. The lessons after that are Growthik Media&apos;s own analysis of how attention moved — and why attention alone is not a business plan.
+      </p>
+      <p>
+        Originally published 31 May 2026. Updated September 2026, after later reporting showed the story did not end in May.
+      </p>
+
+      <div className="bg-(--surface) border border-(--border) rounded-2xl p-6 my-8">
+        <h2 className="mt-0 text-xl font-black">Cockroach Janta Party case study — at a glance</h2>
+        <ul className="mt-4 space-y-2 text-sm">
+          <li><strong>Subject:</strong> Cockroach Janta Party (CJP)</li>
+          <li><strong>Year:</strong> 2026</li>
+          <li><strong>Category:</strong> Political and social movement communication</li>
+          <li><strong>Marketing themes:</strong> Virality, identity, humour, community, real-time content</li>
+          <li><strong>Main platforms:</strong> Social media, a website, and later offline gatherings</li>
+          <li><strong>Case-study focus:</strong> How a distinctive name and easy participation can amplify a message</li>
+        </ul>
+      </div>
+
+      <BlogInlineCTA
+        title="Have a marketing idea but do not know where to start?"
+        description="Get a free website and SEO audit from Growthik Media. We will tell you what is working, what is missing, and what to fix first."
+        href="/audit/"
+        label="Get a free SEO audit"
+        secondaryHref="/contact/"
+        secondaryLabel="Talk to us"
       />
 
-      <p className="lead">
-        The <strong>Cockroach Janta Party viral marketing case study</strong> is more than just a trend. It is a masterclass in how Indian internet attention moves when a topic hits the sweet spot of humor, identity, and community.
-      </p>
-
+      <h2>What is the Cockroach Janta Party?</h2>
       <p>
-        For businesses, the lesson is clear: <strong>Don't just chase trends; understand why they spread.</strong> At <Link href="/">Growthik Media</Link>, we help Pune brands turn attention from search, social, and WhatsApp into measurable leads.
+        The Cockroach Janta Party is a satirical Indian political movement launched on 16 May 2026 by Abhijeet Dipke, a political communications strategist. News reports describe it as a response to a public remark that compared some people to cockroaches. The Chief Justice later said the remark was about fake degrees, not unemployed youth. By then, the phrase had already spread online.
       </p>
-
-      <div className="bg-(--surface) p-8 rounded-3xl border border-(--border) my-12">
-        <h2 className="text-2xl font-black mt-0 mb-4 text-(--color-primary)">The Core Message</h2>
-        <blockquote className="text-xl italic font-bold border-none p-0 m-0">
-          "Attention is the most valuable asset in 2026. Without it, your website and ads are invisible."
-        </blockquote>
-      </div>
-
-      <div className="bg-(--surface) p-6 rounded-2xl border border-(--border) my-8 shadow-sm">
-        <h2 className="mt-0 flex items-center gap-3">
-          <MapPin className="w-6 h-6 text-(--color-primary)" /> Quick Local Keyword Map
-        </h2>
-        <p className="mb-4 text-sm text-(--text-secondary)">
-          Visibility in local Pune hubs like Warje and Baner starts with ranking for high-intent searches.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {[
-            "top digital marketing agency in Pune",
-            "digital marketing agency near DMart Warje",
-            "digital marketing company in Warje",
-            "best digital marketing agency Pune",
-            "SEO company Pune",
-            "SEO services in Warje Pune",
-            "Google Ads agency Pune",
-            "Meta Ads agency Pune",
-            "social media marketing agency Pune",
-            "website development and digital marketing Pune",
-          ].map((keyword) => (
-            <div key={keyword} className="p-3 rounded-xl bg-(--surface-secondary) border border-(--border) text-sm font-semibold">
-              {keyword}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="my-16 p-10 bg-(--color-primary) text-white rounded-[2.5rem] text-center relative overflow-hidden shadow-2xl">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32" />
-        <h2 className="text-3xl font-black mb-4 text-white border-none">Ready to Turn Attention into Revenue?</h2>
-        <p className="text-lg opacity-90 max-w-2xl mx-auto mb-10">
-          We don't just post content. We build systems that capture attention, build trust, and drive conversions.
-        </p>
-        <Link href="/contact" className="px-10 py-5 bg-white text-(--color-primary) font-black rounded-2xl hover:scale-105 transition-all shadow-xl">
-          Start Your Growth Journey →
-        </Link>
-      </div>
-
-      <h2 className="flex items-center gap-3">
-        <Trophy className="w-6 h-6 text-(--color-primary)" /> What Makes a Marketing Agency "Top Tier" in Pune?
-      </h2>
       <p>
-        A real growth agency connects every activity to business outcomes. In 2026, that means combining:
+        Reuters later reported that Dipke became the public face of a large youth-led protest conversation around unemployment, exam paper leaks, and representation. The Hindu and The Statesman reported that a website, social accounts, a membership form, and a short set of demands appeared within days. CJP described itself as a satirical movement and public-pressure campaign, not a fully registered election party.
+      </p>
+      <p>
+        That distinction matters. A movement can grow on identity and anger. A business still needs an offer, a page, and a way to measure enquiries.
       </p>
 
-      <ul className="space-y-4 my-8">
-        <CheckListItem><strong>Attention Economics:</strong> Capturing intent when people are already searching.</CheckListItem>
-        <CheckListItem><strong>Emotional Connection:</strong> Using identity and humor over boring promotions.</CheckListItem>
-        <CheckListItem><strong>Systematic Delivery:</strong> Integrating SEO, Ads, and Analytics into one growth engine.</CheckListItem>
-        <CheckListItem><strong>Local Authority:</strong> Dominating 'near me' searches in Warje, Baner, and Kothrud.</CheckListItem>
+      <h2>How did the Cockroach Janta Party go viral?</h2>
+      <h3>The original trigger</h3>
+      <p>
+        On 16 May 2026, Dipke posted a simple invite: a new platform for people who felt insulted by the cockroach remark. The Hindu reported thousands of registrations within hours. The first post did not try to look official. It used plain language and a form people could complete in one sitting.
+      </p>
+      <h3>The unusual name</h3>
+      <p>
+        “Cockroach Janta Party” is hard to forget. It sounds like a political party name, it repeats the insult, and it gives people a label they can own. From a branding view, that is high recall. People could say the name out loud, search it, and joke about it without extra explanation.
+      </p>
+      <h3>The emotional hook</h3>
+      <p>
+        The message mixed humour, frustration, and belonging. People were not only sharing news. They were placing themselves inside the joke. That is different from a brand post that asks for likes. Here, sharing felt like taking a side.
+      </p>
+      <p>
+        This is marketing analysis, not a claim about anyone’s private motive. The documented part is simple: a timely remark, a shareable name, and a low-friction way to join.
+      </p>
+
+      <h2>Cockroach Janta Party timeline</h2>
+      <div className="overflow-x-auto my-6">
+        <table>
+          <thead>
+            <tr>
+              <th>Date (2026)</th>
+              <th>What reports said happened</th>
+              <th>Why it matters for marketers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>15–16 May</td>
+              <td>A public remark spread online. CJP was announced the next day.</td>
+              <td>Speed mattered more than a polished brand book.</td>
+            </tr>
+            <tr>
+              <td>16–20 May</td>
+              <td>Website, social accounts, form, and a short manifesto appeared.</td>
+              <td>People could join, not only watch.</td>
+            </tr>
+            <tr>
+              <td>Early June</td>
+              <td>The first major offline gathering was reported in Delhi.</td>
+              <td>Online talk can become a real-world event.</td>
+            </tr>
+            <tr>
+              <td>June–July</td>
+              <td>Coverage grew. Reuters and other outlets documented a larger protest story.</td>
+              <td>Earned media can outlast the first viral week.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        A May article that stops in May is incomplete. Later reporting shows the conversation continued. If you write a case study, update the date when the story changes.
+      </p>
+
+      <h2>Why the CJP name was so memorable</h2>
+      <p>
+        Most campaigns fail because people cannot repeat them. This name did four jobs at once: it named the insult, named the group, sounded like a party, and invited a search. That is why “Cockroach Janta Party viral marketing” became a search itself.
+      </p>
+      <p>
+        Businesses do not need a shocking name. They do need a line people can remember after one read. If your offer needs a paragraph, it will not travel on WhatsApp.
+      </p>
+
+      <h2>The marketing psychology behind the virality</h2>
+      <h3>Identity</h3>
+      <p>
+        People joined a label, not a product. Once someone says “this is us,” they share to stay inside the group.
+      </p>
+      <h3>Humour</h3>
+      <p>
+        Humour lowered the cost of sharing. A joke is easier to forward than a long policy note.
+      </p>
+      <h3>Curiosity</h3>
+      <p>
+        The name made people search. Search is free distribution if your page can answer the question.
+      </p>
+      <h3>Community</h3>
+      <p>
+        A form, a website, and social handles gave the audience a role. They were not only viewers.
+      </p>
+      <h3>Social sharing</h3>
+      <p>
+        Instagram and X made the first loop. WhatsApp-style sharing usually follows when a name is short enough to type.
+      </p>
+      <h3>Real-time communication</h3>
+      <p>
+        The first posts arrived while the remark was still news. Late content rarely catches the same wave.
+      </p>
+
+      <h2>The Cockroach Janta Party viral marketing funnel</h2>
+      <p>
+        Here is a simple way to read the CJP social media campaign as a funnel. This is a marketing model, not an official CJP diagram.
+      </p>
+      <div className="overflow-x-auto my-6">
+        <table>
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>What happened</th>
+              <th>Marketing lesson</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Trigger</td>
+              <td>A public remark created a live conversation.</td>
+              <td>Real-time moments create openings.</td>
+            </tr>
+            <tr>
+              <td>Attention</td>
+              <td>The unusual name and humour made people stop.</td>
+              <td>Distinctive branding improves recall.</td>
+            </tr>
+            <tr>
+              <td>Curiosity</td>
+              <td>People searched for CJP and the full name.</td>
+              <td>Curiosity drives discovery.</td>
+            </tr>
+            <tr>
+              <td>Participation</td>
+              <td>Users shared, joked, and filled a form.</td>
+              <td>Community creates distribution.</td>
+            </tr>
+            <tr>
+              <td>Identity</td>
+              <td>People connected themselves with the idea.</td>
+              <td>Identity can strengthen engagement.</td>
+            </tr>
+            <tr>
+              <td>Action</td>
+              <td>Some joined, posted, or later attended events.</td>
+              <td>Attention can move toward action.</td>
+            </tr>
+            <tr>
+              <td>Earned media</td>
+              <td>Newsrooms covered the rise of the movement.</td>
+              <td>Press coverage compounds attention.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Trigger → Attention → Curiosity → Sharing → Community → Action → Earned media.
+      </p>
+
+      <BlogInlineCTA
+        title="Want to turn online attention into real enquiries?"
+        description="Growthik Media helps Pune businesses with SEO, Google Ads, Meta Ads and conversion-focused websites. We connect content to a page that can convert."
+        href="/contact/"
+        label="Talk to Growthik Media"
+        secondaryHref="/services/social-media-marketing/"
+        secondaryLabel="See social media services"
+      />
+
+      <h2>7 marketing lessons businesses can learn</h2>
+      <ol>
+        <li><strong>Be instantly understandable.</strong> If a stranger cannot repeat your offer in one line, they will not share it.</li>
+        <li><strong>Give people something worth sharing.</strong> Emotion, humour, or a clear stance travels. A generic discount rarely does.</li>
+        <li><strong>Build an identity, not only a logo.</strong> People join a story they can see themselves in.</li>
+        <li><strong>Use culture carefully.</strong> Borrowing a political or social moment can backfire if it looks forced or disrespectful.</li>
+        <li><strong>React while the conversation is live.</strong> Speed is a skill. So is knowing when to stay silent.</li>
+        <li><strong>Give the audience a role.</strong> A form, a reply prompt, or a simple next step beats “follow us.”</li>
+        <li><strong>Connect attention to an actual action.</strong> Views without a landing page, offer, and tracking are a spike, not a system.</li>
+      </ol>
+      <p>
+        For the basics behind positioning and conversion, read <Link href="/blog/what-is-marketing-guide-pune/">What is marketing?</Link> For another real-time example, see <Link href="/blog/rcb-vs-gt-ipl-2026-marketing-lessons-pune/">IPL marketing lessons</Link>.
+      </p>
+
+      <h2>What viral marketing can and cannot do</h2>
+      <p>
+        Virality does not automatically equal revenue. Attention can disappear in a week. Controversy can also damage trust. Audience growth is not the same as conversion. Social platforms can change reach overnight.
+      </p>
+      <p>
+        A political or social movement is not a shampoo brand. Do not copy protest tactics for a local shop. Copy the mechanics that are legal and useful: a clear name, a simple message, a join step, and a way to measure what happened next.
+      </p>
+
+      <h2>How businesses can apply these lessons</h2>
+      <div className="overflow-x-auto my-6">
+        <table>
+          <thead>
+            <tr>
+              <th>CJP mechanism</th>
+              <th>Business equivalent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Strong identity</td>
+              <td>Clear brand positioning</td>
+            </tr>
+            <tr>
+              <td>Memorable language</td>
+              <td>Better campaign messaging</td>
+            </tr>
+            <tr>
+              <td>Community</td>
+              <td>Customer community and reviews</td>
+            </tr>
+            <tr>
+              <td>Viral content</td>
+              <td>Shareable content, not only ads</td>
+            </tr>
+            <tr>
+              <td>Real-time reaction</td>
+              <td>Trend-based content when it fits</td>
+            </tr>
+            <tr>
+              <td>Social proof</td>
+              <td>Case studies and testimonials</td>
+            </tr>
+            <tr>
+              <td>Call to action</td>
+              <td>A form, call, or WhatsApp path</td>
+            </tr>
+            <tr>
+              <td>Multi-platform reach</td>
+              <td><Link href="/services/seo/">SEO</Link>, social, and <Link href="/services/ppc-google-ads/">Google Ads</Link></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        If you need local search after the spike, start with <Link href="/blog/why-seo-is-important/">why SEO still matters</Link> and <Link href="/services/local-seo/">local SEO</Link>. If search itself is changing, read our <Link href="/blog/ai-search-optimization-2026-seo-aeo-geo-guide/">AI search, AEO and GEO guide</Link>. For paid social, see <Link href="/services/meta-ads/">Meta Ads</Link> and <Link href="/services/website-development/">website development</Link> so the click has a page to land on.
+      </p>
+
+      <h2>Key takeaways</h2>
+      <ul>
+        <li>CJP is a documented 2026 movement that began as a satirical online response and later received national coverage.</li>
+        <li>The marketing lesson is about distinctive naming, identity, speed, and participation — not about copying politics.</li>
+        <li>A viral marketing case study is useful only if you also ask what happens after the share.</li>
+        <li>Businesses should turn attention into a tracked enquiry path, not only more posts.</li>
       </ul>
 
-      <h2 className="flex items-center gap-3">
-        <Zap className="w-6 h-6 text-(--color-primary)" /> Conclusion: Visibility Over Perfection
-      </h2>
+      <h2>Sources</h2>
+      <ul>
+        <li>
+          <a href="https://www.reuters.com/world/india/abhijeet-dipke-face-indias-first-gen-z-protest-movement-2026-07-23/" target="_blank" rel="noopener noreferrer">
+            Reuters, 23 July 2026 — reporting on Abhijeet Dipke and the CJP protest story
+          </a>
+        </li>
+        <li>
+          <a href="https://www.thehindu.com/news/national/who-is-abhijeet-dipke-inside-the-viral-cockroach-janta-party-movement/article70994402.ece" target="_blank" rel="noopener noreferrer">
+            The Hindu — who Abhijeet Dipke is and how the first posts spread
+          </a>
+        </li>
+        <li>
+          <a href="https://www.thestatesman.com/india/what-is-cjp-cockroach-janata-party-abhijeet-dipke-manifesto-1503596075.html" target="_blank" rel="noopener noreferrer">
+            The Statesman — launch details, website, and early membership reports
+          </a>
+        </li>
+        <li>
+          <a href="https://www.thehindu.com/news/national/the-rise-of-the-cockroaches-timeline-cockroach-janta-party/article71256984.ece" target="_blank" rel="noopener noreferrer">
+            The Hindu timeline — from online joke to later street protests
+          </a>
+        </li>
+      </ul>
       <p>
-        The viral movement succeeded because it was visible, timely, and relatable. Marketing in 2026 is about being part of the conversation at the right time with a clear offer and tracking in place.
+        Political claims, motives, and later outcomes can be disputed. Treat news reports as reports, not as Growthik’s political view.
       </p>
 
-      <div className="mt-16 p-10 bg-(--surface) rounded-[2.5rem] border-2 border-(--color-primary)/20 text-center">
-        <Rocket className="w-16 h-16 text-(--color-primary) mx-auto mb-6" />
-        <h2 className="text-3xl font-black mb-4 border-none text-(--text-primary)">We Engineer Growth in Pune</h2>
-        <p className="text-(--text-secondary) max-w-2xl mx-auto mb-10 text-lg">
-          Whether it's SEO, SMM, or custom-built performance systems, we help businesses in Pune and Warje scale profitably.
-        </p>
-        <Link
-          href="/contact"
-          className="blog-cta-link inline-flex items-center justify-center gap-3 px-10 py-5 bg-(--color-primary) text-white font-black rounded-2xl hover:scale-105 transition-all shadow-2xl shadow-(--color-primary)/30 text-lg"
-        >
-          Grow Your Business with Us <Rocket className="w-5 h-5" />
-        </Link>
-      </div>
+      <BlogInlineCTA
+        title="Turn attention into business growth"
+        description="A viral post can create attention. A proper digital system turns that attention into traffic, enquiries and customers. Get a free digital growth audit."
+        href="/audit/"
+        label="Start free audit"
+        secondaryHref="/services/social-media-marketing/"
+        secondaryLabel="Digital marketing services"
+      />
     </div>
   ),
   "complete-beginner-guide-to-seo-2026": (
@@ -1715,6 +1823,13 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
       <p>
         At <strong>Growthik Media</strong>, we don't just watch the scoreboard; we watch the <em>search board</em>. While Gujarat Titans (GT) secured a thrilling 4-wicket victory against Royal Challengers Bengaluru (RCB), the real game was being played in the minds of millions of consumers. As a Pune-based business or marketer, if you're not seeing the marketing goldmines hidden in these match highlights, you're missing out on the biggest <strong>IPL marketing strategy</strong> of the year.
       </p>
+      <p>
+        For another 2026 example of real-time attention, see our{" "}
+        <Link href="/blog/cockroach-janta-party-viral-marketing-case-study-2026/">
+          Cockroach Janta Party viral marketing case study
+        </Link>
+        .
+      </p>
 
       <div className="p-8 bg-(--surface) border-2 border-(--color-primary)/10 rounded-3xl my-12 relative overflow-hidden shadow-sm">
         <div className="absolute top-0 right-0 w-32 h-32 bg-(--color-primary)/5 rounded-full blur-3xl" />
@@ -2439,7 +2554,7 @@ export const POST_CONTENT: Record<string, React.ReactNode> = {
 
       <div className="mt-16 p-10 bg-(--surface) rounded-[2.5rem] border-2 border-(--color-primary)/20 text-center relative overflow-hidden">
         <Rocket className="w-16 h-16 text-(--color-primary) mx-auto mb-6" />
-        <h2 className="text-3xl font-black mb-4 border-none text-(--text-primary)">We are the Best Marketing Agency in Pune</h2>
+        <h2 className="text-3xl font-black mb-4 border-none text-(--text-primary)">Digital Marketing Agency in Pune</h2>
         <p className="text-(--text-secondary) max-w-2xl mx-auto mb-10 text-lg">
           At Growthik Media, we don't just run ads. We engineer growth. Whether it's SEO, SMM, or custom-built performance systems, we help businesses in Pune and Warje scale profitably.
         </p>

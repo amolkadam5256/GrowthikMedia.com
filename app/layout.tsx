@@ -1,40 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
-import { Caveat } from "next/font/google";
+import { Inter, Caveat } from "next/font/google";
 import { buildMetadata } from "@/lib/seo/metadata";
 import "./assets/styles/globals.css";
 
-const rostex = localFont({
-  src: [
-    {
-      path: "../public/fonts/Rostex-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Rostex-Oblique.ttf",
-      weight: "400",
-      style: "italic",
-    },
-  ],
-  variable: "--font-rostex",
-  display: "swap",
-});
-
-const rostexOutline = localFont({
-  src: [
-    {
-      path: "../public/fonts/Rostex-Outline.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/fonts/Rostex-ObliqueOutline.ttf",
-      weight: "400",
-      style: "italic",
-    },
-  ],
-  variable: "--font-rostex-outline",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -73,7 +44,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${rostex.variable} ${rostexOutline.variable} ${caveat.variable}`}
+      className={`${inter.variable} ${caveat.variable}`}
     >
       <head>
         <meta name="google-adsense-account" content="ca-pub-6335044286537508" />
@@ -85,7 +56,7 @@ export default function RootLayout({
       </head>
       <body
         suppressHydrationWarning
-        className="antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
+        className={`${inter.className} antialiased bg-white text-gray-900 dark:bg-gray-900 dark:text-white`}
       >
         {/* Blocking script: sets 'dark' class before first paint  -  no FOUC */}
         <script

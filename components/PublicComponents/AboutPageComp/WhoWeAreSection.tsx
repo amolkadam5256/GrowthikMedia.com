@@ -110,8 +110,8 @@ const WhoWeAreSection = () => {
             <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-(--border)">
               {[
                 { label: "Established", val: "2019" },
-                { label: "Growth Ratio", val: "300%" },
-                { label: "Retention", val: "95%" },
+                { label: "Clients", val: "10+" },
+                { label: "Projects", val: "50+" },
               ].map((stat, i) => (
                 <div key={i}>
                   <div className="text-3xl font-black text-(--text-primary) mb-1">

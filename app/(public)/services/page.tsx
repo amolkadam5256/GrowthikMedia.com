@@ -16,8 +16,7 @@ import {
   Users,
   Briefcase,
   Phone,
-  CheckCircle2,
-} from "lucide-react";
+  CheckCircle2} from "lucide-react";
 import { CONTACT_INFO, STRUCTURED_DATA_IDS } from "@/constants/contact";
 
 // FilterableServices has interactive state and lives below the fold -
@@ -33,12 +32,11 @@ export const metadata: Metadata = {
   keywords:
     "digital marketing services pune, seo company pune, google ads agency pune, website development pune, ecommerce development, performance marketing pune, social media marketing pune, branding agency pune, growthik media services",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/",
-  },
+    canonical: "https://www.growthikmedia.com/services/"},
   openGraph: {
-    title: "Top Digital Marketing & Web Development Services in Pune",
+    title: "Digital Marketing & Web Development Services in Pune",
     description:
-      "Drive growth with Pune's top digital agency. High-performance Next.js websites, advanced SEO, & branding.",
+      "Drive growth with a Pune digital agency. High-performance Next.js websites, SEO and branding.",
     url: `${CONTACT_INFO.website}/services/`,
     type: "website",
     siteName: "Growthik Media",
@@ -47,19 +45,14 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Digital Marketing & Web Development Services in Pune - Growthik Media",
-      },
-    ],
-  },
+        alt: "Digital Marketing & Web Development Services in Pune - Growthik Media"}]},
   twitter: {
     card: "summary_large_image",
-    title: "Top Digital Marketing & Web Development Services in Pune",
+    title: "Digital Marketing & Web Development Services in Pune",
     description:
-      "Drive growth with Pune's premier digital marketing & web development agency in Pune.",
+      "Digital marketing and web development services for Pune businesses.",
     images: ["/og-image.png"],
-    creator: "@growthikmedia",
-  },
-};
+    creator: "@growthikmedia"}};
 
 export default function ServicesPage() {
   const schemaMarkup = {
@@ -74,20 +67,12 @@ export default function ServicesPage() {
           "@type": "PostalAddress",
           addressLocality: "Pune",
           addressRegion: "Maharashtra",
-          addressCountry: "IN",
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          reviewCount: "138",
-        },
-      },
+          addressCountry: "IN"}},
       {
         "@type": "Service",
         name: "Digital Marketing & Website Development",
         provider: {
-          "@id": STRUCTURED_DATA_IDS.organization,
-        },
+          "@id": STRUCTURED_DATA_IDS.organization},
         areaServed: [
           "Pune",
           "Baner",
@@ -97,9 +82,7 @@ export default function ServicesPage() {
           "Kothrud",
           "Hadapsar",
           "Viman Nagar",
-          "PCMC",
-        ],
-      },
+          "PCMC"]},
       {
         "@type": "ItemList",
         "@id": `${CONTACT_INFO.website}/services/#service-catalog`,
@@ -112,9 +95,7 @@ export default function ServicesPage() {
           { "@type": "ListItem", position: 4, url: `${CONTACT_INFO.website}/services/website-development/`, name: "Website Development" },
           { "@type": "ListItem", position: 5, url: `${CONTACT_INFO.website}/services/web-application/`, name: "Web Application Development" },
           { "@type": "ListItem", position: 6, url: `${CONTACT_INFO.website}/services/local-seo/`, name: "Local SEO" },
-          { "@type": "ListItem", position: 7, url: `${CONTACT_INFO.website}/services/branding-design/`, name: "Branding and Design" },
-        ],
-      },
+          { "@type": "ListItem", position: 7, url: `${CONTACT_INFO.website}/services/branding-design/`, name: "Branding and Design" }]},
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -122,18 +103,12 @@ export default function ServicesPage() {
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: CONTACT_INFO.website,
-          },
+            item: CONTACT_INFO.website},
           {
             "@type": "ListItem",
             position: 2,
             name: "Services",
-            item: `${CONTACT_INFO.website}/services`,
-          },
-        ],
-      },
-    ],
-  };
+            item: `${CONTACT_INFO.website}/services`}]}]};
 
   const serviceCategories = [
     {
@@ -143,11 +118,8 @@ export default function ServicesPage() {
       services: [
         {
           name: "Website Design & Development",
-          link: "/services/website-development/",
-        },
-        { name: "WordPress Development", link: "/services/wordpress-development/" },
-      ],
-    },
+          link: "/services/website-development/"},
+        { name: "WordPress Development", link: "/services/wordpress-development/" }]},
     {
       title: "eCommerce & Platforms",
       icon: TrendingUp,
@@ -155,12 +127,9 @@ export default function ServicesPage() {
       services: [
         {
           name: "eCommerce Development",
-          link: "/services/ecommerce-development/",
-        },
+          link: "/services/ecommerce-development/"},
         { name: "Custom Web Applications", link: "/services/web-application/" },
-        { name: "Software Development", link: "/services/software-development/" },
-      ],
-    },
+        { name: "Software Development", link: "/services/software-development/" }]},
     {
       title: "Care & Maintenance",
       icon: Settings,
@@ -169,37 +138,27 @@ export default function ServicesPage() {
         { name: "Website Maintenance", link: "/services/website-maintenance/" },
         {
           name: "Application Maintenance",
-          link: "/services/application-maintenance/",
-        },
-      ],
-    },
-  ];
+          link: "/services/application-maintenance/"}]}];
 
   const metrics = [
     { icon: Globe, value: "50+", label: "Projects Completed" },
     { icon: Users, value: "10+", label: "Happy Clients" },
     { icon: Briefcase, value: "3+", label: "Years Experience" },
-    { icon: Award, value: "3", label: "Team Members" },
-  ];
+    { icon: Award, value: "5+", label: "Team Members" }];
 
   const faqItems = [
     {
       q: "What are your core digital marketing services?",
-      a: "SEO (national & local), Google/Meta Ads, high-performance website development (Next.js & WordPress) and conversion-focused branding/creative.",
-    },
+      a: "SEO (national & local), Google/Meta Ads, high-performance website development (Next.js & WordPress) and conversion-focused branding/creative."},
     {
       q: "How much do SEO services cost in Pune?",
-      a: "Typical retainers start from ₹15,000 to ₹50,000 per month depending on competitiveness, pages and link-building needs.",
-    },
+      a: "Typical retainers start from ₹15,000 to ₹50,000 per month depending on competitiveness, pages and link-building needs."},
     {
       q: "How long until we see results?",
-      a: "Technical fixes ship in week one; rankings and leads usually compound over 3-6 months with consistent content and links.",
-    },
+      a: "Technical fixes ship in week one; rankings and leads usually compound over 3-6 months with consistent content and links."},
     {
       q: "Do you work with startups and enterprises?",
-      a: "Yes. We have playbooks for seed-stage startups, D2C brands and enterprise teams needing performance and governance.",
-    },
-  ];
+      a: "Yes. We have playbooks for seed-stage startups, D2C brands and enterprise teams needing performance and governance."}];
 
   return (
     <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
@@ -237,8 +196,7 @@ export default function ServicesPage() {
           style={{
             backgroundImage:
               "radial-gradient(circle at center, rgba(255,255,255,0.8) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
+            backgroundSize: "24px 24px"}}
         ></div>
 
         <div className="relative z-20 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
@@ -269,8 +227,7 @@ export default function ServicesPage() {
                 "SEO + Local SEO: Hinjewadi, Baner, Wakad",
                 "Google & Meta Ads with ROAS tracking",
                 "Next.js & WordPress sites that pass CWV",
-                "Branding & creative that converts",
-              ].map((item, idx) => (
+                "Branding & creative that converts"].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3 text-white/90">
                   <CheckCircle2 className="w-5 h-5 text-(--color-primary) mt-0.5" />
                   <span className="font-medium text-sm md:text-base">{item}</span>
@@ -447,8 +404,7 @@ export default function ServicesPage() {
               "Viman Nagar",
               "Aundh",
               "Kothrud",
-              "Hadapsar",
-            ].map((loc) => (
+              "Hadapsar"].map((loc) => (
               <Link
                 key={loc}
                 href="/services/website-design-company-pune/"
@@ -473,18 +429,14 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "+250% organic traffic",
-                desc: "B2B SaaS in Baner-SEO + content hub in 4 months.",
-              },
+                title: "Reet Foods website live",
+                desc: "Corporate gifting site for Reet Foods in Hinjewadi, with quotation and WhatsApp enquiry flow."},
               {
-                title: "5.2x ROAS on Google Ads",
-                desc: "D2C ecommerce in Wakad-smart bidding + landing CRO.",
-              },
+                title: "10+ clients served",
+                desc: "Pune businesses using Growthik for websites, SEO, ads and ongoing digital support."},
               {
-                title: "#1 for “SEO company Pune”",
-                desc: "Local services brand-top-3 map pack and AI answers.",
-              },
-            ].map((item, idx) => (
+                title: "50+ projects since 2019",
+                desc: "Websites, campaigns and maintenance work delivered from the Warje office."}].map((item, idx) => (
               <div
                 key={idx}
                 className="p-6 rounded-2xl border border-(--border) bg-(--surface) shadow-sm hover:shadow-lg transition-shadow"
@@ -611,17 +563,13 @@ export default function ServicesPage() {
               {[
                 {
                   title: "Data-Driven Decisions",
-                  desc: "No guesswork. Every strategy is backed by analytics and deep market research.",
-                },
+                  desc: "No guesswork. Every strategy is backed by analytics and deep market research."},
                 {
                   title: "Senior Local Experts",
-                  desc: "Direct access to our senior developers and marketers based in Pune.",
-                },
+                  desc: "Direct access to our senior developers and marketers based in Pune."},
                 {
                   title: "Omnichannel Approach",
-                  desc: "We don't operate in silos. Your SEO, Ads and Website work synergistically.",
-                },
-              ].map((item, idx) => (
+                  desc: "We don't operate in silos. Your SEO, Ads and Website work synergistically."}].map((item, idx) => (
                 <li key={idx} className="flex gap-4">
                   <div className="w-12 h-12 shrink-0 bg-(--color-primary)/10 text-(--color-primary) rounded-xl flex items-center justify-center font-black text-xl">
                     {idx + 1}
@@ -646,8 +594,7 @@ export default function ServicesPage() {
                 "Discovery & Audit",
                 "Strategy & Architecture",
                 "Execution & Development",
-                "Optimization & Scaling",
-              ].map((step, idx) => (
+                "Optimization & Scaling"].map((step, idx) => (
                 <div
                   key={idx}
                   className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
@@ -676,17 +623,13 @@ export default function ServicesPage() {
             {[
               {
                 name: "Anjali, SaaS Founder (Baner)",
-                quote: "Growthik took us from page 3 to top 3 for our core SaaS terms and halved our CAC in 5 months.",
-              },
+                quote: "Growthik took us from page 3 to top 3 for our core SaaS terms and halved our CAC in 5 months."},
               {
                 name: "Rahul, D2C CEO (Wakad)",
-                quote: "5x ROAS on Google Ads with landing page CRO. Weekly reporting kept the team aligned.",
-              },
+                quote: "5x ROAS on Google Ads with landing page CRO. Weekly reporting kept the team aligned."},
               {
                 name: "Meera, Clinic Owner (Aundh)",
-                quote: "Local SEO + GMB optimization drove a 3x increase in appointment calls within 10 weeks.",
-              },
-            ].map((item, idx) => (
+                quote: "Local SEO + GMB optimization drove a 3x increase in appointment calls within 10 weeks."}].map((item, idx) => (
               <div key={idx} className="p-6 rounded-2xl border border-(--border) bg-(--surface) shadow-sm">
                 <p className="text-(--text-primary) font-semibold mb-3 leading-relaxed">“{item.quote}”</p>
                 <span className="text-(--text-secondary) text-sm font-bold">{item.name}</span>
@@ -731,11 +674,7 @@ export default function ServicesPage() {
               name: item.q,
               acceptedAnswer: {
                 "@type": "Answer",
-                text: item.a,
-              },
-            })),
-          }),
-        }}
+                text: item.a}}))})}}
       />
 
       {/* 6. FINAL CTA SECTION WITH IMAGE BACKDROP */}
@@ -745,8 +684,7 @@ export default function ServicesPage() {
           backgroundImage:
             "linear-gradient(120deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45)), url('/og-image.png')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+          backgroundPosition: "center"}}
       >
         <div className="absolute inset-0 pattern-grid-lg opacity-[0.1]"></div>
 

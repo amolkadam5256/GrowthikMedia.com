@@ -65,6 +65,14 @@ export default function Footer() {
   const isDark = mounted && resolvedTheme === "dark";
   const logoSrc = isDark ? images.WhiteLogo : images.BlackLogo;
 
+  const resourceLinks = [
+    { href: "/blog/seo/", label: "SEO Guides" },
+    { href: "/blog/local-seo/", label: "Local SEO" },
+    { href: "/blog/google-ads/", label: "Google Ads Guides" },
+    { href: "/blog/ai-search/", label: "AI Search" },
+    { href: "/blog/digital-marketing/", label: "Digital Marketing" },
+  ];
+
   const quickLinks = [
     { href: "/", label: "Home", icon: FiHome },
     { href: "/about", label: "About", icon: FiInfo },
@@ -229,6 +237,24 @@ export default function Footer() {
                         } transition-all hover:translate-x-1`}
                     >
                       <link.icon className="w-4 h-4 opacity-60 group-hover:opacity-100" />
+                      <span>{link.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <h4 className="text-lg font-bold mt-8 mb-4 relative inline-block">
+                Resources
+                <span className="absolute -bottom-2 left-0 w-12 h-1 bg-[#D90B1C] rounded-full"></span>
+              </h4>
+              <ul className="space-y-3">
+                {resourceLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`flex items-center gap-3 text-sm group ${isDark ? "hover:text-[#D90B1C]" : "hover:text-[#D90B1C]"
+                        } transition-all hover:translate-x-1`}
+                    >
+                      <FiBookOpen className="w-4 h-4 opacity-60 group-hover:opacity-100" />
                       <span>{link.label}</span>
                     </Link>
                   </li>

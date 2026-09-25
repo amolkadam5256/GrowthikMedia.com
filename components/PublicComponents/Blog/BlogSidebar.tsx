@@ -9,13 +9,12 @@ import {
   ArrowRight,
   Rss,
 } from "lucide-react";
-import { getTrendingPosts, getLatestPosts, CATEGORIES } from "@/lib/blog/data";
-import { formatDate, formatNumber } from "@/lib/blog/utils";
+import { getTrendingPosts, getRecommendedPosts, CATEGORIES } from "@/lib/blog/data";
 import BlogCard from "./BlogCard";
-import { useBlogPostsWithStats } from "./useBlogStats";
 
 interface BlogSidebarProps {
   currentPostId?: string;
+  variant?: "listing" | "article";
 }
 
 // ─── Section Header ───────────────────────────────────────────────────────────
@@ -37,10 +36,10 @@ function SidebarSection({ title, icon: Icon, children }: {
 
 // ─── Trending Posts ───────────────────────────────────────────────────────────
 function TrendingPosts({ currentPostId }: { currentPostId?: string }) {
-  const trendingPosts = useMemo(() => getTrendingPosts(), []);
-  const posts = useBlogPostsWithStats(trendingPosts)
-    .filter((p) => p.id !== currentPostId)
-    .slice(0, 3);
+  const posts = useMemo(
+    () => getTrendingPosts().filter((p) => p.id !== currentPostId).slice(0, 3),
+    [currentPostId],
+  );
 
   return (
     <SidebarSection title="Trending" icon={Flame}>
@@ -48,7 +47,7 @@ function TrendingPosts({ currentPostId }: { currentPostId?: string }) {
         {posts.map((post, idx) => (
           <Link
             key={post.id}
-            href={`/blog/${post.slug}`}
+            href={`/blog/${post.slug}/`}
             className="group flex gap-4 items-center p-2 -mx-2 rounded-xl hover:bg-(--background) transition-colors"
           >
             <span
@@ -71,8 +70,8 @@ function TrendingPosts({ currentPostId }: { currentPostId?: string }) {
                 {post.title}
               </p>
               <div className="flex items-center gap-2 text-[10px] text-(--text-secondary) font-medium">
-                <Clock className="w-2.5 h-2.5" />
-                {post.readingTime} min <span className="text-(--border)">•</span> {formatNumber(post.views)} views
+                <Clock className="w-2.5 h-2.5" aria-hidden="true" />
+                {post.readingTime} min read
               </div>
             </div>
           </Link>
@@ -83,14 +82,14 @@ function TrendingPosts({ currentPostId }: { currentPostId?: string }) {
 }
 
 // ─── Latest Posts ─────────────────────────────────────────────────────────────
-function LatestPosts({ currentPostId }: { currentPostId?: string }) {
-  const latestPosts = useMemo(() => getLatestPosts(), []);
-  const posts = useBlogPostsWithStats(latestPosts)
-    .filter((p) => p.id !== currentPostId)
-    .slice(0, 4);
+function RecommendedPosts({ currentPostId }: { currentPostId?: string }) {
+  const posts = useMemo(
+    () => getRecommendedPosts(currentPostId, 4),
+    [currentPostId],
+  );
 
   return (
-    <SidebarSection title="Latest Articles" icon={Rss}>
+    <SidebarSection title="Recommended Reading" icon={Rss}>
       <div className="space-y-4">
         {posts.map((post) => (
           <BlogCard key={post.id} post={post} variant="compact" />
@@ -108,7 +107,7 @@ function CategoriesWidget() {
         {CATEGORIES.map((cat) => (
           <Link
             key={cat.id}
-            href={`/blog?category=${cat.slug}`}
+            href={`/blog/${cat.slug}/`}
             className="flex items-center justify-between py-2 px-3 rounded-xl hover:bg-(--background) transition-colors group"
           >
             <span className="flex items-center gap-2 text-sm font-semibold text-(--text-primary) group-hover:text-(--color-primary) transition-colors">
@@ -118,13 +117,15 @@ function CategoriesWidget() {
               />
               {cat.name}
             </span>
-            <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-(--background) text-(--text-secondary) border border-(--border)">
-              {cat.count}
-            </span>
+            {cat.count > 0 && (
+              <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-(--background) text-(--text-secondary) border border-(--border)">
+                {cat.count}
+              </span>
+            )}
           </Link>
         ))}
         <Link
-          href="/blog"
+          href="/blog/"
           className="flex items-center gap-1 text-xs font-bold text-(--color-primary) hover:opacity-70 transition-opacity mt-2 pt-2 border-t border-(--border)"
         >
           View all categories <ArrowRight className="w-3 h-3" />
@@ -136,16 +137,33 @@ function CategoriesWidget() {
 
 
 // ─── Main Sidebar ─────────────────────────────────────────────────────────────
-export default function BlogSidebar({ currentPostId }: BlogSidebarProps) {
+export default function BlogSidebar({
+  currentPostId,
+  variant = "article",
+}: BlogSidebarProps) {
   return (
     <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start lg:h-fit">
-      {/* Trending */}
       <TrendingPosts currentPostId={currentPostId} />
-
-      {/* Latest */}
-      <LatestPosts currentPostId={currentPostId} />
-
-      {/* Categories */}
+      {variant === "article" && <RecommendedPosts currentPostId={currentPostId} />}
+      {variant === "article" && (
+        <div className="rounded-2xl border border-(--color-primary)/20 bg-(--surface) p-5">
+          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-(--color-primary)">
+            Related next step
+          </p>
+          <p className="mt-2 text-sm font-black text-(--text-primary)">
+            Want this applied to your site?
+          </p>
+          <p className="mt-2 text-xs leading-relaxed text-(--text-secondary)">
+            Get a free website and SEO audit from Growthik Media.
+          </p>
+          <Link
+            href="/audit/"
+            className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-(--color-primary)"
+          >
+            Get free audit <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </Link>
+        </div>
+      )}
       <CategoriesWidget />
     </aside>
   );

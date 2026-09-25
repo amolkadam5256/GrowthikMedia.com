@@ -7,32 +7,11 @@ export const AUTHORS: BlogAuthor[] = [
     id: "author-1",
     name: "Amol Kadam",
     avatar: "",
-    role: "Founder & CEO",
-    bio: "Digital strategist and founder of Growthik Media with 7+ years building data-driven marketing systems for Indian businesses. Specializes in SEO, performance marketing and web architecture.",
+    role: "Founder & Digital Marketing Strategist",
+    bio: "Amol Kadam is the founder and digital marketing strategist at Growthik Media, a Pune-based digital marketing and web development agency. He has 2.5+ years of hands-on work across SEO, performance marketing, content strategy and website development.",
     socialLinks: {
-      linkedin: "https://linkedin.com/company/growthikmedia",
+      linkedin: "https://www.linkedin.com/in/amolkadam77/",
       twitter: "https://twitter.com/growthikmedia",
-      website: "https://www.growthikmedia.com",
-    },
-  },
-  {
-    id: "author-2",
-    name: "Priya Sharma",
-    avatar: "",
-    role: "Head of SEO",
-    bio: "SEO specialist with expertise in technical audits, content strategy and local search optimization for Pune-based businesses. Google certified.",
-    socialLinks: {
-      linkedin: "https://linkedin.com/company/growthikmedia",
-    },
-  },
-  {
-    id: "author-3",
-    name: "Rahul Desai",
-    avatar: "",
-    role: "Lead Developer",
-    bio: "Full-stack developer specializing in Next.js, performance optimization and Core Web Vitals. Builds high-converting websites for Indian markets.",
-    socialLinks: {
-      linkedin: "https://linkedin.com/company/growthikmedia",
       website: "https://www.growthikmedia.com",
     },
   },
@@ -41,36 +20,38 @@ export const AUTHORS: BlogAuthor[] = [
 // ─── Categories ───────────────────────────────────────────────────────────────
 
 export const CATEGORIES: BlogCategory[] = [
-  { id: "cat-1", name: "SEO", slug: "seo", color: "#d90b1c", count: 6 },
+  { id: "cat-1", name: "SEO", slug: "seo", color: "#d90b1c", count: 0 },
+  { id: "cat-2", name: "Local SEO", slug: "local-seo", color: "#0f766e", count: 0 },
+  { id: "cat-3", name: "Google Ads", slug: "google-ads", color: "#d97706", count: 0 },
+  { id: "cat-4", name: "Meta Ads", slug: "meta-ads", color: "#2563eb", count: 0 },
   {
-    id: "cat-2",
-    name: "Web Design",
-    slug: "web-design",
-    color: "#2563eb",
-    count: 2,
-  },
-  {
-    id: "cat-3",
+    id: "cat-5",
     name: "Digital Marketing",
     slug: "digital-marketing",
     color: "#7c3aed",
-    count: 3,
+    count: 0,
   },
   {
-    id: "cat-4",
-    name: "Performance",
-    slug: "performance",
+    id: "cat-6",
+    name: "Web Development",
+    slug: "web-development",
     color: "#059669",
-    count: 2,
+    count: 0,
   },
-  {
-    id: "cat-5",
-    name: "Google Ads",
-    slug: "google-ads",
-    color: "#d97706",
-    count: 1,
-  },
+  { id: "cat-7", name: "AI Search", slug: "ai-search", color: "#7c3aed", count: 0 },
 ];
+
+export function getCategoryBySlug(slug: string): BlogCategory | undefined {
+  return CATEGORIES.find((category) => category.slug === slug);
+}
+
+function categoryBySlug(slug: string): BlogCategory {
+  const category = getCategoryBySlug(slug);
+  if (!category) {
+    throw new Error(`Unknown blog category: ${slug}`);
+  }
+  return category;
+}
 
 // ─── Tags ─────────────────────────────────────────────────────────────────────
 
@@ -98,6 +79,7 @@ export const TAGS: BlogTag[] = [
   },
   { id: "tag-12", name: "Social Media", slug: "social-media", count: 3 },
   { id: "tag-13", name: "AI Search", slug: "ai-search", count: 1 },
+  { id: "tag-14", name: "Meta Ads", slug: "meta-ads", count: 1 },
 ];
 
 // ─── Blog Posts ───────────────────────────────────────────────────────────────
@@ -111,7 +93,9 @@ export const BLOG_POSTS: BlogPost[] = [
     content: "ai-search-optimization-2026-seo-aeo-geo-guide",
     featuredImage: "/images/blog/ai-search-optimization-2026-seo-aeo-geo-guide.png",
     featuredImageAlt: "AI Search Optimization for 2026 with SEO, AEO and GEO visibility strategy",
-    category: CATEGORIES[0],
+    thumbnailHeadline: "Master AI Search",
+    thumbnailLabel: "AI SEARCH",
+    category: categoryBySlug("ai-search"),
     tags: [TAGS[0], TAGS[12], TAGS[3], TAGS[7], TAGS[4], TAGS[10]],
     author: AUTHORS[0],
     publishDate: "2026-09-20T09:00:00Z",
@@ -141,35 +125,39 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: "post-16",
-    title: "Cockroach Janta Party Viral Marketing Case Study 2026",
+    title: "Cockroach Janta Party Viral Marketing Case Study: How a Viral Moment Became a Movement",
     slug: "cockroach-janta-party-viral-marketing-case-study-2026",
-    excerpt: "A practical 2026 case study on the Cockroach Janta Party viral moment and what Pune businesses can learn about attention, timing, humor, trust and conversion.",
+    excerpt: "A 2026 marketing case study on how the Cockroach Janta Party gained attention, what made the name travel, and what businesses can learn about identity, timing and conversion.",
     content: "cockroach-janta-party-viral-marketing-case-study-2026",
     featuredImage: "/images/blog/cockroach-janta-party-viral-marketing-case-study-2026.jpg",
     featuredImageAlt: "Cockroach Janta Party viral marketing case study 2026",
-    category: CATEGORIES[2],
+    thumbnailHeadline: "Viral Marketing Lessons",
+    thumbnailLabel: "CASE STUDY",
+    category: categoryBySlug("digital-marketing"),
     tags: [TAGS[3], TAGS[2], TAGS[7], TAGS[10], TAGS[11]],
     author: AUTHORS[0],
     publishDate: "2026-05-31T09:00:00Z",
-    readingTime: 14,
+    updatedDate: "2026-09-25T09:00:00Z",
+    readingTime: 16,
     views: 0,
     commentsCount: 0,
     likesCount: 0,
     featured: true,
     trending: true,
-    metaTitle: "Cockroach Janta Party Viral Marketing Case Study 2026 | Growthik",
-    metaDescription: "Study the Cockroach Janta Party viral marketing moment and learn how Pune businesses can turn attention, humor, timing and tracking into measurable growth.",
+    metaTitle: "Cockroach Janta Party Viral Marketing Case Study 2026",
+    metaDescription:
+      "Explore the Cockroach Janta Party viral marketing case study, how CJP gained attention in 2026, and the digital marketing lessons businesses can learn from its rise.",
     seoKeywords: [
-      "Cockroach Janta Party",
-      "Cockroach Janta Party viral marketing",
-      "viral marketing case study 2026",
-      "viral marketing strategy India",
-      "moment marketing India",
-      "digital marketing trends Pune",
-      "social media marketing Pune",
-      "brand awareness campaign India",
-      "trend marketing for businesses",
-      "Pune digital marketing agency",
+      "Cockroach Janta Party viral marketing case study",
+      "Cockroach Janta Party case study",
+      "Cockroach Janta Party viral campaign",
+      "CJP viral marketing",
+      "Cockroach Janta Party 2026",
+      "viral marketing case study India",
+      "viral marketing examples India",
+      "grassroots digital marketing",
+      "meme marketing strategy",
+      "real-time marketing examples",
     ],
   },
   {
@@ -180,7 +168,9 @@ export const BLOG_POSTS: BlogPost[] = [
     content: "what-is-marketing-guide-pune",
     featuredImage: "/images/blog/What-Is-Marketing-Blog-Thumbnail-2026.jpg",
     featuredImageAlt: "Digital Marketing Strategy and Growth in Pune",
-    category: CATEGORIES[2],
+    thumbnailHeadline: "What Is Marketing",
+    thumbnailLabel: "MARKETING",
+    category: categoryBySlug("digital-marketing"),
     tags: [TAGS[3], TAGS[10], TAGS[11]],
     author: AUTHORS[0],
     publishDate: "2026-05-07T10:00:00Z",
@@ -210,7 +200,9 @@ export const BLOG_POSTS: BlogPost[] = [
     content: "rcb-vs-gt-ipl-2026-marketing-lessons-pune",
     featuredImage: "/images/blog/rcb-vs-gt-ipl-2026.jpg",
     featuredImageAlt: "RCB vs GT IPL 2026 Marketing Lessons for Pune Businesses",
-    category: CATEGORIES[2],
+    thumbnailHeadline: "IPL Marketing Lessons",
+    thumbnailLabel: "PERFORMANCE",
+    category: categoryBySlug("digital-marketing"),
     tags: [TAGS[3], TAGS[11], TAGS[9], TAGS[10]],
     author: AUTHORS[0],
     publishDate: "2026-05-01T00:10:00Z",
@@ -239,7 +231,9 @@ export const BLOG_POSTS: BlogPost[] = [
     content: "seo-for-real-estate-pune-guide",
     featuredImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80",
     featuredImageAlt: "Real Estate SEO Strategy for Pune Developers",
-    category: CATEGORIES[0],
+    thumbnailHeadline: "Win Property Search",
+    thumbnailLabel: "LOCAL SEO",
+    category: categoryBySlug("local-seo"),
     tags: [TAGS[0], TAGS[3], TAGS[7], TAGS[11]],
     author: AUTHORS[0],
     publishDate: "2026-04-30T10:00:00Z",
@@ -267,7 +261,9 @@ export const BLOG_POSTS: BlogPost[] = [
     content: "raja-shivaji-marathi-movie-bookings-pune-marketing-trend",
     featuredImage: "/images/blog/raja-shivaji-marathi-movie-bookings-pune.jpg",
     featuredImageAlt: "Raja Shivaji Marathi Movie Bookings Trending Pune",
-    category: CATEGORIES[2],
+    thumbnailHeadline: "Moment Marketing",
+    thumbnailLabel: "PERFORMANCE",
+    category: categoryBySlug("digital-marketing"),
     tags: [TAGS[3], TAGS[2], TAGS[0], TAGS[7]],
     author: AUTHORS[0],
     publishDate: "2026-04-27T10:00:00Z",
@@ -295,7 +291,9 @@ export const BLOG_POSTS: BlogPost[] = [
     content: "complete-beginner-guide-to-seo-2026",
     featuredImage: "/images/blog/seo-services-in-pune-rank-1-google-growthik-media-thumbnail.png",
     featuredImageAlt: "SEO Services in Pune - Rank 1 on Google with Growthik Media",
-    category: CATEGORIES[0],
+    thumbnailHeadline: "What Is SEO",
+    thumbnailLabel: "SEO",
+    category: categoryBySlug("seo"),
     tags: [TAGS[0], TAGS[7], TAGS[2]],
     author: AUTHORS[0],
     publishDate: "2026-03-19T09:00:00Z",
@@ -323,7 +321,9 @@ export const BLOG_POSTS: BlogPost[] = [
     content: "search-engine-submission-guide-pune",
     featuredImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
     featuredImageAlt: "Global digital ecosystem and SEO strategy",
-    category: CATEGORIES[0],
+    thumbnailHeadline: "Get Indexed Faster",
+    thumbnailLabel: "SEO",
+    category: categoryBySlug("seo"),
     tags: [TAGS[0], TAGS[7], TAGS[2]],
     author: AUTHORS[0],
     publishDate: "2026-03-16T09:00:00Z",
@@ -352,12 +352,13 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Use this Pune SEO audit checklist to find technical, content, local SEO and trust issues that stop your website from earning search traffic.",
     content: "technical-seo-audit-checklist",
-    featuredImage:
-      "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=80",
     featuredImageAlt: "SEO audit checklist on a laptop screen",
-    category: CATEGORIES[0],
+    thumbnailHeadline: "SEO Audit Checklist",
+    thumbnailLabel: "SEO",
+    category: categoryBySlug("seo"),
     tags: [TAGS[0], TAGS[4], TAGS[2]],
-    author: AUTHORS[1],
+    author: AUTHORS[0],
     publishDate: "2025-03-01T09:00:00Z",
     updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 12,
@@ -385,12 +386,13 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "If your Pune business is invisible on Google, you pay for every lead. Learn why SEO compounds traffic, trust and enquiries in 2026.",
     content: "why-seo-is-important",
-    featuredImage:
-      "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800&q=80",
     featuredImageAlt: "Google analytics dashboard showing SEO growth",
-    category: CATEGORIES[0],
+    thumbnailHeadline: "Why SEO Matters",
+    thumbnailLabel: "SEO",
+    category: categoryBySlug("seo"),
     tags: [TAGS[0], TAGS[3], TAGS[7]],
-    author: AUTHORS[1],
+    author: AUTHORS[0],
     publishDate: "2025-02-05T09:00:00Z",
     updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 10,
@@ -417,12 +419,13 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Don't hire the wrong web agency and waste months and lakhs of rupees. Here are 7 critical factors every Pune business should evaluate before signing a contract.",
     content: "how-to-choose-website-design-company",
-    featuredImage:
-      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&q=80",
     featuredImageAlt: "Designer working on website mockup on computer",
-    category: CATEGORIES[1],
+    thumbnailHeadline: "Choose a Web Partner",
+    thumbnailLabel: "WEB DEVELOPMENT",
+    category: categoryBySlug("web-development"),
     tags: [TAGS[1], TAGS[2], TAGS[4]],
-    author: AUTHORS[2],
+    author: AUTHORS[0],
     publishDate: "2025-02-18T09:00:00Z",
     readingTime: 9,
     views: 3892,
@@ -448,12 +451,13 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "How much does a website cost in Pune in 2026? A complete breakdown from basic sites to custom web apps, with what each price range actually includes.",
     content: "website-cost-in-pune",
-    featuredImage:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     featuredImageAlt: "Website pricing and cost calculation on laptop",
-    category: CATEGORIES[1],
+    thumbnailHeadline: "Website Cost Guide",
+    thumbnailLabel: "WEB DEVELOPMENT",
+    category: categoryBySlug("web-development"),
     tags: [TAGS[1], TAGS[2], TAGS[8]],
-    author: AUTHORS[2],
+    author: AUTHORS[0],
     publishDate: "2025-01-20T09:00:00Z",
     updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 8,
@@ -481,11 +485,12 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Google Ads gives you intent. Meta Ads gives you scale. But which is better for YOUR Pune business? We break down the real differences with real data from our campaigns.",
     content: "google-ads-vs-meta-ads",
-    featuredImage:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
     featuredImageAlt: "Google and Meta advertising platforms comparison",
-    category: CATEGORIES[4],
-    tags: [TAGS[6], TAGS[3], TAGS[2]],
+    thumbnailHeadline: "Google Ads vs Meta",
+    thumbnailLabel: "GOOGLE ADS",
+    category: categoryBySlug("google-ads"),
+    tags: [TAGS[6], TAGS[13], TAGS[3], TAGS[2]],
     author: AUTHORS[0],
     publishDate: "2025-01-10T09:00:00Z",
     updatedDate: "2026-04-29T09:00:00Z",
@@ -513,12 +518,13 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Google's ranking algorithm heavily weights Core Web Vitals. This technical guide walks you through exactly how to fix LCP, CLS and INP to hit perfect scores.",
     content: "core-web-vitals-guide",
-    featuredImage:
-      "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800&q=80",
     featuredImageAlt: "Google PageSpeed Insights score showing 100",
-    category: CATEGORIES[3],
+    thumbnailHeadline: "Core Web Vitals",
+    thumbnailLabel: "PERFORMANCE",
+    category: categoryBySlug("web-development"),
     tags: [TAGS[4], TAGS[5], TAGS[0]],
-    author: AUTHORS[2],
+    author: AUTHORS[0],
     publishDate: "2024-12-15T09:00:00Z",
     updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 14,
@@ -546,12 +552,13 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Rank in Google's Map Pack for Pune area searches with this step-by-step local SEO strategy - Google Business Profile, citations, reviews and hyper-local content.",
     content: "local-seo-pune",
-    featuredImage:
-      "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&q=80",
+    featuredImage: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&q=80",
     featuredImageAlt: "Google Maps showing local business listings in Pune",
-    category: CATEGORIES[0],
+    thumbnailHeadline: "Win Local Search",
+    thumbnailLabel: "LOCAL SEO",
+    category: categoryBySlug("local-seo"),
     tags: [TAGS[7], TAGS[2], TAGS[0]],
-    author: AUTHORS[1],
+    author: AUTHORS[0],
     publishDate: "2024-12-05T09:00:00Z",
     updatedDate: "2026-04-29T09:00:00Z",
     readingTime: 10,
@@ -578,10 +585,11 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "A high bounce rate kills your conversions and tanks your SEO. Here are the 12 most common causes of bounce rate - and exact, actionable fixes for each one.",
     content: "fix-high-bounce-rate",
-    featuredImage:
-      "/images/blog/fix-high-bounce-rate-pune-website-seo-2026.jpg",
+    featuredImage: "/images/blog/fix-high-bounce-rate-pune-website-seo-2026.jpg",
     featuredImageAlt: "High bounce rate fix Pune website SEO 2026",
-    category: CATEGORIES[3],
+    thumbnailHeadline: "Fix Bounce Rate",
+    thumbnailLabel: "CRO",
+    category: categoryBySlug("web-development"),
     tags: [TAGS[4], TAGS[1], TAGS[3]],
     author: AUTHORS[0],
     publishDate: "2024-11-20T09:00:00Z",
@@ -611,10 +619,11 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Most B2B content in India fails because it copies Western playbooks. Here is a Pune-friendly strategy for Indian buyers and longer sales cycles.",
     content: "b2b-content-marketing-india",
-    featuredImage:
-      "/images/blog/b2b-content-marketing-strategy-pune-india-2026.png",
+    featuredImage: "/images/blog/b2b-content-marketing-strategy-pune-india-2026.png",
     featuredImageAlt: "Content marketing strategy planning session",
-    category: CATEGORIES[2],
+    thumbnailHeadline: "B2B Content Strategy",
+    thumbnailLabel: "LEAD GENERATION",
+    category: categoryBySlug("digital-marketing"),
     tags: [TAGS[10], TAGS[3], TAGS[9]],
     author: AUTHORS[0],
     publishDate: "2024-11-05T09:00:00Z",
@@ -637,25 +646,84 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 ];
 
+CATEGORIES.forEach((category) => {
+  category.count = BLOG_POSTS.filter((post) => post.category.slug === category.slug).length;
+});
+
+export const RECOMMENDED_GUIDE_SLUGS = [
+  "complete-beginner-guide-to-seo-2026",
+  "local-seo-pune",
+  "google-ads-vs-meta-ads",
+  "ai-search-optimization-2026-seo-aeo-geo-guide",
+  "core-web-vitals-guide",
+];
+
 // ─── Helper Accessors ─────────────────────────────────────────────────────────
 
 export const getFeaturedPosts = () => BLOG_POSTS.filter((p) => p.featured);
 export const getTrendingPosts = () =>
-  [...BLOG_POSTS].sort((a, b) => b.views - a.views);
+  [...BLOG_POSTS]
+    .filter((p) => p.trending)
+    .sort(
+      (a, b) =>
+        new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(),
+    );
 export const getLatestPosts = () =>
   [...BLOG_POSTS].sort(
     (a, b) =>
       new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime(),
   );
+export const getRecommendedPosts = (excludeId?: string, count = 4): BlogPost[] => {
+  const recommended = RECOMMENDED_GUIDE_SLUGS
+    .map((slug) => BLOG_POSTS.find((post) => post.slug === slug))
+    .filter((post): post is BlogPost => post != null && post.id !== excludeId);
+
+  if (recommended.length >= count) {
+    return recommended.slice(0, count);
+  }
+
+  const extras = getLatestPosts().filter(
+    (post) => post.id !== excludeId && !recommended.some((item) => item.id === post.id),
+  );
+
+  return [...recommended, ...extras].slice(0, count);
+};
 export const getPostBySlug = (slug: string) =>
   BLOG_POSTS.find((p) => p.slug === (slug === "importance-of-seo" ? "why-seo-is-important" : slug));
-export const getRelatedPosts = (post: BlogPost, count = 3): BlogPost[] =>
-  BLOG_POSTS.filter(
-    (p) =>
-      p.id !== post.id &&
-      (p.category.id === post.category.id ||
-        p.tags.some((t) => post.tags.map((pt) => pt.id).includes(t.id))),
-  ).slice(0, count);
+export const getPostsByCategorySlug = (slug: string, relatedSlugs: string[] = []): BlogPost[] => {
+  const direct = BLOG_POSTS.filter((post) => post.category.slug === slug);
+  if (direct.length > 0) return getLatestPosts().filter((post) => post.category.slug === slug);
+
+  const related = relatedSlugs
+    .map((relatedSlug) => BLOG_POSTS.find((post) => post.slug === relatedSlug))
+    .filter((post): post is BlogPost => Boolean(post));
+
+  if (related.length > 0) return related;
+
+  return BLOG_POSTS.filter((post) => post.tags.some((tag) => tag.slug === slug));
+};
+export const getRelatedPosts = (post: BlogPost, count = 3): BlogPost[] => {
+  const cluster = [
+    "cockroach-janta-party-viral-marketing-case-study-2026",
+    "rcb-vs-gt-ipl-2026-marketing-lessons-pune",
+    "what-is-marketing-guide-pune",
+    "ai-search-optimization-2026-seo-aeo-geo-guide",
+    "why-seo-is-important",
+    "google-ads-vs-meta-ads",
+    "local-seo-pune",
+  ];
+  const preferred = cluster
+    .map((slug) => BLOG_POSTS.find((item) => item.slug === slug && item.id !== post.id))
+    .filter((item): item is BlogPost => Boolean(item));
+  const rest = BLOG_POSTS.filter(
+    (item) =>
+      item.id !== post.id &&
+      !preferred.some((match) => match.id === item.id) &&
+      (item.category.id === post.category.id ||
+        item.tags.some((tag) => post.tags.map((pt) => pt.id).includes(tag.id))),
+  );
+  return [...preferred, ...rest].slice(0, count);
+};
 
 export const filterAndSortPosts = (
   posts: BlogPost[],

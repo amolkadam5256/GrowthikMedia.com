@@ -16,16 +16,14 @@ const features = ["Instagram Reel Strategy", "LinkedIn Authority Building", "Met
 
 export const metadata: Metadata = {
   title, description, alternates: { canonical },
-  openGraph: { title, description, url: canonical, siteName: "Growthik Media", locale: "en_IN", type: "website" },
-};
+  openGraph: { title, description, url: canonical, siteName: "Growthik Media", locale: "en_IN", type: "website" }};
 
 export default function SocialMediaMarketingPage() {
   const service = "Social Media Marketing";
   return (
     <>
       <Script id={`schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org", "@type": "Service", "name": "Expert Social Media Marketing Pune", serviceType: service, provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` }, areaServed: { "@type": "City", name: "Pune" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
-      })}} />
+        "@context": "https://schema.org", "@type": "Service", "name": "Expert Social Media Marketing Pune", serviceType: service, provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` }, areaServed: { "@type": "City", name: "Pune" }})}} />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />

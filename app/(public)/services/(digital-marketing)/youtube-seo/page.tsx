@@ -13,8 +13,7 @@ export const metadata: Metadata = {
   description:
     "Dominate video search with expert YouTube Video SEO services in Pune. Growthik Media helps you rank higher, increase views and grow your channel content.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/youtube-seo/",
-  },
+    canonical: "https://www.growthikmedia.com/services/youtube-seo/"},
   openGraph: {
     title: "YouTube Video SEO Services in Pune | Growthik Media",
     description:
@@ -22,9 +21,7 @@ export const metadata: Metadata = {
     url: `${CONTACT_INFO.website}/services/youtube-seo/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function YoutubeSeoPage() {
   const serviceName = "YouTube SEO";
@@ -41,14 +38,7 @@ export default function YoutubeSeoPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

@@ -4,6 +4,48 @@ export interface FAQ {
 }
 
 export const BLOG_FAQS: Record<string, FAQ[]> = {
+  "cockroach-janta-party-viral-marketing-case-study-2026": [
+    {
+      question: "What is the Cockroach Janta Party?",
+      answer:
+        "The Cockroach Janta Party (CJP) is a satirical Indian political and social movement launched on 16 May 2026 by Abhijeet Dipke. News reports describe it as an online response that later grew into a wider protest conversation.",
+    },
+    {
+      question: "Why did the Cockroach Janta Party become viral?",
+      answer:
+        "CJP attracted attention through an unusual name, timely communication, social-media sharing, community identity and a live public conversation. The marketing lesson is not simply “make something controversial”; it is to make a message distinctive, easy to understand and easy for people to join.",
+    },
+    {
+      question: "When was the Cockroach Janta Party launched?",
+      answer:
+        "Multiple Indian news reports say CJP was announced on 16 May 2026, with a website, social accounts and a membership form appearing in the first days.",
+    },
+    {
+      question: "Who founded the Cockroach Janta Party?",
+      answer:
+        "Published reports identify Abhijeet Dipke, a political communications strategist, as the founder and public face of CJP.",
+    },
+    {
+      question: "What marketing lessons can businesses learn from CJP?",
+      answer:
+        "Use a memorable line, give people a role, move while a conversation is live, and connect attention to a clear action. Do not copy political tactics blindly.",
+    },
+    {
+      question: "Is the Cockroach Janta Party a marketing campaign or a political movement?",
+      answer:
+        "It is a political and social movement. Marketers study it as a case of rapid digital mobilisation. It is not a commercial brand campaign.",
+    },
+    {
+      question: "What is viral marketing?",
+      answer:
+        "Viral marketing is content or messaging that people share on their own, so reach grows without paying for every view. It still needs a next step if you want enquiries.",
+    },
+    {
+      question: "How does social media make campaigns go viral?",
+      answer:
+        "Social media lowers the cost of sharing. A short name, emotion, humour and a simple join step help a post move from one person to many.",
+    },
+  ],
   "ai-search-optimization-2026-seo-aeo-geo-guide": [
     { question: "What is AI Search Optimization?", answer: "AI Search Optimization is the practice of making your website easy for search engines and AI-powered search features to discover, understand, trust and cite. It combines traditional SEO, technical SEO, content quality, entity clarity, internal linking and measurement." },
     { question: "Is SEO still important in 2026?", answer: "Yes. Google's own guidance says SEO fundamentals remain relevant for generative AI features because AI Overviews and AI Mode rely on Search systems, indexed content and quality signals." },

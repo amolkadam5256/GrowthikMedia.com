@@ -6,7 +6,6 @@ import Script from "next/script";
 import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import {
-  ArrowLeft,
   Calendar,
   Clock,
   Tag,
@@ -18,17 +17,24 @@ import {
 import { CONTACT_INFO } from "@/constants/contact";
 import { BLOG_POSTS, getPostBySlug, getRelatedPosts } from "@/lib/blog/data";
 import {
+  BLOG_CATEGORY_PAGES,
+  getBlogCategoryPage,
+  LEGACY_CATEGORY_REDIRECTS,
+} from "@/lib/blog/categories";
+import { redirect } from "next/navigation";
+import BlogCategoryPage from "../BlogCategoryPage";
+import BlogBreadcrumb from "@/components/PublicComponents/Blog/BlogBreadcrumb";
+import {
   formatDate,
   getInitials,
   stringToColor,
 } from "@/lib/blog/utils";
 import { POST_CONTENT } from "@/lib/blog/content";
 import { BLOG_FAQS } from "@/lib/blog/faqs";
-import BlogSidebar from "@/components/PublicComponents/Blog/BlogSidebar";
+import BlogArticleRail from "@/components/PublicComponents/Blog/BlogArticleRail";
 import RelatedPosts from "@/components/PublicComponents/Blog/RelatedPosts";
 import CommentSection from "@/components/PublicComponents/Blog/CommentSection";
 import BlogViewCounter from "@/components/PublicComponents/Blog/BlogViewCounter";
-import { db } from "@/lib/db";
 
 // Lazily load interactive-only widgets - they are below the fold and
 // do not appear in the initial server-rendered HTML, so splitting them
@@ -47,7 +53,10 @@ const toAbsoluteUrl = (url: string) =>
 // ─── Generate Static Params ───────────────────────────────────────────────────
 
 export async function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({ slug: post.slug }));
+  return [
+    ...BLOG_POSTS.map((post) => ({ slug: post.slug })),
+    ...BLOG_CATEGORY_PAGES.map((category) => ({ slug: category.slug })),
+  ];
 }
 
 // ─── Metadata ─────────────────────────────────────────────────────────────────
@@ -58,6 +67,39 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const category = getBlogCategoryPage(slug);
+
+  if (category) {
+    const pageUrl = `${CONTACT_INFO.website}/blog/${category.slug}/`;
+    return {
+      title: category.metaTitle,
+      description: category.metaDescription,
+      authors: [{ name: "Amol Kadam" }, { name: "Growthik Media" }],
+      alternates: { canonical: pageUrl },
+      openGraph: {
+        title: category.metaTitle,
+        description: category.metaDescription,
+        url: pageUrl,
+        siteName: "Growthik Media",
+        type: "website",
+        images: [
+          {
+            url: "/og-image.png",
+            width: 1200,
+            height: 630,
+            alt: category.h1,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: category.metaTitle,
+        description: category.metaDescription,
+        images: ["/og-image.png"],
+      },
+    };
+  }
+
   const post = getPostBySlug(slug);
 
   if (!post) {
@@ -83,6 +125,7 @@ export async function generateMetadata({
       siteName: "Growthik Media",
       type: "article",
       publishedTime: post.publishDate,
+      modifiedTime: post.updatedDate || post.publishDate,
       authors: [post.author.name],
       images: [
         {
@@ -132,6 +175,16 @@ export default async function BlogDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  if (LEGACY_CATEGORY_REDIRECTS[slug]) {
+    redirect(`/blog/${LEGACY_CATEGORY_REDIRECTS[slug]}/`);
+  }
+
+  const categoryPage = getBlogCategoryPage(slug);
+  if (categoryPage) {
+    return <BlogCategoryPage category={categoryPage} />;
+  }
+
   const post = getPostBySlug(slug);
   const contentSlug = slug === "importance-of-seo" ? "why-seo-is-important" : slug;
 
@@ -141,23 +194,13 @@ export default async function BlogDetailPage({
   }
 
   const related = getRelatedPosts(post, 3);
+  const serviceCategory = getBlogCategoryPage(post.category.slug);
   const pageUrl = `${CONTACT_INFO.website}/blog/${slug}/`;
   const imageUrl = toAbsoluteUrl(post.featuredImage);
   const logoUrl = `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`;
   const seoKeywords = post.seoKeywords ?? post.tags.map((t) => t.name);
 
-  // Get dynamic stats from DB
-  let dbPost = null;
-  try {
-    dbPost = await db.blogPost.findUnique({
-      where: { slug: contentSlug },
-      select: { views: true },
-    });
-  } catch (error) {
-    console.error(`Failed to fetch dynamic views for ${slug}:`, error);
-  }
-
-  const liveViews = dbPost?.views ?? post.views;
+  const liveViews = post.views;
 
   const faqs = BLOG_FAQS[contentSlug] || [];
 
@@ -181,6 +224,8 @@ export default async function BlogDetailPage({
       "@type": "Person",
       name: post.author.name,
       jobTitle: post.author.role,
+      url: post.author.socialLinks.linkedin || CONTACT_INFO.website,
+      sameAs: Object.values(post.author.socialLinks).filter(Boolean),
       worksFor: {
         "@type": "Organization",
         name: CONTACT_INFO.companyName,
@@ -230,118 +275,125 @@ export default async function BlogDetailPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       )}
+      <Script
+        id={`schema-breadcrumb-${slug}`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: `${CONTACT_INFO.website}/`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Blog",
+                  item: `${CONTACT_INFO.website}/blog/`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 3,
+                  name: post.category.name,
+                  item: `${CONTACT_INFO.website}/blog/${post.category.slug}/`,
+                },
+                {
+                  "@type": "ListItem",
+                  position: 4,
+                  name: post.title,
+                  item: pageUrl,
+                },
+              ],
+            },
+          ),
+        }}
+      />
 
       {/* Reading progress bar */}
       <ReadingProgress />
 
-      <div className="min-h-screen bg-(--background) pt-16">
-        <header className="bg-(--background) pt-12 pb-8 border-b border-(--border)/50">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 text-left">
-            {/* Breadcrumb */}
-            <nav className="flex items-center justify-start gap-2 text-sm text-(--text-secondary) font-medium mb-8">
-              <Link
-                href="/"
-                className="hover:text-(--color-primary) transition-colors"
-              >
-                Home
-              </Link>
-              <ArrowRight className="w-3 h-3 text-(--border)" />
-              <Link
-                href="/blog"
-                className="hover:text-(--color-primary) transition-colors"
-              >
-                Blog
-              </Link>
-              <ArrowRight className="w-3 h-3 text-(--border)" />
-              <span className="text-(--text-primary) truncate max-w-[200px]">
-                {post.title}
-              </span>
-            </nav>
+      <div className="blog-page min-h-screen bg-(--background)">
+        <header className="border-b border-(--border)">
+          <div className="mx-auto max-w-6xl px-5 py-8 md:px-8 lg:px-12 lg:py-10">
+            <BlogBreadcrumb
+              items={[
+                { label: "Home", href: "/" },
+                { label: "Blog", href: "/blog/" },
+                { label: post.category.name, href: `/blog/${post.category.slug}/` },
+                { label: post.title },
+              ]}
+            />
 
-            {/* Category + Trending */}
-            <div className="flex items-center justify-start gap-3 mb-6 flex-wrap">
-              <span
-                className="inline-block text-xs font-bold px-3 py-1.5 rounded-full"
+            <div className="flex flex-wrap items-center gap-2">
+              <Link
+                href={`/blog/${post.category.slug}/`}
+                className="inline-flex rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em]"
                 style={{
                   backgroundColor: `${post.category.color}15`,
                   color: post.category.color,
-                  border: `1px solid ${post.category.color}30`,
                 }}
               >
                 {post.category.name}
-              </span>
-              {post.trending && (
-                <span className="bg-(--color-primary)/10 text-(--color-primary) border border-(--color-primary)/20 text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
-                  Trending
-                </span>
-              )}
+              </Link>
             </div>
 
-            {/* Title */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-(--text-primary) leading-[1.2] tracking-tight mb-8">
+            <h1 className="mt-4 max-w-4xl text-[1.75rem] font-black leading-tight tracking-tight text-(--text-primary) md:text-4xl">
               {post.title}
             </h1>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-(--text-secondary) md:text-lg">
+              {post.excerpt}
+            </p>
 
-            {/* Meta row */}
-            <div className="flex flex-wrap items-center justify-start gap-x-6 gap-y-3 text-sm text-(--text-secondary) font-medium py-4 border-y border-(--border)/50">
-              <div className="flex items-center gap-2">
-                <AuthorAvatar name={post.author.name} size={32} />
-                <span className="font-bold text-(--text-primary)">
-                  {post.author.name}
+            <div className="mt-6 flex flex-wrap items-center justify-between gap-4 border-t border-(--border) pt-5">
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-(--text-secondary)">
+                <div className="flex items-center gap-2">
+                  <AuthorAvatar name={post.author.name} size={36} />
+                  <div>
+                    <p className="font-bold text-(--text-primary)">{post.author.name}</p>
+                    <p className="text-xs">{post.author.role}</p>
+                  </div>
+                </div>
+                <span className="inline-flex items-center gap-1.5">
+                  <Calendar className="h-4 w-4" aria-hidden="true" />
+                  {formatDate(post.publishDate)}
                 </span>
+                {post.updatedDate && post.updatedDate !== post.publishDate && (
+                  <span>Updated {formatDate(post.updatedDate)}</span>
+                )}
+                <span className="inline-flex items-center gap-1.5">
+                  <Clock className="h-4 w-4" aria-hidden="true" />
+                  {post.readingTime} min
+                </span>
+                <BlogViewCounter slug={slug} initialViews={liveViews} />
               </div>
-              <span className="flex items-center gap-1.5">
-                <Calendar className="w-4 h-4" />
-                {formatDate(post.publishDate)}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4" />
-                {post.readingTime} min read
-              </span>
-              <BlogViewCounter slug={slug} initialViews={liveViews} />
-            </div>
-          </div>
-
-          {/* Featured Image */}
-          <div className="max-w-4xl mx-auto px-6 mt-8">
-            <div className="relative rounded-2xl overflow-hidden shadow-xl ring-1 ring-black/5 dark:ring-white/10 bg-(--surface)">
-              <Image
-                src={post.featuredImage}
-                alt={post.featuredImageAlt}
-                width={1200}
-                height={630}
-                className="w-full h-auto"
-                priority
-              />
-              <div className="absolute inset-0 border border-black/10 dark:border-white/10 rounded-3xl pointer-events-none" />
+              <ShareButtons url={pageUrl} title={post.title} compact />
             </div>
           </div>
         </header>
 
-        {/* ──────────── MAIN CONTENT ──────────── */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 py-10">
-          <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 lg:gap-14 items-start">
-            {/* Sticky Sidebar (Left) */}
-            <div className="order-2 lg:order-1 lg:sticky lg:top-28">
-              <BlogSidebar currentPostId={post.id} />
-            </div>
-
-            {/* Article (Right) */}
-            <article className="order-1 lg:order-2">
-              {/* Share buttons - top */}
-              <div className="flex items-center justify-between mb-8 pb-6 border-b border-(--border) flex-wrap gap-4">
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-(--color-primary) hover:opacity-70 transition-opacity"
-                >
-                  <ArrowLeft className="w-4 h-4" /> Back to Blog
-                </Link>
-                <ShareButtons url={pageUrl} title={post.title} />
+        <div className="mx-auto max-w-6xl px-5 py-10 md:px-8 lg:px-12">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-14">
+            <article>
+              <div className="relative mb-10 overflow-hidden rounded-2xl bg-(--surface) ring-1 ring-black/5">
+                <Image
+                  src={post.featuredImage}
+                  alt={post.featuredImageAlt}
+                  width={1200}
+                  height={630}
+                  quality={85}
+                  sizes="(max-width: 1024px) 100vw, 760px"
+                  className="h-auto w-full"
+                  priority
+                />
               </div>
 
-              {/* Article body */}
               {content ? (
-                <div className="blog-body">{content}</div>
+                <div id="article-body" className="blog-body">{content}</div>
               ) : (
                 /* Fallback for posts without content override */
                 <div className="blog-body">
@@ -360,7 +412,7 @@ export default async function BlogDetailPage({
                       Get Free Consultation
                     </Link>
                     <Link
-                      href="/blog"
+                      href="/blog/"
                       className="blog-cta-link px-6 py-3 border border-(--border) text-(--text-primary) font-bold rounded-xl text-sm hover:border-(--color-primary)/50 transition-all"
                     >
                       Browse All Articles
@@ -371,7 +423,7 @@ export default async function BlogDetailPage({
 
               {/* Dynamic FAQ Section */}
               {faqs.length > 0 && (
-                <div className="mt-12 pt-8 border-t border-(--border)">
+                <div id="article-faq" className="mt-12 pt-8 border-t border-(--border)">
                   <h2 className="text-2xl font-black mb-6 flex items-center gap-2">
                     <HelpCircle className="w-6 h-6 text-(--color-primary)" />
                     Frequently Asked Questions
@@ -391,6 +443,24 @@ export default async function BlogDetailPage({
                 </div>
               )}
 
+              {serviceCategory && (
+                <div className="mt-10 rounded-2xl border border-(--border) bg-(--surface) p-5">
+                  <p className="text-xs font-bold uppercase tracking-wider text-(--color-primary)">
+                    Continue to a service page
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-(--text-secondary)">
+                    If you want this applied to your Pune business, talk to Growthik Media about{" "}
+                    <Link
+                      href={serviceCategory.serviceHref}
+                      className="font-bold text-(--color-primary)"
+                    >
+                      {serviceCategory.serviceLabel}
+                    </Link>
+                    .
+                  </p>
+                </div>
+              )}
+
               {/* Tags */}
               <div className="mt-10 pt-8 border-t border-(--border)">
                 <div className="flex items-center gap-2 flex-wrap">
@@ -400,18 +470,17 @@ export default async function BlogDetailPage({
                   {post.tags.map((tag) => (
                     <Link
                       key={tag.id}
-                      href={`/blog?tag=${tag.slug}`}
+                      href={
+                        getBlogCategoryPage(tag.slug)
+                          ? `/blog/${tag.slug}/`
+                          : "/blog/"
+                      }
                       className="px-3 py-1.5 rounded-full text-xs font-bold bg-(--surface) border border-(--border) text-(--text-secondary) hover:border-(--color-primary)/50 hover:text-(--color-primary) transition-all"
                     >
                       #{tag.name}
                     </Link>
                   ))}
                 </div>
-              </div>
-
-              {/* Share buttons - bottom */}
-              <div className="mt-8 pt-8 border-t border-(--border)">
-                <ShareButtons url={pageUrl} title={post.title} />
               </div>
 
               {/* Author Card */}
@@ -431,7 +500,7 @@ export default async function BlogDetailPage({
                     <p className="text-sm text-(--text-secondary) font-medium leading-relaxed">
                       {post.author.bio}
                     </p>
-                    <div className="flex items-center gap-3 mt-4">
+                    <div className="flex items-center gap-3 mt-4 flex-wrap">
                       {post.author.socialLinks.linkedin && (
                         <a
                           href={post.author.socialLinks.linkedin}
@@ -442,16 +511,12 @@ export default async function BlogDetailPage({
                           <ExternalLink className="w-3 h-3" /> LinkedIn
                         </a>
                       )}
-                      {post.author.socialLinks.website && (
-                        <a
-                          href={post.author.socialLinks.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 text-xs font-bold text-(--color-primary) hover:opacity-70 transition-opacity"
-                        >
-                          <ExternalLink className="w-3 h-3" /> Website
-                        </a>
-                      )}
+                      <Link
+                        href="/about/"
+                        className="flex items-center gap-1.5 text-xs font-bold text-(--color-primary) hover:opacity-70 transition-opacity"
+                      >
+                        About Growthik Media
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -492,22 +557,20 @@ export default async function BlogDetailPage({
                 </div>
               </div>
 
-              {/* Comments Section */}
               <CommentSection slug={slug} />
-
             </article>
+
+            <BlogArticleRail related={related} category={serviceCategory} />
           </div>
         </div>
 
-        {/* Full-width Related Posts section */}
-        <div className="bg-(--surface)/30 border-y border-(--border)/50 mt-16 py-16">
-          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div id="related-articles" className="border-y border-(--border) bg-(--surface-secondary) py-14">
+          <div className="mx-auto max-w-6xl px-5 md:px-8 lg:px-12">
             <RelatedPosts posts={related} />
           </div>
         </div>
 
-        {/* Newsletter section */}
-        <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+        <section className="mx-auto max-w-6xl px-5 py-14 md:px-8 lg:px-12">
           <NewsletterForm />
         </section>
       </div>

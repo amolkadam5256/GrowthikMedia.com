@@ -14,16 +14,14 @@ const features = ["Brand Films", "Product Videos", "Social Media Reels", "Explai
 
 export const metadata: Metadata = {
   title, description, alternates: { canonical },
-  openGraph: { title, description, url: canonical, siteName: "Growthik Media", locale: "en_IN", type: "website" },
-};
+  openGraph: { title, description, url: canonical, siteName: "Growthik Media", locale: "en_IN", type: "website" }};
 
 export default function VideoProductionPage() {
   const service = "Video Production";
   return (
     <>
       <Script id={`schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org", "@type": "Service", serviceType: service, provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` }, areaServed: { "@type": "City", name: "Pune" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
-      })}} />
+        "@context": "https://schema.org", "@type": "Service", serviceType: service, provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` }, areaServed: { "@type": "City", name: "Pune" }})}} />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />
@@ -32,7 +30,7 @@ export default function VideoProductionPage() {
               <Award className="w-4 h-4" />Specialized Agency Services
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
-              Top Agency For <br /><span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">{h1}</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">{h1}</span>
             </h1>
             <p className="text-lg md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
               We understand that engaging your audience is your biggest hurdle. That's why Growthik Media builds video production systems designed specifically for your needs.

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { Search, X, SlidersHorizontal, ChevronDown, TrendingUp, Clock, Star, Calendar } from "lucide-react";
 import type { BlogFilters, SortOption } from "@/lib/blog/types";
 import { CATEGORIES, TAGS } from "@/lib/blog/data";
@@ -8,6 +9,7 @@ interface SearchAndFilterProps {
   filters: BlogFilters;
   onFiltersChange: (filters: BlogFilters) => void;
   totalResults: number;
+  categoryAsLinks?: boolean;
 }
 
 const SORT_OPTIONS: { value: SortOption; label: string; icon: React.ElementType }[] = [
@@ -24,7 +26,12 @@ const READING_TIME_OPTIONS = [
   { value: "long", label: "Deep Dive (>10 min)" },
 ];
 
-export default function SearchAndFilter({ filters, onFiltersChange, totalResults }: SearchAndFilterProps) {
+export default function SearchAndFilter({
+  filters,
+  onFiltersChange,
+  totalResults,
+  categoryAsLinks = false,
+}: SearchAndFilterProps) {
   const [showFilters, setShowFilters] = useState(false);
   const [localSearch, setLocalSearch] = useState(filters.search);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -64,15 +71,18 @@ export default function SearchAndFilter({ filters, onFiltersChange, totalResults
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-(--text-secondary)" />
           <input
             ref={searchRef}
-            type="text"
+            type="search"
             value={localSearch}
             onChange={(e) => setLocalSearch(e.target.value)}
             placeholder="Search articles, authors, topics..."
+            aria-label="Search articles"
             className="w-full h-12 pl-11 pr-10 rounded-xl border border-(--border) bg-(--surface) text-(--text-primary) placeholder:text-(--text-secondary) text-sm font-medium focus:outline-none focus:border-(--color-primary) focus:ring-2 focus:ring-(--color-primary)/10 transition-all"
           />
           {localSearch && (
             <button
+              type="button"
               onClick={() => setLocalSearch("")}
+              aria-label="Clear search"
               className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full bg-(--border) hover:bg-(--color-primary)/10 transition-colors"
             >
               <X className="w-3 h-3 text-(--text-secondary)" />
@@ -85,6 +95,7 @@ export default function SearchAndFilter({ filters, onFiltersChange, totalResults
           <select
             value={filters.sort}
             onChange={(e) => setFilter("sort", e.target.value as SortOption)}
+            aria-label="Sort articles"
             className="h-12 pl-4 pr-10 rounded-xl border border-(--border) bg-(--surface) text-(--text-primary) text-sm font-medium focus:outline-none focus:border-(--color-primary) focus:ring-2 focus:ring-(--color-primary)/10 transition-all appearance-none cursor-pointer min-w-[160px]"
           >
             {SORT_OPTIONS.map((opt) => (
@@ -98,7 +109,10 @@ export default function SearchAndFilter({ filters, onFiltersChange, totalResults
 
         {/* Filter Toggle */}
         <button
+          type="button"
           onClick={() => setShowFilters(!showFilters)}
+          aria-expanded={showFilters}
+          aria-label="Toggle article filters"
           className={`h-12 px-5 rounded-xl border font-semibold text-sm flex items-center gap-2 transition-all shrink-0 ${showFilters || activeFilterCount > 0
               ? "bg-(--color-primary) border-(--color-primary) text-white"
               : "border-(--border) bg-(--surface) text-(--text-primary) hover:border-(--color-primary)/50"
@@ -124,29 +138,54 @@ export default function SearchAndFilter({ filters, onFiltersChange, totalResults
                 Category
               </label>
               <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => setFilter("category", "")}
-                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${!filters.category
-                      ? "bg-(--color-primary) text-white"
-                      : "bg-(--background) border border-(--border) text-(--text-secondary) hover:border-(--color-primary)/50"
-                    }`}
-                >
-                  All
-                </button>
-                {CATEGORIES.map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => setFilter("category", filters.category === cat.slug ? "" : cat.slug)}
-                    className="px-3 py-1.5 rounded-full text-xs font-bold transition-all border"
-                    style={
-                      filters.category === cat.slug
-                        ? { backgroundColor: cat.color, borderColor: cat.color, color: "white" }
-                        : { backgroundColor: "var(--background)", borderColor: "var(--border)", color: "var(--text-secondary)" }
-                    }
-                  >
-                    {cat.name} ({cat.count})
-                  </button>
-                ))}
+                {categoryAsLinks ? (
+                  <>
+                    <Link
+                      href="/blog/"
+                      className="px-3 py-1.5 rounded-full text-xs font-bold bg-(--color-primary) text-white"
+                    >
+                      All
+                    </Link>
+                    {CATEGORIES.map((cat) => (
+                      <Link
+                        key={cat.id}
+                        href={`/blog/${cat.slug}/`}
+                        className="px-3 py-1.5 rounded-full text-xs font-bold border bg-(--background) text-(--text-secondary) hover:border-(--color-primary)/50"
+                        style={{ borderColor: "var(--border)" }}
+                      >
+                        {cat.name}{cat.count > 0 ? ` (${cat.count})` : ""}
+                      </Link>
+                    ))}
+                  </>
+                ) : (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setFilter("category", "")}
+                      className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${!filters.category
+                          ? "bg-(--color-primary) text-white"
+                          : "bg-(--background) border border-(--border) text-(--text-secondary) hover:border-(--color-primary)/50"
+                        }`}
+                    >
+                      All
+                    </button>
+                    {CATEGORIES.map((cat) => (
+                      <button
+                        type="button"
+                        key={cat.id}
+                        onClick={() => setFilter("category", filters.category === cat.slug ? "" : cat.slug)}
+                        className="px-3 py-1.5 rounded-full text-xs font-bold transition-all border"
+                        style={
+                          filters.category === cat.slug
+                            ? { backgroundColor: cat.color, borderColor: cat.color, color: "white" }
+                            : { backgroundColor: "var(--background)", borderColor: "var(--border)", color: "var(--text-secondary)" }
+                        }
+                      >
+                        {cat.name}{cat.count > 0 ? ` (${cat.count})` : ""}
+                      </button>
+                    ))}
+                  </>
+                )}
               </div>
             </div>
 

@@ -26,20 +26,20 @@ export interface LocationData {
 
 export const locationMapping: Record<string, LocationData> = {
   "website-design-company-aundh": {
-    title: "Best Web Design Company in Aundh Pune | Growthik Media",
+    title: "Website Design Company in Aundh Pune | Growthik Media",
     description:
-      "Top web design company in Aundh, Pune. We build fast, SEO-optimized, conversion-focused websites for local businesses. Get a free quote today.",
+      "Website design company in Aundh, Pune. We build fast, SEO-optimized, conversion-focused websites for local businesses. Get a free quote today.",
     keywords:
-      "website design company in aundh, web design aundh pune, website development aundh, best web design company aundh",
-    ogTitle: "Best Web Design Company in Aundh Pune | Growthik Media",
+      "website design company in aundh, web design aundh pune, website development aundh",
+    ogTitle: "Website Design Company in Aundh Pune | Growthik Media",
     ogDescription:
-      "Top-rated website design company in Aundh, Pune - fast, SEO-optimized websites that convert visitors into customers.",
+      "Website design company in Aundh, Pune - fast, SEO-optimized websites that convert visitors into customers.",
     area: "Aundh",
     city: "Pune",
     primaryService: "Website Design Company",
-    headline: "Best Website Design Company in Aundh",
+    headline: "Website Design Company in Aundh",
     subheadline:
-      "We design and develop high-performance, SEO-ready websites for businesses in Aundh, Pune that rank on Google and turn visitors into leads - guaranteed.",
+      "We design and develop high-performance, SEO-ready websites for businesses in Aundh, Pune that rank on Google and turn visitors into leads.",
     areaDescription:
       "Aundh is one of Pune's most vibrant business hubs, home to IT firms, retail shops, clinics, coaching institutes and restaurants. With increasing digital competition, having a professional website isn't enough - you need a site that loads fast, ranks high and converts. Growthik Media has completed 50+ projects for Pune businesses and we understand exactly what the Aundh audience expects from an online experience.",
     services: [
@@ -96,16 +96,16 @@ export const locationMapping: Record<string, LocationData> = {
   "website-design-company-baner": {
     title: "Web Design Company in Baner Pune | Growthik Media",
     description:
-      "Best web design company in Baner, Pune. We build fast, SEO-optimized and conversion-focused websites for local businesses. Get a free quote today.",
+      "Website design company in Baner, Pune. We build fast, SEO-optimized and conversion-focused websites for local businesses. Get a free quote today.",
     keywords:
-      "website design company baner, web design baner pune, website development baner, best web design company baner pune",
+      "website design company baner, web design baner pune, website development baner",
     ogTitle: "Web Design Company in Baner Pune | Growthik Media",
     ogDescription:
-      "Best website design company in Baner, Pune - premium websites for startups, agencies and businesses in Baner & Balewadi area.",
+      "Website design company in Baner, Pune - websites for startups, agencies and businesses in Baner and Balewadi.",
     area: "Baner",
     city: "Pune",
     primaryService: "Website Design Company",
-    headline: "Top Website Design Company in Baner",
+    headline: "Website Design Company in Baner",
     subheadline:
       "Premium website design and development for startups, agencies, restaurants, clinics and retail businesses in Baner and Balewadi - built to rank, designed to convert.",
     areaDescription:
@@ -144,7 +144,7 @@ export const locationMapping: Record<string, LocationData> = {
     ],
     faqs: [
       {
-        q: "What makes Growthik Media the best website design company in Baner?",
+        q: "What makes Growthik Media a strong website design company in Baner?",
         a: "We combine three things that most agencies in Baner lack: premium design quality, technical performance excellence (90+ PageSpeed) and SEO built into every website from day one. We also offer transparent pricing and dedicated account management.",
       },
       {
@@ -166,7 +166,7 @@ export const locationMapping: Record<string, LocationData> = {
     description:
       "Expert website development in Hadapsar, Pune. Custom, SEO-optimized websites for businesses in Hadapsar. Fast delivery, transparent pricing. Get a free quote.",
     keywords:
-      "website development hadapsar, web design hadapsar pune, website design company hadapsar, best web development hadapsar pune",
+      "website development hadapsar, web design hadapsar pune, website design company hadapsar",
     ogTitle: "Website Development in Hadapsar Pune | Growthik Media",
     ogDescription:
       "Expert website development in Hadapsar, Pune - custom, SEO-ready websites for businesses of all sizes. Free quote available.",
@@ -232,16 +232,16 @@ export const locationMapping: Record<string, LocationData> = {
   "website-design-company-kothrud": {
     title: "Web Design Company in Kothrud Pune | Growthik Media",
     description:
-      "Best web design company in Kothrud, Pune. We create modern, fast and SEO-optimized websites for local businesses. Get a free quote today.",
+      "Website design company in Kothrud, Pune. We create modern, fast and SEO-optimized websites for local businesses. Get a free quote today.",
     keywords:
-      "website design company kothrud, web design kothrud pune, website development kothrud, best web design company kothrud pune",
+      "website design company kothrud, web design kothrud pune, website development kothrud",
     ogTitle: "Web Design Company in Kothrud Pune | Growthik Media",
     ogDescription:
-      "Best website design company in Kothrud, Pune - modern, fast, SEO-ready websites that convert. Free consultation available.",
+      "Website design company in Kothrud, Pune - modern, fast, SEO-ready websites that convert. Free consultation available.",
     area: "Kothrud",
     city: "Pune",
     primaryService: "Website Design Company",
-    headline: "Best Website Design Company in Kothrud",
+    headline: "Website Design Company in Kothrud",
     subheadline:
       "We build high-performance, beautifully designed websites for Kothrud businesses that rank on Google, engage visitors and convert them into loyal customers.",
     areaDescription:
@@ -302,7 +302,7 @@ export const locationMapping: Record<string, LocationData> = {
     description:
       "Professional website design in PCMC (Pimpri Chinchwad). We build high-performance, SEO-ready websites for PCMC businesses. Get a free website audit today.",
     keywords:
-      "website design pcmc, web design pimpri chinchwad, website development pcmc pune, best website design company pcmc",
+      "website design pcmc, web design pimpri chinchwad, website development pcmc pune",
     ogTitle: "Website Design in PCMC Pune | Growthik Media",
     ogDescription:
       "Professional website design in PCMC (Pimpri Chinchwad) - fast, SEO-optimized websites for local businesses. Free consultation available.",
@@ -370,7 +370,7 @@ export const locationMapping: Record<string, LocationData> = {
     description:
       "Professional web design in Viman Nagar, Pune. We build fast, beautiful and conversion-focused websites for businesses in Viman Nagar. Get a free quote.",
     keywords:
-      "web design viman nagar, website design company viman nagar pune, website development viman nagar, best web design viman nagar",
+      "web design viman nagar, website design company viman nagar pune, website development viman nagar",
     ogTitle: "Web Design in Viman Nagar Pune | Growthik Media",
     ogDescription:
       "Professional web design in Viman Nagar, Pune - high-performance, SEO-optimized websites that grow your business.",
@@ -436,16 +436,16 @@ export const locationMapping: Record<string, LocationData> = {
   "website-design-company-wakad": {
     title: "Web Design Company in Wakad Pune | Growthik Media",
     description:
-      "Top web design company in Wakad, Pune. Fast, SEO-optimized websites for IT companies, startups and local businesses. Get a free consultation.",
+      "Website design company in Wakad, Pune. Fast, SEO-optimized websites for IT companies, startups and local businesses. Get a free consultation.",
     keywords:
-      "website design company wakad, web design wakad pune, website development wakad, best web design company wakad pune",
+      "website design company wakad, web design wakad pune, website development wakad",
     ogTitle: "Web Design Company in Wakad Pune | Growthik Media",
     ogDescription:
-      "Top website design company in Wakad, Pune - SEO-optimized, conversion-focused websites for Wakad businesses. Free consultation.",
+      "Website design company in Wakad, Pune - SEO-optimized, conversion-focused websites for Wakad businesses. Free consultation.",
     area: "Wakad",
     city: "Pune",
     primaryService: "Website Design Company",
-    headline: "Best Website Design Company in Wakad",
+    headline: "Website Design Company in Wakad",
     subheadline:
       "We build premium, performance-first websites for businesses in Wakad - from IT companies and real estate agencies to restaurants and professional service providers.",
     areaDescription:
@@ -506,10 +506,10 @@ export const locationMapping: Record<string, LocationData> = {
     description:
       "SEO services for IT companies and startups in Hinjewadi Pune. Rank higher and generate more B2B leads. Get a free SEO audit today.",
     keywords:
-      "seo company in hinjewadi, seo services hinjewadi pune, seo for it companies hinjewadi, best seo agency hinjewadi",
+      "seo company in hinjewadi, seo services hinjewadi pune, seo for it companies hinjewadi",
     ogTitle: "SEO Company in Hinjewadi Pune | Growthik Media",
     ogDescription:
-      "Top-rated SEO agency in Hinjewadi, Pune - specialized in B2B lead generation for IT companies and startups.",
+      "SEO agency in Hinjewadi, Pune - specialized in B2B lead generation for IT companies and startups.",
     area: "Hinjewadi",
     city: "Pune",
     primaryService: "SEO Company",
@@ -572,7 +572,7 @@ export const locationMapping: Record<string, LocationData> = {
   "website-design-company-pune": {
     title: "Website Design Company in Pune | Growthik Media",
     description: "Leading website design company in Pune. We create stunning, mobile-responsive and conversion-focused designs.",
-    keywords: "website design company pune, web design pune, best website design pune",
+    keywords: "website design company pune, web design pune, website design pune",
     ogTitle: "Website Design Company in Pune | Growthik Media",
     ogDescription: "Leading website design company in Pune. We create stunning, mobile-responsive and conversion-focused designs.",
     area: "Pune",

@@ -105,13 +105,13 @@ const AboutFounderSection = () => {
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-(--color-primary) transition-colors">
                   <ShieldCheck className="w-4 h-4 text-(--text-secondary) group-hover:text-(--color-primary) group-hover:scale-110 transition-all" />
                   <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-(--color-primary) transition-colors">
-                    Google Certified
+                    Pune-Based
                   </span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-(--color-primary) transition-colors">
                   <Award className="w-4 h-4 text-(--text-secondary) group-hover:text-(--color-primary) group-hover:scale-110 transition-all" />
                   <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-(--color-primary) transition-colors">
-                    Meta Partner
+                    Established 2019
                   </span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-(--color-primary) transition-colors">

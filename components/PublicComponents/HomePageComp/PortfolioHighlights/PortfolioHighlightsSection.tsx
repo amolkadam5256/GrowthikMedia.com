@@ -101,7 +101,7 @@ const PortfolioHighlightsSection = React.memo(() => {
             {[
               { val: "50+", label: "Projects Completed" },
               { val: "10+", label: "Happy Clients" },
-              { val: "3+", label: "Years Experience" },
+              { val: "2019", label: "Established" },
             ].map((stat, i) => (
               <div
                 key={i}

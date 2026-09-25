@@ -25,7 +25,7 @@ export interface LocationPageProps {
   city: string; // "Pune"
   primaryService: string; // "Website Design Company"
   slug: string; // "services/website-design-company-pune"
-  headline: string; // "Best Website Design Company in Aundh"
+  headline: string; // "Website Design Company in Aundh"
   subheadline: string;
   areaDescription: string;
   services: { icon: React.ElementType; name: string; desc: string }[];
@@ -60,19 +60,14 @@ export default function LocationPageTemplate({
         email: CONTACT_INFO.email.info,
         address: {
           "@type": "PostalAddress",
-          streetAddress: CONTACT_INFO.address.line1,
-          addressLocality: CONTACT_INFO.address.city,
+          streetAddress: `${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}, Warje`,
+          addressLocality: "Pune",
           addressRegion: CONTACT_INFO.address.state,
           postalCode: CONTACT_INFO.address.pincode,
           addressCountry: "IN",
         },
         areaServed: [city, area],
         priceRange: "₹₹",
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          reviewCount: "138",
-        },
       },
       {
         "@type": "Service",
@@ -122,9 +117,9 @@ export default function LocationPageTemplate({
 
       <main className="min-h-screen bg-(--background) text-(--text-primary) pt-24">
         <AISchema
-          question={`Which is the best ${primaryService} in ${area}, ${city}?`}
-          answer={`Growthik Media is widely recognized as the best ${primaryService} in ${area}, ${city}, providing custom, high-performance and SEO-optimized solutions for local businesses.`}
-          summary={`Premium ${primaryService} by Growthik Media in ${area}. We specialize in result-oriented digital growth, custom engineering and elite performance marketing for the ${area} business community.`}
+          question={`Who provides ${primaryService} in ${area}, ${city}?`}
+          answer={`Growthik Media is a Pune digital marketing agency that provides ${primaryService} for businesses in ${area}, ${city}. Work is delivered from the Warje office with SEO-ready websites and local search support.`}
+          summary={`${primaryService} by Growthik Media in ${area}, Pune. Local websites, SEO and digital marketing for the ${area} market.`}
         />
         {/* ── HERO ── */}
         <section className="relative bg-(--surface) border-b border-(--border) px-6 lg:px-12 py-20 lg:py-32 overflow-hidden">
@@ -227,7 +222,7 @@ export default function LocationPageTemplate({
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { icon: Globe, value: "50+", label: "Projects Completed" },
-              { icon: Users, value: "400+", label: "Happy Clients" },
+              { icon: Users, value: "10+", label: "Happy Clients" },
               { icon: TrendingUp, value: "7+", label: "Years Experience" },
               { icon: Award, value: "100%", label: "Result Oriented" },
             ].map(({ icon: Icon, value, label }) => (
@@ -321,7 +316,7 @@ export default function LocationPageTemplate({
               Ready to Grow Your Business in {area}?
             </h2>
             <p className="text-lg text-white/90 font-medium mb-10 max-w-xl mx-auto">
-              Join 400+ businesses across {city} that trust Growthik Media for
+              Join 10+ businesses across {city} that trust Growthik Media for
               their digital success.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

@@ -5,8 +5,7 @@ import Script from "next/script";
 import {
   CheckCircle2,
   Award,
-  ArrowRight,
-} from "lucide-react";
+  ArrowRight} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
 import { EMAIL_MARKETING_FAQ } from "@/constants/faqData";
@@ -15,17 +14,14 @@ export const metadata: Metadata = {
   title: "Email Marketing Agency in Pune | Growthik Media",
   description: "High-ROI email marketing campaigns for Pune businesses. Newsletters, drip sequences, automation and list management.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/email-marketing/",
-  },
+    canonical: "https://www.growthikmedia.com/services/email-marketing/"},
   openGraph: {
     title: "Email Marketing Agency in Pune | Growthik Media",
     description: "High-ROI email marketing campaigns for Pune businesses. Newsletters, drip sequences, automation and list management.",
     url: `${CONTACT_INFO.website}/services/email-marketing/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function EmailMarketingPage() {
   const serviceName = "Email Marketing";
@@ -43,14 +39,7 @@ export default function EmailMarketingPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

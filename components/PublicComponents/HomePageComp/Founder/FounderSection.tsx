@@ -14,7 +14,6 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Button } from "@/components/PublicComponents/ui/GButton";
-import { Counter } from "@/components/PublicComponents/ui/GCounter";
 
 const FounderSection = () => {
   return (
@@ -135,11 +134,7 @@ const FounderSection = () => {
                   Experience
                 </span>
                 <span className="text-lg font-black text-(--text-primary)">
-                  <Counter
-                    value={2.5}
-                    decimals={1}
-                    suffix="+ Years in Digital Marketing"
-                  />
+                  Founded Growthik Media in 2019
                 </span>
               </div>
             </div>

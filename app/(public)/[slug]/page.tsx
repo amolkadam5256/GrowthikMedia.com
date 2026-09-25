@@ -5,14 +5,34 @@ import { locationMapping } from "@/constants/locationData";
 import LocationPageTemplate from "@/app/(public)/_locationPage/LocationPageTemplate";
 import { LegacyPageContent, legacyRootPages } from "@/lib/seo/legacyPages";
 
-// Generate paths for static generation
+const RESERVED_ROOT_SLUGS = new Set([
+  "about",
+  "contact",
+  "services",
+  "audit",
+  "blog",
+  "portfolio",
+  "privacy-policy",
+  "terms",
+  "refund-policy",
+  "shipping-policy",
+  "backlink-strategy",
+  "success-stories",
+  "admin",
+  "chat",
+  "api",
+]);
+
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
-  return Object.keys(locationMapping).map((slug) => ({
-    slug: slug,
-  }));
+  return Object.keys(locationMapping)
+    .filter((slug) => !RESERVED_ROOT_SLUGS.has(slug))
+    .map((slug) => ({
+      slug,
+    }));
 }
 
-// Dynamic Metadata
 export async function generateMetadata({
   params,
 }: {

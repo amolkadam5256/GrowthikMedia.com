@@ -62,11 +62,6 @@ export const CONTACT_INFO = {
     iframe: "https://www.google.com/maps/embed?pb=YOUR_IFRAME_LINK",
   },
 
-  // Legal
-  legal: {
-    gst: "27ABCDE1234F1Z5",
-    cin: "U12345MH2024PTC000000",
-  },
 };
 
 export const STRUCTURED_DATA_IDS = {

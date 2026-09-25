@@ -9,17 +9,14 @@ export const metadata: Metadata = {
   title: "Business Card Design Company Pune | Growthik Media",
   description: "Make a powerful first impression with the best business card design in Pune. Premium, professional visiting card designs that reflect your brand identity.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/business-card-design/",
-  },
+    canonical: "https://www.growthikmedia.com/services/business-card-design/"},
   openGraph: {
     title: "Business Card Design Company Pune | Growthik Media",
     description: "Make a powerful first impression with the best business card design in Pune. Premium, professional visiting card designs that reflect your brand identity.",
     url: `${CONTACT_INFO.website}/services/business-card-design/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function BusinessCardDesignPage() {
   const serviceName = "Business Card Design";
@@ -36,14 +33,7 @@ export default function BusinessCardDesignPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

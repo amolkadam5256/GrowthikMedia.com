@@ -28,16 +28,15 @@ const PuneMarketInsightSection = () => {
 
             <div className="prose prose-lg text-(--text-secondary) mb-8">
               <p className="leading-relaxed mb-4">
-                Pune is evolving into one of India's fastest-growing startup hubs.
-                With over <strong>45% of local consumer queries</strong> now
-                containing &quot;near me&quot; or &quot;best in Pune,&quot;
-                traditional marketing alone isn&apos;t enough.
+                Pune businesses now compete in search, ads and social before they
+                compete on the street. Customers compare options online, then call
+                or visit the brand that looks most trustworthy.
               </p>
               <p className="leading-relaxed">
                 Whether you are a manufacturing unit in PCMC or a retail brand in
-                Koregaon Park, your customers are searching online{" "}
-                <em>right now</em>. Growthik Media helps you turn local success into digital visibility, ensuring you reach
-                your customers before your competitors do.
+                Koregaon Park, your next customer is already searching. Growthik
+                Media helps you turn that demand into visibility, qualified leads
+                and measurable revenue.
               </p>
             </div>
 
@@ -69,14 +68,14 @@ const PuneMarketInsightSection = () => {
                       Local Intent
                     </h3>
                     <p className="text-sm text-(--text-secondary)">
-                      Surge in &quot;Near Me&quot; searches across{" "}
+                      Local search and Maps visibility matter across{" "}
                       <Link
-                        href="/services/seo"
+                        href="/services/local-seo"
                         className="text-(--color-primary) hover:underline font-semibold"
                       >
-                        Pune & PCMC
-                      </Link>{" "}
-                      regions.
+                        Pune and PCMC
+                      </Link>
+                      .
                     </p>
                   </div>
                 </div>
@@ -90,7 +89,8 @@ const PuneMarketInsightSection = () => {
                       Digital Adoption
                     </h3>
                     <p className="text-sm text-(--text-secondary)">
-                      Punekars spend 4+ hours daily on digital platforms.
+                      Buyers research services, compare options and enquire online
+                      before they visit or call.
                     </p>
                   </div>
                 </div>

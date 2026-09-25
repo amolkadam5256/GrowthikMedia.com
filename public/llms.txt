@@ -9,6 +9,7 @@ Growthik Media is a Pune-based digital marketing and web development company. Th
 - Services: https://www.growthikmedia.com/services/
 - Blog: https://www.growthikmedia.com/blog/
 - Portfolio: https://www.growthikmedia.com/portfolio/
+- Reet Foods project: https://www.growthikmedia.com/portfolio/reet-foods-corporate-gifting-website/
 - Contact: https://www.growthikmedia.com/contact/
 - Full AI-readable knowledge: https://www.growthikmedia.com/llms-full.txt
 
@@ -28,7 +29,7 @@ The authoritative public contact details are maintained in `constants/contact.ts
 - [Brochure Design Company in Pune | Growthik Media](https://www.growthikmedia.com/services/brochure-design/) - Professional brochure design in Pune. Company profiles, product brochures, flyers and all print collateral.
 - [Business Card Design Company Pune | Growthik Media](https://www.growthikmedia.com/services/business-card-design/) - Make a powerful first impression with the best business card design in Pune. Premium, professional visiting card designs that reflect your brand identity.
 - [Content Marketing Agency in Pune | B2B Content Strategy | Growthik](https://www.growthikmedia.com/services/content-marketing/) - Strategic content marketing in Pune. We specialize in blog writing, whitepapers, LinkedIn thought leadership, and case studies for B2B & IT firms in Hinjewadi & Baner.
-- [Digital Marketing Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/digital-marketing/) - Results-driven digital marketing agency in Pune. SEO, Google Ads, Social Media and Content Marketing to scale your business.
+- [Digital Marketing Agency in Pune | Growthik Media](https://www.growthikmedia.com/) - Pune-based digital marketing agency. SEO, Google Ads, Meta Ads, performance marketing and website development.
 - [eCommerce Website Development Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/ecommerce-development/) - Professional eCommerce development in Pune. Scaling online stores with Razorpay, inventory management and high-converting UX.
 - [E-commerce Website Development in Pune | Growthik Media](https://www.growthikmedia.com/services/ecommerce-website-development/) - Scale your online store with professional e-commerce development in Pune. Shopify, WooCommerce and custom platforms.
 - [Educational Website Development in Pune | Growthik Media](https://www.growthikmedia.com/services/educational-website-development/) - LMS and educational website development in Pune. E-learning platforms for schools, colleges and coaching institutes.
@@ -69,9 +70,9 @@ The authoritative public contact details are maintained in `constants/contact.ts
 
 ## Policy Pages
 
-- [Privacy Policy | ${CONTACT_INFO.companyName}](https://www.growthikmedia.com/privacy-policy/)
-- [Refund & Cancellation Policy | Growthik Media - SEO & Digital Marketing Agency Pune](https://www.growthikmedia.com/refund-policy/)
+- [Privacy Policy | Growthik Media](https://www.growthikmedia.com/privacy-policy/)
+- [Refund & Cancellation Policy | Growthik Media](https://www.growthikmedia.com/refund-policy/)
 - [Shipping & Delivery Policy | Growthik Media](https://www.growthikmedia.com/shipping-policy/)
-- [Terms of Service | ${CONTACT_INFO.companyName}](https://www.growthikmedia.com/terms/)
+- [Terms of Service | Growthik Media](https://www.growthikmedia.com/terms/)
 
-Generated locally from project source files. Last generated: 2026-08-30.
+Generated locally from project source files. Last generated: 2026-09-25.

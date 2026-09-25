@@ -135,14 +135,14 @@ import AIOptimizedBlocks from "@/components/PublicComponents/HomePageComp/GEO/AI
 const HomeClient = () => {
   return (
     <main className="relative bg-(--background)">
-      {/* 0. GEO / AI SEO Blocks - Hidden but extractable by AI Agents */}
-      <AIOptimizedBlocks />
-
       {/* 1. Hero - First Impression & Value Proposition */}
       <HomeHeroSection />
 
       {/* 2. Trust Strip - Immediate Social Proof */}
       <TrustStrip />
+
+      {/* 2.1 AEO definition — extractable answer for search and AI */}
+      <AIOptimizedBlocks />
 
       {/* 2.5 Industries We Serve - Industry Targeting & Semantic SEO */}
       <IndustriesWeServeSection />

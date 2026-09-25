@@ -7,26 +7,26 @@ const testimonials = [
   {
     id: 1,
     content:
-      "Growthik Media generated high-quality leads through precision SEO and PPC.",
-    initials: "RD",
-    name: "Rahul Deshmukh",
-    title: "CEO, TechNova",
+      "Growthik Media built our corporate gifting website and made it simple for Pune companies to request a quotation.",
+    initials: "SK",
+    name: "Shraddha Kharate",
+    title: "Co-founder, Reet Foods",
   },
   {
     id: 2,
     content:
-      "Our website traffic increased by 300% after deploying their strategies. Unmatched ROI.",
-    initials: "SP",
-    name: "Sneha Patil",
-    title: "Founder, EcomStore",
+      "They set up the pages, quotation flow and WhatsApp contact so corporate buyers can reach us quickly.",
+    initials: "HK",
+    name: "Harshad Kharate",
+    title: "Co-founder, Reet Foods",
   },
   {
     id: 3,
     content:
-      "The best digital marketing agency in Pune. Fantastic results across all channels.",
-    initials: "AM",
-    name: "Anil Mehta",
-    title: "Director, BuildCorp",
+      "Google Ads, SEO and conversion tracking were set up so we can see which campaigns create real enquiries.",
+    initials: "CL",
+    name: "Client",
+    title: "Ecommerce skincare brand",
   },
 ];
 

@@ -11,14 +11,12 @@ import {
   MapPin,
   ArrowRight,
   Globe,
-  BarChart,
-} from "lucide-react";
+  BarChart} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 
 // Next 15 requires awaiting params
 export async function generateMetadata({
-  params,
-}: {
+  params}: {
   params: Promise<{ seoStrategy: string }>;
 }): Promise<Metadata> {
   const { seoStrategy } = await params;
@@ -52,8 +50,7 @@ export async function generateMetadata({
 
   const exactOverrides: Record<string, string> = {
     "lead-generation-company-in-pune":
-      "Best Lead Generation Agency in Pune | Growthik Media",
-  };
+      "Best Lead Generation Agency in Pune | Growthik Media"};
 
   const metaTitle =
     exactOverrides[seoStrategy] ||
@@ -69,21 +66,17 @@ export async function generateMetadata({
     title: metaTitle,
     description: metaDescription,
     alternates: {
-      canonical: `${CONTACT_INFO.website}/services/${seoStrategy}`,
-    },
+      canonical: `${CONTACT_INFO.website}/services/${seoStrategy}`},
     openGraph: {
       title: metaTitle,
       description: metaDescription,
       url: `${CONTACT_INFO.website}/services/${seoStrategy}`,
       siteName: "Growthik Media",
-      type: "website",
-    },
-  };
+      type: "website"}};
 }
 
 export default async function ProgrammaticSeoPage({
-  params,
-}: {
+  params}: {
   params: Promise<{ seoStrategy: string }>;
 }) {
   const { seoStrategy } = await params;
@@ -139,15 +132,7 @@ export default async function ProgrammaticSeoPage({
               provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
               areaServed: {
                 "@type": "City",
-                name: modifier,
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.9",
-                reviewCount: "138",
-              },
-            }),
-          }}
+                name: modifier}})}}
         />
       )}
 
@@ -162,7 +147,6 @@ export default async function ProgrammaticSeoPage({
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
-              Top Agency For <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">
                 {h1}
               </span>
@@ -229,8 +213,7 @@ export default async function ProgrammaticSeoPage({
                 { icon: BarChart, title: "High-Intent Traffic" },
                 { icon: Target, title: "Precision Targeting" },
                 { icon: Monitor, title: "Conversion Optimization" },
-                { icon: Globe, title: "Scalable Infrastructure" },
-              ].map((benefit, idx) => (
+                { icon: Globe, title: "Scalable Infrastructure" }].map((benefit, idx) => (
                 <div
                   key={idx}
                   className="bg-(--surface) p-6 rounded-2xl border border-(--border)"

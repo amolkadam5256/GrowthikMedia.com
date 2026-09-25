@@ -3,7 +3,6 @@ import Script from "next/script";
 import {
   buildLocalBusinessSchema,
   buildOrganizationSchema,
-  buildServiceSchema,
   buildWebSiteSchema,
 } from "@/lib/seo/schema";
 
@@ -34,13 +33,6 @@ export default function SEO() {
         }}
       />
 
-      <Script
-        id="structured-data-services"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(buildServiceSchema()),
-        }}
-      />
     </>
   );
 }

@@ -9,7 +9,7 @@ import { PPC_FAQ } from "@/constants/faqData";
 
 const slug = "ppc-google-ads";
 const title = "Google Ads Agency in Pune | High ROI PPC Management | Growthik";
-const description = "Certified Google Ads agency in Pune. Maximizing ROAS and lead quality with data-driven PPC strategies for Pune businesses in Baner, Hinjewadi & Kharadi.";
+const description = "Google Ads agency in Pune. We manage search and Performance Max campaigns to improve lead quality for Pune businesses in Baner, Hinjewadi and Kharadi.";
 const h1 = "Google Ads Agency in Pune";
 const canonical = `https://www.growthikmedia.com/services/${slug}/`;
 const features = ["Search & Performance Max", "Remarketing Display Ads", "E-commerce Shopping Ads", "B2B Lead Generation Ads", "Landing Page CRO", "Negative Keyword Scrubbing"];
@@ -17,8 +17,7 @@ const googleAdsIntents = [
   { title: "Startups", desc: "Lean search campaigns for early-stage companies that need pipeline without wasting budget on broad discovery terms." },
   { title: "Real Estate", desc: "Project and location-led campaigns with call tracking, lead forms, landing page testing and negative keyword control." },
   { title: "Healthcare", desc: "Compliant, intent-focused Google Ads for clinics and healthcare providers that depend on local appointment searches." },
-  { title: "Mumbai Expansion", desc: "Campaign structures for Pune teams selling into Mumbai with separate geo bidding, copy and conversion tracking." },
-];
+  { title: "Mumbai Expansion", desc: "Campaign structures for Pune teams selling into Mumbai with separate geo bidding, copy and conversion tracking." }];
 
 export const metadata: Metadata = {
   title, description, alternates: { canonical },
@@ -30,8 +29,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Google Ads Agency Pune" }]
-  },
-};
+  }};
 
 export default function GoogleAdsPage() {
   const service = "Google Ads";
@@ -43,15 +41,13 @@ export default function GoogleAdsPage() {
         "name": "Google Ads PPC Management Pune",
         "serviceType": service,
         "provider": { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-        "areaServed": { "@type": "City", name: "Pune" },
-        "aggregateRating": { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "135" },
-      })}} />
+        "areaServed": { "@type": "City", name: "Pune" }})}} />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />
           <div className="relative z-10 max-w-5xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--background) border border-(--border) shadow-sm mb-6 text-sm font-bold text-(--color-primary) tracking-wide uppercase">
-              <Target className="w-4 h-4" /> Certified PPC Experts
+              <Target className="w-4 h-4" /> Google Ads Specialists
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
               Buy Leads, Not Clicks: <br /><span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">{h1}</span>

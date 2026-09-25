@@ -15,8 +15,8 @@ export function buildOrganizationSchema() {
     telephone: CONTACT_INFO.phone.primary,
     address: {
       "@type": "PostalAddress",
-      streetAddress: `${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}`,
-      addressLocality: CONTACT_INFO.address.city,
+      streetAddress: `${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}, Warje`,
+      addressLocality: "Pune",
       addressRegion: CONTACT_INFO.address.state,
       postalCode: CONTACT_INFO.address.pincode,
       addressCountry: "IN",
@@ -60,8 +60,8 @@ export function buildLocalBusinessSchema() {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: `${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}`,
-      addressLocality: CONTACT_INFO.address.city,
+      streetAddress: `${CONTACT_INFO.address.line1}, ${CONTACT_INFO.address.line2}, Warje`,
+      addressLocality: "Pune",
       addressRegion: CONTACT_INFO.address.state,
       postalCode: CONTACT_INFO.address.pincode,
       addressCountry: "IN",
@@ -139,6 +139,56 @@ export function buildFaqSchema(items: Array<{ question: string; answer: string }
         text: item.answer,
       },
     })),
+  };
+}
+
+export function buildBlogListingSchema({
+  name,
+  description,
+  url,
+  posts,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  posts: Array<{ title: string; slug: string }>;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["CollectionPage", "Blog"],
+        "@id": `${url}#blog`,
+        name,
+        url,
+        description,
+        isPartOf: { "@id": STRUCTURED_DATA_IDS.website },
+        about: {
+          "@type": "Thing",
+          name: "Digital marketing and SEO for Pune businesses",
+        },
+        publisher: { "@id": STRUCTURED_DATA_IDS.organization },
+        author: {
+          "@type": "Person",
+          name: "Amol Kadam",
+          jobTitle: "Founder & Digital Marketing Strategist",
+          url: "https://www.linkedin.com/in/amolkadam77/",
+          worksFor: { "@id": STRUCTURED_DATA_IDS.organization },
+        },
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${url}#itemlist`,
+        name,
+        numberOfItems: posts.length,
+        itemListElement: posts.map((post, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: `${CONTACT_INFO.website}/blog/${post.slug}/`,
+          name: post.title,
+        })),
+      },
+    ],
   };
 }
 

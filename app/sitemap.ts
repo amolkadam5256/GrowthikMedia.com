@@ -15,7 +15,6 @@ const serviceRoutes = [
   "/services/brochure-design",
   "/services/business-card-design",
   "/services/content-marketing",
-  "/services/digital-marketing",
   "/services/ecommerce-development",
   "/services/ecommerce-website-development",
   "/services/educational-website-development",
@@ -64,6 +63,7 @@ const staticRoutes = [
   "/portfolio/digital-campaigns",
   "/portfolio/skincare-serum-facewash-ecommerce-campaign",
   "/portfolio/mango-pulp-whatsapp-lead-generation-campaign",
+  "/portfolio/reet-foods-corporate-gifting-website",
   "/portfolio/social-media-creatives",
   "/privacy-policy",
   "/refund-policy",
@@ -80,10 +80,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = CONTACT_INFO.website;
   const now = new Date();
 
-  const locationRoutes = Object.keys(locationMapping).flatMap((slug) => [
-    `/${slug}`,
-    `/services/${slug}`,
-  ]);
+  const locationRoutes = Object.keys(locationMapping)
+    .filter((slug) => slug !== "website-design-company-pune")
+    .map((slug) => `/${slug}`);
 
   const pageRoutes = [...new Set([...staticRoutes, ...locationRoutes])].map((route) => {
     const changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] =
@@ -97,6 +96,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
   });
 
+  const blogCategoryRoutes = [
+    "seo",
+    "local-seo",
+    "google-ads",
+    "meta-ads",
+    "digital-marketing",
+    "web-development",
+    "ai-search",
+  ].map((slug) => ({
+    url: `${baseUrl}/blog/${slug}/`,
+    lastModified: now,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
   const blogRoutes = BLOG_POSTS.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}/`,
     lastModified: new Date(post.updatedDate || post.publishDate),
@@ -104,5 +118,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...pageRoutes, ...blogRoutes];
+  return [...pageRoutes, ...blogCategoryRoutes, ...blogRoutes];
 }

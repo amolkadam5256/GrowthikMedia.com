@@ -12,9 +12,10 @@ import {
 interface ShareButtonsProps {
   url: string;
   title: string;
+  compact?: boolean;
 }
 
-export default function ShareButtons({ url, title }: ShareButtonsProps) {
+export default function ShareButtons({ url, title, compact = false }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
 
   const encoded = encodeURIComponent(url);
@@ -50,10 +51,37 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
     },
   ];
 
+  if (compact) {
+    return (
+      <div className="flex items-center gap-2" aria-label="Share article">
+        {platforms.map((p) => (
+          <a
+            key={p.name}
+            href={p.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Share on ${p.name}`}
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-(--border) bg-(--surface) text-(--text-primary) transition-colors hover:border-(--color-primary)/40 hover:text-(--color-primary)"
+          >
+            <p.icon className="h-3.5 w-3.5" />
+          </a>
+        ))}
+        <button
+          type="button"
+          onClick={copyLink}
+          aria-label="Copy link"
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-(--color-primary) text-white"
+        >
+          {copied ? <CheckCircle2 className="h-3.5 w-3.5" /> : <Link2 className="h-3.5 w-3.5" />}
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="flex items-center gap-2 flex-wrap">
       <span className="flex items-center gap-2 text-sm font-bold text-(--text-secondary)">
-        <Share2 className="w-4 h-4" />
+        <Share2 className="w-4 h-4" aria-hidden="true" />
         Share
       </span>
 
@@ -75,7 +103,6 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
         </a>
       ))}
 
-      {/* Copy link */}
       <button
         onClick={copyLink}
         className="flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-black transition-all hover:scale-105 active:scale-95 bg-linear-to-r from-[#d90b1c] to-[#f22e52] text-white shadow-lg shadow-[#d90b1c]/20"

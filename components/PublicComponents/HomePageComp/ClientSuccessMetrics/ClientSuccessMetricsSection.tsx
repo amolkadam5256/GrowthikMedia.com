@@ -8,31 +8,31 @@ import { Counter } from "@/components/PublicComponents/ui/GCounter";
 const metrics = [
   {
     icon: Users,
-    value: 50,
+    value: 10,
     suffix: "+",
-    label: "Businesses Scaled",
-    timeframe: "In Pune & Beyond",
-  },
-  {
-    icon: DollarSign,
-    value: 12,
-    suffix: " Cr+",
-    label: "Revenue Generated",
-    timeframe: "For Our Clients",
-  },
-  {
-    icon: TrendingUp,
-    value: 150,
-    suffix: "%+",
-    label: "Avg. Traffic Growth",
-    timeframe: "Within first 6 months",
+    label: "Clients Served",
+    timeframe: "Across Pune and India",
   },
   {
     icon: Target,
-    value: 3,
-    suffix: "X",
-    label: "Lead Gen Increase",
-    timeframe: "On average per client",
+    value: 50,
+    suffix: "+",
+    label: "Projects Completed",
+    timeframe: "Web, SEO and campaigns",
+  },
+  {
+    icon: TrendingUp,
+    value: 2019,
+    suffix: "",
+    label: "Established",
+    timeframe: "Pune-based team",
+  },
+  {
+    icon: DollarSign,
+    value: 5,
+    suffix: "+",
+    label: "Team Members",
+    timeframe: "Strategy and delivery",
   },
 ];
 
@@ -117,38 +117,35 @@ const ClientSuccessMetricsSection = () => {
           data-aos="fade-up"
         >
           <h3 className="text-2xl md:text-3xl font-black text-(--text-primary) uppercase mb-6">
-            Average Client Growth Metrics
+            How we report results
           </h3>
 
           <p className="text-base md:text-lg text-(--text-secondary) leading-relaxed mb-6">
-            From local startups to established enterprises, we've helped Pune
-            businesses generate over{" "}
-            <span className="text-(--color-primary) font-bold">
-              ₹12 crore in attributed revenue
-            </span>{" "}
-            through our{" "}
-            <Link
-              href="/services/performance-marketing"
-              className="text-(--color-primary) font-bold hover:underline"
-            >
-              performance marketing strategies
-            </Link>
-            . Our{" "}
+            We report the numbers we can stand behind: projects completed, clients
+            served and the work delivered. Campaign-level outcomes — traffic,
+            CPL, ROAS and revenue — belong in case studies with a baseline,
+            timeframe and evidence. See{" "}
             <Link
               href="/services/seo"
               className="text-(--color-primary) font-bold hover:underline"
             >
               SEO services in Pune
-            </Link>{" "}
-            consistently deliver first-page rankings for high-intent keywords,
-            while our{" "}
+            </Link>
+            ,{" "}
             <Link
               href="/services/ppc-google-ads"
               className="text-(--color-primary) font-bold hover:underline"
             >
-              Google Ads campaigns
+              Google Ads management
             </Link>{" "}
-            maintain industry-leading conversion rates.
+            and{" "}
+            <Link
+              href="/portfolio"
+              className="text-(--color-primary) font-bold hover:underline"
+            >
+              recent work
+            </Link>
+            .
           </p>
 
           <div className="w-20 h-1 bg-(--color-primary) mb-6" />

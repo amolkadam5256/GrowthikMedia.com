@@ -5,31 +5,27 @@ import Script from "next/script";
 import {
   CheckCircle2,
   Award,
-  ArrowRight,
-} from "lucide-react";
+  ArrowRight} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
 import { POLITICAL_MARKETING_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
-  title: "Top Political Digital Marketing Pune | Growthik Media",
+  title: "Political Digital Marketing Pune | Growthik Media",
   description: "Win elections with the top political digital marketing agency in Pune. Professional social media management, sentiment analysis and voter outreach strategies.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/political-digital-marketing/",
-  },
+    canonical: "https://www.growthikmedia.com/services/political-digital-marketing/"},
   openGraph: {
-    title: "Top Political Digital Marketing Pune | Growthik Media",
+    title: "Political Digital Marketing Pune | Growthik Media",
     description: "Win elections with the top political digital marketing agency in Pune. Professional social media management, sentiment analysis and voter outreach strategies.",
     url: `${CONTACT_INFO.website}/services/political-digital-marketing/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function PoliticalDigitalMarketingPage() {
   const serviceName = "Political Digital Marketing";
-  const h1 = "Top Political Digital Marketing Pune";
+  const h1 = "Political Digital Marketing Pune";
 
   return (
     <>
@@ -42,14 +38,7 @@ export default function PoliticalDigitalMarketingPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

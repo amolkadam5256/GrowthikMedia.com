@@ -19,7 +19,7 @@ const HeroHeadline = () => {
         >
           <p className="text-xs md:text-sm font-bold tracking-wider text-white flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-(--color-primary) animate-pulse" aria-hidden="true" />
-            Pune's Digital Marketing Agency - Trusted Since 2019
+            Pune-based digital marketing agency · Since 2019
           </p>
         </div>
 
@@ -28,10 +28,10 @@ const HeroHeadline = () => {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black leading-[1.05] tracking-tight"
           style={{ color: "var(--color-white)" }}
         >
-          Best
+          Digital Marketing Agency
           <span className="relative inline-block mx-4">
             <span className="bg-linear-to-r from-(--color-primary) via-(--color-primary-light) to-(--color-primary-light) bg-clip-text text-transparent">
-              Digital Marketing Agency
+              in Pune
             </span>
             <svg
               className="absolute w-full h-4 md:h-6 -bottom-3 md:-bottom-5 left-0"
@@ -50,7 +50,7 @@ const HeroHeadline = () => {
             </svg>
           </span>
           <br />
-          in Pune for ROI-Driven Growth
+          Built for Measurable Growth
         </h1>
 
         {/* Subheadline - The Core Identity Line */}
@@ -58,10 +58,7 @@ const HeroHeadline = () => {
           className="text-lg sm:text-xl md:text-2xl max-w-4xl font-medium leading-[1.6] mx-auto"
           style={{ color: "var(--color-white)" }}
         >
-          We&apos;re Pune&apos;s digital marketing team helping businesses in Baner, Hinjewadi and PCMC get more traffic, better leads and real ROI -{" "}
-          <strong className="text-(--color-primary) font-black">
-            through SEO, Google Ads and websites that actually work.
-          </strong>
+          Grow traffic, leads and revenue with SEO, Google Ads, Meta Ads and high-performance websites — planned and managed by our Pune-based team.
         </p>
 
         {/* CTA Section */}
@@ -168,7 +165,7 @@ const HeroHeadline = () => {
               className="text-xs md:text-sm font-semibold"
               style={{ color: "var(--color-white)" }}
             >
-              Google Certified
+              Pune-Based Team
             </span>
           </li>
           <li className="flex items-center gap-2">

@@ -20,24 +20,22 @@ import {
   ChevronDown,
   ArrowRight,
   Code,
-  Globe,
-} from "lucide-react";
+  Globe} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { images } from "@/app/assets/images/images";
 
 export const metadata: Metadata = {
   title:
-    "Best Application Maintenance in Pune | Custom & SEO-Friendly Websites",
+    "Application Maintenance in Pune | Custom & SEO-Friendly Websites",
   description:
     "Professional application maintenance in Pune. Custom, SEO-optimized, and mobile-responsive website services for business growth. Get a free audit today!",
   keywords:
     "Application Maintenance in Pune, SEO Company in Pune, Digital Marketing Agency in Pune, Custom Application Maintenance Pune",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/application-maintenance/",
-  },
+    canonical: "https://www.growthikmedia.com/services/application-maintenance/"},
   openGraph: {
     title:
-      "Best Application Maintenance in Pune | Custom & SEO-Friendly Websites",
+      "Application Maintenance in Pune | Custom & SEO-Friendly Websites",
     description:
       "Looking for a professional application maintenance company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses.",
     url: `${CONTACT_INFO.website}/services/application-maintenance`,
@@ -47,19 +45,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Growthik Media - Best Application Maintenance in Pune",
-      },
-    ],
+        alt: "Growthik Media - Application Maintenance in Pune"}],
     locale: "en_IN",
-    type: "website",
-  },
+    type: "website"},
   twitter: {
     card: "summary_large_image",
-    title: "Best Application Maintenance in Pune",
+    title: "Application Maintenance in Pune",
     description:
       "Custom, SEO-optimized, mobile-responsive website development.",
-    images: ["/og-image.png"],
-  },
+    images: ["/og-image.png"]},
   robots: {
     index: true,
     follow: true,
@@ -68,10 +62,7 @@ export const metadata: Metadata = {
       follow: true,
       "max-video-preview": -1,
       "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-};
+      "max-snippet": -1}}};
 
 export default function ServicePage() {
   return (
@@ -90,35 +81,25 @@ export default function ServicePage() {
                 name: "Growthik Media",
                 image: `${CONTACT_INFO.website}/brand/growthik-media-transparent-logo.png`,
                 description:
-                  "Best Application Maintenance in Pune offering custom, SEO-friendly websites.",
+                  "Application maintenance in Pune offering custom, SEO-friendly websites.",
                 url: CONTACT_INFO.website,
                 telephone: CONTACT_INFO.phone.primary,
                 address: {
                   "@type": "PostalAddress",
                   addressLocality: "Pune",
                   addressRegion: "Maharashtra",
-                  addressCountry: "IN",
-                },
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: "4.9",
-                  reviewCount: "150",
-                },
-              },
+                  addressCountry: "IN"}},
               {
                 "@type": "Service",
                 "@id": `${CONTACT_INFO.website}/services/application-maintenance/#service`,
                 name: "Application Maintenance Services Pune",
                 provider: {
-                  "@id": `${CONTACT_INFO.website}/#localbusiness`,
-                },
+                  "@id": `${CONTACT_INFO.website}/#localbusiness`},
                 areaServed: {
                   "@type": "City",
-                  name: "Pune",
-                },
+                  name: "Pune"},
                 description:
-                  "Custom, mobile-responsive, SEO-optimized website development services.",
-              },
+                  "Custom, mobile-responsive, SEO-optimized website development services."},
               {
                 "@type": "BreadcrumbList",
                 itemListElement: [
@@ -127,27 +108,19 @@ export default function ServicePage() {
                     position: 1,
                     item: {
                       "@id": CONTACT_INFO.website,
-                      name: "Home",
-                    },
-                  },
+                      name: "Home"}},
                   {
                     "@type": "ListItem",
                     position: 2,
                     item: {
                       "@id": `${CONTACT_INFO.website}/services`,
-                      name: "Services",
-                    },
-                  },
+                      name: "Services"}},
                   {
                     "@type": "ListItem",
                     position: 3,
                     item: {
                       "@id": `${CONTACT_INFO.website}/services/application-maintenance`,
-                      name: "Application Maintenance Company Pune",
-                    },
-                  },
-                ],
-              },
+                      name: "Application Maintenance Company Pune"}}]},
               {
                 "@type": "FAQPage",
                 mainEntity: [
@@ -156,30 +129,19 @@ export default function ServicePage() {
                     name: "What is application maintenance?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Website design involves planning, creating and structuring websites for optimal user experience and functionality.",
-                    },
-                  },
+                      text: "Website design involves planning, creating and structuring websites for optimal user experience and functionality."}},
                   {
                     "@type": "Question",
                     name: "How long does it take to deliver results?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Typically 2-6 weeks depending on project complexity.",
-                    },
-                  },
+                      text: "Typically 2-6 weeks depending on project complexity."}},
                   {
                     "@type": "Question",
                     name: "Is SEO included in application maintenance?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Yes. Our websites are SEO-optimized from the beginning.",
-                    },
-                  },
-                ],
-              },
-            ],
-          }),
-        }}
+                      text: "Yes. Our websites are SEO-optimized from the beginning."}}]}]})}}
       />
       <main
         className="bg-(--background) min-h-screen pt-10 overflow-hidden text-(--text-primary) font-sans"
@@ -201,8 +163,8 @@ export default function ServicePage() {
             </h4>
 
             <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] font-black mb-6 tracking-tighter leading-[0.95] uppercase text-(--text-primary) text-center drop-shadow-sm">
-              Best Website
-              <br /> Design Pune
+              Application
+              <br /> Maintenance Pune
             </h1>
 
             <div className="inline-flex items-center gap-2 border-y-2 border-(--border) py-3 mb-10">
@@ -393,34 +355,27 @@ export default function ServicePage() {
                 {
                   icon: LayoutTemplate,
                   title: "Modern UI/UX Design",
-                  desc: "Engage your audience with stunning, intuitive UI/UX that offers seamless navigation.",
-                },
+                  desc: "Engage your audience with stunning, intuitive UI/UX that offers seamless navigation."},
                 {
                   icon: Search,
                   title: "SEO-Optimized Structure",
-                  desc: "We deliver Application Maintenance services with keyword-optimized headings, internal linking architecture and schema markup.",
-                },
+                  desc: "We deliver Application Maintenance services with keyword-optimized headings, internal linking architecture and schema markup."},
                 {
                   icon: Smartphone,
                   title: "Mobile-Responsive Layout",
-                  desc: "Flawless performance across all devices, ensuring your customers can reach you anywhere.",
-                },
+                  desc: "Flawless performance across all devices, ensuring your customers can reach you anywhere."},
                 {
                   icon: Zap,
                   title: "Fast Loading Speed",
-                  desc: "Optimized code, compressed images and efficient caching to provide blazing-fast load times.",
-                },
+                  desc: "Optimized code, compressed images and efficient caching to provide blazing-fast load times."},
                 {
                   icon: Target,
                   title: "Conversion-Focused Design",
-                  desc: "Strategic placement of CTAs, forms and trust signals to turn visitors into paying customers.",
-                },
+                  desc: "Strategic placement of CTAs, forms and trust signals to turn visitors into paying customers."},
                 {
                   icon: Shield,
                   title: "Secure & Scalable Development",
-                  desc: "Built with the latest technologies and security protocols to protect your data and scale up.",
-                },
-              ].map((feature, idx) => (
+                  desc: "Built with the latest technologies and security protocols to protect your data and scale up."}].map((feature, idx) => (
                 <div
                   key={idx}
                   className="p-8 rounded-2xl bg-(--surface) border border-(--border) hover:border-(--color-primary)/50 transition-all duration-300 group shadow-sm hover:shadow-lg"
@@ -454,25 +409,19 @@ export default function ServicePage() {
               {[
                 {
                   title: "Business Application Maintenance",
-                  desc: "Professional corporate websites tailored to represent your brand identity and build credibility.",
-                },
+                  desc: "Professional corporate websites tailored to represent your brand identity and build credibility."},
                 {
                   title: "E-Commerce Website Development",
-                  desc: "Sell products online with secure, scalable and high-conversion eCommerce websites.",
-                },
+                  desc: "Sell products online with secure, scalable and high-conversion eCommerce websites."},
                 {
                   title: "WordPress Website Development",
-                  desc: "Flexible, SEO-friendly WordPress websites customized to your business needs.",
-                },
+                  desc: "Flexible, SEO-friendly WordPress websites customized to your business needs."},
                 {
                   title: "Landing Page Design",
-                  desc: "High-converting landing pages for Google Ads and social media campaigns.",
-                },
+                  desc: "High-converting landing pages for Google Ads and social media campaigns."},
                 {
                   title: "Website Redesign Services",
-                  desc: "Upgrade your old website with a modern, fast, SEO-optimized structure.",
-                },
-              ].map((service, idx) => (
+                  desc: "Upgrade your old website with a modern, fast, SEO-optimized structure."}].map((service, idx) => (
                 <div
                   key={idx}
                   className="bg-(--surface) p-8 rounded-none border border-(--border) hover:border-(--color-primary) hover:shadow-2xl hover:shadow-(--color-primary)/10 hover:-translate-y-2 transition-all duration-300 group"
@@ -519,8 +468,7 @@ export default function ServicePage() {
                   "Fast loading optimization",
                   "Optimized image compression",
                   "Clean URL structure",
-                  "Internal linking strategy",
-                ].map((item, i) => (
+                  "Internal linking strategy"].map((item, i) => (
                   <li
                     key={i}
                     className="flex items-start gap-3 text-(--text-secondary) font-medium"
@@ -539,8 +487,7 @@ export default function ServicePage() {
                     "Application Maintenance in Pune",
                     "SEO Company in Pune",
                     "Digital Marketing Agency in Pune",
-                    "Custom Application Maintenance Pune",
-                  ].map((kw, i) => (
+                    "Custom Application Maintenance Pune"].map((kw, i) => (
                     <span
                       key={i}
                       className="px-3 py-1 bg-(--background) border border-(--border) rounded-full text-xs font-bold text-(--text-secondary)"
@@ -599,21 +546,17 @@ export default function ServicePage() {
                   name: "E-Commerce Store Redesign",
                   ind: "Retail & Shopping",
                   desc: "Improved sales velocity by 150%",
-                  img: images.portfolio.luxuryBranding,
-                },
+                  img: images.portfolio.luxuryBranding},
                 {
                   name: "Corporate Business Portal",
                   ind: "Finance & B2B",
                   desc: "Reduced bounce rate by 30%",
-                  img: images.portfolio.websiteRedesign,
-                },
+                  img: images.portfolio.websiteRedesign},
                 {
                   name: "Local Service Website",
                   ind: "Healthcare",
                   desc: "Increased weekly leads by 200%",
-                  img: images.portfolio.seoRealEstate,
-                },
-              ].map((port, i) => (
+                  img: images.portfolio.seoRealEstate}].map((port, i) => (
                 <article
                   key={i}
                   className="bg-(--surface) rounded-[2rem] overflow-hidden shadow-lg border border-(--border)/50 hover:-translate-y-3 hover:shadow-2xl hover:shadow-(--color-primary)/10 transition-all duration-500 group flex flex-col relative"
@@ -674,21 +617,17 @@ export default function ServicePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Rahul Deshmukh",
-                  comp: "Tech Solutions Pune",
-                  text: "Growthik Media transformed our business website. The new design is fast, modern and has increased our daily leads by 3x! Highly recommended.",
-                },
+                  name: "Shraddha Kharate",
+                  comp: "Reet Foods",
+                  text: "Growthik Media built our corporate gifting website and made it simple for Pune companies to understand our hampers and request a quotation."},
                 {
-                  name: "Priya Sharma",
-                  comp: "Retail Brand",
-                  text: "Best application maintenance company in Pune! Their SEO-first approach helped us rank on the first page of Google for our key products within 3 months.",
-                },
+                  name: "Harshad Kharate",
+                  comp: "Reet Foods",
+                  text: "We needed a site that could handle corporate Diwali gifting enquiries. Growthik set up the pages, quotation flow and WhatsApp contact."},
                 {
-                  name: "Amit Joshi",
-                  comp: "Real Estate Agency",
-                  text: "Professional team, excellent communication and outstanding results. They understood our complex requirements perfectly.",
-                },
-              ].map((t, i) => (
+                  name: "Client",
+                  comp: "Skincare brand",
+                  text: "Growthik set up Google Ads, SEO and conversion tracking so we can see which campaigns create real enquiries."}].map((t, i) => (
                 <article
                   key={i}
                   className="bg-(--surface) p-8 rounded-3xl border border-(--border) relative hover:shadow-lg transition-shadow"
@@ -738,25 +677,19 @@ export default function ServicePage() {
                 {[
                   {
                     title: "Strong Brand Identity",
-                    desc: "Stand out with a unique layout tailored to your brand.",
-                  },
+                    desc: "Stand out with a unique layout tailored to your brand."},
                   {
                     title: "Better User Experience",
-                    desc: "Improve navigation and engagement.",
-                  },
+                    desc: "Improve navigation and engagement."},
                   {
                     title: "Higher Conversion Rate",
-                    desc: "Turn visitors into leads and customers.",
-                  },
+                    desc: "Turn visitors into leads and customers."},
                   {
                     title: "Scalability",
-                    desc: "Grow your website as your business expands.",
-                  },
+                    desc: "Grow your website as your business expands."},
                   {
                     title: "Competitive Edge",
-                    desc: "Stay ahead in Pune’s competitive digital market.",
-                  },
-                ].map((item, idx) => (
+                    desc: "Stay ahead in Pune’s competitive digital market."}].map((item, idx) => (
                   <div key={idx} className="flex gap-4 group">
                     <div className="mt-1 w-10 h-10 rounded-full bg-(--surface) border border-(--border) flex items-center justify-center shrink-0 group-hover:bg-(--color-primary) group-hover:text-white transition-colors text-(--color-primary)">
                       <CheckCircle2 className="w-5 h-5" />
@@ -789,8 +722,7 @@ export default function ServicePage() {
                   "Development & Coding",
                   "SEO Optimization",
                   "Testing & Launch",
-                  "Maintenance & Support",
-                ].map((step, idx) => (
+                  "Maintenance & Support"].map((step, idx) => (
                   <div
                     key={idx}
                     className="flex items-center gap-4 p-4 bg-(--surface) rounded-xl border border-(--border) hover:border-(--color-primary)/30 transition-colors"
@@ -832,10 +764,9 @@ export default function ServicePage() {
               <div className="grid grid-cols-2 gap-6">
                 {[
                   { icon: Monitor, stat: "50+", label: "Projects Completed" },
-                  { icon: Users, stat: "400+", label: "Happy Clients" },
+                  { icon: Users, stat: "10+", label: "Happy Clients" },
                   { icon: Award, stat: "7+ Years", label: "Experience" },
-                  { icon: Target, stat: "40+", label: "Expert Team Members" },
-                ].map((item, i) => (
+                  { icon: Target, stat: "5+", label: "Team Members" }].map((item, i) => (
                   <div
                     key={i}
                     className="flex items-center gap-4 bg-(--surface) p-4 rounded-xl border border-(--border) shadow-sm hover:shadow-md transition-shadow"
@@ -882,14 +813,11 @@ export default function ServicePage() {
                   { loc: "Kothrud", slug: "services/website-design-company-pune" },
                   {
                     loc: "Hadapsar",
-                    slug: "services/website-design-company-pune",
-                  },
+                    slug: "services/website-design-company-pune"},
                   {
                     loc: "Viman Nagar",
-                    slug: "services/website-design-company-pune",
-                  },
-                  { loc: "PCMC", slug: "services/website-design-company-pune" },
-                ].map((locData, i) => (
+                    slug: "services/website-design-company-pune"},
+                  { loc: "PCMC", slug: "services/website-design-company-pune" }].map((locData, i) => (
                   <Link
                     key={i}
                     href={`/${locData.slug}`}
@@ -920,24 +848,19 @@ export default function ServicePage() {
                 {
                   stat: "200%",
                   label: "Increase organic traffic by 200%",
-                  icon: TrendingUp,
-                },
+                  icon: TrendingUp},
                 {
                   stat: "40%",
                   label: "Reduce bounce rate by 40%",
-                  icon: Target,
-                },
+                  icon: Target},
                 {
                   stat: "60%",
                   label: "Improve lead conversion by 60%",
-                  icon: Users,
-                },
+                  icon: Users},
                 {
                   stat: "#1",
                   label: "Rank on Google’s first page",
-                  icon: Search,
-                },
-              ].map((res, i) => (
+                  icon: Search}].map((res, i) => (
                 <div
                   key={i}
                   className="p-8 rounded-2xl border border-(--border) bg-(--surface) hover:-translate-y-2 hover:border-(--color-primary)/50 transition-all duration-300 group shadow-sm"
@@ -977,8 +900,7 @@ export default function ServicePage() {
                   "Custom features",
                   "E-commerce integration",
                   "SEO requirements",
-                  "Content development",
-                ].map((item, i) => (
+                  "Content development"].map((item, i) => (
                   <li
                     key={i}
                     className="flex items-center gap-3 font-medium text-(--text-secondary)"
@@ -1010,21 +932,16 @@ export default function ServicePage() {
                 {[
                   {
                     q: "What is application maintenance?",
-                    a: "Website design involves planning, creating and structuring websites for optimal user experience and functionality.",
-                  },
+                    a: "Website design involves planning, creating and structuring websites for optimal user experience and functionality."},
                   {
                     q: "How long does it take to deliver results?",
-                    a: "Typically 2-6 weeks depending on project complexity.",
-                  },
+                    a: "Typically 2-6 weeks depending on project complexity."},
                   {
                     q: "Is SEO included in application maintenance?",
-                    a: "Yes. Our websites are SEO-optimized from the beginning.",
-                  },
+                    a: "Yes. Our websites are SEO-optimized from the beginning."},
                   {
                     q: "Do you provide website maintenance?",
-                    a: "Yes. We offer ongoing website maintenance and support.",
-                  },
-                ].map((faq, idx) => (
+                    a: "Yes. We offer ongoing website maintenance and support."}].map((faq, idx) => (
                   <details
                     key={idx}
                     className="group bg-(--background) p-6 rounded-2xl border border-(--border) cursor-pointer [&_summary::-webkit-details-marker]:hidden transition-all hover:border-(--color-primary)/30"

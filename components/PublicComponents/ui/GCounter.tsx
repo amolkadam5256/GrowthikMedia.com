@@ -22,19 +22,27 @@ export const Counter = ({
   suffix = "",
   decimals = 0,
 }: CounterProps) => {
+  const formattedValue = Intl.NumberFormat("en-US", {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals,
+  }).format(value);
+
   const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(direction === "down" ? value : 0);
+  const motionValue = useMotionValue(value);
   const springValue = useSpring(motionValue, {
     damping: 30,
     stiffness: 100,
   });
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (isInView) {
+    if (isInView && !hasAnimated.current) {
+      hasAnimated.current = true;
+      motionValue.set(direction === "down" ? value : 0);
       motionValue.set(value);
     }
-  }, [motionValue, isInView, value]);
+  }, [motionValue, isInView, value, direction]);
 
   useEffect(() => {
     springValue.on("change", (latest) => {
@@ -50,7 +58,7 @@ export const Counter = ({
   return (
     <span className={className}>
       {prefix}
-      <span ref={ref}>{direction === "down" ? value : 0}</span>
+      <span ref={ref}>{formattedValue}</span>
       {suffix}
     </span>
   );

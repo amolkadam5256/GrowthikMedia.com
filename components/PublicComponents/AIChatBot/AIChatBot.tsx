@@ -414,7 +414,7 @@ const AIChatBot = () => {
             ? "bg-black rounded-xl shadow-xl overflow-hidden hidden md:flex"
             : "bg-transparent drop-shadow-[0_0_20px_rgba(217,11,28,0.2)]"
         }`}
-        aria-label={isOpen ? "Close AI Assistant" : "Talk to Growthik AI Assistant"}
+        aria-label={isOpen ? "Close AI Assistant" : "Ask our AI Marketing Assistant"}
       >
         <div className="absolute inset-0 pointer-events-none" />
 
@@ -473,7 +473,7 @@ const AIChatBot = () => {
         {/* Hover Text */}
         {!isOpen && (
           <div className="absolute right-full mr-4 bg-black text-white px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
-            Talk to AI
+            Ask our AI Marketing Assistant
             <div className="absolute top-1/2 -right-1 -translate-y-1/2 w-2 h-2 bg-black rotate-45" />
           </div>
         )}

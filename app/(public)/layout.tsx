@@ -15,17 +15,15 @@ import { Metadata } from "next";
 // clean and avoid SSR-related hydration mismatches or dynamic import errors.
 
 export const metadata: Metadata = buildMetadata({
-  title: `Top Digital Marketing Agency in Pune | AI-Powered SEO & Ads - ${CONTACT_INFO.companyName}`,
-  description: `${CONTACT_INFO.companyName} is Pune's leading digital marketing agency helping businesses grow with professional SEO, Google Ads and smart marketing automation.`,
+  title: `Digital Marketing Agency in Pune | ${CONTACT_INFO.companyName}`,
+  description: `${CONTACT_INFO.companyName} is a Pune-based digital marketing agency helping businesses grow with SEO, Google Ads, Meta Ads and high-converting websites.`,
   path: "/",
   keywords: [
-    "Digital Marketing Agency Pune",
-    "Digital Marketing Company in Pune",
-    "SEO Services Pune",
-    "Video Production Company Pune",
-    "Social Media Marketing Agency",
-    "Google Ads Experts Pune",
-    "Growth Engineering India",
+    "digital marketing agency in Pune",
+    "digital marketing company in Pune",
+    "digital marketing services in Pune",
+    "Pune digital marketing agency",
+    "Growthik Media",
   ],
   image: "/og-image.png",
   type: "website",

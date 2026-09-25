@@ -9,7 +9,7 @@ import { WEB_DEV_FAQ } from "@/constants/faqData";
 
 const slug = "website-development";
 const title = "Website Development Company in Pune | Next.js Experts | Growthik";
-const description = "Top website development company in Pune. We build high-performance, SEO-optimized Next.js websites for startups & enterprises in Hinjewadi, Baner & Magarpatta.";
+const description = "Website development company in Pune. We build high-performance, SEO-optimized Next.js websites for startups and enterprises in Hinjewadi, Baner and Magarpatta.";
 const h1 = "Website Development Company in Pune";
 const canonical = `https://www.growthikmedia.com/services/${slug}/`;
 const features = ["Next.js & React Apps", "Core Web Vitals Pass", "Technical SEO Architecture", "Headless CMS Solutions", "Mobile-First UI/UX", "API Integrations"];
@@ -24,8 +24,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Website Development Agency Pune" }]
-  },
-};
+  }};
 
 export default function WebsiteDevelopmentPage() {
   const service = "Website Development";
@@ -38,9 +37,7 @@ export default function WebsiteDevelopmentPage() {
           "name": "Next.js Website Development Pune",
           "serviceType": service,
           "provider": { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-          "areaServed": { "@type": "City", name: "Pune" },
-          "aggregateRating": { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "145" },
-        })
+          "areaServed": { "@type": "City", name: "Pune" }})
       }} />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
@@ -75,8 +72,7 @@ export default function WebsiteDevelopmentPage() {
                 {[
                   { label: "Lighthouse Score", value: "98/100" },
                   { label: "Average LCP", value: "<1.5s" },
-                  { label: "SEO Structured Data", value: "Fully Baked" },
-                ].map((stat, idx) => (
+                  { label: "SEO Structured Data", value: "Fully Baked" }].map((stat, idx) => (
                   <div key={idx} className="rounded-2xl border border-(--border) bg-(--surface) p-4 flex items-center gap-3">
                     <BarChart2 className="w-5 h-5 text-(--color-primary)" />
                     <div>

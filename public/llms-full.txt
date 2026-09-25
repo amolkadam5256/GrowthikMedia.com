@@ -4410,8 +4410,6 @@ Growthik Media
 - https://www.quora.com/profile/growthikmedia
 - https://maps.google.com/?q=Pune+Maharashtra
 - https://www.google.com/maps/embed?pb=YOUR_IFRAME_LINK
-- 27ABCDE1234F1Z5
-- U12345MH2024PTC000000
 - /#organization
 - /#localbusiness
 - /#professional-service

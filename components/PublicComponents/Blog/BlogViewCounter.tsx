@@ -35,9 +35,13 @@ export default function BlogViewCounter({ slug, initialViews }: BlogViewCounterP
     };
   }, [slug]);
 
+  if (views < 1) {
+    return null;
+  }
+
   return (
     <span className="flex items-center gap-1.5">
-      <Eye className="w-4 h-4" />
+      <Eye className="w-4 h-4" aria-hidden="true" />
       {formatNumber(views)} views
     </span>
   );

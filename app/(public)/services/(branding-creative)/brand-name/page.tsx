@@ -29,8 +29,7 @@ const processSteps = [
 
 export const metadata: Metadata = {
   title, description, alternates: { canonical },
-  openGraph: { title, description, url: canonical, siteName: "Growthik Media", locale: "en_IN", type: "website" },
-};
+  openGraph: { title, description, url: canonical, siteName: "Growthik Media", locale: "en_IN", type: "website" }};
 
 export default function BrandNamePage() {
   const service = "Brand Naming";
@@ -38,8 +37,7 @@ export default function BrandNamePage() {
     <>
       <Script id={`schema-${slug}`} type="application/ld+json" dangerouslySetInnerHTML={{
         __html: JSON.stringify({
-          "@context": "https://schema.org", "@type": "Service", serviceType: service, provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` }, areaServed: { "@type": "City", name: "Pune" }, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
-        })
+          "@context": "https://schema.org", "@type": "Service", serviceType: service, provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` }, areaServed: { "@type": "City", name: "Pune" }})
       }} />
       <main className="min-h-screen pt-24 overflow-hidden font-sans bg-(--background) text-(--text-primary) selection:bg-(--color-primary) selection:text-white transition-colors duration-300">
 

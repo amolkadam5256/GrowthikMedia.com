@@ -5,25 +5,21 @@ import Script from "next/script";
 import {
   CheckCircle2,
   Award,
-  ArrowRight,
-} from "lucide-react";
+  ArrowRight} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 
 export const metadata: Metadata = {
   title: "Real Estate Website Development in Pune | Growthik Media",
   description: "Capture high-intent leads with specialized real estate website development in Pune. CRM integration, MLS mapping and virtual tours.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/real-estate-website-development/",
-  },
+    canonical: "https://www.growthikmedia.com/services/real-estate-website-development/"},
   openGraph: {
     title: "Real Estate Website Development in Pune | Growthik Media",
     description: "Capture high-intent leads with specialized real estate website development in Pune. CRM integration, MLS mapping and virtual tours.",
     url: `${CONTACT_INFO.website}/services/real-estate-website-development/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function RealEstateWebsiteDevelopmentPage() {
   const serviceName = "Real Estate Website Development";
@@ -41,14 +37,7 @@ export default function RealEstateWebsiteDevelopmentPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

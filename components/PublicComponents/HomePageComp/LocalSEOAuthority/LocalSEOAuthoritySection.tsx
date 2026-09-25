@@ -63,10 +63,10 @@ const LocalSEOAuthoritySection = () => {
             <p className="text-(--text-secondary) leading-relaxed">
                Our{" "}
               <Link
-                href="/services/seo"
+                href="/services/local-seo"
                 className="text-(--color-primary) font-bold hover:underline"
               >
-                local SEO strategies
+                Local SEO services in Pune
               </Link>{" "}
               help you rank higher on Google Maps, ensuring visibility when Pune
               customers search.
@@ -98,46 +98,33 @@ const LocalSEOAuthoritySection = () => {
           data-aos="fade-up"
         >
           <p className="text-lg md:text-xl text-(--text-primary) leading-relaxed mb-6">
-            Choosing a Pune-based{" "}
-            <Link
-              href="/services/social-media-marketing"
-              className="text-(--color-primary) font-bold hover:underline"
-            >
-              digital marketing company
-            </Link>{" "}
-             isn't just about proximity-it's about local expertise that drives
-            results. Unlike remote agencies, we offer face-to-face strategy
-            sessions, actual local market updates and deep understanding of
-            regional consumer behavior and local trends.
+            Growthik Media is a digital marketing agency based in Pune, serving
+            startups, SMEs and growth-focused businesses across Pune and PCMC.
+            Our team works with businesses in areas including Baner, Hinjewadi,
+            Wakad, Kharadi, Viman Nagar, Aundh, Kothrud and Hadapsar, while also
+            supporting clients across India.
           </p>
 
           <div className="w-20 h-1 bg-(--color-primary) mb-6" />
 
           <p className="text-base md:text-lg text-(--text-secondary) leading-relaxed mb-6">
-            We've helped{" "}
+            We have helped{" "}
             <span className="text-(--color-primary) font-bold">
-              10+ Happy Clients
+              10+ clients
             </span>{" "}
-            improve their digital presence. Our team lives, works,
-            and breathes Pune's digital landscape-giving you the competitive
-            edge that off-shore agencies simply cannot match.
+            improve their digital presence. Face-to-face strategy sessions and
+            local market context are available when they help the work — the
+            office address is listed in the footer and on Google Business Profile.
           </p>
 
-          {/* Location Badges */}
           <div className="flex flex-wrap gap-3 pt-4">
-            <span className="px-4 py-2 bg-(--surface) border border-(--border) rounded-full text-xs font-bold text-(--text-secondary) hover:border-(--color-primary) transition-colors">
+            <span className="px-4 py-2 bg-(--surface) border border-(--border) rounded-full text-xs font-bold text-(--text-secondary)">
               Serving Pune
             </span>
-            <span className="px-4 py-2 bg-(--surface) border border-(--border) rounded-full text-xs font-bold text-(--text-secondary) hover:border-(--color-primary) transition-colors">
+            <span className="px-4 py-2 bg-(--surface) border border-(--border) rounded-full text-xs font-bold text-(--text-secondary)">
               Pimpri-Chinchwad
             </span>
-            <span className="px-4 py-2 bg-(--surface) border border-(--border) rounded-full text-xs font-bold text-(--text-secondary) hover:border-(--color-primary) transition-colors">
-              Wakad
-            </span>
-            <span className="px-4 py-2 bg-(--surface) border border-(--border) rounded-full text-xs font-bold text-(--text-secondary) hover:border-(--color-primary) transition-colors">
-              Baner
-            </span>
-            <span className="px-4 py-2 bg-(--surface) border border-(--border) rounded-full text-xs font-bold text-(--text-secondary) hover:border-(--color-primary) transition-colors">
+            <span className="px-4 py-2 bg-(--surface) border border-(--border) rounded-full text-xs font-bold text-(--text-secondary)">
               Across Maharashtra
             </span>
           </div>

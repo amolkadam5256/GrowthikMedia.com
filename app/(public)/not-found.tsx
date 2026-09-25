@@ -1,4 +1,10 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Page Not Found | Growthik Media',
+  robots: { index: false, follow: true },
+};
 
 /**
  * This not-found.tsx sits inside app/(public)/ so it renders WITHIN

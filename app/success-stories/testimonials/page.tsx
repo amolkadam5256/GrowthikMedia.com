@@ -27,7 +27,7 @@ export default function TestimonialsPage() {
                 Our clients aren't just names in a spreadsheet; they are partners in growth. We focus on building long-term relationships with businesses across Pune, helping them navigate the complexities of digital acquisition.
               </p>
               <p className="text-lg text-gray-600 dark:text-gray-400 font-medium italic border-l-4 border-red-500 pl-6">
-                "Growthik Media isn't like other agencies. They think like business owners, not just marketers. Their technical depth and transparency are what set them apart in the Pune market."
+                &quot;Growthik Media built our corporate gifting website and made it simple for Pune companies to understand our hampers and request a quotation.&quot; — Shraddha Kharate, Co-founder, Reet Foods
               </p>
             </div>
             <div className="bg-zinc-900 p-1 rounded-3xl overflow-hidden shadow-2xl">
@@ -37,9 +37,9 @@ export default function TestimonialsPage() {
                     <div key={s} className="w-5 h-5 bg-yellow-500 rounded-sm" />
                   ))}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">138+ Five-Star Reviews</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Named client proof</h3>
                 <p className="text-gray-400 text-sm">
-                  Across Google Business, Clutch and direct client feedback surveys. We maintain a 4.9/5 average rating by focusing on lead quality and technical performance.
+                  Reet Foods (reetfoodsngiftings.com) is a live website we designed and developed. Additional campaign work is shared with client permission.
                 </p>
               </div>
             </div>

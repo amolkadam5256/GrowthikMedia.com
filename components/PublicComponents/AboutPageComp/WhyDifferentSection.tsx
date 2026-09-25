@@ -80,13 +80,13 @@ const WhyDifferentSection = () => {
                   50+
                 </span>
                 <span className="text-[10px] text-(--text-secondary) uppercase font-bold tracking-widest">
-                  Regional Brands Scaled
+                  Projects Completed
                 </span>
               </div>
               <div className="col-span-2 mt-4 bg-[#1a1a1a] p-4 text-white flex items-center gap-4 rounded-lg border border-(--border)/50">
                 <ShieldCheck className="w-8 h-8 text-(--color-primary)" />
                 <span className="text-xs font-bold uppercase tracking-widest leading-snug">
-                  Google & Meta <br /> Certified Partner
+                  Pune-Based Team <br /> Established 2019
                 </span>
               </div>
             </div>

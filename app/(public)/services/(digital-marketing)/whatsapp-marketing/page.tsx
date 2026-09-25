@@ -5,31 +5,27 @@ import Script from "next/script";
 import {
   CheckCircle2,
   Award,
-  ArrowRight,
-} from "lucide-react";
+  ArrowRight} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
 import { WHATSAPP_MARKETING_FAQ } from "@/constants/faqData";
 
 export const metadata: Metadata = {
-  title: "Top WhatsApp Marketing Services Pune | Growthik Media",
+  title: "WhatsApp Marketing Services Pune | Growthik Media",
   description: "Boost sales with top WhatsApp marketing services in Pune. Growthik Media offers official WhatsApp Business API integration and bulk messaging for high ROI.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/whatsapp-marketing/",
-  },
+    canonical: "https://www.growthikmedia.com/services/whatsapp-marketing/"},
   openGraph: {
-    title: "Top WhatsApp Marketing Services Pune | Growthik Media",
+    title: "WhatsApp Marketing Services Pune | Growthik Media",
     description: "Boost sales with top WhatsApp marketing services in Pune. Growthik Media offers official WhatsApp Business API integration and bulk messaging for high ROI.",
     url: `${CONTACT_INFO.website}/services/whatsapp-marketing/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function WhatsappMarketingPage() {
   const serviceName = "WhatsApp Marketing";
-  const h1 = "Top WhatsApp Marketing Services Pune";
+  const h1 = "WhatsApp Marketing Services Pune";
 
   return (
     <>
@@ -42,14 +38,7 @@ export default function WhatsappMarketingPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

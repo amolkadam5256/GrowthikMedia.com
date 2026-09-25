@@ -7,7 +7,7 @@ export default function Breadcrumbs() {
   const pathname = usePathname();
   const segments = pathname.split("/").filter(Boolean);
 
-  if (segments.length === 0) {
+  if (segments.length === 0 || segments[0] === "blog") {
     return null;
   }
 

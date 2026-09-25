@@ -5,8 +5,7 @@ import Script from "next/script";
 import {
   CheckCircle2,
   Award,
-  ArrowRight,
-} from "lucide-react";
+  ArrowRight} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
 import { SOCIAL_PROMOTIONS_FAQ } from "@/constants/faqData";
@@ -15,17 +14,14 @@ export const metadata: Metadata = {
   title: "Social Media Promotions Agency in Pune | Growthik Media",
   description: "Boost your reach with social media promotions in Pune. Targeted ad campaigns and viral marketing for businesses of all sizes.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/social-media-promotions/",
-  },
+    canonical: "https://www.growthikmedia.com/services/social-media-promotions/"},
   openGraph: {
     title: "Social Media Promotions Agency in Pune | Growthik Media",
     description: "Boost your reach with social media promotions in Pune. Targeted ad campaigns and viral marketing for businesses of all sizes.",
     url: `${CONTACT_INFO.website}/services/social-media-promotions/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function SocialMediaPromotionsPage() {
   const serviceName = "Social Media Promotions";
@@ -43,14 +39,7 @@ export default function SocialMediaPromotionsPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

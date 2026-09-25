@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
   // we recommend server-side optimization or using a loader.
   // output: "export",
   trailingSlash: true,
-  skipTrailingSlashRedirect: true,
   compress: true, // Enable gzip/brotli compression
   poweredByHeader: false, // Remove X-Powered-By header for security
   images: {
@@ -39,11 +38,33 @@ const nextConfig: NextConfig = {
     return [
       // Major Category & Service Cleanup
       { source: "/services/digital-marketing", destination: "/services/", permanent: true },
+      { source: "/services/digital-marketing/", destination: "/services/", permanent: true },
       { source: "/services/google-ads", destination: "/services/ppc-google-ads/", permanent: true },
+      { source: "/services/google-ads/", destination: "/services/ppc-google-ads/", permanent: true },
       { source: "/services/seo-company-in-pune", destination: "/services/seo/", permanent: true },
+      { source: "/services/seo-company-in-pune/", destination: "/services/seo/", permanent: true },
+      { source: "/services/website-design-company-aundh", destination: "/website-design-company-aundh/", permanent: true },
+      { source: "/services/website-design-company-aundh/", destination: "/website-design-company-aundh/", permanent: true },
+      { source: "/services/website-design-company-baner", destination: "/website-design-company-baner/", permanent: true },
+      { source: "/services/website-design-company-baner/", destination: "/website-design-company-baner/", permanent: true },
+      { source: "/services/website-design-company-hadapsar", destination: "/website-design-company-hadapsar/", permanent: true },
+      { source: "/services/website-design-company-hadapsar/", destination: "/website-design-company-hadapsar/", permanent: true },
+      { source: "/services/website-design-company-kothrud", destination: "/website-design-company-kothrud/", permanent: true },
+      { source: "/services/website-design-company-kothrud/", destination: "/website-design-company-kothrud/", permanent: true },
+      { source: "/services/website-design-company-pcmc", destination: "/website-design-company-pcmc/", permanent: true },
+      { source: "/services/website-design-company-pcmc/", destination: "/website-design-company-pcmc/", permanent: true },
+      { source: "/services/website-design-company-viman-nagar", destination: "/website-design-company-viman-nagar/", permanent: true },
+      { source: "/services/website-design-company-viman-nagar/", destination: "/website-design-company-viman-nagar/", permanent: true },
+      { source: "/services/website-design-company-wakad", destination: "/website-design-company-wakad/", permanent: true },
+      { source: "/services/website-design-company-wakad/", destination: "/website-design-company-wakad/", permanent: true },
+      { source: "/services/seo-company-hinjewadi", destination: "/seo-company-hinjewadi/", permanent: true },
+      { source: "/services/seo-company-hinjewadi/", destination: "/seo-company-hinjewadi/", permanent: true },
       
       // Legacy Specifics & Misc
       { source: "/quote", destination: "/contact/", permanent: true },
+      { source: "/sitemap-pages.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/sitemap-services.xml", destination: "/sitemap.xml", permanent: true },
+      { source: "/sitemap-blog.xml", destination: "/sitemap.xml", permanent: true },
       
       // 410 Gone Handling
       // Next.js direct 410 in redirects isn't standard, normally used for 3xx. 

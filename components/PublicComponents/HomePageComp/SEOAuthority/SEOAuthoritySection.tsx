@@ -13,9 +13,9 @@ const seoExpertise = [
   },
   {
     icon: MapPin,
-    title: "Local SEO Pune",
-    desc: "Reach more customers locally and map packs in the Pune region.",
-    link: "/services/seo",
+    title: "Local SEO",
+    desc: "Google Business Profile, Maps visibility and Pune-area search intent.",
+    link: "/services/local-seo",
   },
   {
     icon: ShoppingCart,
@@ -44,14 +44,13 @@ const SEOAuthoritySection = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/3" data-aos="fade-right">
             <h2 className="text-3xl md:text-4xl font-black text-(--text-primary) uppercase tracking-tighter mb-6">
-              SEO Services in Pune -{" "}
-              <span className="text-(--color-primary)">Our Expertise </span>
-              Includes:
+              How we support{" "}
+              <span className="text-(--color-primary)">organic growth</span>
             </h2>
             <p className="text-(--text-secondary) leading-relaxed">
-              We don't just find keywords; we find customers. Our
-              performance-driven SEO approach is built on technical precision
-              and local authority.
+              SEO work lives on its own service page so the homepage stays
+              focused on digital marketing in Pune. These are the organic
+              capabilities we use inside that work.
             </p>
           </div>
           <div className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

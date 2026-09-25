@@ -2,9 +2,9 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Eye, Clock, Heart, MessageCircle, BookmarkPlus } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import type { BlogPost } from "@/lib/blog/types";
-import { formatDate, formatNumber, getInitials, stringToColor } from "@/lib/blog/utils";
+import { formatDate } from "@/lib/blog/utils";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -12,210 +12,141 @@ interface BlogCardProps {
   priority?: boolean;
 }
 
-// ─── Avatar Component ─────────────────────────────────────────────────────────
-function AuthorAvatar({ name, size = 32 }: { name: string; size?: number }) {
-  const bg = stringToColor(name);
+function CategoryBadge({ label }: { label: string }) {
   return (
-    <div
-      className="rounded-full flex items-center justify-center text-white font-bold shrink-0"
-      style={{
-        width: size,
-        height: size,
-        backgroundColor: bg,
-        fontSize: size * 0.35,
-        minWidth: size,
-        minHeight: size,
-      }}
-      aria-label={name}
-    >
-      {getInitials(name)}
-    </div>
-  );
-}
-
-// ─── Category Badge ───────────────────────────────────────────────────────────
-function CategoryBadge({ name, color }: { name: string; color: string }) {
-  return (
-    <span
-      className="inline-block text-xs font-bold px-2.5 py-1 rounded-full"
-      style={{ backgroundColor: `${color}18`, color }}
-    >
-      {name}
+    <span className="inline-block text-[11px] font-bold tracking-[0.14em] uppercase text-(--color-primary)">
+      {label}
     </span>
   );
 }
 
-// ─── Default Card ─────────────────────────────────────────────────────────────
 function DefaultCard({ post, priority }: { post: BlogPost; priority?: boolean }) {
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="group flex flex-col rounded-2xl overflow-hidden border border-(--border) bg-(--surface) hover:border-(--color-primary)/30 hover:shadow-xl hover:shadow-black/5 transition-all duration-300 hover:-translate-y-1"
-    >
-      {/* Image */}
-      <div className="relative w-full overflow-hidden" style={{ paddingBottom: "56.25%" }}>
-        <Image
-          src={post.featuredImage}
-          alt={post.featuredImageAlt}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
-          priority={priority}
-        />
-        {/* Trending badge */}
-        {post.trending && (
-          <div className="absolute top-3 left-3 bg-red-600/90 backdrop-blur-md text-white px-2.5 py-1 text-[10px] sm:text-xs font-black uppercase tracking-widest rounded-full border border-white/20 shadow-lg flex items-center gap-1.5 z-10">
-            <span className="w-1.5 h-1.5 rounded-full bg-yellow-300 animate-[pulse_1.5s_ease-in-out_infinite]"></span>
-            Trending
-          </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="flex flex-col flex-1 p-5">
-        {/* Category + Read time */}
-        <div className="flex items-center justify-between mb-3">
-          <CategoryBadge name={post.category.name} color={post.category.color} />
-          <span className="flex items-center gap-1 text-xs font-medium text-(--text-secondary)">
-            <Clock className="w-3 h-3" />
-            {post.readingTime} min
-          </span>
+    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-(--border) bg-(--surface) transition-all duration-300 hover:-translate-y-1 hover:border-(--color-primary)/30 hover:shadow-xl hover:shadow-black/5">
+      <Link href={`/blog/${post.slug}/`} className="relative block overflow-hidden">
+        <div className="relative aspect-video w-full">
+          <Image
+            src={post.featuredImage}
+            alt={post.featuredImageAlt}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 420px"
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            priority={priority}
+          />
         </div>
+      </Link>
 
-        {/* Title */}
-        <h3 className="font-bold text-base leading-snug text-(--text-primary) group-hover:text-(--color-primary) transition-colors mb-2 line-clamp-2">
-          {post.title}
+      <div className="flex flex-1 flex-col p-5">
+        <CategoryBadge label={post.thumbnailLabel || post.category.name} />
+
+        <h3 className="mt-2 line-clamp-2 text-base font-bold leading-snug text-(--text-primary) transition-colors group-hover:text-(--color-primary)">
+          <Link href={`/blog/${post.slug}/`}>{post.title}</Link>
         </h3>
 
-        {/* Excerpt */}
-        <p className="text-sm text-(--text-secondary) leading-relaxed line-clamp-2 mb-4 flex-1">
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-(--text-secondary)">
           {post.excerpt}
         </p>
 
-        {/* Footer */}
-        <div className="flex items-center justify-between pt-4 border-t border-(--border)">
-          <div className="flex items-center gap-2 min-w-0">
-            <AuthorAvatar name={post.author.name} size={28} />
-            <div className="min-w-0">
-              <p className="text-xs font-bold text-(--text-primary) truncate">{post.author.name}</p>
-              <p className="text-xs text-(--text-secondary)">{formatDate(post.publishDate)}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 text-xs text-(--text-secondary) shrink-0">
-            <span className="flex items-center gap-1">
-              <Eye className="w-3 h-3" />
-              {formatNumber(post.views)}
+        <div className="mt-auto flex flex-col gap-3 pt-5 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <span className="flex flex-wrap items-center gap-2 text-(--text-secondary)">
+            <span>{post.author.name}</span>
+            <span className="text-(--border)" aria-hidden="true">·</span>
+            <span>
+              {post.updatedDate && post.updatedDate !== post.publishDate
+                ? `Updated ${formatDate(post.updatedDate)}`
+                : formatDate(post.publishDate)}
             </span>
-            <span className="flex items-center gap-1">
-              <MessageCircle className="w-3 h-3" />
-              {post.commentsCount}
+            <span className="text-(--border)" aria-hidden="true">·</span>
+            <span className="inline-flex items-center gap-1">
+              <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+              {post.readingTime} min
             </span>
-          </div>
+          </span>
+          <Link
+            href={`/blog/${post.slug}/`}
+            className="inline-flex shrink-0 items-center gap-1 font-bold text-(--color-primary)"
+          >
+            Read guide
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+          </Link>
         </div>
       </div>
-    </Link>
+    </article>
   );
 }
 
-// ─── Featured Hero Card ───────────────────────────────────────────────────────
 function FeaturedCard({ post, priority }: { post: BlogPost; priority?: boolean }) {
   return (
     <Link
-      href={`/blog/${post.slug}`}
-      className="group relative rounded-2xl overflow-hidden block aspect-video w-full"
+      href={`/blog/${post.slug}/`}
+      className="group relative block aspect-video w-full overflow-hidden rounded-2xl"
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <Image
-          src={post.featuredImage}
-          alt={post.featuredImageAlt}
-          fill
-          sizes="(max-width: 1280px) 100vw, 1200px"
-          className="object-cover group-hover:scale-105 transition-transform duration-700"
-          priority={priority}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
-      </div>
-
-      {/* Overlay content */}
-      <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 lg:p-8">
-        <h2 className="text-lg md:text-xl lg:text-2xl font-black text-white leading-tight mb-2 group-hover:text-(--color-primary-light) transition-colors max-w-xl">
-          {post.title}
-        </h2>
-      </div>
+      <Image
+        src={post.featuredImage}
+        alt={post.featuredImageAlt}
+        fill
+        sizes="(max-width: 1280px) 100vw, 1200px"
+        className="object-cover transition-transform duration-700 group-hover:scale-105"
+        priority={priority}
+      />
     </Link>
   );
 }
 
-// ─── Compact Card ─────────────────────────────────────────────────────────────
 function CompactCard({ post }: { post: BlogPost }) {
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="group flex gap-3 items-start hover:opacity-80 transition-opacity"
-    >
-      <div className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0">
+    <Link href={`/blog/${post.slug}/`} className="group flex items-start gap-3">
+      <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xl">
         <Image
           src={post.featuredImage}
           alt={post.featuredImageAlt}
           fill
-          sizes="64px"
-          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          sizes="96px"
+          className="object-cover transition-transform duration-300 group-hover:scale-110"
         />
       </div>
-      <div className="flex-1 min-w-0 flex flex-col justify-center">
-        <div className="flex items-center gap-2 mb-1.5">
-          <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: post.category.color }} />
-          <p className="text-[10px] font-black uppercase tracking-wider text-(--text-secondary)">
-            {post.category.name}
-          </p>
-        </div>
-        <h4 className="text-[13px] font-bold text-(--text-primary) leading-[1.3] line-clamp-2 group-hover:text-(--color-primary) transition-colors mb-1.5 pr-2">
+      <div className="min-w-0 flex-1">
+        <p className="mb-1 text-[10px] font-bold uppercase tracking-[0.14em] text-(--color-primary)">
+          {post.thumbnailLabel || post.category.name}
+        </p>
+        <h4 className="mb-1 line-clamp-2 text-[13px] font-bold leading-snug text-(--text-primary) transition-colors group-hover:text-(--color-primary)">
           {post.title}
         </h4>
-        <p className="text-[11px] text-(--text-secondary) font-medium">{formatDate(post.publishDate)}</p>
+        <p className="text-[11px] font-medium text-(--text-secondary)">{formatDate(post.publishDate)}</p>
       </div>
     </Link>
   );
 }
 
-// ─── Horizontal Card ─────────────────────────────────────────────────────────
 function HorizontalCard({ post, priority }: { post: BlogPost; priority?: boolean }) {
   return (
     <Link
-      href={`/blog/${post.slug}`}
-      className="group flex gap-4 rounded-2xl overflow-hidden border border-(--border) bg-(--surface) hover:border-(--color-primary)/30 hover:shadow-lg transition-all duration-300 p-4"
+      href={`/blog/${post.slug}/`}
+      className="group flex gap-4 overflow-hidden rounded-2xl border border-(--border) bg-(--surface) p-4 transition-all duration-300 hover:border-(--color-primary)/30 hover:shadow-lg"
     >
-      <div className="relative w-32 md:w-40 rounded-xl overflow-hidden shrink-0" style={{ minHeight: 96 }}>
+      <div className="relative w-32 shrink-0 overflow-hidden rounded-xl md:w-40" style={{ minHeight: 96 }}>
         <Image
           src={post.featuredImage}
           alt={post.featuredImageAlt}
           fill
           sizes="160px"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
           priority={priority}
         />
       </div>
-      <div className="flex flex-col justify-between flex-1 min-w-0 py-1">
+      <div className="flex min-w-0 flex-1 flex-col justify-between py-1">
         <div>
-          <CategoryBadge name={post.category.name} color={post.category.color} />
-          <h3 className="font-bold text-sm md:text-base text-(--text-primary) leading-snug mt-2 line-clamp-2 group-hover:text-(--color-primary) transition-colors">
+          <CategoryBadge label={post.thumbnailLabel || post.category.name} />
+          <h3 className="mt-2 line-clamp-2 text-sm font-bold leading-snug text-(--text-primary) transition-colors group-hover:text-(--color-primary) md:text-base">
             {post.title}
           </h3>
         </div>
-        <div className="flex items-center gap-3 text-xs text-(--text-secondary) mt-2">
-          <span className="flex items-center gap-1">
-            <Clock className="w-3 h-3" /> {post.readingTime} min
-          </span>
-          <span>·</span>
-          <span>{formatDate(post.publishDate)}</span>
-        </div>
+        <p className="mt-2 text-xs text-(--text-secondary)">{formatDate(post.publishDate)}</p>
       </div>
     </Link>
   );
 }
 
-// ─── BlogCard Selector ────────────────────────────────────────────────────────
 export default function BlogCard({ post, variant = "default", priority }: BlogCardProps) {
   if (variant === "featured") return <FeaturedCard post={post} priority={priority} />;
   if (variant === "compact") return <CompactCard post={post} />;
@@ -223,4 +154,4 @@ export default function BlogCard({ post, variant = "default", priority }: BlogCa
   return <DefaultCard post={post} priority={priority} />;
 }
 
-export { AuthorAvatar, CategoryBadge };
+export { CategoryBadge };

@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const TrustProofSection = () => {
   const stats = [
-    { label: "Client Retention", val: "95%" },
-    { label: "Growth Ratio", val: "300%" },
-    { label: "Growth Projects Across Pune Businesses", val: "50+" },
-    { label: "Satisfaction", val: "98%" },
+    { label: "Clients Served", val: "10+" },
+    { label: "Projects Completed", val: "50+" },
+    { label: "Established", val: "2019" },
+    { label: "Team Members", val: "5+" },
   ];
 
   return (

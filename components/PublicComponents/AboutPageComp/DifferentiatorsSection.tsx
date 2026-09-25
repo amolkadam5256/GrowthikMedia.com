@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2, ShieldCheck } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 
 const DifferentiatorsSection = () => {
   return (
@@ -47,31 +47,31 @@ const DifferentiatorsSection = () => {
           {/* Stats Block */}
           <div className="grid grid-cols-2 gap-4" data-aos="fade-left">
             <div className="bg-(--color-primary) p-8 text-white flex flex-col justify-center items-center text-center">
-              <span className="text-5xl font-black mb-2">50+</span>
+              <span className="text-5xl font-black mb-2">10+</span>
               <span className="text-xs font-bold uppercase tracking-widest opacity-80">
                 Clients Served
               </span>
             </div>
             <div className="bg-(--surface) border border-(--border) p-8 flex flex-col justify-center items-center text-center">
               <span className="text-5xl font-black text-(--text-primary) mb-2">
-                5+
+                2019
               </span>
               <span className="text-xs font-bold uppercase tracking-widest text-(--text-secondary)">
-                Years Experience
+                Established
               </span>
             </div>
             <div className="bg-(--surface) border border-(--border) p-8 flex flex-col justify-center items-center text-center">
               <span className="text-5xl font-black text-(--text-primary) mb-2">
-                98%
+                50+
               </span>
               <span className="text-xs font-bold uppercase tracking-widest text-(--text-secondary)">
-                Satisfaction Rate
+                Projects Completed
               </span>
             </div>
             <div className="bg-[#1a1a1a] p-8 text-white flex flex-col justify-center items-center text-center border border-(--border)">
-              <ShieldCheck className="w-12 h-12 mb-4 text-(--color-primary)" />
+              <span className="text-5xl font-black mb-2">5+</span>
               <span className="text-[10px] font-bold uppercase tracking-widest opacity-80">
-                Google & Meta <br /> Certified Partner
+                Team Members
               </span>
             </div>
           </div>

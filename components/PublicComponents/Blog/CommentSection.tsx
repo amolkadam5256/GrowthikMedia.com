@@ -274,7 +274,9 @@ export default function CommentSection({ slug }: CommentSectionProps) {
         </div>
         <div>
           <h3 className="text-xl font-black text-(--text-primary)">
-            Community Insights ({comments.length + comments.reduce((acc, c) => acc + (c.replies?.length || 0), 0)})
+            {comments.length > 0
+              ? `Community Insights (${comments.length + comments.reduce((acc, c) => acc + (c.replies?.length || 0), 0)})`
+              : "Leave a comment"}
           </h3>
           <p className="text-sm text-(--text-secondary) font-medium">Join the discussion and share your thoughts</p>
         </div>

@@ -24,8 +24,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Content Marketing Agency Pune" }]
-  },
-};
+  }};
 
 export default function ContentMarketingPage() {
   const service = "Content Marketing";
@@ -38,9 +37,7 @@ export default function ContentMarketingPage() {
           "name": "B2B Content Marketing Pune",
           "serviceType": service,
           "provider": { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-          "areaServed": { "@type": "City", name: "Pune" },
-          "aggregateRating": { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
-        })
+          "areaServed": { "@type": "City", name: "Pune" }})
       }} />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

@@ -9,15 +9,14 @@ import { LEAD_GEN_FAQ } from "@/constants/faqData";
 
 const slug = "lead-generation";
 const title = "Lead Generation Agency in Pune | Predictable Revenue Systems | Growthik";
-const description = "Top lead generation agency in Pune. We build automated B2B & B2C lead systems using Google Ads, Meta Ads & LinkedIn for startups in Baner & Hinjewadi.";
+const description = "Lead generation agency in Pune. We build B2B and B2C lead systems using Google Ads, Meta Ads and LinkedIn for startups in Baner and Hinjewadi.";
 const h1 = "Lead Generation Agency in Pune";
 const canonical = `https://www.growthikmedia.com/services/${slug}/`;
 const features = ["B2B Lead Acquisition", "Meta Lead Gen Ads", "Google Ads Optimization", "High-Converting Landing Pages", "CRM & Sales Alignment", "Lead Scoring Systems"];
 const aiMarketCoverage = [
   "AI-assisted lead generation for Pune companies that need faster qualification and lower manual follow-up.",
   "Hyderabad, Delhi and Mumbai campaign support through search, paid social, landing pages and CRM automation.",
-  "Ecommerce and real estate funnels with audience segmentation, remarketing and conversion-focused nurturing.",
-];
+  "Ecommerce and real estate funnels with audience segmentation, remarketing and conversion-focused nurturing."];
 
 export const metadata: Metadata = {
   title, description, alternates: { canonical },
@@ -29,8 +28,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Lead Generation Agency Pune" }]
-  },
-};
+  }};
 
 export default function LeadGenerationPage() {
   const service = "Lead Generation";
@@ -43,9 +41,7 @@ export default function LeadGenerationPage() {
           "name": "Performance Lead Generation Pune",
           "serviceType": service,
           "provider": { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-          "areaServed": { "@type": "City", name: "Pune" },
-          "aggregateRating": { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
-        })
+          "areaServed": { "@type": "City", name: "Pune" }})
       }} />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
@@ -78,8 +74,7 @@ export default function LeadGenerationPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
                  {[
                     { title: "Lead Scoring", icon: <Filter className="w-5 h-5 text-(--color-primary)" /> },
-                    { title: "CRM Syncing", icon: <TrendingUp className="w-5 h-5 text-(--color-primary)" /> },
-                 ].map((item, i) => (
+                    { title: "CRM Syncing", icon: <TrendingUp className="w-5 h-5 text-(--color-primary)" /> }].map((item, i) => (
                     <div key={i} className="flex items-center gap-3 p-4 bg-(--surface) rounded-xl border border-(--border)">
                         {item.icon}
                         <span className="font-bold text-(--text-primary)">{item.title}</span>

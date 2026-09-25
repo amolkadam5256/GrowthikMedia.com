@@ -146,7 +146,7 @@ export default function NewsletterForm({ compact = false }: NewsletterFormProps)
         </form>
 
         <p className="text-xs text-(--text-secondary) mt-6">
-          Join 1,200+ digital marketers and business owners. Unsubscribe anytime.
+          Get weekly SEO, marketing and website growth insights. Unsubscribe anytime.
         </p>
       </div>
     </div>

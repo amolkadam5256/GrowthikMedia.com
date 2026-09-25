@@ -9,7 +9,7 @@ import { MapPin, Search, Rocket, MessageSquare, Star, ArrowRight } from "lucide-
 
 const slug = "local-seo";
 const title = "Local SEO Agency in Pune | Google Maps SEO | Growthik";
-const description = "Best local SEO agency in Pune. Dominating local search results and Google Maps for businesses in Baner, Hinjewadi, Warje & beyond. Get more footfall today.";
+const description = "Local SEO agency in Pune. We help businesses rank in local search and Google Maps across Baner, Hinjewadi, Warje and other Pune areas.";
 const h1 = "Local SEO Agency in Pune";
 const canonical = `https://www.growthikmedia.com/services/${slug}/`;
 const features = ["Google Maps Ranking", "GMB Optimization", "Local Citations", "Hyperlocal Keywords", "Review Management", "AEO/GEO Optimization"];
@@ -24,8 +24,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     type: "website",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Local SEO Agency Pune" }]
-  },
-};
+  }};
 
 export default function LocalSEOPage() {
   const service = "Local SEO";
@@ -44,9 +43,7 @@ export default function LocalSEOPage() {
           { "@type": "Neighborhood", "name": "Hinjewadi" },
           { "@type": "Neighborhood", "name": "Wakad" },
           { "@type": "Neighborhood", "name": "Kothrud" }
-        ],
-        "aggregateRating": { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "138" },
-      })}} />
+        ]})}} />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">
           <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-(--color-primary)/5 blur-[120px] rounded-full pointer-events-none" />

@@ -47,7 +47,7 @@ export default function ServicePage() {
             React Development Services Pune
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
-            Best React Development Services in Pune –{" "}
+            React Development Services in Pune –{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-primary) to-(--color-primary-light)">
               Custom, SEO-Friendly & Conversion-Focused
             </span>
@@ -166,7 +166,7 @@ export default function ServicePage() {
                   "React Development Company in Pune",
                   "SEO Company in Pune",
                   "Digital Marketing Agency in Pune",
-                  "Top React Development Services",
+                  "React Development Services",
                 ].map((kw, i) => (
                   <span
                     key={i}
@@ -298,7 +298,7 @@ export default function ServicePage() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-12 justify-between">
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-5xl font-black mb-6 uppercase tracking-tight text-white">
-              Why We Are the Best React Development Company in Pune
+              Why Pune Teams Hire Us for React Development
             </h2>
             <p className="text-(--color-primary-light) font-bold text-xl mb-10 tracking-wide">
               We are not just agency vendors - we are your growth partners.
@@ -306,9 +306,9 @@ export default function ServicePage() {
             <div className="grid grid-cols-2 gap-6">
               {[
                 { icon: Monitor, stat: "50+", label: "Projects Completed" },
-                { icon: Users, stat: "400+", label: "Happy Clients" },
+                { icon: Users, stat: "10+", label: "Happy Clients" },
                 { icon: Award, stat: "7+ Years", label: "Experience" },
-                { icon: Target, stat: "40+", label: "Expert Team Members" },
+                { icon: Target, stat: "5+", label: "Team Members" },
               ].map((item, i) => (
                 <div
                   key={i}

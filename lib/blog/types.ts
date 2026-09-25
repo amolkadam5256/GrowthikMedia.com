@@ -21,6 +21,22 @@ export interface BlogCategory {
   count: number;
 }
 
+export interface BlogCategoryPage {
+  slug: string;
+  name: string;
+  h1: string;
+  eyebrow: string;
+  intro: string;
+  directAnswer: string;
+  metaTitle: string;
+  metaDescription: string;
+  serviceHref: string;
+  serviceLabel: string;
+  serviceCta: string;
+  relatedPostSlugs?: string[];
+  faqs: Array<{ question: string; answer: string }>;
+}
+
 export interface BlogTag {
   id: string;
   name: string;
@@ -36,6 +52,8 @@ export interface BlogPost {
   content: string; // HTML/MDX content
   featuredImage: string;
   featuredImageAlt: string;
+  thumbnailHeadline: string;
+  thumbnailLabel: string;
   category: BlogCategory;
   tags: BlogTag[];
   author: BlogAuthor;

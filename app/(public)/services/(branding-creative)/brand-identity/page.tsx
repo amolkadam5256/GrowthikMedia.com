@@ -11,8 +11,7 @@ import {
   MapPin,
   ArrowRight,
   Globe,
-  BarChart,
-} from "lucide-react";
+  BarChart} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 
 const slug = "brand-identity";
@@ -26,17 +25,14 @@ export const metadata: Metadata = {
   title: title,
   description: description,
   alternates: {
-    canonical: canonical,
-  },
+    canonical: canonical},
   openGraph: {
     title: title,
     description: description,
     url: canonical,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function BrandIdentityPage() {
   const service = "Brand Identity Design";
@@ -56,15 +52,7 @@ export default function BrandIdentityPage() {
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
             areaServed: {
               "@type": "City",
-              name: modifier,
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+              name: modifier}})}}
       />
 
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
@@ -78,7 +66,6 @@ export default function BrandIdentityPage() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
-              Top Agency For <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">
                 {h1}
               </span>

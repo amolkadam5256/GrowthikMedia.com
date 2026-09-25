@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import { CONTACT_INFO, STRUCTURED_DATA_IDS } from "@/constants/contact";
 
 const AboutHeroSection = dynamic(
@@ -232,7 +231,7 @@ export default function About() {
   };
 
   return (
-    <main className="bg-[--background] min-h-screen pt-20 overflow-hidden">
+    <div className="bg-[--background] min-h-screen pt-20 overflow-hidden">
       {/* Schema Markup */}
       <script
         type="application/ld+json"
@@ -265,6 +264,6 @@ export default function About() {
 
       {/* 10. FINAL CTA SECTION */}
       <AboutFinalCTASection />
-    </main>
+    </div>
   );
 }

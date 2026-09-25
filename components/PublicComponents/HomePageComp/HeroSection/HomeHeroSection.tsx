@@ -12,7 +12,7 @@ const HomeHeroSection = React.memo(() => {
       <div className="absolute inset-0 z-0">
         <Image
           src={images.bg}
-          alt="Growthik Media - Best AI-Powered Digital Marketing Agency in Pune providing SEO and Ads Services"
+          alt="Growthik Media digital marketing agency in Pune — SEO, Google Ads and website team"
           fill
           priority
           quality={80}

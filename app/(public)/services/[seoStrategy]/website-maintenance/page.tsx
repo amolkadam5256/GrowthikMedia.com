@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Website Maintenance Services | Growthik Media",
   description: "Website maintenance, updates, performance fixes and technical support by Growthik Media.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/(technology-services)/website-maintenance/",
+    canonical: "https://www.growthikmedia.com/services/website-maintenance/",
   },
 };
 

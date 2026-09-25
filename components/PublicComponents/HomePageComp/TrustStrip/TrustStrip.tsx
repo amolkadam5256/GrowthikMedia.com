@@ -6,16 +6,14 @@ import { Star } from "lucide-react";
 import { Counter } from "@/components/PublicComponents/ui/GCounter";
 
 const logos = [
-  "Heritage Furnishings",
-  "TechNova Solutions",
-  "Global Edunext",
-  "Vibe E-commerce",
+  "Reet Foods",
+  "Ecommerce Brands",
+  "Food & Beverage",
   "Pune Startups",
-  "Healthcare Clinics",
-  "Real Estate Brands",
-  "D2C Brands",
-  "EdTech Companies",
-  "B2B Enterprises",
+  "Healthcare",
+  "Real Estate",
+  "Education",
+  "B2B Companies",
 ];
 
 const TrustStrip = React.memo(() => {
@@ -83,22 +81,13 @@ const TrustStrip = React.memo(() => {
               </div>
             </a>
 
-            {/* Certifications & Partners */}
             <div className="flex items-center gap-3 bg-(--surface) px-4 py-2 rounded-full border border-(--border) shadow-sm shrink-0">
-              <div className="flex -space-x-2">
-                <div className="w-7 h-7 rounded-full bg-(--color-primary) opacity-80 flex items-center justify-center text-[10px] font-bold text-white border-2 border-(--surface) shadow-sm">
-                  G
-                </div>
-                <div className="w-7 h-7 rounded-full bg-(--color-primary) flex items-center justify-center text-[10px] font-bold text-white border-2 border-(--surface) shadow-sm">
-                  M
-                </div>
-              </div>
               <div className="flex flex-col leading-none">
                 <span className="text-xs font-bold text-(--text-primary)">
-                  Certified Partner
+                  Pune-Based Team
                 </span>
                 <span className="text-[9px] text-(--text-secondary) uppercase tracking-wider">
-                  Google & Meta
+                  Established 2019
                 </span>
               </div>
             </div>

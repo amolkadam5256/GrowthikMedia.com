@@ -9,17 +9,14 @@ export const metadata: Metadata = {
   title: "Professional Letterhead Design Pune | Growthik Media",
   description: "Establish corporate authority with professional letterhead design in Pune. Custom corporate stationery and digital letterhead templates for your brand.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/letterhead-design/",
-  },
+    canonical: "https://www.growthikmedia.com/services/letterhead-design/"},
   openGraph: {
     title: "Professional Letterhead Design Pune | Growthik Media",
     description: "Establish corporate authority with professional letterhead design in Pune. Custom corporate stationery and digital letterhead templates for your brand.",
     url: `${CONTACT_INFO.website}/services/letterhead-design/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function LetterheadDesignPage() {
   const serviceName = "Letterhead Design";
@@ -36,14 +33,7 @@ export default function LetterheadDesignPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

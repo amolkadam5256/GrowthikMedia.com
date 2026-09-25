@@ -73,7 +73,7 @@ const AboutHeroSection = () => {
                   </div>
                 </div>
                 <div className="text-xs font-bold text-(--text-secondary) uppercase tracking-wider">
-                  Trusted by 100+ Growth-stage Brands
+                  Trusted by 10+ Growth-stage Brands
                 </div>
               </div>
 
@@ -259,10 +259,10 @@ const AboutHeroSection = () => {
                 </div>
                 <div>
                   <span className="block font-bold text-sm md:text-base text-(--text-primary)">
-                    4.9/5
+                    10+
                   </span>
                   <span className="text-[10px] md:text-xs text-(--text-secondary) block">
-                    Satisfaction
+                    Clients served
                   </span>
                 </div>
               </motion.div>

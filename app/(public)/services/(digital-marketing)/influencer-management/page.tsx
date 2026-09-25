@@ -5,8 +5,7 @@ import Script from "next/script";
 import {
   CheckCircle2,
   Award,
-  ArrowRight,
-} from "lucide-react";
+  ArrowRight} from "lucide-react";
 import { CONTACT_INFO } from "@/constants/contact";
 import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
 import { INFLUENCER_FAQ } from "@/constants/faqData";
@@ -15,17 +14,14 @@ export const metadata: Metadata = {
   title: "Influencer Management Agency Pune | Growthik Media",
   description: "Scale your brand with the top influencer management agency in Pune. We connect you with authentic influencers to drive engagement and sales.",
   alternates: {
-    canonical: "https://www.growthikmedia.com/services/influencer-management/",
-  },
+    canonical: "https://www.growthikmedia.com/services/influencer-management/"},
   openGraph: {
     title: "Influencer Management Agency Pune | Growthik Media",
     description: "Scale your brand with the top influencer management agency in Pune. We connect you with authentic influencers to drive engagement and sales.",
     url: `${CONTACT_INFO.website}/services/influencer-management/`,
     siteName: "Growthik Media",
     locale: "en_IN",
-    type: "website",
-  },
-};
+    type: "website"}};
 
 export default function InfluencerManagementPage() {
   const serviceName = "Influencer Management";
@@ -42,14 +38,7 @@ export default function InfluencerManagementPage() {
             "@type": "Service",
             name: serviceName,
             provider: { "@id": `${CONTACT_INFO.website}/#localbusiness` },
-            areaServed: { "@type": "City", name: "Pune" },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "138",
-            },
-          }),
-        }}
+            areaServed: { "@type": "City", name: "Pune" }})}}
       />
       <main className="bg-(--background) min-h-screen pt-24 overflow-hidden text-(--text-primary) font-sans">
         <header className="relative px-6 lg:px-12 py-20 lg:py-32 flex flex-col items-center text-center bg-(--surface) overflow-hidden border-b border-(--border)">

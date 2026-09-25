@@ -3,8 +3,54 @@
 import React from "react";
 import Link from "next/link";
 import ServiceButton from "./ServiceButton";
-import ServicesGrid from "@/components/PublicComponents/ServicesGrid";
 import { trackEvent } from "@/lib/analytics";
+import {
+  Search,
+  Target,
+  Facebook,
+  BarChart,
+  Code,
+  Zap,
+} from "lucide-react";
+
+const CORE_SERVICES = [
+  {
+    title: "SEO Services in Pune",
+    description: "Technical, local and content SEO that builds organic demand over time.",
+    href: "/services/seo/",
+    icon: Search,
+  },
+  {
+    title: "Google Ads Management",
+    description: "High-intent paid search campaigns measured on leads and cost per result.",
+    href: "/services/ppc-google-ads/",
+    icon: Target,
+  },
+  {
+    title: "Meta Ads",
+    description: "Facebook and Instagram campaigns for reach, remarketing and conversions.",
+    href: "/services/meta-ads/",
+    icon: Facebook,
+  },
+  {
+    title: "Performance Marketing",
+    description: "CPA, ROAS and funnel tracking across paid channels.",
+    href: "/services/performance-marketing/",
+    icon: BarChart,
+  },
+  {
+    title: "Website Development",
+    description: "Next.js, React and WordPress sites built to load fast and convert.",
+    href: "/services/website-development/",
+    icon: Code,
+  },
+  {
+    title: "B2B Lead Generation",
+    description: "Search, LinkedIn and conversion paths for qualified enquiries.",
+    href: "/services/lead-generation/",
+    icon: Zap,
+  },
+];
 
 const OurServicesSection = React.memo(() => {
   return (
@@ -74,13 +120,33 @@ const OurServicesSection = React.memo(() => {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            SEO, Google Ads, social media, branding and websites - everything your Pune business needs to grow online, handled in one place.
+            Six core growth services for Pune businesses. Everything else lives on the full services directory.
           </p>
         </header>
 
-        {/* Services Grid Implementation */}
-        <div data-aos="fade-up" data-aos-delay="400">
-          <ServicesGrid />
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          {CORE_SERVICES.map((service) => {
+            const Icon = service.icon;
+            return (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="block p-8 border-2 border-(--border) bg-(--surface) hover:border-(--color-primary) transition-all group"
+              >
+                <Icon className="w-8 h-8 text-(--color-primary) mb-5" />
+                <h3 className="text-xl font-black text-(--text-primary) mb-3 group-hover:text-(--color-primary) transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-(--text-secondary) leading-relaxed">
+                  {service.description}
+                </p>
+              </Link>
+            );
+          })}
         </div>
 
         {/* CTA Section */}
@@ -108,8 +174,8 @@ const OurServicesSection = React.memo(() => {
             {[
               { number: "50+", label: "Projects Completed" },
               { number: "10+", label: "Happy Clients" },
-              { number: "3", label: "Team Members" },
-              { number: "3+", label: "Years Experience" },
+              { number: "5+", label: "Team Members" },
+              { number: "2019", label: "Established" },
             ].map((stat, index) => (
               <li
                 key={index}

@@ -6,50 +6,49 @@ import {
   Quote,
   ChevronLeft,
   ChevronRight,
-  PlayCircle,
 } from "lucide-react";
 import Link from "next/link";
 
 const TESTIMONIALS = [
   {
-    name: "Rajesh Kulkarni",
-    role: "Founder & CEO",
-    company: "Heritage Furnishings",
-    city: "Pune",
+    name: "Shraddha Kharate",
+    role: "Co-founder",
+    company: "Reet Foods",
+    city: "Hinjewadi, Pune",
     rating: 5,
-    text: "We came in with a broken ads account and almost no organic traffic. Six months later our leads tripled and our cost per lead dropped significantly. These guys don't just run campaigns - they actually care about your results.",
-    metrics: "300% Growth in Leads",
-    avatar: "/testimonials/rajesh.png",
+    text: "Growthik Media built our corporate gifting website and made it simple for Pune companies to understand our hampers and request a quotation. The site is clear, fast and easy for our team to use.",
+    metrics: "Website live",
+    site: "https://www.reetfoodsngiftings.com/",
   },
   {
-    name: "Sneha Deshmukh",
-    role: "Marketing Director",
-    company: "TechNova Solutions",
-    city: "Mumbai / Pune",
+    name: "Harshad Kharate",
+    role: "Co-founder",
+    company: "Reet Foods",
+    city: "Hinjewadi, Pune",
     rating: 5,
-    text: "Their technical SEO audit was seriously eye-opening - they found issues we had no idea existed. Within a few months our keyword rankings improved by over 150% and we started getting inbound traffic we never had before. Highly recommended.",
-    metrics: "150% Increase in SEO Traffic",
-    avatar: "/testimonials/sneha.png",
+    text: "We needed a site that could handle corporate Diwali gifting enquiries, not just look pretty. Growthik set up the pages, quotation flow and WhatsApp contact so buyers can reach us quickly.",
+    metrics: "Corporate enquiry flow",
+    site: "https://www.reetfoodsngiftings.com/",
   },
   {
-    name: "Amit Shinde",
-    role: "COO",
-    company: "Global Edunext",
-    city: "Pune",
+    name: "Client",
+    role: "Ecommerce brand",
+    company: "Skincare Serum & Facewash",
+    city: "India",
     rating: 5,
-    text: "Our enrollment numbers went up and our cost per lead dropped by 45%. What I appreciated most was their content strategy - students were already familiar with us before they even contacted our team. Made our sales process so much easier.",
-    metrics: "45% Lower CPL",
-    avatar: "/testimonials/amit.png",
+    text: "Growthik set up Google Ads, SEO and conversion tracking for our serum and facewash store. We now see which campaigns create real enquiries instead of guessing from clicks.",
+    metrics: "Ads + SEO measurement",
+    site: "/portfolio/skincare-serum-facewash-ecommerce-campaign/",
   },
   {
-    name: "Priya Mehta",
-    role: "Head of Growth",
-    company: "Vibe E-commerce",
-    city: "Pune",
+    name: "Client",
+    role: "Food brand",
+    company: "Mango Pulp Campaign",
+    city: "India",
     rating: 5,
-    text: "We scaled from ₹5L to ₹25L in monthly ad spend and our ROAS actually improved from 2.5 to 4.2 along the way. I was honestly nervous about scaling that fast but they managed it really well. Solid team.",
-    metrics: "₹20L+ Monthly Revenue Scale",
-    avatar: "/testimonials/priya.png",
+    text: "The WhatsApp lead campaign helped us reach distributors and buyers across India. Follow-up became clearer because every enquiry was tagged by buyer type and location.",
+    metrics: "WhatsApp lead capture",
+    site: "/portfolio/mango-pulp-whatsapp-lead-generation-campaign/",
   },
 ];
 
@@ -89,11 +88,11 @@ const TestimonialSection = React.memo(() => {
               </span>
             </div>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1]">
-              CLIENT SUCCESS STORIES,{" "}
-              <span className="text-(--color-primary)">REAL RESULTS</span>
+              CLIENT NOTES,{" "}
+              <span className="text-(--color-primary)">REAL WORK</span>
             </h2>
             <p className="text-lg md:text-xl text-(--text-secondary) mt-4 font-light italic max-w-2xl">
-              Don&apos;t take our word for it - listen to the results.
+              Simple feedback from work we actually delivered.
             </p>
           </div>
 
@@ -137,13 +136,8 @@ const TestimonialSection = React.memo(() => {
                       ))}
                     </div>
                     <span className="text-(--text-primary) font-bold text-sm">
-                      5.0 / 5.0 Rating
+                      Client feedback
                     </span>
-                    <div className="flex items-center gap-1.5 bg-yellow-400/10 px-3 py-1 rounded-full border border-yellow-400/20">
-                      <span className="text-[10px] font-black text-yellow-600 uppercase tracking-widest">
-                        Google Review
-                      </span>
-                    </div>
                   </div>
                   <p className="text-xl md:text-2xl font-medium text-(--text-primary) leading-relaxed mb-8 italic">
                     "{t.text}"
@@ -158,42 +152,34 @@ const TestimonialSection = React.memo(() => {
                         {t.role} @ {t.company}
                       </span>
                       <span className="text-(--text-secondary) text-sm mt-1">
-                        {t.city}, Maharashtra
+                        {t.city}
                       </span>
+                      {t.site && (
+                        <Link
+                          href={t.site}
+                          target={t.site.startsWith("http") ? "_blank" : undefined}
+                          rel={t.site.startsWith("http") ? "noopener noreferrer" : undefined}
+                          className="text-(--color-primary) text-sm font-bold mt-2 hover:underline"
+                        >
+                          View project
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>
 
                 {/* Right side: Video / Metrics */}
                 <div className="lg:col-span-5">
-                  <div className="relative group overflow-hidden border border-(--border) bg-(--surface) p-2 shadow-2xl">
-                    {/* Video Placeholder Style */}
-                    <div className="aspect-video bg-(--surface-secondary) relative flex items-center justify-center">
-                      <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors" />
-                      <div className="flex flex-col items-center gap-4 text-center p-8">
-                        <div className="relative">
-                          <PlayCircle className="w-20 h-20 text-(--color-primary) opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all cursor-pointer will-change-transform" />
-                          <span className="absolute -bottom-2 right-0 bg-black text-white text-[10px] font-bold px-2 py-0.5 rounded">
-                            1:24
-                          </span>
-                        </div>
-                        <span className="text-(--color-primary) font-bold uppercase tracking-widest text-xs">
-                          Watch Video Testimonial
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Result Badge */}
-                    <div className="absolute -bottom-6 -left-6 bg-(--color-primary) p-8 text-white shadow-xl z-20 will-change-transform">
-                      <div className="flex flex-col">
-                        <span className="text-xs uppercase tracking-widest font-bold opacity-80">
-                          Proven Result
-                        </span>
-                        <span className="text-2xl font-black whitespace-nowrap">
-                          {t.metrics}
-                        </span>
-                      </div>
-                    </div>
+                  <div className="relative overflow-hidden border border-(--border) bg-(--surface) p-8 shadow-xl">
+                    <span className="text-xs uppercase tracking-widest font-bold text-(--text-secondary)">
+                      Work delivered
+                    </span>
+                    <p className="text-2xl font-black text-(--text-primary) mt-3">
+                      {t.metrics}
+                    </p>
+                    <p className="text-sm text-(--text-secondary) mt-4">
+                      {t.company} · {t.city}
+                    </p>
                   </div>
                 </div>
               </div>

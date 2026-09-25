@@ -87,7 +87,7 @@ const TEMPLATES: EmailTemplate[] = [
     icon: Clock,
     userVersion: {
       subject: "Quick question about your growth strategy",
-      body: `Hi [Name],\r\n\r\nI'm following up on our recent communication. I noticed [Specific Note about their site] and wanted to see if you're still looking to scale your revenue this quarter.\r\n\r\nWe recently helped a similar brand in [Industry] achieve a 300% growth ratio in 6 months using our AI SEO framework.\r\n\r\nWould you be open to a 5-minute chat tomorrow?\r\n\r\nRegards,\r\nAmol Kadam`,
+      body: `Hi [Name],\r\n\r\nI'm following up on our recent communication. I noticed [Specific Note about their site] and wanted to see if you're still looking to scale your revenue this quarter.\r\n\r\nWe work with Pune businesses on SEO, ads and websites, then report the leads and actions that actually come in.\r\n\r\nWould you be open to a 5-minute chat tomorrow?\r\n\r\nRegards,\r\nAmol Kadam`,
     },
     adminVersion: {
       subject: "⏳ Follow-up Alert: No Response from [Name]",
