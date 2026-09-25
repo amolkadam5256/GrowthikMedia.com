@@ -76,10 +76,10 @@ export default function RootLayout({
       className={`${rostex.variable} ${rostexOutline.variable} ${caveat.variable}`}
     >
       <head>
-        <meta name="google-adsense-account" content="ca-pub-2209927581524030" />
+        <meta name="google-adsense-account" content="ca-pub-6335044286537508" />
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2209927581524030"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6335044286537508"
           crossOrigin="anonymous"
         />
       </head>
