@@ -10,20 +10,21 @@ const metrics = [
     icon: Users,
     value: 10,
     suffix: "+",
-    label: "Clients Served",
+    label: "Happy Clients",
     timeframe: "Across Pune and India",
   },
   {
     icon: Target,
-    value: 50,
+    value: 30,
     suffix: "+",
     label: "Projects Completed",
     timeframe: "Web, SEO and campaigns",
   },
   {
     icon: TrendingUp,
-    value: 2019,
+    value: 2020,
     suffix: "",
+    raw: true,
     label: "Established",
     timeframe: "Pune-based team",
   },
@@ -91,7 +92,7 @@ const ClientSuccessMetricsSection = () => {
               {/* Value */}
               <div className="mb-4">
                 <span className="text-4xl md:text-5xl font-black text-(--color-primary) leading-none">
-                  <Counter value={metric.value} suffix={metric.suffix} />
+                  <Counter value={metric.value} suffix={metric.suffix} raw={metric.raw} />
                 </span>
               </div>
 

@@ -53,7 +53,7 @@ export default function ServiceCard({
         {/* Number Badge */}
         <div className="absolute top-6 right-6">
           <span
-            className="text-6xl font-bold transition-all duration-500"
+            className="text-5xl font-bold transition-all duration-500"
             style={{
               color: isHovered ? "var(--color-primary)" : "var(--border)",
               opacity: 0.3,

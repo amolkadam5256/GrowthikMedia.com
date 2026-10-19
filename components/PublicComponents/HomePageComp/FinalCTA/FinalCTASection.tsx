@@ -36,7 +36,7 @@ const FinalCTASection = React.memo(() => {
 
           {/* Main Headline */}
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) mb-6 tracking-tight leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) mb-6 tracking-tight leading-[1.1]"
             data-aos="fade-up"
           >
             Ready to Make Digital Marketing{" "}
@@ -86,7 +86,7 @@ const FinalCTASection = React.memo(() => {
               <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 will-change-transform" />
 
               <Zap className="w-5 h-5 relative z-10" />
-              <span className="relative z-10">Get Free Strategy Session</span>
+              <span className="relative z-10">Book Your Free Strategy Call</span>
               <ArrowRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" />
             </Link>
 

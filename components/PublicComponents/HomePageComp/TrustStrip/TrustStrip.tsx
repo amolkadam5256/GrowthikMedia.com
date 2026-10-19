@@ -1,22 +1,94 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
 import { Counter } from "@/components/PublicComponents/ui/GCounter";
 
-const logos = [
-  "Reet Foods",
-  "Ecommerce Brands",
-  "Food & Beverage",
-  "Pune Startups",
-  "Healthcare",
-  "Real Estate",
-  "Education",
-  "B2B Companies",
+export interface ClientItem {
+  id: string;
+  name: string;
+  headline: string;
+  highlightText: string;
+  description: string;
+  caseStudyUrl: string;
+  logo?: string;
+  logoBg?: string;
+}
+
+export const namedClients: ClientItem[] = [
+  {
+    id: "reet-foods",
+    name: "Reet Foods",
+    headline: "Reet Foods,",
+    highlightText: "built in Pune",
+    description: "Corporate gifting site, quotation flow and WhatsApp enquiries.",
+    caseStudyUrl: "/portfolio/reet-foods-corporate-gifting-website",
+    logo: "/images/portfolio/reet-foods-logo.png",
+    logoBg: "bg-black",
+  },
+  {
+    id: "mind-spa-global",
+    name: "Mind Spa Global",
+    headline: "Mind Spa Global,",
+    highlightText: "Healthcare & Wellness",
+    description: "Paid advertising, Meta & Google Ads and qualified lead generation.",
+    caseStudyUrl: "/portfolio/mind-spa-global-paid-advertising-lead-generation",
+    logo: "/images/portfolio/mind-spa-global-dr-dipti.png",
+    logoBg: "bg-gray-200",
+  },
+  {
+    id: "house-of-bunkar",
+    name: "House of Bunkar",
+    headline: "House of Bunkar,",
+    highlightText: "Ethnic Fashion & Sarees",
+    description: "Social media management, reels production and Meta Ads campaigns.",
+    caseStudyUrl: "/portfolio/house-of-bunkar-digital-marketing-case-study",
+    logo: "/images/portfolio/house-of-bunkar-logo.png",
+    logoBg: "bg-white p-0.5",
+  },
+  {
+    id: "pcmc-lead-gen",
+    name: "PCMC Lead Gen",
+    headline: "40 Leads in 7 Days,",
+    highlightText: "PCMC, Pune",
+    description: "Retirement community lead generation through targeted Meta Ads in Pimpri-Chinchwad.",
+    caseStudyUrl: "/portfolio/pcmc-lead-generation-case-study-pune",
+  },
+];
+
+const logos: { name: string; logo?: string; logoBg?: string }[] = [
+  { name: "Reet Foods", logo: "/images/portfolio/reet-foods-logo.png", logoBg: "bg-black" },
+  { name: "Mind Spa Global" },
+  { name: "House of Bunkar", logo: "/images/portfolio/house-of-bunkar-logo.png", logoBg: "bg-white" },
+  { name: "Ethnic Fashion" },
+  { name: "Healthcare & Wellness" },
+  { name: "Pune Startups" },
+  { name: "Real Estate" },
+  { name: "Ecommerce Brands" },
+  { name: "Food & Beverage" },
+  { name: "Education" },
+  { name: "B2B Companies" },
 ];
 
 const TrustStrip = React.memo(() => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const nextClient = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % namedClients.length);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(nextClient, 5000);
+    return () => clearInterval(interval);
+  }, [isPaused, nextClient]);
+
+  const activeClient = namedClients[currentIndex];
+
   return (
     <div className="w-full py-12 md:py-16 overflow-hidden relative z-20 transition-colors duration-300 bg-(--surface) border-b border-(--border)">
       {/* Background Animated Shapes */}
@@ -41,14 +113,91 @@ const TrustStrip = React.memo(() => {
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
-        {/* Left Section: Big Text */}
-        <div className="flex flex-col justify-center text-center md:text-left">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) leading-tight tracking-tight">
-            Trusted by <br className="hidden md:block" />
-            <span className="text-(--color-primary)">
-              <Counter value={10} suffix="+ Happy Clients" />
-            </span>
-          </h2>
+        {/* Left Section: Minimal Multi-Client Text */}
+        <div
+          className="flex flex-col justify-center text-center md:text-left"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          {/* Eyebrow & Carousel Indicator */}
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2.5 mb-3">
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-(--color-primary)">
+              Named client work
+            </p>
+            <div className="inline-flex items-center gap-2">
+              <div className="flex items-center gap-1.5">
+                {namedClients.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentIndex(idx)}
+                    className={`rounded-full transition-all duration-300 cursor-pointer ${
+                      currentIndex === idx
+                        ? "w-5 h-1.5 bg-(--color-primary)"
+                        : "w-1.5 h-1.5 bg-(--text-secondary)/30 hover:bg-(--text-secondary)/60"
+                    }`}
+                    aria-label={`View ${namedClients[idx].name}`}
+                  />
+                ))}
+              </div>
+              <span className="text-[10px] font-bold text-(--text-secondary) tabular-nums">
+                {currentIndex + 1} / {namedClients.length}
+              </span>
+            </div>
+          </div>
+
+          {/* Client Headline & Summary */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeClient.id}
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -4 }}
+              transition={{ duration: 0.18 }}
+            >
+              <div className="flex items-center justify-center md:justify-start gap-2.5 mb-2.5">
+                {activeClient.logo ? (
+                  <div className={`relative w-8 h-8 rounded-full overflow-hidden border border-(--border) shadow-xs shrink-0 ${activeClient.logoBg || "bg-white"}`}>
+                    <Image
+                      src={activeClient.logo}
+                      alt={`${activeClient.name} logo`}
+                      width={32}
+                      height={32}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                ) : (
+                  <span className="w-2 h-2 rounded-full bg-(--color-primary)" />
+                )}
+                <span className="text-xs font-bold uppercase tracking-wider text-(--text-secondary)">
+                  {activeClient.name}
+                </span>
+              </div>
+
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-(--text-primary) leading-tight tracking-tight">
+                {activeClient.headline}{" "}
+                <span className="text-(--color-primary)">{activeClient.highlightText}</span>
+              </h2>
+
+              <p className="mt-3 text-base text-(--text-secondary) max-w-md mx-auto md:mx-0 leading-relaxed">
+                {activeClient.description}
+              </p>
+
+              <div className="mt-4 flex items-center justify-center md:justify-start gap-4">
+                <Link
+                  href={activeClient.caseStudyUrl}
+                  className="inline-flex text-sm font-bold text-(--color-primary) hover:underline"
+                >
+                  View case study &rarr;
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="inline-flex text-xs font-semibold text-(--text-secondary) hover:text-(--color-primary) transition-colors"
+                >
+                  All work
+                </Link>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Right Section: Reviews (Top) & Logos (Bottom) */}
@@ -87,13 +236,16 @@ const TrustStrip = React.memo(() => {
                   Pune-Based Team
                 </span>
                 <span className="text-[9px] text-(--text-secondary) uppercase tracking-wider">
-                  Established 2019
+                  Established 2020
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Bottom: Scrolling Logos */}
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-(--text-secondary) text-center md:text-left">
+            Industries
+          </p>
+          {/* Bottom: industry labels, not client logos */}
           <div
             className="w-full overflow-hidden relative"
             style={{
@@ -113,12 +265,25 @@ const TrustStrip = React.memo(() => {
                 duration: 40,
               }}
             >
-              {[...logos, ...logos].map((logo, index) => (
+              {[...logos, ...logos].map((item, index) => (
                 <span
                   key={index}
-                  className="text-2xl md:text-3xl font-bold text-(--text-secondary) grayscale hover:grayscale-0 hover:text-(--text-primary) transition-all duration-300 cursor-default select-none"
+                  className="inline-flex items-center gap-2 grayscale hover:grayscale-0 hover:text-(--text-primary) transition-all duration-300 cursor-default select-none"
                 >
-                  {logo}
+                  {item.logo ? (
+                    <span className={`relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border border-(--border) shadow-xs shrink-0 inline-flex items-center justify-center ${item.logoBg || "bg-white"}`}>
+                      <Image
+                        src={item.logo}
+                        alt={item.name}
+                        width={48}
+                        height={48}
+                        className="object-contain w-full h-full"
+                      />
+                    </span>
+                  ) : null}
+                  <span className="text-2xl md:text-3xl font-bold text-(--text-secondary)">
+                    {item.name}
+                  </span>
                 </span>
               ))}
             </motion.div>

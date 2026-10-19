@@ -49,12 +49,12 @@ const DifferentiatorsSection = () => {
             <div className="bg-(--color-primary) p-8 text-white flex flex-col justify-center items-center text-center">
               <span className="text-5xl font-black mb-2">10+</span>
               <span className="text-xs font-bold uppercase tracking-widest opacity-80">
-                Clients Served
+                Happy Clients
               </span>
             </div>
             <div className="bg-(--surface) border border-(--border) p-8 flex flex-col justify-center items-center text-center">
               <span className="text-5xl font-black text-(--text-primary) mb-2">
-                2019
+                2020
               </span>
               <span className="text-xs font-bold uppercase tracking-widest text-(--text-secondary)">
                 Established
@@ -62,7 +62,7 @@ const DifferentiatorsSection = () => {
             </div>
             <div className="bg-(--surface) border border-(--border) p-8 flex flex-col justify-center items-center text-center">
               <span className="text-5xl font-black text-(--text-primary) mb-2">
-                50+
+                30+
               </span>
               <span className="text-xs font-bold uppercase tracking-widest text-(--text-secondary)">
                 Projects Completed

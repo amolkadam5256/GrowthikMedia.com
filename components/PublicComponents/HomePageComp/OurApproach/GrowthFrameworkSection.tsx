@@ -69,7 +69,7 @@ const GrowthFrameworkSection = React.memo(() => {
             </span>
             <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-[1.1]">
             GROWTH STRATEGY{" "}
             <span className="text-(--color-primary)">FRAMEWORK</span>
           </h2>
@@ -89,7 +89,7 @@ const GrowthFrameworkSection = React.memo(() => {
                 data-aos="fade-up"
               >
                 {/* Step Number */}
-                <div className="absolute -top-6 -right-6 text-8xl font-black text-(--color-primary)/5 group-hover:text-(--color-primary)/10 transition-colors pointer-events-none">
+                <div className="absolute -top-6 -right-6 text-5xl font-black text-(--color-primary)/5 group-hover:text-(--color-primary)/10 transition-colors pointer-events-none">
                   0{index + 1}
                 </div>
 

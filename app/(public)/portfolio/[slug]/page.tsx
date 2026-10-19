@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { CheckCircle2, Target, Layers, Search, BarChart3, Calendar, ShieldCheck, Sparkles } from 'lucide-react';
 import { portfolioData, getProjectBySlug, getRelatedProjects } from '@/lib/data/portfolio';
 import { CONTACT_INFO, STRUCTURED_DATA_IDS } from '@/constants/contact';
 import { LegacyPageContent, legacyPortfolioPages } from '@/lib/seo/legacyPages';
@@ -202,7 +203,21 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
               <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">
                 {project.client === 'Confidential' ? 'Case Study' : 'Our Client'}
               </span>
-              <span className="text-lg font-bold text-gray-900 dark:text-gray-100">{project.client}</span>
+              <div className="flex items-center gap-2.5">
+                {project.clientLogo && (
+                  <div className={`relative w-7 h-7 rounded-full overflow-hidden shrink-0 border border-gray-200 dark:border-gray-700 ${project.client === 'House of Bunkar' ? 'bg-white p-0.5' : 'bg-black'
+                    }`}>
+                    <Image
+                      src={project.clientLogo}
+                      alt={`${project.client} logo`}
+                      width={28}
+                      height={28}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                )}
+                <span className="text-lg font-bold text-gray-900 dark:text-gray-100">{project.client}</span>
+              </div>
             </div>
             <div>
               <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block mb-1">Focus Area</span>
@@ -251,6 +266,289 @@ export default async function PortfolioProjectPage({ params }: { params: Promise
                     </div>
                   ))}
                 </div>
+              </div>
+            )}
+
+            {project.caseStudyDetail && (
+              <div className="mt-14 space-y-12">
+                {/* Clinical Authority & Core Programs */}
+                {project.caseStudyDetail.doctorPresence && (
+                  <div className="p-6 bg-gradient-to-r from-red-600/10 via-amber-600/10 to-transparent border border-red-500/20 rounded-xl">
+                    <span className="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 block mb-1">
+                      Professional Clinical Leadership
+                    </span>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                      {project.caseStudyDetail.doctorPresence}
+                    </h3>
+                  </div>
+                )}
+
+                {/* Business Objectives */}
+                {project.caseStudyDetail.businessObjectives && (
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Target className="w-6 h-6 text-red-600" />
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        Key Business Objectives
+                      </h3>
+                    </div>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                      {project.caseStudyDetail.businessObjectives.map((obj, i) => (
+                        <li key={i} className="flex items-start gap-3 p-4 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl shadow-xs">
+                          <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                          <span className="text-sm font-medium text-gray-700 dark:text-gray-300 leading-relaxed">{obj}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Campaign Assessment Table */}
+                {project.caseStudyDetail.campaignAssessment && (
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <BarChart3 className="w-6 h-6 text-red-600" />
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        Campaign Diagnostic &amp; Execution Assessment
+                      </h3>
+                    </div>
+                    <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800 shadow-xs">
+                      <table className="w-full text-left text-sm">
+                        <thead className="bg-gray-100 dark:bg-gray-800 text-xs uppercase font-bold text-gray-700 dark:text-gray-300 tracking-wider">
+                          <tr>
+                            <th className="py-3 px-4">Area</th>
+                            <th className="py-3 px-4">Observation</th>
+                            <th className="py-3 px-4">Required Improvement</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900">
+                          {project.caseStudyDetail.campaignAssessment.map((row, i) => (
+                            <tr key={i} className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                              <td className="py-3 px-4 font-bold text-gray-900 dark:text-white whitespace-nowrap">{row.area}</td>
+                              <td className="py-3 px-4 text-gray-600 dark:text-gray-400">{row.observation}</td>
+                              <td className="py-3 px-4 font-medium text-red-600 dark:text-red-400">{row.improvement}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* Creative Assessment */}
+                {project.caseStudyDetail.creatives && (
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Layers className="w-6 h-6 text-red-600" />
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        Advertising Creative Framework
+                      </h3>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {project.caseStudyDetail.creatives.map((c, i) => (
+                        <div key={i} className="p-5 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-xs flex flex-col">
+                          <span className="text-xs font-black uppercase tracking-wider text-red-600 mb-1">{c.code}</span>
+                          <h4 className="text-base font-bold text-gray-900 dark:text-white mb-2">{c.name}</h4>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 mb-4 leading-relaxed flex-grow">{c.description}</p>
+                          <div className="pt-3 border-t border-gray-100 dark:border-gray-800">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 block mb-1">Recommended Deployment</span>
+                            <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">{c.recommendedUse}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Meta Advertising Strategy */}
+                {project.caseStudyDetail.metaStrategy && (
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      Proposed Meta Advertising Strategy
+                    </h3>
+                    <div className="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-800 shadow-xs">
+                      <table className="w-full text-left text-sm">
+                        <thead className="bg-gray-100 dark:bg-gray-800 text-xs uppercase font-bold text-gray-700 dark:text-gray-300 tracking-wider">
+                          <tr>
+                            <th className="py-3 px-4">Campaign</th>
+                            <th className="py-3 px-4">Objective</th>
+                            <th className="py-3 px-4">Audience</th>
+                            <th className="py-3 px-4">Conversion Goal</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200 dark:divide-gray-800 bg-white dark:bg-gray-900">
+                          {project.caseStudyDetail.metaStrategy.map((row, i) => (
+                            <tr key={i} className="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                              <td className="py-3 px-4 font-bold text-gray-900 dark:text-white">{row.campaign}</td>
+                              <td className="py-3 px-4 text-gray-600 dark:text-gray-400">{row.objective}</td>
+                              <td className="py-3 px-4 text-gray-600 dark:text-gray-400">{row.audience}</td>
+                              <td className="py-3 px-4 font-semibold text-red-600 dark:text-red-400">{row.conversionGoal}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* Google Ads Strategy */}
+                {project.caseStudyDetail.googleStrategy && (
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Search className="w-6 h-6 text-red-600" />
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        Google Search Intent Architecture
+                      </h3>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                      {project.caseStudyDetail.googleStrategy.map((item, i) => (
+                        <div key={i} className="p-5 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-xs">
+                          <h4 className="text-base font-bold text-gray-900 dark:text-white mb-2">{item.title}</h4>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{item.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Integrated Lead Generation Funnel */}
+                {project.caseStudyDetail.funnelStages && (
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      Integrated Lead-Generation Funnel
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                      {project.caseStudyDetail.funnelStages.map((stage, i) => (
+                        <div key={i} className="p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-xs">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-xs font-black text-red-600 px-2 py-0.5 rounded bg-red-50 dark:bg-red-900/20">
+                              STEP {stage.step}
+                            </span>
+                          </div>
+                          <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-1.5">{stage.title}</h4>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{stage.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* KPI Measurement Framework */}
+                {project.caseStudyDetail.kpis && (
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                      Performance Measurement Framework (Reporting KPIs)
+                    </h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                      {project.caseStudyDetail.kpis.map((k, i) => (
+                        <div key={i} className="p-4 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-lg">
+                          <span className="text-xs font-bold text-red-600 uppercase tracking-wide block mb-1">{k.kpi}</span>
+                          <span className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed block">{k.purpose}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Implementation Roadmap */}
+                {project.caseStudyDetail.roadmap && (
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Calendar className="w-6 h-6 text-red-600" />
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        Recommended Implementation Roadmap
+                      </h3>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {project.caseStudyDetail.roadmap.map((step, i) => (
+                        <div key={i} className="p-5 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl shadow-xs">
+                          <span className="text-xs font-black uppercase tracking-wider text-red-600 block mb-1">{step.week}</span>
+                          <h4 className="text-base font-bold text-gray-900 dark:text-white mb-2">{step.title}</h4>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{step.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Pillars Approach */}
+                {project.caseStudyDetail.pillars && (
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <Sparkles className="w-6 h-6 text-amber-500" />
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                        Our Approach: Complete Digital Marketing Management
+                      </h3>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {project.caseStudyDetail.pillars.map((pillar, i) => (
+                        <div key={i} className="p-5 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl shadow-xs">
+                          <span className="text-xs font-black text-amber-500 uppercase tracking-widest block mb-1">
+                            {pillar.number}
+                          </span>
+                          <h4 className="text-base font-bold text-gray-900 dark:text-white mb-2.5">
+                            {pillar.title}
+                          </h4>
+                          <ul className="space-y-1.5">
+                            {pillar.points.map((pt, pIdx) => (
+                              <li key={pIdx} className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                                <span className="text-amber-500 font-bold">•</span>
+                                <span>{pt}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Campaign Highlight (e.g. PULA Bazaar) */}
+                {project.caseStudyDetail.campaignHighlight && (
+                  <div className="p-6 md:p-8 bg-gradient-to-br from-amber-500/10 via-red-500/5 to-transparent border border-amber-500/20 rounded-2xl shadow-xs">
+                    <span className="text-xs font-black uppercase tracking-widest text-amber-600 dark:text-amber-400 block mb-1">
+                      Featured Performance Highlight
+                    </span>
+                    <h3 className="text-xl md:text-2xl font-black text-gray-900 dark:text-white mb-2">
+                      {project.caseStudyDetail.campaignHighlight.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                      {project.caseStudyDetail.campaignHighlight.subtitle}
+                    </p>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 mb-6">
+                      {project.caseStudyDetail.campaignHighlight.stats.map((s, i) => (
+                        <div key={i} className="p-4 bg-white dark:bg-gray-900/80 border border-gray-100 dark:border-gray-800 rounded-xl text-center">
+                          <span className="text-xl font-black text-amber-600 dark:text-amber-400 block mb-1">{s.value}</span>
+                          <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide">{s.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                    {project.caseStudyDetail.campaignHighlight.notes && (
+                      <p className="text-xs text-gray-500 dark:text-gray-400 italic leading-relaxed border-t border-amber-500/10 pt-4">
+                        {project.caseStudyDetail.campaignHighlight.notes}
+                      </p>
+                    )}
+                  </div>
+                )}
+
+                {/* Strategic Case Study Conclusion */}
+                {project.caseStudyDetail.conclusion && (
+                  <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-black text-white border border-gray-800 shadow-xl">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-red-400 mb-3">
+                      <ShieldCheck className="w-4 h-4" />
+                      Strategic Case Study Conclusion
+                    </div>
+                    <div className="space-y-3 text-sm text-gray-300 leading-relaxed whitespace-pre-line mb-6">
+                      {project.caseStudyDetail.conclusion}
+                    </div>
+                    {project.caseStudyDetail.statusNote && (
+                      <div className="pt-4 border-t border-gray-800 flex items-center justify-between text-xs text-gray-400">
+                        <span>{project.caseStudyDetail.statusNote}</span>
+                        <span className="font-bold text-red-400">2025–2026 Strategy</span>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             )}
           </div>

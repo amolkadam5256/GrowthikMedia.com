@@ -111,7 +111,7 @@ const AboutFounderSection = () => {
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-(--color-primary) transition-colors">
                   <Award className="w-4 h-4 text-(--text-secondary) group-hover:text-(--color-primary) group-hover:scale-110 transition-all" />
                   <span className="text-[10px] uppercase font-bold text-(--text-secondary) group-hover:text-(--color-primary) transition-colors">
-                    Established 2019
+                    Established 2020
                   </span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1.5 bg-(--surface) border border-(--border) rounded-md group hover:border-(--color-primary) transition-colors">
@@ -142,7 +142,7 @@ const AboutFounderSection = () => {
 
         {/* Vertical Text Decoration */}
         <div className="absolute right-10 top-1/2 -translate-y-1/2 hidden xl:block select-none pointer-events-none">
-          <span className="text-[12rem] font-black text-(--text-primary)/5 rotate-90 inline-block tracking-tighter">
+          <span className="text-5xl font-black text-(--text-primary)/5 rotate-90 inline-block tracking-tighter">
             ELITE
           </span>
         </div>
@@ -159,7 +159,7 @@ const AboutFounderSection = () => {
                   The Squad
                 </span>
               </div>
-              <h2 className="text-5xl md:text-7xl font-black text-(--text-primary) uppercase tracking-tighter leading-[0.9]">
+              <h2 className="text-5xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter leading-[0.9]">
                 Architects of <br />
                 <span
                   className="text-transparent"

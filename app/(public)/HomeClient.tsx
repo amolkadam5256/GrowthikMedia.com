@@ -5,23 +5,22 @@ import dynamic from "next/dynamic";
 import HomeHeroSection from "@/components/PublicComponents/HomePageComp/HeroSection/HomeHeroSection";
 import TrustStrip from "@/components/PublicComponents/HomePageComp/TrustStrip/TrustStrip";
 
-// Code-split all below-fold sections.
-// ssr:false in a "use client" component means Next.js emits these as separate
-// JS chunks, loaded client-side only - reducing initial JS bundle & parse time.
+// Code-split below-fold sections, but keep them in the server HTML so
+// search engines and first-time visitors receive the full page.
 const IndustriesWeServeSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/IndustriesWeServe/IndustriesWeServeSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const ProblemSolutionSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/ProblemSolution/ProblemSolutionSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const LeadMagnetSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/LeadMagnet/LeadMagnetSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const AboutCompanySection = dynamic(
   () =>
@@ -41,7 +40,7 @@ const OurServicesSection = dynamic(
 const TechStackSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/TechStack/TechStackSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const SEOAuthoritySection = dynamic(
   () =>
@@ -63,61 +62,61 @@ const GrowthFrameworkSection = dynamic(
     import("@/components/PublicComponents/HomePageComp/OurApproach").then(
       (m) => m.GrowthFrameworkSection,
     ),
-  { ssr: false },
+  { ssr: true },
 );
 const AIPositioningSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/AIPositioning/AIPositioningSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const WhyChooseUsSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/WhyChooseUs/WhyChooseUsSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const ComparisonSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/Comparison/ComparisonSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const GrowthResourcesSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/GrowthResources/GrowthResourcesSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const PortfolioHighlightsSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/PortfolioHighlights").then(
       (m) => m.PortfolioHighlightsSection,
     ),
-  { ssr: false },
+  { ssr: true },
 );
 const ClientSuccessMetricsSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/ClientSuccessMetrics/ClientSuccessMetricsSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const PerformanceRoadmapSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/PerformanceRoadmap/PerformanceRoadmapSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const InvestmentSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/Investment/InvestmentSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const TestimonialSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/Testimonials").then(
       (m) => m.TestimonialSection,
     ),
-  { ssr: false },
+  { ssr: true },
 );
 const CircularRevealSection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/CircularRevealHero/CircularRevealSection"),
-  { ssr: false },
+  { ssr: true },
 );
 const FAQSection = dynamic(
   () =>
@@ -127,7 +126,7 @@ const FAQSection = dynamic(
 const FinalCTASection = dynamic(
   () =>
     import("@/components/PublicComponents/HomePageComp/FinalCTA/FinalCTASection"),
-  { ssr: false },
+  { ssr: true },
 );
 
 import AIOptimizedBlocks from "@/components/PublicComponents/HomePageComp/GEO/AIOptimizedBlocks";

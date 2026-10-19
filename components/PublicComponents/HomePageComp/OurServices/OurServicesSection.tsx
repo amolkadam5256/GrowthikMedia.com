@@ -92,7 +92,7 @@ const OurServicesSection = React.memo(() => {
 
           {/* Main Heading */}
           <h2
-            className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 tracking-tight leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-5xl font-black mb-6 tracking-tight leading-[1.1]"
             style={{ color: "var(--text-primary)" }}
             data-aos="fade-up"
             data-aos-delay="100"
@@ -172,10 +172,10 @@ const OurServicesSection = React.memo(() => {
             }}
           >
             {[
-              { number: "50+", label: "Projects Completed" },
+              { number: "30+", label: "Projects Completed" },
               { number: "10+", label: "Happy Clients" },
               { number: "5+", label: "Team Members" },
-              { number: "2019", label: "Established" },
+              { number: "2020", label: "Established" },
             ].map((stat, index) => (
               <li
                 key={index}

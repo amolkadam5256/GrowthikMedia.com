@@ -46,7 +46,7 @@ const AIPositioningSection = () => {
             </span>
             <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
+          <h2 className="text-4xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
             Better Insights{" "}
             <span className="text-(--color-primary)">& Smart Tools</span>
           </h2>

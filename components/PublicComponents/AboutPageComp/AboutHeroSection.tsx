@@ -40,7 +40,7 @@ const AboutHeroSection = () => {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1] mb-6">
                 <span className="text-xl md:text-2xl text-(--text-secondary) block mb-2 font-bold tracking-widest italic lowercase opacity-70">
                   from pune, with love.
                 </span>
@@ -239,7 +239,7 @@ const AboutHeroSection = () => {
                 </div>
                 <div>
                   <span className="block font-black text-base md:text-lg text-(--text-primary)">
-                    50+
+                    30+
                   </span>
                   <span className="text-[10px] md:text-xs text-(--text-secondary) whitespace-nowrap">
                     Projects Completed
@@ -262,7 +262,7 @@ const AboutHeroSection = () => {
                     10+
                   </span>
                   <span className="text-[10px] md:text-xs text-(--text-secondary) block">
-                    Clients served
+                    Happy Clients
                   </span>
                 </div>
               </motion.div>

@@ -7,7 +7,7 @@ import { buildCollectionSchema, buildPortfolioItemListItems } from '@/lib/seo/co
 export const metadata: Metadata = {
   title: 'Web Design & Digital Marketing Portfolio | Growthik Media - Pune',
   description:
-    'See Growthik Media\'s portfolio of 50+ web design, SEO & digital marketing projects across Pune and India. Real results for real businesses. View our client work!',
+    'See Growthik Media\'s portfolio of 30+ web design, SEO & digital marketing projects across Pune and India. Real results for real businesses. View our client work!',
   keywords:
     'digital marketing portfolio pune, web design portfolio pune, SEO case studies pune, Growthik Media projects, website development portfolio India, marketing agency work samples, web app portfolio pune, branding portfolio India',
   alternates: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Web Design & Digital Marketing Portfolio | Growthik Media',
     description:
-      'Explore 50+ real client projects - web design, SEO campaigns, digital marketing and web apps built by Growthik Media for businesses in Pune and India.',
+      'Explore 30+ real client projects - web design, SEO campaigns, digital marketing and web apps built by Growthik Media for businesses in Pune and India.',
     url: 'https://www.growthikmedia.com/portfolio/',
     siteName: 'Growthik Media',
     images: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Web Design & Digital Marketing Portfolio | Growthik Media',
     description:
-      'Explore 50+ real client projects - web design, SEO & digital marketing by Growthik Media, Pune.',
+      'Explore 30+ real client projects - web design, SEO & digital marketing by Growthik Media, Pune.',
     images: ['/og-image.png'],
     creator: '@growthikmedia',
   },
@@ -84,14 +84,14 @@ export default function PortfolioPage() {
               Web Design &amp; Digital Marketing <br className="hidden md:block" /> Portfolio - Real Results.
             </h1>
             <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-              Explore 50+ of our latest web design, digital marketing, SEO campaigns and full-stack web applications - built for businesses across Pune, India and Dubai.
+              Explore 30+ of our latest web design, digital marketing, SEO campaigns and full-stack web applications - built for businesses across Pune, India and Dubai.
             </p>
           </div>
 
           {/* Stats Bar Component */}
           <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-6 shadow-xl flex gap-8">
             <div className="text-center">
-              <span className="block text-3xl font-black text-gray-900 dark:text-white">50+</span>
+              <span className="block text-3xl font-black text-gray-900 dark:text-white">30+</span>
               <span className="text-xs text-gray-500 uppercase font-semibold">Projects Completed</span>
             </div>
             <div className="w-px bg-gray-200 dark:bg-gray-800" />
@@ -103,7 +103,7 @@ export default function PortfolioPage() {
             <div className="text-center">
               <span className="block text-3xl font-black text-gray-900 dark:text-white">2</span>
               <span className="text-xs text-gray-500 uppercase font-semibold">Global Markets</span>
-            </div> and  and
+            </div>
           </div>
         </section>
 

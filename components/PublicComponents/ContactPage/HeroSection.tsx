@@ -22,7 +22,7 @@ export default function HeroSection() {
               Digital Marketing Agency in Pune
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 leading-[1.05] tracking-tight text-(--text-primary) uppercase transition-colors">
+            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-black mb-8 leading-[1.05] tracking-tight text-(--text-primary) uppercase transition-colors">
               Let’s Grow <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">
                 Your Business
@@ -148,9 +148,9 @@ export default function HeroSection() {
                   <div className="relative z-10 flex justify-between items-center">
                     <div>
                       <p className="text-xs text-white/60 dark:text-gray-400 font-bold tracking-widest uppercase mb-1">
-                        Active Clients
+                        Happy Clients
                       </p>
-                      <p className="text-5xl font-black text-white">50+</p>
+                      <p className="text-5xl font-black text-white">10+</p>
                     </div>
                     <div className="flex flex-col items-end">
                       <div className="text-red-500 font-black text-2xl flex items-center gap-1">

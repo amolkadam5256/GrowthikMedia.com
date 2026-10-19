@@ -8,6 +8,7 @@ import { DesktopNavigation } from "./DesktopNavigation";
 import { MobileNavigation } from "./MobileNavigation";
 
 import { MobileMenuButton } from "./MobileMenuButton";
+import { ContactButton } from "./ContactButton";
 import { GlobalStyles } from "./GlobalStyles";
 import { FloatingThemeToggle } from "./FloatingThemeToggle";
 
@@ -65,7 +66,8 @@ export default function Header() {
             <DesktopNavigation navigationData={navigationData.desktop} />
           </div>
 
-          <div className="flex items-center justify-end">
+          <div className="flex items-center justify-end gap-2 sm:gap-3">
+            <ContactButton />
             <MobileMenuButton
               isMobileMenuOpen={isMobileMenuOpen}
               toggleMobileMenu={toggleMobileMenu}

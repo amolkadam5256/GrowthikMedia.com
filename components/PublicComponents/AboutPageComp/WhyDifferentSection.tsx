@@ -77,7 +77,7 @@ const WhyDifferentSection = () => {
               </div>
               <div>
                 <span className="block text-3xl font-black text-(--text-primary)">
-                  50+
+                  30+
                 </span>
                 <span className="text-[10px] text-(--text-secondary) uppercase font-bold tracking-widest">
                   Projects Completed
@@ -86,7 +86,7 @@ const WhyDifferentSection = () => {
               <div className="col-span-2 mt-4 bg-[#1a1a1a] p-4 text-white flex items-center gap-4 rounded-lg border border-(--border)/50">
                 <ShieldCheck className="w-8 h-8 text-(--color-primary)" />
                 <span className="text-xs font-bold uppercase tracking-widest leading-snug">
-                  Pune-Based Team <br /> Established 2019
+                  Pune-Based Team <br /> Established 2020
                 </span>
               </div>
             </div>

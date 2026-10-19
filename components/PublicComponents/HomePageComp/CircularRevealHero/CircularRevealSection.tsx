@@ -112,7 +112,7 @@ const CircularRevealSection = React.memo(() => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.8 }}
-                className="text-white text-4xl sm:text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-tight uppercase"
+                className="text-white text-4xl sm:text-5xl md:text-5xl font-black mb-8 tracking-tighter leading-tight uppercase"
               >
                 {slides[index].title}
               </motion.h2>

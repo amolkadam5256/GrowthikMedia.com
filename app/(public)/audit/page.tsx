@@ -20,7 +20,7 @@ export default function GrowthAudit() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--color-primary)/10 text-(--color-primary) font-black text-xs uppercase tracking-[0.2em] mb-4">
              <Zap className="w-4 h-4 fill-current" /> Free Growth Audit
           </div>
-          <h1 className="text-4xl md:text-6xl font-black text-(--text-primary) leading-[1.1] uppercase tracking-tighter">
+          <h1 className="text-4xl md:text-5xl font-black text-(--text-primary) leading-[1.1] uppercase tracking-tighter">
             Stop Guessing. <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-600">Start Scaling.</span>
           </h1>

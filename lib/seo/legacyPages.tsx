@@ -211,7 +211,7 @@ export function LegacyPageContent({ page, pathPrefix = "" }: { page: LegacyPage;
         <section className="px-6 lg:px-12 py-20 bg-(--surface) border-b border-(--border)">
           <div className="max-w-5xl mx-auto">
             <p className="text-sm font-black uppercase tracking-wide text-(--color-primary) mb-4">{page.eyebrow}</p>
-            <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6">{page.h1}</h1>
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-6">{page.h1}</h1>
             <p className="text-lg md:text-xl text-(--text-secondary) max-w-3xl leading-relaxed">
               Built for {page.audience}. This page answers the original search intent directly and connects visitors to the most useful Growthik Media resources.
             </p>

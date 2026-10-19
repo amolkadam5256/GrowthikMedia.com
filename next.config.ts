@@ -37,6 +37,8 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // Major Category & Service Cleanup
+      { source: "/portfolio/mango-pulp-whatsapp-lead-generation-campaign", destination: "/portfolio/", permanent: true },
+      { source: "/portfolio/mango-pulp-whatsapp-lead-generation-campaign/", destination: "/portfolio/", permanent: true },
       { source: "/services/digital-marketing", destination: "/services/", permanent: true },
       { source: "/services/digital-marketing/", destination: "/services/", permanent: true },
       { source: "/services/google-ads", destination: "/services/ppc-google-ads/", permanent: true },

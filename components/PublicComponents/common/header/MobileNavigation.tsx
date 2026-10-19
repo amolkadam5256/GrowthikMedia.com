@@ -155,6 +155,13 @@ export function MobileNavigation({
         </div>
 
         <div className="mt-8 pt-6 border-t border-(--border-light) space-y-4">
+          <Link
+            href="/contact"
+            onClick={handleMobileLinkClick}
+            className="flex items-center justify-center w-full bg-[#D90B1C] text-white py-3 px-4 text-sm font-bold"
+          >
+            Book Your Free Strategy Call
+          </Link>
           <div className="flex items-center">
             <MdPhone className="text-[#D90B1C] mr-3 text-lg" />
             <span className="text-sm font-medium">

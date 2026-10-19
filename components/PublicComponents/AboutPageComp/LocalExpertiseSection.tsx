@@ -44,10 +44,10 @@ const LocalExpertiseSection = () => {
           </div>
           <div className="text-center group">
             <div className="text-3xl font-black text-(--text-primary) group-hover:text-(--color-primary) transition-colors">
-              50+
+              30+
             </div>
             <div className="text-[10px] text-(--text-secondary) uppercase font-bold tracking-widest mt-2">
-              Regional Brands
+              Projects Completed
             </div>
           </div>
           <div className="text-center group">

@@ -51,7 +51,7 @@ const ProblemSolutionSection = React.memo(() => {
             <span className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) mb-6 tracking-tight leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) mb-6 tracking-tight leading-[1.1]">
             <span className="opacity-40 line-through decoration-red-500/50 decoration-4 mr-0 md:mr-4">
               Stop Guessing.
             </span>

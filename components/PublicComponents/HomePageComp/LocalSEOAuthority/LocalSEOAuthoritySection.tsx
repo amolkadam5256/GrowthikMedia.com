@@ -86,8 +86,8 @@ const LocalSEOAuthoritySection = () => {
               On-Ground Support & Strategy Sessions
             </h3>
             <p className="text-(--text-secondary) leading-relaxed">
-              Face-to-face strategy sessions, real-time market deep
-              understanding of regional consumer behavior and insights.
+              Face-to-face strategy sessions, grounded in real local market
+              knowledge and an understanding of regional consumer behaviour.
             </p>
           </div>
         </div>

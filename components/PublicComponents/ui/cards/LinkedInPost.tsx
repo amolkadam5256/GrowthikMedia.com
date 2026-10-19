@@ -121,11 +121,11 @@ export default function LinkedInPost({
           ) : (
             <div className="text-center">
               <div className="inline-flex items-center gap-1 sm:gap-2">
-                <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-400 tracking-tight">
+                <span className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-gray-400 tracking-tight">
                   Linked
                 </span>
                 <div className="bg-gray-400 rounded px-2 py-1 sm:px-2.5 sm:py-1.5 flex items-center justify-center">
-                  <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white">
+                  <span className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl font-bold text-white">
                     in
                   </span>
                 </div>

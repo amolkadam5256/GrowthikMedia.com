@@ -19,13 +19,13 @@ const HeroHeadline = () => {
         >
           <p className="text-xs md:text-sm font-bold tracking-wider text-white flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-(--color-primary) animate-pulse" aria-hidden="true" />
-            Pune-based digital marketing agency · Since 2019
+            Pune-based digital marketing agency · Since 2020
           </p>
         </div>
 
         {/* Main Headline - Single clean H1 for SEO and Accessibility */}
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black leading-[1.05] tracking-tight"
+          className="text-4xl sm:text-5xl font-black leading-[1.05] tracking-tight"
           style={{ color: "var(--color-white)" }}
         >
           Digital Marketing Agency

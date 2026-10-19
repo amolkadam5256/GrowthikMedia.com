@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildMetadata({
   title: "Digital Marketing Agency in Pune | Growthik Media",
-  description: "Growthik Media is a Pune-based digital marketing agency helping businesses grow through SEO, Google Ads, Meta Ads, performance marketing and high-converting websites. Book a free strategy call.",
+  description: "Pune digital marketing agency for SEO, Google Ads, Meta Ads and fast websites. Book a free strategy call with Growthik Media.",
   path: "/",
   keywords: [
     "digital marketing agency in Pune",
@@ -24,8 +24,9 @@ export default function Home() {
   return (
     <>
       <AISchema
+        pageName="Digital Marketing Agency in Pune | Growthik Media"
         question="What does a digital marketing agency in Pune do?"
-        answer="A digital marketing agency in Pune helps businesses acquire customers through SEO, Google Ads, Meta Ads, content marketing and conversion optimization. Growthik Media is a Pune-based agency founded in 2019 by Amol Kadam. We combine these channels with analytics and website development to help businesses across Pune and PCMC generate measurable leads and revenue."
+        answer="A digital marketing agency in Pune helps businesses acquire customers through SEO, Google Ads, Meta Ads, content marketing and conversion optimization. Growthik Media is a Pune-based agency founded in 2020 by Amol Kadam. We combine these channels with analytics and website development to help businesses across Pune and PCMC generate measurable leads and revenue."
       />
       <script
         type="application/ld+json"
@@ -55,7 +56,7 @@ export default function Home() {
               "telephone": "+918055754054",
               "email": "info@growthikmedia.com",
               "priceRange": "₹₹",
-              "foundingDate": "2019",
+              "foundingDate": "2020",
               "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 5 },
               "founder": {
                 "@type": "Person",
@@ -119,7 +120,7 @@ export default function Home() {
               "@id": "https://www.growthikmedia.com/#founder",
               "name": "Amol Kadam",
               "jobTitle": "Founder & Growth Strategist",
-              "description": "Amol Kadam is the founder of Growthik Media, a Pune-based digital marketing agency established in 2019. He specialises in Next.js development, SEO strategy and Google Ads management.",
+              "description": "Amol Kadam is the founder of Growthik Media, a Pune-based digital marketing agency established in 2020. He specialises in Next.js development, SEO strategy and Google Ads management.",
               "worksFor": {
                 "@type": "Organization",
                 "@id": "https://www.growthikmedia.com/#organization",

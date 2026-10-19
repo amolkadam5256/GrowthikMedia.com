@@ -13,7 +13,7 @@ import { HOME_FAQ } from "@/constants/faqData";
 import { trackEvent } from "@/lib/analytics";
 
 const FAQSection = React.memo(() => {
-  const [openId, setOpenId] = useState<number | null>(1);
+  const [openId, setOpenId] = useState<number | null>(0);
 
   const toggleFaq = (id: number) => {
     setOpenId(openId === id ? null : id);
@@ -44,7 +44,7 @@ const FAQSection = React.memo(() => {
             </span>
             <div className="w-12 h-[2px] bg-primary" />
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-4 leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-4 leading-[1.1]">
             FAQ<span className="text-primary">.</span>
           </h2>
           <p className="text-lg md:text-xl text-(--text-secondary) font-light italic max-w-2xl mx-auto">

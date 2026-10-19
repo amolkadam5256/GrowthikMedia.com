@@ -2,50 +2,34 @@
 
 import React from "react";
 import Link from "next/link";
-import { Download, FileText, BarChart3, ArrowRight } from "lucide-react";
+import { Search, Megaphone, Monitor, ArrowRight } from "lucide-react";
 import { Button } from "@/components/PublicComponents/ui/GButton";
 import { motion } from "framer-motion";
-import { Counter } from "@/components/PublicComponents/ui/GCounter";
 
 const magnets = [
   {
-    id: "seo-checklist",
-    icon: FileText,
-    title: "Free SEO Checklist",
-    description: (
-      <>
-        The exact <Counter value={45} suffix="-point checklist" /> we use to
-        improve rankings for our clients on Google Pune. Complete technical and on-page
-        guide.
-      </>
-    ),
-    cta: "Download PDF",
-    color: "from-(--color-primary)/10 to-(--color-primary-light)/5",
-    iconColor: "text-(--color-primary)",
-  },
-  {
-    id: "ads-audit",
-    icon: Download,
-    title: "Free Ads Audit PDF",
+    id: "seo-review",
+    icon: Search,
+    title: "SEO on the call",
     description:
-      "Identify why your Google or Meta Ads aren&apos;t converting. Get actionable fixes for your local Pune business.",
-    cta: "Request Free Audit",
-    color: "from-(--color-primary)/10 to-(--color-primary-light)/5",
-    iconColor: "text-(--color-primary)",
+      "Rankings, local visibility and the pages that should already be bringing enquiries.",
+    cta: "Book Your Free Strategy Call",
   },
   {
-    id: "website-score",
-    icon: BarChart3,
-    title: "Instant Website Score",
-    description: (
-      <>
-        Get a performance and SEO score for your website in under{" "}
-        <Counter value={60} suffix=" seconds" />. Know exactly where you stand.
-      </>
-    ),
-    cta: "Check Score",
-    color: "from-(--color-primary)/10 to-(--color-primary-light)/5",
-    iconColor: "text-(--color-primary)",
+    id: "ads-review",
+    icon: Megaphone,
+    title: "Ads on the call",
+    description:
+      "Where Google or Meta spend is going, and which campaigns are creating real enquiries.",
+    cta: "Book Your Free Strategy Call",
+  },
+  {
+    id: "site-review",
+    icon: Monitor,
+    title: "Website on the call",
+    description:
+      "Speed, mobile use and whether the page can turn a visit into a lead.",
+    cta: "Book Your Free Strategy Call",
   },
 ];
 
@@ -60,17 +44,17 @@ const LeadMagnetSection = () => {
           <div className="flex items-center justify-center gap-4 mb-6 px-4 py-2">
             <div className="w-12 h-[2px] bg-(--color-primary)" />
             <span className="text-(--color-primary) font-bold uppercase tracking-[0.3em] text-xs">
-              Direct Value
+              Strategy call
             </span>
             <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-none">
-            Grab Our <br />
-            <span className="text-(--color-primary)">Growth Resources</span>
+          <h2 className="text-4xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-none">
+            What the call <br />
+            <span className="text-(--color-primary)">actually covers</span>
           </h2>
           <p className="text-lg text-(--text-secondary) max-w-2xl mx-auto leading-relaxed">
-            The same checklists and tools our team uses on every client campaign - now free for you to use in your business.
+            One conversation. No download, no score tool, no obligation to hire us.
           </p>
         </div>
 
@@ -108,7 +92,7 @@ const LeadMagnetSection = () => {
                     fbEvent="Lead"
                     fbEventData={{ content_name: magnet.title }}
                   >
-                    {idx === 0 ? "Request Guide" : magnet.cta}
+                    {magnet.cta}
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>

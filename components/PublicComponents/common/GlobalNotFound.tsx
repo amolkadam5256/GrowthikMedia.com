@@ -82,11 +82,11 @@ export default function GlobalNotFound() {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-8 md:px-6 md:py-16">
         <div className="relative mb-8 md:mb-12">
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-[100px] sm:text-[150px] md:text-[250px] font-black opacity-5 select-none animate-pulse">
+            <div className="text-5xl font-black opacity-5 select-none animate-pulse">
               404
             </div>
           </div>
-          <h1 className="relative text-[80px] sm:text-[120px] md:text-[180px] font-black leading-none text-(--color-primary) animate-pulse">
+          <h1 className="relative text-4xl sm:text-5xl font-black leading-none text-(--color-primary) animate-pulse">
             404
           </h1>
           <div className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 animate-bounce">

@@ -148,7 +148,7 @@ export default function WebsiteDesignPunePage() {
               Website Design Company In Pune
             </h4>
 
-            <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] font-black mb-6 tracking-tighter leading-[0.95] uppercase text-(--text-primary) text-center drop-shadow-sm">
+            <h1 className="text-5xl sm:text-5xl md:text-5xl lg:text-5xl font-black mb-6 tracking-tighter leading-[0.95] uppercase text-(--text-primary) text-center drop-shadow-sm">
               Website Design
               <br /> Company Pune
             </h1>
@@ -749,9 +749,9 @@ export default function WebsiteDesignPunePage() {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { icon: Monitor, stat: "50+", label: "Projects Completed" },
+                  { icon: Monitor, stat: "30+", label: "Projects Completed" },
                   { icon: Users, stat: "10+", label: "Happy Clients" },
-                  { icon: Award, stat: "7+ Years", label: "Experience" },
+                  { icon: Award, stat: "6+ Years", label: "Experience" },
                   { icon: Target, stat: "5+", label: "Team Members" }].map((item, i) => (
                   <div
                     key={i}
@@ -934,7 +934,7 @@ export default function WebsiteDesignPunePage() {
             <div className="inline-block bg-(--color-primary)/10 text-(--color-primary) px-4 py-1.5 rounded-full font-black text-sm tracking-widest mb-6 animate-pulse border border-(--color-primary)/20">
               LIMITED TIME: FREE SEO AUDIT INCLUDED
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) mb-6 uppercase tracking-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) mb-6 uppercase tracking-tight">
               Contact Us
             </h2>
             <p className="text-xl md:text-2xl text-(--text-secondary) font-medium mb-12 max-w-2xl mx-auto">

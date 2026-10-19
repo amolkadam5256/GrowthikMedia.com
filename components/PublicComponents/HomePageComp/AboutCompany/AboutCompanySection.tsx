@@ -33,7 +33,7 @@ const AboutCompanySection = React.memo(() => {
               <div className="w-12 h-[2px] bg-(--color-primary)" />
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) mb-8 tracking-tight leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) mb-8 tracking-tight leading-[1.1]">
               We Turn{" "}
               <span className="relative inline-block">
                 <span className="text-(--color-primary)">Clicks</span>
@@ -150,7 +150,7 @@ const AboutCompanySection = React.memo(() => {
                 <line x1="3" x2="21" y1="10" y2="10" />
               </svg>
               <span className="text-sm font-bold text-(--text-secondary)">
-                Established 2019
+                Established 2020
               </span>
             </div>
 

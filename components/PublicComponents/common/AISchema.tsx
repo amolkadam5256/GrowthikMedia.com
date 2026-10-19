@@ -10,15 +10,17 @@ export default function AISchema({
   question,
   answer,
   summary,
+  pageName,
 }: {
   question: string;
   answer: string;
   summary?: string;
+  pageName?: string;
 }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: question,
+    name: pageName || question,
     description: answer,
     about: {
       "@type": "Thing",

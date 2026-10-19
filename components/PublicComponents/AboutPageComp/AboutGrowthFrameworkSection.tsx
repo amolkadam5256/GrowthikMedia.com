@@ -18,7 +18,7 @@ const AboutGrowthFrameworkSection = () => {
             </span>
             <div className="w-8 h-[2px] bg-(--color-primary)" />
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-6">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-6">
             Our 4-Step <br />
             <span className="text-(--color-primary)">
               Growth Engineering Framework
@@ -71,7 +71,7 @@ const AboutGrowthFrameworkSection = () => {
                 {item.icon}
               </div>
               <div
-                className="text-5xl md:text-6xl font-black text-transparent absolute top-4 right-4 opacity-10 pointer-events-none transition-opacity group-hover:opacity-20"
+                className="text-5xl md:text-5xl font-black text-transparent absolute top-4 right-4 opacity-10 pointer-events-none transition-opacity group-hover:opacity-20"
                 style={{ WebkitTextStroke: "2px var(--color-primary)" }}
               >
                 {item.step}

@@ -149,7 +149,7 @@ export default function LocationPageTemplate({
               Serving {area}, {city}
             </div>
 
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6 text-(--text-primary)">
+            <h1 className="text-3xl md:text-5xl lg:text-5xl font-black tracking-tight leading-[1.1] mb-6 text-(--text-primary)">
               {headline.split(area)[0]}
               <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">
                 {area}
@@ -165,7 +165,7 @@ export default function LocationPageTemplate({
               {[
                 {
                   icon: CheckCircle2,
-                  label: "50+ Projects Completed",
+                  label: "30+ Projects Completed",
                   color: "text-green-500",
                 },
                 {
@@ -175,7 +175,7 @@ export default function LocationPageTemplate({
                 },
                 {
                   icon: Award,
-                  label: "7+ Years in Pune",
+                  label: "6+ Years in Pune",
                   color: "text-(--color-primary)",
                 },
               ].map(({ icon: Icon, label, color }) => (
@@ -221,9 +221,9 @@ export default function LocationPageTemplate({
         <section className="px-6 lg:px-12 py-12 bg-(--surface) border-y border-(--border)">
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { icon: Globe, value: "50+", label: "Projects Completed" },
+              { icon: Globe, value: "30+", label: "Projects Completed" },
               { icon: Users, value: "10+", label: "Happy Clients" },
-              { icon: TrendingUp, value: "7+", label: "Years Experience" },
+              { icon: TrendingUp, value: "6+", label: "Years Experience" },
               { icon: Award, value: "100%", label: "Result Oriented" },
             ].map(({ icon: Icon, value, label }) => (
               <div key={label} className="text-center">

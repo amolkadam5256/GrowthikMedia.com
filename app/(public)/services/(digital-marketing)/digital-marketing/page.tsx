@@ -8,9 +8,9 @@ import { ServiceFAQ } from "@/components/PublicComponents/common/ServiceFAQ";
 import { DIGITAL_MARKETING_FAQ } from "@/constants/faqData";
 
 const slug = "digital-marketing";
-const title = "Digital Marketing Agency in Pune | Growthik Media";
-const description = "Results-driven digital marketing agency in Pune. SEO, Google Ads, Social Media and Content Marketing to scale your business.";
-const h1 = "Digital Marketing Agency in Pune";
+const title = "Digital Marketing Services in Pune | Growthik Media";
+const description = "Digital marketing services in Pune: SEO, Google Ads, social and content. Growthik Media scopes the plan on a free strategy call.";
+const h1 = "Digital Marketing Services in Pune";
 const canonical = `https://www.growthikmedia.com/services/${slug}/`;
 const features = ["SEO Services", "Google Ads", "Social Media", "Content Marketing", "Email Marketing", "Data Analytics"];
 
@@ -31,11 +31,15 @@ export default function DigitalMarketingPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--background) border border-(--border) shadow-sm mb-6 text-sm font-bold text-(--color-primary) tracking-wide uppercase">
               <Award className="w-4 h-4" />Specialized Agency Services
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-black mb-6 tracking-tighter leading-[1.1] uppercase text-(--text-primary)">
               <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) to-blue-500">{h1}</span>
             </h1>
             <p className="text-lg md:text-xl text-(--text-secondary) font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
-              We understand that multi-channel visibility is your biggest hurdle. That's why Growthik Media builds comprehensive digital marketing systems designed specifically for your needs.
+              This page covers the service mix. For the agency overview, start with our{" "}
+              <Link href="/" className="text-(--color-primary) underline underline-offset-4">
+                digital marketing agency in Pune
+              </Link>
+              .
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Link href="/contact" className="px-8 py-4 bg-(--color-primary) text-white font-bold rounded-xl hover:bg-black transition-all duration-300 shadow-lg shadow-(--color-primary)/30 flex items-center justify-center gap-2 w-full sm:w-auto">Book Your Free Strategy Call <ArrowRight className="w-5 h-5" /></Link>

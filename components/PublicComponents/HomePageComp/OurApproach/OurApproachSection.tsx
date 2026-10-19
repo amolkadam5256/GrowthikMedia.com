@@ -112,7 +112,7 @@ export default function OurApproachSection() {
           </div>
 
           <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl md:text-5xl lg:text-5xl font-bold mb-6"
             style={{ color: "var(--text-primary)" }}
           >
             How We Grow Your Business

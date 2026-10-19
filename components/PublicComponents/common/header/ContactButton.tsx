@@ -1,17 +1,13 @@
 import Link from "next/link";
-import { FiTrendingUp } from "react-icons/fi";
 
 export function ContactButton() {
   return (
-    <div className="hidden lg:block">
-      <Link
-        href="/contact"
-        className="bg-(--color-primary) hover:from-(--color-primary-light) 
-        hover:to-(--color-primary-light) text-white px-7 py-3 rounded-full font-bold uppercase text-xs tracking-wider transition-all duration-300 transform hover:scale-105 shadow-lg shadow-red-500/30 flex items-center space-x-2 group/contact"
-      >
-        <FiTrendingUp className="group-hover/contact:animate-bounce" />
-        <span>Get Free Growth Audit</span>
-      </Link>
-    </div>
+    <Link
+      href="/contact"
+      className="inline-flex items-center justify-center bg-(--color-primary) text-white px-3 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold text-[11px] sm:text-xs tracking-wide shadow-lg shadow-red-500/25 hover:opacity-90 transition-opacity whitespace-nowrap"
+    >
+      <span className="sm:hidden">Book a Call</span>
+      <span className="hidden sm:inline">Book Your Free Strategy Call</span>
+    </Link>
   );
 }

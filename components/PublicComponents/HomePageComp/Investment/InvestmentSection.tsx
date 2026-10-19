@@ -22,7 +22,7 @@ const tiers = [
       "Social Media Management (2 Platforms)",
       "Monthly Performance Report",
     ],
-    cta: "Start Small",
+    cta: "Book Your Free Strategy Call",
     popular: false,
   },
   {
@@ -41,7 +41,7 @@ const tiers = [
       "Weekly Strategy Updates",
       "Dedicated Account Manager",
     ],
-    cta: "Scale Now",
+    cta: "Book Your Free Strategy Call",
     popular: true,
   },
   {
@@ -60,7 +60,7 @@ const tiers = [
       "Real-time Data BI Dashboard",
       "Direct Founder Access",
     ],
-    cta: "Request Consultation",
+    cta: "Book Your Free Strategy Call",
     popular: false,
   },
 ];
@@ -82,12 +82,12 @@ const InvestmentSection = () => {
             <div className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-none">
-            Simple, Transparent <br />
-            <span className="text-(--color-primary)">Pricing</span>
+          <h2 className="text-4xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-6 leading-none">
+            Typical starting <br />
+            <span className="text-(--color-primary)">ranges</span>
           </h2>
           <p className="text-lg text-(--text-secondary) max-w-2xl mx-auto leading-relaxed">
-            No hidden fees, no padded retainers. Just clear pricing for what your Pune business actually needs.
+            Starting points, not fixed packages. Scope and fee are set on the strategy call.
           </p>
         </div>
 

@@ -219,7 +219,7 @@ export default function SEOCompanyPunePage() {
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             <div>
               <p className="mb-4 text-sm font-black uppercase tracking-wide text-(--color-primary)">SEO Services in Pune</p>
-              <h1 className="mb-6 text-4xl font-black leading-tight tracking-tight md:text-6xl">
+              <h1 className="mb-6 text-4xl font-black leading-tight tracking-tight md:text-5xl">
                 SEO Company in Pune for Sustainable Organic Growth
               </h1>
               <p className="max-w-3xl text-lg leading-8 text-(--text-secondary)">

@@ -147,7 +147,7 @@ export default function AboutUsSection() {
                     className="text-3xl font-bold mb-1"
                     style={{ color: "var(--color-primary)" }}
                   >
-                    3+
+                    6+
                   </div>
                   <div
                     className="text-xs"
@@ -161,7 +161,7 @@ export default function AboutUsSection() {
                     className="text-3xl font-bold mb-1"
                     style={{ color: "var(--color-primary)" }}
                   >
-                    50+
+                    30+
                   </div>
                   <div
                     className="text-xs"

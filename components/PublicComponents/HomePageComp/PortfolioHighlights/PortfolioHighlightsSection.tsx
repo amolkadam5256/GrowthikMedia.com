@@ -11,9 +11,9 @@ import { portfolioData, getFeaturedProjects } from "@/lib/data/portfolio";
 
 const PortfolioHighlightsSection = React.memo(() => {
   const featuredProjects = getFeaturedProjects().slice(0, 6);
-  
+
   const projectsToDisplay = featuredProjects.map(project => ({
-    category: project.category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+    category: project.industry || project.category.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
     title: project.title,
     image: project.thumbnail,
     link: `/portfolio/${project.slug}`,
@@ -47,7 +47,7 @@ const PortfolioHighlightsSection = React.memo(() => {
             </div>
 
             <h2
-              className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) leading-[1.1] uppercase tracking-tighter"
+              className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) leading-[1.1] uppercase tracking-tighter"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -99,9 +99,9 @@ const PortfolioHighlightsSection = React.memo(() => {
         <div className="mt-32 pt-20 border-t border-(--border) flex flex-wrap justify-between items-center gap-12">
           <div className="flex flex-wrap gap-12 md:gap-20">
             {[
-              { val: "50+", label: "Projects Completed" },
+              { val: "30+", label: "Projects Completed" },
               { val: "10+", label: "Happy Clients" },
-              { val: "2019", label: "Established" },
+              { val: "2020", label: "Established" },
             ].map((stat, i) => (
               <div
                 key={i}
@@ -109,7 +109,7 @@ const PortfolioHighlightsSection = React.memo(() => {
                 data-aos="zoom-in"
                 data-aos-delay={i * 100}
               >
-                <span className="text-5xl md:text-6xl font-black text-(--text-primary) tracking-tighter">
+                <span className="text-5xl md:text-5xl font-black text-(--text-primary) tracking-tighter">
                   {stat.val}
                 </span>
                 <div className="flex items-center gap-2">

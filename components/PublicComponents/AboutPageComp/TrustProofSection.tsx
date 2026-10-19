@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 const TrustProofSection = () => {
   const stats = [
-    { label: "Clients Served", val: "10+" },
-    { label: "Projects Completed", val: "50+" },
-    { label: "Established", val: "2019" },
+    { label: "Happy Clients", val: "10+" },
+    { label: "Projects Completed", val: "30+" },
+    { label: "Established", val: "2020" },
     { label: "Team Members", val: "5+" },
   ];
 

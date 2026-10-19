@@ -59,7 +59,7 @@ export default function BrandNamePage() {
                 Local Digital Marketing Agency In Pune
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-6xl font-black mb-6 tracking-tight leading-[1.1] text-(--text-primary)">
+              <h1 className="text-5xl md:text-5xl lg:text-5xl font-black mb-6 tracking-tight leading-[1.1] text-(--text-primary)">
                 Brand Names That <br className="hidden lg:block" />
                 <span className="relative inline-block mt-1 mb-2">
                   <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-(--color-primary) via-red-500 to-orange-500 animate-gradient bg-300%">
@@ -190,7 +190,7 @@ export default function BrandNamePage() {
         <section className="py-24 bg-(--surface-secondary) overflow-hidden flex items-center border-b border-(--border) group">
           <div className="whitespace-nowrap flex gap-8 animate-pulse transition-transform duration-[10000ms] group-hover:-translate-x-[20%]">
             {[...Array(2)].map((_, i) => (
-              <h2 key={i} className="text-5xl md:text-7xl font-black uppercase text-transparent" style={{ WebkitTextStroke: '2px var(--color-primary)' }}>
+              <h2 key={i} className="text-5xl md:text-5xl font-black uppercase text-transparent" style={{ WebkitTextStroke: '2px var(--color-primary)' }}>
                 MEMORABLE • DISTINCTIVE • PROTECTABLE •
               </h2>
             ))}
@@ -201,7 +201,7 @@ export default function BrandNamePage() {
         <section className="px-6 lg:px-12 py-32 bg-(--background) text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto relative z-10">
             <Compass className="w-16 h-16 mx-auto text-(--color-primary) mb-8 animate-pulse" />
-            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8 text-(--text-primary)">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 text-(--text-primary)">
               Ready to find your <span className="text-(--color-primary)">Identity?</span>
             </h2>
             <p className="text-xl text-(--text-secondary) font-medium mb-12">

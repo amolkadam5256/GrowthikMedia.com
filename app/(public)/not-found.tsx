@@ -18,10 +18,10 @@ export default function PublicNotFound() {
     <div className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-24 bg-gray-50 dark:bg-black text-center">
       {/* Animated 404 number */}
       <div className="relative mb-8 select-none">
-        <span className="text-[120px] md:text-[200px] font-black leading-none text-gray-100 dark:text-gray-900 absolute inset-0 flex items-center justify-center pointer-events-none">
+        <span className="text-5xl font-black leading-none text-gray-100 dark:text-gray-900 absolute inset-0 flex items-center justify-center pointer-events-none">
           404
         </span>
-        <span className="relative text-[80px] md:text-[140px] font-black leading-none text-red-600">
+        <span className="relative text-4xl md:text-5xl font-black leading-none text-red-600">
           404
         </span>
       </div>

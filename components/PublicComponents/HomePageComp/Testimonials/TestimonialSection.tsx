@@ -16,39 +16,32 @@ const TESTIMONIALS = [
     company: "Reet Foods",
     city: "Hinjewadi, Pune",
     rating: 5,
-    text: "Growthik Media built our corporate gifting website and made it simple for Pune companies to understand our hampers and request a quotation. The site is clear, fast and easy for our team to use.",
-    metrics: "Website live",
+    text: "Growthik Media built our corporate gifting website and made it straightforward for Pune companies to understand our hampers and request a quotation. The site is clean, fast and easy for our team to manage.",
+    metrics: "Corporate gifting website delivered",
     site: "https://www.reetfoodsngiftings.com/",
+    caseStudyLink: "/portfolio/reet-foods-corporate-gifting-website",
   },
   {
-    name: "Harshad Kharate",
-    role: "Co-founder",
-    company: "Reet Foods",
-    city: "Hinjewadi, Pune",
+    name: "Dr. Dipti Panhalkar",
+    role: "Founder & Chief Psychologist",
+    company: "Mind Spa Global",
+    city: "Pune & Mumbai",
     rating: 5,
-    text: "We needed a site that could handle corporate Diwali gifting enquiries, not just look pretty. Growthik set up the pages, quotation flow and WhatsApp contact so buyers can reach us quickly.",
-    metrics: "Corporate enquiry flow",
-    site: "https://www.reetfoodsngiftings.com/",
+    text: "The Growthik team ran our Meta and Google Ads for the Neuro Mind Gym programme. They structured the campaign to reach the right audience and track qualified enquiries, not just clicks.",
+    metrics: "Paid advertising & lead generation",
+    site: "/portfolio/mind-spa-global-paid-advertising-lead-generation",
+    caseStudyLink: "/portfolio/mind-spa-global-paid-advertising-lead-generation",
   },
   {
-    name: "Client",
-    role: "Ecommerce brand",
-    company: "Skincare Serum & Facewash",
-    city: "India",
+    name: "House of Bunkar Team",
+    role: "Premium Ethnic Fashion Boutique",
+    company: "House of Bunkar",
+    city: "Bhoslenagar, Pune",
     rating: 5,
-    text: "Growthik set up Google Ads, SEO and conversion tracking for our serum and facewash store. We now see which campaigns create real enquiries instead of guessing from clicks.",
-    metrics: "Ads + SEO measurement",
-    site: "/portfolio/skincare-serum-facewash-ecommerce-campaign/",
-  },
-  {
-    name: "Client",
-    role: "Food brand",
-    company: "Mango Pulp Campaign",
-    city: "India",
-    rating: 5,
-    text: "The WhatsApp lead campaign helped us reach distributors and buyers across India. Follow-up became clearer because every enquiry was tagged by buyer type and location.",
-    metrics: "WhatsApp lead capture",
-    site: "/portfolio/mango-pulp-whatsapp-lead-generation-campaign/",
+    text: "For the PULA Bazaar event we needed real footfall from Pune shoppers. The Meta Ads campaign reached 124,600 people with a ₹600 spend and drove genuine local awareness on a tight budget.",
+    metrics: "124,600 Pune shopper reach · ₹600 ad spend · PULA Bazaar",
+    site: "/portfolio/house-of-bunkar-digital-marketing-case-study",
+    caseStudyLink: "/portfolio/house-of-bunkar-digital-marketing-case-study",
   },
 ];
 
@@ -87,7 +80,7 @@ const TestimonialSection = React.memo(() => {
                 Testimonials
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) uppercase tracking-tighter leading-[1.1]">
               CLIENT NOTES,{" "}
               <span className="text-(--color-primary)">REAL WORK</span>
             </h2>

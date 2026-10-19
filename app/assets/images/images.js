@@ -49,7 +49,6 @@ export const publicAssets = {
     ectiEducational: "/images/portfolio/ecti-educational-institute-portal.jpg",
     demoProjectShowcase: "/images/portfolio/demo-project-showcase.jpg",
     skincareEcommerce: "/images/portfolio/skincare-serum-facewash-ecommerce.jpg",
-    mangoPulpCampaign: "/images/portfolio/mango-pulp-whatsapp-campaign.jpg",
     growthikmediaOfficial: "/images/portfolio/growthikmedia-official-website.jpg",
     hajjUmrahTravel: "/images/portfolio/hajj-umrah-travel-portal.jpg",
     healurmindMentalHealth: "/images/portfolio/healurmind-mental-health-platform.jpg",

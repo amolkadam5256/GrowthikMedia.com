@@ -38,7 +38,6 @@ export const publicAssets = {
   portfolio: {
       demoProjectShowcase: "/images/portfolio/demo-project-showcase.jpg",
       skincareEcommerce: "/images/portfolio/skincare-serum-facewash-ecommerce.jpg",
-      mangoPulpCampaign: "/images/portfolio/mango-pulp-whatsapp-campaign.jpg",
       growthikmediaOfficial: "/images/portfolio/growthikmedia-official-website.jpg",
   },
 } as const;

@@ -7,7 +7,7 @@ const AboutFinalCTASection = () => {
   return (
     <section className="py-24 md:py-32 bg-(--surface) border-t border-(--border) text-center">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-4xl md:text-6xl font-black text-(--text-primary) uppercase tracking-tighter mb-8 leading-none">
+        <h2 className="text-4xl md:text-5xl font-black text-(--text-primary) uppercase tracking-tighter mb-8 leading-none">
           Ready to Engineer <br />
           <span className="text-(--color-primary)">Predictable Revenue?</span>
         </h2>

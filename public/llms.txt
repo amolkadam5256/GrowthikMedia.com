@@ -9,7 +9,6 @@ Growthik Media is a Pune-based digital marketing and web development company. Th
 - Services: https://www.growthikmedia.com/services/
 - Blog: https://www.growthikmedia.com/blog/
 - Portfolio: https://www.growthikmedia.com/portfolio/
-- Reet Foods project: https://www.growthikmedia.com/portfolio/reet-foods-corporate-gifting-website/
 - Contact: https://www.growthikmedia.com/contact/
 - Full AI-readable knowledge: https://www.growthikmedia.com/llms-full.txt
 
@@ -19,7 +18,7 @@ The authoritative public contact details are maintained in `constants/contact.ts
 
 ## Main Service Pages
 
-- [Best Application Maintenance in Pune | Custom & SEO-Friendly Websites](https://www.growthikmedia.com/services/application-maintenance/) - Professional application maintenance in Pune. Custom, SEO-optimized, and mobile-responsive website services for business growth. Get a free audit today!
+- [Application Maintenance in Pune | Custom & SEO-Friendly Websites](https://www.growthikmedia.com/services/application-maintenance/) - Professional application maintenance in Pune. Custom, SEO-optimized, and mobile-responsive website services for business growth. Get a free audit today!
 - [Brand Identity Design Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/brand-identity/) - Professional brand identity design in Pune. Logo, colour palette, typography & brand guidelines for startups and SMEs.
 - [Brand Marketing & Communications Agency Pune | Growthik Media](https://www.growthikmedia.com/services/brand-marketing-communications/) - Strategic brand marketing and communications in Pune. Messaging frameworks, PR campaigns and brand voice development.
 - [Brand Naming Agency in Pune | Creative Brand Names | Growthik Media](https://www.growthikmedia.com/services/brand-name/) - Creative brand naming in Pune. Unique, memorable brand names for startups and products. Trademark-friendly naming.
@@ -29,22 +28,22 @@ The authoritative public contact details are maintained in `constants/contact.ts
 - [Brochure Design Company in Pune | Growthik Media](https://www.growthikmedia.com/services/brochure-design/) - Professional brochure design in Pune. Company profiles, product brochures, flyers and all print collateral.
 - [Business Card Design Company Pune | Growthik Media](https://www.growthikmedia.com/services/business-card-design/) - Make a powerful first impression with the best business card design in Pune. Premium, professional visiting card designs that reflect your brand identity.
 - [Content Marketing Agency in Pune | B2B Content Strategy | Growthik](https://www.growthikmedia.com/services/content-marketing/) - Strategic content marketing in Pune. We specialize in blog writing, whitepapers, LinkedIn thought leadership, and case studies for B2B & IT firms in Hinjewadi & Baner.
-- [Digital Marketing Agency in Pune | Growthik Media](https://www.growthikmedia.com/) - Pune-based digital marketing agency. SEO, Google Ads, Meta Ads, performance marketing and website development.
+- [Digital Marketing Services in Pune | Growthik Media](https://www.growthikmedia.com/services/digital-marketing/) - Digital marketing services in Pune: SEO, Google Ads, social and content. Growthik Media scopes the plan on a free strategy call.
 - [eCommerce Website Development Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/ecommerce-development/) - Professional eCommerce development in Pune. Scaling online stores with Razorpay, inventory management and high-converting UX.
 - [E-commerce Website Development in Pune | Growthik Media](https://www.growthikmedia.com/services/ecommerce-website-development/) - Scale your online store with professional e-commerce development in Pune. Shopify, WooCommerce and custom platforms.
 - [Educational Website Development in Pune | Growthik Media](https://www.growthikmedia.com/services/educational-website-development/) - LMS and educational website development in Pune. E-learning platforms for schools, colleges and coaching institutes.
 - [Email Marketing Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/email-marketing/) - High-ROI email marketing campaigns for Pune businesses. Newsletters, drip sequences, automation and list management.
 - [Influencer Management Agency Pune | Growthik Media](https://www.growthikmedia.com/services/influencer-management/) - Scale your brand with the top influencer management agency in Pune. We connect you with authentic influencers to drive engagement and sales.
-- [Lead Generation Agency in Pune | Predictable Revenue Systems | Growthik](https://www.growthikmedia.com/services/lead-generation/) - Top lead generation agency in Pune. We build automated B2B & B2C lead systems using Google Ads, Meta Ads & LinkedIn for startups in Baner & Hinjewadi.
+- [Lead Generation Agency in Pune | Predictable Revenue Systems | Growthik](https://www.growthikmedia.com/services/lead-generation/) - Lead generation agency in Pune. We build B2B and B2C lead systems using Google Ads, Meta Ads and LinkedIn for startups in Baner and Hinjewadi.
 - [Professional Letterhead Design Pune | Growthik Media](https://www.growthikmedia.com/services/letterhead-design/) - Establish corporate authority with professional letterhead design in Pune. Custom corporate stationery and digital letterhead templates for your brand.
-- [Local SEO Agency in Pune | Google Maps SEO | Growthik](https://www.growthikmedia.com/services/local-seo/) - Best local SEO agency in Pune. Dominating local search results and Google Maps for businesses in Baner, Hinjewadi, Warje & beyond. Get more footfall today.
+- [Local SEO Agency in Pune | Google Maps SEO | Growthik](https://www.growthikmedia.com/services/local-seo/) - Local SEO agency in Pune. We help businesses rank in local search and Google Maps across Baner, Hinjewadi, Warje and other Pune areas.
 - [Logo Design Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/logo-design/) - Creative logo design agency in Pune. Unique, memorable logos for startups, SMEs and enterprises. Multiple revisions included.
 - [Expert Media Planning and Buying Pune | Growthik Media](https://www.growthikmedia.com/services/media-planning-buying/) - Maximize your ad spend with expert media planning and buying in Pune. Our data-driven digital media strategy ensures your brand reaches the right audience.
 - [Meta Ads Agency in Pune | Instagram & Facebook Ads | Growthik](https://www.growthikmedia.com/services/meta-ads/) - ROI-driven Meta Ads (Facebook & Instagram) management in Pune. Custom creative strategies and data-led scaling for brands in Baner, Hinjewadi & Wakad.
 - [Mobile App Development Company in Pune | Growthik Media](https://www.growthikmedia.com/services/mobile-app-development/) - Top mobile app development in Pune. iOS and Android app development using React Native and Flutter for startups and enterprises.
 - [Performance Marketing Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/performance-marketing/) - Data-driven performance marketing for Pune businesses. Result-oriented campaigns for ROAS, CPA and revenue growth.
-- [Top Political Digital Marketing Pune | Growthik Media](https://www.growthikmedia.com/services/political-digital-marketing/) - Win elections with the top political digital marketing agency in Pune. Professional social media management, sentiment analysis and voter outreach strategies.
-- [Google Ads Agency in Pune | High ROI PPC Management | Growthik](https://www.growthikmedia.com/services/ppc-google-ads/) - Certified Google Ads agency in Pune. Maximizing ROAS and lead quality with data-driven PPC strategies for Pune businesses in Baner, Hinjewadi & Kharadi.
+- [Political Digital Marketing Pune | Growthik Media](https://www.growthikmedia.com/services/political-digital-marketing/) - Win elections with the top political digital marketing agency in Pune. Professional social media management, sentiment analysis and voter outreach strategies.
+- [Google Ads Agency in Pune | High ROI PPC Management | Growthik](https://www.growthikmedia.com/services/ppc-google-ads/) - Google Ads agency in Pune. We manage search and Performance Max campaigns to improve lead quality for Pune businesses in Baner, Hinjewadi and Kharadi.
 - [Real Estate Website Development in Pune | Growthik Media](https://www.growthikmedia.com/services/real-estate-website-development/) - Capture high-intent leads with specialized real estate website development in Pune. CRM integration, MLS mapping and virtual tours.
 - [SEO Company in Pune for Sustainable Organic Growth | Growthik Media](https://www.growthikmedia.com/services/seo/) - SEO services in Pune by Growthik Media: technical SEO, local SEO, content strategy, ecommerce SEO, SaaS/B2B SEO, audits and ROI measurement.
 - [Bulk SMS Marketing Services in Pune | Growthik Media](https://www.growthikmedia.com/services/sms-marketing/) - Scale your business with the best bulk SMS marketing services in Pune. Growthik Media delivers high-ROI promotional and transactional SMS campaigns that convert.
@@ -52,15 +51,15 @@ The authoritative public contact details are maintained in `constants/contact.ts
 - [Social Media Promotions Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/social-media-promotions/) - Boost your reach with social media promotions in Pune. Targeted ad campaigns and viral marketing for businesses of all sizes.
 - [Custom Software Development Company in Pune | Growthik Media](https://www.growthikmedia.com/services/software-development/) - Expert custom software development in Pune. Scalable web applications, SaaS products and enterprise software solutions.
 - [Video Production Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/video-production/) - Professional video production in Pune. Brand films, product videos, social media reels and explainer videos.
-- [Custom Web App Development in Pune | Growthik Media](https://www.growthikmedia.com/services/web-application/) - Top web application company in Pune. We build custom, SEO-optimized and mobile-responsive web apps for businesses looking to scale. Get a free quote!
+- [Custom Web App Development in Pune | Growthik Media](https://www.growthikmedia.com/services/web-application/) - Web application company in Pune. We build custom, SEO-optimized and mobile-responsive web apps for businesses looking to scale. Get a free quote!
 - [Website Design Company in Pune | Growthik Media](https://www.growthikmedia.com/services/website-design/) - Creative website design company in Pune. High-converting, mobile-first designs for businesses that want to stand out and rank.
-- [Best Website Design Company in Pune | Growthik Media](https://www.growthikmedia.com/services/website-design-company-pune/) - Looking for a professional website design company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!
-- [Website Development Company in Pune | Next.js Experts | Growthik](https://www.growthikmedia.com/services/website-development/) - Top website development company in Pune. We build high-performance, SEO-optimized Next.js websites for startups & enterprises in Hinjewadi, Baner & Magarpatta.
+- [Website Design Company in Pune | Growthik Media](https://www.growthikmedia.com/services/website-design-company-pune/) - Looking for a professional website design company in Pune? We provide custom, SEO-optimized, mobile-responsive website development services for businesses. Call Now!
+- [Website Development Company in Pune | Next.js Experts | Growthik](https://www.growthikmedia.com/services/website-development/) - Website development company in Pune. We build high-performance, SEO-optimized Next.js websites for startups and enterprises in Hinjewadi, Baner and Magarpatta.
 - [Full Stack Web Development in Pune | Growthik Media](https://www.growthikmedia.com/services/website-development/full-stack/) - Looking for a professional Full-Stack Solutions company in Pune? We provide custom, SEO-optimized, Full-Stack Solutions services for businesses. Call Now!
 - [Next.js Development Services in Pune | Growthik Media](https://www.growthikmedia.com/services/website-development/nextjs/) - Looking for a professional Next.js Development company in Pune? We provide custom, SEO-optimized, Next.js Development services for businesses. Call Now!
 - [React Development Services in Pune | Growthik Media](https://www.growthikmedia.com/services/website-development/react/) - Looking for a professional React Development company in Pune? We provide custom, SEO-optimized, React Development services for businesses. Call Now!
 - [Website Maintenance Services Pune | Growthik Media](https://www.growthikmedia.com/services/website-maintenance/) - Reliable website maintenance company in Pune. We provide custom, SEO-friendly and responsive maintenance services to keep your site fast and secure.
-- [Top WhatsApp Marketing Services Pune | Growthik Media](https://www.growthikmedia.com/services/whatsapp-marketing/) - Boost sales with top WhatsApp marketing services in Pune. Growthik Media offers official WhatsApp Business API integration and bulk messaging for high ROI.
+- [WhatsApp Marketing Services Pune | Growthik Media](https://www.growthikmedia.com/services/whatsapp-marketing/) - Boost sales with top WhatsApp marketing services in Pune. Growthik Media offers official WhatsApp Business API integration and bulk messaging for high ROI.
 - [WordPress Development Agency in Pune | Growthik Media](https://www.growthikmedia.com/services/wordpress-development/) - Expert WordPress development in Pune. Custom themes, plugin development and WooCommerce stores with 24/7 support.
 - [YouTube Video SEO Services in Pune | Growthik Media](https://www.growthikmedia.com/services/youtube-seo/) - Dominate video search with expert YouTube Video SEO services in Pune. Growthik Media helps you rank higher, increase views and grow your channel content.
 
@@ -70,9 +69,9 @@ The authoritative public contact details are maintained in `constants/contact.ts
 
 ## Policy Pages
 
-- [Privacy Policy | Growthik Media](https://www.growthikmedia.com/privacy-policy/)
-- [Refund & Cancellation Policy | Growthik Media](https://www.growthikmedia.com/refund-policy/)
+- [Privacy Policy | ${CONTACT_INFO.companyName}](https://www.growthikmedia.com/privacy-policy/)
+- [Refund & Cancellation Policy | Growthik Media - SEO & Digital Marketing Agency Pune](https://www.growthikmedia.com/refund-policy/)
 - [Shipping & Delivery Policy | Growthik Media](https://www.growthikmedia.com/shipping-policy/)
-- [Terms of Service | Growthik Media](https://www.growthikmedia.com/terms/)
+- [Terms of Service | ${CONTACT_INFO.companyName}](https://www.growthikmedia.com/terms/)
 
-Generated locally from project source files. Last generated: 2026-09-25.
+Generated locally from project source files. Last generated: 2026-08-30.

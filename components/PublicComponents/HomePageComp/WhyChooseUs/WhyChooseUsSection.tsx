@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   TrendingUp,
 } from "lucide-react";
-import { Counter } from "@/components/PublicComponents/ui/GCounter";
 import { trackEvent } from "@/lib/analytics";
 
 const USP_ITEMS = [
@@ -53,7 +52,7 @@ const USP_ITEMS = [
     title: "Proven Track Record",
     description: (
       <>
-        <Counter value={50} suffix="+ campaigns delivered" /> for real businesses across Pune and India.{" "}
+        30+ projects delivered for real businesses across Pune and India.{" "}
         Clients who&apos;ve stayed with us for 2+ years - that&apos;s the only stat that matters.
       </>
     ),
@@ -84,7 +83,7 @@ const WhyChooseUsSection = React.memo(() => {
             <span className="w-12 h-[2px] bg-(--color-primary)" />
           </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-(--text-primary) mb-6 tracking-tight leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-(--text-primary) mb-6 tracking-tight leading-[1.1]">
             Why Choose Our Digital Marketing Agency{" "}
             <span className="text-(--color-primary)">in Pune</span>?
           </h2>

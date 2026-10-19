@@ -141,9 +141,9 @@ export default function ServicesPage() {
           link: "/services/application-maintenance/"}]}];
 
   const metrics = [
-    { icon: Globe, value: "50+", label: "Projects Completed" },
+    { icon: Globe, value: "30+", label: "Projects Completed" },
     { icon: Users, value: "10+", label: "Happy Clients" },
-    { icon: Briefcase, value: "3+", label: "Years Experience" },
+    { icon: Briefcase, value: "6+", label: "Years Experience" },
     { icon: Award, value: "5+", label: "Team Members" }];
 
   const faqItems = [
@@ -214,7 +214,7 @@ export default function ServicesPage() {
             </Link>
 
             {/* Headline */}
-            <h1 className="text-3xl md:text-5xl lg:text-[3.5rem] font-bold mb-6 tracking-tight text-white leading-[1.1] max-w-3xl">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-white leading-[1.1] max-w-3xl">
               Honest Digital Marketing & <br /> Web Development in Pune
             </h1>
 
@@ -432,10 +432,10 @@ export default function ServicesPage() {
                 title: "Reet Foods website live",
                 desc: "Corporate gifting site for Reet Foods in Hinjewadi, with quotation and WhatsApp enquiry flow."},
               {
-                title: "10+ clients served",
+                title: "10+ happy clients",
                 desc: "Pune businesses using Growthik for websites, SEO, ads and ongoing digital support."},
               {
-                title: "50+ projects since 2019",
+                title: "30+ projects since 2020",
                 desc: "Websites, campaigns and maintenance work delivered from the Warje office."}].map((item, idx) => (
               <div
                 key={idx}
@@ -689,7 +689,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 pattern-grid-lg opacity-[0.1]"></div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-white mb-6 tracking-tight leading-[1.1]">
             Ready to Build Your Digital Empire?
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-medium mb-12 max-w-2xl mx-auto">

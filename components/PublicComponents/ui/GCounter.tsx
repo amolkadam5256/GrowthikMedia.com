@@ -11,6 +11,8 @@ interface CounterProps {
   prefix?: string;
   suffix?: string;
   decimals?: number;
+  /** When true, renders the value as a plain string with no thousands separators (use for years etc.) */
+  raw?: boolean;
 }
 
 export const Counter = ({
@@ -21,11 +23,15 @@ export const Counter = ({
   prefix = "",
   suffix = "",
   decimals = 0,
+  raw = false,
 }: CounterProps) => {
-  const formattedValue = Intl.NumberFormat("en-US", {
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
-  }).format(value);
+  const formatValue = (v: number) => {
+    if (raw) return String(Math.round(v));
+    return Intl.NumberFormat("en-US", {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    }).format(v);
+  };
 
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(value);
@@ -47,18 +53,15 @@ export const Counter = ({
   useEffect(() => {
     springValue.on("change", (latest) => {
       if (ref.current) {
-        ref.current.textContent = Intl.NumberFormat("en-US", {
-          minimumFractionDigits: decimals,
-          maximumFractionDigits: decimals,
-        }).format(latest);
+        ref.current.textContent = formatValue(latest);
       }
     });
-  }, [springValue, decimals]);
+  }, [springValue, decimals, raw]);
 
   return (
     <span className={className}>
       {prefix}
-      <span ref={ref}>{formattedValue}</span>
+      <span ref={ref}>{formatValue(value)}</span>
       {suffix}
     </span>
   );

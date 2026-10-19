@@ -109,9 +109,9 @@ const WhoWeAreSection = () => {
             {/* Stats / Proof */}
             <div className="grid grid-cols-3 gap-8 mt-12 pt-8 border-t border-(--border)">
               {[
-                { label: "Established", val: "2019" },
-                { label: "Clients", val: "10+" },
-                { label: "Projects", val: "50+" },
+                { label: "Established", val: "2020" },
+                { label: "Happy Clients", val: "10+" },
+                { label: "Projects Completed", val: "30+" },
               ].map((stat, i) => (
                 <div key={i}>
                   <div className="text-3xl font-black text-(--text-primary) mb-1">

@@ -7,26 +7,29 @@ const testimonials = [
   {
     id: 1,
     content:
-      "Growthik Media built our corporate gifting website and made it simple for Pune companies to request a quotation.",
+      "Growthik Media built our corporate gifting website and made it straightforward for Pune companies to understand our hampers and request a quotation. The site is clean, fast and easy for our team to manage.",
     initials: "SK",
     name: "Shraddha Kharate",
-    title: "Co-founder, Reet Foods",
+    title: "Co-founder, Reet Foods · Hinjewadi, Pune",
+    link: "/portfolio/reet-foods-corporate-gifting-website",
   },
   {
     id: 2,
     content:
-      "They set up the pages, quotation flow and WhatsApp contact so corporate buyers can reach us quickly.",
-    initials: "HK",
-    name: "Harshad Kharate",
-    title: "Co-founder, Reet Foods",
+      "The Growthik team ran our Meta and Google Ads for the Neuro Mind Gym programme. They structured the campaign to reach the right audience and track qualified enquiries, not just clicks.",
+    initials: "DP",
+    name: "Dr. Dipti Panhalkar",
+    title: "Founder & Chief Psychologist, Mind Spa Global · Pune & Mumbai",
+    link: "/portfolio/mind-spa-global-paid-advertising-lead-generation",
   },
   {
     id: 3,
     content:
-      "Google Ads, SEO and conversion tracking were set up so we can see which campaigns create real enquiries.",
-    initials: "CL",
-    name: "Client",
-    title: "Ecommerce skincare brand",
+      "For the PULA Bazaar event we needed real footfall from Pune shoppers. The Meta Ads campaign reached 124,600 people with a ₹600 ad spend — genuine local awareness on a very tight budget.",
+    initials: "HB",
+    name: "House of Bunkar Team",
+    title: "Premium Ethnic Fashion Boutique · Bhoslenagar, Pune",
+    link: "/portfolio/house-of-bunkar-digital-marketing-case-study",
   },
 ];
 

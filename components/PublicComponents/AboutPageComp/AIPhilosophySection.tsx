@@ -66,14 +66,14 @@ const AIPhilosophySection = () => {
               Our Journey
             </h2>
             <p className="text-sm text-(--text-secondary) ml-6 mb-8 max-w-lg leading-relaxed">
-              Since 2019, Growthik Media has evolved from a boutique digital
+              Since 2020, Growthik Media has evolved from a boutique digital
               marketing agency in Pune into a full-stack growth partner
               delivering scalable AI-powered marketing systems.
             </p>
             <div className="relative border-l-2 border-(--border) ml-6 space-y-12">
               {[
                 {
-                  year: "2019",
+                  year: "2020",
                   title: "Agency Foundation",
                   desc: "Established as a boutique digital consultancy in Pune, focusing on precision marketing.",
                 },

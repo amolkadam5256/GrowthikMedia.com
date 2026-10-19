@@ -8,6 +8,8 @@ import {
   ArrowRight,
   Github,
   Linkedin,
+  Instagram,
+  Facebook,
   Briefcase,
   Globe,
   Monitor,
@@ -55,13 +57,31 @@ const FounderSection = () => {
               <a
                 href="https://www.linkedin.com/in/amolkadam77/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-(--surface) border border-(--border) text-(--text-secondary) hover:text-(--color-primary) hover:border-(--color-primary) transition-all"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
+                href="https://www.instagram.com/adflux_77/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-(--surface) border border-(--border) text-(--text-secondary) hover:text-[#E1306C] hover:border-[#E1306C] transition-all"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61595067885489"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-(--surface) border border-(--border) text-(--text-secondary) hover:text-[#1877F2] hover:border-[#1877F2] transition-all"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
                 href="https://github.com/amolkadam5256"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="p-3 bg-(--surface) border border-(--border) text-(--text-secondary) hover:text-(--color-primary) hover:border-(--color-primary) transition-all"
               >
                 <Github className="w-5 h-5" />
@@ -134,7 +154,7 @@ const FounderSection = () => {
                   Experience
                 </span>
                 <span className="text-lg font-black text-(--text-primary)">
-                  Founded Growthik Media in 2019
+                  Founded Growthik Media in 2020
                 </span>
               </div>
             </div>
