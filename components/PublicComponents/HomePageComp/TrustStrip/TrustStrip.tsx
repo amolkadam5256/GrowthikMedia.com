@@ -61,7 +61,7 @@ export const namedClients: ClientItem[] = [
 
 const logos: { name: string; logo?: string; logoBg?: string }[] = [
   { name: "Reet Foods", logo: "/images/portfolio/reet-foods-logo.png", logoBg: "bg-black" },
-  { name: "Mind Spa Global" },
+  { name: "Mind Spa Global", logo: "/images/portfolio/mind-spa-global-dr-dipti.png", logoBg: "bg-white" },
   { name: "House of Bunkar", logo: "/images/portfolio/house-of-bunkar-logo.png", logoBg: "bg-white" },
   { name: "Ethnic Fashion" },
   { name: "Healthcare & Wellness" },
@@ -243,9 +243,8 @@ const TrustStrip = React.memo(() => {
           </div>
 
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-(--text-secondary) text-center md:text-left">
-            Industries
+            Clients & Industries
           </p>
-          {/* Bottom: industry labels, not client logos */}
           <div
             className="w-full overflow-hidden relative"
             style={{
@@ -268,22 +267,26 @@ const TrustStrip = React.memo(() => {
               {[...logos, ...logos].map((item, index) => (
                 <span
                   key={index}
-                  className="inline-flex items-center gap-2 grayscale hover:grayscale-0 hover:text-(--text-primary) transition-all duration-300 cursor-default select-none"
+                  className="inline-flex items-center grayscale hover:grayscale-0 hover:text-(--text-primary) transition-all duration-300 cursor-default select-none"
                 >
                   {item.logo ? (
-                    <span className={`relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden border border-(--border) shadow-xs shrink-0 inline-flex items-center justify-center ${item.logoBg || "bg-white"}`}>
+                    <span
+                      className={`relative w-12 h-12 md:w-14 md:h-14 rounded-2xl overflow-hidden border border-(--border) shadow-xs shrink-0 inline-flex items-center justify-center p-1.5 ${item.logoBg || "bg-white"}`}
+                      title={item.name}
+                    >
                       <Image
                         src={item.logo}
                         alt={item.name}
-                        width={48}
-                        height={48}
+                        width={56}
+                        height={56}
                         className="object-contain w-full h-full"
                       />
                     </span>
-                  ) : null}
-                  <span className="text-2xl md:text-3xl font-bold text-(--text-secondary)">
-                    {item.name}
-                  </span>
+                  ) : (
+                    <span className="text-2xl md:text-3xl font-bold text-(--text-secondary)">
+                      {item.name}
+                    </span>
+                  )}
                 </span>
               ))}
             </motion.div>

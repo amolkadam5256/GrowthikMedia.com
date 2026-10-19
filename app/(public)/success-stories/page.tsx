@@ -31,7 +31,7 @@ export default function SuccessStoriesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <PageHero
           eyebrow="Success Stories"
           title="Milestones Delivered."
@@ -106,7 +106,7 @@ export default function SuccessStoriesPage() {
             </Link>
           ))}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

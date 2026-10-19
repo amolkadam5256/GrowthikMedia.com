@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function MediaPage() {
   return (
     <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-black overflow-hidden relative">
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <PageHero
           eyebrow="Media Coverage"
           title="In the Press."
@@ -56,7 +56,7 @@ export default function MediaPage() {
             </p>
           </div>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
